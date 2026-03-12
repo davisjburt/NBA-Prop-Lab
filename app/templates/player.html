@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NBA Prop Lab - Player</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        font-family: sans-serif;
+        background: #111;
+        color: #eee;
+        padding: 2rem;
+      }
+      h1 {
+        color: #f0a500;
+      }
+      a {
+        color: #f0a500;
+        text-decoration: none;
+      }
+      .controls {
+        display: flex;
+        gap: 1rem;
+        margin: 1.5rem 0;
+        flex-wrap: wrap;
+      }
+      select,
+      input {
+        background: #1e1e1e;
+        color: #eee;
+        border: 1px solid #444;
+        padding: 0.5rem 0.75rem;
+        border-radius: 6px;
+        font-size: 1rem;
+      }
+      button {
+        background: #f0a500;
+        color: #111;
+        border: none;
+        padding: 0.5rem 1.25rem;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #d4920a;
+      }
+      .stat-box {
+        display: flex;
+        gap: 1rem;
+        margin: 1.5rem 0;
+        flex-wrap: wrap;
+      }
+      .stat-card {
+        background: #1e1e1e;
+        border-radius: 8px;
+        padding: 1rem 1.5rem;
+        text-align: center;
+        min-width: 120px;
+      }
+      .stat-card .value {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #f0a500;
+      }
+      .stat-card .label {
+        font-size: 0.8rem;
+        color: #aaa;
+        margin-top: 4px;
+      }
+      .hit {
+        color: #4caf50;
+        font-weight: bold;
+      }
+      .miss {
+        color: #f44336;
+        font-weight: bold;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+      }
+      th,
+      td {
+        padding: 0.6rem 1rem;
+        text-align: left;
+        border-bottom: 1px solid #2a2a2a;
+      }
+      th {
+        color: #f0a500;
+      }
+      canvas {
+        margin-top: 2rem;
+        max-width: 700px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/">← Back to players</a>
+    <h1 id="player-name">Loading...</h1>
+
+    <div class="controls">
+      <select id="stat">
+        <option value="pts">Points</option>
+        <option value="reb">Rebounds</option>
+        <option value="ast">Assists</option>
+        <option value="stl">Steals</option>
+        <option value="blk">Blocks</option>
+        <option value="fg3m">3-Pointers Made</option>
+        <option value="tov">Turnovers</option>
+      </select>
+      <input
+        id="line"
+        type="number"
+        step="0.5"
+        value="20.5"
+        placeholder="Line (e.g. 24.5)"
+      />
+      <select id="last_n">
+        <option value="">All games</option>
+        <option value="5">Last 5</option>
+        <option value="10">Last 10</option>
+        <option value="20">Last 20</option>
+      </select>
+      <select id="location">
+        <option value="">All</option>
+        <option value="Home">Home</option>
+        <option value="Road">Road</option>
+      </select>
+      <button onclick="loadProps()">Search</button>
+    </div>
+
+    <div class="stat-box">
+      <div class="stat-card">
+        <div class="value" id="hit-rate">--</div>
+        <div class="label">Hit Rate</div>
+      </div>
+      <div class="stat-card">
+        <div class="value" id="hits">--</div>
+        <div class="label">Hits / Games</div>
+      </div>
+      <div class="stat-card">
+        <div class="value" id="avg">--</div>
+        <div class="label">Avg</div>
+      </div>
+      <div class="stat-card">
+        <div class="value" id="max">--</div>
+        <div class="label">Max</div>
+      </div>
+      <div class="stat-card">
+        <div class="value" id="min-val">--</div>
+        <div class="label">Min</div>
+      </div>
+    </div>
+
+    <canvas id="chart" height="120"></canvas>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Matchup</th>
+          <th>Stat</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody id="game-rows"></tbody>
+    </table>
+
+    <script>
+      const playerId = {{ player_id }};
+      let chartInstance = null;
+
+      fetch(`/api/players/${playerId}`)
+        .then(r => r.json())
+        .then(p => document.getElementById("player-name").textContent = `${p.name} — ${p.team}`);
+
+      function loadProps() {
+        const stat     = document.getElementById("stat").value;
+        const line     = document.getElementById("line").value;
+        const last_n   = document.getElementById("last_n").value;
+        const location = document.getElementById("location").value;
+
+        let url = `/api/players/${playerId}/props?stat=${stat}&line=${line}`;
+        if (last_n)   url += `&last_n=${last_n}`;
+        if (location) url += `&location=${location}`;
+
+        fetch(url).then(r => r.json()).then(data => {
+          if (data.error) { alert(data.error); return; }
+
+          document.getElementById("hit-rate").textContent = (data.hit_rate * 100).toFixed(1) + "%";
+          document.getElementById("hits").textContent     = `${data.hits} / ${data.sample}`;
+          document.getElementById("avg").textContent      = data.avg;
+          document.getElementById("max").textContent      = data.max;
+          document.getElementById("min-val").textContent  = data.min;
+
+          // Game log table
+          const tbody = document.getElementById("game-rows");
+          tbody.innerHTML = "";
+          data.games.forEach(g => {
+            const hit = g[stat] > parseFloat(line);
+            tbody.innerHTML += `
+              <tr>
+                <td>${g.date}</td>
+                <td>${g.matchup}</td>
+                <td>${g[stat]}</td>
+                <td class="${hit ? "hit" : "miss"}">${hit ? "✅ Hit" : "❌ Miss"}</td>
+              </tr>`;
+          });
+
+          // Chart
+          const labels = data.games.map(g => g.date).reverse();
+          const values = data.games.map(g => g[stat]).reverse();
+          if (chartInstance) chartInstance.destroy();
+          chartInstance = new Chart(document.getElementById("chart"), {
+            type: "bar",
+            data: {
+              labels,
+              datasets: [{
+                label: stat.toUpperCase(),
+                data: values,
+                backgroundColor: values.map(v => v > parseFloat(line) ? "#4caf50" : "#f44336"),
+              }]
+            },
+            options: {
+              plugins: {
+                annotation: { annotations: {} },
+                legend: { labels: { color: "#eee" } }
+              },
+              scales: {
+                x: { ticks: { color: "#aaa" } },
+                y: { ticks: { color: "#aaa" }, grid: { color: "#2a2a2a" } }
+              }
+            }
+          });
+        });
+      }
+
+      loadProps();
+    </script>
+  </body>
+</html>

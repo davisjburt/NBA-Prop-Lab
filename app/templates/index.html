@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NBA Prop Lab</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background: #111;
+        color: #eee;
+        padding: 2rem;
+      }
+      h1 {
+        color: #f0a500;
+      }
+      .player-card {
+        background: #1e1e1e;
+        border-radius: 8px;
+        padding: 1rem 1.5rem;
+        margin: 0.5rem 0;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.2s;
+      }
+      .player-card:hover {
+        background: #2a2a2a;
+      }
+      .badge {
+        background: #f0a500;
+        color: #111;
+        border-radius: 4px;
+        padding: 2px 8px;
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🏀 NBA Prop Lab</h1>
+    <p>Select a player to explore prop hit rates.</p>
+    <div id="player-list"></div>
+
+    <script>
+      fetch("/api/players")
+        .then((r) => r.json())
+        .then((players) => {
+          const list = document.getElementById("player-list");
+          players.forEach((p) => {
+            const card = document.createElement("div");
+            card.className = "player-card";
+            card.innerHTML = `
+            <span>${p.name}</span>
+            <div>
+              <span class="badge">${p.position}</span>
+              <span style="margin-left:8px;color:#aaa">${p.team}</span>
+            </div>`;
+            card.onclick = () => (window.location.href = `/player/${p.id}`);
+            list.appendChild(card);
+          });
+        });
+    </script>
+  </body>
+</html>
