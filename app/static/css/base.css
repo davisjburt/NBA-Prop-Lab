@@ -1,0 +1,233 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f5f7fa;
+  --surface: #ffffff;
+  --border: #e8ecf0;
+  --accent: #6366f1;
+  --accent2: #f59e0b;
+  --text: #1a1d23;
+  --muted: #6b7280;
+  --success: #10b981;
+  --danger: #ef4444;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.12);
+  --radius: 14px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+}
+.nav-logo {
+  font-family: "Fredoka One", cursive;
+  font-size: 1.6rem;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.5rem;
+}
+.nav-links a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--muted);
+  transition: all 0.15s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  background: #f0f1ff;
+  color: var(--accent);
+}
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.controls-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.4s 0.05s ease both;
+}
+.controls-card h3 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.control-group label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+select,
+input[type="number"] {
+  padding: 0.6rem 0.9rem;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.92rem;
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+  min-width: 130px;
+}
+select:focus,
+input[type="number"]:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+.btn {
+  padding: 0.65rem 1.5rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    transform 0.1s;
+  align-self: flex-end;
+}
+.btn:hover {
+  background: #4f46e5;
+}
+.btn:active {
+  transform: scale(0.97);
+}
+
+.table-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  animation: fadeUp 0.4s 0.2s ease both;
+  margin-bottom: 3rem;
+}
+.table-card h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  padding: 0.75rem 1.5rem;
+  text-align: left;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  background: #fafbfc;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.15s;
+}
+th:hover {
+  color: var(--accent);
+}
+td {
+  padding: 0.8rem 1.5rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border);
+}
+tr:last-child td {
+  border-bottom: none;
+}
+tr.data-row {
+  cursor: pointer;
+  transition: background 0.1s;
+}
+tr.data-row:hover td {
+  background: #fafbff;
+}
+
+.player-avatar {
+  border-radius: 50%;
+  background: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.player-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

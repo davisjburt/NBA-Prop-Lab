@@ -1,63 +1,78 @@
-import sys, os
+import sys, os, time
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from app import create_app
 from app.models.models import db, Player, PlayerGameStat
 from app.services.nba_fetcher import fetch_game_logs
-from nba_api.stats.static import players
-import time
+from nba_api.stats.static import players as nba_players
+from nba_api.stats.endpoints import commonplayerinfo
 
 SEASON = "2024-25"
 
-# Add any players you want to seed here: (player_id, name, team, position)
-PLAYERS_TO_SEED = [
-    (203999, "Nikola Jokic",    "DEN", "C"),
-    (1629029, "Ja Morant",      "MEM", "PG"),
-    (1628384, "Jayson Tatum",   "BOS", "SF"),
-    (2544,    "LeBron James",   "LAL", "SF"),
-    (203507,  "Giannis Antetokounmpo", "MIL", "PF"),
-]
+def get_team_and_position(player_id):
+    try:
+        time.sleep(0.6)
+        info = commonplayerinfo.CommonPlayerInfo(player_id=player_id)
+        df = info.get_data_frames()[0]
+        team = df["TEAM_ABBREVIATION"].iloc[0]
+        pos  = df["POSITION"].iloc[0].split("-")[0].strip()[:3]
+        return team or "N/A", pos or "N/A"
+    except:
+        return "N/A", "N/A"
 
 def seed():
     app = create_app()
+    all_players = nba_players.get_active_players()
+    total = len(all_players)
+    print(f"Found {total} active players. Starting seed...\n")
+
     with app.app_context():
-        for player_id, name, team, position in PLAYERS_TO_SEED:
-            # Upsert player
+        for i, p in enumerate(all_players):
+            player_id = p["id"]
+            name      = p["full_name"]
+            print(f"[{i+1}/{total}] {name}", end=" ... ", flush=True)
+
+            # Skip if already fully seeded
+            existing_stats = PlayerGameStat.query.filter_by(player_id=player_id).first()
+            if existing_stats:
+                print("skipped (already seeded)")
+                continue
+
+            # Fetch team/position
+            team, pos = get_team_and_position(player_id)
+
+            # Upsert player row
             player = Player.query.get(player_id)
             if not player:
-                player = Player(id=player_id, name=name, team_abbr=team, position=position)
+                player = Player(id=player_id, name=name, team_abbr=team, position=pos)
                 db.session.add(player)
                 db.session.commit()
-                print(f"Added player: {name}")
-            else:
-                print(f"Player already exists: {name}")
 
-            # Fetch and insert game logs
-            print(f"  Fetching logs for {name}...")
+            # Fetch game logs
             try:
                 df = fetch_game_logs(player_id, season=SEASON)
-                new_rows = 0
+                if df.empty:
+                    print("no games")
+                    continue
                 for _, row in df.iterrows():
-                    exists = PlayerGameStat.query.filter_by(
-                        player_id=player_id, date=row["date"]
-                    ).first()
-                    if not exists:
-                        stat = PlayerGameStat(
-                            player_id=player_id,
-                            date=row["date"],
-                            matchup=row["matchup"],
-                            location=row["location"],
-                            min=row["min"],  pts=row["pts"],  reb=row["reb"],
-                            ast=row["ast"],  stl=row["stl"],  blk=row["blk"],
-                            fg3m=row["fg3m"],tov=row["tov"]
-                        )
-                        db.session.add(stat)
-                        new_rows += 1
+                    db.session.add(PlayerGameStat(
+                        player_id=player_id,
+                        date=row["date"],     matchup=row["matchup"],
+                        location=row["location"], min=row["min"],
+                        pts=row["pts"],       reb=row["reb"],
+                        ast=row["ast"],       stl=row["stl"],
+                        blk=row["blk"],       fg3m=row["fg3m"],
+                        tov=row["tov"]
+                    ))
                 db.session.commit()
-                print(f"  ✅ {new_rows} new game logs added for {name}")
+                print(f"✅ {len(df)} games")
             except Exception as e:
-                print(f"  ❌ Error fetching {name}: {e}")
-            time.sleep(1)
+                db.session.rollback()
+                print(f"❌ {e}")
+            
+            time.sleep(0.8)
+
+    print("\n✅ Seed complete!")
 
 if __name__ == "__main__":
     seed()

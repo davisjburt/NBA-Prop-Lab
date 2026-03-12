@@ -1,0 +1,109 @@
+.hero {
+  padding: 4rem 2rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeUp 0.5s ease both;
+}
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.15;
+}
+.hero h1 span {
+  color: var(--accent);
+}
+.hero p {
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin-top: 0.75rem;
+}
+
+.search-bar {
+  max-width: 900px;
+  margin: 1.5rem auto 0;
+  padding: 0 2rem;
+  animation: fadeUp 0.5s 0.1s ease both;
+}
+.search-bar input {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+  outline: none;
+}
+.search-bar input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+.player-grid {
+  max-width: 900px;
+  margin: 1.5rem auto 4rem;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.player-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.18s,
+    box-shadow 0.18s,
+    border-color 0.18s;
+  animation: fadeUp 0.4s ease both;
+}
+.player-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
+}
+.player-card .player-avatar {
+  width: 48px;
+  height: 48px;
+}
+.player-info {
+  flex: 1;
+  min-width: 0;
+}
+.player-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.player-meta {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-top: 2px;
+}
+.player-badges {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.badge {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #f0f1ff;
+  color: var(--accent);
+}

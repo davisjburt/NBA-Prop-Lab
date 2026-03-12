@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from app.models.models import PlayerGameStat
+from app.models.models import Player, PlayerGameStat
 from app.services.hit_rate import hit_rate
 import pandas as pd
 
@@ -37,3 +37,39 @@ def player_logs(player_id):
         "pts": r.pts, "reb": r.reb, "ast": r.ast,
         "stl": r.stl, "blk": r.blk, "fg3m": r.fg3m, "tov": r.tov
     } for r in rows])
+
+@props_bp.route("/discover")
+def discover():
+    stat   = request.args.get("stat", "pts")
+    line   = float(request.args.get("line", 20.5))
+    last_n = request.args.get("last_n", type=int)
+
+    players = Player.query.all()
+    results = []
+
+    for player in players:
+        rows = PlayerGameStat.query.filter_by(player_id=player.id) \
+                   .order_by(PlayerGameStat.date.desc()).all()
+        if not rows:
+            continue
+
+        df = pd.DataFrame([{
+            "date": str(r.date), "matchup": r.matchup, "location": r.location,
+            "pts": r.pts, "reb": r.reb, "ast": r.ast,
+            "stl": r.stl, "blk": r.blk, "fg3m": r.fg3m, "tov": r.tov
+        } for r in rows])
+
+        stats = hit_rate(df, stat, line, last_n=last_n)
+        if "error" in stats:
+            continue
+
+        results.append({
+            "id":       player.id,
+            "name":     player.name,
+            "team":     player.team_abbr,
+            "position": player.position,
+            **stats
+        })
+
+    results.sort(key=lambda x: x["hit_rate"], reverse=True)
+    return jsonify(results)

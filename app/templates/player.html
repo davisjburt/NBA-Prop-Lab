@@ -3,179 +3,151 @@
   <head>
     <meta charset="UTF-8" />
     <title>NBA Prop Lab - Player</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-      body {
-        font-family: sans-serif;
-        background: #111;
-        color: #eee;
-        padding: 2rem;
-      }
-      h1 {
-        color: #f0a500;
-      }
-      a {
-        color: #f0a500;
-        text-decoration: none;
-      }
-      .controls {
-        display: flex;
-        gap: 1rem;
-        margin: 1.5rem 0;
-        flex-wrap: wrap;
-      }
-      select,
-      input {
-        background: #1e1e1e;
-        color: #eee;
-        border: 1px solid #444;
-        padding: 0.5rem 0.75rem;
-        border-radius: 6px;
-        font-size: 1rem;
-      }
-      button {
-        background: #f0a500;
-        color: #111;
-        border: none;
-        padding: 0.5rem 1.25rem;
-        border-radius: 6px;
-        font-size: 1rem;
-        font-weight: bold;
-        cursor: pointer;
-      }
-      button:hover {
-        background: #d4920a;
-      }
-      .stat-box {
-        display: flex;
-        gap: 1rem;
-        margin: 1.5rem 0;
-        flex-wrap: wrap;
-      }
-      .stat-card {
-        background: #1e1e1e;
-        border-radius: 8px;
-        padding: 1rem 1.5rem;
-        text-align: center;
-        min-width: 120px;
-      }
-      .stat-card .value {
-        font-size: 2rem;
-        font-weight: bold;
-        color: #f0a500;
-      }
-      .stat-card .label {
-        font-size: 0.8rem;
-        color: #aaa;
-        margin-top: 4px;
-      }
-      .hit {
-        color: #4caf50;
-        font-weight: bold;
-      }
-      .miss {
-        color: #f44336;
-        font-weight: bold;
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 1rem;
-      }
-      th,
-      td {
-        padding: 0.6rem 1rem;
-        text-align: left;
-        border-bottom: 1px solid #2a2a2a;
-      }
-      th {
-        color: #f0a500;
-      }
-      canvas {
-        margin-top: 2rem;
-        max-width: 700px;
-      }
-    </style>
+    <link rel="stylesheet" href="/static/css/base.css" />
+    <link rel="stylesheet" href="/static/css/player.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <a href="/">← Back to players</a>
-    <h1 id="player-name">Loading...</h1>
+    <nav>
+      <div class="nav-logo">Prop Lab</div>
+      <div class="nav-links">
+        <a href="/">Players</a>
+        <a href="/discover">Discover</a>
+      </div>
+    </nav>
 
-    <div class="controls">
-      <select id="stat">
-        <option value="pts">Points</option>
-        <option value="reb">Rebounds</option>
-        <option value="ast">Assists</option>
-        <option value="stl">Steals</option>
-        <option value="blk">Blocks</option>
-        <option value="fg3m">3-Pointers Made</option>
-        <option value="tov">Turnovers</option>
-      </select>
-      <input
-        id="line"
-        type="number"
-        step="0.5"
-        value="20.5"
-        placeholder="Line (e.g. 24.5)"
-      />
-      <select id="last_n">
-        <option value="">All games</option>
-        <option value="5">Last 5</option>
-        <option value="10">Last 10</option>
-        <option value="20">Last 20</option>
-      </select>
-      <select id="location">
-        <option value="">All</option>
-        <option value="Home">Home</option>
-        <option value="Road">Road</option>
-      </select>
-      <button onclick="loadProps()">Search</button>
+    <div class="page">
+      <div class="player-header">
+        <div class="player-avatar" id="avatar"></div>
+        <div>
+          <h1 id="player-name">Loading...</h1>
+          <p id="player-meta"></p>
+        </div>
+      </div>
+
+      <div class="controls-card">
+        <h3>Prop Settings</h3>
+        <div class="controls">
+          <div class="control-group">
+            <label>Stat</label>
+            <select id="stat">
+              <option value="pts">Points</option>
+              <option value="reb">Rebounds</option>
+              <option value="ast">Assists</option>
+              <option value="stl">Steals</option>
+              <option value="blk">Blocks</option>
+              <option value="fg3m">3PM</option>
+              <option value="tov">Turnovers</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label>Line</label>
+            <input id="line" type="number" step="0.5" value="20.5" />
+          </div>
+          <div class="control-group">
+            <label>Sample</label>
+            <select id="last_n">
+              <option value="">All games</option>
+              <option value="5">Last 5</option>
+              <option value="10">Last 10</option>
+              <option value="20">Last 20</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label>Location</label>
+            <select id="location">
+              <option value="">All</option>
+              <option value="Home">Home</option>
+              <option value="Road">Road</option>
+            </select>
+          </div>
+          <button class="btn" onclick="loadProps()">Update</button>
+        </div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="hit-rate-card">
+          <div class="ring-wrap">
+            <svg width="80" height="80" viewBox="0 0 80 80">
+              <circle class="ring-bg" cx="40" cy="40" r="32" />
+              <circle
+                class="ring-fill"
+                id="ring"
+                cx="40"
+                cy="40"
+                r="32"
+                stroke-dasharray="201"
+                stroke-dashoffset="201"
+              />
+            </svg>
+            <div class="ring-text" id="hit-rate-text">--%</div>
+          </div>
+          <div class="label">Hit Rate</div>
+        </div>
+        <div class="stat-card">
+          <div class="value" id="hits">--</div>
+          <div class="label">Hits / Games</div>
+        </div>
+        <div class="stat-card">
+          <div class="value" id="avg">--</div>
+          <div class="label">Average</div>
+        </div>
+        <div class="stat-card">
+          <div class="value" id="max" style="color: #10b981">--</div>
+          <div class="label">Season High</div>
+        </div>
+        <div class="stat-card">
+          <div class="value" id="min-val" style="color: #ef4444">--</div>
+          <div class="label">Season Low</div>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <h3 id="chart-title">Last 10 Games</h3>
+        <canvas id="chart" height="90"></canvas>
+      </div>
+
+      <div class="table-card">
+        <h3>Game Log</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Matchup</th>
+              <th>Stat</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody id="game-rows"></tbody>
+        </table>
+      </div>
     </div>
-
-    <div class="stat-box">
-      <div class="stat-card">
-        <div class="value" id="hit-rate">--</div>
-        <div class="label">Hit Rate</div>
-      </div>
-      <div class="stat-card">
-        <div class="value" id="hits">--</div>
-        <div class="label">Hits / Games</div>
-      </div>
-      <div class="stat-card">
-        <div class="value" id="avg">--</div>
-        <div class="label">Avg</div>
-      </div>
-      <div class="stat-card">
-        <div class="value" id="max">--</div>
-        <div class="label">Max</div>
-      </div>
-      <div class="stat-card">
-        <div class="value" id="min-val">--</div>
-        <div class="label">Min</div>
-      </div>
-    </div>
-
-    <canvas id="chart" height="120"></canvas>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Matchup</th>
-          <th>Stat</th>
-          <th>Result</th>
-        </tr>
-      </thead>
-      <tbody id="game-rows"></tbody>
-    </table>
 
     <script>
       const playerId = {{ player_id }};
       let chartInstance = null;
 
-      fetch(`/api/players/${playerId}`)
-        .then(r => r.json())
-        .then(p => document.getElementById("player-name").textContent = `${p.name} — ${p.team}`);
+      fetch(`/api/players/${playerId}`).then(r => r.json()).then(p => {
+        document.getElementById("player-name").textContent = p.name;
+        document.getElementById("player-meta").textContent = `${p.team} · ${p.position}`;
+        document.getElementById("avatar").innerHTML =
+          `<img src="https://cdn.nba.com/headshots/nba/latest/260x190/${playerId}.png" alt="${p.name}" />`;
+      });
+
+      function setRing(pct) {
+        const offset = 201 - (pct / 100) * 201;
+        const ring = document.getElementById("ring");
+        ring.style.strokeDashoffset = offset;
+        ring.style.stroke = pct >= 60 ? "#10b981" : pct <= 40 ? "#ef4444" : "#6366f1";
+      }
 
       function loadProps() {
         const stat     = document.getElementById("stat").value;
@@ -190,50 +162,89 @@
         fetch(url).then(r => r.json()).then(data => {
           if (data.error) { alert(data.error); return; }
 
-          document.getElementById("hit-rate").textContent = (data.hit_rate * 100).toFixed(1) + "%";
-          document.getElementById("hits").textContent     = `${data.hits} / ${data.sample}`;
-          document.getElementById("avg").textContent      = data.avg;
-          document.getElementById("max").textContent      = data.max;
-          document.getElementById("min-val").textContent  = data.min;
+          const pct = (data.hit_rate * 100).toFixed(1);
+          document.getElementById("hit-rate-text").textContent = pct + "%";
+          document.getElementById("hits").textContent    = `${data.hits}/${data.sample}`;
+          document.getElementById("avg").textContent     = data.avg;
+          document.getElementById("max").textContent     = data.max;
+          document.getElementById("min-val").textContent = data.min;
+          setRing(parseFloat(pct));
 
-          // Game log table
-          const tbody = document.getElementById("game-rows");
-          tbody.innerHTML = "";
-          data.games.forEach(g => {
-            const hit = g[stat] > parseFloat(line);
-            tbody.innerHTML += `
-              <tr>
-                <td>${g.date}</td>
-                <td>${g.matchup}</td>
-                <td>${g[stat]}</td>
-                <td class="${hit ? "hit" : "miss"}">${hit ? "✅ Hit" : "❌ Miss"}</td>
-              </tr>`;
-          });
+          const statLabel = document.getElementById("stat").selectedOptions[0].text;
+          document.getElementById("chart-title").textContent = `${statLabel} — Last ${data.games.length} Games`;
 
-          // Chart
-          const labels = data.games.map(g => g.date).reverse();
-          const values = data.games.map(g => g[stat]).reverse();
+          const labels  = data.games.map(g => g.date).reverse();
+          const values  = data.games.map(g => g[stat]).reverse();
+          const lineVal = parseFloat(line);
+
           if (chartInstance) chartInstance.destroy();
           chartInstance = new Chart(document.getElementById("chart"), {
             type: "bar",
             data: {
               labels,
-              datasets: [{
-                label: stat.toUpperCase(),
-                data: values,
-                backgroundColor: values.map(v => v > parseFloat(line) ? "#4caf50" : "#f44336"),
-              }]
+              datasets: [
+                {
+                  label: statLabel,
+                  data: values,
+                  backgroundColor: values.map(v =>
+                    v > lineVal ? "rgba(16,185,129,0.75)" : "rgba(239,68,68,0.65)"
+                  ),
+                  borderRadius: 6,
+                  borderSkipped: false,
+                },
+                {
+                  label: `Line (${lineVal})`,
+                  data: Array(labels.length).fill(lineVal),
+                  type: "line",
+                  borderColor: "#6366f1",
+                  borderWidth: 2,
+                  borderDash: [6, 4],
+                  pointRadius: 0,
+                  fill: false,
+                }
+              ]
             },
             options: {
+              responsive: true,
+              animation: { duration: 600, easing: "easeOutQuart" },
               plugins: {
-                annotation: { annotations: {} },
-                legend: { labels: { color: "#eee" } }
+                legend: { labels: { font: { family: "Inter", size: 12 }, color: "#6b7280" } },
+                tooltip: {
+                  backgroundColor: "#fff",
+                  titleColor: "#1a1d23",
+                  bodyColor: "#6b7280",
+                  borderColor: "#e8ecf0",
+                  borderWidth: 1,
+                  padding: 12,
+                  cornerRadius: 10,
+                  titleFont: { family: "Inter", weight: "700" },
+                  bodyFont:  { family: "Inter" },
+                }
               },
               scales: {
-                x: { ticks: { color: "#aaa" } },
-                y: { ticks: { color: "#aaa" }, grid: { color: "#2a2a2a" } }
+                x: {
+                  grid: { display: false },
+                  ticks: { color: "#9ca3af", font: { family: "Inter", size: 11 } }
+                },
+                y: {
+                  grid: { color: "#f0f0f5" },
+                  ticks: { color: "#9ca3af", font: { family: "Inter", size: 11 } }
+                }
               }
             }
+          });
+
+          const tbody = document.getElementById("game-rows");
+          tbody.innerHTML = "";
+          data.games.forEach(g => {
+            const hit = g[stat] > lineVal;
+            tbody.innerHTML += `
+              <tr class="data-row">
+                <td>${g.date}</td>
+                <td>${g.matchup}</td>
+                <td><strong>${g[stat]}</strong></td>
+                <td><span class="hit-pill ${hit ? "hit" : "miss"}">${hit ? "✓ Hit" : "✗ Miss"}</span></td>
+              </tr>`;
           });
         });
       }

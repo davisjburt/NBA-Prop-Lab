@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NBA Prop Lab - Discover</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/css/base.css" />
+    <link rel="stylesheet" href="/static/css/discover.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-logo">Prop Lab</div>
+      <div class="nav-links">
+        <a href="/">Players</a>
+        <a href="/discover" class="active">Discover</a>
+      </div>
+    </nav>
+
+    <div class="page">
+      <div class="page-header">
+        <h1>🔍 Discover Props</h1>
+        <p>Rank all players by hit rate for any stat and line.</p>
+      </div>
+
+      <div class="controls-card">
+        <div class="controls">
+          <div class="control-group">
+            <label>Stat</label>
+            <select id="stat">
+              <option value="pts">Points</option>
+              <option value="reb">Rebounds</option>
+              <option value="ast">Assists</option>
+              <option value="stl">Steals</option>
+              <option value="blk">Blocks</option>
+              <option value="fg3m">3PM</option>
+              <option value="tov">Turnovers</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label>Line</label>
+            <input id="line" type="number" step="0.5" value="20.5" />
+          </div>
+          <div class="control-group">
+            <label>Sample</label>
+            <select id="last_n">
+              <option value="">All games</option>
+              <option value="5">Last 5</option>
+              <option value="10" selected>Last 10</option>
+              <option value="20">Last 20</option>
+            </select>
+          </div>
+          <button class="btn" onclick="loadDiscover()">Search</button>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Player</th>
+              <th onclick="sortBy('hit_rate')">Hit Rate ↕</th>
+              <th onclick="sortBy('hits')">Hits ↕</th>
+              <th onclick="sortBy('avg')">Avg ↕</th>
+              <th onclick="sortBy('max')">High ↕</th>
+              <th>Sample</th>
+            </tr>
+          </thead>
+          <tbody id="results">
+            <tr>
+              <td colspan="7">
+                <div class="empty-state">
+                  🔍
+                  <p>Set a line and hit Search to discover props.</p>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      let data = [];
+      let sortKey = "hit_rate";
+      let sortDir = -1;
+
+      function rateClass(r) {
+        return r >= 0.6 ? "rate-high" : r <= 0.4 ? "rate-low" : "rate-mid";
+      }
+      function rateColor(r) {
+        return r >= 0.6 ? "#10b981" : r <= 0.4 ? "#ef4444" : "#6366f1";
+      }
+
+      function loadDiscover() {
+        const stat = document.getElementById("stat").value;
+        const line = document.getElementById("line").value;
+        const last_n = document.getElementById("last_n").value;
+        let url = `/api/discover?stat=${stat}&line=${line}`;
+        if (last_n) url += `&last_n=${last_n}`;
+
+        document.getElementById("results").innerHTML =
+          `<tr><td colspan="7"><div class="empty-state">⏳<p>Loading...</p></div></td></tr>`;
+
+        fetch(url)
+          .then((r) => r.json())
+          .then((d) => {
+            data = d;
+            renderTable();
+          });
+      }
+
+      function sortBy(key) {
+        if (sortKey === key) sortDir *= -1;
+        else {
+          sortKey = key;
+          sortDir = -1;
+        }
+        renderTable();
+      }
+
+      function renderTable() {
+        const sorted = [...data].sort(
+          (a, b) => sortDir * (a[sortKey] - b[sortKey]),
+        );
+        const tbody = document.getElementById("results");
+        if (!sorted.length) {
+          tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state">😶<p>No results found.</p></div></td></tr>`;
+          return;
+        }
+        tbody.innerHTML = "";
+        sorted.forEach((p, i) => {
+          const pct = (p.hit_rate * 100).toFixed(1);
+          const tr = document.createElement("tr");
+          tr.className = "data-row";
+          tr.innerHTML = `
+          <td style="color:var(--muted);font-size:0.85rem">${i + 1}</td>
+          <td>
+            <div class="player-cell">
+              <div class="mini-avatar">
+                <img src="https://cdn.nba.com/headshots/nba/latest/260x190/${p.id}.png" alt="${p.name}" />
+              </div>
+              <div>
+                <div style="font-weight:600;font-size:0.9rem">${p.name}</div>
+                <div style="color:var(--muted);font-size:0.78rem">${p.team} · ${p.position}</div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="rate-bar-wrap">
+              <div class="rate-bar-bg">
+                <div class="rate-bar-fill" style="width:${pct}%;background:${rateColor(p.hit_rate)}"></div>
+              </div>
+              <span class="rate-label ${rateClass(p.hit_rate)}">${pct}%</span>
+            </div>
+          </td>
+          <td>${p.hits} / ${p.sample}</td>
+          <td>${p.avg}</td>
+          <td>${p.max}</td>
+          <td style="color:var(--muted)">${p.sample}</td>`;
+          tr.onclick = () => (window.location.href = `/player/${p.id}`);
+          tbody.appendChild(tr);
+        });
+      }
+
+      loadDiscover();
+    </script>
+  </body>
+</html>

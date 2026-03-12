@@ -30,3 +30,8 @@ def get_player(player_id):
         "team": p.team_abbr,
         "position": p.position
     })
+
+@players_bp.route("/discover")
+def discover_page():
+    return render_template("discover.html")
+

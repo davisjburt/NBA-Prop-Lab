@@ -1,0 +1,155 @@
+.player-header {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.4s ease both;
+}
+.player-header .player-avatar {
+  width: 72px;
+  height: 72px;
+}
+.player-header h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.player-header p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.4s 0.1s ease both;
+}
+.stat-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.18s,
+    box-shadow 0.18s;
+}
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.stat-card .value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--accent);
+  line-height: 1;
+}
+.stat-card .label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-top: 6px;
+}
+
+.hit-rate-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.18s,
+    box-shadow 0.18s;
+}
+.hit-rate-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.ring-wrap {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.ring-wrap svg {
+  transform: rotate(-90deg);
+}
+.ring-bg {
+  fill: none;
+  stroke: #e8ecf0;
+  stroke-width: 8;
+}
+.ring-fill {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition:
+    stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    stroke 0.4s;
+}
+.ring-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text);
+}
+.hit-rate-card .label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-top: 8px;
+}
+
+.chart-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.4s 0.15s ease both;
+}
+.chart-card h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.hit-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.hit-pill.hit {
+  background: #d1fae5;
+  color: #065f46;
+}
+.hit-pill.miss {
+  background: #fee2e2;
+  color: #991b1b;
+}
