@@ -6,23 +6,19 @@ from app.models.models import db, Player, PlayerGameStat
 from app.services.nba_fetcher import fetch_game_logs
 from nba_api.stats.static import players as nba_players
 from nba_api.stats.endpoints import commonplayerinfo
+from sqlalchemy.exc import IntegrityError
 
 SEASON = "2025-26"
 
 def normalize_position(pos_str):
     pos_str = pos_str.strip().lower()
     mapping = {
-        "point guard":       "PG",
-        "shooting guard":    "SG",
-        "small forward":     "SF",
-        "power forward":     "PF",
-        "center":            "C",
-        "guard-forward":     "SG",
-        "forward-guard":     "SF",
-        "forward-center":    "PF",
-        "center-forward":    "C",
-        "guard":             "G",
-        "forward":           "F",
+        "point guard":    "PG", "shooting guard":  "SG",
+        "small forward":  "SF", "power forward":   "PF",
+        "center":         "C",  "guard-forward":   "SG",
+        "forward-guard":  "SF", "forward-center":  "PF",
+        "center-forward": "C",  "guard":            "G",
+        "forward":        "F",
     }
     return mapping.get(pos_str, pos_str[:3].upper())
 
@@ -49,16 +45,13 @@ def seed():
             name      = p["full_name"]
             print(f"[{i+1}/{total}] {name}", end=" ... ", flush=True)
 
-            # Skip if already has stats for this season
             existing_stats = PlayerGameStat.query.filter_by(player_id=player_id).first()
             if existing_stats:
                 print("skipped (already seeded)")
                 continue
 
-            # Fetch team/position
             team, pos = get_team_and_position(player_id)
 
-            # Upsert player using merge (handles both insert and update)
             player = db.session.get(Player, player_id)
             if not player:
                 player = Player(id=player_id, name=name, team_abbr=team, position=pos)
@@ -66,7 +59,7 @@ def seed():
             else:
                 player.team_abbr = team
                 player.position  = pos
-            
+
             try:
                 db.session.commit()
             except Exception as e:
@@ -74,22 +67,25 @@ def seed():
                 print(f"❌ player upsert failed: {e}")
                 continue
 
-            # Fetch game logs
             try:
                 df = fetch_game_logs(player_id, season=SEASON)
                 if df.empty:
                     print("no games")
                     continue
                 for _, row in df.iterrows():
-                    db.session.add(PlayerGameStat(
-                        player_id=player_id,
-                        date=row["date"],      matchup=row["matchup"],
-                        location=row["location"], min=row["min"],
-                        pts=row["pts"],         reb=row["reb"],
-                        ast=row["ast"],         stl=row["stl"],
-                        blk=row["blk"],         fg3m=row["fg3m"],
-                        tov=row["tov"]
-                    ))
+                    try:
+                        db.session.add(PlayerGameStat(
+                            player_id=player_id,
+                            date=row["date"],      matchup=row["matchup"],
+                            location=row["location"], min=row["min"],
+                            pts=row["pts"],         reb=row["reb"],
+                            ast=row["ast"],         stl=row["stl"],
+                            blk=row["blk"],         fg3m=row["fg3m"],
+                            tov=row["tov"]
+                        ))
+                        db.session.flush()
+                    except IntegrityError:
+                        db.session.rollback()
                 db.session.commit()
                 print(f"✅ {len(df)} games")
             except Exception as e:

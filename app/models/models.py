@@ -1,30 +1,26 @@
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import UniqueConstraint
 
 db = SQLAlchemy()
 
 class Player(db.Model):
     __tablename__ = "players"
-    id        = db.Column(db.Integer, primary_key=True)  # NBA player_id
-    name      = db.Column(db.String, nullable=False)
-    team_abbr = db.Column(db.String(5))
-    position  = db.Column(db.String(5))
-    games     = db.relationship("PlayerGameStat", backref="player", lazy=True)
 
-class Game(db.Model):
-    __tablename__ = "games"
-    id        = db.Column(db.Integer, primary_key=True)  # NBA game_id
-    date      = db.Column(db.Date, nullable=False)
-    home_team = db.Column(db.String(5))
-    away_team = db.Column(db.String(5))
+    id        = db.Column(db.Integer, primary_key=True)
+    name      = db.Column(db.String,  nullable=False)
+    team_abbr = db.Column(db.String)
+    position  = db.Column(db.String)
+    stats     = db.relationship("PlayerGameStat", backref="player", lazy=True)
 
 class PlayerGameStat(db.Model):
-    __tablename__ = "player_game_stats"
+    __tablename__  = "player_game_stats"
+    __table_args__ = (UniqueConstraint("player_id", "date", name="uq_player_date"),)
+
     id        = db.Column(db.Integer, primary_key=True)
     player_id = db.Column(db.Integer, db.ForeignKey("players.id"), nullable=False)
-    game_id   = db.Column(db.Integer, db.ForeignKey("games.id"), nullable=True)
-    date      = db.Column(db.Date)
-    matchup   = db.Column(db.String(20))
-    location  = db.Column(db.String(4))   # "Home" or "Road"
+    date      = db.Column(db.Date,    nullable=False)
+    matchup   = db.Column(db.String)
+    location  = db.Column(db.String)
     min       = db.Column(db.Float)
     pts       = db.Column(db.Float)
     reb       = db.Column(db.Float)

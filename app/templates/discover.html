@@ -38,14 +38,24 @@
         <div class="controls">
           <div class="control-group">
             <label>Stat</label>
-            <select id="stat">
-              <option value="pts">Points</option>
-              <option value="reb">Rebounds</option>
-              <option value="ast">Assists</option>
-              <option value="stl">Steals</option>
-              <option value="blk">Blocks</option>
-              <option value="fg3m">3PM</option>
-              <option value="tov">Turnovers</option>
+            <select id="stat" onchange="updateLineDefault()">
+              <optgroup label="Single Stat">
+                <option value="pts">Points</option>
+                <option value="reb">Rebounds</option>
+                <option value="ast">Assists</option>
+                <option value="stl">Steals</option>
+                <option value="blk">Blocks</option>
+                <option value="fg3m">3PM</option>
+                <option value="tov">Turnovers</option>
+              </optgroup>
+              <optgroup label="Combos">
+                <option value="pr">PTS + REB</option>
+                <option value="pa">PTS + AST</option>
+                <option value="ra">REB + AST</option>
+                <option value="pra">PTS + REB + AST</option>
+                <option value="sa">STL + AST</option>
+                <option value="bs">BLK + STL</option>
+              </optgroup>
             </select>
           </div>
           <div class="control-group">

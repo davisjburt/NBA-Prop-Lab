@@ -8,17 +8,12 @@ from nba_api.stats.endpoints import commonplayerinfo
 def normalize_position(pos_str):
     pos_str = pos_str.strip().lower()
     mapping = {
-        "point guard":       "PG",
-        "shooting guard":    "SG",
-        "small forward":     "SF",
-        "power forward":     "PF",
-        "center":            "C",
-        "guard-forward":     "SG",
-        "forward-guard":     "SF",
-        "forward-center":    "PF",
-        "center-forward":    "C",
-        "guard":             "G",
-        "forward":           "F",
+        "point guard":    "PG", "shooting guard":  "SG",
+        "small forward":  "SF", "power forward":   "PF",
+        "center":         "C",  "guard-forward":   "SG",
+        "forward-guard":  "SF", "forward-center":  "PF",
+        "center-forward": "C",  "guard":            "G",
+        "forward":        "F",
     }
     return mapping.get(pos_str, pos_str[:3].upper())
 

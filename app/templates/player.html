@@ -3,18 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <title>NBA Prop Lab - Player</title>
+    <link rel="icon" type="image/svg+xml" href="/static/proplab.svg" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fredoka+One&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="/static/css/base.css" />
     <link rel="stylesheet" href="/static/css/player.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fredoka+One&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/svg+xml" href="/static/proplab.svg" />
   </head>
   <body>
     <nav>
@@ -22,7 +18,6 @@
         Prop Lab
         <img src="/static/proplab.svg" alt="Prop Lab" class="nav-logo-icon" />
       </a>
-
       <div class="nav-links">
         <a href="/">Players</a>
         <a href="/discover">Discover</a>
@@ -38,21 +33,121 @@
         </div>
       </div>
 
+      <!-- CHIP SELECTOR -->
+      <div class="chip-section">
+        <div class="chip-section-label">Stat</div>
+        <div class="chip-row">
+          <button
+            class="chip active"
+            data-stat="pts"
+            data-label="Points"
+            onclick="selectChip(this)"
+          >
+            PTS
+          </button>
+          <button
+            class="chip"
+            data-stat="reb"
+            data-label="Rebounds"
+            onclick="selectChip(this)"
+          >
+            REB
+          </button>
+          <button
+            class="chip"
+            data-stat="ast"
+            data-label="Assists"
+            onclick="selectChip(this)"
+          >
+            AST
+          </button>
+          <button
+            class="chip"
+            data-stat="stl"
+            data-label="Steals"
+            onclick="selectChip(this)"
+          >
+            STL
+          </button>
+          <button
+            class="chip"
+            data-stat="blk"
+            data-label="Blocks"
+            onclick="selectChip(this)"
+          >
+            BLK
+          </button>
+          <button
+            class="chip"
+            data-stat="fg3m"
+            data-label="3-Pointers"
+            onclick="selectChip(this)"
+          >
+            3PM
+          </button>
+          <button
+            class="chip"
+            data-stat="tov"
+            data-label="Turnovers"
+            onclick="selectChip(this)"
+          >
+            TOV
+          </button>
+          <div class="chip-divider"></div>
+          <button
+            class="chip combo"
+            data-stat="pr"
+            data-label="PTS + REB"
+            onclick="selectChip(this)"
+          >
+            PR
+          </button>
+          <button
+            class="chip combo"
+            data-stat="pa"
+            data-label="PTS + AST"
+            onclick="selectChip(this)"
+          >
+            PA
+          </button>
+          <button
+            class="chip combo"
+            data-stat="ra"
+            data-label="REB + AST"
+            onclick="selectChip(this)"
+          >
+            RA
+          </button>
+          <button
+            class="chip combo"
+            data-stat="pra"
+            data-label="PTS+REB+AST"
+            onclick="selectChip(this)"
+          >
+            PRA
+          </button>
+          <button
+            class="chip combo"
+            data-stat="sa"
+            data-label="STL + AST"
+            onclick="selectChip(this)"
+          >
+            SA
+          </button>
+          <button
+            class="chip combo"
+            data-stat="bs"
+            data-label="BLK + STL"
+            onclick="selectChip(this)"
+          >
+            BS
+          </button>
+        </div>
+      </div>
+
+      <!-- CONTROLS -->
       <div class="controls-card">
-        <h3>Prop Settings</h3>
         <div class="controls">
-          <div class="control-group">
-            <label>Stat</label>
-            <select id="stat">
-              <option value="pts">Points</option>
-              <option value="reb">Rebounds</option>
-              <option value="ast">Assists</option>
-              <option value="stl">Steals</option>
-              <option value="blk">Blocks</option>
-              <option value="fg3m">3PM</option>
-              <option value="tov">Turnovers</option>
-            </select>
-          </div>
           <div class="control-group">
             <label>Line</label>
             <input id="line" type="number" step="0.5" value="20.5" />
@@ -74,10 +169,24 @@
               <option value="Road">Road</option>
             </select>
           </div>
-          <button class="btn" onclick="loadProps()">Update</button>
+          <div class="control-group">
+            <label>Opponent</label>
+            <select id="opponent">
+              <option value="">All</option>
+            </select>
+          </div>
+          <div class="active-stat-label" id="active-stat-label">Points</div>
+          <button class="btn" onclick="loadStat()">Update</button>
         </div>
       </div>
 
+      <!-- STREAK BANNER -->
+      <div class="streak-banner" id="streak-banner">
+        <span class="streak-icon" id="streak-icon"></span>
+        <span id="streak-text"></span>
+      </div>
+
+      <!-- METRICS -->
       <div class="stat-grid">
         <div class="hit-rate-card">
           <div class="ring-wrap">
@@ -107,16 +216,16 @@
         </div>
         <div class="stat-card">
           <div class="value" id="max" style="color: #10b981">--</div>
-          <div class="label">Season High</div>
+          <div class="label">High</div>
         </div>
         <div class="stat-card">
           <div class="value" id="min-val" style="color: #ef4444">--</div>
-          <div class="label">Season Low</div>
+          <div class="label">Low</div>
         </div>
       </div>
 
       <div class="chart-card">
-        <h3 id="chart-title">Last 10 Games</h3>
+        <h3 id="chart-title">Points — Last 10 Games</h3>
         <canvas id="chart" height="90"></canvas>
       </div>
 
@@ -127,7 +236,7 @@
             <tr>
               <th>Date</th>
               <th>Matchup</th>
-              <th>Stat</th>
+              <th id="table-stat-header">PTS</th>
               <th>Result</th>
             </tr>
           </thead>
@@ -139,30 +248,100 @@
     <script>
       const playerId = {{ player_id }};
       let chartInstance = null;
+      let playerAvgs    = {};
+      let activeStat    = "pts";
+      let activeLabel   = "Points";
 
-      fetch(`/api/players/${playerId}`).then(r => r.json()).then(p => {
-        document.getElementById("player-name").textContent = p.name;
-        document.getElementById("player-meta").textContent = `${p.team} · ${p.position}`;
-        document.getElementById("avatar").innerHTML =
-          `<img src="https://cdn.nba.com/headshots/nba/latest/260x190/${playerId}.png" alt="${p.name}" />`;
-      });
+      const lineDefaults = {
+        pts: 20.5, reb: 8.5,  ast: 5.5,  stl: 1.5,
+        blk: 1.5,  fg3m: 2.5, tov: 2.5,
+        pr: 30.5,  pa: 25.5,  ra: 20.5,
+        pra: 40.5, sa: 4.5,   bs: 3.5
+      };
+      const combos = new Set(["pr","pa","ra","pra","sa","bs"]);
+
+      // Load player info
+      fetch(`/api/players/${playerId}`)
+        .then(r => r.json())
+        .then(p => {
+          document.getElementById("player-name").textContent = p.name;
+          document.getElementById("player-meta").textContent = `${p.team} · ${p.position}`;
+          document.getElementById("avatar").innerHTML =
+            `<img src="https://cdn.nba.com/headshots/nba/latest/260x190/${playerId}.png" alt="${p.name}" />`;
+        });
+
+      // Load opponent options
+      fetch(`/api/players/${playerId}/opponents`)
+        .then(r => r.json())
+        .then(opponents => {
+          const select = document.getElementById("opponent");
+          opponents.forEach(opp => {
+            const opt = document.createElement("option");
+            opt.value = opp;
+            opt.textContent = opp;
+            select.appendChild(opt);
+          });
+        });
+
+      // Load last-5 averages then trigger initial stat load
+      fetch(`/api/players/${playerId}/averages`)
+        .then(r => r.json())
+        .then(avgs => {
+          playerAvgs = avgs;
+          document.getElementById("line").value = playerAvgs["pts"] ?? lineDefaults["pts"];
+          loadStat();
+        })
+        .catch(() => loadStat());
+
+      function selectChip(btn) {
+        document.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+        btn.classList.add("active");
+        activeStat  = btn.dataset.stat;
+        activeLabel = btn.dataset.label;
+        document.getElementById("active-stat-label").textContent = activeLabel;
+        document.getElementById("line").value =
+          playerAvgs[activeStat] ?? lineDefaults[activeStat] ?? 10.5;
+        loadStat();
+      }
 
       function setRing(pct) {
         const offset = 201 - (pct / 100) * 201;
-        const ring = document.getElementById("ring");
+        const ring   = document.getElementById("ring");
         ring.style.strokeDashoffset = offset;
         ring.style.stroke = pct >= 60 ? "#10b981" : pct <= 40 ? "#ef4444" : "#6366f1";
       }
 
-      function loadProps() {
-        const stat     = document.getElementById("stat").value;
+      function showStreak(streak) {
+        const banner = document.getElementById("streak-banner");
+        const icon   = document.getElementById("streak-icon");
+        const text   = document.getElementById("streak-text");
+
+        if (!streak || streak.count < 2 || streak.type === "none") {
+          banner.className = "streak-banner";
+          return;
+        }
+
+        const isHit = streak.type === "hit";
+        icon.textContent  = isHit ? "🔥" : "❄️";
+        text.textContent  = isHit
+          ? `Hit the line ${streak.count} games in a row`
+          : `Missed the line ${streak.count} games in a row`;
+        banner.className  = `streak-banner visible ${isHit ? "hit" : "miss"}`;
+      }
+
+      function loadStat() {
         const line     = document.getElementById("line").value;
         const last_n   = document.getElementById("last_n").value;
         const location = document.getElementById("location").value;
+        const opponent = document.getElementById("opponent").value;
+        const isCombo  = combos.has(activeStat);
 
-        let url = `/api/players/${playerId}/props?stat=${stat}&line=${line}`;
+        let url = isCombo
+          ? `/api/players/${playerId}/combo?combo=${activeStat}&line=${line}`
+          : `/api/players/${playerId}/props?stat=${activeStat}&line=${line}`;
         if (last_n)   url += `&last_n=${last_n}`;
         if (location) url += `&location=${location}`;
+        if (opponent) url += `&opponent=${opponent}`;
 
         fetch(url).then(r => r.json()).then(data => {
           if (data.error) { alert(data.error); return; }
@@ -174,13 +353,16 @@
           document.getElementById("max").textContent     = data.max;
           document.getElementById("min-val").textContent = data.min;
           setRing(parseFloat(pct));
+          showStreak(data.streak);
 
-          const statLabel = document.getElementById("stat").selectedOptions[0].text;
-          document.getElementById("chart-title").textContent = `${statLabel} — Last ${data.games.length} Games`;
+          document.getElementById("chart-title").textContent       = `${activeLabel} — ${data.sample} Games`;
+          document.getElementById("table-stat-header").textContent = activeLabel;
 
-          const labels  = data.games.map(g => g.date).reverse();
-          const values  = data.games.map(g => g[stat]).reverse();
           const lineVal = parseFloat(line);
+          const labels  = data.games.map(g => g.date).reverse();
+          const values  = isCombo
+            ? data.games.map(g => g.combo_total).reverse()
+            : data.games.map(g => g[activeStat]).reverse();
 
           if (chartInstance) chartInstance.destroy();
           chartInstance = new Chart(document.getElementById("chart"), {
@@ -189,7 +371,7 @@
               labels,
               datasets: [
                 {
-                  label: statLabel,
+                  label: activeLabel,
                   data: values,
                   backgroundColor: values.map(v =>
                     v > lineVal ? "rgba(16,185,129,0.75)" : "rgba(239,68,68,0.65)"
@@ -215,26 +397,14 @@
               plugins: {
                 legend: { labels: { font: { family: "Inter", size: 12 }, color: "#6b7280" } },
                 tooltip: {
-                  backgroundColor: "#fff",
-                  titleColor: "#1a1d23",
-                  bodyColor: "#6b7280",
-                  borderColor: "#e8ecf0",
-                  borderWidth: 1,
-                  padding: 12,
-                  cornerRadius: 10,
-                  titleFont: { family: "Inter", weight: "700" },
-                  bodyFont:  { family: "Inter" },
+                  backgroundColor: "#fff", titleColor: "#1a1d23", bodyColor: "#6b7280",
+                  borderColor: "#e8ecf0", borderWidth: 1, padding: 12, cornerRadius: 10,
+                  titleFont: { family: "Inter", weight: "700" }, bodyFont: { family: "Inter" },
                 }
               },
               scales: {
-                x: {
-                  grid: { display: false },
-                  ticks: { color: "#9ca3af", font: { family: "Inter", size: 11 } }
-                },
-                y: {
-                  grid: { color: "#f0f0f5" },
-                  ticks: { color: "#9ca3af", font: { family: "Inter", size: 11 } }
-                }
+                x: { grid: { display: false }, ticks: { color: "#9ca3af", font: { family: "Inter", size: 11 } } },
+                y: { grid: { color: "#f0f0f5" }, ticks: { color: "#9ca3af", font: { family: "Inter", size: 11 } } }
               }
             }
           });
@@ -242,19 +412,18 @@
           const tbody = document.getElementById("game-rows");
           tbody.innerHTML = "";
           data.games.forEach(g => {
-            const hit = g[stat] > lineVal;
+            const val = isCombo ? g.combo_total : g[activeStat];
+            const hit = val > lineVal;
             tbody.innerHTML += `
               <tr class="data-row">
                 <td>${g.date}</td>
                 <td>${g.matchup}</td>
-                <td><strong>${g[stat]}</strong></td>
+                <td><strong>${val}</strong></td>
                 <td><span class="hit-pill ${hit ? "hit" : "miss"}">${hit ? "✓ Hit" : "✗ Miss"}</span></td>
               </tr>`;
           });
         });
       }
-
-      loadProps();
     </script>
   </body>
 </html>

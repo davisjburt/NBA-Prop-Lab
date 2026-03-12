@@ -25,6 +25,177 @@
   margin-top: 4px;
 }
 
+/* CHIP SELECTOR */
+.chip-section {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.4s ease both;
+}
+.chip-section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.6rem;
+}
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.chip-divider {
+  width: 1px;
+  height: 28px;
+  background: var(--border);
+  margin: 0 0.25rem;
+}
+.chip {
+  padding: 0.4rem 0.9rem;
+  border-radius: 99px;
+  border: 1.5px solid var(--border);
+  background: var(--bg);
+  color: var(--muted);
+  font-family: "Inter", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: #f0f1ff;
+}
+.chip.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+.chip.combo {
+  border-style: dashed;
+}
+.chip.combo.active {
+  border-style: solid;
+}
+
+/* CONTROLS */
+.controls-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.4s 0.05s ease both;
+}
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.control-group label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+select,
+input[type="number"] {
+  padding: 0.6rem 0.9rem;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.92rem;
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+  min-width: 120px;
+}
+select:focus,
+input[type="number"]:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+.btn {
+  padding: 0.65rem 1.5rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    transform 0.1s;
+  align-self: flex-end;
+}
+.btn:hover {
+  background: #4f46e5;
+}
+.btn:active {
+  transform: scale(0.97);
+}
+
+.active-stat-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: #f0f1ff;
+  border-radius: 8px;
+  padding: 0.4rem 0.85rem;
+  align-self: flex-end;
+  white-space: nowrap;
+}
+
+/* STREAK BANNER */
+.streak-banner {
+  display: none;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.3s ease both;
+}
+.streak-banner.visible {
+  display: flex;
+}
+.streak-banner.hit {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1.5px solid #6ee7b7;
+}
+.streak-banner.miss {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1.5px solid #fca5a5;
+}
+.streak-icon {
+  font-size: 1.2rem;
+}
+
+/* STAT CARDS */
 .stat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -62,6 +233,7 @@
   margin-top: 6px;
 }
 
+/* HIT RATE RING */
 .hit-rate-card {
   background: var(--surface);
   border: 1.5px solid var(--border);
@@ -121,6 +293,7 @@
   margin-top: 8px;
 }
 
+/* CHART */
 .chart-card {
   background: var(--surface);
   border: 1.5px solid var(--border);
@@ -136,6 +309,7 @@
   margin-bottom: 1.25rem;
 }
 
+/* HIT/MISS PILLS */
 .hit-pill {
   display: inline-flex;
   align-items: center;
