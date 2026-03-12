@@ -1,9 +1,19 @@
 from flask import Blueprint, jsonify, request
 from app.models.models import db, Player, PlayerGameStat
-from app.services.hit_rate import hit_rate, hit_rate_combo, COMBO_STATS, extract_opponent
+from app.services.hit_rate import hit_rate, hit_rate_combo, COMBO_STATS, calculate_streak, extract_opponent
 import pandas as pd
 
+
 props_bp = Blueprint("props", __name__, url_prefix="/api")
+
+SINGLE_STATS = ["pts", "reb", "ast", "stl", "blk", "fg3m", "tov"]
+STAT_LABELS  = {
+    "pts": "Points", "reb": "Rebounds", "ast": "Assists",
+    "stl": "Steals", "blk": "Blocks",   "fg3m": "3PM", "tov": "Turnovers",
+    "pr": "PTS+REB", "pa": "PTS+AST",   "ra": "REB+AST",
+    "pra": "PTS+REB+AST", "sa": "STL+AST", "bs": "BLK+STL"
+}
+
 
 def rows_to_df(rows):
     return pd.DataFrame([{
@@ -13,8 +23,10 @@ def rows_to_df(rows):
         "tov":     r.tov
     } for r in rows])
 
+
 def round_to_half(val):
     return round(val * 2) / 2
+
 
 @props_bp.route("/players")
 def all_players():
@@ -24,12 +36,14 @@ def all_players():
         "team": p.team_abbr, "position": p.position
     } for p in players])
 
+
 @props_bp.route("/players/<int:player_id>")
 def get_player(player_id):
     p = db.session.get(Player, player_id)
     if not p:
         return jsonify({"error": "Player not found"}), 404
     return jsonify({"id": p.id, "name": p.name, "team": p.team_abbr, "position": p.position})
+
 
 @props_bp.route("/players/<int:player_id>/averages")
 def player_averages(player_id):
@@ -47,6 +61,7 @@ def player_averages(player_id):
         avgs[combo] = round_to_half(df[combo_cols].sum(axis=1).mean())
     return jsonify(avgs)
 
+
 @props_bp.route("/players/<int:player_id>/opponents")
 def player_opponents(player_id):
     rows = PlayerGameStat.query.filter_by(player_id=player_id).all()
@@ -54,6 +69,7 @@ def player_opponents(player_id):
         return jsonify([])
     opponents = sorted(set(extract_opponent(r.matchup) for r in rows))
     return jsonify(opponents)
+
 
 @props_bp.route("/players/<int:player_id>/props")
 def player_props(player_id):
@@ -72,6 +88,7 @@ def player_props(player_id):
     result = hit_rate(df, stat, line, last_n=last_n, location=location, opponent=opponent)
     return jsonify(result)
 
+
 @props_bp.route("/players/<int:player_id>/combo")
 def player_combo(player_id):
     combo    = request.args.get("combo", "pra")
@@ -89,11 +106,13 @@ def player_combo(player_id):
     result = hit_rate_combo(df, combo, line, last_n=last_n, location=location, opponent=opponent)
     return jsonify(result)
 
+
 @props_bp.route("/players/<int:player_id>/logs")
 def player_logs(player_id):
     rows = PlayerGameStat.query.filter_by(player_id=player_id) \
                .order_by(PlayerGameStat.date.desc()).all()
     return jsonify(rows_to_df(rows).to_dict(orient="records"))
+
 
 @props_bp.route("/discover")
 def discover():
@@ -118,8 +137,7 @@ def discover():
         if "error" in stats:
             continue
 
-        # Strip per-game data from discover results
-        stats.pop("games", None)
+        stats.pop("games",  None)
         stats.pop("streak", None)
 
         results.append({
@@ -130,3 +148,89 @@ def discover():
 
     results.sort(key=lambda x: x["hit_rate"], reverse=True)
     return jsonify(results)
+
+
+@props_bp.route("/trending")
+def trending():
+    players     = Player.query.all()
+    hot_streaks = []
+    top_hitters = []
+
+    for player in players:
+        rows = PlayerGameStat.query.filter_by(player_id=player.id) \
+                   .order_by(PlayerGameStat.date.desc()).limit(20).all()
+        if len(rows) < 3:
+            continue
+
+        df = rows_to_df(rows)
+
+        for stat in SINGLE_STATS:
+            values = df[stat].tolist()
+            line   = round_to_half(df[stat].head(5).mean())
+            if line <= 0:
+                continue
+
+            streak = calculate_streak(values, line)
+            hr     = hit_rate(df, stat, line, last_n=10)
+            if "error" in hr:
+                continue
+
+            base = {
+                "id":       player.id,
+                "name":     player.name,
+                "team":     player.team_abbr,
+                "position": player.position,
+                "stat":     stat,
+                "label":    STAT_LABELS[stat],
+                "line":     line,
+                "avg":      round(df[stat].mean(), 1),
+                "hit_rate": hr["hit_rate"],
+                "sample":   hr["sample"],
+                "hits":     hr["hits"],
+            }
+
+            if streak["type"] == "hit" and streak["count"] >= 3:
+                hot_streaks.append({**base, "streak": streak["count"]})
+
+            if hr["hit_rate"] >= 0.70 and hr["sample"] >= 5:
+                top_hitters.append(base)
+
+        for combo, cols in COMBO_STATS.items():
+            df2              = df.copy()
+            df2["combo_val"] = df2[cols].sum(axis=1)
+            line             = round_to_half(df2["combo_val"].head(5).mean())
+            if line <= 0:
+                continue
+
+            streak = calculate_streak(df2["combo_val"].tolist(), line)
+            hr     = hit_rate_combo(df, combo, line, last_n=10)
+            if "error" in hr:
+                continue
+
+            base = {
+                "id":       player.id,
+                "name":     player.name,
+                "team":     player.team_abbr,
+                "position": player.position,
+                "stat":     combo,
+                "label":    STAT_LABELS[combo],
+                "line":     line,
+                "avg":      hr["avg"],
+                "hit_rate": hr["hit_rate"],
+                "sample":   hr["sample"],
+                "hits":     hr["hits"],
+            }
+
+            if streak["type"] == "hit" and streak["count"] >= 3:
+                hot_streaks.append({**base, "streak": streak["count"]})
+
+            if hr["hit_rate"] >= 0.70 and hr["sample"] >= 5:
+                top_hitters.append(base)
+
+    hot_streaks.sort(key=lambda x: x["streak"],  reverse=True)
+    top_hitters.sort(key=lambda x: x["hit_rate"], reverse=True)
+
+    return jsonify({
+        "hot_streaks": hot_streaks[:30],
+        "top_hitters": top_hitters[:30],
+    })

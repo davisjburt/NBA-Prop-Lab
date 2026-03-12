@@ -11,6 +11,14 @@ def index():
 def player_page(player_id):
     return render_template("player.html", player_id=player_id)
 
+@players_bp.route("/discover")
+def discover_page():
+    return render_template("discover.html")
+
+@players_bp.route("/trending")
+def trending_page():
+    return render_template("trending.html")
+
 @players_bp.route("/api/players")
 def get_players():
     players = Player.query.order_by(Player.name).all()
@@ -30,8 +38,3 @@ def get_player(player_id):
         "team": p.team_abbr,
         "position": p.position
     })
-
-@players_bp.route("/discover")
-def discover_page():
-    return render_template("discover.html")
-

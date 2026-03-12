@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NBA Prop Lab - Trending</title>
+    <link rel="icon" type="image/svg+xml" href="/static/proplab.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/css/base.css" />
+    <link rel="stylesheet" href="/static/css/trending.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="nav-logo">
+        Prop Lab
+        <img src="/static/proplab.svg" alt="Prop Lab" class="nav-logo-icon" />
+      </a>
+      <div class="nav-links">
+        <a href="/">Players</a>
+        <a href="/discover">Discover</a>
+        <a href="/trending" class="active">Trending</a>
+      </div>
+    </nav>
+
+    <div class="page">
+      <div class="page-header">
+        <h1>📈 Trending Props</h1>
+        <p>Hot streaks and top performers across every player right now.</p>
+      </div>
+      <div id="content">
+        <div class="loading-state">⏳ Crunching the numbers...</div>
+      </div>
+    </div>
+
+    <script>
+      function rateColor(r) {
+        return r >= 0.7 ? "#10b981" : r >= 0.55 ? "#6366f1" : "#ef4444";
+      }
+      function rateClass(r) {
+        return r >= 0.7
+          ? "trend-rate-high"
+          : r >= 0.55
+            ? "trend-rate-mid"
+            : "trend-rate-low";
+      }
+
+      function buildCard(p, showStreak) {
+        const pct = (p.hit_rate * 100).toFixed(1);
+        return `
+        <div class="trend-card" onclick="window.location.href='/player/${p.id}'">
+          <div class="trend-card-top">
+            <div class="trend-avatar">
+              <img src="https://cdn.nba.com/headshots/nba/latest/260x190/${p.id}.png" alt="${p.name}" />
+            </div>
+            <div>
+              <div class="trend-player-name">${p.name}</div>
+              <div class="trend-player-meta">${p.team} · ${p.position}</div>
+            </div>
+            ${showStreak ? `<span class="streak-pill">🔥 ${p.streak} straight</span>` : ""}
+          </div>
+          <div class="trend-card-mid">
+            <span class="trend-stat-badge">${p.label}</span>
+            <span class="trend-line">Line: <strong>${p.line}</strong> · Avg: <strong>${p.avg}</strong></span>
+          </div>
+          <div class="trend-card-bottom">
+            <div class="trend-rate-bar-bg">
+              <div class="trend-rate-bar-fill" style="width:${pct}%;background:${rateColor(p.hit_rate)}"></div>
+            </div>
+            <span class="trend-rate-label ${rateClass(p.hit_rate)}">${pct}%</span>
+          </div>
+        </div>`;
+      }
+
+      function buildSection(icon, title, items, showStreak) {
+        const cards = items.length
+          ? items.map((p) => buildCard(p, showStreak)).join("")
+          : `<div class="empty-state"><p>Nothing to show right now.</p></div>`;
+        return `
+        <div class="section-header">
+          <span class="section-icon">${icon}</span>
+          <h2>${title}</h2>
+          <span class="section-count">${items.length} props</span>
+        </div>
+        <div class="trend-grid">${cards}</div>`;
+      }
+
+      fetch("/api/trending")
+        .then((r) => r.json())
+        .then((data) => {
+          document.getElementById("content").innerHTML =
+            buildSection("🔥", "Hot Streaks", data.hot_streaks, true) +
+            buildSection(
+              "📈",
+              "Top Hit Rates (Last 10)",
+              data.top_hitters,
+              false,
+            );
+        })
+        .catch(() => {
+          document.getElementById("content").innerHTML =
+            `<div class="empty-state">😶<p>Failed to load trending data.</p></div>`;
+        });
+    </script>
+  </body>
+</html>
