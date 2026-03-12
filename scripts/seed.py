@@ -7,7 +7,7 @@ from app.services.nba_fetcher import fetch_game_logs
 from nba_api.stats.static import players as nba_players
 from nba_api.stats.endpoints import commonplayerinfo
 
-SEASON = "2024-25"
+SEASON = "2025-26"
 
 def get_team_and_position(player_id):
     try:
@@ -32,7 +32,7 @@ def seed():
             name      = p["full_name"]
             print(f"[{i+1}/{total}] {name}", end=" ... ", flush=True)
 
-            # Skip if already fully seeded
+            # Skip if already has stats for this season
             existing_stats = PlayerGameStat.query.filter_by(player_id=player_id).first()
             if existing_stats:
                 print("skipped (already seeded)")
@@ -41,12 +41,21 @@ def seed():
             # Fetch team/position
             team, pos = get_team_and_position(player_id)
 
-            # Upsert player row
-            player = Player.query.get(player_id)
+            # Upsert player using merge (handles both insert and update)
+            player = db.session.get(Player, player_id)
             if not player:
                 player = Player(id=player_id, name=name, team_abbr=team, position=pos)
                 db.session.add(player)
+            else:
+                player.team_abbr = team
+                player.position  = pos
+            
+            try:
                 db.session.commit()
+            except Exception as e:
+                db.session.rollback()
+                print(f"❌ player upsert failed: {e}")
+                continue
 
             # Fetch game logs
             try:
@@ -57,11 +66,11 @@ def seed():
                 for _, row in df.iterrows():
                     db.session.add(PlayerGameStat(
                         player_id=player_id,
-                        date=row["date"],     matchup=row["matchup"],
+                        date=row["date"],      matchup=row["matchup"],
                         location=row["location"], min=row["min"],
-                        pts=row["pts"],       reb=row["reb"],
-                        ast=row["ast"],       stl=row["stl"],
-                        blk=row["blk"],       fg3m=row["fg3m"],
+                        pts=row["pts"],         reb=row["reb"],
+                        ast=row["ast"],         stl=row["stl"],
+                        blk=row["blk"],         fg3m=row["fg3m"],
                         tov=row["tov"]
                     ))
                 db.session.commit()
@@ -69,7 +78,7 @@ def seed():
             except Exception as e:
                 db.session.rollback()
                 print(f"❌ {e}")
-            
+
             time.sleep(0.8)
 
     print("\n✅ Seed complete!")

@@ -48,6 +48,13 @@ nav {
   color: var(--accent);
   letter-spacing: 0.5px;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-logo-icon {
+  width: 28px;
+  height: 28px;
 }
 
 .nav-links {
