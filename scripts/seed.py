@@ -9,13 +9,30 @@ from nba_api.stats.endpoints import commonplayerinfo
 
 SEASON = "2025-26"
 
+def normalize_position(pos_str):
+    pos_str = pos_str.strip().lower()
+    mapping = {
+        "point guard":       "PG",
+        "shooting guard":    "SG",
+        "small forward":     "SF",
+        "power forward":     "PF",
+        "center":            "C",
+        "guard-forward":     "SG",
+        "forward-guard":     "SF",
+        "forward-center":    "PF",
+        "center-forward":    "C",
+        "guard":             "G",
+        "forward":           "F",
+    }
+    return mapping.get(pos_str, pos_str[:3].upper())
+
 def get_team_and_position(player_id):
     try:
         time.sleep(0.6)
         info = commonplayerinfo.CommonPlayerInfo(player_id=player_id)
-        df = info.get_data_frames()[0]
+        df   = info.get_data_frames()[0]
         team = df["TEAM_ABBREVIATION"].iloc[0]
-        pos  = df["POSITION"].iloc[0].split("-")[0].strip()[:3]
+        pos  = normalize_position(df["POSITION"].iloc[0])
         return team or "N/A", pos or "N/A"
     except:
         return "N/A", "N/A"
