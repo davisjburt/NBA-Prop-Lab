@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NBA Prop Lab - PrizePicks</title>
+    <link rel="icon" type="image/svg+xml" href="/static/proplab.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/css/base.css" />
+    <link rel="stylesheet" href="/static/css/discover.css" />
+    <link rel="stylesheet" href="/static/css/prizepicks.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="nav-logo">
+        Prop Lab
+        <img src="/static/proplab.svg" alt="Prop Lab" class="nav-logo-icon" />
+      </a>
+      <div class="nav-links">
+        <a href="/">Players</a>
+        <a href="/discover">Discover</a>
+        <a href="/trending">Trending</a>
+        <a href="/prizepicks" class="active">PrizePicks</a>
+      </div>
+    </nav>
+
+    <div class="page">
+      <div class="page-header">
+        <h1>🎯 PrizePicks Edge Finder</h1>
+        <p>
+          Today's live PrizePicks board ranked by historical hit rate. Averages
+          exclude outlier games.
+        </p>
+      </div>
+
+      <div class="pp-filters">
+        <select id="filterStat" onchange="renderTable()">
+          <option value="">All Stats</option>
+          <option value="pts">Points</option>
+          <option value="reb">Rebounds</option>
+          <option value="ast">Assists</option>
+          <option value="stl">Steals</option>
+          <option value="blk">Blocks</option>
+          <option value="fg3m">3PM</option>
+          <option value="tov">Turnovers</option>
+          <option value="pra">PTS+REB+AST</option>
+          <option value="pr">PTS+REB</option>
+          <option value="pa">PTS+AST</option>
+          <option value="ra">REB+AST</option>
+          <option value="bs">BLK+STL</option>
+        </select>
+        <select id="filterEdge" onchange="renderTable()">
+          <option value="">All Edges</option>
+          <option value="positive">Positive Edge (Over)</option>
+          <option value="negative">Negative Edge (Under)</option>
+        </select>
+        <select id="filterHR" onchange="renderTable()">
+          <option value="">All Hit Rates</option>
+          <option value="70">70%+ Hit Rate</option>
+          <option value="60">60%+ Hit Rate</option>
+        </select>
+        <select id="sortField" onchange="sortBy(this.value)">
+          <option value="hit_rate">Sort: Hit Rate</option>
+          <option value="edge">Sort: Edge</option>
+          <option value="avg_l5">Sort: L5 Avg</option>
+          <option value="avg_l10">Sort: L10 Avg</option>
+          <option value="line">Sort: Line</option>
+        </select>
+      </div>
+
+      <div class="table-card">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Player</th>
+              <th>Stat</th>
+              <th onclick="sortBy('line')" style="cursor: pointer">
+                PP Line ↕
+              </th>
+              <th onclick="sortBy('avg_l5')" style="cursor: pointer">
+                L5 Avg ↕
+              </th>
+              <th onclick="sortBy('avg_l10')" style="cursor: pointer">
+                L10 Avg ↕
+              </th>
+              <th onclick="sortBy('edge')" style="cursor: pointer">Edge ↕</th>
+              <th onclick="sortBy('hit_rate')" style="cursor: pointer">
+                Hit Rate ↕
+              </th>
+              <th>Sample</th>
+            </tr>
+          </thead>
+          <tbody id="results">
+            <tr>
+              <td colspan="9">
+                <div class="loading-state">⏳ Loading today's board...</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      let allData = [];
+      let sortKey = "hit_rate";
+      let sortDir = -1;
+
+      function rateColor(r) {
+        return r >= 0.7 ? "#10b981" : r <= 0.4 ? "#ef4444" : "#6366f1";
+      }
+      function rateClass(r) {
+        return r >= 0.7 ? "rate-high" : r <= 0.4 ? "rate-low" : "rate-mid";
+      }
+      function edgeClass(e) {
+        return e > 0 ? "edge-pos" : e < 0 ? "edge-neg" : "";
+      }
+      function fmtEdge(e) {
+        return e === null ? "—" : e > 0 ? `+${e}` : `${e}`;
+      }
+
+      function sortBy(key) {
+        if (sortKey === key) sortDir *= -1;
+        else {
+          sortKey = key;
+          sortDir = -1;
+        }
+        document.getElementById("sortField").value = key;
+        renderTable();
+      }
+
+      function renderTable() {
+        const statFilter = document.getElementById("filterStat").value;
+        const edgeFilter = document.getElementById("filterEdge").value;
+        const hrFilter =
+          parseFloat(document.getElementById("filterHR").value) || 0;
+
+        let filtered = allData.filter((p) => {
+          if (statFilter && p.stat !== statFilter) return false;
+          if (edgeFilter === "positive" && (p.edge === null || p.edge <= 0))
+            return false;
+          if (edgeFilter === "negative" && (p.edge === null || p.edge >= 0))
+            return false;
+          if (hrFilter && p.hit_rate * 100 < hrFilter) return false;
+          return true;
+        });
+
+        filtered.sort((a, b) => {
+          const av = a[sortKey] ?? -Infinity;
+          const bv = b[sortKey] ?? -Infinity;
+          return sortDir * (av - bv);
+        });
+
+        const tbody = document.getElementById("results");
+        if (!filtered.length) {
+          tbody.innerHTML = `<tr><td colspan="9"><div class="empty-state">😶<p>No props match your filters.</p></div></td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = "";
+        filtered.forEach((p, i) => {
+          const pct = (p.hit_rate * 100).toFixed(1);
+          const tr = document.createElement("tr");
+          tr.className = "data-row";
+          tr.innerHTML = `
+          <td style="color:var(--muted);font-size:0.85rem">${i + 1}</td>
+          <td>
+            <div class="player-cell">
+              <div class="mini-avatar">
+                <img src="https://cdn.nba.com/headshots/nba/latest/260x190/${p.id}.png" alt="${p.name}" />
+              </div>
+              <div>
+                <div style="font-weight:600;font-size:0.9rem">${p.name}</div>
+                <div style="color:var(--muted);font-size:0.78rem">${p.team} · ${p.position}</div>
+              </div>
+            </div>
+          </td>
+          <td><span class="stat-chip">${p.label}</span></td>
+          <td style="font-weight:600">${p.line}</td>
+          <td>${p.avg_l5 ?? "—"}</td>
+          <td>${p.avg_l10 ?? "—"}</td>
+          <td class="${edgeClass(p.edge)}" style="font-weight:700">${fmtEdge(p.edge)}</td>
+          <td>
+            <div class="rate-bar-wrap">
+              <div class="rate-bar-bg">
+                <div class="rate-bar-fill" style="width:${pct}%;background:${rateColor(p.hit_rate)}"></div>
+              </div>
+              <span class="rate-label ${rateClass(p.hit_rate)}">${pct}%</span>
+            </div>
+          </td>
+          <td style="color:var(--muted)">${p.hits}/${p.sample}</td>`;
+          tr.onclick = () => (window.location.href = `/player/${p.id}`);
+          tbody.appendChild(tr);
+        });
+      }
+
+      fetch("/api/prizepicks")
+        .then((r) => r.json())
+        .then((data) => {
+          if (data.error) throw new Error(data.error);
+          allData = data;
+          renderTable();
+        })
+        .catch((err) => {
+          document.getElementById("results").innerHTML =
+            `<tr><td colspan="9"><div class="empty-state">❌<p>${err.message || "Failed to load PrizePicks data."}</p></div></td></tr>`;
+        });
+    </script>
+  </body>
+</html>

@@ -1,3 +1,5 @@
+import numpy as np
+
 COMBO_STATS = {
     "pr":  ["pts", "reb"],
     "pa":  ["pts", "ast"],
@@ -23,6 +25,25 @@ def calculate_streak(values, line):
             break
     return {"count": count, "type": streak_type}
 
+def clean_series(values):
+    """Remove outliers using IQR method before averaging."""
+    if len(values) < 4:
+        return values
+    arr = np.array(values, dtype=float)
+    q1, q3 = np.percentile(arr, 25), np.percentile(arr, 75)
+    iqr    = q3 - q1
+    lower  = q1 - 1.5 * iqr
+    upper  = q3 + 1.5 * iqr
+    cleaned = arr[(arr >= lower) & (arr <= upper)]
+    return cleaned.tolist() if len(cleaned) >= 3 else values
+
+def clean_avg(values, n=None):
+    """Return outlier-cleaned mean over last n values."""
+    vals = values[:n] if n else values
+    if not vals:
+        return None
+    return round(float(np.mean(clean_series(vals))), 1)
+
 def hit_rate(df, stat, line, last_n=None, location=None, opponent=None):
     subset = df.copy()
     if location:
@@ -33,7 +54,6 @@ def hit_rate(df, stat, line, last_n=None, location=None, opponent=None):
         subset = subset.head(last_n)
     if subset.empty:
         return {"error": "No data matching filters"}
-
     hits  = (subset[stat] > line).sum()
     total = len(subset)
     return {
@@ -52,7 +72,6 @@ def hit_rate(df, stat, line, last_n=None, location=None, opponent=None):
 def hit_rate_combo(df, combo, line, last_n=None, location=None, opponent=None):
     if combo not in COMBO_STATS:
         return {"error": f"Unknown combo: {combo}"}
-
     subset = df.copy()
     if location:
         subset = subset[subset["location"] == location]
@@ -62,11 +81,9 @@ def hit_rate_combo(df, combo, line, last_n=None, location=None, opponent=None):
         subset = subset.head(last_n)
     if subset.empty:
         return {"error": "No data matching filters"}
-
     cols = COMBO_STATS[combo]
     subset = subset.copy()
     subset["combo_total"] = subset[cols].sum(axis=1)
-
     hits  = (subset["combo_total"] > line).sum()
     total = len(subset)
     return {

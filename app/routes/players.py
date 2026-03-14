@@ -19,6 +19,10 @@ def discover_page():
 def trending_page():
     return render_template("trending.html")
 
+@players_bp.route("/prizepicks")
+def prizepicks_page():
+    return render_template("prizepicks.html")
+
 @players_bp.route("/api/players")
 def get_players():
     players = Player.query.order_by(Player.name).all()

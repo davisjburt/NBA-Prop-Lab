@@ -1,17 +1,21 @@
 from flask import Blueprint, jsonify, request
 from app.models.models import db, Player, PlayerGameStat
-from app.services.hit_rate import hit_rate, hit_rate_combo, COMBO_STATS, calculate_streak, extract_opponent
+from app.services.hit_rate import (
+    hit_rate, hit_rate_combo, COMBO_STATS,
+    calculate_streak, extract_opponent, clean_avg
+)
+from app.services.prizepicks import fetch_prizepicks_lines, normalize
 import pandas as pd
-
 
 props_bp = Blueprint("props", __name__, url_prefix="/api")
 
 SINGLE_STATS = ["pts", "reb", "ast", "stl", "blk", "fg3m", "tov"]
 STAT_LABELS  = {
-    "pts": "Points", "reb": "Rebounds", "ast": "Assists",
-    "stl": "Steals", "blk": "Blocks",   "fg3m": "3PM", "tov": "Turnovers",
-    "pr": "PTS+REB", "pa": "PTS+AST",   "ra": "REB+AST",
-    "pra": "PTS+REB+AST", "sa": "STL+AST", "bs": "BLK+STL"
+    "pts": "Points",    "reb": "Rebounds",   "ast": "Assists",
+    "stl": "Steals",    "blk": "Blocks",     "fg3m": "3PM",
+    "tov": "Turnovers", "pr":  "PTS+REB",    "pa":   "PTS+AST",
+    "ra":  "REB+AST",   "pra": "PTS+REB+AST","sa":   "STL+AST",
+    "bs":  "BLK+STL"
 }
 
 
@@ -176,22 +180,16 @@ def trending():
                 continue
 
             base = {
-                "id":       player.id,
-                "name":     player.name,
-                "team":     player.team_abbr,
-                "position": player.position,
-                "stat":     stat,
-                "label":    STAT_LABELS[stat],
-                "line":     line,
-                "avg":      round(df[stat].mean(), 1),
-                "hit_rate": hr["hit_rate"],
-                "sample":   hr["sample"],
+                "id":       player.id,       "name":     player.name,
+                "team":     player.team_abbr, "position": player.position,
+                "stat":     stat,            "label":    STAT_LABELS[stat],
+                "line":     line,            "avg":      round(df[stat].mean(), 1),
+                "hit_rate": hr["hit_rate"],  "sample":   hr["sample"],
                 "hits":     hr["hits"],
             }
 
             if streak["type"] == "hit" and streak["count"] >= 3:
                 hot_streaks.append({**base, "streak": streak["count"]})
-
             if hr["hit_rate"] >= 0.70 and hr["sample"] >= 5:
                 top_hitters.append(base)
 
@@ -208,29 +206,93 @@ def trending():
                 continue
 
             base = {
-                "id":       player.id,
-                "name":     player.name,
-                "team":     player.team_abbr,
-                "position": player.position,
-                "stat":     combo,
-                "label":    STAT_LABELS[combo],
-                "line":     line,
-                "avg":      hr["avg"],
-                "hit_rate": hr["hit_rate"],
-                "sample":   hr["sample"],
+                "id":       player.id,       "name":     player.name,
+                "team":     player.team_abbr, "position": player.position,
+                "stat":     combo,           "label":    STAT_LABELS[combo],
+                "line":     line,            "avg":      hr["avg"],
+                "hit_rate": hr["hit_rate"],  "sample":   hr["sample"],
                 "hits":     hr["hits"],
             }
 
             if streak["type"] == "hit" and streak["count"] >= 3:
                 hot_streaks.append({**base, "streak": streak["count"]})
-
             if hr["hit_rate"] >= 0.70 and hr["sample"] >= 5:
                 top_hitters.append(base)
 
-    hot_streaks.sort(key=lambda x: x["streak"],  reverse=True)
-    top_hitters.sort(key=lambda x: x["hit_rate"], reverse=True)
+    hot_streaks.sort(key=lambda x: x["streak"],   reverse=True)
+    top_hitters.sort(key=lambda x: x["hit_rate"],  reverse=True)
 
-    return jsonify({
-        "hot_streaks": hot_streaks[:30],
-        "top_hitters": top_hitters[:30],
-    })
+    return jsonify({"hot_streaks": hot_streaks[:30], "top_hitters": top_hitters[:30]})
+
+
+@props_bp.route("/prizepicks")
+def prizepicks():
+    pp_lines = fetch_prizepicks_lines()
+    if not pp_lines:
+        return jsonify({"error": "Could not fetch PrizePicks data"}), 502
+
+    all_players = Player.query.all()
+    name_map    = {normalize(p.name): p for p in all_players}
+
+    def find_player(name_key):
+        if name_key in name_map:
+            return name_map[name_key]
+        for key, player in name_map.items():
+            if name_key in key or key in name_key:
+                return player
+        return None
+
+    results = []
+    for entry in pp_lines:
+        player = find_player(entry["name_key"])
+        if not player:
+            continue
+
+        rows = PlayerGameStat.query.filter_by(player_id=player.id) \
+                   .order_by(PlayerGameStat.date.desc()).all()
+        if not rows:
+            continue
+
+        df   = rows_to_df(rows)
+        stat = entry["stat"]
+        line = entry["line"]
+
+        if stat in COMBO_STATS:
+            cols   = COMBO_STATS[stat]
+            values = df[cols].sum(axis=1).tolist()
+        elif stat in df.columns:
+            values = df[stat].tolist()
+        else:
+            continue
+
+        avg_l5     = clean_avg(values, n=5)
+        avg_l10    = clean_avg(values, n=10)
+        avg_season = clean_avg(values)
+
+        hr = hit_rate_combo(df, stat, line, last_n=10) if stat in COMBO_STATS \
+             else hit_rate(df, stat, line, last_n=10)
+
+        if "error" in hr:
+            continue
+
+        edge = round(avg_l5 - line, 1) if avg_l5 is not None else None
+
+        results.append({
+            "id":         player.id,
+            "name":       player.name,
+            "team":       player.team_abbr,
+            "position":   player.position,
+            "stat":       stat,
+            "label":      entry["pp_stat_label"],
+            "line":       line,
+            "hit_rate":   hr["hit_rate"],
+            "avg_l5":     avg_l5,
+            "avg_l10":    avg_l10,
+            "avg_season": avg_season,
+            "edge":       edge,
+            "hits":       hr["hits"],
+            "sample":     hr["sample"],
+        })
+
+    results.sort(key=lambda x: x["hit_rate"], reverse=True)
+    return jsonify(results)
