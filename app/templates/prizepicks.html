@@ -51,6 +51,12 @@
           <option value="ra">REB+AST</option>
           <option value="bs">BLK+STL</option>
         </select>
+        <select id="filterOddsType" onchange="renderTable()">
+          <option value="">All Lines</option>
+          <option value="standard">Standard Only</option>
+          <option value="goblin">Goblin Only 👺</option>
+          <option value="demon">Demon Only 😈</option>
+        </select>
         <select id="filterEdge" onchange="renderTable()">
           <option value="">All Edges</option>
           <option value="positive">Positive Edge (Over)</option>
@@ -122,6 +128,14 @@
         return e === null ? "—" : e > 0 ? `+${e}` : `${e}`;
       }
 
+      function oddsTypeBadge(type) {
+        if (type === "goblin")
+          return `<span class="odds-badge goblin">👺 Goblin</span>`;
+        if (type === "demon")
+          return `<span class="odds-badge demon">😈 Demon</span>`;
+        return "";
+      }
+
       function sortBy(key) {
         if (sortKey === key) sortDir *= -1;
         else {
@@ -134,12 +148,14 @@
 
       function renderTable() {
         const statFilter = document.getElementById("filterStat").value;
+        const oddsTypeFilter = document.getElementById("filterOddsType").value;
         const edgeFilter = document.getElementById("filterEdge").value;
         const hrFilter =
           parseFloat(document.getElementById("filterHR").value) || 0;
 
         let filtered = allData.filter((p) => {
           if (statFilter && p.stat !== statFilter) return false;
+          if (oddsTypeFilter && p.odds_type !== oddsTypeFilter) return false;
           if (edgeFilter === "positive" && (p.edge === null || p.edge <= 0))
             return false;
           if (edgeFilter === "negative" && (p.edge === null || p.edge >= 0))
@@ -172,14 +188,14 @@
               <div class="mini-avatar">
                 <img src="https://cdn.nba.com/headshots/nba/latest/260x190/${p.id}.png" alt="${p.name}" />
               </div>
-              <div>
-                <div style="font-weight:600;font-size:0.9rem">${p.name}</div>
-                <div style="color:var(--muted);font-size:0.78rem">${p.team} · ${p.position}</div>
+              <div class="player-info">
+                <div class="player-name">${p.name}</div>
+                <div class="player-meta">${p.team} · ${p.position}</div>
               </div>
             </div>
           </td>
           <td><span class="stat-chip">${p.label}</span></td>
-          <td style="font-weight:600">${p.line}</td>
+          <td style="font-weight:600;white-space:nowrap">${p.line} ${oddsTypeBadge(p.odds_type)}</td>
           <td>${p.avg_l5 ?? "—"}</td>
           <td>${p.avg_l10 ?? "—"}</td>
           <td class="${edgeClass(p.edge)}" style="font-weight:700">${fmtEdge(p.edge)}</td>
@@ -202,6 +218,11 @@
         .then((data) => {
           if (data.error) throw new Error(data.error);
           allData = data;
+
+          // DEBUG
+          const types = [...new Set(data.map((p) => p.odds_type))];
+          console.log("odds_type values:", types);
+
           renderTable();
         })
         .catch((err) => {

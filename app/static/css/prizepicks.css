@@ -21,6 +21,30 @@
   border-color: var(--accent);
 }
 
+.player-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+.player-info {
+  min-width: 0;
+  overflow: hidden;
+}
+.player-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+}
+.player-meta {
+  color: var(--muted);
+  font-size: 0.78rem;
+  margin-top: 2px;
+}
+
 .stat-chip {
   display: inline-block;
   padding: 3px 10px;
@@ -30,6 +54,25 @@
   font-size: 0.78rem;
   font-weight: 700;
   white-space: nowrap;
+}
+
+.odds-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-left: 4px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.odds-badge.goblin {
+  background: #d1fae5;
+  color: #065f46;
+}
+.odds-badge.demon {
+  background: #fee2e2;
+  color: #991b1b;
 }
 
 .edge-pos {

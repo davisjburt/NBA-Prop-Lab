@@ -278,21 +278,23 @@ def prizepicks():
         edge = round(avg_l5 - line, 1) if avg_l5 is not None else None
 
         results.append({
-            "id":         player.id,
-            "name":       player.name,
-            "team":       player.team_abbr,
-            "position":   player.position,
-            "stat":       stat,
-            "label":      entry["pp_stat_label"],
-            "line":       line,
-            "hit_rate":   hr["hit_rate"],
-            "avg_l5":     avg_l5,
-            "avg_l10":    avg_l10,
-            "avg_season": avg_season,
-            "edge":       edge,
-            "hits":       hr["hits"],
-            "sample":     hr["sample"],
-        })
+    "id":         player.id,
+    "name":       player.name,
+    "team":       player.team_abbr,
+    "position":   player.position,
+    "stat":       stat,
+    "label":      entry["pp_stat_label"],
+    "odds_type":  entry.get("odds_type", "standard"),   # ← make sure this line exists
+    "line":       line,
+    "hit_rate":   hr["hit_rate"],
+    "avg_l5":     avg_l5,
+    "avg_l10":    avg_l10,
+    "avg_season": avg_season,
+    "edge":       edge,
+    "hits":       hr["hits"],
+    "sample":     hr["sample"],
+})
+
 
     results.sort(key=lambda x: x["hit_rate"], reverse=True)
     return jsonify(results)

@@ -25,10 +25,17 @@ STAT_MAP = {
 }
 
 def normalize(name):
-    """Lowercase, strip accents, remove punctuation for fuzzy matching."""
     nfkd = unicodedata.normalize("NFKD", name)
-    ascii_name = nfkd.encode("ascii", "ignore").decode("ascii")
-    return ascii_name.lower().strip()
+    return nfkd.encode("ascii", "ignore").decode("ascii").lower().strip()
+
+def normalize_odds_type(raw):
+    if not raw:
+        return "standard"
+    if "goblin" in raw.lower():
+        return "goblin"
+    if "demon" in raw.lower():
+        return "demon"
+    return "standard"
 
 def fetch_prizepicks_lines():
     try:
@@ -59,6 +66,7 @@ def fetch_prizepicks_lines():
         attr       = proj.get("attributes", {})
         pp_stat    = attr.get("stat_type", "")
         line       = attr.get("line_score")
+        odds_type  = normalize_odds_type(attr.get("odds_type"))
         player_rel = proj.get("relationships", {}).get("new_player", {}).get("data", {})
         player_id  = player_rel.get("id")
         player     = players.get(player_id, {})
@@ -75,6 +83,7 @@ def fetch_prizepicks_lines():
             "stat":          stat,
             "pp_stat_label": pp_stat,
             "line":          float(line),
+            "odds_type":     odds_type,
         })
 
     return lines
