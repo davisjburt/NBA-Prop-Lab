@@ -20,8 +20,7 @@
       </a>
       <div class="nav-links">
         <a href="/">Players</a>
-        <a href="/discover">Discover</a>
-        <a href="/trending">Trending</a>
+        <a href="/explore">Explore</a>
         <a href="/prizepicks" class="active">PrizePicks</a>
       </div>
     </nav>
@@ -257,5 +256,6 @@
             `<tr><td colspan="11"><div class="empty-state">❌<p>${err.message || "Failed to load PrizePicks data."}</p></div></td></tr>`;
         });
     </script>
+    {% include 'base_drawer.html' %}
   </body>
 </html>

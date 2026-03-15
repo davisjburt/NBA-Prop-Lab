@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NBA Prop Lab - Explore</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/css/base.css" />
+    <link rel="stylesheet" href="/static/css/explore.css" />
+    <link rel="icon" type="image/svg+xml" href="/static/proplab.svg" />
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="nav-logo"
+        >Prop Lab <img src="/static/proplab.svg" class="nav-logo-icon"
+      /></a>
+      <div class="nav-links">
+        <a href="/">Players</a>
+        <a href="/explore" class="active">Explore</a>
+        <a href="/prizepicks">PrizePicks</a>
+      </div>
+    </nav>
+
+    <div class="page">
+      <div class="page-header">
+        <h1>Explore</h1>
+        <p>Hot streaks, top performers, and custom prop searches.</p>
+      </div>
+
+      <!-- Sub-nav tabs -->
+      <div class="explore-tabs">
+        <button class="e-tab active" onclick="switchTab('trending', this)">
+          🔥 Trending
+        </button>
+        <button class="e-tab" onclick="switchTab('discover', this)">
+          🔍 Discover
+        </button>
+      </div>
+
+      <!-- Trending panel -->
+      <div id="panel-trending">
+        <div id="trending-content">
+          <div class="loading-state">⏳ Loading trending props...</div>
+        </div>
+      </div>
+
+      <!-- Discover panel -->
+      <div id="panel-discover" style="display: none">
+        <div class="controls-card">
+          <div class="controls">
+            <div class="control-group">
+              <label>Stat</label>
+              <select id="discoverStat" onchange="updateDiscoverLine()">
+                <optgroup label="Single">
+                  <option value="pts">Points</option>
+                  <option value="reb">Rebounds</option>
+                  <option value="ast">Assists</option>
+                  <option value="stl">Steals</option>
+                  <option value="blk">Blocks</option>
+                  <option value="fg3m">3PM</option>
+                  <option value="tov">Turnovers</option>
+                </optgroup>
+                <optgroup label="Combos">
+                  <option value="pra">PTS+REB+AST</option>
+                  <option value="pr">PTS+REB</option>
+                  <option value="pa">PTS+AST</option>
+                  <option value="ra">REB+AST</option>
+                  <option value="bs">BLK+STL</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="control-group">
+              <label>Line</label>
+              <input id="discoverLine" type="number" step="0.5" value="20.5" />
+            </div>
+            <div class="control-group">
+              <label>Sample</label>
+              <select id="discoverLastN">
+                <option value="">All</option>
+                <option value="5">Last 5</option>
+                <option value="10" selected>Last 10</option>
+                <option value="20">Last 20</option>
+              </select>
+            </div>
+            <button class="btn" onclick="loadDiscover()">Search</button>
+          </div>
+        </div>
+
+        <div class="table-card">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Player</th>
+                <th onclick="sortDiscover('hit_rate')">Hit Rate ↕</th>
+                <th onclick="sortDiscover('hits')">Hits ↕</th>
+                <th onclick="sortDiscover('avg')">Avg ↕</th>
+                <th onclick="sortDiscover('max')">High ↕</th>
+                <th>Sample</th>
+              </tr>
+            </thead>
+            <tbody id="discoverResults">
+              <tr>
+                <td colspan="7">
+                  <div class="empty-state">
+                    🔍
+                    <p>Set a line and hit Search.</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    {% include 'base_drawer.html' %}
+
+    <script>
+      const DISCOVER_LINE_DEFAULTS = {
+        pts: 20.5,
+        reb: 8.5,
+        ast: 5.5,
+        stl: 1.5,
+        blk: 1.5,
+        fg3m: 2.5,
+        tov: 2.5,
+        pr: 30.5,
+        pa: 25.5,
+        ra: 14.5,
+        pra: 40.5,
+        sa: 4.5,
+        bs: 3.5,
+      };
+
+      function switchTab(name, btn) {
+        document
+          .querySelectorAll(".e-tab")
+          .forEach((t) => t.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById("panel-trending").style.display =
+          name === "trending" ? "" : "none";
+        document.getElementById("panel-discover").style.display =
+          name === "discover" ? "" : "none";
+      }
+
+      function updateDiscoverLine() {
+        const s = document.getElementById("discoverStat").value;
+        document.getElementById("discoverLine").value =
+          DISCOVER_LINE_DEFAULTS[s] ?? 10.5;
+      }
+
+      // ── Trending ──
+      function rateColor(r) {
+        return r >= 0.7 ? "#10b981" : r >= 0.55 ? "#6366f1" : "#ef4444";
+      }
+      function rateClass(r) {
+        return r >= 0.7 ? "rate-high" : r >= 0.55 ? "rate-mid" : "rate-low";
+      }
+
+      function buildTrendCard(p, showStreak) {
+        const pct = (p.hit_rate * 100).toFixed(1);
+        return `
+        <div class="trend-card" onclick="openDrawer(${p.id})">
+          <div class="trend-top">
+            <div class="trend-avatar">
+              <img src="https://cdn.nba.com/headshots/nba/latest/260x190/${p.id}.png" alt="${p.name}" />
+            </div>
+            <div class="trend-info">
+              <div class="trend-name">${p.name}</div>
+              <div class="trend-meta">${p.team} · ${p.position}</div>
+            </div>
+            ${showStreak ? `<span class="streak-pill">🔥 ${p.streak}</span>` : ""}
+          </div>
+          <div class="trend-mid">
+            <span class="stat-chip">${p.label}</span>
+            <span class="trend-line">Line: <strong>${p.line}</strong> · Avg: <strong>${p.avg}</strong></span>
+          </div>
+          <div class="trend-bottom">
+            <div class="rate-bar-bg">
+              <div class="rate-bar-fill" style="width:${pct}%;background:${rateColor(p.hit_rate)}"></div>
+            </div>
+            <span class="rate-label ${rateClass(p.hit_rate)}">${pct}%</span>
+          </div>
+        </div>`;
+      }
+
+      fetch("/api/trending")
+        .then((r) => r.json())
+        .then((data) => {
+          const el = document.getElementById("trending-content");
+          const streaks = data.hot_streaks.length
+            ? data.hot_streaks.map((p) => buildTrendCard(p, true)).join("")
+            : `<div class="empty-state"><p>No hot streaks right now.</p></div>`;
+          const hitters = data.top_hitters.length
+            ? data.top_hitters.map((p) => buildTrendCard(p, false)).join("")
+            : `<div class="empty-state"><p>Nothing to show.</p></div>`;
+          el.innerHTML = `
+          <div class="section-header"><span>🔥</span><h2>Hot Streaks</h2><span class="section-count">${data.hot_streaks.length} props</span></div>
+          <div class="trend-grid">${streaks}</div>
+          <div class="section-header" style="margin-top:2rem"><span>📈</span><h2>Top Hit Rates (L10)</h2><span class="section-count">${data.top_hitters.length} props</span></div>
+          <div class="trend-grid">${hitters}</div>`;
+        })
+        .catch(() => {
+          document.getElementById("trending-content").innerHTML =
+            `<div class="empty-state">😶<p>Failed to load trending data.</p></div>`;
+        });
+
+      // ── Discover ──
+      let discoverData = [];
+      let discoverSortKey = "hit_rate";
+      let discoverSortDir = -1;
+
+      function loadDiscover() {
+        const stat = document.getElementById("discoverStat").value;
+        const line = document.getElementById("discoverLine").value;
+        const last_n = document.getElementById("discoverLastN").value;
+        let url = `/api/discover?stat=${stat}&line=${line}`;
+        if (last_n) url += `&last_n=${last_n}`;
+        document.getElementById("discoverResults").innerHTML =
+          `<tr><td colspan="7"><div class="empty-state">⏳<p>Loading...</p></div></td></tr>`;
+        fetch(url)
+          .then((r) => r.json())
+          .then((d) => {
+            discoverData = d;
+            renderDiscover();
+          });
+      }
+
+      function sortDiscover(key) {
+        discoverSortKey = key === discoverSortKey ? discoverSortKey : key;
+        if (key === discoverSortKey) discoverSortDir *= -1;
+        else discoverSortDir = -1;
+        renderDiscover();
+      }
+
+      function renderDiscover() {
+        const sorted = [...discoverData].sort(
+          (a, b) => discoverSortDir * (a[discoverSortKey] - b[discoverSortKey]),
+        );
+        const tbody = document.getElementById("discoverResults");
+        if (!sorted.length) {
+          tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state">😶<p>No results.</p></div></td></tr>`;
+          return;
+        }
+        tbody.innerHTML = "";
+        sorted.forEach((p, i) => {
+          const pct = (p.hit_rate * 100).toFixed(1);
+          const tr = document.createElement("tr");
+          tr.className = "data-row";
+          tr.innerHTML = `
+          <td style="color:var(--muted);font-size:.85rem">${i + 1}</td>
+          <td>
+            <div class="player-cell">
+              <div class="mini-avatar"><img src="https://cdn.nba.com/headshots/nba/latest/260x190/${p.id}.png" /></div>
+              <div>
+                <div style="font-weight:600;font-size:.9rem">${p.name}</div>
+                <div style="color:var(--muted);font-size:.78rem">${p.team} · ${p.position}</div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="rate-bar-wrap">
+              <div class="rate-bar-bg"><div class="rate-bar-fill" style="width:${pct}%;background:${rateColor(p.hit_rate)}"></div></div>
+              <span class="rate-label ${rateClass(p.hit_rate)}">${pct}%</span>
+            </div>
+          </td>
+          <td>${p.hits} / ${p.sample}</td>
+          <td>${p.avg}</td>
+          <td>${p.max}</td>
+          <td style="color:var(--muted)">${p.sample}</td>`;
+          tr.onclick = () => openDrawer(p.id);
+          tbody.appendChild(tr);
+        });
+      }
+    </script>
+  </body>
+</html>

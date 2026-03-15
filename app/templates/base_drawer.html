@@ -1,0 +1,313 @@
+<!-- ── Global Player Drawer ── -->
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+
+<div class="player-drawer" id="playerDrawer">
+  <div class="drawer-header">
+    <div class="drawer-avatar">
+      <img id="drawerAvatar" src="" alt="" />
+    </div>
+    <div>
+      <div class="drawer-player-name" id="drawerName">Loading...</div>
+      <div class="drawer-player-meta" id="drawerMeta"></div>
+    </div>
+    <button class="drawer-close" onclick="closeDrawer()">✕</button>
+  </div>
+
+  <div class="drawer-chips">
+    <button
+      class="d-chip active"
+      data-stat="pts"
+      onclick="drawerSelectStat(this)"
+    >
+      PTS
+    </button>
+    <button class="d-chip" data-stat="reb" onclick="drawerSelectStat(this)">
+      REB
+    </button>
+    <button class="d-chip" data-stat="ast" onclick="drawerSelectStat(this)">
+      AST
+    </button>
+    <button class="d-chip" data-stat="stl" onclick="drawerSelectStat(this)">
+      STL
+    </button>
+    <button class="d-chip" data-stat="blk" onclick="drawerSelectStat(this)">
+      BLK
+    </button>
+    <button class="d-chip" data-stat="fg3m" onclick="drawerSelectStat(this)">
+      3PM
+    </button>
+    <button class="d-chip" data-stat="tov" onclick="drawerSelectStat(this)">
+      TOV
+    </button>
+    <button
+      class="d-chip combo"
+      data-stat="pra"
+      onclick="drawerSelectStat(this)"
+    >
+      PRA
+    </button>
+    <button
+      class="d-chip combo"
+      data-stat="pr"
+      onclick="drawerSelectStat(this)"
+    >
+      P+R
+    </button>
+    <button
+      class="d-chip combo"
+      data-stat="pa"
+      onclick="drawerSelectStat(this)"
+    >
+      P+A
+    </button>
+    <button
+      class="d-chip combo"
+      data-stat="ra"
+      onclick="drawerSelectStat(this)"
+    >
+      R+A
+    </button>
+    <button
+      class="d-chip combo"
+      data-stat="bs"
+      onclick="drawerSelectStat(this)"
+    >
+      B+S
+    </button>
+  </div>
+
+  <div class="drawer-controls">
+    <label
+      style="
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--muted);
+        text-transform: uppercase;
+      "
+      >Line</label
+    >
+    <input
+      type="number"
+      id="drawerLine"
+      step="0.5"
+      value="20.5"
+      onchange="drawerLoad()"
+    />
+    <select id="drawerLastN" onchange="drawerLoad()">
+      <option value="">All</option>
+      <option value="5">L5</option>
+      <option value="10" selected>L10</option>
+      <option value="20">L20</option>
+    </select>
+    <select id="drawerLocation" onchange="drawerLoad()">
+      <option value="">All</option>
+      <option value="Home">Home</option>
+      <option value="Road">Road</option>
+    </select>
+  </div>
+
+  <div class="drawer-metrics">
+    <div class="drawer-metric">
+      <div class="dm-val" id="dmHitRate">—</div>
+      <div class="dm-lbl">Hit Rate</div>
+    </div>
+    <div class="drawer-metric">
+      <div class="dm-val" id="dmHits">—</div>
+      <div class="dm-lbl">Hits/Games</div>
+    </div>
+    <div class="drawer-metric">
+      <div class="dm-val" id="dmAvg">—</div>
+      <div class="dm-lbl">Average</div>
+    </div>
+    <div class="drawer-metric">
+      <div class="dm-val" id="dmHigh" style="color: var(--success)">—</div>
+      <div class="dm-lbl">High</div>
+    </div>
+    <div class="drawer-metric">
+      <div class="dm-val" id="dmLow" style="color: var(--danger)">—</div>
+      <div class="dm-lbl">Low</div>
+    </div>
+  </div>
+
+  <div class="drawer-streak" id="drawerStreak"></div>
+
+  <div class="drawer-body">
+    <table class="drawer-log-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Matchup</th>
+          <th id="drawerStatHeader">PTS</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody id="drawerRows"></tbody>
+    </table>
+  </div>
+
+  <a class="drawer-full-link" id="drawerFullLink" href="#"
+    >View Full Player Page →</a
+  >
+</div>
+
+<script>
+  const COMBOS = new Set(["pr", "pa", "ra", "pra", "sa", "bs"]);
+  const STAT_LBLS = {
+    pts: "Points",
+    reb: "Rebounds",
+    ast: "Assists",
+    stl: "Steals",
+    blk: "Blocks",
+    fg3m: "3PM",
+    tov: "Turnovers",
+    pr: "P+R",
+    pa: "P+A",
+    ra: "R+A",
+    pra: "PRA",
+    sa: "S+A",
+    bs: "B+S",
+  };
+
+  let _drawerId = null;
+  let _drawerStat = "pts";
+  let _drawerAvgs = {};
+
+  const LINE_DEFAULTS = {
+    pts: 20.5,
+    reb: 8.5,
+    ast: 5.5,
+    stl: 1.5,
+    blk: 1.5,
+    fg3m: 2.5,
+    tov: 2.5,
+    pr: 30.5,
+    pa: 25.5,
+    ra: 14.5,
+    pra: 40.5,
+    sa: 4.5,
+    bs: 3.5,
+  };
+
+  function openDrawer(playerId) {
+    _drawerId = playerId;
+    _drawerStat = "pts";
+    _drawerAvgs = {};
+
+    // Reset chips
+    document
+      .querySelectorAll(".d-chip")
+      .forEach((c) => c.classList.remove("active"));
+    document.querySelector('.d-chip[data-stat="pts"]').classList.add("active");
+    document.getElementById("drawerRows").innerHTML =
+      `<tr><td colspan="4" style="text-align:center;padding:2rem;color:var(--muted)">Loading...</td></tr>`;
+
+    // Show overlay + drawer
+    document.getElementById("drawerOverlay").classList.add("open");
+    document.getElementById("playerDrawer").classList.add("open");
+    document.body.style.overflow = "hidden";
+
+    document.getElementById("drawerFullLink").href = `/player/${playerId}`;
+
+    // Load player info
+    fetch(`/api/players/${playerId}`)
+      .then((r) => r.json())
+      .then((p) => {
+        document.getElementById("drawerAvatar").src =
+          `https://cdn.nba.com/headshots/nba/latest/260x190/${playerId}.png`;
+        document.getElementById("drawerName").textContent = p.name;
+        document.getElementById("drawerMeta").textContent =
+          `${p.team} · ${p.position}`;
+      });
+
+    // Load averages then stats
+    fetch(`/api/players/${playerId}/averages`)
+      .then((r) => r.json())
+      .then((avgs) => {
+        _drawerAvgs = avgs;
+        document.getElementById("drawerLine").value =
+          avgs["pts"] ?? LINE_DEFAULTS["pts"];
+        drawerLoad();
+      })
+      .catch(() => drawerLoad());
+  }
+
+  function closeDrawer() {
+    document.getElementById("drawerOverlay").classList.remove("open");
+    document.getElementById("playerDrawer").classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  function drawerSelectStat(btn) {
+    document
+      .querySelectorAll(".d-chip")
+      .forEach((c) => c.classList.remove("active"));
+    btn.classList.add("active");
+    _drawerStat = btn.dataset.stat;
+    document.getElementById("drawerLine").value =
+      _drawerAvgs[_drawerStat] ?? LINE_DEFAULTS[_drawerStat] ?? 10.5;
+    drawerLoad();
+  }
+
+  function drawerLoad() {
+    if (!_drawerId) return;
+    const line = document.getElementById("drawerLine").value;
+    const last_n = document.getElementById("drawerLastN").value;
+    const location = document.getElementById("drawerLocation").value;
+    const isCombo = COMBOS.has(_drawerStat);
+
+    let url = isCombo
+      ? `/api/players/${_drawerId}/combo?combo=${_drawerStat}&line=${line}`
+      : `/api/players/${_drawerId}/props?stat=${_drawerStat}&line=${line}`;
+    if (last_n) url += `&last_n=${last_n}`;
+    if (location) url += `&location=${location}`;
+
+    fetch(url)
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.error) return;
+        const pct = (data.hit_rate * 100).toFixed(1) + "%";
+        document.getElementById("dmHitRate").textContent = pct;
+        document.getElementById("dmHits").textContent =
+          `${data.hits}/${data.sample}`;
+        document.getElementById("dmAvg").textContent = data.avg;
+        document.getElementById("dmHigh").textContent = data.max;
+        document.getElementById("dmLow").textContent = data.min;
+        document.getElementById("drawerStatHeader").textContent =
+          STAT_LBLS[_drawerStat] || _drawerStat.toUpperCase();
+
+        // Streak
+        const streakEl = document.getElementById("drawerStreak");
+        const s = data.streak;
+        if (s && s.count >= 2 && s.type !== "none") {
+          streakEl.className = `drawer-streak ${s.type}`;
+          streakEl.textContent =
+            s.type === "hit"
+              ? `🔥 Hit the line ${s.count} games in a row`
+              : `❄️ Missed the line ${s.count} games in a row`;
+        } else {
+          streakEl.className = "drawer-streak";
+        }
+
+        // Game log
+        const lineVal = parseFloat(line);
+        const tbody = document.getElementById("drawerRows");
+        tbody.innerHTML = "";
+        data.games.forEach((g) => {
+          const val = isCombo ? g.combo_total : g[_drawerStat];
+          const hit = val > lineVal;
+          tbody.innerHTML += `
+          <tr>
+            <td>${g.date}</td>
+            <td style="color:var(--muted)">${g.matchup}</td>
+            <td><strong>${val}</strong></td>
+            <td><span class="hit-pill ${hit ? "hit" : "miss"}">${hit ? "✓ Hit" : "✗ Miss"}</span></td>
+          </tr>`;
+        });
+      });
+  }
+
+  // Close on Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeDrawer();
+  });
+</script>
