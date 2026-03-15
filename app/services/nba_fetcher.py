@@ -1,7 +1,7 @@
-from nba_api.stats.endpoints import playergamelog, leaguedashteamstats
+from nba_api.stats.endpoints import playergamelog, leaguedashteamstats, scoreboardv2
 from nba_api.stats.static import players, teams as nba_teams
 import pandas as pd
-import time, random
+import datetime, time, random
 
 SEASON = "2025-26"
 
@@ -73,6 +73,33 @@ def fetch_opponent_defense(season: str = SEASON) -> dict:
             "opp_fg3m": row.get("OPP_FG3M"),
         }
 
-    print(f"✅ Opponent defense loaded for {len(result)} teams: {list(result.keys())[:5]}...")
+    print(f"✅ Opponent defense loaded for {len(result)} teams")
     return result
 
+def fetch_todays_matchups() -> dict:
+    """
+    Returns dict of team_abbr -> {"opponent": abbr, "location": "Home"/"Road"}
+    using today's NBA scoreboard.
+    """
+    try:
+        time.sleep(0.6)
+        id_to_abbr = {t["id"]: t["abbreviation"] for t in nba_teams.get_teams()}
+        today = datetime.date.today().strftime("%m/%d/%Y")
+        board = scoreboardv2.ScoreboardV2(game_date=today, day_offset=0, timeout=15)
+        games = board.get_data_frames()[0]  # GameHeader
+
+        matchups = {}
+        for _, row in games.iterrows():
+            home_id = int(row["HOME_TEAM_ID"])
+            away_id = int(row["VISITOR_TEAM_ID"])
+            home    = id_to_abbr.get(home_id)
+            away    = id_to_abbr.get(away_id)
+            if home and away:
+                matchups[home] = {"opponent": away, "location": "Home"}
+                matchups[away] = {"opponent": home, "location": "Road"}
+
+        print(f"✅ Today's matchups loaded: {list(matchups.keys())}")
+        return matchups
+    except Exception as e:
+        print(f"⚠️  fetch_todays_matchups failed: {e}")
+        return {}
