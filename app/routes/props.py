@@ -38,7 +38,9 @@ def get_opp_defense():
     if not _opp_defense_cache:
         try:
             _opp_defense_cache = fetch_opponent_defense()
-        except Exception:
+            print(f"✅ Opponent defense loaded for {len(_opp_defense_cache)} teams")
+        except Exception as e:
+            print(f"❌ fetch_opponent_defense failed: {e}")
             _opp_defense_cache = {}
     return _opp_defense_cache
 
