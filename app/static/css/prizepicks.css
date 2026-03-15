@@ -1,66 +1,83 @@
+/* ── Filters bar ── */
 .pp-filters {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.65rem;
   flex-wrap: wrap;
   margin-bottom: 1.25rem;
   animation: fadeUp 0.3s ease both;
 }
 .pp-filters select {
-  padding: 8px 14px;
+  padding: 7px 12px;
   border: 1.5px solid var(--border);
   border-radius: var(--radius);
   background: var(--surface);
   color: var(--text);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-family: inherit;
   cursor: pointer;
   transition: border-color 0.2s;
+  min-width: unset;
 }
 .pp-filters select:focus {
   outline: none;
   border-color: var(--accent);
 }
 
+/* ── Player cell ── */
 .player-cell {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  min-width: 0;
+  gap: 0.6rem;
+}
+.mini-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--border);
+}
+.mini-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .player-info {
   min-width: 0;
-  overflow: hidden;
 }
 .player-name {
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 160px;
+  max-width: 180px;
 }
 .player-meta {
   color: var(--muted);
-  font-size: 0.78rem;
-  margin-top: 2px;
+  font-size: 0.75rem;
+  margin-top: 1px;
+  white-space: nowrap;
 }
 
+/* ── Stat chip ── */
 .stat-chip {
   display: inline-block;
-  padding: 3px 10px;
+  padding: 3px 9px;
   background: #f0f1ff;
   color: var(--accent);
   border-radius: 99px;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 700;
   white-space: nowrap;
 }
 
+/* ── Odds badges ── */
 .odds-badge {
   display: inline-block;
-  padding: 2px 8px;
+  padding: 1px 6px;
   border-radius: 99px;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
   margin-left: 4px;
   vertical-align: middle;
@@ -75,14 +92,94 @@
   color: #991b1b;
 }
 
+/* ── Edge ── */
 .edge-pos {
   color: #10b981;
+  font-weight: 700;
 }
 .edge-neg {
   color: #ef4444;
+  font-weight: 700;
 }
 
-.loading-state {
+/* ── Hit rate bar ── */
+.rate-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 120px;
+}
+.rate-bar-bg {
+  flex: 1;
+  height: 6px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.rate-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+.rate-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  min-width: 36px;
+  text-align: right;
+}
+.rate-high {
+  color: #10b981;
+}
+.rate-mid {
+  color: #6366f1;
+}
+.rate-low {
+  color: #ef4444;
+}
+
+/* ── Confidence badge ── */
+.conf-badge {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  display: inline-block;
+}
+.conf-high {
+  background: #10b98122;
+  color: #10b981;
+}
+.conf-mid {
+  background: #6366f122;
+  color: #6366f1;
+}
+.conf-low {
+  background: #ef444422;
+  color: #ef4444;
+}
+
+/* ── Matchup indicators ── */
+.matchup-easy {
+  color: #10b981;
+  font-weight: 600;
+}
+.matchup-hard {
+  color: #ef4444;
+  font-weight: 600;
+}
+.matchup-neutral {
+  color: var(--muted);
+}
+
+/* ── Streak badge ── */
+.streak-badge {
+  font-size: 0.78rem;
+  margin-left: 4px;
+}
+
+/* ── States ── */
+.loading-state,
+.empty-state {
   text-align: center;
   padding: 4rem;
   color: var(--muted);

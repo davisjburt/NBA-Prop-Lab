@@ -1,6 +1,7 @@
 import sys, os, time
 from datetime import date
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import pandas as pd
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
@@ -11,18 +12,43 @@ from sqlalchemy.exc import IntegrityError
 
 SEASON      = "2025-26"
 MAX_WORKERS = 2
+DEBUG_PLAYERS = {"Shai Gilgeous-Alexander"}  # add any other names here to debug
 
 def update_player(player_id, player_name, last_logged, app):
     time.sleep(0.5)
     with app.app_context():
         try:
             df = fetch_game_logs(player_id, season=SEASON)
-            if df.empty:
-                return player_name, 0, None
 
-            # Only insert rows newer than what we already have
+            # ── DEBUG ──────────────────────────────────────────────
+            if player_name in DEBUG_PLAYERS:
+                print(f"\n{'='*50}")
+                print(f"DEBUG: {player_name}")
+                print(f"  last_logged type : {type(last_logged)}")
+                print(f"  last_logged value: {last_logged}")
+                if df.empty:
+                    print(f"  fetch result     : EMPTY DATAFRAME")
+                else:
+                    print(f"  df row count     : {len(df)}")
+                    print(f"  df['date'] dtype : {df['date'].dtype}")
+                    print(f"  df['date'] sample: {df['date'].head(3).tolist()}")
+                    print(f"  date[0] type     : {type(df['date'].iloc[0])}")
+                print(f"{'='*50}\n")
+            # ──────────────────────────────────────────────────────
+
+            if df.empty:
+                return player_name, 0, "empty dataframe from API"
+
+            # Normalize dates to datetime.date
+            df["date"] = pd.to_datetime(df["date"]).dt.date
+
             if last_logged:
+                last_logged = last_logged.date() \
+                    if hasattr(last_logged, "date") else last_logged
                 df = df[df["date"] > last_logged]
+
+                if player_name in DEBUG_PLAYERS:
+                    print(f"DEBUG {player_name}: {len(df)} rows after date filter (> {last_logged})\n")
 
             if df.empty:
                 return player_name, 0, None
@@ -46,29 +72,33 @@ def update_player(player_id, player_name, last_logged, app):
 
             db.session.commit()
             return player_name, new_rows, None
+
         except Exception as e:
             db.session.rollback()
             return player_name, 0, str(e)
 
 def update():
     app = create_app()
-    print(f"Running update (catching up all missed games)...\n")
+    print("Running update (catching up all missed games)...\n")
 
     with app.app_context():
         players = Player.query.all()
-
-        # Build list of (player_id, name, last_logged_date)
         player_list = []
         for p in players:
             latest = db.session.query(db.func.max(PlayerGameStat.date)) \
                         .filter_by(player_id=p.id).scalar()
             player_list.append((p.id, p.name, latest))
 
+        with_data    = [(pid, n, l) for pid, n, l in player_list if l]
+        without_data = [(pid, n, l) for pid, n, l in player_list if not l]
+        if with_data:
+            most_recent = max(l for _, _, l in with_data)
+            print(f"📅 Most recent game in DB : {most_recent}")
+        print(f"📊 {len(with_data)} players have data, {len(without_data)} have none\n")
+
     total   = len(player_list)
     updated = 0
     skipped = 0
-
-    print(f"Checking {total} players for new games...\n")
 
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         futures = {
@@ -87,9 +117,9 @@ def update():
             else:
                 skipped += 1
                 if skipped % 50 == 0:
-                    print(f"  ... {skipped} players up to date so far")
+                    print(f"  ({skipped} players up to date so far...)")
 
-    print(f"\n✅ Update complete — {updated} players had new games, {skipped} were already up to date.")
+    print(f"\n✅ Done — {updated} players updated, {skipped} already up to date.")
 
 if __name__ == "__main__":
     update()

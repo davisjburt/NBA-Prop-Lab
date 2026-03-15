@@ -29,6 +29,7 @@ body {
   min-height: 100vh;
 }
 
+/* ── Nav ── */
 nav {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
@@ -56,7 +57,6 @@ nav {
   width: 28px;
   height: 28px;
 }
-
 .nav-links {
   display: flex;
   gap: 0.5rem;
@@ -76,12 +76,20 @@ nav {
   color: var(--accent);
 }
 
+/* ── Page layouts ── */
 .page {
   max-width: 960px;
   margin: 0 auto;
   padding: 2rem;
 }
 
+/* Wide variant — used by prizepicks */
+.page-wide {
+  width: 100%;
+  padding: 24px 32px;
+}
+
+/* ── Cards ── */
 .controls-card {
   background: var(--surface);
   border: 1.5px solid var(--border);
@@ -117,6 +125,7 @@ nav {
   text-transform: uppercase;
   letter-spacing: 0.4px;
 }
+
 select,
 input[type="number"] {
   padding: 0.6rem 0.9rem;
@@ -160,11 +169,13 @@ input[type="number"]:focus {
   transform: scale(0.97);
 }
 
+/* ── Table card ── */
 .table-card {
   background: var(--surface);
   border: 1.5px solid var(--border);
   border-radius: var(--radius);
-  overflow: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   box-shadow: var(--shadow-sm);
   animation: fadeUp 0.4s 0.2s ease both;
   margin-bottom: 3rem;
@@ -175,14 +186,16 @@ input[type="number"]:focus {
   padding: 1.25rem 1.5rem;
   border-bottom: 1px solid var(--border);
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
+  white-space: nowrap;
 }
 th {
-  padding: 0.75rem 1.5rem;
+  padding: 0.65rem 1rem;
   text-align: left;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--muted);
   text-transform: uppercase;
@@ -197,8 +210,8 @@ th:hover {
   color: var(--accent);
 }
 td {
-  padding: 0.8rem 1.5rem;
-  font-size: 0.9rem;
+  padding: 0.65rem 1rem;
+  font-size: 0.875rem;
   border-bottom: 1px solid var(--border);
 }
 tr:last-child td {
@@ -212,6 +225,7 @@ tr.data-row:hover td {
   background: #fafbff;
 }
 
+/* ── Avatars ── */
 .player-avatar {
   border-radius: 50%;
   background: var(--border);
@@ -228,6 +242,7 @@ tr.data-row:hover td {
   border-radius: 50%;
 }
 
+/* ── Animations ── */
 @keyframes fadeUp {
   from {
     opacity: 0;

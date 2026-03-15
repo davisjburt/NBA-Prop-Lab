@@ -26,12 +26,12 @@
       </div>
     </nav>
 
-    <div class="page">
+    <div class="page-wide">
       <div class="page-header">
         <h1>🎯 PrizePicks Edge Finder</h1>
         <p>
-          Today's live PrizePicks board ranked by historical hit rate. Averages
-          exclude outlier games.
+          Live board ranked by <strong>confidence score</strong> — combining hit
+          rate, matchup difficulty, edge, and streak.
         </p>
       </div>
 
@@ -51,27 +51,34 @@
           <option value="ra">REB+AST</option>
           <option value="bs">BLK+STL</option>
         </select>
+
         <select id="filterOddsType" onchange="renderTable()">
           <option value="">All Lines</option>
           <option value="standard">Standard Only</option>
           <option value="goblin">Goblin Only 👺</option>
           <option value="demon">Demon Only 😈</option>
         </select>
+
         <select id="filterEdge" onchange="renderTable()">
           <option value="">All Edges</option>
           <option value="positive">Positive Edge (Over)</option>
           <option value="negative">Negative Edge (Under)</option>
         </select>
-        <select id="filterHR" onchange="renderTable()">
-          <option value="">All Hit Rates</option>
-          <option value="70">70%+ Hit Rate</option>
-          <option value="60">60%+ Hit Rate</option>
+
+        <select id="filterConf" onchange="renderTable()">
+          <option value="">All Confidence</option>
+          <option value="80">80+ Confidence</option>
+          <option value="70">70+ Confidence</option>
+          <option value="60">60+ Confidence</option>
         </select>
+
         <select id="sortField" onchange="sortBy(this.value)">
-          <option value="hit_rate">Sort: Hit Rate</option>
+          <option value="confidence">Sort: Confidence</option>
+          <option value="hit_rate">Sort: L10 Hit Rate</option>
+          <option value="hit_rate_l5">Sort: L5 Hit Rate</option>
           <option value="edge">Sort: Edge</option>
           <option value="avg_l5">Sort: L5 Avg</option>
-          <option value="avg_l10">Sort: L10 Avg</option>
+          <option value="matchup_mult">Sort: Matchup</option>
           <option value="line">Sort: Line</option>
         </select>
       </div>
@@ -93,15 +100,21 @@
                 L10 Avg ↕
               </th>
               <th onclick="sortBy('edge')" style="cursor: pointer">Edge ↕</th>
+              <th onclick="sortBy('matchup_mult')" style="cursor: pointer">
+                Matchup ↕
+              </th>
               <th onclick="sortBy('hit_rate')" style="cursor: pointer">
-                Hit Rate ↕
+                L10 HR ↕
+              </th>
+              <th onclick="sortBy('confidence')" style="cursor: pointer">
+                Confidence ↕
               </th>
               <th>Sample</th>
             </tr>
           </thead>
           <tbody id="results">
             <tr>
-              <td colspan="9">
+              <td colspan="11">
                 <div class="loading-state">⏳ Loading today's board...</div>
               </td>
             </tr>
@@ -112,7 +125,7 @@
 
     <script>
       let allData = [];
-      let sortKey = "hit_rate";
+      let sortKey = "confidence";
       let sortDir = -1;
 
       function rateColor(r) {
@@ -127,13 +140,30 @@
       function fmtEdge(e) {
         return e === null ? "—" : e > 0 ? `+${e}` : `${e}`;
       }
-
       function oddsTypeBadge(type) {
         if (type === "goblin")
           return `<span class="odds-badge goblin">👺 Goblin</span>`;
         if (type === "demon")
           return `<span class="odds-badge demon">😈 Demon</span>`;
         return "";
+      }
+      function matchupBadge(mult) {
+        if (mult === null || mult === undefined) return "—";
+        if (mult >= 1.1)
+          return `<span class="matchup-easy">▲ ${mult.toFixed(2)}</span>`;
+        if (mult <= 0.9)
+          return `<span class="matchup-hard">▼ ${mult.toFixed(2)}</span>`;
+        return `<span class="matchup-neutral">~ ${mult.toFixed(2)}</span>`;
+      }
+      function confidenceBadge(score) {
+        const cls =
+          score >= 80 ? "conf-high" : score >= 65 ? "conf-mid" : "conf-low";
+        return `<span class="conf-badge ${cls}">${score}</span>`;
+      }
+      function streakBadge(streak) {
+        if (!streak || streak.count < 2) return "";
+        const icon = streak.type === "hit" ? "🔥" : "❄️";
+        return `<span class="streak-badge">${icon}${streak.count}</span>`;
       }
 
       function sortBy(key) {
@@ -148,19 +178,19 @@
 
       function renderTable() {
         const statFilter = document.getElementById("filterStat").value;
-        const oddsTypeFilter = document.getElementById("filterOddsType").value;
+        const oddsFilter = document.getElementById("filterOddsType").value;
         const edgeFilter = document.getElementById("filterEdge").value;
-        const hrFilter =
-          parseFloat(document.getElementById("filterHR").value) || 0;
+        const confFilter =
+          parseFloat(document.getElementById("filterConf").value) || 0;
 
         let filtered = allData.filter((p) => {
           if (statFilter && p.stat !== statFilter) return false;
-          if (oddsTypeFilter && p.odds_type !== oddsTypeFilter) return false;
+          if (oddsFilter && p.odds_type !== oddsFilter) return false;
           if (edgeFilter === "positive" && (p.edge === null || p.edge <= 0))
             return false;
           if (edgeFilter === "negative" && (p.edge === null || p.edge >= 0))
             return false;
-          if (hrFilter && p.hit_rate * 100 < hrFilter) return false;
+          if (confFilter && p.confidence < confFilter) return false;
           return true;
         });
 
@@ -172,7 +202,7 @@
 
         const tbody = document.getElementById("results");
         if (!filtered.length) {
-          tbody.innerHTML = `<tr><td colspan="9"><div class="empty-state">😶<p>No props match your filters.</p></div></td></tr>`;
+          tbody.innerHTML = `<tr><td colspan="11"><div class="empty-state">😶<p>No props match your filters.</p></div></td></tr>`;
           return;
         }
 
@@ -182,32 +212,34 @@
           const tr = document.createElement("tr");
           tr.className = "data-row";
           tr.innerHTML = `
-          <td style="color:var(--muted);font-size:0.85rem">${i + 1}</td>
-          <td>
-            <div class="player-cell">
-              <div class="mini-avatar">
-                <img src="https://cdn.nba.com/headshots/nba/latest/260x190/${p.id}.png" alt="${p.name}" />
+            <td style="color:var(--muted);font-size:0.85rem">${i + 1}</td>
+            <td>
+              <div class="player-cell">
+                <div class="mini-avatar">
+                  <img src="https://cdn.nba.com/headshots/nba/latest/260x190/${p.id}.png" alt="${p.name}" />
+                </div>
+                <div class="player-info">
+                  <div class="player-name">${p.name} ${streakBadge(p.streak)}</div>
+                  <div class="player-meta">${p.team} · ${p.position} · ${p.location ?? ""} vs ${p.opponent ?? ""}</div>
+                </div>
               </div>
-              <div class="player-info">
-                <div class="player-name">${p.name}</div>
-                <div class="player-meta">${p.team} · ${p.position}</div>
+            </td>
+            <td><span class="stat-chip">${p.label}</span></td>
+            <td style="font-weight:600;white-space:nowrap">${p.line} ${oddsTypeBadge(p.odds_type)}</td>
+            <td>${p.avg_l5 ?? "—"}</td>
+            <td>${p.avg_l10 ?? "—"}</td>
+            <td class="${edgeClass(p.edge)}" style="font-weight:700">${fmtEdge(p.edge)}</td>
+            <td>${matchupBadge(p.matchup_mult)}</td>
+            <td>
+              <div class="rate-bar-wrap">
+                <div class="rate-bar-bg">
+                  <div class="rate-bar-fill" style="width:${pct}%;background:${rateColor(p.hit_rate)}"></div>
+                </div>
+                <span class="rate-label ${rateClass(p.hit_rate)}">${pct}%</span>
               </div>
-            </div>
-          </td>
-          <td><span class="stat-chip">${p.label}</span></td>
-          <td style="font-weight:600;white-space:nowrap">${p.line} ${oddsTypeBadge(p.odds_type)}</td>
-          <td>${p.avg_l5 ?? "—"}</td>
-          <td>${p.avg_l10 ?? "—"}</td>
-          <td class="${edgeClass(p.edge)}" style="font-weight:700">${fmtEdge(p.edge)}</td>
-          <td>
-            <div class="rate-bar-wrap">
-              <div class="rate-bar-bg">
-                <div class="rate-bar-fill" style="width:${pct}%;background:${rateColor(p.hit_rate)}"></div>
-              </div>
-              <span class="rate-label ${rateClass(p.hit_rate)}">${pct}%</span>
-            </div>
-          </td>
-          <td style="color:var(--muted)">${p.hits}/${p.sample}</td>`;
+            </td>
+            <td>${confidenceBadge(p.confidence)}</td>
+            <td style="color:var(--muted)">${p.hits}/${p.sample}</td>`;
           tr.onclick = () => (window.location.href = `/player/${p.id}`);
           tbody.appendChild(tr);
         });
@@ -218,16 +250,11 @@
         .then((data) => {
           if (data.error) throw new Error(data.error);
           allData = data;
-
-          // DEBUG
-          const types = [...new Set(data.map((p) => p.odds_type))];
-          console.log("odds_type values:", types);
-
           renderTable();
         })
         .catch((err) => {
           document.getElementById("results").innerHTML =
-            `<tr><td colspan="9"><div class="empty-state">❌<p>${err.message || "Failed to load PrizePicks data."}</p></div></td></tr>`;
+            `<tr><td colspan="11"><div class="empty-state">❌<p>${err.message || "Failed to load PrizePicks data."}</p></div></td></tr>`;
         });
     </script>
   </body>
