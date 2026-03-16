@@ -586,7 +586,5 @@ tr.data-row:hover td {
 
 @font-face {
   font-family: "Milker";
-  src: url("/static/milker.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
+  src: url("/static/Milker.otf") format("opentype");
 }
