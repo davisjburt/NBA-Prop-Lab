@@ -9,123 +9,141 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/static/css/base.css" />
-    <link rel="stylesheet" href="/static/css/discover.css" />
     <link rel="stylesheet" href="/static/css/prizepicks.css" />
   </head>
   <body>
     <nav>
       <a href="/" class="nav-logo">
-        Prop Lab
-        <img src="/static/proplab.svg" alt="Prop Lab" class="nav-logo-icon" />
+        <img src="/static/proplab.svg" class="nav-logo-icon" /> Prop Lab
       </a>
       <div class="nav-links">
-        <a href="/">Players</a>
-        <a href="/explore">Explore</a>
-        <a href="/prizepicks" class="active">PrizePicks</a>
+        <a href="/"><i data-lucide="users"></i> Players</a>
+        <a href="/explore"><i data-lucide="compass"></i> Explore</a>
+        <a href="/prizepicks" class="active"
+          ><i data-lucide="book"></i> PrizePicks</a
+        >
       </div>
     </nav>
 
     <div class="page-wide">
       <div class="page-header">
-        <h1>🎯 PrizePicks Edge Finder</h1>
+        <h1>PrizePicks Edge Finder</h1>
         <p>
           Live board ranked by <strong>confidence score</strong> — combining hit
           rate, matchup difficulty, edge, and streak.
         </p>
       </div>
 
-      <div class="pp-filters">
-        <select id="filterStat" onchange="renderTable()">
-          <option value="">All Stats</option>
-          <option value="pts">Points</option>
-          <option value="reb">Rebounds</option>
-          <option value="ast">Assists</option>
-          <option value="stl">Steals</option>
-          <option value="blk">Blocks</option>
-          <option value="fg3m">3PM</option>
-          <option value="tov">Turnovers</option>
-          <option value="pra">PTS+REB+AST</option>
-          <option value="pr">PTS+REB</option>
-          <option value="pa">PTS+AST</option>
-          <option value="ra">REB+AST</option>
-          <option value="bs">BLK+STL</option>
-        </select>
-
-        <select id="filterOddsType" onchange="renderTable()">
-          <option value="">All Lines</option>
-          <option value="standard">Standard Only</option>
-          <option value="goblin">Goblin Only 👺</option>
-          <option value="demon">Demon Only 😈</option>
-        </select>
-
-        <select id="filterEdge" onchange="renderTable()">
-          <option value="">All Edges</option>
-          <option value="positive">Positive Edge (Over)</option>
-          <option value="negative">Negative Edge (Under)</option>
-        </select>
-
-        <select id="filterConf" onchange="renderTable()">
-          <option value="">All Confidence</option>
-          <option value="80">80+ Confidence</option>
-          <option value="70">70+ Confidence</option>
-          <option value="60">60+ Confidence</option>
-        </select>
-
-        <select id="sortField" onchange="sortBy(this.value)">
-          <option value="confidence">Sort: Confidence</option>
-          <option value="hit_rate">Sort: L10 Hit Rate</option>
-          <option value="hit_rate_l5">Sort: L5 Hit Rate</option>
-          <option value="edge">Sort: Edge</option>
-          <option value="avg_l5">Sort: L5 Avg</option>
-          <option value="matchup_mult">Sort: Matchup</option>
-          <option value="line">Sort: Line</option>
-        </select>
+      <!-- ── Tab switcher ── -->
+      <div class="pp-tabs">
+        <button class="pp-tab active" onclick="switchTab('props', this)">
+          <i data-lucide="layout-list"></i> Props Board
+        </button>
+        <button class="pp-tab" onclick="switchTab('parlays', this)">
+          <i data-lucide="layers"></i> Best Parlays
+        </button>
       </div>
 
-      <div class="table-card">
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Player</th>
-              <th>Stat</th>
-              <th onclick="sortBy('line')" style="cursor: pointer">
-                PP Line ↕
-              </th>
-              <th onclick="sortBy('avg_l5')" style="cursor: pointer">
-                L5 Avg ↕
-              </th>
-              <th onclick="sortBy('avg_l10')" style="cursor: pointer">
-                L10 Avg ↕
-              </th>
-              <th onclick="sortBy('edge')" style="cursor: pointer">Edge ↕</th>
-              <th onclick="sortBy('matchup_mult')" style="cursor: pointer">
-                Matchup ↕
-              </th>
-              <th onclick="sortBy('hit_rate')" style="cursor: pointer">
-                L10 HR ↕
-              </th>
-              <th onclick="sortBy('confidence')" style="cursor: pointer">
-                Confidence ↕
-              </th>
-              <th>Sample</th>
-            </tr>
-          </thead>
-          <tbody id="results">
-            <tr>
-              <td colspan="11">
-                <div class="loading-state">⏳ Loading today's board...</div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- ══════════════ PROPS BOARD ══════════════ -->
+      <div id="panel-props">
+        <div class="pp-filters">
+          <select id="filterStat" onchange="renderTable()">
+            <option value="">All Stats</option>
+            <option value="pts">Points</option>
+            <option value="reb">Rebounds</option>
+            <option value="ast">Assists</option>
+            <option value="stl">Steals</option>
+            <option value="blk">Blocks</option>
+            <option value="fg3m">3PM</option>
+            <option value="tov">Turnovers</option>
+            <option value="pra">PTS+REB+AST</option>
+            <option value="pr">PTS+REB</option>
+            <option value="pa">PTS+AST</option>
+            <option value="ra">REB+AST</option>
+            <option value="bs">BLK+STL</option>
+          </select>
+          <select id="filterOddsType" onchange="renderTable()">
+            <option value="">All Lines</option>
+            <option value="standard">Standard Only</option>
+            <option value="goblin">Goblin Only</option>
+            <option value="demon">Demon Only</option>
+          </select>
+          <select id="filterEdge" onchange="renderTable()">
+            <option value="">All Edges</option>
+            <option value="positive">Positive Edge</option>
+            <option value="negative">Negative Edge</option>
+          </select>
+          <select id="filterConf" onchange="renderTable()">
+            <option value="">All Confidence</option>
+            <option value="80">80+ Score</option>
+            <option value="70">70+ Score</option>
+            <option value="60">60+ Score</option>
+          </select>
+          <select id="sortField" onchange="sortBy(this.value)">
+            <option value="confidence">Sort: Confidence</option>
+            <option value="hit_rate">Sort: L10 Hit Rate</option>
+            <option value="hit_rate_l5">Sort: L5 Hit Rate</option>
+            <option value="edge">Sort: Edge</option>
+            <option value="avg_l5">Sort: L5 Avg</option>
+            <option value="matchup_mult">Sort: Matchup</option>
+            <option value="line">Sort: Line</option>
+          </select>
+        </div>
+
+        <div class="table-card">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Player</th>
+                <th>Stat</th>
+                <th onclick="sortBy('line')">PP Line</th>
+                <th onclick="sortBy('avg_l5')">L5 Avg</th>
+                <th onclick="sortBy('avg_l10')">L10 Avg</th>
+                <th onclick="sortBy('edge')">Edge</th>
+                <th onclick="sortBy('matchup_mult')">Matchup</th>
+                <th onclick="sortBy('hit_rate')">L10 HR</th>
+                <th onclick="sortBy('confidence')">Confidence</th>
+                <th>Sample</th>
+              </tr>
+            </thead>
+            <tbody id="results">
+              <tr>
+                <td colspan="11">
+                  <div class="loading-state">Loading today's board...</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ══════════════ PARLAYS ══════════════ -->
+      <div id="panel-parlays" style="display: none">
+        <div class="parlay-tabs">
+          <button class="pl-tab active" onclick="switchParlayTab('two', this)">
+            <i data-lucide="git-merge"></i> 2-Leg Parlays
+          </button>
+          <button class="pl-tab" onclick="switchParlayTab('three', this)">
+            <i data-lucide="git-branch"></i> 3-Leg Parlays
+          </button>
+        </div>
+        <div id="parlay-two">
+          <div class="loading-state">Loading parlays...</div>
+        </div>
+        <div id="parlay-three" style="display: none">
+          <div class="loading-state">Loading parlays...</div>
+        </div>
       </div>
     </div>
+
+    {% include 'base_drawer.html' %}
 
     <script>
       let allData = [];
       let sortKey = "confidence";
       let sortDir = -1;
+      let parlaysLoaded = false;
 
       function rateColor(r) {
         return r >= 0.7 ? "#10b981" : r <= 0.4 ? "#ef4444" : "#6366f1";
@@ -139,32 +157,64 @@
       function fmtEdge(e) {
         return e === null ? "—" : e > 0 ? `+${e}` : `${e}`;
       }
+      function confClass(s) {
+        return s >= 80 ? "conf-high" : s >= 65 ? "conf-mid" : "conf-low";
+      }
+
       function oddsTypeBadge(type) {
         if (type === "goblin")
-          return `<span class="odds-badge goblin">👺 Goblin</span>`;
+          return `<span class="odds-badge goblin"><i data-lucide="chevrons-down"></i> Goblin</span>`;
         if (type === "demon")
-          return `<span class="odds-badge demon">😈 Demon</span>`;
+          return `<span class="odds-badge demon"><i data-lucide="chevrons-up"></i> Demon</span>`;
         return "";
       }
       function matchupBadge(mult) {
         if (mult === null || mult === undefined) return "—";
         if (mult >= 1.1)
-          return `<span class="matchup-easy">▲ ${mult.toFixed(2)}</span>`;
+          return `<span class="matchup-easy"><i data-lucide="trending-up" style="width:12px;height:12px;vertical-align:middle"></i> ${mult.toFixed(2)}</span>`;
         if (mult <= 0.9)
-          return `<span class="matchup-hard">▼ ${mult.toFixed(2)}</span>`;
-        return `<span class="matchup-neutral">~ ${mult.toFixed(2)}</span>`;
-      }
-      function confidenceBadge(score) {
-        const cls =
-          score >= 80 ? "conf-high" : score >= 65 ? "conf-mid" : "conf-low";
-        return `<span class="conf-badge ${cls}">${score}</span>`;
+          return `<span class="matchup-hard"><i data-lucide="trending-down" style="width:12px;height:12px;vertical-align:middle"></i> ${mult.toFixed(2)}</span>`;
+        return `<span class="matchup-neutral">${mult.toFixed(2)}</span>`;
       }
       function streakBadge(streak) {
         if (!streak || streak.count < 2) return "";
-        const icon = streak.type === "hit" ? "🔥" : "❄️";
-        return `<span class="streak-badge">${icon}${streak.count}</span>`;
+        const cls = streak.type === "hit" ? "hot" : "cold";
+        const icon =
+          streak.type === "hit"
+            ? `<i data-lucide="flame"></i>`
+            : `<i data-lucide="snowflake"></i>`;
+        return `<span class="streak-badge ${cls}">${icon}${streak.count}</span>`;
       }
 
+      // ── Tab switching ──
+      function switchTab(name, btn) {
+        document
+          .querySelectorAll(".pp-tab")
+          .forEach((t) => t.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById("panel-props").style.display =
+          name === "props" ? "" : "none";
+        document.getElementById("panel-parlays").style.display =
+          name === "parlays" ? "" : "none";
+        if (name === "parlays" && !parlaysLoaded) {
+          parlaysLoaded = true;
+          loadParlays();
+        }
+        lucide.createIcons();
+      }
+
+      function switchParlayTab(name, btn) {
+        document
+          .querySelectorAll(".pl-tab")
+          .forEach((t) => t.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById("parlay-two").style.display =
+          name === "two" ? "" : "none";
+        document.getElementById("parlay-three").style.display =
+          name === "three" ? "" : "none";
+      }
+
+      // ── Props board ──
       function sortBy(key) {
         if (sortKey === key) sortDir *= -1;
         else {
@@ -192,56 +242,60 @@
           if (confFilter && p.confidence < confFilter) return false;
           return true;
         });
-
-        filtered.sort((a, b) => {
-          const av = a[sortKey] ?? -Infinity;
-          const bv = b[sortKey] ?? -Infinity;
-          return sortDir * (av - bv);
-        });
+        filtered.sort(
+          (a, b) =>
+            sortDir * ((a[sortKey] ?? -Infinity) - (b[sortKey] ?? -Infinity)),
+        );
 
         const tbody = document.getElementById("results");
         if (!filtered.length) {
-          tbody.innerHTML = `<tr><td colspan="11"><div class="empty-state">😶<p>No props match your filters.</p></div></td></tr>`;
+          tbody.innerHTML = `<tr><td colspan="11"><div class="empty-state">No props match your filters.</div></td></tr>`;
           return;
         }
-
         tbody.innerHTML = "";
         filtered.forEach((p, i) => {
           const pct = (p.hit_rate * 100).toFixed(1);
           const tr = document.createElement("tr");
           tr.className = "data-row";
           tr.innerHTML = `
-            <td style="color:var(--muted);font-size:0.85rem">${i + 1}</td>
-            <td>
-              <div class="player-cell">
-                <div class="mini-avatar">
-                  <img src="https://cdn.nba.com/headshots/nba/latest/260x190/${p.id}.png" alt="${p.name}" />
-                </div>
-                <div class="player-info">
-                  <div class="player-name">${p.name} ${streakBadge(p.streak)}</div>
-                  <div class="player-meta">${p.team} · ${p.position} · ${p.location ?? ""} vs ${p.opponent ?? ""}</div>
-                </div>
+          <td style="color:var(--muted);font-size:.85rem">${i + 1}</td>
+          <td>
+            <div class="player-cell">
+              <div class="mini-avatar"><img src="https://cdn.nba.com/headshots/nba/latest/260x190/${p.id}.png" alt="${p.name}" /></div>
+              <div class="player-info">
+                <div class="player-name">${p.name} ${streakBadge(p.streak)}</div>
+                <div class="player-meta">${p.team} · ${p.position} · ${p.location ?? ""} vs ${p.opponent ?? ""}</div>
               </div>
-            </td>
-            <td><span class="stat-chip">${p.label}</span></td>
-            <td style="font-weight:600;white-space:nowrap">${p.line} ${oddsTypeBadge(p.odds_type)}</td>
-            <td>${p.avg_l5 ?? "—"}</td>
-            <td>${p.avg_l10 ?? "—"}</td>
-            <td class="${edgeClass(p.edge)}" style="font-weight:700">${fmtEdge(p.edge)}</td>
-            <td>${matchupBadge(p.matchup_mult)}</td>
-            <td>
-              <div class="rate-bar-wrap">
-                <div class="rate-bar-bg">
-                  <div class="rate-bar-fill" style="width:${pct}%;background:${rateColor(p.hit_rate)}"></div>
-                </div>
-                <span class="rate-label ${rateClass(p.hit_rate)}">${pct}%</span>
-              </div>
-            </td>
-            <td>${confidenceBadge(p.confidence)}</td>
-            <td style="color:var(--muted)">${p.hits}/${p.sample}</td>`;
-          tr.onclick = () => (window.location.href = `/player/${p.id}`);
+            </div>
+          </td>
+          <td><span class="stat-chip">${p.label}</span></td>
+          <td style="font-weight:600;white-space:nowrap">${p.line}${oddsTypeBadge(p.odds_type)}</td>
+          <td>${p.avg_l5 ?? "—"}</td>
+          <td>${p.avg_l10 ?? "—"}</td>
+          <td class="${edgeClass(p.edge)}" style="font-weight:700">${fmtEdge(p.edge)}</td>
+          <td>${matchupBadge(p.matchup_mult)}</td>
+          <td>
+            <div class="rate-bar-wrap">
+              <div class="rate-bar-bg"><div class="rate-bar-fill" style="width:${pct}%;background:${rateColor(p.hit_rate)}"></div></div>
+              <span class="rate-label ${rateClass(p.hit_rate)}">${pct}%</span>
+            </div>
+          </td>
+          <td><span class="conf-badge ${confClass(p.confidence)}">${p.confidence}</span></td>
+          <td style="color:var(--muted)">${p.hits}/${p.sample}</td>`;
+          tr.onclick = () => {
+            openDrawer(p.id);
+            setTimeout(() => {
+              const chip = document.querySelector(
+                `.d-chip[data-stat="${p.stat}"]`,
+              );
+              if (chip) drawerSelectStat(chip);
+              document.getElementById("drawerLine").value = p.line;
+              drawerLoad();
+            }, 150);
+          };
           tbody.appendChild(tr);
         });
+        lucide.createIcons();
       }
 
       fetch("/api/prizepicks")
@@ -253,9 +307,72 @@
         })
         .catch((err) => {
           document.getElementById("results").innerHTML =
-            `<tr><td colspan="11"><div class="empty-state">❌<p>${err.message || "Failed to load PrizePicks data."}</p></div></td></tr>`;
+            `<tr><td colspan="11"><div class="empty-state">${err.message || "Failed to load PrizePicks data."}</div></td></tr>`;
         });
+
+      // ── Parlays ──
+      function buildLeg(leg) {
+        const pct = leg.hit_rate ? (leg.hit_rate * 100).toFixed(1) + "%" : "—";
+        return `
+        <div class="parlay-leg" onclick="openLegDrawer(event,${leg.id},'${leg.stat}',${leg.line})">
+          <div class="leg-avatar"><img src="https://cdn.nba.com/headshots/nba/latest/260x190/${leg.id}.png" alt="${leg.name}" /></div>
+          <div class="leg-info">
+            <div class="leg-name">${leg.name}</div>
+            <div class="leg-meta">${leg.team} · ${leg.position} · ${leg.location ?? ""} vs ${leg.opponent ?? ""}</div>
+          </div>
+          <div class="leg-right">
+            <span class="stat-chip">${leg.label}</span>
+            <div class="leg-line">Over ${leg.line}</div>
+            <div class="leg-rate" style="color:${rateColor(leg.hit_rate ?? 0)}">${pct} L10</div>
+          </div>
+        </div>`;
+      }
+
+      function openLegDrawer(e, id, stat, line) {
+        e.stopPropagation();
+        openDrawer(id);
+        setTimeout(() => {
+          const chip = document.querySelector(`.d-chip[data-stat="${stat}"]`);
+          if (chip) drawerSelectStat(chip);
+          document.getElementById("drawerLine").value = line;
+          drawerLoad();
+        }, 150);
+      }
+
+      function buildParlayCard(parlay, rank) {
+        const corrWarning = parlay.correlated
+          ? `<span class="corr-warning"><i data-lucide="alert-triangle"></i> Same team</span>`
+          : "";
+        return `
+        <div class="parlay-card">
+          <div class="parlay-card-header">
+            <span class="parlay-rank">#${rank}</span>
+            <span class="conf-badge ${confClass(parlay.score)}">Score: ${parlay.score}</span>
+            ${corrWarning}
+          </div>
+          ${parlay.legs.map(buildLeg).join(`<div class="leg-divider"><i data-lucide="plus"></i></div>`)}
+        </div>`;
+      }
+
+      function loadParlays() {
+        fetch("/api/prizepicks/parlays")
+          .then((r) => r.json())
+          .then((data) => {
+            document.getElementById("parlay-two").innerHTML = data.two_leg
+              .length
+              ? data.two_leg.map((p, i) => buildParlayCard(p, i + 1)).join("")
+              : `<div class="empty-state">Not enough high-confidence props for 2-leg parlays today.</div>`;
+            document.getElementById("parlay-three").innerHTML = data.three_leg
+              .length
+              ? data.three_leg.map((p, i) => buildParlayCard(p, i + 1)).join("")
+              : `<div class="empty-state">Not enough high-confidence props for 3-leg parlays today.</div>`;
+            lucide.createIcons();
+          })
+          .catch(() => {
+            document.getElementById("parlay-two").innerHTML =
+              `<div class="empty-state">Failed to load parlays.</div>`;
+          });
+      }
     </script>
-    {% include 'base_drawer.html' %}
   </body>
 </html>

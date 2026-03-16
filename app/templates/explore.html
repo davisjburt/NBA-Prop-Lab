@@ -13,13 +13,16 @@
   </head>
   <body>
     <nav>
-      <a href="/" class="nav-logo"
-        >Prop Lab <img src="/static/proplab.svg" class="nav-logo-icon"
-      /></a>
+      <a href="/" class="nav-logo">
+        <img src="/static/proplab.svg" class="nav-logo-icon" />
+        Prop Lab
+      </a>
       <div class="nav-links">
-        <a href="/">Players</a>
-        <a href="/explore" class="active">Explore</a>
-        <a href="/prizepicks">PrizePicks</a>
+        <a href="/"><i data-lucide="users"></i> Players</a>
+        <a href="/explore" class="active"
+          ><i data-lucide="compass"></i> Explore</a
+        >
+        <a href="/prizepicks"><i data-lucide="crosshair"></i> PrizePicks</a>
       </div>
     </nav>
 
@@ -29,20 +32,19 @@
         <p>Hot streaks, top performers, and custom prop searches.</p>
       </div>
 
-      <!-- Sub-nav tabs -->
       <div class="explore-tabs">
         <button class="e-tab active" onclick="switchTab('trending', this)">
-          🔥 Trending
+          <i data-lucide="trending-up"></i> Trending
         </button>
         <button class="e-tab" onclick="switchTab('discover', this)">
-          🔍 Discover
+          <i data-lucide="search"></i> Discover
         </button>
       </div>
 
       <!-- Trending panel -->
       <div id="panel-trending">
         <div id="trending-content">
-          <div class="loading-state">⏳ Loading trending props...</div>
+          <div class="loading-state">Loading trending props...</div>
         </div>
       </div>
 
@@ -84,7 +86,18 @@
                 <option value="20">Last 20</option>
               </select>
             </div>
-            <button class="btn" onclick="loadDiscover()">Search</button>
+            <button class="btn" onclick="loadDiscover()">
+              <i
+                data-lucide="search"
+                style="
+                  width: 14px;
+                  height: 14px;
+                  vertical-align: middle;
+                  margin-right: 4px;
+                "
+              ></i>
+              Search
+            </button>
           </div>
         </div>
 
@@ -94,20 +107,17 @@
               <tr>
                 <th>#</th>
                 <th>Player</th>
-                <th onclick="sortDiscover('hit_rate')">Hit Rate ↕</th>
-                <th onclick="sortDiscover('hits')">Hits ↕</th>
-                <th onclick="sortDiscover('avg')">Avg ↕</th>
-                <th onclick="sortDiscover('max')">High ↕</th>
+                <th onclick="sortDiscover('hit_rate')">Hit Rate</th>
+                <th onclick="sortDiscover('hits')">Hits</th>
+                <th onclick="sortDiscover('avg')">Avg</th>
+                <th onclick="sortDiscover('max')">High</th>
                 <th>Sample</th>
               </tr>
             </thead>
             <tbody id="discoverResults">
               <tr>
                 <td colspan="7">
-                  <div class="empty-state">
-                    🔍
-                    <p>Set a line and hit Search.</p>
-                  </div>
+                  <div class="empty-state">Set a line and hit Search.</div>
                 </td>
               </tr>
             </tbody>
@@ -152,7 +162,6 @@
           DISCOVER_LINE_DEFAULTS[s] ?? 10.5;
       }
 
-      // ── Trending ──
       function rateColor(r) {
         return r >= 0.7 ? "#10b981" : r >= 0.55 ? "#6366f1" : "#ef4444";
       }
@@ -162,6 +171,10 @@
 
       function buildTrendCard(p, showStreak) {
         const pct = (p.hit_rate * 100).toFixed(1);
+        const streakIcon =
+          p.streak && p.streak >= 3
+            ? `<span class="streak-pill"><i data-lucide="flame" style="width:12px;height:12px;vertical-align:middle"></i> ${p.streak}</span>`
+            : "";
         return `
         <div class="trend-card" onclick="openDrawer(${p.id})">
           <div class="trend-top">
@@ -172,7 +185,7 @@
               <div class="trend-name">${p.name}</div>
               <div class="trend-meta">${p.team} · ${p.position}</div>
             </div>
-            ${showStreak ? `<span class="streak-pill">🔥 ${p.streak}</span>` : ""}
+            ${showStreak ? streakIcon : ""}
           </div>
           <div class="trend-mid">
             <span class="stat-chip">${p.label}</span>
@@ -193,22 +206,30 @@
           const el = document.getElementById("trending-content");
           const streaks = data.hot_streaks.length
             ? data.hot_streaks.map((p) => buildTrendCard(p, true)).join("")
-            : `<div class="empty-state"><p>No hot streaks right now.</p></div>`;
+            : `<div class="empty-state">No hot streaks right now.</div>`;
           const hitters = data.top_hitters.length
             ? data.top_hitters.map((p) => buildTrendCard(p, false)).join("")
-            : `<div class="empty-state"><p>Nothing to show.</p></div>`;
+            : `<div class="empty-state">Nothing to show.</div>`;
           el.innerHTML = `
-          <div class="section-header"><span>🔥</span><h2>Hot Streaks</h2><span class="section-count">${data.hot_streaks.length} props</span></div>
+          <div class="section-header">
+            <i data-lucide="zap"></i>
+            <h2>Hot Streaks</h2>
+            <span class="section-count">${data.hot_streaks.length} props</span>
+          </div>
           <div class="trend-grid">${streaks}</div>
-          <div class="section-header" style="margin-top:2rem"><span>📈</span><h2>Top Hit Rates (L10)</h2><span class="section-count">${data.top_hitters.length} props</span></div>
+          <div class="section-header" style="margin-top:2rem">
+            <i data-lucide="bar-chart-2"></i>
+            <h2>Top Hit Rates (L10)</h2>
+            <span class="section-count">${data.top_hitters.length} props</span>
+          </div>
           <div class="trend-grid">${hitters}</div>`;
+          lucide.createIcons();
         })
         .catch(() => {
           document.getElementById("trending-content").innerHTML =
-            `<div class="empty-state">😶<p>Failed to load trending data.</p></div>`;
+            `<div class="empty-state">Failed to load trending data.</div>`;
         });
 
-      // ── Discover ──
       let discoverData = [];
       let discoverSortKey = "hit_rate";
       let discoverSortDir = -1;
@@ -220,7 +241,7 @@
         let url = `/api/discover?stat=${stat}&line=${line}`;
         if (last_n) url += `&last_n=${last_n}`;
         document.getElementById("discoverResults").innerHTML =
-          `<tr><td colspan="7"><div class="empty-state">⏳<p>Loading...</p></div></td></tr>`;
+          `<tr><td colspan="7"><div class="empty-state">Loading...</div></td></tr>`;
         fetch(url)
           .then((r) => r.json())
           .then((d) => {
@@ -230,9 +251,9 @@
       }
 
       function sortDiscover(key) {
-        discoverSortKey = key === discoverSortKey ? discoverSortKey : key;
         if (key === discoverSortKey) discoverSortDir *= -1;
         else discoverSortDir = -1;
+        discoverSortKey = key;
         renderDiscover();
       }
 
@@ -242,7 +263,7 @@
         );
         const tbody = document.getElementById("discoverResults");
         if (!sorted.length) {
-          tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state">😶<p>No results.</p></div></td></tr>`;
+          tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state">No results.</div></td></tr>`;
           return;
         }
         tbody.innerHTML = "";

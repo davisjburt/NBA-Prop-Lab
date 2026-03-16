@@ -43,3 +43,6 @@ def get_player(player_id):
         "id": p.id, "name": p.name,
         "team": p.team_abbr, "position": p.position
     })
+@players_bp.route("/parlays")
+def parlays_page():
+    return render_template("parlays.html")

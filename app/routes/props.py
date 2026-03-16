@@ -8,6 +8,7 @@ from app.services.hit_rate import (
 from app.services.prizepicks import fetch_prizepicks_lines, normalize
 from app.services.nba_fetcher import fetch_opponent_defense, fetch_todays_matchups
 import pandas as pd
+import time as _time
 
 props_bp = Blueprint("props", __name__, url_prefix="/api")
 
@@ -30,26 +31,34 @@ def rows_to_df(rows):
 def round_to_half(val):
     return round(val * 2) / 2
 
-# ── Module-level caches ──
-_opp_defense_cache   = {}
+# ── Caches with TTL ──
+_opp_defense_cache    = {}
+_opp_defense_ts       = 0.0
 _todays_matchup_cache = {}
+_todays_matchup_ts    = 0.0
+
+OPP_CACHE_TTL     = 6 * 3600   # 6 hours
+MATCHUP_CACHE_TTL = 1 * 3600   # 1 hour
 
 def get_opp_defense():
-    global _opp_defense_cache
-    if not _opp_defense_cache:
+    global _opp_defense_cache, _opp_defense_ts
+    if not _opp_defense_cache or (_time.time() - _opp_defense_ts) > OPP_CACHE_TTL:
         try:
             _opp_defense_cache = fetch_opponent_defense()
-            print(f"✅ Defense cache loaded for {len(_opp_defense_cache)} teams")
+            _opp_defense_ts    = _time.time()
+            print(f"✅ Defense cache refreshed for {len(_opp_defense_cache)} teams")
         except Exception as e:
             print(f"❌ fetch_opponent_defense failed: {e}")
             _opp_defense_cache = {}
     return _opp_defense_cache
 
 def get_todays_matchups():
-    global _todays_matchup_cache
-    if not _todays_matchup_cache:
+    global _todays_matchup_cache, _todays_matchup_ts
+    if not _todays_matchup_cache or (_time.time() - _todays_matchup_ts) > MATCHUP_CACHE_TTL:
         try:
             _todays_matchup_cache = fetch_todays_matchups()
+            _todays_matchup_ts    = _time.time()
+            print(f"✅ Matchup cache refreshed: {list(_todays_matchup_cache.keys())}")
         except Exception as e:
             print(f"❌ fetch_todays_matchups failed: {e}")
             _todays_matchup_cache = {}
@@ -211,17 +220,16 @@ def trending():
 
 # ── PrizePicks ──
 
-@props_bp.route("/prizepicks")
-def prizepicks():
+def _build_prizepicks_results():
+    """Shared logic used by both /prizepicks and /prizepicks/parlays."""
     pp_lines = fetch_prizepicks_lines()
     if not pp_lines:
-        return jsonify({"error": "Could not fetch PrizePicks data"}), 502
+        return None
 
-    opp_defense      = get_opp_defense()
-    todays_matchups  = get_todays_matchups()  # real today's schedule
-
-    all_players = Player.query.all()
-    name_map    = {normalize(p.name): p for p in all_players}
+    opp_defense     = get_opp_defense()
+    todays_matchups = get_todays_matchups()
+    all_players     = Player.query.all()
+    name_map        = {normalize(p.name): p for p in all_players}
 
     def find_player(name_key):
         if name_key in name_map:
@@ -245,18 +253,15 @@ def prizepicks():
         stat = entry["stat"]
         line = entry["line"]
 
-        # ── Today's real matchup from NBA schedule ──
         team_abbr  = (entry.get("team") or player.team_abbr or "").upper()
         today_game = todays_matchups.get(team_abbr)
         if today_game:
             opponent_abbr    = today_game["opponent"]
             current_location = today_game["location"]
         else:
-            # Fallback to most recent logged game
             opponent_abbr    = extract_opponent(rows[0].matchup)
             current_location = rows[0].location
 
-        # ── Stat values ──
         if stat in COMBO_STATS:
             cols         = COMBO_STATS[stat]
             values       = df[cols].sum(axis=1).tolist()
@@ -282,11 +287,10 @@ def prizepicks():
         streak = hr_l10.get("streak", {"count": 0, "type": "none"})
         mult   = matchup_multiplier(opponent_abbr, primary_stat, opp_defense)
 
-        # ── Home/away bonus ──
         home_df = df[df["location"] == "Home"]
         away_df = df[df["location"] == "Road"]
         if stat in COMBO_STATS:
-            cols    = COMBO_STATS[stat]
+            cols   = COMBO_STATS[stat]
             home_hr = (home_df[cols].sum(axis=1) > line).mean() if not home_df.empty else 0.5
             away_hr = (away_df[cols].sum(axis=1) > line).mean() if not away_df.empty else 0.5
         else:
@@ -311,62 +315,47 @@ def prizepicks():
         )
 
         results.append({
-            "id":              player.id,
-            "name":            player.name,
-            "team":            player.team_abbr,
-            "position":        player.position,
-            "stat":            stat,
-            "label":           entry["pp_stat_label"],
-            "odds_type":       entry.get("odds_type", "standard"),
-            "line":            line,
-            "hit_rate":        hr_l10["hit_rate"],
-            "hit_rate_l5":     hr_l5.get("hit_rate")     if "error" not in hr_l5     else None,
-            "hit_rate_season": hr_season.get("hit_rate") if "error" not in hr_season else None,
-            "avg_l5":          avg_l5,
-            "avg_l10":         avg_l10,
-            "avg_season":      avg_season,
-            "edge":            edge,
-            "hits":            hr_l10["hits"],
-            "sample":          hr_l10["sample"],
-            "matchup_mult":    mult,
-            "opponent":        opponent_abbr,
-            "location":        current_location,
-            "streak":          streak,
-            "confidence":      conf,
+            "id":               player.id,
+            "name":             player.name,
+            "team":             player.team_abbr,
+            "position":         player.position,
+            "stat":             stat,
+            "label":            entry["pp_stat_label"],
+            "odds_type":        entry.get("odds_type", "standard"),
+            "line":             line,
+            "hit_rate":         hr_l10["hit_rate"],
+            "hit_rate_l5":      hr_l5.get("hit_rate")     if "error" not in hr_l5     else None,
+            "hit_rate_season":  hr_season.get("hit_rate") if "error" not in hr_season else None,
+            "avg_l5":           avg_l5,
+            "avg_l10":          avg_l10,
+            "avg_season":       avg_season,
+            "edge":             edge,
+            "hits":             hr_l10["hits"],
+            "sample":           hr_l10["sample"],
+            "matchup_mult":     mult,
+            "opponent":         opponent_abbr,
+            "location":         current_location,
+            "streak":           streak,
+            "confidence":       conf,
         })
 
     results.sort(key=lambda x: x["confidence"], reverse=True)
+    return results
+
+@props_bp.route("/prizepicks")
+def prizepicks():
+    results = _build_prizepicks_results()
+    if results is None:
+        return jsonify({"error": "Could not fetch PrizePicks data"}), 502
     return jsonify(results)
 
 @props_bp.route("/prizepicks/parlays")
 def prizepicks_parlays():
     from itertools import combinations
 
-    pp_lines = fetch_prizepicks_lines()
-    if not pp_lines:
+    ranked = _build_prizepicks_results()
+    if ranked is None:
         return jsonify({"error": "Could not fetch PrizePicks data"}), 502
-
-    opp_defense     = get_opp_defense()
-    todays_matchups = get_todays_matchups()
-    all_players     = Player.query.all()
-    name_map        = {normalize(p.name): p for p in all_players}
-
-    def find_player(name_key):
-        if name_key in name_map:
-            return name_map[name_key]
-        for key, player in name_map.items():
-            if name_key in key or key in name_key:
-                return player
-        return None
-
-    # Build ranked list inline (avoids HTTP self-call)
-    from flask import current_app
-    with current_app.test_request_context():
-        ranked_resp = prizepicks()
-        ranked = ranked_resp.get_json()
-
-    if isinstance(ranked, dict) and "error" in ranked:
-        return jsonify(ranked), 502
 
     candidates = [p for p in ranked if p["confidence"] >= 65 and p["odds_type"] == "standard"][:30]
 
@@ -387,5 +376,4 @@ def prizepicks_parlays():
 
     parlays_2.sort(key=lambda x: x["score"], reverse=True)
     parlays_3.sort(key=lambda x: x["score"], reverse=True)
-
     return jsonify({"two_leg": parlays_2[:10], "three_leg": parlays_3[:10]})

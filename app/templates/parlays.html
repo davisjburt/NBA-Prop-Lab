@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NBA Prop Lab - Parlays</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/css/base.css" />
+    <link rel="stylesheet" href="/static/css/parlays.css" />
+    <link rel="icon" type="image/svg+xml" href="/static/proplab.svg" />
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="nav-logo"
+        >Prop Lab <img src="/static/proplab.svg" class="nav-logo-icon"
+      /></a>
+      <div class="nav-links">
+        <a href="/">Players</a>
+        <a href="/explore">Explore</a>
+        <a href="/prizepicks">PrizePicks</a>
+        <a href="/parlays" class="active">Parlays</a>
+      </div>
+    </nav>
+
+    <div class="page">
+      <div class="page-header">
+        <h1>🎰 Best Parlays</h1>
+        <p>
+          Top 2- and 3-leg combos ranked by combined confidence. Correlated legs
+          (same team) are penalized.
+        </p>
+      </div>
+
+      <div class="parlay-tabs">
+        <button class="p-tab active" onclick="switchTab('two', this)">
+          2-Leg Parlays
+        </button>
+        <button class="p-tab" onclick="switchTab('three', this)">
+          3-Leg Parlays
+        </button>
+      </div>
+
+      <div id="panel-two">
+        <div id="two-leg-content">
+          <div class="loading-state">⏳ Loading...</div>
+        </div>
+      </div>
+      <div id="panel-three" style="display: none">
+        <div id="three-leg-content">
+          <div class="loading-state">⏳ Loading...</div>
+        </div>
+      </div>
+    </div>
+
+    {% include 'base_drawer.html' %}
+
+    <script>
+      function switchTab(name, btn) {
+        document
+          .querySelectorAll(".p-tab")
+          .forEach((t) => t.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById("panel-two").style.display =
+          name === "two" ? "" : "none";
+        document.getElementById("panel-three").style.display =
+          name === "three" ? "" : "none";
+      }
+
+      function confClass(s) {
+        return s >= 80 ? "conf-high" : s >= 65 ? "conf-mid" : "conf-low";
+      }
+      function rateColor(r) {
+        return r >= 0.7 ? "#10b981" : r >= 0.55 ? "#6366f1" : "#ef4444";
+      }
+
+      function buildLeg(leg) {
+        const pct = leg.hit_rate ? (leg.hit_rate * 100).toFixed(1) + "%" : "—";
+        return `
+        <div class="parlay-leg" onclick="openDrawer(${leg.id}); event.stopPropagation();">
+          <div class="leg-avatar">
+            <img src="https://cdn.nba.com/headshots/nba/latest/260x190/${leg.id}.png" alt="${leg.name}" />
+          </div>
+          <div class="leg-info">
+            <div class="leg-name">${leg.name}</div>
+            <div class="leg-meta">${leg.team} · ${leg.position} · vs ${leg.opponent ?? "?"}</div>
+          </div>
+          <div class="leg-right">
+            <span class="stat-chip">${leg.label}</span>
+            <div class="leg-line">Over ${leg.line}</div>
+            <div class="leg-rate" style="color:${rateColor(leg.hit_rate ?? 0)}">${pct} L10</div>
+          </div>
+        </div>`;
+      }
+
+      function buildCard(parlay, rank) {
+        const corrWarning = parlay.correlated
+          ? `<span class="corr-warning">⚠️ Same team</span>`
+          : "";
+        return `
+        <div class="parlay-card">
+          <div class="parlay-card-header">
+            <span class="parlay-rank">#${rank}</span>
+            <span class="conf-badge ${confClass(parlay.score)}">Score: ${parlay.score}</span>
+            ${corrWarning}
+          </div>
+          ${parlay.legs.map(buildLeg).join('<div class="leg-divider">+</div>')}
+        </div>`;
+      }
+
+      fetch("/api/prizepicks/parlays")
+        .then((r) => r.json())
+        .then((data) => {
+          document.getElementById("two-leg-content").innerHTML = data.two_leg
+            .length
+            ? data.two_leg.map((p, i) => buildCard(p, i + 1)).join("")
+            : `<div class="empty-state">😶<p>Not enough high-confidence props for 2-leg parlays.</p></div>`;
+
+          document.getElementById("three-leg-content").innerHTML = data
+            .three_leg.length
+            ? data.three_leg.map((p, i) => buildCard(p, i + 1)).join("")
+            : `<div class="empty-state">😶<p>Not enough high-confidence props for 3-leg parlays.</p></div>`;
+        })
+        .catch(() => {
+          document.getElementById("two-leg-content").innerHTML =
+            `<div class="empty-state">❌<p>Failed to load parlays.</p></div>`;
+        });
+    </script>
+  </body>
+</html>

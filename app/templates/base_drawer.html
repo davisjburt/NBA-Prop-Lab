@@ -1,16 +1,17 @@
-<!-- ── Global Player Drawer ── -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
 <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
 
 <div class="player-drawer" id="playerDrawer">
   <div class="drawer-header">
-    <div class="drawer-avatar">
-      <img id="drawerAvatar" src="" alt="" />
-    </div>
+    <div class="drawer-avatar"><img id="drawerAvatar" src="" alt="" /></div>
     <div>
       <div class="drawer-player-name" id="drawerName">Loading...</div>
       <div class="drawer-player-meta" id="drawerMeta"></div>
     </div>
-    <button class="drawer-close" onclick="closeDrawer()">✕</button>
+    <button class="drawer-close" onclick="closeDrawer()">
+      <i data-lucide="x"></i>
+    </button>
   </div>
 
   <div class="drawer-chips">
@@ -145,9 +146,9 @@
     </table>
   </div>
 
-  <a class="drawer-full-link" id="drawerFullLink" href="#"
-    >View Full Player Page →</a
-  >
+  <a class="drawer-full-link" id="drawerFullLink" href="#">
+    View Full Player Page <i data-lucide="arrow-right"></i>
+  </a>
 </div>
 
 <script>
@@ -167,11 +168,6 @@
     sa: "S+A",
     bs: "B+S",
   };
-
-  let _drawerId = null;
-  let _drawerStat = "pts";
-  let _drawerAvgs = {};
-
   const LINE_DEFAULTS = {
     pts: 20.5,
     reb: 8.5,
@@ -188,12 +184,15 @@
     bs: 3.5,
   };
 
+  let _drawerId = null;
+  let _drawerStat = "pts";
+  let _drawerAvgs = {};
+
   function openDrawer(playerId) {
     _drawerId = playerId;
     _drawerStat = "pts";
     _drawerAvgs = {};
 
-    // Reset chips
     document
       .querySelectorAll(".d-chip")
       .forEach((c) => c.classList.remove("active"));
@@ -201,14 +200,11 @@
     document.getElementById("drawerRows").innerHTML =
       `<tr><td colspan="4" style="text-align:center;padding:2rem;color:var(--muted)">Loading...</td></tr>`;
 
-    // Show overlay + drawer
     document.getElementById("drawerOverlay").classList.add("open");
     document.getElementById("playerDrawer").classList.add("open");
     document.body.style.overflow = "hidden";
-
     document.getElementById("drawerFullLink").href = `/player/${playerId}`;
 
-    // Load player info
     fetch(`/api/players/${playerId}`)
       .then((r) => r.json())
       .then((p) => {
@@ -217,9 +213,9 @@
         document.getElementById("drawerName").textContent = p.name;
         document.getElementById("drawerMeta").textContent =
           `${p.team} · ${p.position}`;
+        lucide.createIcons();
       });
 
-    // Load averages then stats
     fetch(`/api/players/${playerId}/averages`)
       .then((r) => r.json())
       .then((avgs) => {
@@ -265,8 +261,8 @@
       .then((r) => r.json())
       .then((data) => {
         if (data.error) return;
-        const pct = (data.hit_rate * 100).toFixed(1) + "%";
-        document.getElementById("dmHitRate").textContent = pct;
+        document.getElementById("dmHitRate").textContent =
+          (data.hit_rate * 100).toFixed(1) + "%";
         document.getElementById("dmHits").textContent =
           `${data.hits}/${data.sample}`;
         document.getElementById("dmAvg").textContent = data.avg;
@@ -275,20 +271,24 @@
         document.getElementById("drawerStatHeader").textContent =
           STAT_LBLS[_drawerStat] || _drawerStat.toUpperCase();
 
-        // Streak
         const streakEl = document.getElementById("drawerStreak");
         const s = data.streak;
         if (s && s.count >= 2 && s.type !== "none") {
           streakEl.className = `drawer-streak ${s.type}`;
-          streakEl.textContent =
+          const icon =
             s.type === "hit"
-              ? `🔥 Hit the line ${s.count} games in a row`
-              : `❄️ Missed the line ${s.count} games in a row`;
+              ? `<i data-lucide="flame"></i>`
+              : `<i data-lucide="snowflake"></i>`;
+          streakEl.innerHTML =
+            s.type === "hit"
+              ? `${icon} Hit the line ${s.count} games in a row`
+              : `${icon} Missed the line ${s.count} games in a row`;
         } else {
           streakEl.className = "drawer-streak";
+          streakEl.innerHTML = "";
         }
+        lucide.createIcons();
 
-        // Game log
         const lineVal = parseFloat(line);
         const tbody = document.getElementById("drawerRows");
         tbody.innerHTML = "";
@@ -300,14 +300,14 @@
             <td>${g.date}</td>
             <td style="color:var(--muted)">${g.matchup}</td>
             <td><strong>${val}</strong></td>
-            <td><span class="hit-pill ${hit ? "hit" : "miss"}">${hit ? "✓ Hit" : "✗ Miss"}</span></td>
+            <td><span class="hit-pill ${hit ? "hit" : "miss"}">${hit ? "Hit" : "Miss"}</span></td>
           </tr>`;
         });
       });
   }
 
-  // Close on Escape
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeDrawer();
   });
+  document.addEventListener("DOMContentLoaded", () => lucide.createIcons());
 </script>

@@ -13,13 +13,14 @@
   </head>
   <body>
     <nav>
-      <a href="/" class="nav-logo"
-        >Prop Lab <img src="/static/proplab.svg" class="nav-logo-icon"
-      /></a>
+      <a href="/" class="nav-logo">
+        <img src="/static/proplab.svg" class="nav-logo-icon" />
+        Prop Lab
+      </a>
       <div class="nav-links">
-        <a href="/" class="active">Players</a>
-        <a href="/explore">Explore</a>
-        <a href="/prizepicks">PrizePicks</a>
+        <a href="/" class="active"><i data-lucide="users"></i> Players</a>
+        <a href="/explore"><i data-lucide="compass"></i> Explore</a>
+        <a href="/prizepicks"><i data-lucide="crosshair"></i> PrizePicks</a>
       </div>
     </nav>
 
@@ -29,10 +30,11 @@
     </div>
 
     <div class="search-bar">
+      <i data-lucide="search" class="search-icon"></i>
       <input
         type="text"
         id="search"
-        placeholder="🔍 Search players..."
+        placeholder="Search players..."
         oninput="filterPlayers()"
       />
     </div>
@@ -78,6 +80,7 @@
           allPlayers = data;
           renderPlayers(allPlayers);
         });
+      document.addEventListener("DOMContentLoaded", () => lucide.createIcons());
     </script>
   </body>
 </html>

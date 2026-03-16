@@ -44,18 +44,19 @@ nav {
   box-shadow: var(--shadow-sm);
 }
 .nav-logo {
-  font-family: "Fredoka One", cursive;
+  font-family: "Milker", sans-serif;
   font-size: 1.6rem;
   color: var(--accent);
   letter-spacing: 0.5px;
   text-decoration: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
 }
 .nav-logo-icon {
-  width: 28px;
-  height: 28px;
+  width: 25px;
+  height: 25px;
+  margin-bottom: 4px;
 }
 .nav-links {
   display: flex;
@@ -69,11 +70,20 @@ nav {
   font-weight: 500;
   color: var(--muted);
   transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 .nav-links a:hover,
 .nav-links a.active {
   background: #f0f1ff;
   color: var(--accent);
+}
+.nav-links a i {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  stroke-width: 2;
 }
 
 /* ── Page layouts ── */
@@ -86,8 +96,19 @@ nav {
   width: 100%;
   padding: 24px 32px;
 }
+.page-header {
+  margin-bottom: 1.5rem;
+}
+.page-header h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+.page-header p {
+  color: var(--muted);
+  margin-top: 4px;
+}
 
-/* ── Cards ── */
+/* ── Controls card ── */
 .controls-card {
   background: var(--surface);
   border: 1.5px solid var(--border);
@@ -96,6 +117,14 @@ nav {
   box-shadow: var(--shadow-sm);
   margin-bottom: 1.5rem;
   animation: fadeUp 0.4s 0.05s ease both;
+}
+.controls-card h3 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  margin-bottom: 1rem;
 }
 .controls {
   display: flex;
@@ -151,12 +180,20 @@ input[type="number"]:focus {
     background 0.15s,
     transform 0.1s;
   align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 .btn:hover {
   background: #4f46e5;
 }
 .btn:active {
   transform: scale(0.97);
+}
+.btn i {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
 }
 
 /* ── Table card ── */
@@ -231,6 +268,43 @@ tr.data-row:hover td {
   border-radius: 50%;
 }
 
+/* ── Shared tab style ── */
+.tab-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.25rem;
+}
+.tab-btn {
+  padding: 8px 18px;
+  border-radius: 99px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--muted);
+  transition: all 0.15s;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.tab-btn i {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  stroke-width: 2;
+}
+.tab-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.tab-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
 /* ── Animations ── */
 @keyframes fadeUp {
   from {
@@ -244,7 +318,7 @@ tr.data-row:hover td {
 }
 
 /* ════════════════════════════════════════
-   PLAYER DRAWER — global, works everywhere
+   PLAYER DRAWER
    ════════════════════════════════════════ */
 .drawer-overlay {
   position: fixed;
@@ -279,7 +353,6 @@ tr.data-row:hover td {
   transform: translateX(0);
 }
 
-/* Drawer header */
 .drawer-header {
   display: flex;
   align-items: center;
@@ -317,18 +390,22 @@ tr.data-row:hover td {
   border: none;
   cursor: pointer;
   color: var(--muted);
-  font-size: 1.4rem;
-  line-height: 1;
-  padding: 4px 8px;
+  padding: 6px;
   border-radius: 8px;
   transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .drawer-close:hover {
   background: var(--bg);
   color: var(--text);
 }
+.drawer-close i {
+  width: 18px;
+  height: 18px;
+}
 
-/* Drawer stat chips */
 .drawer-chips {
   display: flex;
   gap: 6px;
@@ -366,7 +443,6 @@ tr.data-row:hover td {
   border-style: dashed;
 }
 
-/* Drawer controls */
 .drawer-controls {
   display: flex;
   gap: 10px;
@@ -391,10 +467,8 @@ tr.data-row:hover td {
   font-size: 0.85rem;
 }
 
-/* Drawer metrics row */
 .drawer-metrics {
   display: flex;
-  gap: 0;
   border-bottom: 1px solid var(--border);
   flex-shrink: 0;
 }
@@ -419,33 +493,37 @@ tr.data-row:hover td {
   letter-spacing: 0.4px;
 }
 
-/* Drawer streak banner */
 .drawer-streak {
   display: none;
   padding: 8px 24px;
   font-size: 0.82rem;
   font-weight: 600;
   border-bottom: 1px solid var(--border);
+  align-items: center;
+  gap: 6px;
 }
 .drawer-streak.hit {
-  display: block;
+  display: flex;
   background: #ecfdf5;
   color: #065f46;
 }
 .drawer-streak.miss {
-  display: block;
+  display: flex;
   background: #fef2f2;
   color: #991b1b;
 }
+.drawer-streak i {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
 
-/* Drawer scrollable body */
 .drawer-body {
   flex: 1;
   overflow-y: auto;
   padding: 16px 24px;
 }
 
-/* Drawer game log */
 .drawer-log-table {
   width: 100%;
   border-collapse: collapse;
@@ -484,10 +562,11 @@ tr.data-row:hover td {
   color: #991b1b;
 }
 
-/* "Open full page" link */
 .drawer-full-link {
-  display: block;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   padding: 14px;
   color: var(--accent);
   font-size: 0.85rem;
@@ -499,4 +578,15 @@ tr.data-row:hover td {
 }
 .drawer-full-link:hover {
   background: #f0f1ff;
+}
+.drawer-full-link i {
+  width: 14px;
+  height: 14px;
+}
+
+@font-face {
+  font-family: "Milker";
+  src: url("/static/milker.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }

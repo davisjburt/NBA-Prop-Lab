@@ -25,6 +25,16 @@
   cursor: pointer;
   color: var(--muted);
   transition: all 0.15s;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.e-tab i {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  stroke-width: 2;
 }
 .e-tab:hover {
   border-color: var(--accent);
