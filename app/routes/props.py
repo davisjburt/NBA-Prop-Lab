@@ -246,13 +246,19 @@ def _build_prizepicks_results():
                 return player
         return None
 
+    # Bulk load all game stats once instead of per-player queries
+    from collections import defaultdict
+    all_stats = PlayerGameStat.query.order_by(PlayerGameStat.date.desc()).all()
+    stats_by_player = defaultdict(list)
+    for s in all_stats:
+        stats_by_player[s.player_id].append(s)
+
     results = []
     for entry in pp_lines:
         player = find_player(entry["name_key"])
         if not player:
             continue
-        rows = PlayerGameStat.query.filter_by(player_id=player.id) \
-            .order_by(PlayerGameStat.date.desc()).all()
+        rows = stats_by_player.get(player.id, [])
         if not rows:
             continue
 
