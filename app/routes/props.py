@@ -1,3 +1,4 @@
+import json, os
 from flask import Blueprint, jsonify, request
 from app.models.models import db, Player, PlayerGameStat
 from app.services.hit_rate import (
@@ -5,10 +6,7 @@ from app.services.hit_rate import (
     calculate_streak, extract_opponent, clean_avg,
     matchup_multiplier, confidence_score
 )
-from app.services.prizepicks import fetch_prizepicks_lines, normalize
-from app.services.nba_fetcher import fetch_opponent_defense, fetch_todays_matchups
 import pandas as pd
-import time as _time
 
 props_bp = Blueprint("props", __name__, url_prefix="/api")
 
@@ -21,6 +19,28 @@ STAT_LABELS  = {
     "bs":  "BLK+STL"
 }
 
+# Path to the data/ folder committed by GitHub Actions
+_DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "data")
+
+
+def _load_json(filename, fallback):
+    """Read a JSON file from data/. Returns fallback value if missing or corrupt."""
+    path = os.path.join(_DATA_DIR, filename)
+    try:
+        with open(path) as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"⚠️  Could not load {filename}: {e}")
+        return fallback
+
+
+def get_opp_defense():
+    return _load_json("opponent_defense.json", {})
+
+
+def get_todays_matchups():
+    return _load_json("todays_matchups.json", {})
+
 
 def rows_to_df(rows):
     return pd.DataFrame([{
@@ -32,42 +52,6 @@ def rows_to_df(rows):
 
 def round_to_half(val):
     return round(val * 2) / 2
-
-
-# ── Caches with TTL ──
-_opp_defense_cache    = {}
-_opp_defense_ts       = 0.0
-_todays_matchup_cache = {}
-_todays_matchup_ts    = 0.0
-
-OPP_CACHE_TTL     = 6 * 3600   # 6 hours
-MATCHUP_CACHE_TTL = 1 * 3600   # 1 hour
-
-
-def get_opp_defense():
-    global _opp_defense_cache, _opp_defense_ts
-    if not _opp_defense_cache or (_time.time() - _opp_defense_ts) > OPP_CACHE_TTL:
-        try:
-            _opp_defense_cache = fetch_opponent_defense()
-            _opp_defense_ts    = _time.time()
-            print(f"✅ Defense cache refreshed for {len(_opp_defense_cache)} teams")
-        except Exception as e:
-            print(f"❌ fetch_opponent_defense failed: {e}")
-            _opp_defense_cache = {}
-    return _opp_defense_cache
-
-
-def get_todays_matchups():
-    global _todays_matchup_cache, _todays_matchup_ts
-    if not _todays_matchup_cache or (_time.time() - _todays_matchup_ts) > MATCHUP_CACHE_TTL:
-        try:
-            _todays_matchup_cache = fetch_todays_matchups()
-            _todays_matchup_ts    = _time.time()
-            print(f"✅ Matchup cache refreshed: {list(_todays_matchup_cache.keys())}")
-        except Exception as e:
-            print(f"❌ fetch_todays_matchups failed: {e}")
-            _todays_matchup_cache = {}
-    return _todays_matchup_cache
 
 
 # ── Player routes ──
@@ -208,7 +192,7 @@ def trending():
             if hr["hit_rate"] >= 0.70 and hr["sample"] >= 5:
                 top_hitters.append(base)
         for combo, cols in COMBO_STATS.items():
-            df2            = df.copy()
+            df2              = df.copy()
             df2["combo_val"] = df2[cols].sum(axis=1)
             line   = round_to_half(df2["combo_val"].head(5).mean())
             if line <= 0:
@@ -236,10 +220,12 @@ def trending():
 # ── PrizePicks ──
 
 def _build_prizepicks_results():
-    """Shared logic used by both /prizepicks and /prizepicks/parlays."""
-    pp_lines = fetch_prizepicks_lines()
+    """Reads prizepicks_lines.json (written by GitHub Actions) instead of live fetching."""
+    pp_lines = _load_json("prizepicks_lines.json", [])
     if not pp_lines:
         return None
+
+    from app.services.prizepicks import normalize
 
     opp_defense     = get_opp_defense()
     todays_matchups = get_todays_matchups()
@@ -275,7 +261,6 @@ def _build_prizepicks_results():
             opponent_abbr    = today_game["opponent"]
             current_location = today_game["location"]
         else:
-            # Fallback to last game if no matchup data for today
             opponent_abbr    = extract_opponent(rows[0].matchup)
             current_location = rows[0].location
 
@@ -364,7 +349,7 @@ def _build_prizepicks_results():
 def prizepicks():
     results = _build_prizepicks_results()
     if results is None:
-        return jsonify({"error": "Could not fetch PrizePicks data"}), 502
+        return jsonify({"error": "PrizePicks data not yet available. Check back after the next data refresh."}), 503
     return jsonify(results)
 
 
@@ -374,7 +359,7 @@ def prizepicks_parlays():
 
     ranked = _build_prizepicks_results()
     if ranked is None:
-        return jsonify({"error": "Could not fetch PrizePicks data"}), 502
+        return jsonify({"error": "PrizePicks data not yet available. Check back after the next data refresh."}), 503
 
     candidates = [p for p in ranked if p["confidence"] >= 65 and p["odds_type"] == "standard"][:30]
 
