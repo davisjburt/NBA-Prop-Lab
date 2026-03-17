@@ -20,16 +20,14 @@ STAT_LABELS  = {
 }
 
 # Path to the data/ folder committed by GitHub Actions
-_DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "data")
+_BASE = os.path.dirname(os.path.abspath(__file__))
+_DATA_DIR = os.path.normpath(os.path.join(_BASE, "..", "..", "data"))
 
 @props_bp.route("/api/debug")
 def debug():
-    import os
-    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "data")
-    real = os.path.realpath(path)
-    exists = os.path.exists(real)
-    files = os.listdir(real) if exists else []
-    return jsonify({"path": real, "exists": exists, "files": files})
+    exists = os.path.exists(_DATA_DIR)
+    files = os.listdir(_DATA_DIR) if exists else []
+    return jsonify({"path": _DATA_DIR, "exists": exists, "files": files})
 
 def _load_json(filename, fallback):
     """Read a JSON file from data/. Returns fallback value if missing or corrupt."""
