@@ -2,21 +2,14 @@ name: NBA Daily Data Refresh
 
 on:
   schedule:
-    # Game logs + opponent defense: runs at 10am ET (2pm UTC)
-    # This is after most previous night's games are fully posted
+    # Runs at 10am ET (2pm UTC) daily
     - cron: "0 14 * * *"
 
-    # PrizePicks lines: runs at 1pm ET (5pm UTC), closer to tip-offs
-    - cron: "0 17 * * *"
-
-  # Allow manual trigger from the Actions tab at any time
+  # Allow manual trigger from the Actions tab
   workflow_dispatch:
 
 jobs:
   update-game-logs:
-    # Only run on the 2pm UTC schedule (or manual trigger)
-    # The 5pm UTC schedule only runs fetch-api-data below
-    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 14 * * *'
     runs-on: ubuntu-latest
 
     env:
@@ -34,29 +27,3 @@ jobs:
 
       - name: Run daily update (game logs → Postgres)
         run: python scripts/daily_update.py
-
-  fetch-api-data:
-    # Runs on both schedules and manual triggers
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install dependencies
-        run: pip install flask flask-sqlalchemy requests pandas numpy nba_api
-
-      - name: Fetch external API data
-        run: python scripts/fetch_data.py
-
-      - name: Commit data files
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/
-          # Only commit if something actually changed
-          git diff --staged --quiet || git commit -m "chore: refresh NBA data [skip ci]"
-          git push
