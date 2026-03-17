@@ -21,6 +21,7 @@ STAT_LABELS  = {
     "bs":  "BLK+STL"
 }
 
+
 def rows_to_df(rows):
     return pd.DataFrame([{
         "date": str(r.date), "matchup": r.matchup, "location": r.location,
@@ -28,8 +29,10 @@ def rows_to_df(rows):
         "stl": r.stl, "blk": r.blk, "fg3m": r.fg3m, "tov": r.tov
     } for r in rows])
 
+
 def round_to_half(val):
     return round(val * 2) / 2
+
 
 # ── Caches with TTL ──
 _opp_defense_cache    = {}
@@ -39,6 +42,7 @@ _todays_matchup_ts    = 0.0
 
 OPP_CACHE_TTL     = 6 * 3600   # 6 hours
 MATCHUP_CACHE_TTL = 1 * 3600   # 1 hour
+
 
 def get_opp_defense():
     global _opp_defense_cache, _opp_defense_ts
@@ -52,6 +56,7 @@ def get_opp_defense():
             _opp_defense_cache = {}
     return _opp_defense_cache
 
+
 def get_todays_matchups():
     global _todays_matchup_cache, _todays_matchup_ts
     if not _todays_matchup_cache or (_time.time() - _todays_matchup_ts) > MATCHUP_CACHE_TTL:
@@ -64,6 +69,7 @@ def get_todays_matchups():
             _todays_matchup_cache = {}
     return _todays_matchup_cache
 
+
 # ── Player routes ──
 
 @props_bp.route("/players")
@@ -71,12 +77,14 @@ def all_players():
     players = Player.query.order_by(Player.name).all()
     return jsonify([{"id": p.id, "name": p.name, "team": p.team_abbr, "position": p.position} for p in players])
 
+
 @props_bp.route("/players/<int:player_id>")
 def get_player(player_id):
     p = db.session.get(Player, player_id)
     if not p:
         return jsonify({"error": "Player not found"}), 404
     return jsonify({"id": p.id, "name": p.name, "team": p.team_abbr, "position": p.position})
+
 
 @props_bp.route("/players/<int:player_id>/averages")
 def player_averages(player_id):
@@ -91,6 +99,7 @@ def player_averages(player_id):
         avgs[combo] = round_to_half(df[combo_cols].sum(axis=1).mean())
     return jsonify(avgs)
 
+
 @props_bp.route("/players/<int:player_id>/opponents")
 def player_opponents(player_id):
     rows = PlayerGameStat.query.filter_by(player_id=player_id).all()
@@ -98,6 +107,7 @@ def player_opponents(player_id):
         return jsonify([])
     opponents = sorted(set(extract_opponent(r.matchup) for r in rows))
     return jsonify(opponents)
+
 
 @props_bp.route("/players/<int:player_id>/props")
 def player_props(player_id):
@@ -114,6 +124,7 @@ def player_props(player_id):
     result = hit_rate(df, stat, line, last_n=last_n, location=location, opponent=opponent)
     return jsonify(result)
 
+
 @props_bp.route("/players/<int:player_id>/combo")
 def player_combo(player_id):
     combo    = request.args.get("combo", "pra")
@@ -129,11 +140,13 @@ def player_combo(player_id):
     result = hit_rate_combo(df, combo, line, last_n=last_n, location=location, opponent=opponent)
     return jsonify(result)
 
+
 @props_bp.route("/players/<int:player_id>/logs")
 def player_logs(player_id):
     rows = PlayerGameStat.query.filter_by(player_id=player_id) \
         .order_by(PlayerGameStat.date.desc()).all()
     return jsonify(rows_to_df(rows).to_dict(orient="records"))
+
 
 # ── Discover / Trending ──
 
@@ -161,6 +174,7 @@ def discover():
                          "team": player.team_abbr, "position": player.position, **stats})
     results.sort(key=lambda x: x["hit_rate"], reverse=True)
     return jsonify(results)
+
 
 @props_bp.route("/trending")
 def trending():
@@ -218,6 +232,7 @@ def trending():
     top_hitters.sort(key=lambda x: x["hit_rate"], reverse=True)
     return jsonify({"hot_streaks": hot_streaks[:30], "top_hitters": top_hitters[:30]})
 
+
 # ── PrizePicks ──
 
 def _build_prizepicks_results():
@@ -255,10 +270,12 @@ def _build_prizepicks_results():
 
         team_abbr  = (entry.get("team") or player.team_abbr or "").upper()
         today_game = todays_matchups.get(team_abbr)
+
         if today_game:
             opponent_abbr    = today_game["opponent"]
             current_location = today_game["location"]
         else:
+            # Fallback to last game if no matchup data for today
             opponent_abbr    = extract_opponent(rows[0].matchup)
             current_location = rows[0].location
 
@@ -290,7 +307,7 @@ def _build_prizepicks_results():
         home_df = df[df["location"] == "Home"]
         away_df = df[df["location"] == "Road"]
         if stat in COMBO_STATS:
-            cols   = COMBO_STATS[stat]
+            cols    = COMBO_STATS[stat]
             home_hr = (home_df[cols].sum(axis=1) > line).mean() if not home_df.empty else 0.5
             away_hr = (away_df[cols].sum(axis=1) > line).mean() if not away_df.empty else 0.5
         else:
@@ -315,32 +332,33 @@ def _build_prizepicks_results():
         )
 
         results.append({
-            "id":               player.id,
-            "name":             player.name,
-            "team":             player.team_abbr,
-            "position":         player.position,
-            "stat":             stat,
-            "label":            entry["pp_stat_label"],
-            "odds_type":        entry.get("odds_type", "standard"),
-            "line":             line,
-            "hit_rate":         hr_l10["hit_rate"],
-            "hit_rate_l5":      hr_l5.get("hit_rate")     if "error" not in hr_l5     else None,
-            "hit_rate_season":  hr_season.get("hit_rate") if "error" not in hr_season else None,
-            "avg_l5":           avg_l5,
-            "avg_l10":          avg_l10,
-            "avg_season":       avg_season,
-            "edge":             edge,
-            "hits":             hr_l10["hits"],
-            "sample":           hr_l10["sample"],
-            "matchup_mult":     mult,
-            "opponent":         opponent_abbr,
-            "location":         current_location,
-            "streak":           streak,
-            "confidence":       conf,
+            "id":              player.id,
+            "name":            player.name,
+            "team":            player.team_abbr,
+            "position":        player.position,
+            "stat":            stat,
+            "label":           entry["pp_stat_label"],
+            "odds_type":       entry.get("odds_type", "standard"),
+            "line":            line,
+            "hit_rate":        hr_l10["hit_rate"],
+            "hit_rate_l5":     hr_l5.get("hit_rate")     if "error" not in hr_l5     else None,
+            "hit_rate_season": hr_season.get("hit_rate") if "error" not in hr_season else None,
+            "avg_l5":          avg_l5,
+            "avg_l10":         avg_l10,
+            "avg_season":      avg_season,
+            "edge":            edge,
+            "hits":            hr_l10["hits"],
+            "sample":          hr_l10["sample"],
+            "matchup_mult":    mult,
+            "opponent":        opponent_abbr,
+            "location":        current_location,
+            "streak":          streak,
+            "confidence":      conf,
         })
 
     results.sort(key=lambda x: x["confidence"], reverse=True)
     return results
+
 
 @props_bp.route("/prizepicks")
 def prizepicks():
@@ -348,6 +366,7 @@ def prizepicks():
     if results is None:
         return jsonify({"error": "Could not fetch PrizePicks data"}), 502
     return jsonify(results)
+
 
 @props_bp.route("/prizepicks/parlays")
 def prizepicks_parlays():
