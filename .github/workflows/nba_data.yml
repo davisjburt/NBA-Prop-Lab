@@ -47,7 +47,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests pandas numpy nba_api
+        run: pip install flask flask-sqlalchemy requests pandas numpy nba_api
 
       - name: Fetch external API data
         run: python scripts/fetch_data.py
