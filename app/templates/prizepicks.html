@@ -27,7 +27,7 @@
 
     <div class="page-wide">
       <div class="page-header">
-        <h1>PrizePicks Edge Finder</h1>
+        <h1>PrizePicks Predictor</h1>
         <p>
           Live board ranked by <strong>confidence score</strong> — combining hit
           rate, matchup difficulty, edge, and streak.
@@ -46,6 +46,18 @@
 
       <!-- ══════════════ PROPS BOARD ══════════════ -->
       <div id="panel-props">
+        <!-- Search bar -->
+        <div class="pp-search-wrap">
+          <i data-lucide="search" class="pp-search-icon"></i>
+          <input
+            type="text"
+            id="searchInput"
+            class="pp-search"
+            placeholder="Search players..."
+            oninput="onSearch()"
+          />
+        </div>
+
         <div class="pp-filters">
           <select id="filterStat" onchange="renderTable()">
             <option value="">All Stats</option>
@@ -116,6 +128,17 @@
             </tbody>
           </table>
         </div>
+
+        <!-- Load more button -->
+        <div
+          id="load-more-wrap"
+          style="display: none; text-align: center; padding: 1.5rem 0"
+        >
+          <button class="btn-load-more" onclick="loadMore()">
+            <i data-lucide="chevrons-down"></i>
+            Load More <span id="load-more-count"></span>
+          </button>
+        </div>
       </div>
 
       <!-- ══════════════ PARLAYS ══════════════ -->
@@ -140,7 +163,11 @@
     {% include 'base_drawer.html' %}
 
     <script>
+      const PAGE_SIZE = 25;
+
       let allData = [];
+      let filtered = [];
+      let shownCount = 0;
       let sortKey = "confidence";
       let sortDir = -1;
       let parlaysLoaded = false;
@@ -160,12 +187,11 @@
       function confClass(s) {
         return s >= 80 ? "conf-high" : s >= 65 ? "conf-mid" : "conf-low";
       }
-
       function oddsTypeBadge(type) {
         if (type === "goblin")
-          return `<span class="odds-badge goblin"><i data-lucide="chevrons-down"></i> Goblin</span>`;
+          return `<span class="odds-badge goblin">Goblin</span>`;
         if (type === "demon")
-          return `<span class="odds-badge demon"><i data-lucide="chevrons-up"></i> Demon</span>`;
+          return `<span class="odds-badge demon">Demon</span>`;
         return "";
       }
       function matchupBadge(mult) {
@@ -184,6 +210,49 @@
             ? `<i data-lucide="flame"></i>`
             : `<i data-lucide="snowflake"></i>`;
         return `<span class="streak-badge ${cls}">${icon}${streak.count}</span>`;
+      }
+
+      function buildRow(p, i) {
+        const pct = (p.hit_rate * 100).toFixed(1);
+        const tr = document.createElement("tr");
+        tr.className = "data-row";
+        tr.innerHTML = `
+          <td style="color:var(--muted);font-size:.85rem">${i + 1}</td>
+          <td>
+            <div class="player-cell">
+              <div class="mini-avatar"><img src="https://cdn.nba.com/headshots/nba/latest/260x190/${p.id}.png" alt="${p.name}" /></div>
+              <div class="player-info">
+                <div class="player-name">${p.name} ${streakBadge(p.streak)}</div>
+                <div class="player-meta">${p.team} · ${p.position} · ${p.location ?? ""} vs ${p.opponent ?? ""}</div>
+              </div>
+            </div>
+          </td>
+          <td><span class="stat-chip">${p.label}</span></td>
+          <td style="font-weight:600;white-space:nowrap">${p.line}${oddsTypeBadge(p.odds_type)}</td>
+          <td>${p.avg_l5 ?? "—"}</td>
+          <td>${p.avg_l10 ?? "—"}</td>
+          <td class="${edgeClass(p.edge)}" style="font-weight:700">${fmtEdge(p.edge)}</td>
+          <td>${matchupBadge(p.matchup_mult)}</td>
+          <td>
+            <div class="rate-bar-wrap">
+              <div class="rate-bar-bg"><div class="rate-bar-fill" style="width:${pct}%;background:${rateColor(p.hit_rate)}"></div></div>
+              <span class="rate-label ${rateClass(p.hit_rate)}">${pct}%</span>
+            </div>
+          </td>
+          <td><span class="conf-badge ${confClass(p.confidence)}">${p.confidence}</span></td>
+          <td style="color:var(--muted)">${p.hits}/${p.sample}</td>`;
+        tr.onclick = () => {
+          openDrawer(p.id);
+          setTimeout(() => {
+            const chip = document.querySelector(
+              `.d-chip[data-stat="${p.stat}"]`,
+            );
+            if (chip) drawerSelectStat(chip);
+            document.getElementById("drawerLine").value = p.line;
+            drawerLoad();
+          }, 150);
+        };
+        return tr;
       }
 
       // ── Tab switching ──
@@ -214,7 +283,7 @@
           name === "three" ? "" : "none";
       }
 
-      // ── Props board ──
+      // ── Sorting ──
       function sortBy(key) {
         if (sortKey === key) sortDir *= -1;
         else {
@@ -225,14 +294,24 @@
         renderTable();
       }
 
+      // ── Search ──
+      function onSearch() {
+        renderTable();
+      }
+
+      // ── Main render — shows first PAGE_SIZE rows ──
       function renderTable() {
         const statFilter = document.getElementById("filterStat").value;
         const oddsFilter = document.getElementById("filterOddsType").value;
         const edgeFilter = document.getElementById("filterEdge").value;
         const confFilter =
           parseFloat(document.getElementById("filterConf").value) || 0;
+        const searchQuery = document
+          .getElementById("searchInput")
+          .value.toLowerCase()
+          .trim();
 
-        let filtered = allData.filter((p) => {
+        filtered = allData.filter((p) => {
           if (statFilter && p.stat !== statFilter) return false;
           if (oddsFilter && p.odds_type !== oddsFilter) return false;
           if (edgeFilter === "positive" && (p.edge === null || p.edge <= 0))
@@ -240,64 +319,64 @@
           if (edgeFilter === "negative" && (p.edge === null || p.edge >= 0))
             return false;
           if (confFilter && p.confidence < confFilter) return false;
+          if (
+            searchQuery &&
+            !p.name.toLowerCase().includes(searchQuery) &&
+            !p.team.toLowerCase().includes(searchQuery)
+          )
+            return false;
           return true;
         });
+
         filtered.sort(
           (a, b) =>
             sortDir * ((a[sortKey] ?? -Infinity) - (b[sortKey] ?? -Infinity)),
         );
 
         const tbody = document.getElementById("results");
+
         if (!filtered.length) {
           tbody.innerHTML = `<tr><td colspan="11"><div class="empty-state">No props match your filters.</div></td></tr>`;
+          document.getElementById("load-more-wrap").style.display = "none";
           return;
         }
+
+        // Render first PAGE_SIZE rows
+        shownCount = Math.min(PAGE_SIZE, filtered.length);
         tbody.innerHTML = "";
-        filtered.forEach((p, i) => {
-          const pct = (p.hit_rate * 100).toFixed(1);
-          const tr = document.createElement("tr");
-          tr.className = "data-row";
-          tr.innerHTML = `
-          <td style="color:var(--muted);font-size:.85rem">${i + 1}</td>
-          <td>
-            <div class="player-cell">
-              <div class="mini-avatar"><img src="https://cdn.nba.com/headshots/nba/latest/260x190/${p.id}.png" alt="${p.name}" /></div>
-              <div class="player-info">
-                <div class="player-name">${p.name} ${streakBadge(p.streak)}</div>
-                <div class="player-meta">${p.team} · ${p.position} · ${p.location ?? ""} vs ${p.opponent ?? ""}</div>
-              </div>
-            </div>
-          </td>
-          <td><span class="stat-chip">${p.label}</span></td>
-          <td style="font-weight:600;white-space:nowrap">${p.line}${oddsTypeBadge(p.odds_type)}</td>
-          <td>${p.avg_l5 ?? "—"}</td>
-          <td>${p.avg_l10 ?? "—"}</td>
-          <td class="${edgeClass(p.edge)}" style="font-weight:700">${fmtEdge(p.edge)}</td>
-          <td>${matchupBadge(p.matchup_mult)}</td>
-          <td>
-            <div class="rate-bar-wrap">
-              <div class="rate-bar-bg"><div class="rate-bar-fill" style="width:${pct}%;background:${rateColor(p.hit_rate)}"></div></div>
-              <span class="rate-label ${rateClass(p.hit_rate)}">${pct}%</span>
-            </div>
-          </td>
-          <td><span class="conf-badge ${confClass(p.confidence)}">${p.confidence}</span></td>
-          <td style="color:var(--muted)">${p.hits}/${p.sample}</td>`;
-          tr.onclick = () => {
-            openDrawer(p.id);
-            setTimeout(() => {
-              const chip = document.querySelector(
-                `.d-chip[data-stat="${p.stat}"]`,
-              );
-              if (chip) drawerSelectStat(chip);
-              document.getElementById("drawerLine").value = p.line;
-              drawerLoad();
-            }, 150);
-          };
-          tbody.appendChild(tr);
-        });
+        for (let i = 0; i < shownCount; i++) {
+          tbody.appendChild(buildRow(filtered[i], i));
+        }
+
+        updateLoadMore();
         lucide.createIcons();
       }
 
+      // ── Load more ──
+      function loadMore() {
+        const tbody = document.getElementById("results");
+        const nextBatch = Math.min(shownCount + PAGE_SIZE, filtered.length);
+        for (let i = shownCount; i < nextBatch; i++) {
+          tbody.appendChild(buildRow(filtered[i], i));
+        }
+        shownCount = nextBatch;
+        updateLoadMore();
+        lucide.createIcons();
+      }
+
+      function updateLoadMore() {
+        const wrap = document.getElementById("load-more-wrap");
+        const remaining = filtered.length - shownCount;
+        if (remaining > 0) {
+          wrap.style.display = "block";
+          document.getElementById("load-more-count").textContent =
+            `(${remaining} more)`;
+        } else {
+          wrap.style.display = "none";
+        }
+      }
+
+      // ── Fetch data ──
       fetch("/api/prizepicks")
         .then((r) => r.json())
         .then((data) => {

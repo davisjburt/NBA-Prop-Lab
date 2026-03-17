@@ -132,6 +132,12 @@
   height: 11px;
   flex-shrink: 0;
 }
+
+.odds-badge i svg {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+}
 .odds-badge.goblin {
   background: #d1fae5;
   color: #065f46;
@@ -399,4 +405,77 @@
   padding: 4rem;
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+/* ── Search bar ── */
+.pp-search-wrap {
+  position: relative;
+  margin-bottom: 0.75rem;
+  animation: fadeUp 0.3s ease both;
+}
+.pp-search-icon {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  color: var(--muted);
+  pointer-events: none;
+  stroke-width: 2;
+}
+.pp-search {
+  width: 100%;
+  padding: 0.6rem 1rem 0.6rem 2.4rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.9rem;
+  font-family: "Inter", sans-serif;
+  outline: none;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+  box-shadow: var(--shadow-sm);
+}
+.pp-search:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+.pp-search::placeholder {
+  color: var(--muted);
+}
+
+/* ── Load more button ── */
+.btn-load-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.75rem;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition:
+    border-color 0.15s,
+    color 0.15s,
+    box-shadow 0.15s;
+}
+.btn-load-more:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+.btn-load-more i {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  stroke-width: 2;
 }
