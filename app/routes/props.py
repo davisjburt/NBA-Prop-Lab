@@ -20,8 +20,7 @@ STAT_LABELS  = {
 }
 
 # Path to the data/ folder committed by GitHub Actions
-_DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "data")
-
+_DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "data")
 
 def _load_json(filename, fallback):
     """Read a JSON file from data/. Returns fallback value if missing or corrupt."""
