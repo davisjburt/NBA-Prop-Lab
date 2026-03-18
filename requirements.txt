@@ -5,5 +5,4 @@ requests
 psycopg2-binary
 numpy
 pandas
-selenium
-webdriver-manager
+python-dotenv
