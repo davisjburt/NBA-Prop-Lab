@@ -1,30 +1,63 @@
-import json
+"""
+app/services/prizepicks.py
+--------------------------
+Fetches NBA player prop lines from The Odds API and normalises them into
+the same shape that fetch_data.py expects from the old PrizePicks scraper:
+
+  [
+    {
+      "name":          str,   # display name  e.g. "LeBron James"
+      "name_key":      str,   # normalised key e.g. "lebron james"
+      "team":          str,   # NBA abbr       e.g. "LAL"
+      "position":      str,   # "" (OddsAPI doesn't supply position)
+      "stat":          str,   # internal key   e.g. "pts"
+      "pp_stat_label": str,   # human label    e.g. "Points"
+      "line":          float, # over/under line
+      "odds_type":     str,   # always "standard" from OddsAPI
+    },
+    ...
+  ]
+
+Set your key in a .env file at the repo root:
+  ODDS_API_KEY=your_key_here
+
+Free tier: 500 requests/month  https://the-odds-api.com
+"""
+
+import os
 import unicodedata
-import time
+import requests
+from dotenv import load_dotenv
 
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.support.ui import WebDriverWait
-from webdriver_manager.chrome import ChromeDriverManager
+load_dotenv()
 
-PP_URL = "https://api.prizepicks.com/projections"
-PP_API  = f"{PP_URL}?league_id=7&per_page=250&single_stat=true"
+# ---------------------------------------------------------------------------
+# OddsAPI constants
+# ---------------------------------------------------------------------------
+_BASE   = "https://api.the-odds-api.com/v4"
+_SPORT  = "basketball_nba"
+_REGION = "us"
 
-STAT_MAP = {
-    "Points":        "pts",
-    "Rebounds":      "reb",
-    "Assists":       "ast",
-    "Steals":        "stl",
-    "Blocked Shots": "blk",
-    "3-Pt Made":     "fg3m",
-    "Turnovers":     "tov",
-    "Pts+Rebs+Asts": "pra",
-    "Pts+Rebs":      "pr",
-    "Pts+Asts":      "pa",
-    "Rebs+Asts":     "ra",
-    "Blks+Stls":     "bs",
+# Maps OddsAPI market keys -> our internal stat keys + human labels
+# Only markets that the free tier exposes for NBA are listed.
+_MARKET_MAP = {
+    "player_points":              ("pts",  "Points"),
+    "player_rebounds":            ("reb",  "Rebounds"),
+    "player_assists":             ("ast",  "Assists"),
+    "player_steals":              ("stl",  "Steals"),
+    "player_blocks":              ("blk",  "Blocked Shots"),
+    "player_threes":              ("fg3m", "3-Pt Made"),
+    "player_turnovers":           ("tov",  "Turnovers"),
+    "player_points_rebounds_assists": ("pra", "Pts+Rebs+Asts"),
+    "player_points_rebounds":     ("pr",   "Pts+Rebs"),
+    "player_points_assists":      ("pa",   "Pts+Asts"),
+    "player_rebounds_assists":    ("ra",   "Rebs+Asts"),
+    "player_blocks_steals":       ("bs",   "Blks+Stls"),
 }
+
+# Bookmaker to use for line values (PrizePicks is DFS, not a sportsbook;
+# we use DraftKings as the closest proxy for their lines).
+_BOOKMAKER = "draftkings"
 
 TEAM_NORMALIZE = {
     "atlanta hawks":         "ATL",
@@ -62,180 +95,180 @@ TEAM_NORMALIZE = {
 }
 
 
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
 def normalize(name: str) -> str:
+    """Return ASCII-lowercased, stripped version of a player name."""
     nfkd = unicodedata.normalize("NFKD", name or "")
     return nfkd.encode("ascii", "ignore").decode("ascii").lower().strip()
-
-
-def normalize_odds_type(raw):
-    if not raw:
-        return "standard"
-    low = raw.lower()
-    if "goblin" in low:
-        return "goblin"
-    if "demon" in low:
-        return "demon"
-    return "standard"
 
 
 def normalize_team(raw: str) -> str:
     if not raw:
         return ""
-    raw_stripped = raw.strip()
-    if len(raw_stripped) <= 4 and raw_stripped.isupper():
-        return raw_stripped
-    key = raw_stripped.lower()
-    if key in TEAM_NORMALIZE:
-        return TEAM_NORMALIZE[key]
-    return raw_stripped.upper()
+    raw = raw.strip()
+    if len(raw) <= 4 and raw.isupper():
+        return raw
+    return TEAM_NORMALIZE.get(raw.lower(), raw.upper())
 
 
-def _build_driver():
-    """Return a headless Chrome WebDriver that mimics a real browser."""
-    opts = Options()
-    opts.add_argument("--headless=new")
-    opts.add_argument("--no-sandbox")
-    opts.add_argument("--disable-dev-shm-usage")
-    opts.add_argument("--disable-blink-features=AutomationControlled")
-    opts.add_experimental_option("excludeSwitches", ["enable-automation"])
-    opts.add_experimental_option("useAutomationExtension", False)
-    opts.add_argument(
-        "user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/123.0.0.0 Safari/537.36"
+def _get_api_key() -> str:
+    key = os.getenv("ODDS_API_KEY", "")
+    if not key:
+        raise EnvironmentError(
+            "ODDS_API_KEY not set. Add it to your .env file:\n"
+            "  ODDS_API_KEY=your_key_here\n"
+            "Get a free key at https://the-odds-api.com"
+        )
+    return key
+
+
+# ---------------------------------------------------------------------------
+# OddsAPI fetching
+# ---------------------------------------------------------------------------
+
+def _fetch_today_event_ids(api_key: str) -> list[str]:
+    """
+    Return a list of today's NBA event IDs from the OddsAPI events endpoint.
+    """
+    url = f"{_BASE}/sports/{_SPORT}/events"
+    resp = requests.get(
+        url,
+        params={"apiKey": api_key, "dateFormat": "iso"},
+        timeout=15,
     )
-    # Enable network interception so we can capture XHR responses
-    opts.set_capability("goog:loggingPrefs", {"performance": "ALL"})
-    service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service, options=opts)
-    driver.execute_cdp_cmd(
-        "Page.addScriptToEvaluateOnNewDocument",
-        {"source": "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"},
-    )
-    return driver
+    resp.raise_for_status()
+    events = resp.json()
+    print(f"  [OddsAPI] {len(events)} event(s) found today")
+    return [e["id"] for e in events]
 
 
-def _parse_response(data: dict) -> list:
-    """Extract prop lines from the PrizePicks projections JSON payload."""
-    players = {}
-    for item in data.get("included", []):
-        if item.get("type") == "new_player":
-            attr = item["attributes"]
-            players[item["id"]] = {
-                "name":     attr.get("display_name", ""),
-                "team":     attr.get("team", ""),
-                "position": attr.get("position", ""),
-            }
+def _fetch_props_for_event(
+    api_key: str,
+    event_id: str,
+    markets: list[str],
+) -> list[dict]:
+    """
+    Fetch player prop odds for a single event and return a flat list of
+    normalised line dicts ready for fetch_data.py.
+    """
+    url = f"{_BASE}/sports/{_SPORT}/events/{event_id}/odds"
+    try:
+        resp = requests.get(
+            url,
+            params={
+                "apiKey":   api_key,
+                "regions":  _REGION,
+                "markets":  ",".join(markets),
+                "oddsFormat": "american",
+            },
+            timeout=15,
+        )
+        resp.raise_for_status()
+    except requests.HTTPError as e:
+        # 422 means no props available for this event yet — skip silently
+        if e.response is not None and e.response.status_code == 422:
+            return []
+        raise
 
+    data = resp.json()
     lines = []
-    for proj in data.get("data", []):
-        attr       = proj.get("attributes", {})
-        pp_stat    = attr.get("stat_type", "")
-        line       = attr.get("line_score")
-        odds_type  = normalize_odds_type(attr.get("odds_type"))
-        player_rel = proj.get("relationships", {}).get("new_player", {}).get("data", {})
-        player_id  = player_rel.get("id")
-        player     = players.get(player_id, {})
-        stat       = STAT_MAP.get(pp_stat)
 
-        if not stat or not line or not player:
+    for bookmaker in data.get("bookmakers", []):
+        if bookmaker["key"] != _BOOKMAKER:
             continue
+        for market in bookmaker.get("markets", []):
+            mkt_key = market["key"]
+            if mkt_key not in _MARKET_MAP:
+                continue
+            stat, label = _MARKET_MAP[mkt_key]
 
-        raw_team  = player.get("team") or ""
-        team_abbr = normalize_team(raw_team)
+            # Group outcomes by player name so we can find the over line
+            player_outcomes: dict[str, dict] = {}
+            for outcome in market.get("outcomes", []):
+                pname = outcome.get("description") or outcome.get("name", "")
+                if not pname:
+                    continue
+                if pname not in player_outcomes:
+                    player_outcomes[pname] = {}
+                player_outcomes[pname][outcome["name"].lower()] = outcome
 
-        lines.append({
-            "name":          player["name"],
-            "name_key":      normalize(player["name"]),
-            "team":          team_abbr,
-            "position":      player["position"],
-            "stat":          stat,
-            "pp_stat_label": pp_stat,
-            "line":          float(line),
-            "odds_type":     odds_type,
-        })
+            for pname, sides in player_outcomes.items():
+                over = sides.get("over")
+                if not over or over.get("point") is None:
+                    continue
+                line_val = float(over["point"])
+
+                # Derive team from home_team / away_team on the event
+                home_team = normalize_team(data.get("home_team", ""))
+                away_team = normalize_team(data.get("away_team", ""))
+                # OddsAPI doesn't tell us which team the player is on —
+                # leave team as "" and let fetch_data.py resolve via DB
+                team = ""
+
+                lines.append({
+                    "name":          pname,
+                    "name_key":      normalize(pname),
+                    "team":          team,
+                    "position":      "",
+                    "stat":          stat,
+                    "pp_stat_label": label,
+                    "line":          line_val,
+                    "odds_type":     "standard",
+                    # Store home/away for optional downstream use
+                    "_home_team":    home_team,
+                    "_away_team":    away_team,
+                })
+        break  # only need DraftKings
+
     return lines
 
 
-def _capture_via_network_log(driver) -> list:
-    """
-    After navigating to app.prizepicks.com, scrape the Chrome performance log
-    to find the projections XHR response body captured in-flight.
-    Returns parsed lines or [] if not found.
-    """
-    logs = driver.get_log("performance")
-    request_ids = []
-    for entry in logs:
-        try:
-            msg = json.loads(entry["message"])["message"]
-            if (
-                msg.get("method") == "Network.responseReceived"
-                and "prizepicks.com/projections" in msg.get("params", {}).get("response", {}).get("url", "")
-            ):
-                request_ids.append(msg["params"]["requestId"])
-        except Exception:
-            continue
+# ---------------------------------------------------------------------------
+# Public entry point (called by fetch_data.py)
+# ---------------------------------------------------------------------------
 
-    for rid in request_ids:
-        try:
-            result = driver.execute_cdp_cmd("Network.getResponseBody", {"requestId": rid})
-            body = result.get("body", "")
-            data = json.loads(body)
-            lines = _parse_response(data)
-            if lines:
-                return lines
-        except Exception:
-            continue
-    return []
-
-
-def fetch_prizepicks_lines() -> list:
+def fetch_prizepicks_lines() -> list[dict]:
     """
-    Fetch PrizePicks NBA projections using a headless Chrome browser.
-    Strategy:
-      1. Enable CDP Network domain so XHR bodies are capturable.
-      2. Warm session on app.prizepicks.com (sets cookies / passes bot checks).
-      3. Try to capture the projections XHR that fires on page load via perf log.
-      4. Fall back to navigating directly to the API URL and reading the body.
+    Fetch today's NBA player prop lines from The Odds API.
+    Returns a list in the same shape as the old PrizePicks scraper so the
+    rest of fetch_data.py works without any changes.
     """
-    driver = None
     try:
-        driver = _build_driver()
-
-        # Enable network tracking before any navigation
-        driver.execute_cdp_cmd("Network.enable", {})
-
-        # --- Step 1: warm the session ---
-        print("  [PP] Loading app.prizepicks.com...")
-        driver.get("https://app.prizepicks.com/")
-        time.sleep(6)  # Give the SPA time to boot and fire its XHR calls
-
-        # --- Step 2: try to grab the XHR that fired during page load ---
-        lines = _capture_via_network_log(driver)
-        if lines:
-            print(f"  PrizePicks: fetched {len(lines)} lines via XHR intercept")
-            return lines
-
-        # --- Step 3: fall back — navigate directly to the JSON endpoint ---
-        print("  [PP] XHR intercept got 0 lines, trying direct API nav...")
-        driver.get(PP_API)
-        time.sleep(3)
-
-        try:
-            body_text = driver.find_element("tag name", "body").text.strip()
-            print(f"  [PP] Direct API body preview: {body_text[:200]}")
-            data = json.loads(body_text)
-            lines = _parse_response(data)
-        except Exception as parse_err:
-            print(f"  [PP] Body parse error: {parse_err}")
-            lines = []
-
-        print(f"  PrizePicks: fetched {len(lines)} lines via direct nav")
-        return lines
-
-    except Exception as e:
-        print(f"PrizePicks fetch error: {e}")
+        api_key = _get_api_key()
+    except EnvironmentError as e:
+        print(f"  [OddsAPI] {e}")
         return []
-    finally:
-        if driver:
-            driver.quit()
+
+    markets = list(_MARKET_MAP.keys())
+
+    try:
+        event_ids = _fetch_today_event_ids(api_key)
+    except Exception as e:
+        print(f"  [OddsAPI] Failed to fetch events: {e}")
+        return []
+
+    if not event_ids:
+        print("  [OddsAPI] No NBA games today.")
+        return []
+
+    all_lines: list[dict] = []
+    seen: set[tuple] = set()  # deduplicate (name_key, stat)
+
+    for event_id in event_ids:
+        try:
+            event_lines = _fetch_props_for_event(api_key, event_id, markets)
+        except Exception as e:
+            print(f"  [OddsAPI] Event {event_id} error: {e}")
+            continue
+
+        for line in event_lines:
+            key = (line["name_key"], line["stat"])
+            if key not in seen:
+                seen.add(key)
+                all_lines.append(line)
+
+    print(f"  [OddsAPI] Fetched {len(all_lines)} prop lines across {len(event_ids)} game(s)")
+    return all_lines
