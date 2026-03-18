@@ -2,26 +2,14 @@
 app/services/prizepicks.py
 --------------------------
 Fetches NBA player prop lines from The Odds API and normalises them into
-the same shape that fetch_data.py expects from the old PrizePicks scraper:
+the same shape that fetch_data.py expects.
 
-  [
-    {
-      "name":          str,   # display name  e.g. "LeBron James"
-      "name_key":      str,   # normalised key e.g. "lebron james"
-      "team":          str,   # NBA abbr       e.g. "LAL"
-      "position":      str,   # "" (OddsAPI doesn't supply position)
-      "stat":          str,   # internal key   e.g. "pts"
-      "pp_stat_label": str,   # human label    e.g. "Points"
-      "line":          float, # over/under line
-      "odds_type":     str,   # always "standard" from OddsAPI
-    },
-    ...
-  ]
+Cost: 1 request (events list) + 1 request per game = ~10 requests/day.
+Free tier: 500 requests/month -> ~50 full runs/month.
 
 Set your key in a .env file at the repo root:
   ODDS_API_KEY=your_key_here
-
-Free tier: 500 requests/month  https://the-odds-api.com
+Get a free key at https://the-odds-api.com
 """
 
 import os
@@ -38,25 +26,39 @@ _BASE   = "https://api.the-odds-api.com/v4"
 _SPORT  = "basketball_nba"
 _REGION = "us"
 
-# Maps OddsAPI market keys -> our internal stat keys + human labels
-# Only markets that the free tier exposes for NBA are listed.
+# All markets passed as ONE comma-joined string per event call = 1 request/game
+_MARKETS = (
+    "player_points,"
+    "player_rebounds,"
+    "player_assists,"
+    "player_steals,"
+    "player_blocks,"
+    "player_threes,"
+    "player_turnovers,"
+    "player_points_rebounds_assists,"
+    "player_points_rebounds,"
+    "player_points_assists,"
+    "player_rebounds_assists,"
+    "player_blocks_steals"
+)
+
+# OddsAPI market key -> (internal stat key, human label)
 _MARKET_MAP = {
-    "player_points":              ("pts",  "Points"),
-    "player_rebounds":            ("reb",  "Rebounds"),
-    "player_assists":             ("ast",  "Assists"),
-    "player_steals":              ("stl",  "Steals"),
-    "player_blocks":              ("blk",  "Blocked Shots"),
-    "player_threes":              ("fg3m", "3-Pt Made"),
-    "player_turnovers":           ("tov",  "Turnovers"),
-    "player_points_rebounds_assists": ("pra", "Pts+Rebs+Asts"),
-    "player_points_rebounds":     ("pr",   "Pts+Rebs"),
-    "player_points_assists":      ("pa",   "Pts+Asts"),
-    "player_rebounds_assists":    ("ra",   "Rebs+Asts"),
-    "player_blocks_steals":       ("bs",   "Blks+Stls"),
+    "player_points":                  ("pts",  "Points"),
+    "player_rebounds":                ("reb",  "Rebounds"),
+    "player_assists":                 ("ast",  "Assists"),
+    "player_steals":                  ("stl",  "Steals"),
+    "player_blocks":                  ("blk",  "Blocked Shots"),
+    "player_threes":                  ("fg3m", "3-Pt Made"),
+    "player_turnovers":               ("tov",  "Turnovers"),
+    "player_points_rebounds_assists": ("pra",  "Pts+Rebs+Asts"),
+    "player_points_rebounds":         ("pr",   "Pts+Rebs"),
+    "player_points_assists":          ("pa",   "Pts+Asts"),
+    "player_rebounds_assists":        ("ra",   "Rebs+Asts"),
+    "player_blocks_steals":           ("bs",   "Blks+Stls"),
 }
 
-# Bookmaker to use for line values (PrizePicks is DFS, not a sportsbook;
-# we use DraftKings as the closest proxy for their lines).
+# Best bookmaker proxy for PrizePicks lines
 _BOOKMAKER = "draftkings"
 
 TEAM_NORMALIZE = {
@@ -100,7 +102,6 @@ TEAM_NORMALIZE = {
 # ---------------------------------------------------------------------------
 
 def normalize(name: str) -> str:
-    """Return ASCII-lowercased, stripped version of a player name."""
     nfkd = unicodedata.normalize("NFKD", name or "")
     return nfkd.encode("ascii", "ignore").decode("ascii").lower().strip()
 
@@ -126,115 +127,104 @@ def _get_api_key() -> str:
 
 
 # ---------------------------------------------------------------------------
-# OddsAPI fetching
+# API calls  (1 request for events list + 1 per game)
 # ---------------------------------------------------------------------------
 
-def _fetch_today_event_ids(api_key: str) -> list[str]:
-    """
-    Return a list of today's NBA event IDs from the OddsAPI events endpoint.
-    """
-    url = f"{_BASE}/sports/{_SPORT}/events"
+def _fetch_events(api_key: str) -> list[dict]:
+    """Return today's NBA events from the OddsAPI."""
     resp = requests.get(
-        url,
+        f"{_BASE}/sports/{_SPORT}/events",
         params={"apiKey": api_key, "dateFormat": "iso"},
         timeout=15,
     )
     resp.raise_for_status()
-    events = resp.json()
-    print(f"  [OddsAPI] {len(events)} event(s) found today")
-    return [e["id"] for e in events]
+    remaining = resp.headers.get("x-requests-remaining", "?")
+    used      = resp.headers.get("x-requests-used", "?")
+    print(f"  [OddsAPI] {len(resp.json())} game(s) today | "
+          f"quota used: {used} / {int(used)+int(remaining) if used != '?' and remaining != '?' else '500'}")
+    return resp.json()
 
 
-def _fetch_props_for_event(
-    api_key: str,
-    event_id: str,
-    markets: list[str],
-) -> list[dict]:
+def _fetch_event_props(api_key: str, event: dict) -> list[dict]:
     """
-    Fetch player prop odds for a single event and return a flat list of
-    normalised line dicts ready for fetch_data.py.
+    Fetch ALL markets for one event in a single API call (1 request).
+    Returns a flat list of normalised prop dicts.
     """
-    url = f"{_BASE}/sports/{_SPORT}/events/{event_id}/odds"
+    event_id   = event["id"]
+    home_team  = normalize_team(event.get("home_team", ""))
+    away_team  = normalize_team(event.get("away_team", ""))
+
     try:
         resp = requests.get(
-            url,
+            f"{_BASE}/sports/{_SPORT}/events/{event_id}/odds",
             params={
-                "apiKey":   api_key,
-                "regions":  _REGION,
-                "markets":  ",".join(markets),
+                "apiKey":     api_key,
+                "regions":    _REGION,
+                "markets":    _MARKETS,   # all 12 markets in one shot
                 "oddsFormat": "american",
             },
-            timeout=15,
+            timeout=20,
         )
         resp.raise_for_status()
     except requests.HTTPError as e:
-        # 422 means no props available for this event yet — skip silently
-        if e.response is not None and e.response.status_code == 422:
-            return []
+        if e.response is not None and e.response.status_code in (404, 422):
+            return []   # props not yet posted for this game
         raise
 
-    data = resp.json()
+    data  = resp.json()
     lines = []
 
     for bookmaker in data.get("bookmakers", []):
         if bookmaker["key"] != _BOOKMAKER:
             continue
+
         for market in bookmaker.get("markets", []):
             mkt_key = market["key"]
             if mkt_key not in _MARKET_MAP:
                 continue
             stat, label = _MARKET_MAP[mkt_key]
 
-            # Group outcomes by player name so we can find the over line
-            player_outcomes: dict[str, dict] = {}
+            # Group by player: {player_name: {"over": outcome, "under": outcome}}
+            by_player: dict[str, dict] = {}
             for outcome in market.get("outcomes", []):
+                # OddsAPI puts the player name in "description" for props
                 pname = outcome.get("description") or outcome.get("name", "")
                 if not pname:
                     continue
-                if pname not in player_outcomes:
-                    player_outcomes[pname] = {}
-                player_outcomes[pname][outcome["name"].lower()] = outcome
+                by_player.setdefault(pname, {})
+                by_player[pname][outcome["name"].lower()] = outcome
 
-            for pname, sides in player_outcomes.items():
+            for pname, sides in by_player.items():
                 over = sides.get("over")
                 if not over or over.get("point") is None:
                     continue
-                line_val = float(over["point"])
-
-                # Derive team from home_team / away_team on the event
-                home_team = normalize_team(data.get("home_team", ""))
-                away_team = normalize_team(data.get("away_team", ""))
-                # OddsAPI doesn't tell us which team the player is on —
-                # leave team as "" and let fetch_data.py resolve via DB
-                team = ""
 
                 lines.append({
                     "name":          pname,
                     "name_key":      normalize(pname),
-                    "team":          team,
+                    "team":          "",        # resolved from DB in fetch_data.py
                     "position":      "",
                     "stat":          stat,
                     "pp_stat_label": label,
-                    "line":          line_val,
+                    "line":          float(over["point"]),
                     "odds_type":     "standard",
-                    # Store home/away for optional downstream use
                     "_home_team":    home_team,
                     "_away_team":    away_team,
                 })
-        break  # only need DraftKings
+        break  # only need one bookmaker
 
     return lines
 
 
 # ---------------------------------------------------------------------------
-# Public entry point (called by fetch_data.py)
+# Public entry point
 # ---------------------------------------------------------------------------
 
 def fetch_prizepicks_lines() -> list[dict]:
     """
     Fetch today's NBA player prop lines from The Odds API.
-    Returns a list in the same shape as the old PrizePicks scraper so the
-    rest of fetch_data.py works without any changes.
+    Cost: 1 (events) + N (one per game) requests.
+    Returns the same list shape as the old PrizePicks scraper.
     """
     try:
         api_key = _get_api_key()
@@ -242,33 +232,36 @@ def fetch_prizepicks_lines() -> list[dict]:
         print(f"  [OddsAPI] {e}")
         return []
 
-    markets = list(_MARKET_MAP.keys())
-
     try:
-        event_ids = _fetch_today_event_ids(api_key)
+        events = _fetch_events(api_key)
     except Exception as e:
         print(f"  [OddsAPI] Failed to fetch events: {e}")
         return []
 
-    if not event_ids:
+    if not events:
         print("  [OddsAPI] No NBA games today.")
         return []
 
     all_lines: list[dict] = []
-    seen: set[tuple] = set()  # deduplicate (name_key, stat)
+    seen: set[tuple]      = set()   # deduplicate (name_key, stat)
 
-    for event_id in event_ids:
+    for event in events:
+        matchup = f"{normalize_team(event.get('away_team',''))} @ {normalize_team(event.get('home_team',''))}"
         try:
-            event_lines = _fetch_props_for_event(api_key, event_id, markets)
+            props = _fetch_event_props(api_key, event)
         except Exception as e:
-            print(f"  [OddsAPI] Event {event_id} error: {e}")
+            print(f"  [OddsAPI] {matchup} error: {e}")
             continue
 
-        for line in event_lines:
+        added = 0
+        for line in props:
             key = (line["name_key"], line["stat"])
             if key not in seen:
                 seen.add(key)
                 all_lines.append(line)
+                added += 1
 
-    print(f"  [OddsAPI] Fetched {len(all_lines)} prop lines across {len(event_ids)} game(s)")
+        print(f"  [OddsAPI] {matchup}: {added} lines")
+
+    print(f"  [OddsAPI] Total: {len(all_lines)} prop lines across {len(events)} game(s)")
     return all_lines
