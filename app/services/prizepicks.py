@@ -1,33 +1,27 @@
 """
 app/services/prizepicks.py
 --------------------------
-Scrapes NBA player prop lines directly from the PrizePicks web app
-using Playwright (headless Chromium). No API key required.
+Fetches NBA player prop lines directly from the PrizePicks public
+projections JSON endpoint. No API key required.
 
-Install once:
-  pip install playwright
-  playwright install chromium
-
-The scraper:
-  1. Loads app.prizepicks.com in a headless browser (passes bot checks)
-  2. Waits for the NBA league tab and clicks it
-  3. Waits for prop cards to render
-  4. Intercepts the /projections XHR that fires during page load
-     (faster + more reliable than scraping the DOM)
-  5. Falls back to DOM scraping if XHR intercept misses
-
-Returns the same list shape that fetch_data.py expects.
+How it works:
+  1. Calls https://api.prizepicks.com/projections with NBA params
+  2. Parses the JSON payload (same structure as the old app XHR)
+  3. Normalizes player names, teams, and odds_type
+  4. Returns a list of dicts in the exact shape fetch_data.py expects
 """
 
 import json
 import unicodedata
 import time
+from typing import List, Dict
 
-from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeout
+import requests
 
 # ---------------------------------------------------------------------------
 # Stat label -> internal key mapping
 # ---------------------------------------------------------------------------
+
 STAT_MAP = {
     "Points":        "pts",
     "Rebounds":      "reb",
@@ -44,44 +38,70 @@ STAT_MAP = {
 }
 
 TEAM_NORMALIZE = {
-    "atlanta hawks":         "ATL",
-    "boston celtics":        "BOS",
-    "brooklyn nets":         "BKN",
-    "charlotte hornets":     "CHA",
-    "chicago bulls":         "CHI",
-    "cleveland cavaliers":   "CLE",
-    "dallas mavericks":      "DAL",
-    "denver nuggets":        "DEN",
-    "detroit pistons":       "DET",
-    "golden state warriors": "GSW",
-    "houston rockets":       "HOU",
-    "indiana pacers":        "IND",
-    "los angeles clippers":  "LAC",
-    "la clippers":           "LAC",
-    "los angeles lakers":    "LAL",
-    "la lakers":             "LAL",
-    "memphis grizzlies":     "MEM",
-    "miami heat":            "MIA",
-    "milwaukee bucks":       "MIL",
-    "minnesota timberwolves":"MIN",
-    "new orleans pelicans":  "NOP",
-    "new york knicks":       "NYK",
-    "oklahoma city thunder": "OKC",
-    "orlando magic":         "ORL",
-    "philadelphia 76ers":    "PHI",
-    "phoenix suns":          "PHX",
-    "portland trail blazers":"POR",
-    "sacramento kings":      "SAC",
-    "san antonio spurs":     "SAS",
-    "toronto raptors":       "TOR",
-    "utah jazz":             "UTA",
-    "washington wizards":    "WAS",
+    "atlanta hawks":          "ATL",
+    "boston celtics":         "BOS",
+    "brooklyn nets":          "BKN",
+    "charlotte hornets":      "CHA",
+    "chicago bulls":          "CHI",
+    "cleveland cavaliers":    "CLE",
+    "dallas mavericks":       "DAL",
+    "denver nuggets":         "DEN",
+    "detroit pistons":        "DET",
+    "golden state warriors":  "GSW",
+    "houston rockets":        "HOU",
+    "indiana pacers":         "IND",
+    "los angeles clippers":   "LAC",
+    "la clippers":            "LAC",
+    "los angeles lakers":     "LAL",
+    "la lakers":              "LAL",
+    "memphis grizzlies":      "MEM",
+    "miami heat":             "MIA",
+    "milwaukee bucks":        "MIL",
+    "minnesota timberwolves": "MIN",
+    "new orleans pelicans":   "NOP",
+    "new york knicks":        "NYK",
+    "oklahoma city thunder":  "OKC",
+    "orlando magic":          "ORL",
+    "philadelphia 76ers":     "PHI",
+    "phoenix suns":           "PHX",
+    "portland trail blazers": "POR",
+    "sacramento kings":       "SAC",
+    "san antonio spurs":      "SAS",
+    "toronto raptors":        "TOR",
+    "utah jazz":              "UTA",
+    "washington wizards":     "WAS",
 }
 
+# ---------------------------------------------------------------------------
+# HTTP config for PrizePicks projections API
+# ---------------------------------------------------------------------------
+
+PP_URL = "https://api.prizepicks.com/projections"
+
+PP_HEADERS = {
+    "Accept": "application/json, text/plain, */*",
+    "Accept-Language": "en-US,en;q=0.9",
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/123.0.0.0 Safari/537.36"
+    ),
+    "Origin": "https://app.prizepicks.com",
+    "Referer": "https://app.prizepicks.com/",
+    "Connection": "keep-alive",
+}
+
+
+PP_PARAMS = {
+    "league_id": 7,       # NBA
+    "per_page": 250,      # large enough for full board
+    "single_stat": "true"
+}
 
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+
 
 def normalize(name: str) -> str:
     nfkd = unicodedata.normalize("NFKD", name or "")
@@ -112,27 +132,41 @@ def normalize_odds_type(raw: str) -> str:
 # Parse the /projections JSON payload (same structure as the old API)
 # ---------------------------------------------------------------------------
 
-def _parse_projections_json(data: dict) -> list[dict]:
-    players = {}
+
+def _parse_projections_json(data: dict) -> List[Dict]:
+    """
+    Parse the PrizePicks projections JSON into a flat list of prop lines
+    that fetch_data.py can consume.
+    """
+    players: Dict[str, Dict] = {}
+
     for item in data.get("included", []):
         if item.get("type") == "new_player":
-            attr = item["attributes"]
+            attr = item.get("attributes", {})
             players[item["id"]] = {
                 "name":     attr.get("display_name", ""),
                 "team":     attr.get("team", ""),
                 "position": attr.get("position", ""),
             }
 
-    lines = []
+    lines: List[Dict] = []
+
     for proj in data.get("data", []):
-        attr       = proj.get("attributes", {})
-        pp_stat    = attr.get("stat_type", "")
-        line       = attr.get("line_score")
-        odds_type  = normalize_odds_type(attr.get("odds_type", ""))
-        player_rel = proj.get("relationships", {}).get("new_player", {}).get("data", {})
-        player_id  = player_rel.get("id")
-        player     = players.get(player_id, {})
-        stat       = STAT_MAP.get(pp_stat)
+        attr = proj.get("attributes", {})
+
+        pp_stat = attr.get("stat_type", "")
+        line = attr.get("line_score")
+        odds_type_raw = attr.get("odds_type", "")
+
+        player_rel = (
+            proj.get("relationships", {})
+            .get("new_player", {})
+            .get("data", {})
+        )
+        player_id = player_rel.get("id")
+        player = players.get(player_id, {})
+
+        stat = STAT_MAP.get(pp_stat)
 
         if not stat or line is None or not player:
             continue
@@ -145,62 +179,9 @@ def _parse_projections_json(data: dict) -> list[dict]:
             "stat":          stat,
             "pp_stat_label": pp_stat,
             "line":          float(line),
-            "odds_type":     odds_type,
+            "odds_type":     normalize_odds_type(odds_type_raw),
         })
-    return lines
 
-
-# ---------------------------------------------------------------------------
-# DOM scrape fallback — parses rendered prop cards
-# ---------------------------------------------------------------------------
-
-def _scrape_dom(page) -> list[dict]:
-    """
-    Fallback: scrape prop cards directly from the rendered DOM.
-    PrizePicks renders each prop as a <li> card containing:
-      - player name
-      - stat type label
-      - line value
-    """
-    lines = []
-    try:
-        # Wait for at least one prop card to appear
-        page.wait_for_selector("li.projection", timeout=15000)
-        cards = page.query_selector_all("li.projection")
-        print(f"  [PP] DOM: found {len(cards)} prop cards")
-
-        for card in cards:
-            try:
-                name_el  = card.query_selector(".name")
-                stat_el  = card.query_selector(".stat-type, .market-name, [class*='stat']")
-                line_el  = card.query_selector(".score, .line-score, [class*='score']")
-                team_el  = card.query_selector(".team-name, [class*='team']")
-                odds_el  = card.query_selector(".odds-type, [class*='goblin'], [class*='demon']")
-
-                name     = name_el.inner_text().strip()  if name_el  else ""
-                pp_stat  = stat_el.inner_text().strip()  if stat_el  else ""
-                line_txt = line_el.inner_text().strip()  if line_el  else ""
-                team_raw = team_el.inner_text().strip()  if team_el  else ""
-                odds_raw = odds_el.inner_text().strip()  if odds_el  else ""
-
-                stat = STAT_MAP.get(pp_stat)
-                if not stat or not name or not line_txt:
-                    continue
-
-                lines.append({
-                    "name":          name,
-                    "name_key":      normalize(name),
-                    "team":          normalize_team(team_raw),
-                    "position":      "",
-                    "stat":          stat,
-                    "pp_stat_label": pp_stat,
-                    "line":          float(line_txt),
-                    "odds_type":     normalize_odds_type(odds_raw),
-                })
-            except Exception:
-                continue
-    except PlaywrightTimeout:
-        print("  [PP] DOM scrape timed out waiting for prop cards")
     return lines
 
 
@@ -208,91 +189,46 @@ def _scrape_dom(page) -> list[dict]:
 # Public entry point
 # ---------------------------------------------------------------------------
 
-def fetch_prizepicks_lines() -> list[dict]:
+
+def fetch_prizepicks_lines() -> List[Dict]:
     """
-    Fetch PrizePicks NBA prop lines using a headless Playwright browser.
-    Strategy:
-      1. Intercept the /projections XHR that fires when the page loads
-         -> parse the JSON directly (same payload as the old API)
-      2. If intercept gets 0 results, fall back to DOM scraping
+    Fetch PrizePicks NBA prop lines using their public projections JSON
+    endpoint. No headless browser required.
+
+    Returns:
+        List[dict]: Each entry has keys:
+          - name
+          - name_key
+          - team
+          - position
+          - stat
+          - pp_stat_label
+          - line
+          - odds_type
     """
-    intercepted: list[dict] = []
-    xhr_done = {"fired": False}
-
-    def handle_response(response):
-        if "prizepicks.com/projections" in response.url and not xhr_done["fired"]:
-            try:
-                data  = response.json()
-                lines = _parse_projections_json(data)
-                if lines:
-                    intercepted.extend(lines)
-                    xhr_done["fired"] = True
-                    print(f"  [PP] XHR intercepted: {len(lines)} lines")
-            except Exception as e:
-                print(f"  [PP] XHR parse error: {e}")
-
-    with sync_playwright() as p:
-        browser = p.chromium.launch(
-            headless=True,
-            args=[
-                "--no-sandbox",
-                "--disable-blink-features=AutomationControlled",
-            ],
+    try:
+        print("  [PP] Hitting projections API...")
+        resp = requests.get(
+            PP_URL,
+            headers=PP_HEADERS,
+            params=PP_PARAMS,
+            timeout=15,
         )
-        context = browser.new_context(
-            user_agent=(
-                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/123.0.0.0 Safari/537.36"
-            ),
-            viewport={"width": 1280, "height": 900},
-            locale="en-US",
-        )
-        page = context.new_page()
+        print("  [PP] Status:", resp.status_code)
 
-        # Strip webdriver fingerprint
-        page.add_init_script(
-            "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
-        )
 
-        # Attach response listener before navigation
-        page.on("response", handle_response)
-
-        print("  [PP] Loading app.prizepicks.com...")
-        try:
-            page.goto("https://app.prizepicks.com/", wait_until="domcontentloaded", timeout=30000)
-        except PlaywrightTimeout:
-            print("  [PP] Page load timed out")
-            browser.close()
+        if resp.status_code != 200:
+            print(f"  [PP] HTTP {resp.status_code} from projections endpoint")
             return []
 
-        # Give SPA time to boot and fire XHR calls
-        time.sleep(6)
-
-        if intercepted:
-            browser.close()
-            return intercepted
-
-        # XHR intercept missed — try clicking the NBA league tab then DOM scrape
-        print("  [PP] XHR miss, attempting NBA tab click + DOM scrape...")
-        try:
-            # Look for an NBA league selector button
-            nba_btn = page.query_selector(
-                "button:has-text('NBA'), "
-                "[data-league='NBA'], "
-                "li:has-text('NBA')"
-            )
-            if nba_btn:
-                nba_btn.click()
-                time.sleep(3)
-        except Exception as e:
-            print(f"  [PP] NBA tab click error: {e}")
-
-        lines = _scrape_dom(page)
-        browser.close()
-
-        if not lines:
-            print("  [PP] Both XHR intercept and DOM scrape returned 0 lines")
-            print("  [PP] PrizePicks may be down or blocking headless browsers")
-
+        data = resp.json()
+        lines = _parse_projections_json(data)
+        print(f"  [PP] API fetched {len(lines)} lines from projections endpoint")
         return lines
+
+    except requests.Timeout:
+        print("  [PP] Projections API timed out")
+        return []
+    except Exception as e:
+        print(f"  [PP] Projections API error: {e}")
+        return []
