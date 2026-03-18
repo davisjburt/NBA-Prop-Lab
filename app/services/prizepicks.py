@@ -1,13 +1,13 @@
-import requests
+import json
 import unicodedata
+import time
+
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
 PP_URL = "https://api.prizepicks.com/projections"
-HEADERS = {
-    "Accept":          "application/json; charset=UTF-8",
-    "User-Agent":      "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
-    "Referer":         "https://app.prizepicks.com/",
-    "Accept-Language": "en-US,en;q=0.9",
-}
 
 STAT_MAP = {
     "Points":        "pts",
@@ -25,39 +25,38 @@ STAT_MAP = {
 }
 
 TEAM_NORMALIZE = {
-    # Long-form names → NBA abbreviations (used only when PP returns full names)
-    "atlanta hawks": "ATL",
-    "boston celtics": "BOS",
-    "brooklyn nets": "BKN",
-    "charlotte hornets": "CHA",
-    "chicago bulls": "CHI",
-    "cleveland cavaliers": "CLE",
-    "dallas mavericks": "DAL",
-    "denver nuggets": "DEN",
-    "detroit pistons": "DET",
-    "golden state warriors": "GSW",
-    "houston rockets": "HOU",
-    "indiana pacers": "IND",
+    "atlanta hawks":        "ATL",
+    "boston celtics":       "BOS",
+    "brooklyn nets":        "BKN",
+    "charlotte hornets":    "CHA",
+    "chicago bulls":        "CHI",
+    "cleveland cavaliers":  "CLE",
+    "dallas mavericks":     "DAL",
+    "denver nuggets":       "DEN",
+    "detroit pistons":      "DET",
+    "golden state warriors":"GSW",
+    "houston rockets":      "HOU",
+    "indiana pacers":       "IND",
     "los angeles clippers": "LAC",
-    "la clippers": "LAC",
-    "los angeles lakers": "LAL",
-    "la lakers": "LAL",
-    "memphis grizzlies": "MEM",
-    "miami heat": "MIA",
-    "milwaukee bucks": "MIL",
-    "minnesota timberwolves": "MIN",
+    "la clippers":          "LAC",
+    "los angeles lakers":   "LAL",
+    "la lakers":            "LAL",
+    "memphis grizzlies":    "MEM",
+    "miami heat":           "MIA",
+    "milwaukee bucks":      "MIL",
+    "minnesota timberwolves":"MIN",
     "new orleans pelicans": "NOP",
-    "new york knicks": "NYK",
-    "oklahoma city thunder": "OKC",
-    "orlando magic": "ORL",
-    "philadelphia 76ers": "PHI",
-    "phoenix suns": "PHX",
-    "portland trail blazers": "POR",
-    "sacramento kings": "SAC",
-    "san antonio spurs": "SAS",
-    "toronto raptors": "TOR",
-    "utah jazz": "UTA",
-    "washington wizards": "WAS",
+    "new york knicks":      "NYK",
+    "oklahoma city thunder":"OKC",
+    "orlando magic":        "ORL",
+    "philadelphia 76ers":   "PHI",
+    "phoenix suns":         "PHX",
+    "portland trail blazers":"POR",
+    "sacramento kings":     "SAC",
+    "san antonio spurs":    "SAS",
+    "toronto raptors":      "TOR",
+    "utah jazz":            "UTA",
+    "washington wizards":   "WAS",
 }
 
 
@@ -78,15 +77,9 @@ def normalize_odds_type(raw):
 
 
 def normalize_team(raw: str) -> str:
-    """
-    PrizePicks sometimes returns abbreviations (OKC, MIA) and sometimes full names.
-    - If it's already a short all-caps code, trust it.
-    - Otherwise map long names via TEAM_NORMALIZE.
-    """
     if not raw:
         return ""
     raw_stripped = raw.strip()
-    # Already an abbreviation like OKC, MIA, DEN
     if len(raw_stripped) <= 4 and raw_stripped.isupper():
         return raw_stripped
     key = raw_stripped.lower()
@@ -95,20 +88,31 @@ def normalize_team(raw: str) -> str:
     return raw_stripped.upper()
 
 
-def fetch_prizepicks_lines():
-    try:
-        resp = requests.get(
-            PP_URL,
-            headers=HEADERS,
-            params={"league_id": 7, "per_page": 250, "single_stat": "true"},
-            timeout=10,
-        )
-        resp.raise_for_status()
-        data = resp.json()
-    except Exception as e:
-        print(f"PrizePicks fetch error: {e}")
-        return []
+def _build_driver():
+    """Return a headless Chrome WebDriver that looks like a real browser."""
+    opts = Options()
+    opts.add_argument("--headless=new")
+    opts.add_argument("--no-sandbox")
+    opts.add_argument("--disable-dev-shm-usage")
+    opts.add_argument("--disable-blink-features=AutomationControlled")
+    opts.add_experimental_option("excludeSwitches", ["enable-automation"])
+    opts.add_experimental_option("useAutomationExtension", False)
+    opts.add_argument(
+        "user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/123.0.0.0 Safari/537.36"
+    )
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=opts)
+    driver.execute_cdp_cmd(
+        "Page.addScriptToEvaluateOnNewDocument",
+        {"source": "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"},
+    )
+    return driver
 
+
+def _parse_response(data: dict) -> list:
+    """Extract lines list from the PrizePicks projections JSON."""
     players = {}
     for item in data.get("included", []):
         if item.get("type") == "new_player":
@@ -128,12 +132,12 @@ def fetch_prizepicks_lines():
         player_rel = proj.get("relationships", {}).get("new_player", {}).get("data", {})
         player_id  = player_rel.get("id")
         player     = players.get(player_id, {})
+        stat       = STAT_MAP.get(pp_stat)
 
-        stat = STAT_MAP.get(pp_stat)
         if not stat or not line or not player:
             continue
 
-        raw_team = player.get("team") or ""
+        raw_team  = player.get("team") or ""
         team_abbr = normalize_team(raw_team)
 
         lines.append({
@@ -146,5 +150,37 @@ def fetch_prizepicks_lines():
             "line":          float(line),
             "odds_type":     odds_type,
         })
-
     return lines
+
+
+def fetch_prizepicks_lines() -> list:
+    """
+    Fetch PrizePicks NBA projections using a headless Chrome browser so that
+    Cloudflare / anti-bot checks pass (plain requests.get returns 403).
+    """
+    url = f"{PP_URL}?league_id=7&per_page=250&single_stat=true"
+    driver = None
+    try:
+        driver = _build_driver()
+
+        # 1) Warm the session on the main app page first
+        driver.get("https://app.prizepicks.com/")
+        time.sleep(3)
+
+        # 2) Now hit the API endpoint directly
+        driver.get(url)
+        time.sleep(2)
+
+        # The browser renders the JSON as plain text inside <body> / <pre>
+        body_text = driver.find_element("tag name", "body").text
+        data = json.loads(body_text)
+        lines = _parse_response(data)
+        print(f"  PrizePicks: fetched {len(lines)} lines via headless browser")
+        return lines
+
+    except Exception as e:
+        print(f"PrizePicks fetch error: {e}")
+        return []
+    finally:
+        if driver:
+            driver.quit()
