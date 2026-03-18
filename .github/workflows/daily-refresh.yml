@@ -1,0 +1,16 @@
+name: Daily Data Refresh
+on:
+  schedule:
+    - cron: "0 11 * * *" # 6am CDT
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - run: python scripts/daily_update.py
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
