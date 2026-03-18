@@ -5,4 +5,4 @@ requests
 psycopg2-binary
 numpy
 pandas
-python-dotenv
+playwright
