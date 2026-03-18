@@ -1,66 +1,74 @@
 {
-  "CHA": {
-    "opponent": "MIA",
+  "BOS": {
+    "opponent": "GSW",
     "location": "Home"
   },
-  "MIA": {
-    "opponent": "CHA",
+  "GSW": {
+    "opponent": "BOS",
     "location": "Road"
   },
-  "ORL": {
+  "BKN": {
     "opponent": "OKC",
     "location": "Home"
   },
   "OKC": {
-    "opponent": "ORL",
+    "opponent": "BKN",
     "location": "Road"
-  },
-  "WAS": {
-    "opponent": "DET",
-    "location": "Home"
-  },
-  "DET": {
-    "opponent": "WAS",
-    "location": "Road"
-  },
-  "NYK": {
-    "opponent": "IND",
-    "location": "Home"
   },
   "IND": {
-    "opponent": "NYK",
-    "location": "Road"
-  },
-  "MIL": {
-    "opponent": "CLE",
+    "opponent": "POR",
     "location": "Home"
   },
-  "CLE": {
-    "opponent": "MIL",
+  "POR": {
+    "opponent": "IND",
+    "location": "Road"
+  },
+  "CHI": {
+    "opponent": "TOR",
+    "location": "Home"
+  },
+  "TOR": {
+    "opponent": "CHI",
     "location": "Road"
   },
   "MIN": {
-    "opponent": "PHX",
+    "opponent": "UTA",
     "location": "Home"
   },
-  "PHX": {
+  "UTA": {
     "opponent": "MIN",
     "location": "Road"
   },
-  "DEN": {
-    "opponent": "PHI",
+  "NOP": {
+    "opponent": "LAC",
     "location": "Home"
   },
-  "PHI": {
-    "opponent": "DEN",
+  "LAC": {
+    "opponent": "NOP",
     "location": "Road"
   },
-  "SAC": {
-    "opponent": "SAS",
+  "MEM": {
+    "opponent": "DEN",
     "location": "Home"
   },
-  "SAS": {
-    "opponent": "SAC",
+  "DEN": {
+    "opponent": "MEM",
+    "location": "Road"
+  },
+  "DAL": {
+    "opponent": "ATL",
+    "location": "Home"
+  },
+  "ATL": {
+    "opponent": "DAL",
+    "location": "Road"
+  },
+  "HOU": {
+    "opponent": "LAL",
+    "location": "Home"
+  },
+  "LAL": {
+    "opponent": "HOU",
     "location": "Road"
   }
 }
