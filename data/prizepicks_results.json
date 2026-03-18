@@ -81,6 +81,33 @@
     "confidence": 96.4
   },
   {
+    "id": 2544,
+    "name": "LeBron James",
+    "team": "LAL",
+    "position": "F",
+    "stat": "pts",
+    "label": "Points",
+    "odds_type": "goblin",
+    "line": 13.5,
+    "hit_rate": 1.0,
+    "hit_rate_l5": 1.0,
+    "hit_rate_season": 0.872,
+    "avg_l5": 17.2,
+    "avg_l10": 19.2,
+    "avg_season": 21.2,
+    "edge": 3.7,
+    "hits": 10,
+    "sample": 10,
+    "matchup_mult": 0.952,
+    "opponent": "HOU",
+    "location": "Road",
+    "streak": {
+      "count": 10,
+      "type": "hit"
+    },
+    "confidence": 95.6
+  },
+  {
     "id": 1641824,
     "name": "Matas Buzelis",
     "team": "CHI",
@@ -108,25 +135,25 @@
     "confidence": 95.5
   },
   {
-    "id": 1642349,
-    "name": "Ajay Mitchell",
-    "team": "OKC",
-    "position": "G",
-    "stat": "ra",
-    "label": "Rebs+Asts",
+    "id": 2544,
+    "name": "LeBron James",
+    "team": "LAL",
+    "position": "F",
+    "stat": "pr",
+    "label": "Pts+Rebs",
     "odds_type": "goblin",
-    "line": 4.5,
+    "line": 20.5,
     "hit_rate": 1.0,
     "hit_rate_l5": 1.0,
-    "hit_rate_season": 0.826,
-    "avg_l5": 7.8,
-    "avg_l10": 7.7,
-    "avg_season": 7.2,
-    "edge": 3.3,
+    "hit_rate_season": 0.851,
+    "avg_l5": 24.0,
+    "avg_l10": 24.6,
+    "avg_season": 27.2,
+    "edge": 3.5,
     "hits": 10,
     "sample": 10,
-    "matchup_mult": 0.976,
-    "opponent": "BKN",
+    "matchup_mult": 0.952,
+    "opponent": "HOU",
     "location": "Road",
     "streak": {
       "count": 10,
@@ -1998,6 +2025,33 @@
     "confidence": 88.7
   },
   {
+    "id": 1630552,
+    "name": "Jalen Johnson",
+    "team": "ATL",
+    "position": "F",
+    "stat": "ra",
+    "label": "Rebs+Asts",
+    "odds_type": "goblin",
+    "line": 14.5,
+    "hit_rate": 0.8,
+    "hit_rate_l5": 1.0,
+    "hit_rate_season": 0.803,
+    "avg_l5": 20.0,
+    "avg_l10": 19.2,
+    "avg_season": 18.1,
+    "edge": 5.5,
+    "hits": 8,
+    "sample": 10,
+    "matchup_mult": 1.061,
+    "opponent": "DAL",
+    "location": "Road",
+    "streak": {
+      "count": 5,
+      "type": "hit"
+    },
+    "confidence": 88.6
+  },
+  {
     "id": 1628401,
     "name": "Derrick White",
     "team": "BOS",
@@ -2104,6 +2158,60 @@
       "type": "hit"
     },
     "confidence": 88.0
+  },
+  {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "pa",
+    "label": "Pts+Asts",
+    "odds_type": "goblin",
+    "line": 14.5,
+    "hit_rate": 0.9,
+    "hit_rate_l5": 1.0,
+    "hit_rate_season": 0.745,
+    "avg_l5": 24.0,
+    "avg_l10": 22.0,
+    "avg_season": 17.9,
+    "edge": 9.5,
+    "hits": 9,
+    "sample": 10,
+    "matchup_mult": 0.97,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 9,
+      "type": "hit"
+    },
+    "confidence": 87.9
+  },
+  {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "pts",
+    "label": "Points",
+    "odds_type": "goblin",
+    "line": 9.5,
+    "hit_rate": 0.9,
+    "hit_rate_l5": 1.0,
+    "hit_rate_season": 0.745,
+    "avg_l5": 18.0,
+    "avg_l10": 16.1,
+    "avg_season": 12.5,
+    "edge": 8.5,
+    "hits": 9,
+    "sample": 10,
+    "matchup_mult": 0.97,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 9,
+      "type": "hit"
+    },
+    "confidence": 87.9
   },
   {
     "id": 1630700,
@@ -2376,6 +2484,33 @@
     "confidence": 87.3
   },
   {
+    "id": 2544,
+    "name": "LeBron James",
+    "team": "LAL",
+    "position": "F",
+    "stat": "pa",
+    "label": "Pts+Asts",
+    "odds_type": "goblin",
+    "line": 21.5,
+    "hit_rate": 0.9,
+    "hit_rate_l5": 1.0,
+    "hit_rate_season": 0.872,
+    "avg_l5": 24.4,
+    "avg_l10": 25.2,
+    "avg_season": 28.1,
+    "edge": 2.9,
+    "hits": 9,
+    "sample": 10,
+    "matchup_mult": 0.952,
+    "opponent": "HOU",
+    "location": "Road",
+    "streak": {
+      "count": 7,
+      "type": "hit"
+    },
+    "confidence": 87.3
+  },
+  {
     "id": 1631248,
     "name": "Baylor Scheierman",
     "team": "BOS",
@@ -2452,6 +2587,33 @@
     "location": "Home",
     "streak": {
       "count": 5,
+      "type": "hit"
+    },
+    "confidence": 87.1
+  },
+  {
+    "id": 1642270,
+    "name": "Donovan Clingan",
+    "team": "POR",
+    "position": "C",
+    "stat": "pra",
+    "label": "Pts+Rebs+Asts",
+    "odds_type": "goblin",
+    "line": 19.5,
+    "hit_rate": 0.8,
+    "hit_rate_l5": 1.0,
+    "hit_rate_season": 0.734,
+    "avg_l5": 28.8,
+    "avg_l10": 27.6,
+    "avg_season": 25.8,
+    "edge": 9.3,
+    "hits": 8,
+    "sample": 10,
+    "matchup_mult": 1.042,
+    "opponent": "IND",
+    "location": "Road",
+    "streak": {
+      "count": 6,
       "type": "hit"
     },
     "confidence": 87.1
@@ -3913,6 +4075,33 @@
       "type": "hit"
     },
     "confidence": 84.8
+  },
+  {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "pts",
+    "label": "Points",
+    "odds_type": "goblin",
+    "line": 11.5,
+    "hit_rate": 0.9,
+    "hit_rate_l5": 1.0,
+    "hit_rate_season": 0.529,
+    "avg_l5": 18.0,
+    "avg_l10": 16.1,
+    "avg_season": 12.5,
+    "edge": 6.5,
+    "hits": 9,
+    "sample": 10,
+    "matchup_mult": 0.97,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 9,
+      "type": "hit"
+    },
+    "confidence": 84.7
   },
   {
     "id": 1642270,
@@ -5782,6 +5971,33 @@
     "name": "Darius Garland",
     "team": "LAC",
     "position": "G",
+    "stat": "pa",
+    "label": "Pts+Asts",
+    "odds_type": "goblin",
+    "line": 26.5,
+    "hit_rate": 0.8,
+    "hit_rate_l5": 1.0,
+    "hit_rate_season": 0.485,
+    "avg_l5": 30.2,
+    "avg_l10": 29.6,
+    "avg_season": 25.2,
+    "edge": 3.7,
+    "hits": 8,
+    "sample": 10,
+    "matchup_mult": 1.038,
+    "opponent": "NOP",
+    "location": "Road",
+    "streak": {
+      "count": 5,
+      "type": "hit"
+    },
+    "confidence": 81.9
+  },
+  {
+    "id": 1629636,
+    "name": "Darius Garland",
+    "team": "LAC",
+    "position": "G",
     "stat": "pr",
     "label": "Pts+Rebs",
     "odds_type": "goblin",
@@ -7209,33 +7425,6 @@
     "confidence": 79.9
   },
   {
-    "id": 1641729,
-    "name": "Brice Sensabaugh",
-    "team": "UTA",
-    "position": "F",
-    "stat": "pa",
-    "label": "Pts+Asts",
-    "odds_type": "goblin",
-    "line": 14.5,
-    "hit_rate": 0.7,
-    "hit_rate_l5": 1.0,
-    "hit_rate_season": 0.492,
-    "avg_l5": 26.2,
-    "avg_l10": 20.1,
-    "avg_season": 14.7,
-    "edge": 11.7,
-    "hits": 7,
-    "sample": 10,
-    "matchup_mult": 0.997,
-    "opponent": "MIN",
-    "location": "Road",
-    "streak": {
-      "count": 6,
-      "type": "hit"
-    },
-    "confidence": 79.8
-  },
-  {
     "id": 1641824,
     "name": "Matas Buzelis",
     "team": "CHI",
@@ -8100,33 +8289,6 @@
     "confidence": 78.4
   },
   {
-    "id": 203999,
-    "name": "Nikola Joki\u0107",
-    "team": "DEN",
-    "position": "C",
-    "stat": "pa",
-    "label": "Pts+Asts",
-    "odds_type": "goblin",
-    "line": 29.5,
-    "hit_rate": 0.8,
-    "hit_rate_l5": 0.8,
-    "hit_rate_season": 0.846,
-    "avg_l5": 42.2,
-    "avg_l10": 38.3,
-    "avg_season": 38.5,
-    "edge": 12.7,
-    "hits": 8,
-    "sample": 10,
-    "matchup_mult": 1.029,
-    "opponent": "MEM",
-    "location": "Road",
-    "streak": {
-      "count": 2,
-      "type": "hit"
-    },
-    "confidence": 78.4
-  },
-  {
     "id": 1629028,
     "name": "Deandre Ayton",
     "team": "LAL",
@@ -8744,6 +8906,33 @@
     "streak": {
       "count": 1,
       "type": "miss"
+    },
+    "confidence": 77.6
+  },
+  {
+    "id": 1641713,
+    "name": "GG Jackson",
+    "team": "MEM",
+    "position": "F",
+    "stat": "pts",
+    "label": "Points",
+    "odds_type": "standard",
+    "line": 13.5,
+    "hit_rate": 0.7,
+    "hit_rate_l5": 1.0,
+    "hit_rate_season": 0.4,
+    "avg_l5": 17.4,
+    "avg_l10": 16.2,
+    "avg_season": 11.2,
+    "edge": 3.9,
+    "hits": 7,
+    "sample": 10,
+    "matchup_mult": 1.009,
+    "opponent": "DEN",
+    "location": "Home",
+    "streak": {
+      "count": 5,
+      "type": "hit"
     },
     "confidence": 77.6
   },
@@ -11421,33 +11610,6 @@
     "confidence": 74.6
   },
   {
-    "id": 1629636,
-    "name": "Darius Garland",
-    "team": "LAC",
-    "position": "G",
-    "stat": "bs",
-    "label": "Blks+Stls",
-    "odds_type": "goblin",
-    "line": 0.5,
-    "hit_rate": 0.7,
-    "hit_rate_l5": 0.8,
-    "hit_rate_season": 0.606,
-    "avg_l5": 1.4,
-    "avg_l10": 1.3,
-    "avg_season": 1.0,
-    "edge": 0.9,
-    "hits": 7,
-    "sample": 10,
-    "matchup_mult": 1.21,
-    "opponent": "NOP",
-    "location": "Road",
-    "streak": {
-      "count": 4,
-      "type": "hit"
-    },
-    "confidence": 74.5
-  },
-  {
     "id": 203932,
     "name": "Aaron Gordon",
     "team": "DEN",
@@ -11795,6 +11957,33 @@
     "streak": {
       "count": 1,
       "type": "miss"
+    },
+    "confidence": 74.3
+  },
+  {
+    "id": 1629661,
+    "name": "Cameron Johnson",
+    "team": "DEN",
+    "position": "F",
+    "stat": "pts",
+    "label": "Points",
+    "odds_type": "goblin",
+    "line": 8.5,
+    "hit_rate": 0.7,
+    "hit_rate_l5": 0.8,
+    "hit_rate_season": 0.69,
+    "avg_l5": 13.2,
+    "avg_l10": 10.8,
+    "avg_season": 11.5,
+    "edge": 4.7,
+    "hits": 7,
+    "sample": 10,
+    "matchup_mult": 1.029,
+    "opponent": "MEM",
+    "location": "Road",
+    "streak": {
+      "count": 3,
+      "type": "hit"
     },
     "confidence": 74.3
   },
@@ -12204,6 +12393,33 @@
     "confidence": 73.9
   },
   {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "pr",
+    "label": "Pts+Rebs",
+    "odds_type": "goblin",
+    "line": 14.5,
+    "hit_rate": 0.8,
+    "hit_rate_l5": 0.8,
+    "hit_rate_season": 0.51,
+    "avg_l5": 22.0,
+    "avg_l10": 20.8,
+    "avg_season": 15.4,
+    "edge": 7.5,
+    "hits": 8,
+    "sample": 10,
+    "matchup_mult": 0.97,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 4,
+      "type": "hit"
+    },
+    "confidence": 73.9
+  },
+  {
     "id": 1642843,
     "name": "Cooper Flagg",
     "team": "DAL",
@@ -12499,33 +12715,6 @@
       "type": "miss"
     },
     "confidence": 73.6
-  },
-  {
-    "id": 1629628,
-    "name": "RJ Barrett",
-    "team": "TOR",
-    "position": "SF",
-    "stat": "pa",
-    "label": "Pts+Asts",
-    "odds_type": "goblin",
-    "line": 22.5,
-    "hit_rate": 0.8,
-    "hit_rate_l5": 0.8,
-    "hit_rate_season": 0.512,
-    "avg_l5": 27.3,
-    "avg_l10": 25.6,
-    "avg_season": 22.3,
-    "edge": 4.8,
-    "hits": 8,
-    "sample": 10,
-    "matchup_mult": 1.041,
-    "opponent": "CHI",
-    "location": "Road",
-    "streak": {
-      "count": 2,
-      "type": "hit"
-    },
-    "confidence": 73.5
   },
   {
     "id": 1642271,
@@ -13203,6 +13392,33 @@
     "confidence": 72.6
   },
   {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "pra",
+    "label": "Pts+Rebs+Asts",
+    "odds_type": "goblin",
+    "line": 19.5,
+    "hit_rate": 0.7,
+    "hit_rate_l5": 0.8,
+    "hit_rate_season": 0.588,
+    "avg_l5": 25.6,
+    "avg_l10": 25.2,
+    "avg_season": 20.8,
+    "edge": 6.1,
+    "hits": 7,
+    "sample": 10,
+    "matchup_mult": 0.97,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 4,
+      "type": "hit"
+    },
+    "confidence": 72.6
+  },
+  {
     "id": 1629655,
     "name": "Daniel Gafford",
     "team": "DAL",
@@ -13554,6 +13770,33 @@
     "confidence": 72.2
   },
   {
+    "id": 1630572,
+    "name": "Sandro Mamukelashvili",
+    "team": "TOR",
+    "position": "PF",
+    "stat": "pr",
+    "label": "Pts+Rebs",
+    "odds_type": "standard",
+    "line": 12.5,
+    "hit_rate": 0.5,
+    "hit_rate_l5": 0.8,
+    "hit_rate_season": 0.677,
+    "avg_l5": 15.0,
+    "avg_l10": 10.7,
+    "avg_season": 15.6,
+    "edge": 2.5,
+    "hits": 5,
+    "sample": 10,
+    "matchup_mult": 1.041,
+    "opponent": "CHI",
+    "location": "Road",
+    "streak": {
+      "count": 3,
+      "type": "hit"
+    },
+    "confidence": 72.2
+  },
+  {
     "id": 1631128,
     "name": "Christian Braun",
     "team": "DEN",
@@ -13630,6 +13873,33 @@
     "location": "Road",
     "streak": {
       "count": 1,
+      "type": "hit"
+    },
+    "confidence": 72.2
+  },
+  {
+    "id": 1629028,
+    "name": "Deandre Ayton",
+    "team": "LAL",
+    "position": "C",
+    "stat": "pts",
+    "label": "Points",
+    "odds_type": "goblin",
+    "line": 6.5,
+    "hit_rate": 0.6,
+    "hit_rate_l5": 0.8,
+    "hit_rate_season": 0.763,
+    "avg_l5": 11.8,
+    "avg_l10": 9.0,
+    "avg_season": 12.5,
+    "edge": 5.3,
+    "hits": 6,
+    "sample": 10,
+    "matchup_mult": 0.952,
+    "opponent": "HOU",
+    "location": "Road",
+    "streak": {
+      "count": 4,
       "type": "hit"
     },
     "confidence": 72.2
@@ -15309,6 +15579,33 @@
     "confidence": 70.4
   },
   {
+    "id": 1631095,
+    "name": "Jabari Smith Jr.",
+    "team": "HOU",
+    "position": "F",
+    "stat": "pr",
+    "label": "Pts+Rebs",
+    "odds_type": "goblin",
+    "line": 18.5,
+    "hit_rate": 0.6,
+    "hit_rate_l5": 0.8,
+    "hit_rate_season": 0.698,
+    "avg_l5": 23.6,
+    "avg_l10": 22.5,
+    "avg_season": 21.7,
+    "edge": 5.1,
+    "hits": 6,
+    "sample": 10,
+    "matchup_mult": 0.996,
+    "opponent": "LAL",
+    "location": "Home",
+    "streak": {
+      "count": 2,
+      "type": "hit"
+    },
+    "confidence": 70.4
+  },
+  {
     "id": 1630611,
     "name": "Gui Santos",
     "team": "GSW",
@@ -16605,6 +16902,33 @@
     "confidence": 69.2
   },
   {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "pts",
+    "label": "Points",
+    "odds_type": "standard",
+    "line": 13.5,
+    "hit_rate": 0.7,
+    "hit_rate_l5": 0.8,
+    "hit_rate_season": 0.392,
+    "avg_l5": 18.0,
+    "avg_l10": 16.1,
+    "avg_season": 12.5,
+    "edge": 4.5,
+    "hits": 7,
+    "sample": 10,
+    "matchup_mult": 0.97,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 4,
+      "type": "hit"
+    },
+    "confidence": 69.1
+  },
+  {
     "id": 1630180,
     "name": "Saddiq Bey",
     "team": "NOP",
@@ -16762,6 +17086,33 @@
     "location": "Home",
     "streak": {
       "count": 1,
+      "type": "hit"
+    },
+    "confidence": 69.0
+  },
+  {
+    "id": 1629651,
+    "name": "Nic Claxton",
+    "team": "BKN",
+    "position": "C",
+    "stat": "pts",
+    "label": "Points",
+    "odds_type": "goblin",
+    "line": 5.5,
+    "hit_rate": 0.7,
+    "hit_rate_l5": 0.6,
+    "hit_rate_season": 0.934,
+    "avg_l5": 6.6,
+    "avg_l10": 9.3,
+    "avg_season": 11.8,
+    "edge": 1.1,
+    "hits": 7,
+    "sample": 10,
+    "matchup_mult": 0.934,
+    "opponent": "OKC",
+    "location": "Home",
+    "streak": {
+      "count": 2,
       "type": "hit"
     },
     "confidence": 69.0
@@ -18036,6 +18387,33 @@
     "confidence": 67.8
   },
   {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "pts",
+    "label": "Points",
+    "odds_type": "demon",
+    "line": 14.5,
+    "hit_rate": 0.7,
+    "hit_rate_l5": 0.8,
+    "hit_rate_season": 0.373,
+    "avg_l5": 18.0,
+    "avg_l10": 16.1,
+    "avg_season": 12.5,
+    "edge": 3.5,
+    "hits": 7,
+    "sample": 10,
+    "matchup_mult": 0.97,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 4,
+      "type": "hit"
+    },
+    "confidence": 67.8
+  },
+  {
     "id": 1630188,
     "name": "Jalen Smith",
     "team": "CHI",
@@ -18439,6 +18817,33 @@
       "type": "hit"
     },
     "confidence": 67.6
+  },
+  {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "ast",
+    "label": "Assists",
+    "odds_type": "goblin",
+    "line": 3.5,
+    "hit_rate": 0.7,
+    "hit_rate_l5": 0.8,
+    "hit_rate_season": 0.765,
+    "avg_l5": 5.0,
+    "avg_l10": 4.1,
+    "avg_season": 5.2,
+    "edge": 1.5,
+    "hits": 7,
+    "sample": 10,
+    "matchup_mult": 0.921,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 1,
+      "type": "hit"
+    },
+    "confidence": 67.5
   },
   {
     "id": 1630552,
@@ -18846,6 +19251,60 @@
     "confidence": 67.2
   },
   {
+    "id": 1628983,
+    "name": "Shai Gilgeous-Alexander",
+    "team": "OKC",
+    "position": "G",
+    "stat": "blk",
+    "label": "Blocked Shots",
+    "odds_type": "standard",
+    "line": 0.5,
+    "hit_rate": 0.6,
+    "hit_rate_l5": 0.8,
+    "hit_rate_season": 0.536,
+    "avg_l5": 1.0,
+    "avg_l10": 0.7,
+    "avg_season": 0.6,
+    "edge": 0.5,
+    "hits": 6,
+    "sample": 10,
+    "matchup_mult": 1.066,
+    "opponent": "BKN",
+    "location": "Road",
+    "streak": {
+      "count": 4,
+      "type": "hit"
+    },
+    "confidence": 67.2
+  },
+  {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "pa",
+    "label": "Pts+Asts",
+    "odds_type": "standard",
+    "line": 19.5,
+    "hit_rate": 0.6,
+    "hit_rate_l5": 0.8,
+    "hit_rate_season": 0.431,
+    "avg_l5": 24.0,
+    "avg_l10": 22.0,
+    "avg_season": 17.9,
+    "edge": 4.5,
+    "hits": 6,
+    "sample": 10,
+    "matchup_mult": 0.97,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 4,
+      "type": "hit"
+    },
+    "confidence": 67.2
+  },
+  {
     "id": 203932,
     "name": "Aaron Gordon",
     "team": "DEN",
@@ -18898,6 +19357,33 @@
       "type": "hit"
     },
     "confidence": 67.2
+  },
+  {
+    "id": 203110,
+    "name": "Draymond Green",
+    "team": "GSW",
+    "position": "F",
+    "stat": "pa",
+    "label": "Pts+Asts",
+    "odds_type": "standard",
+    "line": 13.5,
+    "hit_rate": 0.6,
+    "hit_rate_l5": 0.8,
+    "hit_rate_season": 0.491,
+    "avg_l5": 18.0,
+    "avg_l10": 16.6,
+    "avg_season": 13.8,
+    "edge": 4.5,
+    "hits": 6,
+    "sample": 10,
+    "matchup_mult": 0.929,
+    "opponent": "BOS",
+    "location": "Road",
+    "streak": {
+      "count": 1,
+      "type": "miss"
+    },
+    "confidence": 67.1
   },
   {
     "id": 1629008,
@@ -19219,6 +19705,33 @@
     "location": "Road",
     "streak": {
       "count": 4,
+      "type": "hit"
+    },
+    "confidence": 66.9
+  },
+  {
+    "id": 1629651,
+    "name": "Nic Claxton",
+    "team": "BKN",
+    "position": "C",
+    "stat": "pa",
+    "label": "Pts+Asts",
+    "odds_type": "goblin",
+    "line": 9.5,
+    "hit_rate": 0.7,
+    "hit_rate_l5": 0.6,
+    "hit_rate_season": 0.852,
+    "avg_l5": 9.8,
+    "avg_l10": 12.7,
+    "avg_season": 15.4,
+    "edge": 0.3,
+    "hits": 7,
+    "sample": 10,
+    "matchup_mult": 0.934,
+    "opponent": "OKC",
+    "location": "Home",
+    "streak": {
+      "count": 2,
       "type": "hit"
     },
     "confidence": 66.9
@@ -20142,33 +20655,6 @@
     "confidence": 66.1
   },
   {
-    "id": 1627749,
-    "name": "Dejounte Murray",
-    "team": "NOP",
-    "position": "G",
-    "stat": "bs",
-    "label": "Blks+Stls",
-    "odds_type": "standard",
-    "line": 1.5,
-    "hit_rate": 0.625,
-    "hit_rate_l5": 0.8,
-    "hit_rate_season": 0.625,
-    "avg_l5": 2.0,
-    "avg_l10": 1.6,
-    "avg_season": 1.6,
-    "edge": 0.5,
-    "hits": 5,
-    "sample": 8,
-    "matchup_mult": 0.943,
-    "opponent": "LAC",
-    "location": "Home",
-    "streak": {
-      "count": 1,
-      "type": "miss"
-    },
-    "confidence": 66.1
-  },
-  {
     "id": 1629028,
     "name": "Deandre Ayton",
     "team": "LAL",
@@ -20790,31 +21276,31 @@
     "confidence": 65.7
   },
   {
-    "id": 203110,
-    "name": "Draymond Green",
-    "team": "GSW",
-    "position": "F",
-    "stat": "pa",
-    "label": "Pts+Asts",
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "pr",
+    "label": "Pts+Rebs",
     "odds_type": "standard",
-    "line": 14.5,
+    "line": 17.5,
     "hit_rate": 0.6,
     "hit_rate_l5": 0.8,
-    "hit_rate_season": 0.455,
-    "avg_l5": 18.0,
-    "avg_l10": 16.6,
-    "avg_season": 13.8,
-    "edge": 3.5,
+    "hit_rate_season": 0.333,
+    "avg_l5": 22.0,
+    "avg_l10": 20.8,
+    "avg_season": 15.4,
+    "edge": 4.5,
     "hits": 6,
     "sample": 10,
-    "matchup_mult": 0.929,
-    "opponent": "BOS",
-    "location": "Road",
+    "matchup_mult": 0.97,
+    "opponent": "TOR",
+    "location": "Home",
     "streak": {
-      "count": 1,
-      "type": "miss"
+      "count": 4,
+      "type": "hit"
     },
-    "confidence": 65.6
+    "confidence": 65.7
   },
   {
     "id": 1629614,
@@ -21460,6 +21946,33 @@
     "location": "Road",
     "streak": {
       "count": 3,
+      "type": "hit"
+    },
+    "confidence": 65.2
+  },
+  {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "pra",
+    "label": "Pts+Rebs+Asts",
+    "odds_type": "standard",
+    "line": 22.5,
+    "hit_rate": 0.6,
+    "hit_rate_l5": 0.8,
+    "hit_rate_season": 0.392,
+    "avg_l5": 25.6,
+    "avg_l10": 25.2,
+    "avg_season": 20.8,
+    "edge": 3.1,
+    "hits": 6,
+    "sample": 10,
+    "matchup_mult": 0.97,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 4,
       "type": "hit"
     },
     "confidence": 65.2
@@ -22464,60 +22977,6 @@
     "confidence": 64.6
   },
   {
-    "id": 1630581,
-    "name": "Josh Giddey",
-    "team": "CHI",
-    "position": "G",
-    "stat": "pa",
-    "label": "Pts+Asts",
-    "odds_type": "goblin",
-    "line": 28.5,
-    "hit_rate": 0.5,
-    "hit_rate_l5": 0.8,
-    "hit_rate_season": 0.435,
-    "avg_l5": 32.8,
-    "avg_l10": 28.4,
-    "avg_season": 26.9,
-    "edge": 4.3,
-    "hits": 5,
-    "sample": 10,
-    "matchup_mult": 0.97,
-    "opponent": "TOR",
-    "location": "Home",
-    "streak": {
-      "count": 4,
-      "type": "hit"
-    },
-    "confidence": 64.6
-  },
-  {
-    "id": 1630180,
-    "name": "Saddiq Bey",
-    "team": "NOP",
-    "position": "SG",
-    "stat": "stl",
-    "label": "Steals",
-    "odds_type": "goblin",
-    "line": 0.5,
-    "hit_rate": 0.6,
-    "hit_rate_l5": 0.8,
-    "hit_rate_season": 0.581,
-    "avg_l5": 1.2,
-    "avg_l10": 1.0,
-    "avg_season": 0.9,
-    "edge": 0.7,
-    "hits": 6,
-    "sample": 10,
-    "matchup_mult": 1.009,
-    "opponent": "LAC",
-    "location": "Home",
-    "streak": {
-      "count": 2,
-      "type": "hit"
-    },
-    "confidence": 64.6
-  },
-  {
     "id": 1641708,
     "name": "Amen Thompson",
     "team": "HOU",
@@ -22648,33 +23107,6 @@
     "location": "Home",
     "streak": {
       "count": 4,
-      "type": "hit"
-    },
-    "confidence": 64.5
-  },
-  {
-    "id": 1641713,
-    "name": "GG Jackson",
-    "team": "MEM",
-    "position": "F",
-    "stat": "pts",
-    "label": "Points",
-    "odds_type": "standard",
-    "line": 14.5,
-    "hit_rate": 0.6,
-    "hit_rate_l5": 0.8,
-    "hit_rate_season": 0.356,
-    "avg_l5": 17.4,
-    "avg_l10": 16.2,
-    "avg_season": 11.2,
-    "edge": 2.9,
-    "hits": 6,
-    "sample": 10,
-    "matchup_mult": 1.009,
-    "opponent": "DEN",
-    "location": "Home",
-    "streak": {
-      "count": 3,
       "type": "hit"
     },
     "confidence": 64.5
@@ -23139,33 +23571,6 @@
     "confidence": 64.2
   },
   {
-    "id": 1642270,
-    "name": "Donovan Clingan",
-    "team": "POR",
-    "position": "C",
-    "stat": "pra",
-    "label": "Pts+Rebs+Asts",
-    "odds_type": "goblin",
-    "line": 26.5,
-    "hit_rate": 0.6,
-    "hit_rate_l5": 0.6,
-    "hit_rate_season": 0.453,
-    "avg_l5": 28.8,
-    "avg_l10": 27.6,
-    "avg_season": 25.8,
-    "edge": 2.3,
-    "hits": 6,
-    "sample": 10,
-    "matchup_mult": 1.042,
-    "opponent": "IND",
-    "location": "Road",
-    "streak": {
-      "count": 3,
-      "type": "hit"
-    },
-    "confidence": 64.1
-  },
-  {
     "id": 1631159,
     "name": "Leonard Miller",
     "team": "CHI",
@@ -23431,33 +23836,6 @@
     "location": "Road",
     "streak": {
       "count": 2,
-      "type": "hit"
-    },
-    "confidence": 64.0
-  },
-  {
-    "id": 1627751,
-    "name": "Jakob Poeltl",
-    "team": "TOR",
-    "position": "C",
-    "stat": "pa",
-    "label": "Pts+Asts",
-    "odds_type": "goblin",
-    "line": 9.5,
-    "hit_rate": 0.5,
-    "hit_rate_l5": 0.6,
-    "hit_rate_season": 0.562,
-    "avg_l5": 14.8,
-    "avg_l10": 13.2,
-    "avg_season": 12.2,
-    "edge": 5.3,
-    "hits": 5,
-    "sample": 10,
-    "matchup_mult": 1.041,
-    "opponent": "CHI",
-    "location": "Road",
-    "streak": {
-      "count": 1,
       "type": "hit"
     },
     "confidence": 64.0
@@ -23949,33 +24327,6 @@
     "confidence": 63.8
   },
   {
-    "id": 1629060,
-    "name": "Rui Hachimura",
-    "team": "LAL",
-    "position": "F",
-    "stat": "pts",
-    "label": "Points",
-    "odds_type": "standard",
-    "line": 7.5,
-    "hit_rate": 0.7,
-    "hit_rate_l5": 0.6,
-    "hit_rate_season": 0.75,
-    "avg_l5": 9.8,
-    "avg_l10": 9.8,
-    "avg_season": 11.1,
-    "edge": 2.3,
-    "hits": 7,
-    "sample": 10,
-    "matchup_mult": 0.952,
-    "opponent": "HOU",
-    "location": "Road",
-    "streak": {
-      "count": 2,
-      "type": "miss"
-    },
-    "confidence": 63.8
-  },
-  {
     "id": 1627759,
     "name": "Jaylen Brown",
     "team": "BOS",
@@ -24026,6 +24377,33 @@
     "streak": {
       "count": 1,
       "type": "hit"
+    },
+    "confidence": 63.7
+  },
+  {
+    "id": 1630538,
+    "name": "Bones Hyland",
+    "team": "MIN",
+    "position": "G",
+    "stat": "pr",
+    "label": "Pts+Rebs",
+    "odds_type": "goblin",
+    "line": 9.5,
+    "hit_rate": 0.5,
+    "hit_rate_l5": 0.8,
+    "hit_rate_season": 0.39,
+    "avg_l5": 10.8,
+    "avg_l10": 8.4,
+    "avg_season": 8.2,
+    "edge": 1.3,
+    "hits": 5,
+    "sample": 10,
+    "matchup_mult": 1.083,
+    "opponent": "UTA",
+    "location": "Home",
+    "streak": {
+      "count": 1,
+      "type": "miss"
     },
     "confidence": 63.7
   },
@@ -24813,6 +25191,60 @@
     "confidence": 63.2
   },
   {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "pr",
+    "label": "Pts+Rebs",
+    "odds_type": "demon",
+    "line": 19.5,
+    "hit_rate": 0.6,
+    "hit_rate_l5": 0.8,
+    "hit_rate_season": 0.294,
+    "avg_l5": 22.0,
+    "avg_l10": 20.8,
+    "avg_season": 15.4,
+    "edge": 2.5,
+    "hits": 6,
+    "sample": 10,
+    "matchup_mult": 0.97,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 4,
+      "type": "hit"
+    },
+    "confidence": 63.2
+  },
+  {
+    "id": 1630572,
+    "name": "Sandro Mamukelashvili",
+    "team": "TOR",
+    "position": "PF",
+    "stat": "tov",
+    "label": "Turnovers",
+    "odds_type": "standard",
+    "line": 0.5,
+    "hit_rate": 0.6,
+    "hit_rate_l5": 0.8,
+    "hit_rate_season": 0.6,
+    "avg_l5": 1.0,
+    "avg_l10": 0.7,
+    "avg_season": 0.7,
+    "edge": 0.5,
+    "hits": 6,
+    "sample": 10,
+    "matchup_mult": 0.867,
+    "opponent": "CHI",
+    "location": "Road",
+    "streak": {
+      "count": 4,
+      "type": "hit"
+    },
+    "confidence": 63.2
+  },
+  {
     "id": 1627759,
     "name": "Jaylen Brown",
     "team": "BOS",
@@ -25245,6 +25677,33 @@
     "confidence": 62.9
   },
   {
+    "id": 202691,
+    "name": "Klay Thompson",
+    "team": "DAL",
+    "position": "G",
+    "stat": "pra",
+    "label": "Pts+Rebs+Asts",
+    "odds_type": "goblin",
+    "line": 11.5,
+    "hit_rate": 0.7,
+    "hit_rate_l5": 0.6,
+    "hit_rate_season": 0.678,
+    "avg_l5": 17.8,
+    "avg_l10": 15.5,
+    "avg_season": 15.4,
+    "edge": 6.3,
+    "hits": 7,
+    "sample": 10,
+    "matchup_mult": 1.011,
+    "opponent": "ATL",
+    "location": "Home",
+    "streak": {
+      "count": 1,
+      "type": "miss"
+    },
+    "confidence": 62.9
+  },
+  {
     "id": 1642258,
     "name": "Zaccharie Risacher",
     "team": "ATL",
@@ -25376,33 +25835,6 @@
     "streak": {
       "count": 1,
       "type": "miss"
-    },
-    "confidence": 62.8
-  },
-  {
-    "id": 1628381,
-    "name": "John Collins",
-    "team": "LAC",
-    "position": "PF",
-    "stat": "pr",
-    "label": "Pts+Rebs",
-    "odds_type": "goblin",
-    "line": 17.5,
-    "hit_rate": 0.8,
-    "hit_rate_l5": 0.6,
-    "hit_rate_season": 0.607,
-    "avg_l5": 18.2,
-    "avg_l10": 20.8,
-    "avg_season": 18.9,
-    "edge": 0.7,
-    "hits": 8,
-    "sample": 10,
-    "matchup_mult": 1.038,
-    "opponent": "NOP",
-    "location": "Road",
-    "streak": {
-      "count": 1,
-      "type": "hit"
     },
     "confidence": 62.8
   },
@@ -26271,6 +26703,33 @@
     "confidence": 62.2
   },
   {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "ast",
+    "label": "Assists",
+    "odds_type": "goblin",
+    "line": 4.5,
+    "hit_rate": 0.6,
+    "hit_rate_l5": 0.8,
+    "hit_rate_season": 0.647,
+    "avg_l5": 5.0,
+    "avg_l10": 4.1,
+    "avg_season": 5.2,
+    "edge": 0.5,
+    "hits": 6,
+    "sample": 10,
+    "matchup_mult": 0.921,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 1,
+      "type": "hit"
+    },
+    "confidence": 62.2
+  },
+  {
     "id": 1642377,
     "name": "Jaylen Wells",
     "team": "MEM",
@@ -26618,6 +27077,33 @@
     "streak": {
       "count": 4,
       "type": "hit"
+    },
+    "confidence": 61.9
+  },
+  {
+    "id": 1628392,
+    "name": "Isaiah Hartenstein",
+    "team": "OKC",
+    "position": "C",
+    "stat": "pa",
+    "label": "Pts+Asts",
+    "odds_type": "goblin",
+    "line": 7.5,
+    "hit_rate": 0.8,
+    "hit_rate_l5": 0.6,
+    "hit_rate_season": 0.811,
+    "avg_l5": 8.2,
+    "avg_l10": 14.0,
+    "avg_season": 12.8,
+    "edge": 0.7,
+    "hits": 8,
+    "sample": 10,
+    "matchup_mult": 1.002,
+    "opponent": "BKN",
+    "location": "Road",
+    "streak": {
+      "count": 2,
+      "type": "miss"
     },
     "confidence": 61.9
   },
@@ -27295,33 +27781,6 @@
       "type": "miss"
     },
     "confidence": 61.6
-  },
-  {
-    "id": 1641739,
-    "name": "Toumani Camara",
-    "team": "POR",
-    "position": "F",
-    "stat": "pra",
-    "label": "Pts+Rebs+Asts",
-    "odds_type": "goblin",
-    "line": 17.5,
-    "hit_rate": 0.7,
-    "hit_rate_l5": 0.6,
-    "hit_rate_season": 0.696,
-    "avg_l5": 18.0,
-    "avg_l10": 18.9,
-    "avg_season": 20.6,
-    "edge": 0.5,
-    "hits": 7,
-    "sample": 10,
-    "matchup_mult": 1.042,
-    "opponent": "IND",
-    "location": "Road",
-    "streak": {
-      "count": 1,
-      "type": "hit"
-    },
-    "confidence": 61.5
   },
   {
     "id": 1629029,
@@ -29133,33 +29592,6 @@
     "confidence": 60.4
   },
   {
-    "id": 1642270,
-    "name": "Donovan Clingan",
-    "team": "POR",
-    "position": "C",
-    "stat": "pr",
-    "label": "Pts+Rebs",
-    "odds_type": "goblin",
-    "line": 24.5,
-    "hit_rate": 0.6,
-    "hit_rate_l5": 0.6,
-    "hit_rate_season": 0.438,
-    "avg_l5": 23.2,
-    "avg_l10": 24.8,
-    "avg_season": 23.6,
-    "edge": -1.3,
-    "hits": 6,
-    "sample": 10,
-    "matchup_mult": 1.042,
-    "opponent": "IND",
-    "location": "Road",
-    "streak": {
-      "count": 3,
-      "type": "hit"
-    },
-    "confidence": 60.3
-  },
-  {
     "id": 1630703,
     "name": "Scoot Henderson",
     "team": "POR",
@@ -29607,33 +30039,6 @@
     "avg_l10": 24.4,
     "avg_season": 31.5,
     "edge": 1.9,
-    "hits": 5,
-    "sample": 10,
-    "matchup_mult": 1.041,
-    "opponent": "CHI",
-    "location": "Road",
-    "streak": {
-      "count": 1,
-      "type": "hit"
-    },
-    "confidence": 59.9
-  },
-  {
-    "id": 1627751,
-    "name": "Jakob Poeltl",
-    "team": "TOR",
-    "position": "C",
-    "stat": "pa",
-    "label": "Pts+Asts",
-    "odds_type": "goblin",
-    "line": 12.5,
-    "hit_rate": 0.5,
-    "hit_rate_l5": 0.6,
-    "hit_rate_season": 0.469,
-    "avg_l5": 14.8,
-    "avg_l10": 13.2,
-    "avg_season": 12.2,
-    "edge": 2.3,
     "hits": 5,
     "sample": 10,
     "matchup_mult": 1.041,
@@ -30375,29 +30780,29 @@
     "confidence": 59.5
   },
   {
-    "id": 1627751,
-    "name": "Jakob Poeltl",
-    "team": "TOR",
-    "position": "C",
+    "id": 1629060,
+    "name": "Rui Hachimura",
+    "team": "LAL",
+    "position": "F",
     "stat": "pts",
     "label": "Points",
-    "odds_type": "goblin",
+    "odds_type": "standard",
     "line": 8.5,
     "hit_rate": 0.6,
     "hit_rate_l5": 0.6,
-    "hit_rate_season": 0.531,
-    "avg_l5": 12.0,
-    "avg_l10": 11.0,
-    "avg_season": 10.1,
-    "edge": 3.5,
+    "hit_rate_season": 0.696,
+    "avg_l5": 9.8,
+    "avg_l10": 9.8,
+    "avg_season": 11.1,
+    "edge": 1.3,
     "hits": 6,
     "sample": 10,
-    "matchup_mult": 1.041,
-    "opponent": "CHI",
+    "matchup_mult": 0.952,
+    "opponent": "HOU",
     "location": "Road",
     "streak": {
-      "count": 1,
-      "type": "hit"
+      "count": 2,
+      "type": "miss"
     },
     "confidence": 59.5
   },
@@ -32211,6 +32616,33 @@
     "confidence": 58.4
   },
   {
+    "id": 1627749,
+    "name": "Dejounte Murray",
+    "team": "NOP",
+    "position": "G",
+    "stat": "pr",
+    "label": "Pts+Rebs",
+    "odds_type": "standard",
+    "line": 23.5,
+    "hit_rate": 0.375,
+    "hit_rate_l5": 0.6,
+    "hit_rate_season": 0.375,
+    "avg_l5": 29.0,
+    "avg_l10": 22.9,
+    "avg_season": 22.9,
+    "edge": 5.5,
+    "hits": 3,
+    "sample": 8,
+    "matchup_mult": 0.977,
+    "opponent": "LAC",
+    "location": "Home",
+    "streak": {
+      "count": 3,
+      "type": "hit"
+    },
+    "confidence": 58.4
+  },
+  {
     "id": 1629023,
     "name": "P.J. Washington",
     "team": "DAL",
@@ -32535,33 +32967,6 @@
     "confidence": 58.1
   },
   {
-    "id": 1627749,
-    "name": "Dejounte Murray",
-    "team": "NOP",
-    "position": "G",
-    "stat": "pts",
-    "label": "Points",
-    "odds_type": "standard",
-    "line": 17.5,
-    "hit_rate": 0.375,
-    "hit_rate_l5": 0.6,
-    "hit_rate_season": 0.375,
-    "avg_l5": 22.2,
-    "avg_l10": 17.6,
-    "avg_season": 17.6,
-    "edge": 4.7,
-    "hits": 3,
-    "sample": 8,
-    "matchup_mult": 0.977,
-    "opponent": "LAC",
-    "location": "Home",
-    "streak": {
-      "count": 3,
-      "type": "hit"
-    },
-    "confidence": 58.1
-  },
-  {
     "id": 1642843,
     "name": "Cooper Flagg",
     "team": "DAL",
@@ -32878,60 +33283,6 @@
     "sample": 10,
     "matchup_mult": 0.957,
     "opponent": "BKN",
-    "location": "Road",
-    "streak": {
-      "count": 1,
-      "type": "hit"
-    },
-    "confidence": 57.9
-  },
-  {
-    "id": 1627749,
-    "name": "Dejounte Murray",
-    "team": "NOP",
-    "position": "G",
-    "stat": "pr",
-    "label": "Pts+Rebs",
-    "odds_type": "standard",
-    "line": 24.5,
-    "hit_rate": 0.375,
-    "hit_rate_l5": 0.6,
-    "hit_rate_season": 0.375,
-    "avg_l5": 29.0,
-    "avg_l10": 22.9,
-    "avg_season": 22.9,
-    "edge": 4.5,
-    "hits": 3,
-    "sample": 8,
-    "matchup_mult": 0.977,
-    "opponent": "LAC",
-    "location": "Home",
-    "streak": {
-      "count": 3,
-      "type": "hit"
-    },
-    "confidence": 57.9
-  },
-  {
-    "id": 1628381,
-    "name": "John Collins",
-    "team": "LAC",
-    "position": "PF",
-    "stat": "pa",
-    "label": "Pts+Asts",
-    "odds_type": "standard",
-    "line": 14.5,
-    "hit_rate": 0.7,
-    "hit_rate_l5": 0.6,
-    "hit_rate_season": 0.554,
-    "avg_l5": 13.6,
-    "avg_l10": 15.6,
-    "avg_season": 14.7,
-    "edge": -0.9,
-    "hits": 7,
-    "sample": 10,
-    "matchup_mult": 1.038,
-    "opponent": "NOP",
     "location": "Road",
     "streak": {
       "count": 1,
@@ -33316,6 +33667,33 @@
       "type": "miss"
     },
     "confidence": 57.7
+  },
+  {
+    "id": 1629651,
+    "name": "Nic Claxton",
+    "team": "BKN",
+    "position": "C",
+    "stat": "pra",
+    "label": "Pts+Rebs+Asts",
+    "odds_type": "goblin",
+    "line": 14.5,
+    "hit_rate": 0.6,
+    "hit_rate_l5": 0.4,
+    "hit_rate_season": 0.82,
+    "avg_l5": 16.4,
+    "avg_l10": 18.8,
+    "avg_season": 23.0,
+    "edge": 1.9,
+    "hits": 6,
+    "sample": 10,
+    "matchup_mult": 0.934,
+    "opponent": "OKC",
+    "location": "Home",
+    "streak": {
+      "count": 1,
+      "type": "hit"
+    },
+    "confidence": 57.6
   },
   {
     "id": 1627742,
@@ -34070,6 +34448,33 @@
     "streak": {
       "count": 1,
       "type": "miss"
+    },
+    "confidence": 57.1
+  },
+  {
+    "id": 1627749,
+    "name": "Dejounte Murray",
+    "team": "NOP",
+    "position": "G",
+    "stat": "pts",
+    "label": "Points",
+    "odds_type": "standard",
+    "line": 18.5,
+    "hit_rate": 0.375,
+    "hit_rate_l5": 0.6,
+    "hit_rate_season": 0.375,
+    "avg_l5": 22.2,
+    "avg_l10": 17.6,
+    "avg_season": 17.6,
+    "edge": 3.7,
+    "hits": 3,
+    "sample": 8,
+    "matchup_mult": 0.977,
+    "opponent": "LAC",
+    "location": "Home",
+    "streak": {
+      "count": 3,
+      "type": "hit"
     },
     "confidence": 57.1
   },
@@ -35120,33 +35525,6 @@
     "matchup_mult": 1.21,
     "opponent": "POR",
     "location": "Home",
-    "streak": {
-      "count": 1,
-      "type": "miss"
-    },
-    "confidence": 56.1
-  },
-  {
-    "id": 203468,
-    "name": "CJ McCollum",
-    "team": "ATL",
-    "position": "G",
-    "stat": "pra",
-    "label": "Pts+Rebs+Asts",
-    "odds_type": "standard",
-    "line": 24.5,
-    "hit_rate": 0.7,
-    "hit_rate_l5": 0.6,
-    "hit_rate_season": 0.54,
-    "avg_l5": 24.4,
-    "avg_l10": 25.0,
-    "avg_season": 24.7,
-    "edge": -0.1,
-    "hits": 7,
-    "sample": 10,
-    "matchup_mult": 1.025,
-    "opponent": "DAL",
-    "location": "Road",
     "streak": {
       "count": 1,
       "type": "miss"
@@ -37557,6 +37935,60 @@
     "confidence": 54.4
   },
   {
+    "id": 203468,
+    "name": "CJ McCollum",
+    "team": "ATL",
+    "position": "G",
+    "stat": "pra",
+    "label": "Pts+Rebs+Asts",
+    "odds_type": "standard",
+    "line": 25.5,
+    "hit_rate": 0.7,
+    "hit_rate_l5": 0.6,
+    "hit_rate_season": 0.492,
+    "avg_l5": 24.4,
+    "avg_l10": 25.0,
+    "avg_season": 24.7,
+    "edge": -1.1,
+    "hits": 7,
+    "sample": 10,
+    "matchup_mult": 1.025,
+    "opponent": "DAL",
+    "location": "Road",
+    "streak": {
+      "count": 1,
+      "type": "miss"
+    },
+    "confidence": 54.4
+  },
+  {
+    "id": 202691,
+    "name": "Klay Thompson",
+    "team": "DAL",
+    "position": "G",
+    "stat": "pts",
+    "label": "Points",
+    "odds_type": "standard",
+    "line": 10.5,
+    "hit_rate": 0.5,
+    "hit_rate_l5": 0.6,
+    "hit_rate_season": 0.475,
+    "avg_l5": 15.0,
+    "avg_l10": 12.7,
+    "avg_season": 11.8,
+    "edge": 4.5,
+    "hits": 5,
+    "sample": 10,
+    "matchup_mult": 1.011,
+    "opponent": "ATL",
+    "location": "Home",
+    "streak": {
+      "count": 1,
+      "type": "miss"
+    },
+    "confidence": 54.4
+  },
+  {
     "id": 1630230,
     "name": "Naji Marshall",
     "team": "DAL",
@@ -37881,33 +38313,6 @@
     "confidence": 54.1
   },
   {
-    "id": 1642268,
-    "name": "Isaiah Collier",
-    "team": "UTA",
-    "position": "G",
-    "stat": "bs",
-    "label": "Blks+Stls",
-    "odds_type": "goblin",
-    "line": 1.5,
-    "hit_rate": 0.6,
-    "hit_rate_l5": 0.6,
-    "hit_rate_season": 0.397,
-    "avg_l5": 1.6,
-    "avg_l10": 2.0,
-    "avg_season": 1.3,
-    "edge": 0.1,
-    "hits": 6,
-    "sample": 10,
-    "matchup_mult": 0.779,
-    "opponent": "MIN",
-    "location": "Road",
-    "streak": {
-      "count": 2,
-      "type": "hit"
-    },
-    "confidence": 54.1
-  },
-  {
     "id": 1630700,
     "name": "Dyson Daniels",
     "team": "ATL",
@@ -38089,6 +38494,33 @@
     "sample": 10,
     "matchup_mult": 1.0,
     "opponent": "POR",
+    "location": "Home",
+    "streak": {
+      "count": 1,
+      "type": "hit"
+    },
+    "confidence": 54.0
+  },
+  {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "reb",
+    "label": "Rebounds",
+    "odds_type": "goblin",
+    "line": 2.5,
+    "hit_rate": 0.6,
+    "hit_rate_l5": 0.6,
+    "hit_rate_season": 0.451,
+    "avg_l5": 3.0,
+    "avg_l10": 3.1,
+    "avg_season": 2.9,
+    "edge": 0.5,
+    "hits": 6,
+    "sample": 10,
+    "matchup_mult": 0.99,
+    "opponent": "TOR",
     "location": "Home",
     "streak": {
       "count": 1,
@@ -38444,33 +38876,6 @@
     "streak": {
       "count": 2,
       "type": "miss"
-    },
-    "confidence": 53.7
-  },
-  {
-    "id": 1630529,
-    "name": "Herbert Jones",
-    "team": "NOP",
-    "position": "F",
-    "stat": "pts",
-    "label": "Points",
-    "odds_type": "goblin",
-    "line": 8.5,
-    "hit_rate": 0.5,
-    "hit_rate_l5": 0.6,
-    "hit_rate_season": 0.522,
-    "avg_l5": 10.4,
-    "avg_l10": 9.3,
-    "avg_season": 9.0,
-    "edge": 1.9,
-    "hits": 5,
-    "sample": 10,
-    "matchup_mult": 0.977,
-    "opponent": "LAC",
-    "location": "Home",
-    "streak": {
-      "count": 1,
-      "type": "hit"
     },
     "confidence": 53.7
   },
@@ -38848,33 +39253,6 @@
     "location": "Road",
     "streak": {
       "count": 2,
-      "type": "hit"
-    },
-    "confidence": 53.5
-  },
-  {
-    "id": 202695,
-    "name": "Kawhi Leonard",
-    "team": "LAC",
-    "position": "F",
-    "stat": "pr",
-    "label": "Pts+Rebs",
-    "odds_type": "standard",
-    "line": 35.5,
-    "hit_rate": 0.6,
-    "hit_rate_l5": 0.6,
-    "hit_rate_season": 0.434,
-    "avg_l5": 34.5,
-    "avg_l10": 35.1,
-    "avg_season": 34.0,
-    "edge": -1.0,
-    "hits": 6,
-    "sample": 10,
-    "matchup_mult": 1.038,
-    "opponent": "NOP",
-    "location": "Road",
-    "streak": {
-      "count": 1,
       "type": "hit"
     },
     "confidence": 53.5
@@ -39820,33 +40198,6 @@
     "location": "Home",
     "streak": {
       "count": 1,
-      "type": "hit"
-    },
-    "confidence": 52.8
-  },
-  {
-    "id": 1630530,
-    "name": "Trey Murphy III",
-    "team": "NOP",
-    "position": "F",
-    "stat": "reb",
-    "label": "Rebounds",
-    "odds_type": "demon",
-    "line": 5.5,
-    "hit_rate": 0.5,
-    "hit_rate_l5": 0.6,
-    "hit_rate_season": 0.5,
-    "avg_l5": 5.4,
-    "avg_l10": 5.0,
-    "avg_season": 5.5,
-    "edge": -0.1,
-    "hits": 5,
-    "sample": 10,
-    "matchup_mult": 0.958,
-    "opponent": "LAC",
-    "location": "Home",
-    "streak": {
-      "count": 3,
       "type": "hit"
     },
     "confidence": 52.8
@@ -41310,6 +41661,33 @@
     "confidence": 52.0
   },
   {
+    "id": 202691,
+    "name": "Klay Thompson",
+    "team": "DAL",
+    "position": "G",
+    "stat": "pra",
+    "label": "Pts+Rebs+Asts",
+    "odds_type": "goblin",
+    "line": 13.5,
+    "hit_rate": 0.4,
+    "hit_rate_l5": 0.6,
+    "hit_rate_season": 0.492,
+    "avg_l5": 17.8,
+    "avg_l10": 15.5,
+    "avg_season": 15.4,
+    "edge": 4.3,
+    "hits": 4,
+    "sample": 10,
+    "matchup_mult": 1.011,
+    "opponent": "ATL",
+    "location": "Home",
+    "streak": {
+      "count": 1,
+      "type": "miss"
+    },
+    "confidence": 52.0
+  },
+  {
     "id": 1642907,
     "name": "Cedric Coward",
     "team": "MEM",
@@ -42255,6 +42633,33 @@
     "confidence": 51.4
   },
   {
+    "id": 1629636,
+    "name": "Darius Garland",
+    "team": "LAC",
+    "position": "G",
+    "stat": "bs",
+    "label": "Blks+Stls",
+    "odds_type": "demon",
+    "line": 1.5,
+    "hit_rate": 0.4,
+    "hit_rate_l5": 0.6,
+    "hit_rate_season": 0.303,
+    "avg_l5": 1.4,
+    "avg_l10": 1.3,
+    "avg_season": 1.0,
+    "edge": -0.1,
+    "hits": 4,
+    "sample": 10,
+    "matchup_mult": 1.21,
+    "opponent": "NOP",
+    "location": "Road",
+    "streak": {
+      "count": 1,
+      "type": "hit"
+    },
+    "confidence": 51.4
+  },
+  {
     "id": 1629060,
     "name": "Rui Hachimura",
     "team": "LAL",
@@ -42841,6 +43246,60 @@
     "sample": 10,
     "matchup_mult": 1.002,
     "opponent": "BKN",
+    "location": "Road",
+    "streak": {
+      "count": 1,
+      "type": "miss"
+    },
+    "confidence": 50.9
+  },
+  {
+    "id": 1631096,
+    "name": "Chet Holmgren",
+    "team": "OKC",
+    "position": "C",
+    "stat": "bs",
+    "label": "Blks+Stls",
+    "odds_type": "standard",
+    "line": 2.5,
+    "hit_rate": 0.5,
+    "hit_rate_l5": 0.4,
+    "hit_rate_season": 0.483,
+    "avg_l5": 2.0,
+    "avg_l10": 2.4,
+    "avg_season": 2.4,
+    "edge": -0.5,
+    "hits": 5,
+    "sample": 10,
+    "matchup_mult": 1.066,
+    "opponent": "BKN",
+    "location": "Road",
+    "streak": {
+      "count": 1,
+      "type": "hit"
+    },
+    "confidence": 50.9
+  },
+  {
+    "id": 1642270,
+    "name": "Donovan Clingan",
+    "team": "POR",
+    "position": "C",
+    "stat": "bs",
+    "label": "Blks+Stls",
+    "odds_type": "standard",
+    "line": 2.5,
+    "hit_rate": 0.6,
+    "hit_rate_l5": 0.6,
+    "hit_rate_season": 0.438,
+    "avg_l5": 2.2,
+    "avg_l10": 3.2,
+    "avg_season": 2.0,
+    "edge": -0.3,
+    "hits": 6,
+    "sample": 10,
+    "matchup_mult": 0.984,
+    "opponent": "IND",
     "location": "Road",
     "streak": {
       "count": 1,
@@ -44064,33 +44523,6 @@
     "confidence": 50.3
   },
   {
-    "id": 1627751,
-    "name": "Jakob Poeltl",
-    "team": "TOR",
-    "position": "C",
-    "stat": "pr",
-    "label": "Pts+Rebs",
-    "odds_type": "goblin",
-    "line": 18.5,
-    "hit_rate": 0.4,
-    "hit_rate_l5": 0.4,
-    "hit_rate_season": 0.438,
-    "avg_l5": 21.2,
-    "avg_l10": 18.8,
-    "avg_season": 17.1,
-    "edge": 2.7,
-    "hits": 4,
-    "sample": 10,
-    "matchup_mult": 1.041,
-    "opponent": "CHI",
-    "location": "Road",
-    "streak": {
-      "count": 1,
-      "type": "hit"
-    },
-    "confidence": 50.3
-  },
-  {
     "id": 1630530,
     "name": "Trey Murphy III",
     "team": "NOP",
@@ -44523,33 +44955,6 @@
     "confidence": 50.1
   },
   {
-    "id": 202691,
-    "name": "Klay Thompson",
-    "team": "DAL",
-    "position": "G",
-    "stat": "pts",
-    "label": "Points",
-    "odds_type": "standard",
-    "line": 11.5,
-    "hit_rate": 0.4,
-    "hit_rate_l5": 0.6,
-    "hit_rate_season": 0.424,
-    "avg_l5": 15.0,
-    "avg_l10": 12.7,
-    "avg_season": 11.8,
-    "edge": 3.5,
-    "hits": 4,
-    "sample": 10,
-    "matchup_mult": 1.011,
-    "opponent": "ATL",
-    "location": "Home",
-    "streak": {
-      "count": 1,
-      "type": "miss"
-    },
-    "confidence": 50.1
-  },
-  {
     "id": 1629651,
     "name": "Nic Claxton",
     "team": "BKN",
@@ -44901,6 +45306,33 @@
     "confidence": 49.8
   },
   {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "ra",
+    "label": "Rebs+Asts",
+    "odds_type": "standard",
+    "line": 8.5,
+    "hit_rate": 0.5,
+    "hit_rate_l5": 0.6,
+    "hit_rate_season": 0.431,
+    "avg_l5": 7.6,
+    "avg_l10": 7.2,
+    "avg_season": 7.9,
+    "edge": -0.9,
+    "hits": 5,
+    "sample": 10,
+    "matchup_mult": 0.99,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 1,
+      "type": "hit"
+    },
+    "confidence": 49.8
+  },
+  {
     "id": 203114,
     "name": "Khris Middleton",
     "team": "DAL",
@@ -45036,33 +45468,6 @@
     "confidence": 49.7
   },
   {
-    "id": 1641764,
-    "name": "Brandin Podziemski",
-    "team": "GSW",
-    "position": "G",
-    "stat": "reb",
-    "label": "Rebounds",
-    "odds_type": "goblin",
-    "line": 5.5,
-    "hit_rate": 0.7,
-    "hit_rate_l5": 0.4,
-    "hit_rate_season": 0.412,
-    "avg_l5": 5.8,
-    "avg_l10": 6.6,
-    "avg_season": 4.9,
-    "edge": 0.3,
-    "hits": 7,
-    "sample": 10,
-    "matchup_mult": 0.949,
-    "opponent": "BOS",
-    "location": "Road",
-    "streak": {
-      "count": 2,
-      "type": "miss"
-    },
-    "confidence": 49.7
-  },
-  {
     "id": 1630573,
     "name": "Sam Hauser",
     "team": "BOS",
@@ -45112,33 +45517,6 @@
     "location": "Home",
     "streak": {
       "count": 2,
-      "type": "miss"
-    },
-    "confidence": 49.7
-  },
-  {
-    "id": 1630193,
-    "name": "Immanuel Quickley",
-    "team": "TOR",
-    "position": "G",
-    "stat": "pts",
-    "label": "Points",
-    "odds_type": "goblin",
-    "line": 16.5,
-    "hit_rate": 0.6,
-    "hit_rate_l5": 0.4,
-    "hit_rate_season": 0.547,
-    "avg_l5": 14.0,
-    "avg_l10": 16.5,
-    "avg_season": 16.8,
-    "edge": -2.5,
-    "hits": 6,
-    "sample": 10,
-    "matchup_mult": 1.041,
-    "opponent": "CHI",
-    "location": "Road",
-    "streak": {
-      "count": 1,
       "type": "miss"
     },
     "confidence": 49.7
@@ -45328,33 +45706,6 @@
     "location": "Road",
     "streak": {
       "count": 2,
-      "type": "hit"
-    },
-    "confidence": 49.6
-  },
-  {
-    "id": 1642262,
-    "name": "Cody Williams",
-    "team": "UTA",
-    "position": "F",
-    "stat": "blk",
-    "label": "Blocked Shots",
-    "odds_type": "goblin",
-    "line": 0.5,
-    "hit_rate": 0.5,
-    "hit_rate_l5": 0.6,
-    "hit_rate_season": 0.333,
-    "avg_l5": 0.6,
-    "avg_l10": 0.5,
-    "avg_season": 0.3,
-    "edge": 0.1,
-    "hits": 5,
-    "sample": 10,
-    "matchup_mult": 0.779,
-    "opponent": "MIN",
-    "location": "Road",
-    "streak": {
-      "count": 1,
       "type": "hit"
     },
     "confidence": 49.6
@@ -46027,6 +46378,33 @@
     "sample": 10,
     "matchup_mult": 1.04,
     "opponent": "OKC",
+    "location": "Home",
+    "streak": {
+      "count": 1,
+      "type": "hit"
+    },
+    "confidence": 49.0
+  },
+  {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "pra",
+    "label": "Pts+Rebs+Asts",
+    "odds_type": "demon",
+    "line": 24.5,
+    "hit_rate": 0.5,
+    "hit_rate_l5": 0.6,
+    "hit_rate_season": 0.275,
+    "avg_l5": 25.6,
+    "avg_l10": 25.2,
+    "avg_season": 20.8,
+    "edge": 1.1,
+    "hits": 5,
+    "sample": 10,
+    "matchup_mult": 0.97,
+    "opponent": "TOR",
     "location": "Home",
     "streak": {
       "count": 1,
@@ -47574,33 +47952,6 @@
     "confidence": 48.1
   },
   {
-    "id": 1629008,
-    "name": "Michael Porter Jr.",
-    "team": "BKN",
-    "position": "F",
-    "stat": "tov",
-    "label": "Turnovers",
-    "odds_type": "standard",
-    "line": 2.5,
-    "hit_rate": 0.3,
-    "hit_rate_l5": 0.4,
-    "hit_rate_season": 0.442,
-    "avg_l5": 2.5,
-    "avg_l10": 1.6,
-    "avg_season": 2.1,
-    "edge": 0.0,
-    "hits": 3,
-    "sample": 10,
-    "matchup_mult": 1.156,
-    "opponent": "OKC",
-    "location": "Home",
-    "streak": {
-      "count": 1,
-      "type": "hit"
-    },
-    "confidence": 48.0
-  },
-  {
     "id": 1642846,
     "name": "Ace Bailey",
     "team": "UTA",
@@ -48978,6 +49329,33 @@
     "confidence": 47.3
   },
   {
+    "id": 1627739,
+    "name": "Kris Dunn",
+    "team": "LAC",
+    "position": "G",
+    "stat": "pts",
+    "label": "Points",
+    "odds_type": "standard",
+    "line": 7.5,
+    "hit_rate": 0.4,
+    "hit_rate_l5": 0.4,
+    "hit_rate_season": 0.5,
+    "avg_l5": 6.4,
+    "avg_l10": 5.7,
+    "avg_season": 7.6,
+    "edge": -1.1,
+    "hits": 4,
+    "sample": 10,
+    "matchup_mult": 1.038,
+    "opponent": "NOP",
+    "location": "Road",
+    "streak": {
+      "count": 1,
+      "type": "hit"
+    },
+    "confidence": 47.3
+  },
+  {
     "id": 203468,
     "name": "CJ McCollum",
     "team": "ATL",
@@ -49540,6 +49918,33 @@
     "location": "Home",
     "streak": {
       "count": 1,
+      "type": "miss"
+    },
+    "confidence": 46.9
+  },
+  {
+    "id": 1627826,
+    "name": "Ivica Zubac",
+    "team": "IND",
+    "position": "C",
+    "stat": "ra",
+    "label": "Rebs+Asts",
+    "odds_type": "standard",
+    "line": 9.5,
+    "hit_rate": 0.6,
+    "hit_rate_l5": 0.4,
+    "hit_rate_season": 0.761,
+    "avg_l5": 9.2,
+    "avg_l10": 9.9,
+    "avg_season": 12.9,
+    "edge": -0.3,
+    "hits": 6,
+    "sample": 10,
+    "matchup_mult": 0.992,
+    "opponent": "POR",
+    "location": "Home",
+    "streak": {
+      "count": 3,
       "type": "miss"
     },
     "confidence": 46.9
@@ -50625,33 +51030,6 @@
     "confidence": 46.3
   },
   {
-    "id": 1630168,
-    "name": "Onyeka Okongwu",
-    "team": "ATL",
-    "position": "PF",
-    "stat": "pts",
-    "label": "Points",
-    "odds_type": "standard",
-    "line": 14.5,
-    "hit_rate": 0.4,
-    "hit_rate_l5": 0.4,
-    "hit_rate_season": 0.548,
-    "avg_l5": 12.0,
-    "avg_l10": 13.9,
-    "avg_season": 15.8,
-    "edge": -2.5,
-    "hits": 4,
-    "sample": 10,
-    "matchup_mult": 1.025,
-    "opponent": "DAL",
-    "location": "Road",
-    "streak": {
-      "count": 1,
-      "type": "hit"
-    },
-    "confidence": 46.3
-  },
-  {
     "id": 203114,
     "name": "Khris Middleton",
     "team": "DAL",
@@ -50922,55 +51300,28 @@
     "confidence": 46.2
   },
   {
-    "id": 1630193,
-    "name": "Immanuel Quickley",
-    "team": "TOR",
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
     "position": "G",
-    "stat": "pr",
-    "label": "Pts+Rebs",
-    "odds_type": "goblin",
-    "line": 20.5,
-    "hit_rate": 0.5,
-    "hit_rate_l5": 0.4,
-    "hit_rate_season": 0.516,
-    "avg_l5": 17.4,
-    "avg_l10": 19.7,
-    "avg_season": 20.9,
-    "edge": -3.1,
-    "hits": 5,
+    "stat": "reb",
+    "label": "Rebounds",
+    "odds_type": "demon",
+    "line": 3.5,
+    "hit_rate": 0.4,
+    "hit_rate_l5": 0.6,
+    "hit_rate_season": 0.333,
+    "avg_l5": 3.0,
+    "avg_l10": 3.1,
+    "avg_season": 2.9,
+    "edge": -0.5,
+    "hits": 4,
     "sample": 10,
-    "matchup_mult": 1.041,
-    "opponent": "CHI",
-    "location": "Road",
-    "streak": {
-      "count": 1,
-      "type": "miss"
-    },
-    "confidence": 46.2
-  },
-  {
-    "id": 1629627,
-    "name": "Zion Williamson",
-    "team": "NOP",
-    "position": "F",
-    "stat": "pts",
-    "label": "Points",
-    "odds_type": "goblin",
-    "line": 20.5,
-    "hit_rate": 0.5,
-    "hit_rate_l5": 0.4,
-    "hit_rate_season": 0.596,
-    "avg_l5": 19.8,
-    "avg_l10": 22.1,
-    "avg_season": 22.2,
-    "edge": -0.7,
-    "hits": 5,
-    "sample": 10,
-    "matchup_mult": 0.977,
-    "opponent": "LAC",
+    "matchup_mult": 0.99,
+    "opponent": "TOR",
     "location": "Home",
     "streak": {
-      "count": 2,
+      "count": 1,
       "type": "hit"
     },
     "confidence": 46.2
@@ -51863,33 +52214,6 @@
     "streak": {
       "count": 1,
       "type": "miss"
-    },
-    "confidence": 45.6
-  },
-  {
-    "id": 1641730,
-    "name": "Noah Clowney",
-    "team": "BKN",
-    "position": "PF",
-    "stat": "reb",
-    "label": "Rebounds",
-    "odds_type": "standard",
-    "line": 3.5,
-    "hit_rate": 0.4,
-    "hit_rate_l5": 0.4,
-    "hit_rate_season": 0.59,
-    "avg_l5": 3.2,
-    "avg_l10": 3.8,
-    "avg_season": 4.0,
-    "edge": -0.3,
-    "hits": 4,
-    "sample": 10,
-    "matchup_mult": 1.04,
-    "opponent": "OKC",
-    "location": "Home",
-    "streak": {
-      "count": 2,
-      "type": "hit"
     },
     "confidence": 45.6
   },
@@ -53136,6 +53460,33 @@
     "confidence": 44.9
   },
   {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "pts",
+    "label": "Points",
+    "odds_type": "demon",
+    "line": 17.5,
+    "hit_rate": 0.5,
+    "hit_rate_l5": 0.6,
+    "hit_rate_season": 0.176,
+    "avg_l5": 18.0,
+    "avg_l10": 16.1,
+    "avg_season": 12.5,
+    "edge": 0.5,
+    "hits": 5,
+    "sample": 10,
+    "matchup_mult": 0.97,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 1,
+      "type": "miss"
+    },
+    "confidence": 44.9
+  },
+  {
     "id": 202695,
     "name": "Kawhi Leonard",
     "team": "LAC",
@@ -53618,33 +53969,6 @@
     "streak": {
       "count": 2,
       "type": "miss"
-    },
-    "confidence": 44.6
-  },
-  {
-    "id": 1642270,
-    "name": "Donovan Clingan",
-    "team": "POR",
-    "position": "C",
-    "stat": "pts",
-    "label": "Points",
-    "odds_type": "standard",
-    "line": 13.5,
-    "hit_rate": 0.4,
-    "hit_rate_l5": 0.4,
-    "hit_rate_season": 0.391,
-    "avg_l5": 11.2,
-    "avg_l10": 12.4,
-    "avg_season": 12.0,
-    "edge": -2.3,
-    "hits": 4,
-    "sample": 10,
-    "matchup_mult": 1.042,
-    "opponent": "IND",
-    "location": "Road",
-    "streak": {
-      "count": 1,
-      "type": "hit"
     },
     "confidence": 44.6
   },
@@ -55485,33 +55809,6 @@
     "confidence": 43.8
   },
   {
-    "id": 1630572,
-    "name": "Sandro Mamukelashvili",
-    "team": "TOR",
-    "position": "PF",
-    "stat": "pr",
-    "label": "Pts+Rebs",
-    "odds_type": "standard",
-    "line": 13.5,
-    "hit_rate": 0.2,
-    "hit_rate_l5": 0.4,
-    "hit_rate_season": 0.554,
-    "avg_l5": 15.0,
-    "avg_l10": 10.7,
-    "avg_season": 15.6,
-    "edge": 1.5,
-    "hits": 2,
-    "sample": 10,
-    "matchup_mult": 1.041,
-    "opponent": "CHI",
-    "location": "Road",
-    "streak": {
-      "count": 1,
-      "type": "miss"
-    },
-    "confidence": 43.8
-  },
-  {
     "id": 202691,
     "name": "Klay Thompson",
     "team": "DAL",
@@ -55616,33 +55913,6 @@
     "streak": {
       "count": 1,
       "type": "hit"
-    },
-    "confidence": 43.7
-  },
-  {
-    "id": 203468,
-    "name": "CJ McCollum",
-    "team": "ATL",
-    "position": "G",
-    "stat": "pr",
-    "label": "Pts+Rebs",
-    "odds_type": "standard",
-    "line": 20.5,
-    "hit_rate": 0.5,
-    "hit_rate_l5": 0.4,
-    "hit_rate_season": 0.54,
-    "avg_l5": 20.0,
-    "avg_l10": 20.9,
-    "avg_season": 21.1,
-    "edge": -0.5,
-    "hits": 5,
-    "sample": 10,
-    "matchup_mult": 1.025,
-    "opponent": "DAL",
-    "location": "Road",
-    "streak": {
-      "count": 1,
-      "type": "miss"
     },
     "confidence": 43.7
   },
@@ -58023,6 +58293,33 @@
     "confidence": 42.5
   },
   {
+    "id": 1629029,
+    "name": "Luka Don\u010di\u0107",
+    "team": "LAL",
+    "position": "SF",
+    "stat": "pra",
+    "label": "Pts+Rebs+Asts",
+    "odds_type": "demon",
+    "line": 52.5,
+    "hit_rate": 0.4,
+    "hit_rate_l5": 0.6,
+    "hit_rate_season": 0.411,
+    "avg_l5": 50.0,
+    "avg_l10": 47.7,
+    "avg_season": 50.4,
+    "edge": -2.5,
+    "hits": 4,
+    "sample": 10,
+    "matchup_mult": 0.952,
+    "opponent": "HOU",
+    "location": "Road",
+    "streak": {
+      "count": 1,
+      "type": "miss"
+    },
+    "confidence": 42.5
+  },
+  {
     "id": 201142,
     "name": "Kevin Durant",
     "team": "HOU",
@@ -58860,33 +59157,6 @@
     "confidence": 41.9
   },
   {
-    "id": 1629652,
-    "name": "Luguentz Dort",
-    "team": "OKC",
-    "position": "G",
-    "stat": "pa",
-    "label": "Pts+Asts",
-    "odds_type": "standard",
-    "line": 8.5,
-    "hit_rate": 0.4,
-    "hit_rate_l5": 0.4,
-    "hit_rate_season": 0.526,
-    "avg_l5": 6.5,
-    "avg_l10": 6.6,
-    "avg_season": 9.8,
-    "edge": -2.0,
-    "hits": 4,
-    "sample": 10,
-    "matchup_mult": 1.002,
-    "opponent": "BKN",
-    "location": "Road",
-    "streak": {
-      "count": 3,
-      "type": "miss"
-    },
-    "confidence": 41.9
-  },
-  {
     "id": 1642270,
     "name": "Donovan Clingan",
     "team": "POR",
@@ -59184,6 +59454,33 @@
     "confidence": 41.8
   },
   {
+    "id": 202695,
+    "name": "Kawhi Leonard",
+    "team": "LAC",
+    "position": "F",
+    "stat": "pr",
+    "label": "Pts+Rebs",
+    "odds_type": "standard",
+    "line": 36.5,
+    "hit_rate": 0.5,
+    "hit_rate_l5": 0.4,
+    "hit_rate_season": 0.358,
+    "avg_l5": 34.5,
+    "avg_l10": 35.1,
+    "avg_season": 34.0,
+    "edge": -2.0,
+    "hits": 5,
+    "sample": 10,
+    "matchup_mult": 1.038,
+    "opponent": "NOP",
+    "location": "Road",
+    "streak": {
+      "count": 1,
+      "type": "hit"
+    },
+    "confidence": 41.8
+  },
+  {
     "id": 1630530,
     "name": "Trey Murphy III",
     "team": "NOP",
@@ -59231,6 +59528,33 @@
     "matchup_mult": 0.938,
     "opponent": "NOP",
     "location": "Road",
+    "streak": {
+      "count": 1,
+      "type": "miss"
+    },
+    "confidence": 41.8
+  },
+  {
+    "id": 1642843,
+    "name": "Cooper Flagg",
+    "team": "DAL",
+    "position": "F",
+    "stat": "pr",
+    "label": "Pts+Rebs",
+    "odds_type": "standard",
+    "line": 28.5,
+    "hit_rate": 0.3,
+    "hit_rate_l5": 0.4,
+    "hit_rate_season": 0.368,
+    "avg_l5": 29.0,
+    "avg_l10": 25.7,
+    "avg_season": 26.2,
+    "edge": 0.5,
+    "hits": 3,
+    "sample": 10,
+    "matchup_mult": 1.011,
+    "opponent": "ATL",
+    "location": "Home",
     "streak": {
       "count": 1,
       "type": "miss"
@@ -59743,6 +60067,33 @@
     "sample": 10,
     "matchup_mult": 0.867,
     "opponent": "BOS",
+    "location": "Road",
+    "streak": {
+      "count": 1,
+      "type": "hit"
+    },
+    "confidence": 41.3
+  },
+  {
+    "id": 1642270,
+    "name": "Donovan Clingan",
+    "team": "POR",
+    "position": "C",
+    "stat": "pts",
+    "label": "Points",
+    "odds_type": "standard",
+    "line": 12.5,
+    "hit_rate": 0.4,
+    "hit_rate_l5": 0.4,
+    "hit_rate_season": 0.438,
+    "avg_l5": 11.2,
+    "avg_l10": 12.4,
+    "avg_season": 12.0,
+    "edge": -1.3,
+    "hits": 4,
+    "sample": 10,
+    "matchup_mult": 1.042,
+    "opponent": "IND",
     "location": "Road",
     "streak": {
       "count": 1,
@@ -62289,6 +62640,33 @@
     "confidence": 39.7
   },
   {
+    "id": 203468,
+    "name": "CJ McCollum",
+    "team": "ATL",
+    "position": "G",
+    "stat": "pr",
+    "label": "Pts+Rebs",
+    "odds_type": "standard",
+    "line": 21.5,
+    "hit_rate": 0.4,
+    "hit_rate_l5": 0.4,
+    "hit_rate_season": 0.508,
+    "avg_l5": 20.0,
+    "avg_l10": 20.9,
+    "avg_season": 21.1,
+    "edge": -1.5,
+    "hits": 4,
+    "sample": 10,
+    "matchup_mult": 1.025,
+    "opponent": "DAL",
+    "location": "Road",
+    "streak": {
+      "count": 1,
+      "type": "miss"
+    },
+    "confidence": 39.7
+  },
+  {
     "id": 1642258,
     "name": "Zaccharie Risacher",
     "team": "ATL",
@@ -63990,6 +64368,33 @@
     "confidence": 38.6
   },
   {
+    "id": 202695,
+    "name": "Kawhi Leonard",
+    "team": "LAC",
+    "position": "F",
+    "stat": "pa",
+    "label": "Pts+Asts",
+    "odds_type": "standard",
+    "line": 32.5,
+    "hit_rate": 0.4,
+    "hit_rate_l5": 0.4,
+    "hit_rate_season": 0.396,
+    "avg_l5": 32.2,
+    "avg_l10": 32.1,
+    "avg_season": 31.5,
+    "edge": -0.3,
+    "hits": 4,
+    "sample": 10,
+    "matchup_mult": 1.038,
+    "opponent": "NOP",
+    "location": "Road",
+    "streak": {
+      "count": 2,
+      "type": "miss"
+    },
+    "confidence": 38.6
+  },
+  {
     "id": 202691,
     "name": "Klay Thompson",
     "team": "DAL",
@@ -65389,6 +65794,33 @@
     "location": "Home",
     "streak": {
       "count": 2,
+      "type": "hit"
+    },
+    "confidence": 37.8
+  },
+  {
+    "id": 1631095,
+    "name": "Jabari Smith Jr.",
+    "team": "HOU",
+    "position": "F",
+    "stat": "pra",
+    "label": "Pts+Rebs+Asts",
+    "odds_type": "demon",
+    "line": 28.5,
+    "hit_rate": 0.3,
+    "hit_rate_l5": 0.4,
+    "hit_rate_season": 0.222,
+    "avg_l5": 25.6,
+    "avg_l10": 24.2,
+    "avg_season": 23.6,
+    "edge": -2.9,
+    "hits": 3,
+    "sample": 10,
+    "matchup_mult": 0.996,
+    "opponent": "LAL",
+    "location": "Home",
+    "streak": {
+      "count": 1,
       "type": "hit"
     },
     "confidence": 37.8
@@ -67419,33 +67851,6 @@
     "confidence": 36.6
   },
   {
-    "id": 1627751,
-    "name": "Jakob Poeltl",
-    "team": "TOR",
-    "position": "C",
-    "stat": "pa",
-    "label": "Pts+Asts",
-    "odds_type": "demon",
-    "line": 19.5,
-    "hit_rate": 0.3,
-    "hit_rate_l5": 0.4,
-    "hit_rate_season": 0.188,
-    "avg_l5": 14.8,
-    "avg_l10": 13.2,
-    "avg_season": 12.2,
-    "edge": -4.7,
-    "hits": 3,
-    "sample": 10,
-    "matchup_mult": 1.041,
-    "opponent": "CHI",
-    "location": "Road",
-    "streak": {
-      "count": 1,
-      "type": "hit"
-    },
-    "confidence": 36.6
-  },
-  {
     "id": 1630188,
     "name": "Jalen Smith",
     "team": "CHI",
@@ -68035,6 +68440,33 @@
     "location": "Road",
     "streak": {
       "count": 2,
+      "type": "miss"
+    },
+    "confidence": 36.2
+  },
+  {
+    "id": 1629023,
+    "name": "P.J. Washington",
+    "team": "DAL",
+    "position": "F",
+    "stat": "tov",
+    "label": "Turnovers",
+    "odds_type": "goblin",
+    "line": 1.5,
+    "hit_rate": 0.3,
+    "hit_rate_l5": 0.2,
+    "hit_rate_season": 0.6,
+    "avg_l5": 0.8,
+    "avg_l10": 1.0,
+    "avg_season": 1.5,
+    "edge": -0.7,
+    "hits": 3,
+    "sample": 10,
+    "matchup_mult": 1.095,
+    "opponent": "ATL",
+    "location": "Home",
+    "streak": {
+      "count": 4,
       "type": "miss"
     },
     "confidence": 36.2
@@ -69471,33 +69903,6 @@
     "confidence": 35.4
   },
   {
-    "id": 1630530,
-    "name": "Trey Murphy III",
-    "team": "NOP",
-    "position": "F",
-    "stat": "pts",
-    "label": "Points",
-    "odds_type": "demon",
-    "line": 22.5,
-    "hit_rate": 0.2,
-    "hit_rate_l5": 0.4,
-    "hit_rate_season": 0.367,
-    "avg_l5": 21.0,
-    "avg_l10": 20.3,
-    "avg_season": 20.8,
-    "edge": -1.5,
-    "hits": 2,
-    "sample": 10,
-    "matchup_mult": 0.977,
-    "opponent": "LAC",
-    "location": "Home",
-    "streak": {
-      "count": 2,
-      "type": "miss"
-    },
-    "confidence": 35.4
-  },
-  {
     "id": 1629627,
     "name": "Zion Williamson",
     "team": "NOP",
@@ -69631,6 +70036,33 @@
       "type": "miss"
     },
     "confidence": 35.3
+  },
+  {
+    "id": 1628369,
+    "name": "Jayson Tatum",
+    "team": "BOS",
+    "position": "SF",
+    "stat": "bs",
+    "label": "Blks+Stls",
+    "odds_type": "standard",
+    "line": 1.5,
+    "hit_rate": 0.4,
+    "hit_rate_l5": 0.4,
+    "hit_rate_season": 0.4,
+    "avg_l5": 1.2,
+    "avg_l10": 1.2,
+    "avg_season": 1.2,
+    "edge": -0.3,
+    "hits": 2,
+    "sample": 5,
+    "matchup_mult": 0.861,
+    "opponent": "GSW",
+    "location": "Home",
+    "streak": {
+      "count": 1,
+      "type": "miss"
+    },
+    "confidence": 35.2
   },
   {
     "id": 1642849,
@@ -69950,33 +70382,6 @@
     "matchup_mult": 1.0,
     "opponent": "POR",
     "location": "Home",
-    "streak": {
-      "count": 1,
-      "type": "hit"
-    },
-    "confidence": 35.1
-  },
-  {
-    "id": 1627751,
-    "name": "Jakob Poeltl",
-    "team": "TOR",
-    "position": "C",
-    "stat": "ra",
-    "label": "Rebs+Asts",
-    "odds_type": "demon",
-    "line": 12.5,
-    "hit_rate": 0.3,
-    "hit_rate_l5": 0.4,
-    "hit_rate_season": 0.156,
-    "avg_l5": 12.0,
-    "avg_l10": 8.6,
-    "avg_season": 9.0,
-    "edge": -0.5,
-    "hits": 3,
-    "sample": 10,
-    "matchup_mult": 1.031,
-    "opponent": "CHI",
-    "location": "Road",
     "streak": {
       "count": 1,
       "type": "hit"
@@ -71083,33 +71488,6 @@
     "sample": 10,
     "matchup_mult": 1.128,
     "opponent": "CHI",
-    "location": "Road",
-    "streak": {
-      "count": 2,
-      "type": "miss"
-    },
-    "confidence": 34.5
-  },
-  {
-    "id": 202695,
-    "name": "Kawhi Leonard",
-    "team": "LAC",
-    "position": "F",
-    "stat": "pa",
-    "label": "Pts+Asts",
-    "odds_type": "standard",
-    "line": 33.5,
-    "hit_rate": 0.3,
-    "hit_rate_l5": 0.4,
-    "hit_rate_season": 0.358,
-    "avg_l5": 32.2,
-    "avg_l10": 32.1,
-    "avg_season": 31.5,
-    "edge": -1.3,
-    "hits": 3,
-    "sample": 10,
-    "matchup_mult": 1.038,
-    "opponent": "NOP",
     "location": "Road",
     "streak": {
       "count": 2,
@@ -75438,33 +75816,6 @@
     "confidence": 32.2
   },
   {
-    "id": 1628978,
-    "name": "Donte DiVincenzo",
-    "team": "MIN",
-    "position": "G",
-    "stat": "pr",
-    "label": "Pts+Rebs",
-    "odds_type": "demon",
-    "line": 19.5,
-    "hit_rate": 0.5,
-    "hit_rate_l5": 0.2,
-    "hit_rate_season": 0.309,
-    "avg_l5": 12.0,
-    "avg_l10": 15.6,
-    "avg_season": 16.7,
-    "edge": -7.5,
-    "hits": 5,
-    "sample": 10,
-    "matchup_mult": 1.083,
-    "opponent": "UTA",
-    "location": "Home",
-    "streak": {
-      "count": 1,
-      "type": "hit"
-    },
-    "confidence": 32.2
-  },
-  {
     "id": 1642262,
     "name": "Cody Williams",
     "team": "UTA",
@@ -75677,6 +76028,33 @@
     "streak": {
       "count": 2,
       "type": "hit"
+    },
+    "confidence": 32.1
+  },
+  {
+    "id": 1630193,
+    "name": "Immanuel Quickley",
+    "team": "TOR",
+    "position": "G",
+    "stat": "pa",
+    "label": "Pts+Asts",
+    "odds_type": "demon",
+    "line": 24.5,
+    "hit_rate": 0.4,
+    "hit_rate_l5": 0.2,
+    "hit_rate_season": 0.406,
+    "avg_l5": 18.0,
+    "avg_l10": 20.7,
+    "avg_season": 22.4,
+    "edge": -6.5,
+    "hits": 4,
+    "sample": 10,
+    "matchup_mult": 1.041,
+    "opponent": "CHI",
+    "location": "Road",
+    "streak": {
+      "count": 2,
+      "type": "miss"
     },
     "confidence": 32.1
   },
@@ -76108,6 +76486,33 @@
     "location": "Home",
     "streak": {
       "count": 4,
+      "type": "miss"
+    },
+    "confidence": 31.7
+  },
+  {
+    "id": 1642347,
+    "name": "Jamal Shead",
+    "team": "TOR",
+    "position": "G",
+    "stat": "ast",
+    "label": "Assists",
+    "odds_type": "standard",
+    "line": 4.5,
+    "hit_rate": 0.1,
+    "hit_rate_l5": 0.2,
+    "hit_rate_season": 0.522,
+    "avg_l5": 3.2,
+    "avg_l10": 3.2,
+    "avg_season": 4.7,
+    "edge": -1.3,
+    "hits": 1,
+    "sample": 10,
+    "matchup_mult": 1.068,
+    "opponent": "CHI",
+    "location": "Road",
+    "streak": {
+      "count": 1,
       "type": "miss"
     },
     "confidence": 31.7
@@ -77193,6 +77598,33 @@
     "confidence": 31.1
   },
   {
+    "id": 1630168,
+    "name": "Onyeka Okongwu",
+    "team": "ATL",
+    "position": "PF",
+    "stat": "pts",
+    "label": "Points",
+    "odds_type": "standard",
+    "line": 15.5,
+    "hit_rate": 0.3,
+    "hit_rate_l5": 0.2,
+    "hit_rate_season": 0.5,
+    "avg_l5": 12.0,
+    "avg_l10": 13.9,
+    "avg_season": 15.8,
+    "edge": -3.5,
+    "hits": 3,
+    "sample": 10,
+    "matchup_mult": 1.025,
+    "opponent": "DAL",
+    "location": "Road",
+    "streak": {
+      "count": 3,
+      "type": "miss"
+    },
+    "confidence": 31.1
+  },
+  {
     "id": 203999,
     "name": "Nikola Joki\u0107",
     "team": "DEN",
@@ -77350,33 +77782,6 @@
     "location": "Road",
     "streak": {
       "count": 3,
-      "type": "miss"
-    },
-    "confidence": 31.0
-  },
-  {
-    "id": 1631108,
-    "name": "Max Christie",
-    "team": "DAL",
-    "position": "G",
-    "stat": "ast",
-    "label": "Assists",
-    "odds_type": "standard",
-    "line": 1.5,
-    "hit_rate": 0.3,
-    "hit_rate_l5": 0.2,
-    "hit_rate_season": 0.578,
-    "avg_l5": 0.2,
-    "avg_l10": 0.9,
-    "avg_season": 2.0,
-    "edge": -1.3,
-    "hits": 3,
-    "sample": 10,
-    "matchup_mult": 1.004,
-    "opponent": "ATL",
-    "location": "Home",
-    "streak": {
-      "count": 1,
       "type": "miss"
     },
     "confidence": 31.0
@@ -77810,6 +78215,33 @@
     "streak": {
       "count": 1,
       "type": "miss"
+    },
+    "confidence": 30.7
+  },
+  {
+    "id": 1629651,
+    "name": "Nic Claxton",
+    "team": "BKN",
+    "position": "C",
+    "stat": "pr",
+    "label": "Pts+Rebs",
+    "odds_type": "demon",
+    "line": 19.5,
+    "hit_rate": 0.3,
+    "hit_rate_l5": 0.2,
+    "hit_rate_season": 0.459,
+    "avg_l5": 13.2,
+    "avg_l10": 15.4,
+    "avg_season": 18.8,
+    "edge": -6.3,
+    "hits": 3,
+    "sample": 10,
+    "matchup_mult": 0.934,
+    "opponent": "OKC",
+    "location": "Home",
+    "streak": {
+      "count": 1,
+      "type": "hit"
     },
     "confidence": 30.7
   },
@@ -78516,6 +78948,33 @@
     "confidence": 30.3
   },
   {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "pts",
+    "label": "Points",
+    "odds_type": "demon",
+    "line": 19.5,
+    "hit_rate": 0.3,
+    "hit_rate_l5": 0.4,
+    "hit_rate_season": 0.137,
+    "avg_l5": 18.0,
+    "avg_l10": 16.1,
+    "avg_season": 12.5,
+    "edge": -1.5,
+    "hits": 3,
+    "sample": 10,
+    "matchup_mult": 0.97,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 1,
+      "type": "miss"
+    },
+    "confidence": 30.3
+  },
+  {
     "id": 1630559,
     "name": "Austin Reaves",
     "team": "LAL",
@@ -78616,33 +79075,6 @@
     "sample": 10,
     "matchup_mult": 0.958,
     "opponent": "LAC",
-    "location": "Home",
-    "streak": {
-      "count": 1,
-      "type": "miss"
-    },
-    "confidence": 30.2
-  },
-  {
-    "id": 1642843,
-    "name": "Cooper Flagg",
-    "team": "DAL",
-    "position": "F",
-    "stat": "pr",
-    "label": "Pts+Rebs",
-    "odds_type": "standard",
-    "line": 29.5,
-    "hit_rate": 0.2,
-    "hit_rate_l5": 0.2,
-    "hit_rate_season": 0.298,
-    "avg_l5": 29.0,
-    "avg_l10": 25.7,
-    "avg_season": 26.2,
-    "edge": -0.5,
-    "hits": 2,
-    "sample": 10,
-    "matchup_mult": 1.011,
-    "opponent": "ATL",
     "location": "Home",
     "streak": {
       "count": 1,
@@ -80109,33 +80541,6 @@
     "confidence": 29.2
   },
   {
-    "id": 1629674,
-    "name": "Neemias Queta",
-    "team": "BOS",
-    "position": "C",
-    "stat": "pra",
-    "label": "Pts+Rebs+Asts",
-    "odds_type": "standard",
-    "line": 19.5,
-    "hit_rate": 0.3,
-    "hit_rate_l5": 0.2,
-    "hit_rate_season": 0.375,
-    "avg_l5": 14.7,
-    "avg_l10": 19.8,
-    "avg_season": 19.3,
-    "edge": -4.8,
-    "hits": 3,
-    "sample": 10,
-    "matchup_mult": 0.992,
-    "opponent": "GSW",
-    "location": "Home",
-    "streak": {
-      "count": 1,
-      "type": "miss"
-    },
-    "confidence": 29.1
-  },
-  {
     "id": 1642954,
     "name": "Will Richard",
     "team": "GSW",
@@ -80772,6 +81177,33 @@
     "avg_l10": 19.8,
     "avg_season": 19.3,
     "edge": -6.8,
+    "hits": 3,
+    "sample": 10,
+    "matchup_mult": 0.992,
+    "opponent": "GSW",
+    "location": "Home",
+    "streak": {
+      "count": 1,
+      "type": "miss"
+    },
+    "confidence": 28.7
+  },
+  {
+    "id": 1629674,
+    "name": "Neemias Queta",
+    "team": "BOS",
+    "position": "C",
+    "stat": "pra",
+    "label": "Pts+Rebs+Asts",
+    "odds_type": "standard",
+    "line": 20.5,
+    "hit_rate": 0.3,
+    "hit_rate_l5": 0.2,
+    "hit_rate_season": 0.359,
+    "avg_l5": 14.7,
+    "avg_l10": 19.8,
+    "avg_season": 19.3,
+    "edge": -5.8,
     "hits": 3,
     "sample": 10,
     "matchup_mult": 0.992,
@@ -81594,6 +82026,33 @@
     "confidence": 28.2
   },
   {
+    "id": 1629628,
+    "name": "RJ Barrett",
+    "team": "TOR",
+    "position": "SF",
+    "stat": "bs",
+    "label": "Blks+Stls",
+    "odds_type": "standard",
+    "line": 1.5,
+    "hit_rate": 0.2,
+    "hit_rate_l5": 0.2,
+    "hit_rate_season": 0.302,
+    "avg_l5": 1.0,
+    "avg_l10": 1.0,
+    "avg_season": 1.1,
+    "edge": -0.5,
+    "hits": 2,
+    "sample": 10,
+    "matchup_mult": 1.128,
+    "opponent": "CHI",
+    "location": "Road",
+    "streak": {
+      "count": 1,
+      "type": "miss"
+    },
+    "confidence": 28.2
+  },
+  {
     "id": 1629638,
     "name": "Nickeil Alexander-Walker",
     "team": "ATL",
@@ -82080,33 +82539,6 @@
     "confidence": 27.9
   },
   {
-    "id": 1630245,
-    "name": "Ayo Dosunmu",
-    "team": "MIN",
-    "position": "G",
-    "stat": "ast",
-    "label": "Assists",
-    "odds_type": "demon",
-    "line": 4.5,
-    "hit_rate": 0.1,
-    "hit_rate_l5": 0.2,
-    "hit_rate_season": 0.288,
-    "avg_l5": 1.0,
-    "avg_l10": 2.6,
-    "avg_season": 3.4,
-    "edge": -3.5,
-    "hits": 1,
-    "sample": 10,
-    "matchup_mult": 1.143,
-    "opponent": "UTA",
-    "location": "Home",
-    "streak": {
-      "count": 1,
-      "type": "miss"
-    },
-    "confidence": 27.9
-  },
-  {
     "id": 1630538,
     "name": "Bones Hyland",
     "team": "MIN",
@@ -82399,6 +82831,33 @@
     "location": "Home",
     "streak": {
       "count": 4,
+      "type": "miss"
+    },
+    "confidence": 27.8
+  },
+  {
+    "id": 1630188,
+    "name": "Jalen Smith",
+    "team": "CHI",
+    "position": "PF",
+    "stat": "pr",
+    "label": "Pts+Rebs",
+    "odds_type": "standard",
+    "line": 19.5,
+    "hit_rate": 0.4,
+    "hit_rate_l5": 0.2,
+    "hit_rate_season": 0.36,
+    "avg_l5": 17.7,
+    "avg_l10": 19.7,
+    "avg_season": 17.2,
+    "edge": -1.8,
+    "hits": 4,
+    "sample": 10,
+    "matchup_mult": 0.97,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 2,
       "type": "miss"
     },
     "confidence": 27.8
@@ -83182,33 +83641,6 @@
     "location": "Road",
     "streak": {
       "count": 2,
-      "type": "miss"
-    },
-    "confidence": 27.3
-  },
-  {
-    "id": 203497,
-    "name": "Rudy Gobert",
-    "team": "MIN",
-    "position": "C",
-    "stat": "pr",
-    "label": "Pts+Rebs",
-    "odds_type": "goblin",
-    "line": 23.5,
-    "hit_rate": 0.3,
-    "hit_rate_l5": 0.2,
-    "hit_rate_season": 0.446,
-    "avg_l5": 17.0,
-    "avg_l10": 19.9,
-    "avg_season": 22.0,
-    "edge": -6.5,
-    "hits": 3,
-    "sample": 10,
-    "matchup_mult": 1.083,
-    "opponent": "UTA",
-    "location": "Home",
-    "streak": {
-      "count": 1,
       "type": "miss"
     },
     "confidence": 27.3
@@ -85259,33 +85691,6 @@
     "matchup_mult": 1.041,
     "opponent": "CHI",
     "location": "Road",
-    "streak": {
-      "count": 2,
-      "type": "miss"
-    },
-    "confidence": 26.2
-  },
-  {
-    "id": 1630188,
-    "name": "Jalen Smith",
-    "team": "CHI",
-    "position": "PF",
-    "stat": "pr",
-    "label": "Pts+Rebs",
-    "odds_type": "standard",
-    "line": 20.5,
-    "hit_rate": 0.4,
-    "hit_rate_l5": 0.2,
-    "hit_rate_season": 0.32,
-    "avg_l5": 17.7,
-    "avg_l10": 19.7,
-    "avg_season": 17.2,
-    "edge": -2.8,
-    "hits": 4,
-    "sample": 10,
-    "matchup_mult": 0.97,
-    "opponent": "TOR",
-    "location": "Home",
     "streak": {
       "count": 2,
       "type": "miss"
@@ -87561,33 +87966,6 @@
     "confidence": 25.0
   },
   {
-    "id": 1630578,
-    "name": "Alperen Sengun",
-    "team": "HOU",
-    "position": "C",
-    "stat": "bs",
-    "label": "Blks+Stls",
-    "odds_type": "demon",
-    "line": 2.5,
-    "hit_rate": 0.3,
-    "hit_rate_l5": 0.2,
-    "hit_rate_season": 0.431,
-    "avg_l5": 0.5,
-    "avg_l10": 1.8,
-    "avg_season": 2.2,
-    "edge": -2.0,
-    "hits": 3,
-    "sample": 10,
-    "matchup_mult": 0.738,
-    "opponent": "LAL",
-    "location": "Home",
-    "streak": {
-      "count": 1,
-      "type": "hit"
-    },
-    "confidence": 25.0
-  },
-  {
     "id": 204001,
     "name": "Kristaps Porzi\u0146\u0123is",
     "team": "GSW",
@@ -87935,6 +88313,33 @@
     "streak": {
       "count": 2,
       "type": "miss"
+    },
+    "confidence": 24.8
+  },
+  {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "reb",
+    "label": "Rebounds",
+    "odds_type": "demon",
+    "line": 4.5,
+    "hit_rate": 0.2,
+    "hit_rate_l5": 0.2,
+    "hit_rate_season": 0.235,
+    "avg_l5": 3.0,
+    "avg_l10": 3.1,
+    "avg_season": 2.9,
+    "edge": -1.5,
+    "hits": 2,
+    "sample": 10,
+    "matchup_mult": 0.99,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 1,
+      "type": "hit"
     },
     "confidence": 24.8
   },
@@ -88366,6 +88771,33 @@
     "location": "Road",
     "streak": {
       "count": 1,
+      "type": "miss"
+    },
+    "confidence": 24.5
+  },
+  {
+    "id": 1629675,
+    "name": "Naz Reid",
+    "team": "MIN",
+    "position": "C",
+    "stat": "pts",
+    "label": "Points",
+    "odds_type": "standard",
+    "line": 14.5,
+    "hit_rate": 0.1,
+    "hit_rate_l5": 0.2,
+    "hit_rate_season": 0.448,
+    "avg_l5": 12.7,
+    "avg_l10": 10.7,
+    "avg_season": 13.5,
+    "edge": -1.8,
+    "hits": 1,
+    "sample": 10,
+    "matchup_mult": 1.083,
+    "opponent": "UTA",
+    "location": "Home",
+    "streak": {
+      "count": 2,
       "type": "miss"
     },
     "confidence": 24.5
@@ -89096,33 +89528,6 @@
     "streak": {
       "count": 2,
       "type": "miss"
-    },
-    "confidence": 24.0
-  },
-  {
-    "id": 203944,
-    "name": "Julius Randle",
-    "team": "MIN",
-    "position": "PF",
-    "stat": "pa",
-    "label": "Pts+Asts",
-    "odds_type": "goblin",
-    "line": 27.5,
-    "hit_rate": 0.1,
-    "hit_rate_l5": 0.2,
-    "hit_rate_season": 0.426,
-    "avg_l5": 15.3,
-    "avg_l10": 17.2,
-    "avg_season": 26.2,
-    "edge": -12.2,
-    "hits": 1,
-    "sample": 10,
-    "matchup_mult": 1.083,
-    "opponent": "UTA",
-    "location": "Home",
-    "streak": {
-      "count": 1,
-      "type": "hit"
     },
     "confidence": 24.0
   },
@@ -91584,33 +91989,6 @@
     "confidence": 22.6
   },
   {
-    "id": 1629675,
-    "name": "Naz Reid",
-    "team": "MIN",
-    "position": "C",
-    "stat": "pts",
-    "label": "Points",
-    "odds_type": "standard",
-    "line": 15.5,
-    "hit_rate": 0.1,
-    "hit_rate_l5": 0.2,
-    "hit_rate_season": 0.388,
-    "avg_l5": 12.7,
-    "avg_l10": 10.7,
-    "avg_season": 13.5,
-    "edge": -2.8,
-    "hits": 1,
-    "sample": 10,
-    "matchup_mult": 1.083,
-    "opponent": "UTA",
-    "location": "Home",
-    "streak": {
-      "count": 2,
-      "type": "miss"
-    },
-    "confidence": 22.6
-  },
-  {
     "id": 203497,
     "name": "Rudy Gobert",
     "team": "MIN",
@@ -91950,33 +92328,6 @@
     "avg_l10": 9.4,
     "avg_season": 9.8,
     "edge": -6.7,
-    "hits": 4,
-    "sample": 10,
-    "matchup_mult": 0.929,
-    "opponent": "BOS",
-    "location": "Road",
-    "streak": {
-      "count": 3,
-      "type": "miss"
-    },
-    "confidence": 22.4
-  },
-  {
-    "id": 1642954,
-    "name": "Will Richard",
-    "team": "GSW",
-    "position": "G",
-    "stat": "pr",
-    "label": "Pts+Rebs",
-    "odds_type": "standard",
-    "line": 10.5,
-    "hit_rate": 0.4,
-    "hit_rate_l5": 0.2,
-    "hit_rate_season": 0.345,
-    "avg_l5": 5.0,
-    "avg_l10": 8.4,
-    "avg_season": 8.5,
-    "edge": -5.5,
     "hits": 4,
     "sample": 10,
     "matchup_mult": 0.929,
@@ -92799,6 +93150,33 @@
     "confidence": 21.9
   },
   {
+    "id": 201142,
+    "name": "Kevin Durant",
+    "team": "HOU",
+    "position": "F",
+    "stat": "pra",
+    "label": "Pts+Rebs+Asts",
+    "odds_type": "demon",
+    "line": 41.5,
+    "hit_rate": 0.3,
+    "hit_rate_l5": 0.2,
+    "hit_rate_season": 0.234,
+    "avg_l5": 31.8,
+    "avg_l10": 35.8,
+    "avg_season": 35.8,
+    "edge": -9.7,
+    "hits": 3,
+    "sample": 10,
+    "matchup_mult": 0.996,
+    "opponent": "LAL",
+    "location": "Home",
+    "streak": {
+      "count": 1,
+      "type": "miss"
+    },
+    "confidence": 21.9
+  },
+  {
     "id": 1641716,
     "name": "Jarace Walker",
     "team": "IND",
@@ -93361,6 +93739,33 @@
     "location": "Home",
     "streak": {
       "count": 4,
+      "type": "miss"
+    },
+    "confidence": 21.6
+  },
+  {
+    "id": 1642954,
+    "name": "Will Richard",
+    "team": "GSW",
+    "position": "G",
+    "stat": "pr",
+    "label": "Pts+Rebs",
+    "odds_type": "standard",
+    "line": 11.5,
+    "hit_rate": 0.4,
+    "hit_rate_l5": 0.2,
+    "hit_rate_season": 0.293,
+    "avg_l5": 5.0,
+    "avg_l10": 8.4,
+    "avg_season": 8.5,
+    "edge": -6.5,
+    "hits": 4,
+    "sample": 10,
+    "matchup_mult": 0.929,
+    "opponent": "BOS",
+    "location": "Road",
+    "streak": {
+      "count": 3,
       "type": "miss"
     },
     "confidence": 21.6
@@ -96520,6 +96925,33 @@
     "location": "Home",
     "streak": {
       "count": 5,
+      "type": "miss"
+    },
+    "confidence": 19.5
+  },
+  {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "pa",
+    "label": "Pts+Asts",
+    "odds_type": "demon",
+    "line": 24.5,
+    "hit_rate": 0.2,
+    "hit_rate_l5": 0.2,
+    "hit_rate_season": 0.118,
+    "avg_l5": 24.0,
+    "avg_l10": 22.0,
+    "avg_season": 17.9,
+    "edge": -0.5,
+    "hits": 2,
+    "sample": 10,
+    "matchup_mult": 0.97,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 3,
       "type": "miss"
     },
     "confidence": 19.5
@@ -100089,6 +100521,33 @@
     "confidence": 16.9
   },
   {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "pr",
+    "label": "Pts+Rebs",
+    "odds_type": "demon",
+    "line": 24.5,
+    "hit_rate": 0.2,
+    "hit_rate_l5": 0.2,
+    "hit_rate_season": 0.078,
+    "avg_l5": 22.0,
+    "avg_l10": 20.8,
+    "avg_season": 15.4,
+    "edge": -2.5,
+    "hits": 2,
+    "sample": 10,
+    "matchup_mult": 0.97,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 3,
+      "type": "miss"
+    },
+    "confidence": 16.9
+  },
+  {
     "id": 1630188,
     "name": "Jalen Smith",
     "team": "CHI",
@@ -100759,6 +101218,33 @@
     "location": "Road",
     "streak": {
       "count": 2,
+      "type": "miss"
+    },
+    "confidence": 16.4
+  },
+  {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "pra",
+    "label": "Pts+Rebs+Asts",
+    "odds_type": "demon",
+    "line": 29.5,
+    "hit_rate": 0.2,
+    "hit_rate_l5": 0.2,
+    "hit_rate_season": 0.137,
+    "avg_l5": 25.6,
+    "avg_l10": 25.2,
+    "avg_season": 20.8,
+    "edge": -3.9,
+    "hits": 2,
+    "sample": 10,
+    "matchup_mult": 0.97,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 3,
       "type": "miss"
     },
     "confidence": 16.4
@@ -103194,6 +103680,33 @@
     "confidence": 14.6
   },
   {
+    "id": 1629651,
+    "name": "Nic Claxton",
+    "team": "BKN",
+    "position": "C",
+    "stat": "pa",
+    "label": "Pts+Asts",
+    "odds_type": "demon",
+    "line": 14.5,
+    "hit_rate": 0.3,
+    "hit_rate_l5": 0.0,
+    "hit_rate_season": 0.557,
+    "avg_l5": 9.8,
+    "avg_l10": 12.7,
+    "avg_season": 15.4,
+    "edge": -4.7,
+    "hits": 3,
+    "sample": 10,
+    "matchup_mult": 0.934,
+    "opponent": "OKC",
+    "location": "Home",
+    "streak": {
+      "count": 5,
+      "type": "miss"
+    },
+    "confidence": 14.5
+  },
+  {
     "id": 1631159,
     "name": "Leonard Miller",
     "team": "CHI",
@@ -103783,6 +104296,33 @@
     "location": "Home",
     "streak": {
       "count": 5,
+      "type": "miss"
+    },
+    "confidence": 13.8
+  },
+  {
+    "id": 1630538,
+    "name": "Bones Hyland",
+    "team": "MIN",
+    "position": "G",
+    "stat": "pa",
+    "label": "Pts+Asts",
+    "odds_type": "standard",
+    "line": 16.5,
+    "hit_rate": 0.1,
+    "hit_rate_l5": 0.0,
+    "hit_rate_season": 0.169,
+    "avg_l5": 13.2,
+    "avg_l10": 9.8,
+    "avg_season": 9.4,
+    "edge": -3.3,
+    "hits": 1,
+    "sample": 10,
+    "matchup_mult": 1.083,
+    "opponent": "UTA",
+    "location": "Home",
+    "streak": {
+      "count": 7,
       "type": "miss"
     },
     "confidence": 13.8
@@ -105138,33 +105678,6 @@
     "confidence": 12.5
   },
   {
-    "id": 1630183,
-    "name": "Jaden McDaniels",
-    "team": "MIN",
-    "position": "F",
-    "stat": "pa",
-    "label": "Pts+Asts",
-    "odds_type": "demon",
-    "line": 20.5,
-    "hit_rate": 0.2,
-    "hit_rate_l5": 0.0,
-    "hit_rate_season": 0.364,
-    "avg_l5": 9.0,
-    "avg_l10": 14.2,
-    "avg_season": 17.3,
-    "edge": -11.5,
-    "hits": 2,
-    "sample": 10,
-    "matchup_mult": 1.083,
-    "opponent": "UTA",
-    "location": "Home",
-    "streak": {
-      "count": 7,
-      "type": "miss"
-    },
-    "confidence": 12.5
-  },
-  {
     "id": 1627751,
     "name": "Jakob Poeltl",
     "team": "TOR",
@@ -105408,33 +105921,6 @@
     "confidence": 12.1
   },
   {
-    "id": 1630183,
-    "name": "Jaden McDaniels",
-    "team": "MIN",
-    "position": "F",
-    "stat": "pts",
-    "label": "Points",
-    "odds_type": "demon",
-    "line": 17.5,
-    "hit_rate": 0.2,
-    "hit_rate_l5": 0.0,
-    "hit_rate_season": 0.333,
-    "avg_l5": 7.4,
-    "avg_l10": 12.2,
-    "avg_season": 14.5,
-    "edge": -10.1,
-    "hits": 2,
-    "sample": 10,
-    "matchup_mult": 1.083,
-    "opponent": "UTA",
-    "location": "Home",
-    "streak": {
-      "count": 7,
-      "type": "miss"
-    },
-    "confidence": 12.1
-  },
-  {
     "id": 1641764,
     "name": "Brandin Podziemski",
     "team": "GSW",
@@ -105649,33 +106135,6 @@
       "type": "miss"
     },
     "confidence": 11.9
-  },
-  {
-    "id": 1630183,
-    "name": "Jaden McDaniels",
-    "team": "MIN",
-    "position": "F",
-    "stat": "pr",
-    "label": "Pts+Rebs",
-    "odds_type": "demon",
-    "line": 22.5,
-    "hit_rate": 0.2,
-    "hit_rate_l5": 0.0,
-    "hit_rate_season": 0.318,
-    "avg_l5": 9.4,
-    "avg_l10": 15.5,
-    "avg_season": 18.7,
-    "edge": -13.1,
-    "hits": 2,
-    "sample": 10,
-    "matchup_mult": 1.083,
-    "opponent": "UTA",
-    "location": "Home",
-    "streak": {
-      "count": 6,
-      "type": "miss"
-    },
-    "confidence": 11.8
   },
   {
     "id": 201572,
@@ -106569,6 +107028,33 @@
     "confidence": 10.6
   },
   {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "ast",
+    "label": "Assists",
+    "odds_type": "demon",
+    "line": 6.5,
+    "hit_rate": 0.0,
+    "hit_rate_l5": 0.0,
+    "hit_rate_season": 0.275,
+    "avg_l5": 5.0,
+    "avg_l10": 4.1,
+    "avg_season": 5.2,
+    "edge": -1.5,
+    "hits": 0,
+    "sample": 10,
+    "matchup_mult": 0.921,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 10,
+      "type": "miss"
+    },
+    "confidence": 10.6
+  },
+  {
     "id": 1630188,
     "name": "Jalen Smith",
     "team": "CHI",
@@ -106920,6 +107406,33 @@
     "confidence": 10.3
   },
   {
+    "id": 1630578,
+    "name": "Alperen Sengun",
+    "team": "HOU",
+    "position": "C",
+    "stat": "pra",
+    "label": "Pts+Rebs+Asts",
+    "odds_type": "demon",
+    "line": 37.5,
+    "hit_rate": 0.2,
+    "hit_rate_l5": 0.0,
+    "hit_rate_season": 0.362,
+    "avg_l5": 30.5,
+    "avg_l10": 31.7,
+    "avg_season": 35.8,
+    "edge": -7.0,
+    "hits": 2,
+    "sample": 10,
+    "matchup_mult": 0.996,
+    "opponent": "LAL",
+    "location": "Home",
+    "streak": {
+      "count": 5,
+      "type": "miss"
+    },
+    "confidence": 10.3
+  },
+  {
     "id": 1631106,
     "name": "Tari Eason",
     "team": "HOU",
@@ -107131,33 +107644,6 @@
     "location": "Home",
     "streak": {
       "count": 5,
-      "type": "miss"
-    },
-    "confidence": 10.0
-  },
-  {
-    "id": 1630183,
-    "name": "Jaden McDaniels",
-    "team": "MIN",
-    "position": "F",
-    "stat": "pra",
-    "label": "Pts+Rebs+Asts",
-    "odds_type": "demon",
-    "line": 25.5,
-    "hit_rate": 0.1,
-    "hit_rate_l5": 0.0,
-    "hit_rate_season": 0.364,
-    "avg_l5": 11.0,
-    "avg_l10": 17.5,
-    "avg_season": 21.5,
-    "edge": -14.5,
-    "hits": 1,
-    "sample": 10,
-    "matchup_mult": 1.083,
-    "opponent": "UTA",
-    "location": "Home",
-    "streak": {
-      "count": 9,
       "type": "miss"
     },
     "confidence": 10.0
@@ -107777,6 +108263,33 @@
     "matchup_mult": 1.04,
     "opponent": "NOP",
     "location": "Road",
+    "streak": {
+      "count": 6,
+      "type": "miss"
+    },
+    "confidence": 9.6
+  },
+  {
+    "id": 1642263,
+    "name": "Reed Sheppard",
+    "team": "HOU",
+    "position": "G",
+    "stat": "pts",
+    "label": "Points",
+    "odds_type": "demon",
+    "line": 18.5,
+    "hit_rate": 0.3,
+    "hit_rate_l5": 0.0,
+    "hit_rate_season": 0.149,
+    "avg_l5": 12.4,
+    "avg_l10": 14.7,
+    "avg_season": 12.2,
+    "edge": -6.1,
+    "hits": 3,
+    "sample": 10,
+    "matchup_mult": 0.996,
+    "opponent": "LAL",
+    "location": "Home",
     "streak": {
       "count": 6,
       "type": "miss"
@@ -108803,6 +109316,33 @@
     "matchup_mult": 1.041,
     "opponent": "CHI",
     "location": "Road",
+    "streak": {
+      "count": 10,
+      "type": "miss"
+    },
+    "confidence": 8.8
+  },
+  {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "ast",
+    "label": "Assists",
+    "odds_type": "demon",
+    "line": 7.5,
+    "hit_rate": 0.0,
+    "hit_rate_l5": 0.0,
+    "hit_rate_season": 0.216,
+    "avg_l5": 5.0,
+    "avg_l10": 4.1,
+    "avg_season": 5.2,
+    "edge": -2.5,
+    "hits": 0,
+    "sample": 10,
+    "matchup_mult": 0.921,
+    "opponent": "TOR",
+    "location": "Home",
     "streak": {
       "count": 10,
       "type": "miss"
@@ -110403,33 +110943,6 @@
     "confidence": 7.3
   },
   {
-    "id": 1630538,
-    "name": "Bones Hyland",
-    "team": "MIN",
-    "position": "G",
-    "stat": "pa",
-    "label": "Pts+Asts",
-    "odds_type": "standard",
-    "line": 17.5,
-    "hit_rate": 0.1,
-    "hit_rate_l5": 0.0,
-    "hit_rate_season": 0.136,
-    "avg_l5": 13.2,
-    "avg_l10": 9.8,
-    "avg_season": 9.4,
-    "edge": -4.3,
-    "hits": 1,
-    "sample": 10,
-    "matchup_mult": 1.083,
-    "opponent": "UTA",
-    "location": "Home",
-    "streak": {
-      "count": 7,
-      "type": "miss"
-    },
-    "confidence": 7.3
-  },
-  {
     "id": 1628978,
     "name": "Donte DiVincenzo",
     "team": "MIN",
@@ -111078,6 +111591,33 @@
     "confidence": 6.8
   },
   {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "reb",
+    "label": "Rebounds",
+    "odds_type": "demon",
+    "line": 5.5,
+    "hit_rate": 0.1,
+    "hit_rate_l5": 0.0,
+    "hit_rate_season": 0.137,
+    "avg_l5": 3.0,
+    "avg_l10": 3.1,
+    "avg_season": 2.9,
+    "edge": -2.5,
+    "hits": 1,
+    "sample": 10,
+    "matchup_mult": 0.99,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 5,
+      "type": "miss"
+    },
+    "confidence": 6.8
+  },
+  {
     "id": 1631108,
     "name": "Max Christie",
     "team": "DAL",
@@ -111448,6 +111988,33 @@
     "sample": 10,
     "matchup_mult": 1.083,
     "opponent": "UTA",
+    "location": "Home",
+    "streak": {
+      "count": 10,
+      "type": "miss"
+    },
+    "confidence": 6.6
+  },
+  {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "ast",
+    "label": "Assists",
+    "odds_type": "demon",
+    "line": 8.5,
+    "hit_rate": 0.0,
+    "hit_rate_l5": 0.0,
+    "hit_rate_season": 0.137,
+    "avg_l5": 5.0,
+    "avg_l10": 4.1,
+    "avg_season": 5.2,
+    "edge": -3.5,
+    "hits": 0,
+    "sample": 10,
+    "matchup_mult": 0.921,
+    "opponent": "TOR",
     "location": "Home",
     "streak": {
       "count": 10,
@@ -113400,6 +113967,33 @@
     "confidence": 5.2
   },
   {
+    "id": 1630183,
+    "name": "Jaden McDaniels",
+    "team": "MIN",
+    "position": "F",
+    "stat": "pa",
+    "label": "Pts+Asts",
+    "odds_type": "demon",
+    "line": 29.5,
+    "hit_rate": 0.1,
+    "hit_rate_l5": 0.0,
+    "hit_rate_season": 0.045,
+    "avg_l5": 9.0,
+    "avg_l10": 14.2,
+    "avg_season": 17.3,
+    "edge": -20.5,
+    "hits": 1,
+    "sample": 10,
+    "matchup_mult": 1.083,
+    "opponent": "UTA",
+    "location": "Home",
+    "streak": {
+      "count": 9,
+      "type": "miss"
+    },
+    "confidence": 5.2
+  },
+  {
     "id": 1642262,
     "name": "Cody Williams",
     "team": "UTA",
@@ -113827,6 +114421,33 @@
     "location": "Home",
     "streak": {
       "count": 9,
+      "type": "miss"
+    },
+    "confidence": 4.8
+  },
+  {
+    "id": 1630611,
+    "name": "Gui Santos",
+    "team": "GSW",
+    "position": "F",
+    "stat": "bs",
+    "label": "Blks+Stls",
+    "odds_type": "demon",
+    "line": 2.5,
+    "hit_rate": 0.1,
+    "hit_rate_l5": 0.0,
+    "hit_rate_season": 0.123,
+    "avg_l5": 1.4,
+    "avg_l10": 1.6,
+    "avg_season": 1.2,
+    "edge": -1.1,
+    "hits": 1,
+    "sample": 10,
+    "matchup_mult": 0.861,
+    "opponent": "BOS",
+    "location": "Road",
+    "streak": {
+      "count": 7,
       "type": "miss"
     },
     "confidence": 4.8
@@ -118950,6 +119571,33 @@
     "avg_l10": 19.7,
     "avg_season": 17.2,
     "edge": -11.8,
+    "hits": 0,
+    "sample": 10,
+    "matchup_mult": 0.97,
+    "opponent": "TOR",
+    "location": "Home",
+    "streak": {
+      "count": 10,
+      "type": "miss"
+    },
+    "confidence": 0
+  },
+  {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "team": "CHI",
+    "position": "G",
+    "stat": "pa",
+    "label": "Pts+Asts",
+    "odds_type": "demon",
+    "line": 29.5,
+    "hit_rate": 0.0,
+    "hit_rate_l5": 0.0,
+    "hit_rate_season": 0.039,
+    "avg_l5": 24.0,
+    "avg_l10": 22.0,
+    "avg_season": 17.9,
+    "edge": -5.5,
     "hits": 0,
     "sample": 10,
     "matchup_mult": 0.97,
