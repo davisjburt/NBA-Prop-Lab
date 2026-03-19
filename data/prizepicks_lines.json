@@ -940,16 +940,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Desmond Bane",
-    "name_key": "desmond bane",
-    "team": "ORL",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 24.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Jalen Suggs",
     "name_key": "jalen suggs",
     "team": "ORL",
@@ -1016,16 +1006,6 @@
     "position": "G",
     "stat": "pts",
     "pp_stat_label": "Points",
-    "line": 23.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Moussa Diabat\u00e9",
-    "name_key": "moussa diabate",
-    "team": "CHA",
-    "position": "F",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
     "line": 23.5,
     "odds_type": "demon"
   },
@@ -1130,16 +1110,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Moussa Diabat\u00e9",
-    "name_key": "moussa diabate",
-    "team": "CHA",
-    "position": "F",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 22.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Jalen Suggs",
     "name_key": "jalen suggs",
     "team": "ORL",
@@ -1206,16 +1176,6 @@
     "position": "F",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 21.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Desmond Bane",
-    "name_key": "desmond bane",
-    "team": "ORL",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
     "line": 21.5,
     "odds_type": "goblin"
   },
@@ -1658,6 +1618,16 @@
     "pp_stat_label": "Points",
     "line": 18.5,
     "odds_type": "demon"
+  },
+  {
+    "name": "Moussa Diabat\u00e9",
+    "name_key": "moussa diabate",
+    "team": "CHA",
+    "position": "F",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 18.5,
+    "odds_type": "standard"
   },
   {
     "name": "Moussa Diabat\u00e9",
@@ -1784,16 +1754,6 @@
     "name_key": "moussa diabate",
     "team": "CHA",
     "position": "F",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 17.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Moussa Diabat\u00e9",
-    "name_key": "moussa diabate",
-    "team": "CHA",
-    "position": "F",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 17.5,
@@ -1906,6 +1866,16 @@
     "position": "G",
     "stat": "pa",
     "pp_stat_label": "Pts+Asts",
+    "line": 16.5,
+    "odds_type": "standard"
+  },
+  {
+    "name": "Coby White",
+    "name_key": "coby white",
+    "team": "CHA",
+    "position": "G",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
     "line": 16.5,
     "odds_type": "standard"
   },
@@ -2050,16 +2020,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Coby White",
-    "name_key": "coby white",
-    "team": "CHA",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 15.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "LaMelo Ball",
     "name_key": "lamelo ball",
     "team": "CHA",
@@ -2088,16 +2048,6 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 15.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Coby White",
-    "name_key": "coby white",
-    "team": "CHA",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 15.5,
-    "odds_type": "goblin"
   },
   {
     "name": "Miles Bridges",
@@ -2790,6 +2740,16 @@
     "odds_type": "goblin"
   },
   {
+    "name": "Sion James",
+    "name_key": "sion james",
+    "team": "CHA",
+    "position": "G",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 11.5,
+    "odds_type": "demon"
+  },
+  {
     "name": "Desmond Bane",
     "name_key": "desmond bane",
     "team": "ORL",
@@ -2848,6 +2808,16 @@
     "pp_stat_label": "Rebounds",
     "line": 10.5,
     "odds_type": "demon"
+  },
+  {
+    "name": "Tristan Silva",
+    "name_key": "tristan silva",
+    "team": "ORL",
+    "position": "F",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 10.5,
+    "odds_type": "standard"
   },
   {
     "name": "Wendell Carter",
@@ -2968,6 +2938,16 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 10.5,
     "odds_type": "goblin"
+  },
+  {
+    "name": "Sion James",
+    "name_key": "sion james",
+    "team": "CHA",
+    "position": "G",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 10.5,
+    "odds_type": "demon"
   },
   {
     "name": "Desmond Bane",
@@ -3264,26 +3244,6 @@
     "name_key": "grant williams",
     "team": "CHA",
     "position": "F",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 9.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Ryan Kalkbrenner",
-    "name_key": "ryan kalkbrenner",
-    "team": "CHA",
-    "position": "C",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 9.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Grant Williams",
-    "name_key": "grant williams",
-    "team": "CHA",
-    "position": "F",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 9.5,
@@ -3300,13 +3260,23 @@
     "odds_type": "standard"
   },
   {
+    "name": "Sion James",
+    "name_key": "sion james",
+    "team": "CHA",
+    "position": "G",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 9.5,
+    "odds_type": "demon"
+  },
+  {
     "name": "Ryan Kalkbrenner",
     "name_key": "ryan kalkbrenner",
     "team": "CHA",
     "position": "C",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 9.5,
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 9.0,
     "odds_type": "standard"
   },
   {
@@ -3370,16 +3340,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Paolo Banchero",
-    "name_key": "paolo banchero",
-    "team": "ORL",
-    "position": "F",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 8.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "Tristan Silva",
     "name_key": "tristan silva",
     "team": "ORL",
@@ -3408,16 +3368,6 @@
     "pp_stat_label": "Rebounds",
     "line": 8.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Wendell Carter",
-    "name_key": "wendell carter",
-    "team": "ORL",
-    "position": "C-F",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 8.5,
-    "odds_type": "goblin"
   },
   {
     "name": "Brandon Miller",
@@ -3558,6 +3508,16 @@
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 8.5,
     "odds_type": "standard"
+  },
+  {
+    "name": "Moritz Wagner",
+    "name_key": "moritz wagner",
+    "team": "ORL",
+    "position": "F-C",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 8.5,
+    "odds_type": "goblin"
   },
   {
     "name": "Desmond Bane",
@@ -3780,16 +3740,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Desmond Bane",
-    "name_key": "desmond bane",
-    "team": "ORL",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 7.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Grant Williams",
     "name_key": "grant williams",
     "team": "CHA",
@@ -3866,6 +3816,16 @@
     "position": "F",
     "stat": "pa",
     "pp_stat_label": "Pts+Asts",
+    "line": 7.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Sion James",
+    "name_key": "sion james",
+    "team": "CHA",
+    "position": "G",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
     "line": 7.5,
     "odds_type": "goblin"
   },
@@ -3998,16 +3958,6 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 6.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Wendell Carter",
-    "name_key": "wendell carter",
-    "team": "ORL",
-    "position": "C-F",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 6.5,
-    "odds_type": "goblin"
   },
   {
     "name": "Brandon Miller",
@@ -4354,16 +4304,6 @@
     "name_key": "ryan kalkbrenner",
     "team": "CHA",
     "position": "C",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 5.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Ryan Kalkbrenner",
-    "name_key": "ryan kalkbrenner",
-    "team": "CHA",
-    "position": "C",
     "stat": "reb",
     "pp_stat_label": "Rebounds",
     "line": 5.5,
@@ -4450,14 +4390,24 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Grant Williams",
-    "name_key": "grant williams",
+    "name": "Sion James",
+    "name_key": "sion james",
     "team": "CHA",
-    "position": "F",
+    "position": "G",
     "stat": "pts",
     "pp_stat_label": "Points",
     "line": 5.5,
-    "odds_type": "goblin"
+    "odds_type": "demon"
+  },
+  {
+    "name": "Sion James",
+    "name_key": "sion james",
+    "team": "CHA",
+    "position": "G",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 5.5,
+    "odds_type": "standard"
   },
   {
     "name": "LaMelo Ball",
@@ -4954,6 +4904,16 @@
     "name_key": "moritz wagner",
     "team": "ORL",
     "position": "F-C",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
+    "line": 3.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Moritz Wagner",
+    "name_key": "moritz wagner",
+    "team": "ORL",
+    "position": "F-C",
     "stat": "ra",
     "pp_stat_label": "Rebs+Asts",
     "line": 3.5,
@@ -5210,6 +5170,16 @@
     "odds_type": "demon"
   },
   {
+    "name": "Sion James",
+    "name_key": "sion james",
+    "team": "CHA",
+    "position": "G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 3.5,
+    "odds_type": "standard"
+  },
+  {
     "name": "Desmond Bane",
     "name_key": "desmond bane",
     "team": "ORL",
@@ -5630,6 +5600,16 @@
     "odds_type": "goblin"
   },
   {
+    "name": "Sion James",
+    "name_key": "sion james",
+    "team": "CHA",
+    "position": "G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 2.5,
+    "odds_type": "goblin"
+  },
+  {
     "name": "Desmond Bane",
     "name_key": "desmond bane",
     "team": "ORL",
@@ -5658,16 +5638,6 @@
     "pp_stat_label": "Blocked Shots",
     "line": 1.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Jalen Suggs",
-    "name_key": "jalen suggs",
-    "team": "ORL",
-    "position": "G",
-    "stat": "stl",
-    "pp_stat_label": "Steals",
-    "line": 1.5,
-    "odds_type": "goblin"
   },
   {
     "name": "Jett Howard",
@@ -5908,6 +5878,16 @@
     "pp_stat_label": "Steals",
     "line": 1.5,
     "odds_type": "demon"
+  },
+  {
+    "name": "Coby White",
+    "name_key": "coby white",
+    "team": "CHA",
+    "position": "G",
+    "stat": "tov",
+    "pp_stat_label": "Turnovers",
+    "line": 1.5,
+    "odds_type": "standard"
   },
   {
     "name": "Grant Williams",
@@ -6706,6 +6686,26 @@
     "position": "C",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 42.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Jalen Duren",
+    "name_key": "jalen duren",
+    "team": "DET",
+    "position": "C",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 40.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Jalen Duren",
+    "name_key": "jalen duren",
+    "team": "DET",
+    "position": "C",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
     "line": 40.5,
     "odds_type": "demon"
   },
@@ -6774,9 +6774,9 @@
     "name_key": "jalen duren",
     "team": "DET",
     "position": "C",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 34.5,
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 33.5,
     "odds_type": "goblin"
   },
   {
@@ -6784,8 +6784,8 @@
     "name_key": "jalen duren",
     "team": "DET",
     "position": "C",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
     "line": 33.5,
     "odds_type": "goblin"
   },
@@ -6826,6 +6826,16 @@
     "position": "F",
     "stat": "pr",
     "pp_stat_label": "Pts+Rebs",
+    "line": 29.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
     "line": 29.5,
     "odds_type": "demon"
   },
@@ -6890,12 +6900,32 @@
     "odds_type": "standard"
   },
   {
+    "name": "Alex Sarr",
+    "name_key": "alex sarr",
+    "team": "WAS",
+    "position": "C",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 25.5,
+    "odds_type": "demon"
+  },
+  {
     "name": "Tobias Harris",
     "name_key": "tobias harris",
     "team": "DET",
     "position": "F",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 25.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
     "line": 25.5,
     "odds_type": "demon"
   },
@@ -6960,16 +6990,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 24.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Bub Carrington",
     "name_key": "bub carrington",
     "team": "WAS",
@@ -7016,16 +7036,6 @@
     "position": "F",
     "stat": "pr",
     "pp_stat_label": "Pts+Rebs",
-    "line": 24.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
     "line": 24.5,
     "odds_type": "demon"
   },
@@ -7070,6 +7080,36 @@
     "odds_type": "goblin"
   },
   {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 24.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 24.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Justin Champagnie",
+    "name_key": "justin champagnie",
+    "team": "WAS",
+    "position": "G-F",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 24.5,
+    "odds_type": "demon"
+  },
+  {
     "name": "Jalen Duren",
     "name_key": "jalen duren",
     "team": "DET",
@@ -7090,18 +7130,8 @@
     "odds_type": "demon"
   },
   {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 23.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Tobias Harris",
-    "name_key": "tobias harris",
+    "name": "Duncan Robinson",
+    "name_key": "duncan robinson",
     "team": "DET",
     "position": "F",
     "stat": "pra",
@@ -7120,9 +7150,39 @@
     "odds_type": "demon"
   },
   {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 23.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Justin Champagnie",
+    "name_key": "justin champagnie",
+    "team": "WAS",
+    "position": "G-F",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 23.5,
+    "odds_type": "demon"
+  },
+  {
     "name": "Tobias Harris",
     "name_key": "tobias harris",
     "team": "DET",
+    "position": "F",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 22.5,
+    "odds_type": "standard"
+  },
+  {
+    "name": "Will Riley",
+    "name_key": "will riley",
+    "team": "WAS",
     "position": "F",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
@@ -7140,14 +7200,44 @@
     "odds_type": "demon"
   },
   {
-    "name": "Will Riley",
-    "name_key": "will riley",
-    "team": "WAS",
-    "position": "F",
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 22.0,
+    "line": 22.5,
     "odds_type": "standard"
+  },
+  {
+    "name": "Alex Sarr",
+    "name_key": "alex sarr",
+    "team": "WAS",
+    "position": "C",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 22.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 22.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Justin Champagnie",
+    "name_key": "justin champagnie",
+    "team": "WAS",
+    "position": "G-F",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 22.5,
+    "odds_type": "demon"
   },
   {
     "name": "Alex Sarr",
@@ -7160,10 +7250,10 @@
     "odds_type": "demon"
   },
   {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
+    "name": "Duncan Robinson",
+    "name_key": "duncan robinson",
+    "team": "DET",
+    "position": "F",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 21.5,
@@ -7188,6 +7278,16 @@
     "pp_stat_label": "Points",
     "line": 21.5,
     "odds_type": "goblin"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 21.5,
+    "odds_type": "demon"
   },
   {
     "name": "Ausar Thompson",
@@ -7200,6 +7300,16 @@
     "odds_type": "standard"
   },
   {
+    "name": "Alex Sarr",
+    "name_key": "alex sarr",
+    "team": "WAS",
+    "position": "C",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 20.5,
+    "odds_type": "standard"
+  },
+  {
     "name": "Jalen Duren",
     "name_key": "jalen duren",
     "team": "DET",
@@ -7240,24 +7350,34 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Marcus Sasser",
-    "name_key": "marcus sasser",
+    "name": "Tobias Harris",
+    "name_key": "tobias harris",
     "team": "DET",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
+    "position": "F",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
     "line": 20.5,
     "odds_type": "demon"
   },
   {
-    "name": "Alex Sarr",
-    "name_key": "alex sarr",
+    "name": "Will Riley",
+    "name_key": "will riley",
     "team": "WAS",
-    "position": "C",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 19.5,
-    "odds_type": "standard"
+    "position": "F",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 20.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 20.5,
+    "odds_type": "demon"
   },
   {
     "name": "Duncan Robinson",
@@ -7440,16 +7560,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 19.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Bub Carrington",
     "name_key": "bub carrington",
     "team": "WAS",
@@ -7510,16 +7620,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 19.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Tre Johnson",
     "name_key": "tre johnson",
     "team": "WAS",
@@ -7530,14 +7630,64 @@
     "odds_type": "demon"
   },
   {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
+    "name": "Marcus Sasser",
+    "name_key": "marcus sasser",
+    "team": "DET",
+    "position": "G",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 19.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 19.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 19.5,
+    "odds_type": "standard"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
     "position": "G",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 19.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Alex Sarr",
+    "name_key": "alex sarr",
+    "team": "WAS",
+    "position": "C",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
     "line": 18.5,
     "odds_type": "standard"
+  },
+  {
+    "name": "Alex Sarr",
+    "name_key": "alex sarr",
+    "team": "WAS",
+    "position": "C",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 18.5,
+    "odds_type": "demon"
   },
   {
     "name": "Ausar Thompson",
@@ -7570,6 +7720,16 @@
     "odds_type": "standard"
   },
   {
+    "name": "Tobias Harris",
+    "name_key": "tobias harris",
+    "team": "DET",
+    "position": "F",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 18.5,
+    "odds_type": "goblin"
+  },
+  {
     "name": "Alex Sarr",
     "name_key": "alex sarr",
     "team": "WAS",
@@ -7580,33 +7740,33 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Marcus Sasser",
-    "name_key": "marcus sasser",
+    "name": "Ausar Thompson",
+    "name_key": "ausar thompson",
     "team": "DET",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
+    "position": "G-F",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
     "line": 18.5,
     "odds_type": "demon"
   },
   {
-    "name": "Will Riley",
-    "name_key": "will riley",
+    "name": "Bub Carrington",
+    "name_key": "bub carrington",
     "team": "WAS",
-    "position": "F",
+    "position": "G",
     "stat": "pr",
     "pp_stat_label": "Pts+Rebs",
     "line": 18.5,
-    "odds_type": "goblin"
+    "odds_type": "demon"
   },
   {
-    "name": "Alex Sarr",
-    "name_key": "alex sarr",
+    "name": "Justin Champagnie",
+    "name_key": "justin champagnie",
     "team": "WAS",
-    "position": "C",
+    "position": "G-F",
     "stat": "pr",
     "pp_stat_label": "Pts+Rebs",
-    "line": 18.0,
+    "line": 18.5,
     "odds_type": "standard"
   },
   {
@@ -7644,16 +7804,6 @@
     "name_key": "alex sarr",
     "team": "WAS",
     "position": "C",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 17.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 17.5,
@@ -7716,6 +7866,26 @@
     "position": "F",
     "stat": "pa",
     "pp_stat_label": "Pts+Asts",
+    "line": 17.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Ausar Thompson",
+    "name_key": "ausar thompson",
+    "team": "DET",
+    "position": "G-F",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 17.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
     "line": 17.5,
     "odds_type": "demon"
   },
@@ -7730,16 +7900,6 @@
     "odds_type": "standard"
   },
   {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 16.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "Alex Sarr",
     "name_key": "alex sarr",
     "team": "WAS",
@@ -7754,16 +7914,6 @@
     "name_key": "ausar thompson",
     "team": "DET",
     "position": "G-F",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 16.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
     "stat": "pts",
     "pp_stat_label": "Points",
     "line": 16.5,
@@ -7800,30 +7950,20 @@
     "odds_type": "standard"
   },
   {
-    "name": "Bub Carrington",
-    "name_key": "bub carrington",
-    "team": "WAS",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 16.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 16.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Alex Sarr",
     "name_key": "alex sarr",
     "team": "WAS",
     "position": "C",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 16.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Bub Carrington",
+    "name_key": "bub carrington",
+    "team": "WAS",
+    "position": "G",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 16.5,
@@ -7840,14 +7980,44 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Marcus Sasser",
-    "name_key": "marcus sasser",
+    "name": "Bub Carrington",
+    "name_key": "bub carrington",
+    "team": "WAS",
+    "position": "G",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 16.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
     "team": "DET",
     "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
     "line": 16.5,
     "odds_type": "standard"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 16.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Jalen Duren",
+    "name_key": "jalen duren",
+    "team": "DET",
+    "position": "C",
+    "stat": "ra",
+    "pp_stat_label": "Rebs+Asts",
+    "line": 16.5,
+    "odds_type": "demon"
   },
   {
     "name": "Jalen Duren",
@@ -7864,20 +8034,20 @@
     "name_key": "tre johnson",
     "team": "WAS",
     "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
     "line": 15.5,
     "odds_type": "standard"
   },
   {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
+    "name": "Tre Johnson",
+    "name_key": "tre johnson",
     "team": "WAS",
     "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
     "line": 15.5,
-    "odds_type": "demon"
+    "odds_type": "standard"
   },
   {
     "name": "Duncan Robinson",
@@ -7888,6 +8058,16 @@
     "pp_stat_label": "Points",
     "line": 15.5,
     "odds_type": "demon"
+  },
+  {
+    "name": "Duncan Robinson",
+    "name_key": "duncan robinson",
+    "team": "DET",
+    "position": "F",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 15.5,
+    "odds_type": "goblin"
   },
   {
     "name": "Jalen Duren",
@@ -7934,6 +8114,66 @@
     "name_key": "ausar thompson",
     "team": "DET",
     "position": "G-F",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 15.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Ausar Thompson",
+    "name_key": "ausar thompson",
+    "team": "DET",
+    "position": "G-F",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 15.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Marcus Sasser",
+    "name_key": "marcus sasser",
+    "team": "DET",
+    "position": "G",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 15.5,
+    "odds_type": "standard"
+  },
+  {
+    "name": "Alex Sarr",
+    "name_key": "alex sarr",
+    "team": "WAS",
+    "position": "C",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 15.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 15.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Justin Champagnie",
+    "name_key": "justin champagnie",
+    "team": "WAS",
+    "position": "G-F",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 15.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Justin Champagnie",
+    "name_key": "justin champagnie",
+    "team": "WAS",
+    "position": "G-F",
     "stat": "pr",
     "pp_stat_label": "Pts+Rebs",
     "line": 15.5,
@@ -7974,26 +8214,6 @@
     "name_key": "ausar thompson",
     "team": "DET",
     "position": "G-F",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 14.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 14.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
     "stat": "pa",
     "pp_stat_label": "Pts+Asts",
     "line": 14.5,
@@ -8050,16 +8270,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Tre Johnson",
-    "name_key": "tre johnson",
-    "team": "WAS",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 14.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "Will Riley",
     "name_key": "will riley",
     "team": "WAS",
@@ -8140,22 +8350,22 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 14.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Bub Carrington",
     "name_key": "bub carrington",
     "team": "WAS",
     "position": "G",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 14.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Tre Johnson",
+    "name_key": "tre johnson",
+    "team": "WAS",
+    "position": "G",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
     "line": 14.5,
     "odds_type": "goblin"
   },
@@ -8180,16 +8390,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 14.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Tre Johnson",
     "name_key": "tre johnson",
     "team": "WAS",
@@ -8210,12 +8410,52 @@
     "odds_type": "demon"
   },
   {
-    "name": "Marcus Sasser",
-    "name_key": "marcus sasser",
+    "name": "Caris LeVert",
+    "name_key": "caris levert",
     "team": "DET",
     "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 14.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 14.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 14.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Justin Champagnie",
+    "name_key": "justin champagnie",
+    "team": "WAS",
+    "position": "G-F",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 14.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Justin Champagnie",
+    "name_key": "justin champagnie",
+    "team": "WAS",
+    "position": "G-F",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
     "line": 14.5,
     "odds_type": "goblin"
   },
@@ -8280,16 +8520,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 13.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Tre Johnson",
     "name_key": "tre johnson",
     "team": "WAS",
@@ -8320,13 +8550,73 @@
     "odds_type": "goblin"
   },
   {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 13.5,
+    "odds_type": "standard"
+  },
+  {
+    "name": "Ausar Thompson",
+    "name_key": "ausar thompson",
+    "team": "DET",
+    "position": "G-F",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 13.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 13.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Justin Champagnie",
+    "name_key": "justin champagnie",
+    "team": "WAS",
+    "position": "G-F",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 13.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Justin Champagnie",
+    "name_key": "justin champagnie",
+    "team": "WAS",
+    "position": "G-F",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 13.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Tre Johnson",
+    "name_key": "tre johnson",
+    "team": "WAS",
+    "position": "G",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 13.5,
+    "odds_type": "goblin"
+  },
+  {
     "name": "Alex Sarr",
     "name_key": "alex sarr",
     "team": "WAS",
     "position": "C",
     "stat": "pts",
     "pp_stat_label": "Points",
-    "line": 12.5,
+    "line": 13.0,
     "odds_type": "standard"
   },
   {
@@ -8380,20 +8670,40 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Tre Johnson",
-    "name_key": "tre johnson",
-    "team": "WAS",
-    "position": "G",
+    "name": "Ausar Thompson",
+    "name_key": "ausar thompson",
+    "team": "DET",
+    "position": "G-F",
     "stat": "pa",
     "pp_stat_label": "Pts+Asts",
     "line": 12.5,
     "odds_type": "goblin"
   },
   {
-    "name": "Ausar Thompson",
-    "name_key": "ausar thompson",
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
     "team": "DET",
-    "position": "G-F",
+    "position": "G",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 12.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Jalen Duren",
+    "name_key": "jalen duren",
+    "team": "DET",
+    "position": "C",
+    "stat": "ra",
+    "pp_stat_label": "Rebs+Asts",
+    "line": 12.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Marcus Sasser",
+    "name_key": "marcus sasser",
+    "team": "DET",
+    "position": "G",
     "stat": "pa",
     "pp_stat_label": "Pts+Asts",
     "line": 12.5,
@@ -8406,16 +8716,6 @@
     "position": "C",
     "stat": "reb",
     "pp_stat_label": "Rebounds",
-    "line": 11.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
     "line": 11.5,
     "odds_type": "standard"
   },
@@ -8540,6 +8840,36 @@
     "odds_type": "standard"
   },
   {
+    "name": "Caris LeVert",
+    "name_key": "caris levert",
+    "team": "DET",
+    "position": "G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 11.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "ra",
+    "pp_stat_label": "Rebs+Asts",
+    "line": 11.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Justin Champagnie",
+    "name_key": "justin champagnie",
+    "team": "WAS",
+    "position": "G-F",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 11.5,
+    "odds_type": "standard"
+  },
+  {
     "name": "Ausar Thompson",
     "name_key": "ausar thompson",
     "team": "DET",
@@ -8610,6 +8940,16 @@
     "odds_type": "standard"
   },
   {
+    "name": "Tobias Harris",
+    "name_key": "tobias harris",
+    "team": "DET",
+    "position": "F",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 10.5,
+    "odds_type": "goblin"
+  },
+  {
     "name": "Bub Carrington",
     "name_key": "bub carrington",
     "team": "WAS",
@@ -8618,6 +8958,26 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 10.5,
     "odds_type": "demon"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 10.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Jalen Duren",
+    "name_key": "jalen duren",
+    "team": "DET",
+    "position": "C",
+    "stat": "ra",
+    "pp_stat_label": "Rebs+Asts",
+    "line": 10.5,
+    "odds_type": "goblin"
   },
   {
     "name": "Ausar Thompson",
@@ -8660,16 +9020,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 9.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Duncan Robinson",
     "name_key": "duncan robinson",
     "team": "DET",
@@ -8720,16 +9070,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 9.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Tobias Harris",
     "name_key": "tobias harris",
     "team": "DET",
@@ -8748,6 +9088,16 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 9.5,
     "odds_type": "demon"
+  },
+  {
+    "name": "Bub Carrington",
+    "name_key": "bub carrington",
+    "team": "WAS",
+    "position": "G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 9.5,
+    "odds_type": "goblin"
   },
   {
     "name": "Duncan Robinson",
@@ -8810,6 +9160,56 @@
     "odds_type": "goblin"
   },
   {
+    "name": "Marcus Sasser",
+    "name_key": "marcus sasser",
+    "team": "DET",
+    "position": "G",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 9.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Caris LeVert",
+    "name_key": "caris levert",
+    "team": "DET",
+    "position": "G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 9.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "ast",
+    "pp_stat_label": "Assists",
+    "line": 9.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 9.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Justin Champagnie",
+    "name_key": "justin champagnie",
+    "team": "WAS",
+    "position": "G-F",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
+    "line": 9.5,
+    "odds_type": "demon"
+  },
+  {
     "name": "Ausar Thompson",
     "name_key": "ausar thompson",
     "team": "DET",
@@ -8850,16 +9250,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 8.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Duncan Robinson",
     "name_key": "duncan robinson",
     "team": "DET",
@@ -8894,6 +9284,26 @@
     "name_key": "bub carrington",
     "team": "WAS",
     "position": "G",
+    "stat": "ra",
+    "pp_stat_label": "Rebs+Asts",
+    "line": 8.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Bub Carrington",
+    "name_key": "bub carrington",
+    "team": "WAS",
+    "position": "G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 8.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Duncan Robinson",
+    "name_key": "duncan robinson",
+    "team": "DET",
+    "position": "F",
     "stat": "pts",
     "pp_stat_label": "Points",
     "line": 8.5,
@@ -8916,6 +9326,46 @@
     "position": "G",
     "stat": "ra",
     "pp_stat_label": "Rebs+Asts",
+    "line": 8.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 8.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Jalen Duren",
+    "name_key": "jalen duren",
+    "team": "DET",
+    "position": "C",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
+    "line": 8.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Justin Champagnie",
+    "name_key": "justin champagnie",
+    "team": "WAS",
+    "position": "G-F",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 8.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Justin Champagnie",
+    "name_key": "justin champagnie",
+    "team": "WAS",
+    "position": "G-F",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
     "line": 8.5,
     "odds_type": "demon"
   },
@@ -8990,16 +9440,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 7.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Duncan Robinson",
     "name_key": "duncan robinson",
     "team": "DET",
@@ -9110,20 +9550,60 @@
     "odds_type": "demon"
   },
   {
+    "name": "Caris LeVert",
+    "name_key": "caris levert",
+    "team": "DET",
+    "position": "G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 7.5,
+    "odds_type": "standard"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "ast",
+    "pp_stat_label": "Assists",
+    "line": 7.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "ra",
+    "pp_stat_label": "Rebs+Asts",
+    "line": 7.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Justin Champagnie",
+    "name_key": "justin champagnie",
+    "team": "WAS",
+    "position": "G-F",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 7.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Justin Champagnie",
+    "name_key": "justin champagnie",
+    "team": "WAS",
+    "position": "G-F",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
+    "line": 7.5,
+    "odds_type": "demon"
+  },
+  {
     "name": "Will Riley",
     "name_key": "will riley",
     "team": "WAS",
     "position": "F",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 7.0,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
     "stat": "ra",
     "pp_stat_label": "Rebs+Asts",
     "line": 7.0,
@@ -9180,26 +9660,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 6.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 6.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Duncan Robinson",
     "name_key": "duncan robinson",
     "team": "DET",
@@ -9288,6 +9748,46 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 6.5,
     "odds_type": "demon"
+  },
+  {
+    "name": "Caris LeVert",
+    "name_key": "caris levert",
+    "team": "DET",
+    "position": "G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 6.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Caris LeVert",
+    "name_key": "caris levert",
+    "team": "DET",
+    "position": "G",
+    "stat": "ast",
+    "pp_stat_label": "Assists",
+    "line": 6.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "ast",
+    "pp_stat_label": "Assists",
+    "line": 6.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Justin Champagnie",
+    "name_key": "justin champagnie",
+    "team": "WAS",
+    "position": "G-F",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 6.5,
+    "odds_type": "goblin"
   },
   {
     "name": "Ausar Thompson",
@@ -9330,16 +9830,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Duncan Robinson",
-    "name_key": "duncan robinson",
-    "team": "DET",
-    "position": "F",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 5.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "Tobias Harris",
     "name_key": "tobias harris",
     "team": "DET",
@@ -9384,26 +9874,6 @@
     "name_key": "alex sarr",
     "team": "WAS",
     "position": "C",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 5.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 5.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
     "stat": "ra",
     "pp_stat_label": "Rebs+Asts",
     "line": 5.5,
@@ -9476,6 +9946,46 @@
     "position": "G",
     "stat": "ra",
     "pp_stat_label": "Rebs+Asts",
+    "line": 5.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
+    "line": 5.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Bub Carrington",
+    "name_key": "bub carrington",
+    "team": "WAS",
+    "position": "G",
+    "stat": "ra",
+    "pp_stat_label": "Rebs+Asts",
+    "line": 5.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Caris LeVert",
+    "name_key": "caris levert",
+    "team": "DET",
+    "position": "G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 5.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Justin Champagnie",
+    "name_key": "justin champagnie",
+    "team": "WAS",
+    "position": "G-F",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
     "line": 5.5,
     "odds_type": "goblin"
   },
@@ -9520,16 +10030,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 4.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Duncan Robinson",
     "name_key": "duncan robinson",
     "team": "DET",
@@ -9610,16 +10110,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 4.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Duncan Robinson",
     "name_key": "duncan robinson",
     "team": "DET",
@@ -9634,16 +10124,6 @@
     "name_key": "bub carrington",
     "team": "WAS",
     "position": "G",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 4.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Bub Carrington",
-    "name_key": "bub carrington",
-    "team": "WAS",
-    "position": "G",
     "stat": "reb",
     "pp_stat_label": "Rebounds",
     "line": 4.5,
@@ -9676,6 +10156,76 @@
     "position": "G",
     "stat": "ra",
     "pp_stat_label": "Rebs+Asts",
+    "line": 4.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Jalen Duren",
+    "name_key": "jalen duren",
+    "team": "DET",
+    "position": "C",
+    "stat": "ast",
+    "pp_stat_label": "Assists",
+    "line": 4.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Caris LeVert",
+    "name_key": "caris levert",
+    "team": "DET",
+    "position": "G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 4.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Caris LeVert",
+    "name_key": "caris levert",
+    "team": "DET",
+    "position": "G",
+    "stat": "ast",
+    "pp_stat_label": "Assists",
+    "line": 4.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Caris LeVert",
+    "name_key": "caris levert",
+    "team": "DET",
+    "position": "G",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
+    "line": 4.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "ast",
+    "pp_stat_label": "Assists",
+    "line": 4.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
+    "line": 4.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Justin Champagnie",
+    "name_key": "justin champagnie",
+    "team": "WAS",
+    "position": "G-F",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
     "line": 4.5,
     "odds_type": "goblin"
   },
@@ -9690,46 +10240,6 @@
     "odds_type": "standard"
   },
   {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 4.0,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Ausar Thompson",
-    "name_key": "ausar thompson",
-    "team": "DET",
-    "position": "G-F",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 3.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 3.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 3.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Duncan Robinson",
     "name_key": "duncan robinson",
     "team": "DET",
@@ -9920,6 +10430,26 @@
     "odds_type": "demon"
   },
   {
+    "name": "Caris LeVert",
+    "name_key": "caris levert",
+    "team": "DET",
+    "position": "G",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
+    "line": 3.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "ast",
+    "pp_stat_label": "Assists",
+    "line": 3.5,
+    "odds_type": "goblin"
+  },
+  {
     "name": "Alex Sarr",
     "name_key": "alex sarr",
     "team": "WAS",
@@ -9960,16 +10490,6 @@
     "odds_type": "standard"
   },
   {
-    "name": "Jalen Duren",
-    "name_key": "jalen duren",
-    "team": "DET",
-    "position": "C",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 2.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Tre Johnson",
     "name_key": "tre johnson",
     "team": "WAS",
@@ -9988,6 +10508,16 @@
     "pp_stat_label": "Turnovers",
     "line": 2.5,
     "odds_type": "demon"
+  },
+  {
+    "name": "Will Riley",
+    "name_key": "will riley",
+    "team": "WAS",
+    "position": "F",
+    "stat": "ast",
+    "pp_stat_label": "Assists",
+    "line": 2.5,
+    "odds_type": "goblin"
   },
   {
     "name": "Alex Sarr",
@@ -10014,16 +10544,6 @@
     "name_key": "ausar thompson",
     "team": "DET",
     "position": "G-F",
-    "stat": "stl",
-    "pp_stat_label": "Steals",
-    "line": 2.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
     "stat": "stl",
     "pp_stat_label": "Steals",
     "line": 2.5,
@@ -10060,28 +10580,8 @@
     "odds_type": "demon"
   },
   {
-    "name": "Tobias Harris",
-    "name_key": "tobias harris",
-    "team": "DET",
-    "position": "F",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 2.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "Bub Carrington",
     "name_key": "bub carrington",
-    "team": "WAS",
-    "position": "G",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 2.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
     "team": "WAS",
     "position": "G",
     "stat": "reb",
@@ -10108,16 +10608,6 @@
     "pp_stat_label": "Rebounds",
     "line": 2.5,
     "odds_type": "standard"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "bs",
-    "pp_stat_label": "Blks+Stls",
-    "line": 2.5,
-    "odds_type": "demon"
   },
   {
     "name": "Jalen Duren",
@@ -10160,14 +10650,44 @@
     "odds_type": "demon"
   },
   {
-    "name": "Alex Sarr",
-    "name_key": "alex sarr",
+    "name": "Will Riley",
+    "name_key": "will riley",
     "team": "WAS",
-    "position": "C",
+    "position": "F",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
+    "line": 2.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Caris LeVert",
+    "name_key": "caris levert",
+    "team": "DET",
+    "position": "G",
     "stat": "ast",
     "pp_stat_label": "Assists",
-    "line": 1.5,
-    "odds_type": "standard"
+    "line": 2.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Caris LeVert",
+    "name_key": "caris levert",
+    "team": "DET",
+    "position": "G",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
+    "line": 2.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Daniss Jenkins",
+    "name_key": "daniss jenkins",
+    "team": "DET",
+    "position": "G",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
+    "line": 2.5,
+    "odds_type": "goblin"
   },
   {
     "name": "Alex Sarr",
@@ -10208,36 +10728,6 @@
     "pp_stat_label": "Turnovers",
     "line": 1.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "bs",
-    "pp_stat_label": "Blks+Stls",
-    "line": 1.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "stl",
-    "pp_stat_label": "Steals",
-    "line": 1.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "tov",
-    "pp_stat_label": "Turnovers",
-    "line": 1.5,
-    "odds_type": "goblin"
   },
   {
     "name": "Duncan Robinson",
@@ -10324,26 +10814,6 @@
     "name_key": "ausar thompson",
     "team": "DET",
     "position": "G-F",
-    "stat": "blk",
-    "pp_stat_label": "Blocked Shots",
-    "line": 1.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 1.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
     "stat": "blk",
     "pp_stat_label": "Blocked Shots",
     "line": 1.5,
@@ -10520,6 +10990,26 @@
     "odds_type": "demon"
   },
   {
+    "name": "Will Riley",
+    "name_key": "will riley",
+    "team": "WAS",
+    "position": "F",
+    "stat": "ast",
+    "pp_stat_label": "Assists",
+    "line": 1.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Caris LeVert",
+    "name_key": "caris levert",
+    "team": "DET",
+    "position": "G",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
+    "line": 1.5,
+    "odds_type": "goblin"
+  },
+  {
     "name": "Alex Sarr",
     "name_key": "alex sarr",
     "team": "WAS",
@@ -10534,16 +11024,6 @@
     "name_key": "ausar thompson",
     "team": "DET",
     "position": "G-F",
-    "stat": "blk",
-    "pp_stat_label": "Blocked Shots",
-    "line": 0.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
     "stat": "blk",
     "pp_stat_label": "Blocked Shots",
     "line": 0.5,
@@ -10654,16 +11134,6 @@
     "name_key": "will riley",
     "team": "WAS",
     "position": "F",
-    "stat": "stl",
-    "pp_stat_label": "Steals",
-    "line": 0.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Bilal Coulibaly",
-    "name_key": "bilal coulibaly",
-    "team": "WAS",
-    "position": "G",
     "stat": "stl",
     "pp_stat_label": "Steals",
     "line": 0.5,
@@ -11206,7 +11676,7 @@
     "position": "F",
     "stat": "pts",
     "pp_stat_label": "Points",
-    "line": 29.0,
+    "line": 28.5,
     "odds_type": "standard"
   },
   {
@@ -11720,16 +12190,6 @@
     "odds_type": "standard"
   },
   {
-    "name": "John Collins",
-    "name_key": "john collins",
-    "team": "LAC",
-    "position": "F-C",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 22.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "Saddiq Bey",
     "name_key": "saddiq bey",
     "team": "NOP",
@@ -11786,6 +12246,16 @@
     "position": "F-C",
     "stat": "pr",
     "pp_stat_label": "Pts+Rebs",
+    "line": 21.5,
+    "odds_type": "standard"
+  },
+  {
+    "name": "John Collins",
+    "name_key": "john collins",
+    "team": "LAC",
+    "position": "F-C",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
     "line": 21.5,
     "odds_type": "standard"
   },
@@ -12360,6 +12830,16 @@
     "odds_type": "standard"
   },
   {
+    "name": "Jeremiah Fears",
+    "name_key": "jeremiah fears",
+    "team": "NOP",
+    "position": "G",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 16.5,
+    "odds_type": "standard"
+  },
+  {
     "name": "Saddiq Bey",
     "name_key": "saddiq bey",
     "team": "NOP",
@@ -12378,16 +12858,6 @@
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 16.5,
     "odds_type": "goblin"
-  },
-  {
-    "name": "Brook Lopez",
-    "name_key": "brook lopez",
-    "team": "LAC",
-    "position": "C",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 16.5,
-    "odds_type": "standard"
   },
   {
     "name": "Derrick Jones",
@@ -12426,16 +12896,6 @@
     "position": "G",
     "stat": "pa",
     "pp_stat_label": "Pts+Asts",
-    "line": 15.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Jeremiah Fears",
-    "name_key": "jeremiah fears",
-    "team": "NOP",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
     "line": 15.5,
     "odds_type": "standard"
   },
@@ -12486,7 +12946,7 @@
     "position": "C",
     "stat": "pr",
     "pp_stat_label": "Pts+Rebs",
-    "line": 14.5,
+    "line": 15.0,
     "odds_type": "standard"
   },
   {
@@ -12730,6 +13190,16 @@
     "odds_type": "goblin"
   },
   {
+    "name": "Jeremiah Fears",
+    "name_key": "jeremiah fears",
+    "team": "NOP",
+    "position": "G",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 14.5,
+    "odds_type": "goblin"
+  },
+  {
     "name": "Brook Lopez",
     "name_key": "brook lopez",
     "team": "LAC",
@@ -12800,16 +13270,6 @@
     "odds_type": "standard"
   },
   {
-    "name": "Kris Dunn",
-    "name_key": "kris dunn",
-    "team": "LAC",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 13.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Herbert Jones",
     "name_key": "herbert jones",
     "team": "NOP",
@@ -12840,12 +13300,32 @@
     "odds_type": "demon"
   },
   {
+    "name": "Derik Queen",
+    "name_key": "derik queen",
+    "team": "NOP",
+    "position": "C",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 12.5,
+    "odds_type": "standard"
+  },
+  {
     "name": "Herbert Jones",
     "name_key": "herbert jones",
     "team": "NOP",
     "position": "F",
     "stat": "pr",
     "pp_stat_label": "Pts+Rebs",
+    "line": 12.5,
+    "odds_type": "standard"
+  },
+  {
+    "name": "Jeremiah Fears",
+    "name_key": "jeremiah fears",
+    "team": "NOP",
+    "position": "G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
     "line": 12.5,
     "odds_type": "standard"
   },
@@ -12954,30 +13434,10 @@
     "name_key": "derik queen",
     "team": "NOP",
     "position": "C",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 11.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Derik Queen",
-    "name_key": "derik queen",
-    "team": "NOP",
-    "position": "C",
     "stat": "ra",
     "pp_stat_label": "Rebs+Asts",
     "line": 11.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Jeremiah Fears",
-    "name_key": "jeremiah fears",
-    "team": "NOP",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 11.5,
-    "odds_type": "standard"
   },
   {
     "name": "John Collins",
@@ -13276,6 +13736,16 @@
     "position": "G",
     "stat": "pts",
     "pp_stat_label": "Points",
+    "line": 10.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Kris Dunn",
+    "name_key": "kris dunn",
+    "team": "LAC",
+    "position": "G",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
     "line": 10.5,
     "odds_type": "goblin"
   },
@@ -13548,6 +14018,16 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 9.5,
     "odds_type": "demon"
+  },
+  {
+    "name": "Derik Queen",
+    "name_key": "derik queen",
+    "team": "NOP",
+    "position": "C",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 9.5,
+    "odds_type": "goblin"
   },
   {
     "name": "Zion Williamson",
@@ -13610,16 +14090,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Derik Queen",
-    "name_key": "derik queen",
-    "team": "NOP",
-    "position": "C",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 8.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "Herbert Jones",
     "name_key": "herbert jones",
     "team": "NOP",
@@ -13778,6 +14248,16 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 8.5,
     "odds_type": "demon"
+  },
+  {
+    "name": "Derik Queen",
+    "name_key": "derik queen",
+    "team": "NOP",
+    "position": "C",
+    "stat": "ra",
+    "pp_stat_label": "Rebs+Asts",
+    "line": 8.0,
+    "odds_type": "standard"
   },
   {
     "name": "Saddiq Bey",
@@ -14164,16 +14644,6 @@
     "name_key": "john collins",
     "team": "LAC",
     "position": "F-C",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 6.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "John Collins",
-    "name_key": "john collins",
-    "team": "LAC",
-    "position": "F-C",
     "stat": "ra",
     "pp_stat_label": "Rebs+Asts",
     "line": 6.5,
@@ -14286,16 +14756,6 @@
     "position": "G",
     "stat": "pts",
     "pp_stat_label": "Points",
-    "line": 6.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Jeremiah Fears",
-    "name_key": "jeremiah fears",
-    "team": "NOP",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
     "line": 6.5,
     "odds_type": "goblin"
   },
@@ -14488,16 +14948,6 @@
     "pp_stat_label": "Rebounds",
     "line": 5.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Saddiq Bey",
-    "name_key": "saddiq bey",
-    "team": "NOP",
-    "position": "G-F",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 5.5,
-    "odds_type": "standard"
   },
   {
     "name": "Trey Murphy",
@@ -14870,6 +15320,16 @@
     "odds_type": "goblin"
   },
   {
+    "name": "Jeremiah Fears",
+    "name_key": "jeremiah fears",
+    "team": "NOP",
+    "position": "G",
+    "stat": "ra",
+    "pp_stat_label": "Rebs+Asts",
+    "line": 4.5,
+    "odds_type": "goblin"
+  },
+  {
     "name": "Trey Murphy",
     "name_key": "trey murphy",
     "team": "NOP",
@@ -14968,16 +15428,6 @@
     "pp_stat_label": "Rebounds",
     "line": 3.5,
     "odds_type": "goblin"
-  },
-  {
-    "name": "Derrick Jones",
-    "name_key": "derrick jones",
-    "team": "LAC",
-    "position": "F",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 3.5,
-    "odds_type": "standard"
   },
   {
     "name": "Derrick Jones",
@@ -15110,16 +15560,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Kawhi Leonard",
-    "name_key": "kawhi leonard",
-    "team": "LAC",
-    "position": "F",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 3.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Derrick Jones",
     "name_key": "derrick jones",
     "team": "LAC",
@@ -15320,16 +15760,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Trey Murphy",
-    "name_key": "trey murphy",
-    "team": "NOP",
-    "position": "F",
-    "stat": "tov",
-    "pp_stat_label": "Turnovers",
-    "line": 2.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Yves Missi",
     "name_key": "yves missi",
     "team": "NOP",
@@ -15406,6 +15836,16 @@
     "position": "G-F",
     "stat": "ast",
     "pp_stat_label": "Assists",
+    "line": 2.5,
+    "odds_type": "standard"
+  },
+  {
+    "name": "Darius Garland",
+    "name_key": "darius garland",
+    "team": "LAC",
+    "position": "G",
+    "stat": "tov",
+    "pp_stat_label": "Turnovers",
     "line": 2.5,
     "odds_type": "standard"
   },
@@ -15724,16 +16164,6 @@
     "name_key": "yves missi",
     "team": "NOP",
     "position": "C",
-    "stat": "blk",
-    "pp_stat_label": "Blocked Shots",
-    "line": 1.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Yves Missi",
-    "name_key": "yves missi",
-    "team": "NOP",
-    "position": "C",
     "stat": "stl",
     "pp_stat_label": "Steals",
     "line": 1.5,
@@ -15858,6 +16288,26 @@
     "pp_stat_label": "Turnovers",
     "line": 1.5,
     "odds_type": "demon"
+  },
+  {
+    "name": "Herbert Jones",
+    "name_key": "herbert jones",
+    "team": "NOP",
+    "position": "F",
+    "stat": "tov",
+    "pp_stat_label": "Turnovers",
+    "line": 1.5,
+    "odds_type": "standard"
+  },
+  {
+    "name": "Trey Murphy",
+    "name_key": "trey murphy",
+    "team": "NOP",
+    "position": "F",
+    "stat": "tov",
+    "pp_stat_label": "Turnovers",
+    "line": 1.5,
+    "odds_type": "goblin"
   },
   {
     "name": "Brook Lopez",
@@ -16620,16 +17070,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Austin Reaves",
-    "name_key": "austin reaves",
-    "team": "LAL",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 33.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "Bam Adebayo",
     "name_key": "bam adebayo",
     "team": "MIA",
@@ -16637,6 +17077,16 @@
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 33.0,
+    "odds_type": "standard"
+  },
+  {
+    "name": "Austin Reaves",
+    "name_key": "austin reaves",
+    "team": "LAL",
+    "position": "G",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 32.5,
     "odds_type": "standard"
   },
   {
@@ -17024,6 +17474,16 @@
     "name_key": "norman powell",
     "team": "MIA",
     "position": "G",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 26.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Norman Powell",
+    "name_key": "norman powell",
+    "team": "MIA",
+    "position": "G",
     "stat": "pr",
     "pp_stat_label": "Pts+Rebs",
     "line": 25.5,
@@ -17056,6 +17516,16 @@
     "position": "F",
     "stat": "pa",
     "pp_stat_label": "Pts+Asts",
+    "line": 25.5,
+    "odds_type": "standard"
+  },
+  {
+    "name": "LeBron James",
+    "name_key": "lebron james",
+    "team": "LAL",
+    "position": "F",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
     "line": 25.5,
     "odds_type": "standard"
   },
@@ -17138,16 +17608,6 @@
     "pp_stat_label": "Points",
     "line": 24.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "LeBron James",
-    "name_key": "lebron james",
-    "team": "LAL",
-    "position": "F",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 24.5,
-    "odds_type": "standard"
   },
   {
     "name": "Luka Don\u010di\u0107",
@@ -17270,16 +17730,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Kel'el Ware",
-    "name_key": "kel'el ware",
-    "team": "MIA",
-    "position": "C",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 24.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Marcus Smart",
     "name_key": "marcus smart",
     "team": "LAL",
@@ -17330,6 +17780,16 @@
     "odds_type": "standard"
   },
   {
+    "name": "Jaime Jaquez",
+    "name_key": "jaime jaquez",
+    "team": "MIA",
+    "position": "G",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 23.5,
+    "odds_type": "standard"
+  },
+  {
     "name": "Norman Powell",
     "name_key": "norman powell",
     "team": "MIA",
@@ -17350,16 +17810,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "LeBron James",
-    "name_key": "lebron james",
-    "team": "LAL",
-    "position": "F",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 23.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Tyler Herro",
     "name_key": "tyler herro",
     "team": "MIA",
@@ -17368,16 +17818,6 @@
     "pp_stat_label": "Pts+Asts",
     "line": 23.5,
     "odds_type": "goblin"
-  },
-  {
-    "name": "Jaime Jaquez",
-    "name_key": "jaime jaquez",
-    "team": "MIA",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 22.5,
-    "odds_type": "standard"
   },
   {
     "name": "Austin Reaves",
@@ -17486,6 +17926,16 @@
     "position": "G",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 20.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Deandre Ayton",
+    "name_key": "deandre ayton",
+    "team": "LAL",
+    "position": "C",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
     "line": 20.5,
     "odds_type": "demon"
   },
@@ -17860,6 +18310,16 @@
     "odds_type": "demon"
   },
   {
+    "name": "Deandre Ayton",
+    "name_key": "deandre ayton",
+    "team": "LAL",
+    "position": "C",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 18.5,
+    "odds_type": "goblin"
+  },
+  {
     "name": "Jaime Jaquez",
     "name_key": "jaime jaquez",
     "team": "MIA",
@@ -17896,16 +18356,6 @@
     "position": "C-F",
     "stat": "pts",
     "pp_stat_label": "Points",
-    "line": 17.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Deandre Ayton",
-    "name_key": "deandre ayton",
-    "team": "LAL",
-    "position": "C",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
     "line": 17.5,
     "odds_type": "goblin"
   },
@@ -17956,6 +18406,16 @@
     "position": "G",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 17.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Jaime Jaquez",
+    "name_key": "jaime jaquez",
+    "team": "MIA",
+    "position": "G",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
     "line": 17.5,
     "odds_type": "goblin"
   },
@@ -18010,16 +18470,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Jaime Jaquez",
-    "name_key": "jaime jaquez",
-    "team": "MIA",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 16.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Pelle Larsson",
     "name_key": "pelle larsson",
     "team": "MIA",
@@ -18038,6 +18488,16 @@
     "pp_stat_label": "Pts+Rebs",
     "line": 16.5,
     "odds_type": "goblin"
+  },
+  {
+    "name": "Pelle Larsson",
+    "name_key": "pelle larsson",
+    "team": "MIA",
+    "position": "G",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 16.5,
+    "odds_type": "demon"
   },
   {
     "name": "Pelle Larsson",
@@ -18070,16 +18530,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "LeBron James",
-    "name_key": "lebron james",
-    "team": "LAL",
-    "position": "F",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 15.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Luka Don\u010di\u0107",
     "name_key": "luka doncic",
     "team": "LAL",
@@ -18088,6 +18538,16 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 15.5,
     "odds_type": "goblin"
+  },
+  {
+    "name": "Bam Adebayo",
+    "name_key": "bam adebayo",
+    "team": "MIA",
+    "position": "C-F",
+    "stat": "ra",
+    "pp_stat_label": "Rebs+Asts",
+    "line": 15.5,
+    "odds_type": "demon"
   },
   {
     "name": "LeBron James",
@@ -18290,16 +18750,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Kel'el Ware",
-    "name_key": "kel'el ware",
-    "team": "MIA",
-    "position": "C",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 14.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Pelle Larsson",
     "name_key": "pelle larsson",
     "team": "MIA",
@@ -18400,16 +18850,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Pelle Larsson",
-    "name_key": "pelle larsson",
-    "team": "MIA",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 13.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "LeBron James",
     "name_key": "lebron james",
     "team": "LAL",
@@ -18418,26 +18858,6 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 13.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Bam Adebayo",
-    "name_key": "bam adebayo",
-    "team": "MIA",
-    "position": "C-F",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 12.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Marcus Smart",
-    "name_key": "marcus smart",
-    "team": "LAL",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 12.5,
-    "odds_type": "standard"
   },
   {
     "name": "Marcus Smart",
@@ -18598,6 +19018,16 @@
     "pp_stat_label": "Rebounds",
     "line": 11.5,
     "odds_type": "demon"
+  },
+  {
+    "name": "Marcus Smart",
+    "name_key": "marcus smart",
+    "team": "LAL",
+    "position": "G",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 11.5,
+    "odds_type": "standard"
   },
   {
     "name": "Marcus Smart",
@@ -19800,26 +20230,6 @@
     "odds_type": "standard"
   },
   {
-    "name": "Davion Mitchell",
-    "name_key": "davion mitchell",
-    "team": "MIA",
-    "position": "G",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 6.0,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Davion Mitchell",
-    "name_key": "davion mitchell",
-    "team": "MIA",
-    "position": "G",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 5.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Jaime Jaquez",
     "name_key": "jaime jaquez",
     "team": "MIA",
@@ -19968,6 +20378,16 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 5.5,
     "odds_type": "goblin"
+  },
+  {
+    "name": "Davion Mitchell",
+    "name_key": "davion mitchell",
+    "team": "MIA",
+    "position": "G",
+    "stat": "ast",
+    "pp_stat_label": "Assists",
+    "line": 5.5,
+    "odds_type": "standard"
   },
   {
     "name": "Bam Adebayo",
@@ -20308,16 +20728,6 @@
     "pp_stat_label": "Assists",
     "line": 3.5,
     "odds_type": "standard"
-  },
-  {
-    "name": "Pelle Larsson",
-    "name_key": "pelle larsson",
-    "team": "MIA",
-    "position": "G",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 3.5,
-    "odds_type": "goblin"
   },
   {
     "name": "Tyler Herro",
@@ -21340,12 +21750,12 @@
     "odds_type": "demon"
   },
   {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
+    "name": "James Harden",
+    "name_key": "james harden",
     "team": "CLE",
-    "position": "C",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
+    "position": "G",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
     "line": 39.5,
     "odds_type": "demon"
   },
@@ -21354,8 +21764,8 @@
     "name_key": "james harden",
     "team": "CLE",
     "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
     "line": 39.5,
     "odds_type": "demon"
   },
@@ -21390,6 +21800,16 @@
     "odds_type": "demon"
   },
   {
+    "name": "James Harden",
+    "name_key": "james harden",
+    "team": "CLE",
+    "position": "G",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 36.5,
+    "odds_type": "standard"
+  },
+  {
     "name": "Josh Giddey",
     "name_key": "josh giddey",
     "team": "CHI",
@@ -21406,47 +21826,7 @@
     "position": "G",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 36.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 36.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "James Harden",
-    "name_key": "james harden",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
     "line": 35.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 35.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Donovan Mitchell",
-    "name_key": "donovan mitchell",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 35.0,
     "odds_type": "standard"
   },
   {
@@ -21460,26 +21840,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "James Harden",
-    "name_key": "james harden",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 34.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 34.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Josh Giddey",
     "name_key": "josh giddey",
     "team": "CHI",
@@ -21540,16 +21900,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 34.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "James Harden",
     "name_key": "james harden",
     "team": "CLE",
@@ -21598,16 +21948,6 @@
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 33.5,
     "odds_type": "goblin"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 33.0,
-    "odds_type": "standard"
   },
   {
     "name": "Donovan Mitchell",
@@ -21624,20 +21964,10 @@
     "name_key": "james harden",
     "team": "CLE",
     "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 32.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "James Harden",
-    "name_key": "james harden",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
     "line": 31.5,
-    "odds_type": "goblin"
+    "odds_type": "standard"
   },
   {
     "name": "Matas Buzelis",
@@ -21648,16 +21978,6 @@
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 31.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 31.5,
-    "odds_type": "goblin"
   },
   {
     "name": "Donovan Mitchell",
@@ -21670,16 +21990,6 @@
     "odds_type": "standard"
   },
   {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 30.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Donovan Mitchell",
     "name_key": "donovan mitchell",
     "team": "CLE",
@@ -21694,26 +22004,6 @@
     "name_key": "donovan mitchell",
     "team": "CLE",
     "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 29.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 29.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
     "stat": "pr",
     "pp_stat_label": "Pts+Rebs",
     "line": 29.5,
@@ -21738,16 +22028,6 @@
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 29.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 29.5,
-    "odds_type": "goblin"
   },
   {
     "name": "Jalen Smith",
@@ -21814,30 +22094,10 @@
     "name_key": "donovan mitchell",
     "team": "CLE",
     "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 29.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Donovan Mitchell",
-    "name_key": "donovan mitchell",
-    "team": "CLE",
-    "position": "G",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 29.5,
     "odds_type": "goblin"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 29.5,
-    "odds_type": "demon"
   },
   {
     "name": "James Harden",
@@ -21866,8 +22126,8 @@
     "position": "G",
     "stat": "pa",
     "pp_stat_label": "Pts+Asts",
-    "line": 28.5,
-    "odds_type": "standard"
+    "line": 29.5,
+    "odds_type": "goblin"
   },
   {
     "name": "Matas Buzelis",
@@ -21890,14 +22150,14 @@
     "odds_type": "demon"
   },
   {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
+    "name": "James Harden",
+    "name_key": "james harden",
     "team": "CLE",
-    "position": "C",
+    "position": "G",
     "stat": "pr",
     "pp_stat_label": "Pts+Rebs",
-    "line": 28.5,
-    "odds_type": "goblin"
+    "line": 27.5,
+    "odds_type": "standard"
   },
   {
     "name": "Josh Giddey",
@@ -21910,16 +22170,6 @@
     "odds_type": "standard"
   },
   {
-    "name": "James Harden",
-    "name_key": "james harden",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 27.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Josh Giddey",
     "name_key": "josh giddey",
     "team": "CHI",
@@ -21960,22 +22210,12 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Josh Giddey",
-    "name_key": "josh giddey",
-    "team": "CHI",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 26.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "James Harden",
-    "name_key": "james harden",
+    "name": "Donovan Mitchell",
+    "name_key": "donovan mitchell",
     "team": "CLE",
     "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
+    "stat": "pts",
+    "pp_stat_label": "Points",
     "line": 25.5,
     "odds_type": "standard"
   },
@@ -22004,16 +22244,6 @@
     "name_key": "matas buzelis",
     "team": "CHI",
     "position": "F",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 25.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Matas Buzelis",
-    "name_key": "matas buzelis",
-    "team": "CHI",
-    "position": "F",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 25.5,
@@ -22028,26 +22258,6 @@
     "pp_stat_label": "Pts+Rebs",
     "line": 25.5,
     "odds_type": "goblin"
-  },
-  {
-    "name": "Donovan Mitchell",
-    "name_key": "donovan mitchell",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 25.0,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 24.5,
-    "odds_type": "demon"
   },
   {
     "name": "James Harden",
@@ -22220,53 +22430,43 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
+    "name": "James Harden",
+    "name_key": "james harden",
     "team": "CLE",
-    "position": "C",
+    "position": "G",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 24.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "James Harden",
+    "name_key": "james harden",
+    "team": "CLE",
+    "position": "G",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 24.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Sam Merrill",
+    "name_key": "sam merrill",
+    "team": "CLE",
+    "position": "G",
     "stat": "pa",
     "pp_stat_label": "Pts+Asts",
     "line": 24.5,
     "odds_type": "demon"
   },
   {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 24.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "James Harden",
-    "name_key": "james harden",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 24.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "James Harden",
-    "name_key": "james harden",
+    "name": "Sam Merrill",
+    "name_key": "sam merrill",
     "team": "CLE",
     "position": "G",
     "stat": "pr",
     "pp_stat_label": "Pts+Rebs",
     "line": 24.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 23.5,
     "odds_type": "demon"
   },
   {
@@ -22300,16 +22500,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 22.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "Donovan Mitchell",
     "name_key": "donovan mitchell",
     "team": "CLE",
@@ -22318,16 +22508,6 @@
     "pp_stat_label": "Points",
     "line": 22.5,
     "odds_type": "goblin"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 22.5,
-    "odds_type": "demon"
   },
   {
     "name": "Tre Jones",
@@ -22356,6 +22536,26 @@
     "position": "F",
     "stat": "pa",
     "pp_stat_label": "Pts+Asts",
+    "line": 22.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "James Harden",
+    "name_key": "james harden",
+    "team": "CLE",
+    "position": "G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 22.0,
+    "odds_type": "standard"
+  },
+  {
+    "name": "Matas Buzelis",
+    "name_key": "matas buzelis",
+    "team": "CHI",
+    "position": "F",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
     "line": 21.5,
     "odds_type": "standard"
   },
@@ -22390,26 +22590,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 21.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "James Harden",
-    "name_key": "james harden",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 20.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "Tre Jones",
     "name_key": "tre jones",
     "team": "CHI",
@@ -22418,26 +22598,6 @@
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 20.5,
     "odds_type": "standard"
-  },
-  {
-    "name": "Jalen Smith",
-    "name_key": "jalen smith",
-    "team": "CHI",
-    "position": "F-C",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 20.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 20.5,
-    "odds_type": "demon"
   },
   {
     "name": "Josh Giddey",
@@ -22450,26 +22610,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Matas Buzelis",
-    "name_key": "matas buzelis",
-    "team": "CHI",
-    "position": "F",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 20.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Jalen Smith",
-    "name_key": "jalen smith",
-    "team": "CHI",
-    "position": "F-C",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 20.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Collin Sexton",
     "name_key": "collin sexton",
     "team": "CHI",
@@ -22480,13 +22620,13 @@
     "odds_type": "demon"
   },
   {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 19.5,
+    "name": "Jalen Smith",
+    "name_key": "jalen smith",
+    "team": "CHI",
+    "position": "F-C",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 20.0,
     "odds_type": "standard"
   },
   {
@@ -22510,32 +22650,12 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 19.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Matas Buzelis",
     "name_key": "matas buzelis",
     "team": "CHI",
     "position": "F",
     "stat": "pts",
     "pp_stat_label": "Points",
-    "line": 19.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Jalen Smith",
-    "name_key": "jalen smith",
-    "team": "CHI",
-    "position": "F-C",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
     "line": 19.5,
     "odds_type": "standard"
   },
@@ -22568,16 +22688,6 @@
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 19.5,
     "odds_type": "goblin"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 19.5,
-    "odds_type": "demon"
   },
   {
     "name": "Collin Sexton",
@@ -22658,16 +22768,6 @@
     "pp_stat_label": "Pts+Rebs",
     "line": 19.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 19.5,
-    "odds_type": "goblin"
   },
   {
     "name": "James Harden",
@@ -22678,26 +22778,6 @@
     "pp_stat_label": "Pts+Rebs",
     "line": 19.5,
     "odds_type": "goblin"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 19.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 19.5,
-    "odds_type": "demon"
   },
   {
     "name": "Isaac Okoro",
@@ -22710,26 +22790,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 19.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 18.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Tre Jones",
     "name_key": "tre jones",
     "team": "CHI",
@@ -22756,6 +22816,16 @@
     "position": "G",
     "stat": "pts",
     "pp_stat_label": "Points",
+    "line": 18.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Jalen Smith",
+    "name_key": "jalen smith",
+    "team": "CHI",
+    "position": "F-C",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
     "line": 18.5,
     "odds_type": "goblin"
   },
@@ -22800,16 +22870,6 @@
     "odds_type": "standard"
   },
   {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 17.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Jalen Smith",
     "name_key": "jalen smith",
     "team": "CHI",
@@ -22830,16 +22890,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 17.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "James Harden",
     "name_key": "james harden",
     "team": "CLE",
@@ -22850,26 +22900,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Tre Jones",
-    "name_key": "tre jones",
-    "team": "CHI",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 17.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 16.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "James Harden",
     "name_key": "james harden",
     "team": "CLE",
@@ -22878,16 +22908,6 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 16.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 16.5,
-    "odds_type": "standard"
   },
   {
     "name": "Tre Jones",
@@ -22940,16 +22960,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Collin Sexton",
-    "name_key": "collin sexton",
-    "team": "CHI",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 16.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Tre Jones",
     "name_key": "tre jones",
     "team": "CHI",
@@ -22958,26 +22968,6 @@
     "pp_stat_label": "Pts+Asts",
     "line": 16.5,
     "odds_type": "goblin"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 16.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Collin Sexton",
-    "name_key": "collin sexton",
-    "team": "CHI",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 16.5,
-    "odds_type": "demon"
   },
   {
     "name": "Guerschon Yabusele",
@@ -23040,16 +23030,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 15.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Collin Sexton",
     "name_key": "collin sexton",
     "team": "CHI",
@@ -23057,26 +23037,6 @@
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 15.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 14.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 14.5,
     "odds_type": "goblin"
   },
   {
@@ -23084,36 +23044,16 @@
     "name_key": "sam merrill",
     "team": "CLE",
     "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 14.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Collin Sexton",
-    "name_key": "collin sexton",
-    "team": "CHI",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 14.5,
-    "odds_type": "demon"
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 15.5,
+    "odds_type": "goblin"
   },
   {
     "name": "Donovan Mitchell",
     "name_key": "donovan mitchell",
     "team": "CLE",
     "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 14.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
     "stat": "ra",
     "pp_stat_label": "Rebs+Asts",
     "line": 14.5,
@@ -23160,32 +23100,12 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 14.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Matas Buzelis",
     "name_key": "matas buzelis",
     "team": "CHI",
     "position": "F",
     "stat": "pts",
     "pp_stat_label": "Points",
-    "line": 14.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
     "line": 14.5,
     "odds_type": "goblin"
   },
@@ -23260,26 +23180,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 14.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 14.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Isaac Okoro",
     "name_key": "isaac okoro",
     "team": "CHI",
@@ -23300,46 +23200,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 14.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 14.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 14.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 14.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Guerschon Yabusele",
     "name_key": "guerschon yabusele",
     "team": "CHI",
@@ -23350,33 +23210,13 @@
     "odds_type": "demon"
   },
   {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 13.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "James Harden",
     "name_key": "james harden",
     "team": "CLE",
     "position": "G",
     "stat": "ra",
     "pp_stat_label": "Rebs+Asts",
-    "line": 13.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 13.5,
+    "line": 14.0,
     "odds_type": "standard"
   },
   {
@@ -23400,36 +23240,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 13.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 13.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 13.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "Collin Sexton",
     "name_key": "collin sexton",
     "team": "CHI",
@@ -23440,28 +23250,8 @@
     "odds_type": "standard"
   },
   {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 13.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 13.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Tre Jones",
-    "name_key": "tre jones",
+    "name": "Collin Sexton",
+    "name_key": "collin sexton",
     "team": "CHI",
     "position": "G",
     "stat": "pr",
@@ -23476,8 +23266,18 @@
     "position": "C",
     "stat": "ra",
     "pp_stat_label": "Rebs+Asts",
-    "line": 13.0,
-    "odds_type": "standard"
+    "line": 13.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Collin Sexton",
+    "name_key": "collin sexton",
+    "team": "CHI",
+    "position": "G",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 13.5,
+    "odds_type": "goblin"
   },
   {
     "name": "Jalen Smith",
@@ -23510,16 +23310,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 12.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Josh Giddey",
     "name_key": "josh giddey",
     "team": "CHI",
@@ -23528,16 +23318,6 @@
     "pp_stat_label": "Assists",
     "line": 12.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 12.5,
-    "odds_type": "goblin"
   },
   {
     "name": "Guerschon Yabusele",
@@ -23550,14 +23330,14 @@
     "odds_type": "demon"
   },
   {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
+    "name": "James Harden",
+    "name_key": "james harden",
     "team": "CLE",
-    "position": "C",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 11.5,
-    "odds_type": "demon"
+    "position": "G",
+    "stat": "ra",
+    "pp_stat_label": "Rebs+Asts",
+    "line": 12.5,
+    "odds_type": "goblin"
   },
   {
     "name": "James Harden",
@@ -23568,26 +23348,6 @@
     "pp_stat_label": "Assists",
     "line": 11.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 11.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 11.5,
-    "odds_type": "standard"
   },
   {
     "name": "Isaac Okoro",
@@ -23630,6 +23390,16 @@
     "odds_type": "demon"
   },
   {
+    "name": "Dennis Schr\u00f6der",
+    "name_key": "dennis schroder",
+    "team": "CLE",
+    "position": "G",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 11.5,
+    "odds_type": "standard"
+  },
+  {
     "name": "Donovan Mitchell",
     "name_key": "donovan mitchell",
     "team": "CLE",
@@ -23638,16 +23408,6 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 11.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 11.5,
-    "odds_type": "goblin"
   },
   {
     "name": "Tre Jones",
@@ -23676,26 +23436,6 @@
     "position": "F",
     "stat": "ra",
     "pp_stat_label": "Rebs+Asts",
-    "line": 11.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 11.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
     "line": 11.5,
     "odds_type": "demon"
   },
@@ -23780,14 +23520,14 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
+    "name": "Isaac Okoro",
+    "name_key": "isaac okoro",
+    "team": "CHI",
+    "position": "F-G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
     "line": 11.5,
-    "odds_type": "standard"
+    "odds_type": "demon"
   },
   {
     "name": "Donovan Mitchell",
@@ -23798,16 +23538,6 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 10.5,
     "odds_type": "standard"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 10.5,
-    "odds_type": "goblin"
   },
   {
     "name": "Jalen Smith",
@@ -23870,16 +23600,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 10.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Collin Sexton",
     "name_key": "collin sexton",
     "team": "CHI",
@@ -23910,36 +23630,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 10.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 10.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 10.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Guerschon Yabusele",
     "name_key": "guerschon yabusele",
     "team": "CHI",
@@ -23950,14 +23640,14 @@
     "odds_type": "standard"
   },
   {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 10.0,
-    "odds_type": "standard"
+    "name": "Isaac Okoro",
+    "name_key": "isaac okoro",
+    "team": "CHI",
+    "position": "F-G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 10.5,
+    "odds_type": "demon"
   },
   {
     "name": "Donovan Mitchell",
@@ -23978,46 +23668,6 @@
     "pp_stat_label": "Assists",
     "line": 9.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 9.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 9.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 9.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 9.5,
-    "odds_type": "goblin"
   },
   {
     "name": "Josh Giddey",
@@ -24150,52 +23800,12 @@
     "odds_type": "demon"
   },
   {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 9.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "Donovan Mitchell",
     "name_key": "donovan mitchell",
     "team": "CLE",
     "position": "G",
     "stat": "ra",
     "pp_stat_label": "Rebs+Asts",
-    "line": 9.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 9.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 9.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
     "line": 9.5,
     "odds_type": "goblin"
   },
@@ -24210,36 +23820,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 9.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 9.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 9.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Josh Giddey",
     "name_key": "josh giddey",
     "team": "CHI",
@@ -24250,32 +23830,12 @@
     "odds_type": "standard"
   },
   {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 8.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Donovan Mitchell",
     "name_key": "donovan mitchell",
     "team": "CLE",
     "position": "G",
     "stat": "ra",
     "pp_stat_label": "Rebs+Asts",
-    "line": 8.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
     "line": 8.5,
     "odds_type": "goblin"
   },
@@ -24307,7 +23867,7 @@
     "stat": "ast",
     "pp_stat_label": "Assists",
     "line": 8.5,
-    "odds_type": "demon"
+    "odds_type": "standard"
   },
   {
     "name": "Josh Giddey",
@@ -24340,26 +23900,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 8.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 8.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Guerschon Yabusele",
     "name_key": "guerschon yabusele",
     "team": "CHI",
@@ -24370,26 +23910,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "James Harden",
-    "name_key": "james harden",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 8.0,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 7.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "Donovan Mitchell",
     "name_key": "donovan mitchell",
     "team": "CLE",
@@ -24410,16 +23930,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 7.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "James Harden",
     "name_key": "james harden",
     "team": "CLE",
@@ -24428,16 +23938,6 @@
     "pp_stat_label": "Rebounds",
     "line": 7.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 7.5,
-    "odds_type": "standard"
   },
   {
     "name": "Josh Giddey",
@@ -24468,26 +23968,6 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 7.5,
     "odds_type": "standard"
-  },
-  {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 7.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 7.5,
-    "odds_type": "demon"
   },
   {
     "name": "Josh Giddey",
@@ -24520,16 +24000,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 7.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "James Harden",
     "name_key": "james harden",
     "team": "CLE",
@@ -24554,26 +24024,6 @@
     "name_key": "jalen smith",
     "team": "CHI",
     "position": "F-C",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 7.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 7.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
     "stat": "pts",
     "pp_stat_label": "Points",
     "line": 7.5,
@@ -24610,16 +24060,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 7.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Donovan Mitchell",
     "name_key": "donovan mitchell",
     "team": "CLE",
@@ -24648,6 +24088,16 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 7.5,
     "odds_type": "demon"
+  },
+  {
+    "name": "Isaac Okoro",
+    "name_key": "isaac okoro",
+    "team": "CHI",
+    "position": "F-G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 7.5,
+    "odds_type": "goblin"
   },
   {
     "name": "Jalen Smith",
@@ -24660,52 +24110,12 @@
     "odds_type": "standard"
   },
   {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 6.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "Matas Buzelis",
     "name_key": "matas buzelis",
     "team": "CHI",
     "position": "F",
     "stat": "reb",
     "pp_stat_label": "Rebounds",
-    "line": 6.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 6.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 6.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
     "line": 6.5,
     "odds_type": "demon"
   },
@@ -24770,16 +24180,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 6.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Matas Buzelis",
     "name_key": "matas buzelis",
     "team": "CHI",
@@ -24788,16 +24188,6 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 6.5,
     "odds_type": "goblin"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 6.5,
-    "odds_type": "demon"
   },
   {
     "name": "Tre Jones",
@@ -24816,16 +24206,6 @@
     "position": "G",
     "stat": "ra",
     "pp_stat_label": "Rebs+Asts",
-    "line": 6.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
     "line": 6.5,
     "odds_type": "goblin"
   },
@@ -24860,34 +24240,14 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 6.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
+    "name": "Guerschon Yabusele",
+    "name_key": "guerschon yabusele",
+    "team": "CHI",
+    "position": "F",
     "stat": "pa",
     "pp_stat_label": "Pts+Asts",
     "line": 6.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 6.5,
-    "odds_type": "demon"
+    "odds_type": "standard"
   },
   {
     "name": "Guerschon Yabusele",
@@ -24910,42 +24270,12 @@
     "odds_type": "standard"
   },
   {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 5.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 5.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Donovan Mitchell",
     "name_key": "donovan mitchell",
     "team": "CLE",
     "position": "G",
     "stat": "reb",
     "pp_stat_label": "Rebounds",
-    "line": 5.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
     "line": 5.5,
     "odds_type": "demon"
   },
@@ -24976,16 +24306,6 @@
     "position": "G",
     "stat": "ast",
     "pp_stat_label": "Assists",
-    "line": 5.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
     "line": 5.5,
     "odds_type": "demon"
   },
@@ -25010,16 +24330,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 5.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Matas Buzelis",
     "name_key": "matas buzelis",
     "team": "CHI",
@@ -25028,16 +24338,6 @@
     "pp_stat_label": "Rebounds",
     "line": 5.5,
     "odds_type": "goblin"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 5.5,
-    "odds_type": "demon"
   },
   {
     "name": "Tre Jones",
@@ -25070,46 +24370,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 5.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 5.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 5.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 5.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "Guerschon Yabusele",
     "name_key": "guerschon yabusele",
     "team": "CHI",
@@ -25118,6 +24378,16 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 5.5,
     "odds_type": "demon"
+  },
+  {
+    "name": "Isaac Okoro",
+    "name_key": "isaac okoro",
+    "team": "CHI",
+    "position": "F-G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 5.5,
+    "odds_type": "goblin"
   },
   {
     "name": "James Harden",
@@ -25150,24 +24420,14 @@
     "odds_type": "standard"
   },
   {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
+    "name": "James Harden",
+    "name_key": "james harden",
     "team": "CLE",
-    "position": "F-C",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 4.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
+    "position": "G",
     "stat": "reb",
     "pp_stat_label": "Rebounds",
     "line": 4.5,
-    "odds_type": "demon"
+    "odds_type": "goblin"
   },
   {
     "name": "Dennis Schr\u00f6der",
@@ -25186,26 +24446,6 @@
     "position": "G",
     "stat": "pts",
     "pp_stat_label": "Points",
-    "line": 4.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 4.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
     "line": 4.5,
     "odds_type": "goblin"
   },
@@ -25220,16 +24460,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 4.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Guerschon Yabusele",
     "name_key": "guerschon yabusele",
     "team": "CHI",
@@ -25238,26 +24468,6 @@
     "pp_stat_label": "Points",
     "line": 4.5,
     "odds_type": "goblin"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 4.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 4.5,
-    "odds_type": "demon"
   },
   {
     "name": "Matas Buzelis",
@@ -25270,16 +24480,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 4.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Tre Jones",
     "name_key": "tre jones",
     "team": "CHI",
@@ -25300,12 +24500,12 @@
     "odds_type": "demon"
   },
   {
-    "name": "Collin Sexton",
-    "name_key": "collin sexton",
+    "name": "Isaac Okoro",
+    "name_key": "isaac okoro",
     "team": "CHI",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
+    "position": "F-G",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
     "line": 4.5,
     "odds_type": "demon"
   },
@@ -25340,50 +24540,30 @@
     "odds_type": "demon"
   },
   {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
+    "name": "Guerschon Yabusele",
+    "name_key": "guerschon yabusele",
+    "team": "CHI",
+    "position": "F",
+    "stat": "ra",
+    "pp_stat_label": "Rebs+Asts",
+    "line": 4.5,
+    "odds_type": "standard"
+  },
+  {
+    "name": "Dennis Schr\u00f6der",
+    "name_key": "dennis schroder",
     "team": "CLE",
     "position": "G",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
     "line": 4.5,
     "odds_type": "demon"
   },
   {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 4.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Guerschon Yabusele",
     "name_key": "guerschon yabusele",
     "team": "CHI",
     "position": "F",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 4.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Guerschon Yabusele",
-    "name_key": "guerschon yabusele",
-    "team": "CHI",
-    "position": "F",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 4.0,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
     "stat": "reb",
     "pp_stat_label": "Rebounds",
     "line": 4.0,
@@ -25398,16 +24578,6 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 4.0,
     "odds_type": "standard"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 3.5,
-    "odds_type": "demon"
   },
   {
     "name": "Donovan Mitchell",
@@ -25430,26 +24600,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 3.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 3.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Collin Sexton",
     "name_key": "collin sexton",
     "team": "CHI",
@@ -25463,26 +24613,6 @@
     "name": "Collin Sexton",
     "name_key": "collin sexton",
     "team": "CHI",
-    "position": "G",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 3.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 3.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
     "position": "G",
     "stat": "reb",
     "pp_stat_label": "Rebounds",
@@ -25498,26 +24628,6 @@
     "pp_stat_label": "Steals",
     "line": 3.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "blk",
-    "pp_stat_label": "Blocked Shots",
-    "line": 3.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Guerschon Yabusele",
-    "name_key": "guerschon yabusele",
-    "team": "CHI",
-    "position": "F",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 3.5,
-    "odds_type": "goblin"
   },
   {
     "name": "Isaac Okoro",
@@ -25540,26 +24650,6 @@
     "odds_type": "standard"
   },
   {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 3.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 3.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Matas Buzelis",
     "name_key": "matas buzelis",
     "team": "CHI",
@@ -25568,16 +24658,6 @@
     "pp_stat_label": "Assists",
     "line": 3.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 3.5,
-    "odds_type": "goblin"
   },
   {
     "name": "Tre Jones",
@@ -25618,16 +24698,6 @@
     "pp_stat_label": "Blks+Stls",
     "line": 3.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 3.5,
-    "odds_type": "standard"
   },
   {
     "name": "Guerschon Yabusele",
@@ -25670,46 +24740,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 2.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 2.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 2.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 2.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Donovan Mitchell",
     "name_key": "donovan mitchell",
     "team": "CLE",
@@ -25726,26 +24756,6 @@
     "position": "G",
     "stat": "tov",
     "pp_stat_label": "Turnovers",
-    "line": 2.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "bs",
-    "pp_stat_label": "Blks+Stls",
-    "line": 2.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "blk",
-    "pp_stat_label": "Blocked Shots",
     "line": 2.5,
     "odds_type": "demon"
   },
@@ -25780,56 +24790,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 2.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "bs",
-    "pp_stat_label": "Blks+Stls",
-    "line": 2.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "blk",
-    "pp_stat_label": "Blocked Shots",
-    "line": 2.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 2.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "stl",
-    "pp_stat_label": "Steals",
-    "line": 2.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Matas Buzelis",
     "name_key": "matas buzelis",
     "team": "CHI",
@@ -25858,36 +24818,6 @@
     "pp_stat_label": "Turnovers",
     "line": 2.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 2.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 2.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "James Harden",
-    "name_key": "james harden",
-    "team": "CLE",
-    "position": "G",
-    "stat": "tov",
-    "pp_stat_label": "Turnovers",
-    "line": 2.5,
-    "odds_type": "standard"
   },
   {
     "name": "Tre Jones",
@@ -25930,16 +24860,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 1.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Matas Buzelis",
     "name_key": "matas buzelis",
     "team": "CHI",
@@ -25960,56 +24880,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 1.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "bs",
-    "pp_stat_label": "Blks+Stls",
-    "line": 1.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "stl",
-    "pp_stat_label": "Steals",
-    "line": 1.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 1.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "stl",
-    "pp_stat_label": "Steals",
-    "line": 1.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Donovan Mitchell",
     "name_key": "donovan mitchell",
     "team": "CLE",
@@ -26028,16 +24898,6 @@
     "pp_stat_label": "Steals",
     "line": 1.5,
     "odds_type": "standard"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "stl",
-    "pp_stat_label": "Steals",
-    "line": 1.5,
-    "odds_type": "demon"
   },
   {
     "name": "Jalen Smith",
@@ -26100,46 +24960,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 1.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "blk",
-    "pp_stat_label": "Blocked Shots",
-    "line": 1.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 1.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "stl",
-    "pp_stat_label": "Steals",
-    "line": 1.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Matas Buzelis",
     "name_key": "matas buzelis",
     "team": "CHI",
@@ -26164,16 +24984,6 @@
     "name_key": "matas buzelis",
     "team": "CHI",
     "position": "F",
-    "stat": "stl",
-    "pp_stat_label": "Steals",
-    "line": 1.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
     "stat": "stl",
     "pp_stat_label": "Steals",
     "line": 1.5,
@@ -26220,10 +25030,10 @@
     "odds_type": "standard"
   },
   {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
+    "name": "Isaac Okoro",
+    "name_key": "isaac okoro",
+    "team": "CHI",
+    "position": "F-G",
     "stat": "reb",
     "pp_stat_label": "Rebounds",
     "line": 1.5,
@@ -26250,14 +25060,14 @@
     "odds_type": "demon"
   },
   {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
+    "name": "Josh Giddey",
+    "name_key": "josh giddey",
+    "team": "CHI",
     "position": "G",
     "stat": "bs",
     "pp_stat_label": "Blks+Stls",
     "line": 1.5,
-    "odds_type": "goblin"
+    "odds_type": "standard"
   },
   {
     "name": "Collin Sexton",
@@ -26300,63 +25110,13 @@
     "odds_type": "demon"
   },
   {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 0.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "blk",
-    "pp_stat_label": "Blocked Shots",
-    "line": 0.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "stl",
-    "pp_stat_label": "Steals",
-    "line": 0.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Dean Wade",
-    "name_key": "dean wade",
-    "team": "CLE",
-    "position": "F-C",
-    "stat": "tov",
-    "pp_stat_label": "Turnovers",
-    "line": 0.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
+    "name": "James Harden",
+    "name_key": "james harden",
     "team": "CLE",
     "position": "G",
     "stat": "bs",
     "pp_stat_label": "Blks+Stls",
-    "line": 0.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
-    "position": "G",
-    "stat": "blk",
-    "pp_stat_label": "Blocked Shots",
-    "line": 0.5,
+    "line": 1.5,
     "odds_type": "demon"
   },
   {
@@ -26366,8 +25126,8 @@
     "position": "G",
     "stat": "tov",
     "pp_stat_label": "Turnovers",
-    "line": 0.5,
-    "odds_type": "goblin"
+    "line": 1.5,
+    "odds_type": "demon"
   },
   {
     "name": "Donovan Mitchell",
@@ -26378,16 +25138,6 @@
     "pp_stat_label": "Blocked Shots",
     "line": 0.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Evan Mobley",
-    "name_key": "evan mobley",
-    "team": "CLE",
-    "position": "C",
-    "stat": "stl",
-    "pp_stat_label": "Steals",
-    "line": 0.5,
-    "odds_type": "goblin"
   },
   {
     "name": "Jalen Smith",
@@ -26470,46 +25220,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 0.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "blk",
-    "pp_stat_label": "Blocked Shots",
-    "line": 0.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "stl",
-    "pp_stat_label": "Steals",
-    "line": 0.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Keon Ellis",
-    "name_key": "keon ellis",
-    "team": "CLE",
-    "position": "G",
-    "stat": "tov",
-    "pp_stat_label": "Turnovers",
-    "line": 0.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "Matas Buzelis",
     "name_key": "matas buzelis",
     "team": "CHI",
@@ -26530,26 +25240,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "bs",
-    "pp_stat_label": "Blks+Stls",
-    "line": 0.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "blk",
-    "pp_stat_label": "Blocked Shots",
-    "line": 0.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "Tre Jones",
     "name_key": "tre jones",
     "team": "CHI",
@@ -26563,26 +25253,6 @@
     "name": "Tre Jones",
     "name_key": "tre jones",
     "team": "CHI",
-    "position": "G",
-    "stat": "stl",
-    "pp_stat_label": "Steals",
-    "line": 0.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Sam Merrill",
-    "name_key": "sam merrill",
-    "team": "CLE",
-    "position": "G",
-    "stat": "stl",
-    "pp_stat_label": "Steals",
-    "line": 0.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Dennis Schr\u00f6der",
-    "name_key": "dennis schroder",
-    "team": "CLE",
     "position": "G",
     "stat": "stl",
     "pp_stat_label": "Steals",
@@ -26646,6 +25316,16 @@
     "position": "F",
     "stat": "ast",
     "pp_stat_label": "Assists",
+    "line": 0.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Sam Merrill",
+    "name_key": "sam merrill",
+    "team": "CLE",
+    "position": "G",
+    "stat": "tov",
+    "pp_stat_label": "Turnovers",
     "line": 0.5,
     "odds_type": "goblin"
   },
@@ -26800,6 +25480,16 @@
     "odds_type": "goblin"
   },
   {
+    "name": "Victor Wembanyama",
+    "name_key": "victor wembanyama",
+    "team": "SAS",
+    "position": "F-C",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 36.0,
+    "odds_type": "standard"
+  },
+  {
     "name": "Devin Booker",
     "name_key": "devin booker",
     "team": "PHX",
@@ -26818,16 +25508,6 @@
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 35.5,
     "odds_type": "goblin"
-  },
-  {
-    "name": "Victor Wembanyama",
-    "name_key": "victor wembanyama",
-    "team": "SAS",
-    "position": "F-C",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 35.0,
-    "odds_type": "standard"
   },
   {
     "name": "Devin Booker",
@@ -26990,19 +25670,19 @@
     "odds_type": "demon"
   },
   {
-    "name": "Devin Booker",
-    "name_key": "devin booker",
-    "team": "PHX",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 31.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Jalen Green",
     "name_key": "jalen green",
     "team": "PHX",
+    "position": "G",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 30.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Stephon Castle",
+    "name_key": "stephon castle",
+    "team": "SAS",
     "position": "G",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
@@ -27630,6 +26310,16 @@
     "odds_type": "demon"
   },
   {
+    "name": "De'Aaron Fox",
+    "name_key": "de'aaron fox",
+    "team": "SAS",
+    "position": "G",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 22.5,
+    "odds_type": "goblin"
+  },
+  {
     "name": "Collin Gillespie",
     "name_key": "collin gillespie",
     "team": "PHX",
@@ -27676,16 +26366,6 @@
     "position": "F-C",
     "stat": "pts",
     "pp_stat_label": "Points",
-    "line": 21.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "De'Aaron Fox",
-    "name_key": "de'aaron fox",
-    "team": "SAS",
-    "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
     "line": 21.5,
     "odds_type": "goblin"
   },
@@ -28100,6 +26780,16 @@
     "odds_type": "standard"
   },
   {
+    "name": "De'Aaron Fox",
+    "name_key": "de'aaron fox",
+    "team": "SAS",
+    "position": "G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 17.5,
+    "odds_type": "standard"
+  },
+  {
     "name": "Dylan Harper",
     "name_key": "dylan harper",
     "team": "SAS",
@@ -28156,16 +26846,6 @@
     "position": "G",
     "stat": "pr",
     "pp_stat_label": "Pts+Rebs",
-    "line": 16.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "De'Aaron Fox",
-    "name_key": "de'aaron fox",
-    "team": "SAS",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
     "line": 16.5,
     "odds_type": "standard"
   },
@@ -28630,6 +27310,16 @@
     "odds_type": "demon"
   },
   {
+    "name": "Julian Champagnie",
+    "name_key": "julian champagnie",
+    "team": "SAS",
+    "position": "F",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 14.5,
+    "odds_type": "goblin"
+  },
+  {
     "name": "Dylan Harper",
     "name_key": "dylan harper",
     "team": "SAS",
@@ -28838,16 +27528,6 @@
     "pp_stat_label": "Points",
     "line": 12.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Luke Kornet",
-    "name_key": "luke kornet",
-    "team": "SAS",
-    "position": "C-F",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 12.5,
-    "odds_type": "standard"
   },
   {
     "name": "Oso Ighodaro",
@@ -30310,6 +28990,16 @@
     "odds_type": "goblin"
   },
   {
+    "name": "Stephon Castle",
+    "name_key": "stephon castle",
+    "team": "SAS",
+    "position": "G",
+    "stat": "ast",
+    "pp_stat_label": "Assists",
+    "line": 6.5,
+    "odds_type": "goblin"
+  },
+  {
     "name": "Oso Ighodaro",
     "name_key": "oso ighodaro",
     "team": "PHX",
@@ -30504,16 +29194,6 @@
     "name_key": "luke kornet",
     "team": "SAS",
     "position": "C-F",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 5.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Luke Kornet",
-    "name_key": "luke kornet",
-    "team": "SAS",
-    "position": "C-F",
     "stat": "ra",
     "pp_stat_label": "Rebs+Asts",
     "line": 5.5,
@@ -30618,6 +29298,16 @@
     "pp_stat_label": "Blks+Stls",
     "line": 5.5,
     "odds_type": "demon"
+  },
+  {
+    "name": "Luke Kornet",
+    "name_key": "luke kornet",
+    "team": "SAS",
+    "position": "C-F",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
+    "line": 5.0,
+    "odds_type": "standard"
   },
   {
     "name": "Julian Champagnie",
@@ -32280,6 +30970,16 @@
     "odds_type": "demon"
   },
   {
+    "name": "Bobby Portis",
+    "name_key": "bobby portis",
+    "team": "MIL",
+    "position": "F",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 34.5,
+    "odds_type": "demon"
+  },
+  {
     "name": "Brice Sensabaugh",
     "name_key": "brice sensabaugh",
     "team": "UTA",
@@ -32510,6 +31210,16 @@
     "odds_type": "demon"
   },
   {
+    "name": "Bobby Portis",
+    "name_key": "bobby portis",
+    "team": "MIL",
+    "position": "F",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 29.5,
+    "odds_type": "demon"
+  },
+  {
     "name": "Brice Sensabaugh",
     "name_key": "brice sensabaugh",
     "team": "UTA",
@@ -32700,12 +31410,12 @@
     "odds_type": "demon"
   },
   {
-    "name": "Kevin Porter",
-    "name_key": "kevin porter",
-    "team": "MIL",
-    "position": "G-F",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
+    "name": "Kyle Filipowski",
+    "name_key": "kyle filipowski",
+    "team": "UTA",
+    "position": "C",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
     "line": 24.5,
     "odds_type": "standard"
   },
@@ -32940,6 +31650,26 @@
     "odds_type": "demon"
   },
   {
+    "name": "Bobby Portis",
+    "name_key": "bobby portis",
+    "team": "MIL",
+    "position": "F",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 24.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Bobby Portis",
+    "name_key": "bobby portis",
+    "team": "MIL",
+    "position": "F",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 24.5,
+    "odds_type": "standard"
+  },
+  {
     "name": "Ace Bailey",
     "name_key": "ace bailey",
     "team": "UTA",
@@ -32970,12 +31700,12 @@
     "odds_type": "standard"
   },
   {
-    "name": "Kyle Filipowski",
-    "name_key": "kyle filipowski",
-    "team": "UTA",
-    "position": "C",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
+    "name": "Kevin Porter",
+    "name_key": "kevin porter",
+    "team": "MIL",
+    "position": "G-F",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
     "line": 23.5,
     "odds_type": "standard"
   },
@@ -33060,9 +31790,9 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Ryan Rollins",
-    "name_key": "ryan rollins",
-    "team": "MIL",
+    "name": "Isaiah Collier",
+    "name_key": "isaiah collier",
+    "team": "UTA",
     "position": "G",
     "stat": "pa",
     "pp_stat_label": "Pts+Asts",
@@ -33116,6 +31846,16 @@
     "position": "F",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 21.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Ryan Rollins",
+    "name_key": "ryan rollins",
+    "team": "MIL",
+    "position": "G",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
     "line": 21.5,
     "odds_type": "goblin"
   },
@@ -33170,6 +31910,16 @@
     "odds_type": "goblin"
   },
   {
+    "name": "Isaiah Collier",
+    "name_key": "isaiah collier",
+    "team": "UTA",
+    "position": "G",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 20.5,
+    "odds_type": "demon"
+  },
+  {
     "name": "Ace Bailey",
     "name_key": "ace bailey",
     "team": "UTA",
@@ -33498,6 +32248,26 @@
     "pp_stat_label": "Pts+Asts",
     "line": 19.5,
     "odds_type": "demon"
+  },
+  {
+    "name": "Bobby Portis",
+    "name_key": "bobby portis",
+    "team": "MIL",
+    "position": "F",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 19.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Bobby Portis",
+    "name_key": "bobby portis",
+    "team": "MIL",
+    "position": "F",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 19.5,
+    "odds_type": "goblin"
   },
   {
     "name": "Ace Bailey",
@@ -33780,14 +32550,14 @@
     "odds_type": "demon"
   },
   {
-    "name": "Kyle Kuzma",
-    "name_key": "kyle kuzma",
+    "name": "Bobby Portis",
+    "name_key": "bobby portis",
     "team": "MIL",
     "position": "F",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
+    "stat": "pts",
+    "pp_stat_label": "Points",
     "line": 16.5,
-    "odds_type": "demon"
+    "odds_type": "standard"
   },
   {
     "name": "Cody Williams",
@@ -34200,6 +32970,16 @@
     "odds_type": "goblin"
   },
   {
+    "name": "Bobby Portis",
+    "name_key": "bobby portis",
+    "team": "MIL",
+    "position": "F",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 14.5,
+    "odds_type": "goblin"
+  },
+  {
     "name": "Ousmane Dieng",
     "name_key": "ousmane dieng",
     "team": "MIL",
@@ -34258,6 +33038,16 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 13.5,
     "odds_type": "demon"
+  },
+  {
+    "name": "Kyle Kuzma",
+    "name_key": "kyle kuzma",
+    "team": "MIL",
+    "position": "F",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 13.5,
+    "odds_type": "goblin"
   },
   {
     "name": "AJ Green",
@@ -34277,6 +33067,16 @@
     "stat": "pa",
     "pp_stat_label": "Pts+Asts",
     "line": 13.0,
+    "odds_type": "standard"
+  },
+  {
+    "name": "AJ Green",
+    "name_key": "aj green",
+    "team": "MIL",
+    "position": "G",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 12.5,
     "odds_type": "standard"
   },
   {
@@ -34370,16 +33170,6 @@
     "odds_type": "standard"
   },
   {
-    "name": "AJ Green",
-    "name_key": "aj green",
-    "team": "MIL",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 11.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "Isaiah Collier",
     "name_key": "isaiah collier",
     "team": "UTA",
@@ -34550,20 +33340,20 @@
     "odds_type": "goblin"
   },
   {
+    "name": "Bobby Portis",
+    "name_key": "bobby portis",
+    "team": "MIL",
+    "position": "F",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 11.5,
+    "odds_type": "goblin"
+  },
+  {
     "name": "Isaiah Collier",
     "name_key": "isaiah collier",
     "team": "UTA",
     "position": "G",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 10.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Kyle Filipowski",
-    "name_key": "kyle filipowski",
-    "team": "UTA",
-    "position": "C",
     "stat": "ra",
     "pp_stat_label": "Rebs+Asts",
     "line": 10.5,
@@ -34688,6 +33478,26 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 10.5,
     "odds_type": "standard"
+  },
+  {
+    "name": "AJ Green",
+    "name_key": "aj green",
+    "team": "MIL",
+    "position": "G",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 10.5,
+    "odds_type": "standard"
+  },
+  {
+    "name": "Bobby Portis",
+    "name_key": "bobby portis",
+    "team": "MIL",
+    "position": "F",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
+    "line": 10.5,
+    "odds_type": "demon"
   },
   {
     "name": "Ryan Rollins",
@@ -34950,6 +33760,16 @@
     "odds_type": "demon"
   },
   {
+    "name": "Bobby Portis",
+    "name_key": "bobby portis",
+    "team": "MIL",
+    "position": "F",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
+    "line": 9.5,
+    "odds_type": "demon"
+  },
+  {
     "name": "Cody Williams",
     "name_key": "cody williams",
     "team": "UTA",
@@ -35130,6 +33950,16 @@
     "odds_type": "demon"
   },
   {
+    "name": "Bobby Portis",
+    "name_key": "bobby portis",
+    "team": "MIL",
+    "position": "F",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
+    "line": 8.5,
+    "odds_type": "demon"
+  },
+  {
     "name": "Cody Williams",
     "name_key": "cody williams",
     "team": "UTA",
@@ -35168,16 +33998,6 @@
     "pp_stat_label": "Rebounds",
     "line": 7.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Kyle Filipowski",
-    "name_key": "kyle filipowski",
-    "team": "UTA",
-    "position": "C",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 7.5,
-    "odds_type": "goblin"
   },
   {
     "name": "Kyle Kuzma",
@@ -35358,6 +34178,16 @@
     "pp_stat_label": "Points",
     "line": 7.5,
     "odds_type": "goblin"
+  },
+  {
+    "name": "Bobby Portis",
+    "name_key": "bobby portis",
+    "team": "MIL",
+    "position": "F",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
+    "line": 7.5,
+    "odds_type": "standard"
   },
   {
     "name": "Kevin Porter",
@@ -35560,6 +34390,16 @@
     "odds_type": "demon"
   },
   {
+    "name": "Bobby Portis",
+    "name_key": "bobby portis",
+    "team": "MIL",
+    "position": "F",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
+    "line": 6.5,
+    "odds_type": "goblin"
+  },
+  {
     "name": "Ryan Rollins",
     "name_key": "ryan rollins",
     "team": "MIL",
@@ -35838,6 +34678,16 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 5.5,
     "odds_type": "demon"
+  },
+  {
+    "name": "Bobby Portis",
+    "name_key": "bobby portis",
+    "team": "MIL",
+    "position": "F",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
+    "line": 5.5,
+    "odds_type": "goblin"
   },
   {
     "name": "Kevin Porter",
@@ -36420,16 +35270,6 @@
     "odds_type": "standard"
   },
   {
-    "name": "Kyle Filipowski",
-    "name_key": "kyle filipowski",
-    "team": "UTA",
-    "position": "C",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 2.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Ace Bailey",
     "name_key": "ace bailey",
     "team": "UTA",
@@ -36840,6 +35680,16 @@
     "odds_type": "standard"
   },
   {
+    "name": "Kyle Filipowski",
+    "name_key": "kyle filipowski",
+    "team": "UTA",
+    "position": "C",
+    "stat": "tov",
+    "pp_stat_label": "Turnovers",
+    "line": 1.5,
+    "odds_type": "standard"
+  },
+  {
     "name": "Kyle Kuzma",
     "name_key": "kyle kuzma",
     "team": "MIL",
@@ -36996,16 +35846,6 @@
     "position": "F",
     "stat": "ast",
     "pp_stat_label": "Assists",
-    "line": 1.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Ace Bailey",
-    "name_key": "ace bailey",
-    "team": "UTA",
-    "position": "F",
-    "stat": "bs",
-    "pp_stat_label": "Blks+Stls",
     "line": 1.5,
     "odds_type": "demon"
   },
@@ -37384,6 +36224,16 @@
     "name_key": "ousmane dieng",
     "team": "MIL",
     "position": "F",
+    "stat": "stl",
+    "pp_stat_label": "Steals",
+    "line": 0.5,
+    "odds_type": "standard"
+  },
+  {
+    "name": "AJ Green",
+    "name_key": "aj green",
+    "team": "MIL",
+    "position": "G",
     "stat": "stl",
     "pp_stat_label": "Steals",
     "line": 0.5,
@@ -37580,16 +36430,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Quentin Grimes",
-    "name_key": "quentin grimes",
-    "team": "PHI",
-    "position": "G",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 31.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "VJ Edgecombe",
     "name_key": "vj edgecombe",
     "team": "PHI",
@@ -37608,6 +36448,16 @@
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 31.5,
     "odds_type": "demon"
+  },
+  {
+    "name": "Quentin Grimes",
+    "name_key": "quentin grimes",
+    "team": "PHI",
+    "position": "G",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 30.5,
+    "odds_type": "standard"
   },
   {
     "name": "DeMar DeRozan",
@@ -37840,6 +36690,16 @@
     "odds_type": "standard"
   },
   {
+    "name": "VJ Edgecombe",
+    "name_key": "vj edgecombe",
+    "team": "PHI",
+    "position": "G",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 27.0,
+    "odds_type": "standard"
+  },
+  {
     "name": "Quentin Grimes",
     "name_key": "quentin grimes",
     "team": "PHI",
@@ -37888,16 +36748,6 @@
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 26.5,
     "odds_type": "goblin"
-  },
-  {
-    "name": "VJ Edgecombe",
-    "name_key": "vj edgecombe",
-    "team": "PHI",
-    "position": "G",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 26.0,
-    "odds_type": "standard"
   },
   {
     "name": "Maxime Raynaud",
@@ -38266,16 +37116,6 @@
     "position": "G",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 23.5,
-    "odds_type": "demon"
-  },
-  {
-    "name": "Russell Westbrook",
-    "name_key": "russell westbrook",
-    "team": "SAC",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
     "line": 23.5,
     "odds_type": "demon"
   },
@@ -38530,16 +37370,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Andre Drummond",
-    "name_key": "andre drummond",
-    "team": "PHI",
-    "position": "C",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 20.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "Nique Clifford",
     "name_key": "nique clifford",
     "team": "SAC",
@@ -38570,22 +37400,22 @@
     "odds_type": "goblin"
   },
   {
+    "name": "Andre Drummond",
+    "name_key": "andre drummond",
+    "team": "PHI",
+    "position": "C",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 20.0,
+    "odds_type": "standard"
+  },
+  {
     "name": "DeMar DeRozan",
     "name_key": "demar derozan",
     "team": "SAC",
     "position": "G-F",
     "stat": "pts",
     "pp_stat_label": "Points",
-    "line": 19.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Justin Edwards",
-    "name_key": "justin edwards",
-    "team": "PHI",
-    "position": "F",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
     "line": 19.5,
     "odds_type": "standard"
   },
@@ -38920,6 +37750,16 @@
     "odds_type": "standard"
   },
   {
+    "name": "Justin Edwards",
+    "name_key": "justin edwards",
+    "team": "PHI",
+    "position": "F",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 18.5,
+    "odds_type": "standard"
+  },
+  {
     "name": "Maxime Raynaud",
     "name_key": "maxime raynaud",
     "team": "SAC",
@@ -38974,6 +37814,16 @@
     "name_key": "trendon watford",
     "team": "PHI",
     "position": "G-F",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 18.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Jabari Walker",
+    "name_key": "jabari walker",
+    "team": "PHI",
+    "position": "F",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 18.5,
@@ -39070,16 +37920,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Trendon Watford",
-    "name_key": "trendon watford",
-    "team": "PHI",
-    "position": "G-F",
-    "stat": "pra",
-    "pp_stat_label": "Pts+Rebs+Asts",
-    "line": 17.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "DeMar DeRozan",
     "name_key": "demar derozan",
     "team": "SAC",
@@ -39114,16 +37954,6 @@
     "name_key": "malik monk",
     "team": "SAC",
     "position": "G",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 17.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Malik Monk",
-    "name_key": "malik monk",
-    "team": "SAC",
-    "position": "G",
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 17.5,
@@ -39200,6 +38030,16 @@
     "odds_type": "demon"
   },
   {
+    "name": "Andre Drummond",
+    "name_key": "andre drummond",
+    "team": "PHI",
+    "position": "C",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 16.5,
+    "odds_type": "goblin"
+  },
+  {
     "name": "Nique Clifford",
     "name_key": "nique clifford",
     "team": "SAC",
@@ -39220,14 +38060,14 @@
     "odds_type": "standard"
   },
   {
-    "name": "Justin Edwards",
-    "name_key": "justin edwards",
-    "team": "PHI",
-    "position": "F",
+    "name": "Malik Monk",
+    "name_key": "malik monk",
+    "team": "SAC",
+    "position": "G",
     "stat": "pa",
     "pp_stat_label": "Pts+Asts",
     "line": 16.5,
-    "odds_type": "demon"
+    "odds_type": "standard"
   },
   {
     "name": "Malik Monk",
@@ -39240,14 +38080,14 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Justin Edwards",
-    "name_key": "justin edwards",
+    "name": "Jabari Walker",
+    "name_key": "jabari walker",
     "team": "PHI",
     "position": "F",
-    "stat": "pr",
-    "pp_stat_label": "Pts+Rebs",
-    "line": 16.0,
-    "odds_type": "standard"
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 16.5,
+    "odds_type": "demon"
   },
   {
     "name": "Justin Edwards",
@@ -39256,6 +38096,16 @@
     "position": "F",
     "stat": "pa",
     "pp_stat_label": "Pts+Asts",
+    "line": 15.5,
+    "odds_type": "standard"
+  },
+  {
+    "name": "Justin Edwards",
+    "name_key": "justin edwards",
+    "team": "PHI",
+    "position": "F",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
     "line": 15.5,
     "odds_type": "standard"
   },
@@ -39337,7 +38187,7 @@
     "stat": "pra",
     "pp_stat_label": "Pts+Rebs+Asts",
     "line": 15.5,
-    "odds_type": "goblin"
+    "odds_type": "standard"
   },
   {
     "name": "Cameron Payne",
@@ -39640,24 +38490,24 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Trendon Watford",
-    "name_key": "trendon watford",
+    "name": "Jabari Walker",
+    "name_key": "jabari walker",
     "team": "PHI",
-    "position": "G-F",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 13.5,
-    "odds_type": "standard"
+    "position": "F",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 14.5,
+    "odds_type": "demon"
   },
   {
-    "name": "Trendon Watford",
-    "name_key": "trendon watford",
+    "name": "Cameron Payne",
+    "name_key": "cameron payne",
     "team": "PHI",
-    "position": "G-F",
+    "position": "G",
     "stat": "pr",
     "pp_stat_label": "Pts+Rebs",
-    "line": 13.5,
-    "odds_type": "standard"
+    "line": 14.5,
+    "odds_type": "demon"
   },
   {
     "name": "Dominick Barlow",
@@ -39720,16 +38570,6 @@
     "odds_type": "standard"
   },
   {
-    "name": "Malik Monk",
-    "name_key": "malik monk",
-    "team": "SAC",
-    "position": "G",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 13.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "Cameron Payne",
     "name_key": "cameron payne",
     "team": "PHI",
@@ -39780,6 +38620,36 @@
     "odds_type": "demon"
   },
   {
+    "name": "Jabari Walker",
+    "name_key": "jabari walker",
+    "team": "PHI",
+    "position": "F",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 13.5,
+    "odds_type": "standard"
+  },
+  {
+    "name": "Justin Edwards",
+    "name_key": "justin edwards",
+    "team": "PHI",
+    "position": "F",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 13.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Justin Edwards",
+    "name_key": "justin edwards",
+    "team": "PHI",
+    "position": "F",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
+    "line": 13.5,
+    "odds_type": "goblin"
+  },
+  {
     "name": "Russell Westbrook",
     "name_key": "russell westbrook",
     "team": "SAC",
@@ -39797,6 +38667,26 @@
     "stat": "pr",
     "pp_stat_label": "Pts+Rebs",
     "line": 13.0,
+    "odds_type": "standard"
+  },
+  {
+    "name": "Malik Monk",
+    "name_key": "malik monk",
+    "team": "SAC",
+    "position": "G",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 13.0,
+    "odds_type": "standard"
+  },
+  {
+    "name": "Dominick Barlow",
+    "name_key": "dominick barlow",
+    "team": "PHI",
+    "position": "F",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 12.5,
     "odds_type": "standard"
   },
   {
@@ -39816,6 +38706,26 @@
     "position": "G",
     "stat": "pts",
     "pp_stat_label": "Points",
+    "line": 12.5,
+    "odds_type": "standard"
+  },
+  {
+    "name": "Trendon Watford",
+    "name_key": "trendon watford",
+    "team": "PHI",
+    "position": "G-F",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 12.5,
+    "odds_type": "standard"
+  },
+  {
+    "name": "Trendon Watford",
+    "name_key": "trendon watford",
+    "team": "PHI",
+    "position": "G-F",
+    "stat": "pr",
+    "pp_stat_label": "Pts+Rebs",
     "line": 12.5,
     "odds_type": "standard"
   },
@@ -39888,16 +38798,6 @@
     "pp_stat_label": "Rebs+Asts",
     "line": 12.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Trendon Watford",
-    "name_key": "trendon watford",
-    "team": "PHI",
-    "position": "G-F",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 12.5,
-    "odds_type": "goblin"
   },
   {
     "name": "Jabari Walker",
@@ -40100,16 +39000,6 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Trendon Watford",
-    "name_key": "trendon watford",
-    "team": "PHI",
-    "position": "G-F",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 11.5,
-    "odds_type": "goblin"
-  },
-  {
     "name": "Cameron Payne",
     "name_key": "cameron payne",
     "team": "PHI",
@@ -40136,6 +39026,16 @@
     "position": "G",
     "stat": "pa",
     "pp_stat_label": "Pts+Asts",
+    "line": 11.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Jabari Walker",
+    "name_key": "jabari walker",
+    "team": "PHI",
+    "position": "F",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
     "line": 11.5,
     "odds_type": "goblin"
   },
@@ -40168,16 +39068,6 @@
     "pp_stat_label": "Points",
     "line": 10.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Andre Drummond",
-    "name_key": "andre drummond",
-    "team": "PHI",
-    "position": "C",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
-    "line": 10.5,
-    "odds_type": "standard"
   },
   {
     "name": "DeMar DeRozan",
@@ -40290,14 +39180,14 @@
     "odds_type": "goblin"
   },
   {
-    "name": "Trendon Watford",
-    "name_key": "trendon watford",
+    "name": "Jabari Walker",
+    "name_key": "jabari walker",
     "team": "PHI",
-    "position": "G-F",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 10.0,
-    "odds_type": "standard"
+    "position": "F",
+    "stat": "pra",
+    "pp_stat_label": "Pts+Rebs+Asts",
+    "line": 10.5,
+    "odds_type": "goblin"
   },
   {
     "name": "VJ Edgecombe",
@@ -40616,16 +39506,6 @@
     "position": "F",
     "stat": "ra",
     "pp_stat_label": "Rebs+Asts",
-    "line": 9.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Andre Drummond",
-    "name_key": "andre drummond",
-    "team": "PHI",
-    "position": "C",
-    "stat": "pa",
-    "pp_stat_label": "Pts+Asts",
     "line": 9.5,
     "odds_type": "goblin"
   },
@@ -40650,6 +39530,16 @@
     "odds_type": "standard"
   },
   {
+    "name": "Nique Clifford",
+    "name_key": "nique clifford",
+    "team": "SAC",
+    "position": "G",
+    "stat": "ra",
+    "pp_stat_label": "Rebs+Asts",
+    "line": 8.5,
+    "odds_type": "standard"
+  },
+  {
     "name": "Russell Westbrook",
     "name_key": "russell westbrook",
     "team": "SAC",
@@ -40658,6 +39548,16 @@
     "pp_stat_label": "Assists",
     "line": 8.5,
     "odds_type": "demon"
+  },
+  {
+    "name": "Trendon Watford",
+    "name_key": "trendon watford",
+    "team": "PHI",
+    "position": "G-F",
+    "stat": "pts",
+    "pp_stat_label": "Points",
+    "line": 8.5,
+    "odds_type": "standard"
   },
   {
     "name": "Adem Bona",
@@ -40784,16 +39684,6 @@
     "name_key": "trendon watford",
     "team": "PHI",
     "position": "G-F",
-    "stat": "pts",
-    "pp_stat_label": "Points",
-    "line": 8.5,
-    "odds_type": "goblin"
-  },
-  {
-    "name": "Trendon Watford",
-    "name_key": "trendon watford",
-    "team": "PHI",
-    "position": "G-F",
     "stat": "ra",
     "pp_stat_label": "Rebs+Asts",
     "line": 8.5,
@@ -40824,6 +39714,26 @@
     "name_key": "malik monk",
     "team": "SAC",
     "position": "G",
+    "stat": "ra",
+    "pp_stat_label": "Rebs+Asts",
+    "line": 8.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Jabari Walker",
+    "name_key": "jabari walker",
+    "team": "PHI",
+    "position": "F",
+    "stat": "pa",
+    "pp_stat_label": "Pts+Asts",
+    "line": 8.5,
+    "odds_type": "standard"
+  },
+  {
+    "name": "Jabari Walker",
+    "name_key": "jabari walker",
+    "team": "PHI",
+    "position": "F",
     "stat": "ra",
     "pp_stat_label": "Rebs+Asts",
     "line": 8.5,
@@ -41100,6 +40010,16 @@
     "odds_type": "demon"
   },
   {
+    "name": "Jabari Walker",
+    "name_key": "jabari walker",
+    "team": "PHI",
+    "position": "F",
+    "stat": "ra",
+    "pp_stat_label": "Rebs+Asts",
+    "line": 7.5,
+    "odds_type": "demon"
+  },
+  {
     "name": "Adem Bona",
     "name_key": "adem bona",
     "team": "PHI",
@@ -41108,16 +40028,6 @@
     "pp_stat_label": "Rebounds",
     "line": 6.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Justin Edwards",
-    "name_key": "justin edwards",
-    "team": "PHI",
-    "position": "F",
-    "stat": "ra",
-    "pp_stat_label": "Rebs+Asts",
-    "line": 6.5,
-    "odds_type": "standard"
   },
   {
     "name": "Andre Drummond",
@@ -41290,14 +40200,24 @@
     "odds_type": "demon"
   },
   {
-    "name": "Adem Bona",
-    "name_key": "adem bona",
+    "name": "Jabari Walker",
+    "name_key": "jabari walker",
     "team": "PHI",
     "position": "F",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 6.0,
-    "odds_type": "standard"
+    "stat": "ra",
+    "pp_stat_label": "Rebs+Asts",
+    "line": 6.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Cameron Payne",
+    "name_key": "cameron payne",
+    "team": "PHI",
+    "position": "G",
+    "stat": "ast",
+    "pp_stat_label": "Assists",
+    "line": 6.5,
+    "odds_type": "demon"
   },
   {
     "name": "Dominick Barlow",
@@ -41510,6 +40430,16 @@
     "odds_type": "goblin"
   },
   {
+    "name": "Adem Bona",
+    "name_key": "adem bona",
+    "team": "PHI",
+    "position": "F",
+    "stat": "reb",
+    "pp_stat_label": "Rebounds",
+    "line": 5.5,
+    "odds_type": "standard"
+  },
+  {
     "name": "DeMar DeRozan",
     "name_key": "demar derozan",
     "team": "SAC",
@@ -41538,16 +40468,6 @@
     "pp_stat_label": "Assists",
     "line": 5.5,
     "odds_type": "goblin"
-  },
-  {
-    "name": "Quentin Grimes",
-    "name_key": "quentin grimes",
-    "team": "PHI",
-    "position": "G",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 5.0,
-    "odds_type": "standard"
   },
   {
     "name": "Nique Clifford",
@@ -41597,6 +40517,16 @@
     "stat": "ast",
     "pp_stat_label": "Assists",
     "line": 5.0,
+    "odds_type": "standard"
+  },
+  {
+    "name": "Quentin Grimes",
+    "name_key": "quentin grimes",
+    "team": "PHI",
+    "position": "G",
+    "stat": "ast",
+    "pp_stat_label": "Assists",
+    "line": 4.5,
     "odds_type": "standard"
   },
   {
@@ -41770,6 +40700,26 @@
     "odds_type": "goblin"
   },
   {
+    "name": "Jabari Walker",
+    "name_key": "jabari walker",
+    "team": "PHI",
+    "position": "F",
+    "stat": "ra",
+    "pp_stat_label": "Rebs+Asts",
+    "line": 4.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "VJ Edgecombe",
+    "name_key": "vj edgecombe",
+    "team": "PHI",
+    "position": "G",
+    "stat": "ast",
+    "pp_stat_label": "Assists",
+    "line": 4.5,
+    "odds_type": "goblin"
+  },
+  {
     "name": "DeMar DeRozan",
     "name_key": "demar derozan",
     "team": "SAC",
@@ -41828,26 +40778,6 @@
     "pp_stat_label": "Turnovers",
     "line": 3.5,
     "odds_type": "demon"
-  },
-  {
-    "name": "Trendon Watford",
-    "name_key": "trendon watford",
-    "team": "PHI",
-    "position": "G-F",
-    "stat": "ast",
-    "pp_stat_label": "Assists",
-    "line": 3.5,
-    "odds_type": "standard"
-  },
-  {
-    "name": "Trendon Watford",
-    "name_key": "trendon watford",
-    "team": "PHI",
-    "position": "G-F",
-    "stat": "reb",
-    "pp_stat_label": "Rebounds",
-    "line": 3.5,
-    "odds_type": "standard"
   },
   {
     "name": "Adem Bona",
@@ -42020,6 +40950,16 @@
     "odds_type": "goblin"
   },
   {
+    "name": "Andre Drummond",
+    "name_key": "andre drummond",
+    "team": "PHI",
+    "position": "C",
+    "stat": "ast",
+    "pp_stat_label": "Assists",
+    "line": 3.5,
+    "odds_type": "demon"
+  },
+  {
     "name": "Adem Bona",
     "name_key": "adem bona",
     "team": "PHI",
@@ -42710,16 +41650,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Nique Clifford",
-    "name_key": "nique clifford",
-    "team": "SAC",
-    "position": "G",
-    "stat": "bs",
-    "pp_stat_label": "Blks+Stls",
-    "line": 1.5,
-    "odds_type": "standard"
-  },
-  {
     "name": "Cameron Payne",
     "name_key": "cameron payne",
     "team": "PHI",
@@ -42788,6 +41718,46 @@
     "pp_stat_label": "Turnovers",
     "line": 1.5,
     "odds_type": "goblin"
+  },
+  {
+    "name": "Jabari Walker",
+    "name_key": "jabari walker",
+    "team": "PHI",
+    "position": "F",
+    "stat": "ast",
+    "pp_stat_label": "Assists",
+    "line": 1.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Jabari Walker",
+    "name_key": "jabari walker",
+    "team": "PHI",
+    "position": "F",
+    "stat": "stl",
+    "pp_stat_label": "Steals",
+    "line": 1.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Justin Edwards",
+    "name_key": "justin edwards",
+    "team": "PHI",
+    "position": "F",
+    "stat": "blk",
+    "pp_stat_label": "Blocked Shots",
+    "line": 1.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Adem Bona",
+    "name_key": "adem bona",
+    "team": "PHI",
+    "position": "F",
+    "stat": "stl",
+    "pp_stat_label": "Steals",
+    "line": 0.5,
+    "odds_type": "standard"
   },
   {
     "name": "Adem Bona",
@@ -42920,16 +41890,6 @@
     "odds_type": "demon"
   },
   {
-    "name": "Trendon Watford",
-    "name_key": "trendon watford",
-    "team": "PHI",
-    "position": "G-F",
-    "stat": "stl",
-    "pp_stat_label": "Steals",
-    "line": 0.5,
-    "odds_type": "demon"
-  },
-  {
     "name": "VJ Edgecombe",
     "name_key": "vj edgecombe",
     "team": "PHI",
@@ -43076,6 +42036,36 @@
     "position": "G",
     "stat": "stl",
     "pp_stat_label": "Steals",
+    "line": 0.5,
+    "odds_type": "demon"
+  },
+  {
+    "name": "Jabari Walker",
+    "name_key": "jabari walker",
+    "team": "PHI",
+    "position": "F",
+    "stat": "ast",
+    "pp_stat_label": "Assists",
+    "line": 0.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Jabari Walker",
+    "name_key": "jabari walker",
+    "team": "PHI",
+    "position": "F",
+    "stat": "bs",
+    "pp_stat_label": "Blks+Stls",
+    "line": 0.5,
+    "odds_type": "goblin"
+  },
+  {
+    "name": "Jabari Walker",
+    "name_key": "jabari walker",
+    "team": "PHI",
+    "position": "F",
+    "stat": "blk",
+    "pp_stat_label": "Blocked Shots",
     "line": 0.5,
     "odds_type": "demon"
   }
