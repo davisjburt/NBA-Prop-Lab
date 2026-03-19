@@ -1,16 +1,24 @@
 name: PrizePicks Hourly Refresh
+
 on:
   schedule:
-    - cron: "0 * * * *" # every hour
+    - cron: "0 * * * *" # every hour, UTC
+  workflow_dispatch: {} # <-- add this
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - uses: actions/setup-python@v4
         with:
           python-version: "3.11"
-      - run: pip install -r requirements.txt
-      - run: python scripts/fetch_data.py
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run fetch_data
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: python scripts/fetch_data.py
