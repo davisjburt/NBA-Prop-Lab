@@ -22,6 +22,11 @@ import requests
 # Stat label -> internal key mapping
 # ---------------------------------------------------------------------------
 
+class PrizePicksError(Exception):
+    """Raised when PrizePicks projections cannot be fetched."""
+    pass
+
+
 STAT_MAP = {
     "Points":        "pts",
     "Rebounds":      "reb",
@@ -205,30 +210,67 @@ def fetch_prizepicks_lines() -> List[Dict]:
           - pp_stat_label
           - line
           - odds_type
+
+    Raises:
+        PrizePicksError: if the projections cannot be fetched after retries.
     """
-    try:
-        print("  [PP] Hitting projections API...")
-        resp = requests.get(
-            PP_URL,
-            headers=PP_HEADERS,
-            params=PP_PARAMS,
-            timeout=15,
-        )
-        print("  [PP] Status:", resp.status_code)
+    max_attempts = 3
+    base_backoff = 2  # seconds
+    last_exc: Exception | None = None
 
+    for attempt in range(1, max_attempts + 1):
+        try:
+            print(f"  [PP] Hitting projections API (attempt {attempt})...")
+            resp = requests.get(
+                PP_URL,
+                headers=PP_HEADERS,
+                params=PP_PARAMS,
+                timeout=30,  # a bit more generous for CI
+            )
+            print("  [PP] Status:", resp.status_code)
 
-        if resp.status_code != 200:
-            print(f"  [PP] HTTP {resp.status_code} from projections endpoint")
-            return []
+            if resp.status_code == 200:
+                data = resp.json()
+                lines = _parse_projections_json(data)
+                print(
+                    f"  [PP] API fetched {len(lines)} lines "
+                    "from projections endpoint"
+                )
+                return lines
 
-        data = resp.json()
-        lines = _parse_projections_json(data)
-        print(f"  [PP] API fetched {len(lines)} lines from projections endpoint")
-        return lines
+            # Hard‑fail on 401/403 – very unlikely to succeed by retrying
+            if resp.status_code in (401, 403):
+                raise PrizePicksError(
+                    f"PrizePicks returned {resp.status_code} "
+                    "— likely blocked or auth change"
+                )
 
-    except requests.Timeout:
-        print("  [PP] Projections API timed out")
-        return []
-    except Exception as e:
-        print(f"  [PP] Projections API error: {e}")
-        return []
+            # Retry on 429/5xx as transient
+            if resp.status_code in (429, 500, 502, 503, 504):
+                raise PrizePicksError(
+                    f"PrizePicks transient status {resp.status_code}"
+                )
+
+            # Other 4xx are treated as non‑retriable API changes
+            raise PrizePicksError(
+                f"PrizePicks unexpected status {resp.status_code}"
+            )
+
+        except (requests.Timeout, requests.ConnectionError, PrizePicksError) as e:
+            last_exc = e
+            print(f"  [PP] Error on attempt {attempt}: {e}")
+
+            # If this is our last attempt, or it's a hard 401/403 case,
+            # don't bother sleeping and retrying.
+            hard_block = isinstance(e, PrizePicksError) and any(
+                code in str(e) for code in ("401", "403")
+            )
+            if attempt == max_attempts or hard_block:
+                break
+
+            sleep_for = base_backoff * (2 ** (attempt - 1))
+            print(f"  [PP] Backing off for {sleep_for} seconds...")
+            time.sleep(sleep_for)
+
+    # If we get here, we failed all attempts
+    raise PrizePicksError(f"Failed to fetch PrizePicks lines: {last_exc}")

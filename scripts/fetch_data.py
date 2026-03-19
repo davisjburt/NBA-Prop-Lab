@@ -15,6 +15,7 @@ Files written:
   data/todays_matchups.json      ← today's game matchups
 """
 
+from pathlib import Path
 import json, os, sys
 from itertools import combinations
 from collections import defaultdict
@@ -23,6 +24,20 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 os.makedirs(DATA_DIR, exist_ok=True)
+
+DATA_PATH = Path(DATA_DIR)
+
+
+def write_safe(filename, data):
+    """Write JSON atomically: only replace file if write succeeds."""
+    path = DATA_PATH / filename
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    with tmp.open("w") as f:
+        json.dump(data, f, indent=2, default=str)
+    tmp.replace(path)
+    count = len(data) if isinstance(data, (list, dict)) else "?"
+    print(f"✅  Wrote {filename} ({count} entries)")
 
 
 def write(filename, data):
