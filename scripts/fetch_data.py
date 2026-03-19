@@ -130,23 +130,19 @@ def main():
         return round(val * 2) / 2
 
     def rows_to_df(rows):
-        return pd.DataFrame(
-            [
-                {
-                    "date": str(r.date),
-                    "matchup": r.matchup,
-                    "location": r.location,
-                    "pts": r.pts,
-                    "reb": r.reb,
-                    "ast": r.ast,
-                    "stl": r.stl,
-                    "blk": r.blk,
-                    "fg3m": r.fg3m,
-                    "tov": r.tov,
-                }
-                for r in rows
-            ]
-        )
+        return pd.DataFrame([{
+            "date": str(r.date),
+            "matchup": r.matchup,
+            "location": r.location,
+            "min": r.min,
+            "pts": r.pts,
+            "reb": r.reb,
+            "ast": r.ast,
+            "stl": r.stl,
+            "blk": r.blk,
+            "fg3m": r.fg3m,
+            "tov": r.tov,
+        } for r in rows])
 
     with app.app_context():
         print("   Loading players...")
@@ -211,9 +207,19 @@ def main():
                 else:
                     continue
 
+                # --- stat averages ---
                 avg_l5 = clean_avg(values, n=5)
                 avg_l10 = clean_avg(values, n=10)
                 avg_season = clean_avg(values)
+
+                # --- minutes features (new) ---
+                min_values = df["min"].tolist()
+                min_l5 = clean_avg(min_values, n=5)
+                min_l10 = clean_avg(min_values, n=10)
+                min_season = clean_avg(min_values)
+                minutes_ratio = None
+                if min_l5 is not None and min_season not in (None, 0):
+                    minutes_ratio = min_l5 / min_season
 
                 hr_l5 = (
                     hit_rate_combo(df, stat, line, last_n=5)
@@ -282,6 +288,7 @@ def main():
                 ):
                     home_away_bonus = 1.0
 
+                # --- pass minutes into confidence_score (new) ---
                 conf = confidence_score(
                     hit_rate_l5=hr_l5.get("hit_rate")
                     if "error" not in hr_l5
@@ -295,6 +302,8 @@ def main():
                     streak_count=streak["count"],
                     streak_type=streak["type"],
                     home_away_bonus=home_away_bonus,
+                    minutes_avg_l5=min_l5,
+                    minutes_avg_season=min_season,
                 )
 
                 pp_results.append(
@@ -327,12 +336,18 @@ def main():
                         "location": current_location,
                         "streak": streak,
                         "confidence": conf,
+                        # --- expose minutes to the UI (new) ---
+                        "minutes_l5": min_l5,
+                        "minutes_l10": min_l10,
+                        "minutes_season": min_season,
+                        "minutes_ratio": minutes_ratio,
                     }
                 )
 
             pp_results.sort(
                 key=lambda x: x["confidence"], reverse=True
             )
+
 
         write_safe("prizepicks_results.json", pp_results)
 

@@ -1,6 +1,11 @@
 #!/bin/bash
+echo "Updating Database..."
+python3 scripts/daily_update.py
 
-echo "📡 Fetching data..."
+echo "Ensuring no duplicate entries..."
+python3 scripts/dedup.py
+
+echo "📡 Fetching PrizePicksdata..."
 python3 scripts/fetch_data.py
 
 echo "📤 Pushing to GitHub..."

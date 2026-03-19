@@ -71,7 +71,18 @@ def matchup_multiplier(opponent_abbr, stat, opp_defense: dict) -> float:
         return 1.0
     return round(opp_val / league_avg, 3)
 
-def confidence_score(hit_rate_l5, hit_rate_l10, hit_rate_season, edge, matchup_mult, streak_count, streak_type, home_away_bonus=0.0):
+def confidence_score(
+    hit_rate_l5,
+    hit_rate_l10,
+    hit_rate_season,
+    edge,
+    matchup_mult,
+    streak_count,
+    streak_type,
+    home_away_bonus=0.0,
+    minutes_avg_l5=None,
+    minutes_avg_season=None,
+):
     """
     Composite 0–100 confidence score.
     Weights: L5 hit rate (35%), L10 (25%), season (15%), edge (10%), matchup (10%), streak (5%)
@@ -89,14 +100,39 @@ def confidence_score(hit_rate_l5, hit_rate_l10, hit_rate_season, edge, matchup_m
     # Matchup: mult 0.8–1.2 → 0–10 pts
     matchup_score = max(0, min(10, (matchup_mult - 0.8) / 0.4 * 10))
 
-    # Streak bonus: up to 5 pts
+    # Streak bonus: up to +/-5 pts
     streak_score = 0
     if streak_type == "hit":
         streak_score = min(5, streak_count)
     elif streak_type == "miss":
         streak_score = -min(5, streak_count)
 
-    raw = hr_l5 + hr_l10 + hr_season + edge_score + matchup_score + streak_score + (home_away_bonus * 5)
+    raw = (
+        hr_l5
+        + hr_l10
+        + hr_season
+        + edge_score
+        + matchup_score
+        + streak_score
+        + (home_away_bonus * 5)
+    )
+
+    # Minutes-based adjustments (v1)
+    if minutes_avg_l5 is not None and minutes_avg_season not in (None, 0):
+        r = minutes_avg_l5 / minutes_avg_season
+
+        # Penalty for very low recent minutes
+        if minutes_avg_l5 < 20:
+            raw -= 8
+
+        # Penalty if recent minutes are much lower than season
+        if r < 0.75:
+            raw -= 7
+
+        # Small bonus for high, stable minutes
+        if minutes_avg_l5 > 32 and r > 0.9:
+            raw += 4
+
     return round(max(0, min(100, raw)), 1)
 
 def hit_rate(df, stat, line, last_n=None, location=None, opponent=None):
@@ -109,8 +145,10 @@ def hit_rate(df, stat, line, last_n=None, location=None, opponent=None):
         subset = subset.head(last_n)
     if subset.empty:
         return {"error": "No data matching filters"}
+
     hits  = (subset[stat] > line).sum()
     total = len(subset)
+
     return {
         "stat":     stat,
         "line":     line,
@@ -123,6 +161,7 @@ def hit_rate(df, stat, line, last_n=None, location=None, opponent=None):
         "streak":   calculate_streak(subset[stat].tolist(), line),
         "games":    subset[["date", "matchup", stat]].to_dict(orient="records"),
     }
+
 
 def hit_rate_combo(df, combo, line, last_n=None, location=None, opponent=None):
     if combo not in COMBO_STATS:

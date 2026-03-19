@@ -479,3 +479,11 @@
   flex-shrink: 0;
   stroke-width: 2;
 }
+.minutes-low {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.minutes-ok {
+  color: var(--muted);
+}

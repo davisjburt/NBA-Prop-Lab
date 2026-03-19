@@ -115,13 +115,15 @@
                 <th onclick="sortBy('edge')">Edge</th>
                 <th onclick="sortBy('matchup_mult')">Matchup</th>
                 <th onclick="sortBy('hit_rate')">L10 HR</th>
+                <th>Minutes</th>
+                <!-- new -->
                 <th onclick="sortBy('confidence')">Confidence</th>
                 <th>Sample</th>
               </tr>
             </thead>
             <tbody id="results">
               <tr>
-                <td colspan="11">
+                <td colspan="12">
                   <div class="loading-state">Loading today's board...</div>
                 </td>
               </tr>
@@ -212,6 +214,24 @@
         return `<span class="streak-badge ${cls}">${icon}${streak.count}</span>`;
       }
 
+      function renderMinutes(p) {
+        const l5 = p.minutes_l5;
+        const szn = p.minutes_season;
+        if (l5 == null || szn == null) return "—";
+
+        const ratio = p.minutes_ratio ?? (szn ? l5 / szn : null);
+        const text = `${l5.toFixed(1)} / ${szn.toFixed(1)}`;
+
+        const isLow = l5 < 20 || (ratio !== null && ratio < 0.75);
+
+        const cls = isLow ? "minutes-low" : "minutes-ok";
+        const title = isLow
+          ? "Recent minutes are low or dropping"
+          : "L5 / season minutes";
+
+        return `<span class="${cls}" title="${title}">${text}</span>`;
+      }
+
       function buildRow(p, i) {
         const pct = (p.hit_rate * 100).toFixed(1);
         const tr = document.createElement("tr");
@@ -239,6 +259,7 @@
               <span class="rate-label ${rateClass(p.hit_rate)}">${pct}%</span>
             </div>
           </td>
+          <td>${renderMinutes(p)}</td>                     <!-- new -->
           <td><span class="conf-badge ${confClass(p.confidence)}">${p.confidence}</span></td>
           <td style="color:var(--muted)">${p.hits}/${p.sample}</td>`;
         tr.onclick = () => {
@@ -386,7 +407,7 @@
         })
         .catch((err) => {
           document.getElementById("results").innerHTML =
-            `<tr><td colspan="11"><div class="empty-state">${err.message || "Failed to load PrizePicks data."}</div></td></tr>`;
+            `<tr><td colspan="12"><div class="empty-state">${err.message || "Failed to load PrizePicks data."}</div></td></tr>`;
         });
 
       // ── Parlays ──
