@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # NBA Prop Lab
 
 A full-stack NBA player prop analysis tool built with Flask and SQLite/Postgres. Pulls live player game logs from the NBA API, scrapes PrizePicks prop lines, computes hit rates and confidence scores, and presents everything in a clean web UI across five pages: Home, Player, Explore, PrizePicks, and Parlays.
@@ -355,3 +356,358 @@ Steps:
 
 5. Run the initial daily update to populate game stats
    python3 scripts/daily
+=======
+🏀 NBA Prop Lab
+
+A blazing-fast, full-stack NBA player prop analysis tool. NBA Prop Lab pulls live player game logs from the NBA API, scrapes PrizePicks prop lines, computes hit rates and confidence scores, and presents actionable insights across a clean web UI.
+
+The application is built with Flask, Pandas, and SQLite/Postgres, utilizing a decoupled architecture to ensure page loads and API responses are nearly instantaneous.
+
+📑 Table of Contents
+
+Overview & Architecture
+
+Tech Stack
+
+Project Structure
+
+Local Setup & Installation
+
+Data Pipeline Scripts
+
+Routes and API Endpoints
+
+Database Schema
+
+Deployment on Render
+
+Troubleshooting
+
+🏛 Overview & Architecture
+
+NBA Prop Lab features two independent systems that work seamlessly together. By decoupling the heavy data processing from the web server, the user interface remains incredibly fast.
+
+The Data Pipeline (Background): Python scripts run on a schedule (via cron or Render background jobs) to pull data from the NBA API and PrizePicks. They update the relational database and pre-compute complex hit-rate analytics, saving the results as static JSON files.
+
+The Web Application (Foreground): The Flask app serves HTML templates and API endpoints by strictly reading from the pre-computed JSON files and querying the database without performing heavy math at request time.
+
+Data Flow Diagram
+
+NBA API ──────────────────► daily_update.py ──► DB: players table
+► DB: player_game_stats table
+
+PrizePicks API ───────────► fetch_data.py ────► data/prizepicks_lines.json
+► data/prizepicks_results.json
+► data/prizepicks_parlays.json
+► data/trending.json
+► data/opponent_defense.json
+► data/todays_matchups.json
+
+Flask app (run.py) ───────► reads DB + JSON ──► HTML pages + JSON API
+
+🛠 Tech Stack
+
+Backend: Python 3.11+, Flask, SQLAlchemy
+
+Data Processing: Pandas, ThreadPoolExecutor
+
+Database: SQLite (Local) / PostgreSQL (Production)
+
+External APIs: nba_api package, PrizePicks Public Projections API
+
+Frontend: HTML/CSS (Jinja2 Templates), Custom Font (Milker.otf)
+
+📂 Project Structure
+
+NBA-Prop-Lab/
+├── app/
+│ ├── **init**.py # App factory: create_app()
+│ ├── config.py # Config class (reads env vars)
+│ ├── models/
+│ │ └── models.py # SQLAlchemy ORM (Player, PlayerGameStat)
+│ ├── routes/
+│ │ ├── players.py # Page routes + player list API (prefix="/")
+│ │ └── props.py # Stats + data API (prefix="/api")
+│ ├── services/
+│ │ ├── hit_rate.py # Hit rate, streaks, combo stat math (Pandas)
+│ │ ├── nba_fetcher.py # NBA API wrapper with retry logic
+│ │ └── prizepicks.py # PrizePicks public API scraper
+│ ├── templates/ # Jinja2 HTML views
+│ └── static/ # CSS, Fonts, and Logos
+├── data/ # JSON files written by scripts, read by Flask
+├── scripts/
+│ ├── daily_update.py # NBA API → DB (run daily)
+│ ├── fetch_data.py # PrizePicks + compute → JSON (run hourly)
+│ ├── dedup.py # Removes duplicate game stat rows
+│ ├── fix_positions.py # Backfills missing player positions
+│ └── seed.py # One-time DB bootstrap for players
+├── render.yaml # Render deploy config (web + cron jobs)
+├── requirements.txt # Python dependencies
+├── refresh.sh # Local helper: fetch data + git push
+└── run.py # Dev server entrypoint
+
+💻 Local Setup & Installation
+
+Prerequisites: Python 3.11+ and Git.
+
+1. Clone the repository:
+
+git clone [https://github.com/davisjburt/NBA-Prop-Lab.git](https://github.com/davisjburt/NBA-Prop-Lab.git)
+cd NBA-Prop-Lab
+
+2. Create and activate a virtual environment:
+
+python3 -m venv venv
+source venv/bin/activate # On Windows use: venv\Scripts\activate
+
+3. Install dependencies:
+
+pip install -r requirements.txt
+
+4. Seed the database (First time only):
+   Populates the players table with all active NBA players.
+
+python3 scripts/seed.py
+
+5. Run the initial daily update:
+   Fetches game logs for all players to populate the player_game_stats table.
+
+python3 scripts/daily_update.py
+
+6. Generate pre-computed JSON data:
+   Scrapes PrizePicks and computes hit rates.
+
+python3 scripts/fetch_data.py
+
+7. Start the Flask development server:
+
+python3 run.py
+
+The app will be available at http://127.0.0.1:5002.
+
+⚙️ Data Pipeline Scripts
+
+To keep your local or production environment up to date, these scripts handle the heavy lifting.
+
+seed.py: Run once on a fresh install. Grabs ~530 active players from the NBA API.
+
+daily_update.py: Designed to run daily at 6:00 AM. Finds the most recent logged game date per player and fetches new logs from the NBA API. Parallelized with ThreadPoolExecutor.
+
+fetch_data.py: Designed to run hourly. Scrapes PrizePicks lines, pulls opponent defense rankings, calculates hit rates/streaks/parlays via hit_rate.py, and writes everything to the data/ directory.
+
+dedup.py: Utility to remove accidental duplicate rows in player_game_stats.
+
+fix_positions.py: Utility to backfill missing position values (G, F, C).
+
+refresh.sh: A convenient bash wrapper that runs fetch_data.py, commits the updated JSON files, and pushes to Git.
+
+🌐 Routes and API Endpoints
+
+UI Routes (/)
+
+Method
+
+Route
+
+Template
+
+Description
+
+GET
+
+/
+
+index.html
+
+Home page
+
+GET
+
+/player/<id>
+
+player.html
+
+Individual player detail and game logs
+
+GET
+
+/explore
+
+explore.html
+
+Explore all players filtered by stat and line
+
+GET
+
+/prizepicks
+
+prizepicks.html
+
+PrizePicks board sorted by confidence scores
+
+GET
+
+/parlays
+
+parlays.html
+
+Pre-computed algorithmic parlay suggestions
+
+(Note: /discover and /trending automatically redirect to /explore)
+
+JSON API Endpoints (/api)
+
+Method
+
+Endpoint
+
+Query Params
+
+Returns
+
+GET
+
+/api/players
+
+—
+
+[{id, name, team, position}]
+
+GET
+
+/api/players/<id>
+
+—
+
+Single player object
+
+GET
+
+/api/players/<id>/averages
+
+—
+
+Last 5 game averages (base + combo stats)
+
+GET
+
+/api/players/<id>/opponents
+
+—
+
+Sorted list of unique opponents faced
+
+GET
+
+/api/players/<id>/props
+
+stat, line, last_n, location, opponent
+
+Hit rate result for a single stat
+
+GET
+
+/api/players/<id>/combo
+
+combo, line, last_n, location, opponent
+
+Hit rate result for a combo stat (e.g. PRA)
+
+GET
+
+/api/players/<id>/logs
+
+—
+
+Full game log as a JSON array
+
+GET
+
+/api/discover
+
+stat, line, last_n
+
+All players sorted by hit rate
+
+GET
+
+/api/trending
+
+—
+
+{hot_streaks, top_hitters}
+
+GET
+
+/api/prizepicks
+
+—
+
+Full enriched PrizePicks board
+
+GET
+
+/api/prizepicks/parlays
+
+—
+
+Top 2-leg and 3-leg parlay combinations
+
+Combo Stats Supported: pr (Pts+Reb), pa (Pts+Ast), ra (Reb+Ast), pra (Pts+Reb+Ast), bs (Blk+Stl), sa (Stl+Ast).
+
+🗄 Database Schema
+
+The database relies on SQLAlchemy and uses standard relational patterns. Tables are auto-created on the first boot via db.create_all().
+
+players table
+| Column | Type | Notes |
+| :--- | :--- | :--- |
+| id | Integer (PK) | NBA API player ID |
+| name | String | Full display name |
+| team_abbr | String | e.g., LAL, BOS |
+| position | String | e.g., G, F, C |
+
+player_game_stats table
+| Column | Type | Notes |
+| :--- | :--- | :--- |
+| id | Integer (PK) | Auto-increment ID |
+| player_id | Integer (FK) | References players.id |
+| date | Date | Game date |
+| matchup | String | e.g., "LAL vs. GSW" |
+| location | String | "Home" or "Road" |
+| min, pts, reb, ast, stl, blk, fg3m, tov | Float | Base game stats |
+
+Note: A unique constraint exists on (player_id, date) to prevent duplicate game entries.
+
+🚀 Deployment on Render
+
+This project is configured for one-click deployment via Render using the provided render.yaml Blueprint.
+
+Connect your GitHub repository to Render.
+
+Go to Blueprints -> New Blueprint Instance and select this repo.
+
+Render will automatically read render.yaml and provision:
+
+Web Service: The Flask frontend/API.
+
+PostgreSQL Database: Production database replacing SQLite.
+
+Cron Jobs: Background tasks mapped to daily_update.py and fetch_data.py.
+
+Environment Variables: Ensure DATABASE_URL, SECRET_KEY, and FLASK_ENV are appropriately set in your Render dashboard.
+
+🚑 Troubleshooting
+
+The UI loads but the boards/tables are completely empty:
+Your app cannot find the JSON files in the /data directory. Run python3 scripts/fetch_data.py to generate them.
+
+Missing or outdated game stats:
+Run python3 scripts/daily_update.py to fetch the latest NBA game logs. If players were recently drafted/traded, re-run seed.py and fix_positions.py.
+
+Hit rate math looks wrong / Duplicate game logs:
+If the database constraint was bypassed, run python3 scripts/dedup.py to clean up the player_game_stats table.
+
+NBA API Timeout / Rate Limit Errors (429):
+The nba_fetcher.py service uses exponential backoff. If you are continually rate-limited by the NBA API, pause scripts for 15-30 minutes and try again.
+>>>>>>> 5a6f83e (readme)
