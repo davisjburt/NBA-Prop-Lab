@@ -28,6 +28,8 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 os.makedirs(DATA_DIR, exist_ok=True)
 DATA_PATH = Path(DATA_DIR)
 
+errors: list[str] = []
+
 
 def write_safe(filename, data):
     """Write JSON atomically: only replace file if write succeeds."""
@@ -36,12 +38,8 @@ def write_safe(filename, data):
     tmp = path.with_suffix(path.suffix + ".tmp")
     with tmp.open("w") as f:
         json.dump(data, f, indent=2, default=str)
-    tmp.replace(path)
     count = len(data) if isinstance(data, (list, dict)) else "?"
     print(f"✅  Wrote {filename} ({count} entries)")
-
-
-errors: list[str] = []
 
 
 def main():
@@ -76,14 +74,25 @@ def main():
         errors.append("todays_matchups")
 
     print("📡  Fetching PrizePicks lines...")
+    pp_lines = None
     try:
         pp_lines = fetch_prizepicks_lines()
         write_safe("prizepicks_lines.json", pp_lines)
     except PrizePicksError as e:
-        print(f"❌  fetch_prizepicks_lines failed (hard): {e}")
-        errors.append("prizepicks_lines")
-        # Do not overwrite existing JSON; fail the job so CI shows red
-        raise
+        msg = str(e)
+        if "403" in msg:
+            # Soft-fail on 403 (likely GitHub Actions IP blocked by PrizePicks)
+            print(
+                "⚠️  fetch_prizepicks_lines got 403 (likely blocked from this IP). "
+                "Keeping existing prizepicks_lines.json and continuing."
+            )
+            errors.append("prizepicks_lines_403")
+            pp_lines = None  # will skip downstream PP computations this run
+        else:
+            print(f"❌  fetch_prizepicks_lines failed (hard): {e}")
+            errors.append("prizepicks_lines")
+            # Do not overwrite existing JSON; fail the job so CI shows red
+            raise
     except Exception as e:
         print(f"❌  fetch_prizepicks_lines failed (unexpected): {e}")
         errors.append("prizepicks_lines")
@@ -130,27 +139,32 @@ def main():
         return round(val * 2) / 2
 
     def rows_to_df(rows):
-        return pd.DataFrame([{
-            "date": str(r.date),
-            "matchup": r.matchup,
-            "location": r.location,
-            "min": r.min,
-            "pts": r.pts,
-            "reb": r.reb,
-            "ast": r.ast,
-            "stl": r.stl,
-            "blk": r.blk,
-            "fg3m": r.fg3m,
-            "tov": r.tov,
-        } for r in rows])
+        return pd.DataFrame(
+            [
+                {
+                    "date": str(r.date),
+                    "matchup": r.matchup,
+                    "location": r.location,
+                    "min": r.min,
+                    "pts": r.pts,
+                    "reb": r.reb,
+                    "ast": r.ast,
+                    "stl": r.stl,
+                    "blk": r.blk,
+                    "fg3m": r.fg3m,
+                    "tov": r.tov,
+                }
+                for r in rows
+            ]
+        )
 
     with app.app_context():
         print("   Loading players...")
         all_players = Player.query.all()
         print(f"   Loading game stats for {len(all_players)} players...")
-        all_stats = (
-            PlayerGameStat.query.order_by(PlayerGameStat.date.desc()).all()
-        )
+        all_stats = PlayerGameStat.query.order_by(
+            PlayerGameStat.date.desc()
+        ).all()
         print(f"   Loaded {len(all_stats)} game stat rows")
 
         stats_by_player = defaultdict(list)
@@ -172,7 +186,8 @@ def main():
 
         pp_results = []
 
-        if pp_lines:
+        # Only compute results if we actually have lines this run
+        if pp_lines is not None:
             for entry in pp_lines:
                 player = find_player(entry["name_key"])
                 if not player:
@@ -212,7 +227,7 @@ def main():
                 avg_l10 = clean_avg(values, n=10)
                 avg_season = clean_avg(values)
 
-                # --- minutes features (new) ---
+                # --- minutes features ---
                 min_values = df["min"].tolist()
                 min_l5 = clean_avg(min_values, n=5)
                 min_l10 = clean_avg(min_values, n=10)
@@ -288,7 +303,7 @@ def main():
                 ):
                     home_away_bonus = 1.0
 
-                # --- pass minutes into confidence_score (new) ---
+                # --- pass minutes into confidence_score ---
                 conf = confidence_score(
                     hit_rate_l5=hr_l5.get("hit_rate")
                     if "error" not in hr_l5
@@ -314,9 +329,7 @@ def main():
                         "position": player.position,
                         "stat": stat,
                         "label": entry["pp_stat_label"],
-                        "odds_type": entry.get(
-                            "odds_type", "standard"
-                        ),
+                        "odds_type": entry.get("odds_type", "standard"),
                         "line": line,
                         "hit_rate": hr_l10["hit_rate"],
                         "hit_rate_l5": hr_l5.get("hit_rate")
@@ -336,7 +349,7 @@ def main():
                         "location": current_location,
                         "streak": streak,
                         "confidence": conf,
-                        # --- expose minutes to the UI (new) ---
+                        # minutes exposed to UI
                         "minutes_l5": min_l5,
                         "minutes_l10": min_l10,
                         "minutes_season": min_season,
@@ -344,11 +357,9 @@ def main():
                     }
                 )
 
-            pp_results.sort(
-                key=lambda x: x["confidence"], reverse=True
-            )
+            pp_results.sort(key=lambda x: x["confidence"], reverse=True)
 
-
+        # Always write prizepicks_results.json (possibly empty) so consumers are happy
         write_safe("prizepicks_results.json", pp_results)
 
         # ── Step 4: Compute parlays ───────────────────────────────────────
@@ -357,8 +368,7 @@ def main():
         candidates = [
             p
             for p in pp_results
-            if p["confidence"] >= 65
-            and p["odds_type"] == "standard"
+            if p["confidence"] >= 65 and p["odds_type"] == "standard"
         ][:30]
 
         def correlation_penalty(a, b):
@@ -455,9 +465,7 @@ def main():
             for combo, cols in COMBO_STATS.items():
                 df2 = df.copy()
                 df2["combo_val"] = df2[cols].sum(axis=1)
-                line = round_to_half(
-                    df2["combo_val"].head(5).mean()
-                )
+                line = round_to_half(df2["combo_val"].head(5).mean())
                 if line <= 0:
                     continue
                 streak = calculate_streak(
