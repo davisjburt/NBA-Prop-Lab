@@ -38,6 +38,7 @@ def write_safe(filename, data):
     tmp = path.with_suffix(path.suffix + ".tmp")
     with tmp.open("w") as f:
         json.dump(data, f, indent=2, default=str)
+    tmp.replace(path)
     count = len(data) if isinstance(data, (list, dict)) else "?"
     print(f"✅  Wrote {filename} ({count} entries)")
 
