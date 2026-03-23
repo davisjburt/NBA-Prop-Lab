@@ -169,8 +169,8 @@ def prizepicks_parlays():
 
 @props_bp.route("/moneylines")
 def moneylines():
-    """Return tonight's game predictions from pre-computed JSON."""
-    data = _load_json("moneylines.json", None)
-    if data is None:
-        return jsonify({"error": "Moneyline data not yet available."}), 503
+    data = _load_json("moneylines.json", [])
+    # Ensure we always return a list (frontend expects an array)
+    if not isinstance(data, list):
+        data = []
     return jsonify(data)
