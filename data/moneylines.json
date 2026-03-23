@@ -211,8 +211,8 @@
     "predicted_winner": "TOR",
     "win_prob_home": 0.0,
     "win_prob_away": 100.0,
-    "spread": -18.8,
-    "home_score_est": 4.1,
+    "spread": -21.0,
+    "home_score_est": -5.9,
     "away_score_est": 69.9,
     "factors": {
       "form": -2.5,
@@ -220,13 +220,13 @@
       "home_court": 7.5,
       "h2h": -5.0,
       "defense": -4.1,
-      "injuries": -87.1
+      "injuries": -99.1
     },
     "home_net_rtg": -7.1,
     "away_net_rtg": 1.8,
     "home_form": 30.0,
     "away_form": 40.0,
-    "home_inj_loss": 114.6,
+    "home_inj_loss": 124.6,
     "away_inj_loss": 42.0,
     "home_team_name": "Utah Jazz",
     "away_team_name": "Toronto Raptors",
@@ -240,7 +240,7 @@
       {
         "team_abbr": "UTA",
         "player_name": "Cody Williams",
-        "status": "day-to-day",
+        "status": "out",
         "reason": "Soreness",
         "player_avg_pts": 10.0
       },
@@ -292,7 +292,7 @@
         "team_abbr": "TOR",
         "player_name": "Collin Murray-Boyles",
         "status": "out",
-        "reason": "Sprain",
+        "reason": "",
         "player_avg_pts": 9.0
       },
       {

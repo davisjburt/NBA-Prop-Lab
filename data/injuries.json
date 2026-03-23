@@ -766,7 +766,7 @@
     "team_abbr": "TOR",
     "player_name": "Collin Murray-Boyles",
     "status": "out",
-    "reason": "Sprain",
+    "reason": "",
     "player_avg_pts": 9.0
   },
   {
@@ -793,7 +793,7 @@
   {
     "team_abbr": "UTA",
     "player_name": "Cody Williams",
-    "status": "day-to-day",
+    "status": "out",
     "reason": "Soreness",
     "player_avg_pts": 10.0
   },
