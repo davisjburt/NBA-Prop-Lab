@@ -5,8 +5,8 @@
     "predicted_winner": "OKC",
     "win_prob_home": 0.0,
     "win_prob_away": 100.0,
-    "spread": -19.5,
-    "home_score_est": 46.4,
+    "spread": -22.9,
+    "home_score_est": 30.7,
     "away_score_est": 112.4,
     "factors": {
       "form": -10.0,
@@ -14,13 +14,13 @@
       "home_court": 7.5,
       "h2h": -5.0,
       "defense": -4.2,
-      "injuries": -79.4
+      "injuries": -98.3
     },
     "home_net_rtg": -0.5,
     "away_net_rtg": 11.0,
     "home_form": 60.0,
     "away_form": 100.0,
-    "home_inj_loss": 72.1,
+    "home_inj_loss": 87.8,
     "away_inj_loss": 5.9,
     "home_team_name": "Philadelphia 76ers",
     "away_team_name": "Oklahoma City Thunder",
@@ -33,15 +33,8 @@
     "home_injuries": [
       {
         "team_abbr": "PHI",
-        "player_name": "Dominick Barlow",
-        "status": "day-to-day",
-        "reason": "Sprain",
-        "player_avg_pts": 7.8
-      },
-      {
-        "team_abbr": "PHI",
         "player_name": "Quentin Grimes",
-        "status": "day-to-day",
+        "status": "out",
         "reason": "Not Specified",
         "player_avg_pts": 15.7
       },
@@ -108,23 +101,23 @@
     "predicted_winner": "ATL",
     "win_prob_home": 100.0,
     "win_prob_away": 0.0,
-    "spread": 25.8,
-    "home_score_est": 118.5,
-    "away_score_est": 30.4,
+    "spread": 26.0,
+    "home_score_est": 96.7,
+    "away_score_est": 7.5,
     "factors": {
       "form": 20.0,
       "net_rtg": 6.8,
       "home_court": 7.5,
       "h2h": 5.0,
       "defense": 1.8,
-      "injuries": 102.1
+      "injuries": 103.4
     },
     "home_net_rtg": 1.2,
     "away_net_rtg": -3.3,
     "home_form": 90.0,
     "away_form": 10.0,
-    "home_inj_loss": 0.0,
-    "away_inj_loss": 85.1,
+    "home_inj_loss": 21.8,
+    "away_inj_loss": 108.0,
     "home_team_name": "Atlanta Hawks",
     "away_team_name": "Memphis Grizzlies",
     "home_w_pct": 0.549,
@@ -137,7 +130,7 @@
       {
         "team_abbr": "ATL",
         "player_name": "Jalen Johnson",
-        "status": "day-to-day",
+        "status": "out",
         "reason": "Inflammation",
         "player_avg_pts": 21.8
       }
@@ -145,8 +138,15 @@
     "away_injuries": [
       {
         "team_abbr": "MEM",
+        "player_name": "Cam Spencer",
+        "status": "out",
+        "reason": "Soreness",
+        "player_avg_pts": 10.1
+      },
+      {
+        "team_abbr": "MEM",
         "player_name": "Javon Small",
-        "status": "day-to-day",
+        "status": "out",
         "reason": "Soreness",
         "player_avg_pts": 12.8
       },
@@ -163,13 +163,6 @@
         "status": "out",
         "reason": "Not Specified",
         "player_avg_pts": 12.7
-      },
-      {
-        "team_abbr": "MEM",
-        "player_name": "Cam Spencer",
-        "status": "day-to-day",
-        "reason": "Soreness",
-        "player_avg_pts": 10.1
       },
       {
         "team_abbr": "MEM",
@@ -388,13 +381,6 @@
         "status": "out",
         "reason": "Fracture",
         "player_avg_pts": 15.6
-      },
-      {
-        "team_abbr": "CHI",
-        "player_name": "Jalen Smith",
-        "status": "day-to-day",
-        "reason": "Not Specified",
-        "player_avg_pts": 12.4
       },
       {
         "team_abbr": "CHI",
@@ -629,7 +615,7 @@
         "team_abbr": "BKN",
         "player_name": "Terance Mann",
         "status": "out",
-        "reason": "Rest",
+        "reason": "Not Specified",
         "player_avg_pts": 6.6
       },
       {
@@ -643,7 +629,7 @@
         "team_abbr": "BKN",
         "player_name": "Danny Wolf",
         "status": "out",
-        "reason": "Not Specified",
+        "reason": "Sprain",
         "player_avg_pts": 10.4
       },
       {
@@ -826,13 +812,6 @@
     "away_injuries": [
       {
         "team_abbr": "SAS",
-        "player_name": "Devin Vassell",
-        "status": "day-to-day",
-        "reason": "Soreness",
-        "player_avg_pts": 13.6
-      },
-      {
-        "team_abbr": "SAS",
         "player_name": "David Jones Garcia",
         "status": "out",
         "reason": "Surgery",
@@ -880,7 +859,7 @@
         "team_abbr": "ORL",
         "player_name": "Jalen Suggs",
         "status": "out",
-        "reason": "Illness",
+        "reason": "Not Specified",
         "player_avg_pts": 13.1
       },
       {
@@ -906,34 +885,6 @@
       }
     ],
     "away_injuries": [
-      {
-        "team_abbr": "IND",
-        "player_name": "Aaron Nesmith",
-        "status": "day-to-day",
-        "reason": "Not Specified",
-        "player_avg_pts": 13.0
-      },
-      {
-        "team_abbr": "IND",
-        "player_name": "Obi Toppin",
-        "status": "day-to-day",
-        "reason": "Not Specified",
-        "player_avg_pts": 9.1
-      },
-      {
-        "team_abbr": "IND",
-        "player_name": "Andrew Nembhard",
-        "status": "day-to-day",
-        "reason": "Bruise",
-        "player_avg_pts": 16.8
-      },
-      {
-        "team_abbr": "IND",
-        "player_name": "Pascal Siakam",
-        "status": "day-to-day",
-        "reason": "Sprain",
-        "player_avg_pts": 23.9
-      },
       {
         "team_abbr": "IND",
         "player_name": "Ivica Zubac",
@@ -965,10 +916,10 @@
     "home": "DET",
     "away": "LAL",
     "predicted_winner": "LAL",
-    "win_prob_home": 36.9,
-    "win_prob_away": 63.1,
-    "spread": -1.2,
-    "home_score_est": 78.5,
+    "win_prob_home": 32.8,
+    "win_prob_away": 67.2,
+    "spread": -1.6,
+    "home_score_est": 76.7,
     "away_score_est": 98.6,
     "factors": {
       "form": -7.5,
@@ -976,13 +927,13 @@
       "home_court": 7.5,
       "h2h": 5.0,
       "defense": 3.5,
-      "injuries": -25.0
+      "injuries": -27.1
     },
     "home_net_rtg": 8.0,
     "away_net_rtg": 1.3,
     "home_form": 60.0,
     "away_form": 90.0,
-    "home_inj_loss": 39.7,
+    "home_inj_loss": 41.5,
     "away_inj_loss": 18.9,
     "home_team_name": "Detroit Pistons",
     "away_team_name": "Los Angeles Lakers",
@@ -995,16 +946,23 @@
     "home_injuries": [
       {
         "team_abbr": "DET",
+        "player_name": "Bobi Klintman",
+        "status": "out",
+        "reason": "Not Specified",
+        "player_avg_pts": 1.8
+      },
+      {
+        "team_abbr": "DET",
         "player_name": "Wendell Moore Jr.",
         "status": "out",
-        "reason": "Knee",
+        "reason": "Not Specified",
         "player_avg_pts": 2.0
       },
       {
         "team_abbr": "DET",
         "player_name": "Marcus Sasser",
         "status": "out",
-        "reason": "Soreness",
+        "reason": "Strain",
         "player_avg_pts": 5.2
       },
       {

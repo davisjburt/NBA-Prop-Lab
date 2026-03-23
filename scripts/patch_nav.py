@@ -19,6 +19,7 @@ NAV_REPLACEMENTS = {
         <a href="/explore"><i data-lucide="compass"></i> Explore</a>
         <a href="/prizepicks"><i data-lucide="list"></i> Player Props</a>
         <a href="/moneylines"><i data-lucide="trending-up"></i> Moneylines</a>
+        <a href="/model-stats"><i data-lucide="bar-chart-3"></i> Model Stats</a>
       </div>'''
     },
     "explore.html": {
@@ -34,6 +35,7 @@ NAV_REPLACEMENTS = {
         <a href="/explore" class="active"><i data-lucide="compass"></i> Explore</a>
         <a href="/prizepicks"><i data-lucide="list"></i> Player Props</a>
         <a href="/moneylines"><i data-lucide="trending-up"></i> Moneylines</a>
+        <a href="/model-stats"><i data-lucide="bar-chart-3"></i> Model Stats</a>
       </div>'''
     },
     "player.html": {
@@ -47,9 +49,11 @@ NAV_REPLACEMENTS = {
         <a href="/explore"> <i data-lucide="compass"></i> Explore </a>
         <a href="/prizepicks"> <i data-lucide="list"></i> Player Props </a>
         <a href="/moneylines"> <i data-lucide="trending-up"></i> Moneylines </a>
+        <a href="/model-stats"><i data-lucide="bar-chart-3"></i> Model Stats</a>
       </div>'''
     },
 }
+
 
 for fname, rep in NAV_REPLACEMENTS.items():
     path = os.path.join(TEMPLATES_DIR, fname)

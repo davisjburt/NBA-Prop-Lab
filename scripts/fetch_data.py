@@ -128,7 +128,15 @@ def main():
     print("\n🗄️   Loading player data from DB...")
 
     from app import create_app
-    from app.models.models import Player, PlayerGameStat
+    from app.models.models import (
+        Player,
+        PlayerGameStat,
+        ModelPropEval,
+        ModelMoneylineEval,
+        db,
+    )
+    import datetime
+
     from app.services.hit_rate import (
         hit_rate,
         hit_rate_combo,
@@ -274,6 +282,25 @@ def main():
         )
         write_safe("moneylines.json", moneylines)
 
+                # ── Log moneyline predictions for model statistics ────────────────
+        today = datetime.date.today()
+        ModelMoneylineEval.query.filter_by(date=today).delete()
+
+        for g in moneylines:
+            m = ModelMoneylineEval(
+                date=today,
+                home_abbr=g["home"],
+                away_abbr=g["away"],
+                predicted_winner=g["predicted_winner"],
+                win_prob_home=g["win_prob_home"],
+                win_prob_away=g["win_prob_away"],
+                spread=g["spread"],
+            )
+            db.session.add(m)
+
+        db.session.commit()
+
+
         # ── Step 5: Compute PrizePicks results ────────────────────────────
         print("\n⚙️   Computing PrizePicks results...")
 
@@ -414,6 +441,31 @@ def main():
             pp_results.sort(key=lambda x: x["confidence"], reverse=True)
 
         write_safe("prizepicks_results.json", pp_results)
+
+                # ── Log top prop picks for model statistics ───────────────────────
+        today = datetime.date.today()
+        ModelPropEval.query.filter_by(date=today).delete()
+
+        by_stat: dict[str, list] = defaultdict(list)
+        for p in pp_results:
+            by_stat[p["stat"]].append(p)
+
+        for stat, rows in by_stat.items():
+            rows.sort(key=lambda x: x["confidence"], reverse=True)
+            for row in rows[:10]:
+                m = ModelPropEval(
+                    date=today,
+                    player_id=row["id"],
+                    player_name=row["name"],
+                    team_abbr=row["team"],
+                    stat=stat,
+                    line=row["line"],
+                    confidence=row["confidence"],
+                )
+                db.session.add(m)
+
+        db.session.commit()
+
 
         # ── Step 6: Compute parlays ───────────────────────────────────────
         print("⚙️   Computing parlays...")

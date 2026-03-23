@@ -1,6 +1,8 @@
 import json, os
 from flask import Blueprint, jsonify, request
-from app.models.models import db, Player, PlayerGameStat
+from app.models.models import db, Player, PlayerGameStat, ModelPropEval, ModelMoneylineEval
+from datetime import date
+from sqlalchemy import func
 from app.services.hit_rate import (
     hit_rate, hit_rate_combo, COMBO_STATS,
     calculate_streak, extract_opponent
@@ -167,6 +169,8 @@ def prizepicks_parlays():
     return jsonify(data)
 
 
+
+
 @props_bp.route("/moneylines")
 def moneylines():
     data = _load_json("moneylines.json", [])
@@ -174,3 +178,62 @@ def moneylines():
     if not isinstance(data, list):
         data = []
     return jsonify(data)
+
+@props_bp.route("/model_stats")
+def model_stats():
+    days = request.args.get("days", default=30, type=int)
+    today = date.today()
+    cutoff = today.fromordinal(today.toordinal() - days)
+
+    # ── Prop stats aggregated by stat ────────────────────────────────────
+    prop_rows = (
+        db.session.query(
+            ModelPropEval.stat.label("stat"),
+            func.count(ModelPropEval.id).label("bets"),
+            func.sum(func.case((ModelPropEval.hit == True, 1), else_=0)).label("hits"),
+        )
+        .filter(
+            ModelPropEval.date >= cutoff,
+            ModelPropEval.hit.isnot(None),
+        )
+        .group_by(ModelPropEval.stat)
+        .all()
+    )
+
+    props = []
+    for row in prop_rows:
+        hit_rate = float(row.hits) / float(row.bets) if row.bets else None
+        props.append({
+            "stat": row.stat,
+            "bets": int(row.bets),
+            "hits": int(row.hits or 0),
+            "hit_rate": round(hit_rate, 3) if hit_rate is not None else None,
+        })
+
+    # ── Moneyline overall stats ─────────────────────────────────────────
+    moneyline_rows = (
+        db.session.query(
+            func.count(ModelMoneylineEval.id).label("bets"),
+            func.sum(func.case((ModelMoneylineEval.correct == True, 1), else_=0)).label("hits"),
+        )
+        .filter(
+            ModelMoneylineEval.date >= cutoff,
+            ModelMoneylineEval.correct.isnot(None),
+        )
+        .one()
+    )
+
+    ml_bets = int(moneyline_rows.bets or 0)
+    ml_hits = int(moneyline_rows.hits or 0)
+    ml_rate = float(ml_hits) / float(ml_bets) if ml_bets else None
+
+    moneylines = {
+        "bets": ml_bets,
+        "hits": ml_hits,
+        "hit_rate": round(ml_rate, 3) if ml_rate is not None else None,
+    }
+
+    return jsonify({
+        "props": props,
+        "moneylines": moneylines,
+    })

@@ -334,7 +334,9 @@ def fetch_injuries() -> list[dict]:
     Fetch today's NBA injury report from ESPN.
 
     Returns list of dicts:
-      team_abbr (filled later), player_name, status, reason, player_avg_pts=None
+      team_abbr (filled later), player_name, status, reason, player_avg_pts=None.
+
+    Always returns a list (possibly empty) and never raises.
     """
     print("📡  Fetching injury report (ESPN only)...")
 
@@ -388,6 +390,7 @@ def fetch_injuries() -> list[dict]:
         print(f"⚠️  ESPN injury fetch failed: {e}")
         print("⚠️  No injury data available — proceeding without injuries")
         return []
+
 
 
 

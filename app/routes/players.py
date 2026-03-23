@@ -51,3 +51,7 @@ def get_player(player_id):
         "id": p.id, "name": p.name,
         "team": p.team_abbr, "position": p.position
     })
+
+@players_bp.route("/model-stats")
+def model_stats_page():
+    return render_template("model-stats.html")
