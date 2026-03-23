@@ -1,145 +1,81 @@
-/* app/static/css/model-stats.css */
+/* model-stats.css */
 
-.model-stats-page {
-  padding: 24px;
-}
-
-.model-stats-page .panel {
-  background: #0b1020;
-  border-radius: 12px;
-  padding: 20px 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-}
-
-.model-stats-page .panel-header {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-bottom: 16px;
-}
-
-.model-stats-page h1 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #ffffff;
-}
-
-.model-stats-page .panel-subtitle {
-  font-size: 13px;
-  color: #a0aec0;
-}
-
-.model-stats-page .controls {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 16px;
-  font-size: 13px;
-  color: #cbd5f5;
-}
-
-.model-stats-page .controls select {
-  background: #111827;
-  color: #e5e7eb;
-  border-radius: 6px;
-  border: 1px solid #374151;
-  padding: 4px 8px;
-  font-size: 13px;
-}
-
-.model-stats-page .loading,
-.model-stats-page .error {
-  font-size: 14px;
-  margin-top: 8px;
-}
-
-.model-stats-page .loading {
-  color: #9ca3af;
-}
-
-.model-stats-page .error {
-  color: #f87171;
-}
-
-/* Layout for cards */
-
-.model-stats-page .stats-layout {
+.stats-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 16px;
-  margin-top: 12px;
+  gap: 1.5rem;
+  animation: fadeUp 0.4s 0.1s ease both;
 }
 
 @media (min-width: 900px) {
-  .model-stats-page .stats-layout {
-    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+  .stats-layout {
+    grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.35fr);
   }
 }
 
-.model-stats-page .card {
-  background: #020617;
-  border-radius: 10px;
-  padding: 16px 18px;
-  border: 1px solid rgba(148, 163, 184, 0.2);
+/* ── Summary block inside the moneylines card ── */
+.summary-block {
+  padding: 1.5rem;
+  text-align: center;
 }
 
-.model-stats-page .card h2 {
-  font-size: 15px;
+.summary-value {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.summary-pct {
+  font-size: 1.4rem;
   font-weight: 600;
-  color: #e5e7eb;
-  margin-bottom: 10px;
+  color: var(--muted);
 }
 
-.model-stats-page .summary-line {
-  font-size: 32px;
+.summary-label {
+  font-size: 0.75rem;
   font-weight: 600;
-  color: #fbbf24;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  margin-top: 6px;
 }
 
-/* Table styles */
-
-.model-stats-page .table-wrapper {
-  overflow-x: auto;
+/* ── Rate badge on hit % cells ── */
+.rate-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 700;
 }
 
-.model-stats-page table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 13px;
-  color: #e5e7eb;
+.rate-high {
+  color: var(--success);
+}
+.rate-badge.rate-high {
+  background: #d1fae5;
+  color: #065f46;
 }
 
-.model-stats-page thead {
-  background: rgba(15, 23, 42, 0.9);
+.rate-mid {
+  color: var(--accent);
+}
+.rate-badge.rate-mid {
+  background: #ede9fe;
+  color: #4c1d95;
 }
 
-.model-stats-page th,
-.model-stats-page td {
-  padding: 6px 8px;
-  white-space: nowrap;
+.rate-low {
+  color: var(--danger);
+}
+.rate-badge.rate-low {
+  background: #fee2e2;
+  color: #991b1b;
 }
 
-.model-stats-page th {
-  text-align: left;
-  font-weight: 500;
-  color: #9ca3af;
-  border-bottom: 1px solid rgba(55, 65, 81, 0.9);
-}
-
-.model-stats-page td {
-  border-bottom: 1px solid rgba(31, 41, 55, 0.8);
-}
-
-.model-stats-page tbody tr:nth-child(even) {
-  background: rgba(15, 23, 42, 0.6);
-}
-
-.model-stats-page tbody tr:hover {
-  background: rgba(55, 65, 81, 0.8);
-}
-
-.model-stats-page td.numeric,
-.model-stats-page th.numeric {
+/* ── Numeric column alignment ── */
+.numeric {
   text-align: right;
 }

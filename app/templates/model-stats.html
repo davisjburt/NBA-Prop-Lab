@@ -2,86 +2,87 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>NBA Prop Lab – Model Stats</title>
+    <title>NBA Prop Lab — Model Stats</title>
+    <link rel="icon" type="image/svg+xml" href="/static/proplab.svg" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
-      href="{{ url_for('static', filename='css/base.css') }}"
     />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/model-stats.css') }}"
-    />
+    <link rel="stylesheet" href="/static/css/base.css" />
+    <link rel="stylesheet" href="/static/css/model-stats.css" />
     <script src="https://unpkg.com/lucide@latest"></script>
   </head>
   <body>
-    <div class="app-shell">
-      <header class="top-nav">
-        <div class="logo">
-          <span class="logo-mark">NBA</span>
-          <span class="logo-text">Prop Lab</span>
-        </div>
-        <div class="nav-links">
-          <a href="/"><i data-lucide="users"></i> Players</a>
-          <a href="/explore"><i data-lucide="compass"></i> Explore</a>
-          <a href="/prizepicks"><i data-lucide="list"></i> Player Props</a>
-          <a href="/moneylines"><i data-lucide="trending-up"></i> Moneylines</a>
-          <a href="/model-stats" class="active"
-            ><i data-lucide="bar-chart-3"></i> Model Stats</a
-          >
-        </div>
-      </header>
+    <nav>
+      <a href="/" class="nav-logo">
+        <img src="/static/proplab.svg" class="nav-logo-icon" /> Prop Lab
+      </a>
+      <div class="nav-links">
+        <a href="/"><i data-lucide="users"></i> Players</a>
+        <a href="/explore"><i data-lucide="compass"></i> Explore</a>
+        <a href="/prizepicks"><i data-lucide="list"></i> Player Props</a>
+        <a href="/moneylines"><i data-lucide="trending-up"></i> Moneylines</a>
+        <a href="/model-stats" class="active"
+          ><i data-lucide="bar-chart-3"></i> Model Stats</a
+        >
+      </div>
+    </nav>
 
-      <main class="page model-stats-page">
-        <section class="panel">
-          <div class="panel-header">
-            <h1>Model Stats</h1>
-            <div class="panel-subtitle">
-              Outcomes for model props and moneylines (last
-              <span id="days-label">30</span> days)
-            </div>
-          </div>
+    <div class="page-wide">
+      <div class="page-header">
+        <h1>Model Stats</h1>
+        <p>
+          Outcomes for model props and moneylines (last
+          <span id="days-label">30</span> days)
+        </p>
+      </div>
 
-          <div class="controls">
-            <label for="days-select">Window:</label>
+      <div class="controls-card">
+        <div class="controls">
+          <div class="control-group">
+            <label for="days-select">Window</label>
             <select id="days-select">
               <option value="7">7 days</option>
               <option value="30" selected>30 days</option>
               <option value="90">90 days</option>
             </select>
           </div>
+        </div>
+      </div>
 
-          <div id="model-stats-loading" class="loading">
-            Loading model stats…
+      <div id="model-stats-loading" class="loading-state">
+        <i data-lucide="loader"></i> Loading model stats…
+      </div>
+      <div id="model-stats-error" class="empty-state" hidden></div>
+
+      <div id="model-stats-content" class="stats-layout" hidden>
+        <!-- Moneylines card -->
+        <div class="table-card">
+          <h3><i data-lucide="trending-up"></i> Moneylines</h3>
+          <div class="summary-block">
+            <div class="summary-value" id="moneylines-summary">—</div>
+            <div class="summary-label">W – L (Hit %)</div>
           </div>
-          <div id="model-stats-error" class="error" hidden></div>
+        </div>
 
-          <div id="model-stats-content" class="stats-layout" hidden>
-            <div class="card">
-              <h2>Moneylines</h2>
-              <div id="moneylines-summary" class="summary-line"></div>
-            </div>
-
-            <div class="card">
-              <h2>Prop Outcomes by Stat</h2>
-              <div class="table-wrapper">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Stat</th>
-                      <th class="numeric">Bets</th>
-                      <th class="numeric">Hits</th>
-                      <th class="numeric">Hit %</th>
-                    </tr>
-                  </thead>
-                  <tbody id="props-table-body">
-                    <!-- rows injected by JS -->
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
+        <!-- Props table card -->
+        <div class="table-card">
+          <h3><i data-lucide="bar-chart-3"></i> Prop Outcomes by Stat</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Stat</th>
+                <th class="numeric">Bets</th>
+                <th class="numeric">Hits</th>
+                <th class="numeric">Hit %</th>
+              </tr>
+            </thead>
+            <tbody id="props-table-body">
+              <!-- rows injected by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -93,66 +94,56 @@
       const daysSelect = document.getElementById("days-select");
       const daysLabel = document.getElementById("days-label");
 
+      function hitClass(rate) {
+        if (rate == null) return "";
+        if (rate >= 0.7) return "rate-high";
+        if (rate <= 0.4) return "rate-low";
+        return "rate-mid";
+      }
+
       async function loadModelStats(days) {
         loadingEl.hidden = false;
         errorEl.hidden = true;
         contentEl.hidden = true;
         propsTbody.innerHTML = "";
-        moneylinesSummary.textContent = "";
+        moneylinesSummary.textContent = "—";
         daysLabel.textContent = days;
 
         try {
           const resp = await fetch(`/api/model_outcomes?days=${days}`);
-          if (!resp.ok) {
-            throw new Error(`Request failed: ${resp.status}`);
-          }
+          if (!resp.ok) throw new Error(`Request failed: ${resp.status}`);
           const data = await resp.json();
 
           const ml = data.moneylines || { bets: 0, hits: 0, hit_rate: null };
           const misses = ml.bets - ml.hits;
           const pct = ml.hit_rate != null ? Math.round(ml.hit_rate * 100) : 0;
-          moneylinesSummary.textContent = `${ml.hits}-${misses} (${pct}%)`;
+          moneylinesSummary.innerHTML = `<span class="${hitClass(ml.hit_rate)}">${ml.hits}–${misses}</span> <span class="summary-pct">(${pct}%)</span>`;
 
           const props = data.props || [];
           if (props.length === 0) {
             const row = document.createElement("tr");
             const cell = document.createElement("td");
             cell.colSpan = 4;
-            cell.textContent = "No prop outcomes yet for this window.";
+            cell.innerHTML = `<div class="empty-state">No prop outcomes yet for this window.</div>`;
             row.appendChild(cell);
             propsTbody.appendChild(row);
           } else {
             props.forEach((p) => {
+              const rate = p.hit_rate != null ? Math.round(p.hit_rate * 100) : null;
               const row = document.createElement("tr");
-
-              const statCell = document.createElement("td");
-              statCell.textContent = p.stat;
-
-              const betsCell = document.createElement("td");
-              betsCell.className = "numeric";
-              betsCell.textContent = p.bets;
-
-              const hitsCell = document.createElement("td");
-              hitsCell.className = "numeric";
-              hitsCell.textContent = p.hits;
-
-              const rateCell = document.createElement("td");
-              rateCell.className = "numeric";
-              rateCell.textContent =
-                p.hit_rate != null ? Math.round(p.hit_rate * 100) + "%" : "-";
-
-              row.appendChild(statCell);
-              row.appendChild(betsCell);
-              row.appendChild(hitsCell);
-              row.appendChild(rateCell);
-
+              row.className = "data-row";
+              row.innerHTML = `
+                <td>${p.stat}</td>
+                <td class="numeric">${p.bets}</td>
+                <td class="numeric">${p.hits}</td>
+                <td class="numeric"><span class="rate-badge ${hitClass(p.hit_rate)}">${rate != null ? rate + '%' : '—'}</span></td>`;
               propsTbody.appendChild(row);
             });
           }
 
           loadingEl.hidden = true;
-          contentEl.hidden = true; // ensure toggle order
           contentEl.hidden = false;
+          lucide.createIcons();
         } catch (err) {
           console.error(err);
           loadingEl.hidden = true;
@@ -166,9 +157,7 @@
       });
 
       window.addEventListener("DOMContentLoaded", () => {
-        if (window.lucide) {
-          window.lucide.createIcons();
-        }
+        lucide.createIcons();
         loadModelStats(daysSelect.value || 30);
       });
     </script>
