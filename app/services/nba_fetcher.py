@@ -331,40 +331,12 @@ def fetch_h2h_season(season: str = SEASON) -> dict:
 
 def fetch_injuries() -> list[dict]:
     """
-    Fetch today's NBA injury report from ESPN's public injuries endpoint.
+    Fetch today's NBA injury report from ESPN.
 
     Returns list of dicts:
-      team_abbr, player_name, status, reason, player_avg_pts (None initially)
-
-    Always returns a list (possibly empty) and never raises.
+      team_abbr (filled later), player_name, status, reason, player_avg_pts=None
     """
     print("📡  Fetching injury report (ESPN only)...")
-
-    # Map full team names → abbreviations
-    name_to_abbr = {
-        t["full_name"].lower(): t["abbreviation"]
-        for t in nba_teams.get_teams()
-    }
-    extra = {
-        "la clippers": "LAC",
-        "la lakers": "LAL",
-        "golden state": "GSW",
-        "new york": "NYK",
-        "oklahoma city": "OKC",
-        "san antonio": "SAS",
-        "new orleans": "NOP",
-        "portland": "POR",
-    }
-    name_to_abbr.update(extra)
-
-    def normalize_team(raw: str) -> str:
-        low = (raw or "").lower().strip()
-        if low in name_to_abbr:
-            return name_to_abbr[low]
-        for k, v in name_to_abbr.items():
-            if k in low or low in k:
-                return v
-        return (raw or "").upper()[:3]
 
     results: list[dict] = []
 
@@ -378,23 +350,36 @@ def fetch_injuries() -> list[dict]:
             return []
 
         data = resp.json()
-        for team in data.get("injuries", []):
-            team_info = team.get("team", {})
-            team_name = team_info.get("displayName") or team_info.get("name") or ""
-            team_abbr = normalize_team(team_name)
 
+        for team in data.get("injuries", []):
             for item in team.get("injuries", []):
-                athlete = item.get("athlete", {})
+                athlete = item.get("athlete", {}) or {}
                 status_raw = str(item.get("status", "")).lower().strip()
                 if status_raw in ("", "available", "not yet submitted", "probable"):
                     continue
-                results.append({
-                    "team_abbr":      team_abbr,
-                    "player_name":    athlete.get("displayName", "").strip(),
-                    "status":         status_raw,
-                    "reason":         item.get("details", "") or "",
-                    "player_avg_pts": None,
-                })
+
+                details = item.get("details")
+                if isinstance(details, str):
+                    reason = details
+                elif isinstance(details, dict):
+                    reason = (
+                        details.get("detail")
+                        or details.get("type")
+                        or details.get("description")
+                        or ""
+                    )
+                else:
+                    reason = ""
+
+                results.append(
+                    {
+                        "team_abbr": "",
+                        "player_name": athlete.get("displayName", "").strip(),
+                        "status": status_raw,
+                        "reason": reason,
+                        "player_avg_pts": None,
+                    }
+                )
 
         print(f"✅ Injuries loaded via ESPN: {len(results)} entries")
         return results
@@ -403,5 +388,7 @@ def fetch_injuries() -> list[dict]:
         print(f"⚠️  ESPN injury fetch failed: {e}")
         print("⚠️  No injury data available — proceeding without injuries")
         return []
+
+
 
 

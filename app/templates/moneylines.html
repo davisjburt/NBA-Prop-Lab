@@ -110,22 +110,47 @@
         if (!injuries || injuries.length === 0) {
           return `<div class="inj-none"><i data-lucide="check-circle"></i> No reported injuries</div>`;
         }
+
         return injuries
           .slice(0, 5)
           .map((inj) => {
-            const name = (inj.player_name || "").replace(",", "").trim();
-            const status = inj.status || "";
-            const reason = (inj.reason || "")
-              .replace("Injury/Illness - ", "")
-              .replace("Injury/Illness -", "")
-              .trim();
-            const label = status.charAt(0).toUpperCase() + status.slice(1);
-            return `
-            <div class="inj-row">
-              <span class="inj-badge ${injuryStatusClass(status)}">${label}</span>
-              <span class="inj-name">${name}</span>
-              ${reason ? `<span class="inj-reason">· ${reason.split(";")[0]}</span>` : ""}
-            </div>`;
+            try {
+              const name = (inj.player_name || "").replace(",", "").trim();
+              const status = inj.status || "";
+
+              let reasonText = "";
+              const r = inj.reason;
+              if (r) {
+                if (typeof r === "string") {
+                  reasonText = r;
+                } else if (typeof r === "object") {
+                  reasonText = r.detail || r.type || r.description || "";
+                }
+              }
+
+              const reason = (reasonText || "")
+                .replace("Injury/Illness - ", "")
+                .replace("Injury/Illness -", "")
+                .trim();
+
+              const label = status
+                ? status.charAt(0).toUpperCase() + status.slice(1)
+                : "";
+
+              return `
+          <div class="inj-row">
+            <span class="inj-badge ${injuryStatusClass(status)}">${label}</span>
+            <span class="inj-name">${name}</span>
+            ${
+              reason
+                ? `<span class="inj-reason">· ${reason.split(";")[0]}</span>`
+                : ""
+            }
+          </div>`;
+            } catch (e) {
+              console.warn("bad injury row", inj, e);
+              return "";
+            }
           })
           .join("");
       }
@@ -336,14 +361,17 @@
       }
 
       fetch("/api/moneylines")
-        .then((r) => r.json())
+        .then((r) => {
+          console.log("moneylines status", r.status);
+          if (!r.ok) throw new Error(`HTTP ${r.status}`);
+          return r.json();
+        })
         .then((data) => {
+          console.log("moneylines data", data);
           const grid = document.getElementById("ml-games-grid");
-          if (data.error) {
-            grid.innerHTML = `<div class="ml-empty">${data.error}</div>`;
-            return;
-          }
-          if (!data.length) {
+
+          if (!Array.isArray(data)) {
+            console.warn("moneylines: non-array payload", data);
             grid.innerHTML = `
               <div class="ml-empty">
                 <i data-lucide="moon"></i>
@@ -352,10 +380,22 @@
             lucide.createIcons();
             return;
           }
+
+          if (data.length === 0) {
+            grid.innerHTML = `
+              <div class="ml-empty">
+                <i data-lucide="moon"></i>
+                <p>No games scheduled for tonight.</p>
+              </div>`;
+            lucide.createIcons();
+            return;
+          }
+
           grid.innerHTML = data.map((g, i) => buildGameCard(g, i)).join("");
           lucide.createIcons();
         })
-        .catch(() => {
+        .catch((err) => {
+          console.error("moneylines fetch failed", err);
           document.getElementById("ml-games-grid").innerHTML =
             `<div class="ml-empty"><i data-lucide="wifi-off"></i><p>Failed to load data. Try refreshing.</p></div>`;
           lucide.createIcons();

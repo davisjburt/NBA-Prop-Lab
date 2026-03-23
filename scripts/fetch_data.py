@@ -196,8 +196,15 @@ def main():
         injuries_enriched = []
         for inj in injuries_raw:
             name_key = normalize(inj["player_name"])
+
+            # Fill team_abbr from DB if missing/blank
+            player = player_map.get(name_key)
+            if player and not inj.get("team_abbr"):
+                inj["team_abbr"] = (player.team_abbr or "").upper()
+
             inj["player_avg_pts"] = player_pts_avg.get(name_key)
             injuries_enriched.append(inj)
+
 
         write_safe("injuries.json", injuries_enriched)
 

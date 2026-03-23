@@ -3,2234 +3,924 @@
     "team_abbr": "ATL",
     "player_name": "Jalen Johnson",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Shoulder",
-      "location": "Arm",
-      "detail": "Inflammation",
-      "side": "Left",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Inflammation",
     "player_avg_pts": 21.8
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "BOS",
     "player_name": "Nikola Vucevic",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Finger",
-      "location": "Arm",
-      "detail": "Surgery",
-      "side": "Right",
-      "returnDate": "2026-04-05"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 12.8
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "BKN",
     "player_name": "Noah Clowney",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Wrist",
-      "location": "Arm",
-      "detail": "Sprain",
-      "side": "Right",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Sprain",
     "player_avg_pts": 11.2
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "BKN",
     "player_name": "Terance Mann",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Rest",
-      "location": "Other",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Rest",
     "player_avg_pts": 6.6
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "BKN",
     "player_name": "Drake Powell",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Not Specified",
-      "side": "Not Specified",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 5.8
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "BKN",
     "player_name": "Danny Wolf",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Ankle",
-      "location": "Leg",
-      "detail": "Not Specified",
-      "side": "Left",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 10.4
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "BKN",
     "player_name": "Michael Porter Jr.",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Hamstring",
-      "location": "Leg",
-      "detail": "Strain",
-      "side": "Left",
-      "returnDate": "2026-04-09"
-    },
+    "reason": "Strain",
     "player_avg_pts": 21.8
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "BKN",
     "player_name": "Egor Demin",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Foot",
-      "location": "Leg",
-      "detail": "Surgery",
-      "side": "Left",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 10.1
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "BKN",
     "player_name": "Day'Ron Sharpe",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Thumb",
-      "location": "Arm",
-      "detail": "Surgery",
-      "side": "Left",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 10.6
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "CHA",
     "player_name": "Tidjane Salaun",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Calf",
-      "location": "Leg",
-      "detail": "Strain",
-      "side": "Left",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Strain",
     "player_avg_pts": 6.0
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "CHI",
     "player_name": "Guerschon Yabusele",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Ankle",
-      "location": "Leg",
-      "detail": "Sprain",
-      "side": "Left",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Sprain",
     "player_avg_pts": 9.3
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "CHI",
     "player_name": "Jaden Ivey",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Soreness",
-      "side": "Left",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Soreness",
     "player_avg_pts": 8.7
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "CHI",
     "player_name": "Isaac Okoro",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Soreness",
-      "side": "Right",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Soreness",
     "player_avg_pts": 10.1
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "CHI",
     "player_name": "Anfernee Simons",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Wrist",
-      "location": "Arm",
-      "detail": "Fracture",
-      "side": "Left",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Fracture",
     "player_avg_pts": 15.6
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "CHI",
     "player_name": "Jalen Smith",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Calf",
-      "location": "Leg",
-      "detail": "Not Specified",
-      "side": "Right",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 12.4
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "CHI",
     "player_name": "Zach Collins",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Toe",
-      "location": "Leg",
-      "detail": "Surgery",
-      "side": "Right",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 9.7
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "CHI",
     "player_name": "Noa Essengue",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Shoulder",
-      "location": "Arm",
-      "detail": "Surgery",
-      "side": "Left",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 0.0
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "CLE",
     "player_name": "Jaylon Tyson",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Toe",
-      "location": "Leg",
-      "detail": "Sprain",
-      "side": "Left",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Sprain",
     "player_avg_pts": 11.5
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "",
     "player_name": "Olivier Sarr",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Calf",
-      "location": "Leg",
-      "detail": "Not Specified",
-      "side": "Not Specified",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": null
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "CLE",
     "player_name": "Tyrese Proctor",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Quadriceps",
-      "location": "Leg",
-      "detail": "Strain",
-      "side": "Right",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Strain",
     "player_avg_pts": 4.1
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "CLE",
     "player_name": "Craig Porter Jr.",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Groin",
-      "location": "Groin",
-      "detail": "Strain",
-      "side": "Left",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Strain",
     "player_avg_pts": 4.0
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "CLE",
     "player_name": "Jarrett Allen",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Tendinitis",
-      "side": "Right",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Tendinitis",
     "player_avg_pts": 18.1
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "DAL",
     "player_name": "Caleb Martin",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Heel",
-      "location": "Leg",
-      "detail": "Bruise",
-      "side": "Right",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Bruise",
     "player_avg_pts": 6.7
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "DAL",
     "player_name": "Brandon Williams",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Concussion",
-      "location": "Head",
-      "detail": "Concussion",
-      "side": "Not Specified",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Concussion",
     "player_avg_pts": 13.6
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "DAL",
     "player_name": "Kyrie Irving",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Surgery",
-      "side": "Left",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": null
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "DAL",
     "player_name": "Dereck Lively II",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Foot",
-      "location": "Leg",
-      "detail": "Surgery",
-      "side": "Right",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 4.3
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "DET",
     "player_name": "Wendell Moore Jr.",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Knee",
     "player_avg_pts": 2.0
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "DET",
     "player_name": "Marcus Sasser",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Hip",
-      "location": "Torso",
-      "detail": "Soreness",
-      "side": "Right",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Soreness",
     "player_avg_pts": 5.2
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "DET",
     "player_name": "Cade Cunningham",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Chest",
-      "location": "Torso",
-      "detail": "Not Specified",
-      "side": "Left",
-      "returnDate": "2026-04-08"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 22.8
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "DET",
     "player_name": "Isaiah Stewart",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Calf",
-      "location": "Leg",
-      "detail": "Strain",
-      "side": "Left",
-      "returnDate": "2026-03-28"
-    },
+    "reason": "Strain",
     "player_avg_pts": 9.7
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "GSW",
     "player_name": "Al Horford",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Calf",
-      "location": "Leg",
-      "detail": "Strain",
-      "side": "Right",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Strain",
     "player_avg_pts": 10.2
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "GSW",
     "player_name": "Kristaps Porzingis",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Back",
-      "location": "Torso",
-      "detail": "Soreness",
-      "side": "Left",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Soreness",
     "player_avg_pts": 15.9
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "GSW",
     "player_name": "Quinten Post",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Foot",
-      "location": "Leg",
-      "detail": "Not Specified",
-      "side": "Right",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 7.3
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "GSW",
     "player_name": "Moses Moody",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Wrist",
-      "location": "Arm",
-      "detail": "Sprain",
-      "side": "Right",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Sprain",
     "player_avg_pts": 15.2
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "GSW",
     "player_name": "De'Anthony Melton",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Hand",
-      "location": "Arm",
-      "detail": "Bruise",
-      "side": "Left",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Bruise",
     "player_avg_pts": 15.3
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "GSW",
     "player_name": "Stephen Curry",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Soreness",
-      "side": "Right",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Soreness",
     "player_avg_pts": 25.6
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "",
     "player_name": "Seth Curry",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Thigh",
-      "location": "Leg",
-      "detail": "Strain",
-      "side": "Left",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Strain",
     "player_avg_pts": null
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "GSW",
     "player_name": "Jimmy Butler III",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Surgery",
-      "side": "Right",
-      "returnDate": "2026-12-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 20.0
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "HOU",
     "player_name": "Steven Adams",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Ankle",
-      "location": "Leg",
-      "detail": "Surgery",
-      "side": "Left",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 5.7
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "HOU",
     "player_name": "Fred VanVleet",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Surgery",
-      "side": "Right",
-      "returnDate": "2026-06-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": null
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "IND",
     "player_name": "Aaron Nesmith",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Ankle",
-      "location": "Leg",
-      "detail": "Not Specified",
-      "side": "Right",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 13.0
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "IND",
     "player_name": "Obi Toppin",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Foot",
-      "location": "Leg",
-      "detail": "Not Specified",
-      "side": "Right",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 9.1
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "IND",
     "player_name": "Andrew Nembhard",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Calf",
-      "location": "Leg",
-      "detail": "Bruise",
-      "side": "Right",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Bruise",
     "player_avg_pts": 16.8
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "IND",
     "player_name": "Pascal Siakam",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Sprain",
-      "side": "Right",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Sprain",
     "player_avg_pts": 23.9
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "IND",
     "player_name": "Ivica Zubac",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Ribs",
-      "location": "Torso",
-      "detail": "Fracture",
-      "side": "Not Specified",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Fracture",
     "player_avg_pts": 12.0
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "IND",
     "player_name": "Johnny Furphy",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Surgery",
-      "side": "Right",
-      "returnDate": "2027-01-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 5.4
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "IND",
     "player_name": "Tyrese Haliburton",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Achilles",
-      "location": "Leg",
-      "detail": "Surgery",
-      "side": "Right",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": null
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "LAC",
     "player_name": "John Collins",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Ankle",
-      "location": "Leg",
-      "detail": "Sprain",
-      "side": "Left",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Sprain",
     "player_avg_pts": 15.1
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "LAC",
     "player_name": "Kawhi Leonard",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Ankle",
-      "location": "Leg",
-      "detail": "Sprain",
-      "side": "Left",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Sprain",
     "player_avg_pts": 29.6
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "LAC",
     "player_name": "Bennedict Mathurin",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Toe",
-      "location": "Leg",
-      "detail": "Not Specified",
-      "side": "Right",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 19.4
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "LAC",
     "player_name": "Yanic Konan Niederhauser",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Foot",
-      "location": "Leg",
-      "detail": "Surgery",
-      "side": "Right",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 5.8
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "LAC",
     "player_name": "Bradley Beal",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Hip",
-      "location": "Torso",
-      "detail": "Surgery",
-      "side": "Left",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 8.2
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "LAL",
     "player_name": "Rui Hachimura",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Calf",
-      "location": "Leg",
-      "detail": "Soreness",
-      "side": "Right",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Soreness",
     "player_avg_pts": 9.7
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "LAL",
     "player_name": "Marcus Smart",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Ankle",
-      "location": "Leg",
-      "detail": "Soreness",
-      "side": "Right",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Soreness",
     "player_avg_pts": 9.2
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "LAL",
     "player_name": "Nick Smith Jr.",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Back",
-      "location": "Torso",
-      "detail": "Not Specified",
-      "side": "Not Specified",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 5.3
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "MEM",
     "player_name": "Javon Small",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Back",
-      "location": "Torso",
-      "detail": "Soreness",
-      "side": "Not Specified",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Soreness",
     "player_avg_pts": 12.8
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "",
     "player_name": "Taj Gibson",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Foot",
-      "location": "Leg",
-      "detail": "Soreness",
-      "side": "Right",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Soreness",
     "player_avg_pts": null
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "MEM",
     "player_name": "Ja Morant",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Elbow",
-      "location": "Arm",
-      "detail": "Sprain",
-      "side": "Left",
-      "returnDate": "2026-03-27"
-    },
+    "reason": "Sprain",
     "player_avg_pts": 19.4
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "",
     "player_name": "Jahmai Mashack",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Ankle",
-      "location": "Leg",
-      "detail": "Sprain",
-      "side": "Left",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Sprain",
     "player_avg_pts": null
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "MEM",
     "player_name": "Cedric Coward",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Personal",
-      "location": "Other",
-      "detail": "Not Specified",
-      "side": "Not Specified",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 12.7
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "MEM",
     "player_name": "Cam Spencer",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Back",
-      "location": "Torso",
-      "detail": "Soreness",
-      "side": "Not Specified",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Soreness",
     "player_avg_pts": 10.1
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "MEM",
     "player_name": "Brandon Clarke",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Calf",
-      "location": "Leg",
-      "detail": "Strain",
-      "side": "Right",
-      "returnDate": "2026-03-27"
-    },
+    "reason": "Strain",
     "player_avg_pts": 4.0
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "MEM",
     "player_name": "Santi Aldama",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Surgery",
-      "side": "Right",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 15.4
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "MEM",
     "player_name": "Scotty Pippen Jr.",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Toe",
-      "location": "Leg",
-      "detail": "Surgery",
-      "side": "Right",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 11.4
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "MEM",
     "player_name": "Zach Edey",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Ankle",
-      "location": "Leg",
-      "detail": "Surgery",
-      "side": "Left",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 13.6
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "MEM",
     "player_name": "Kentavious Caldwell-Pope",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Finger",
-      "location": "Arm",
-      "detail": "Surgery",
-      "side": "Right",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 8.6
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "MIA",
     "player_name": "Jahmir Young",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Undisclosed",
-      "location": "Other",
-      "detail": "Not Specified",
-      "side": "Not Specified",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 1.8
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "MIA",
     "player_name": "Terry Rozier",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Not Injury Related",
-      "detail": "Not Specified",
-      "side": "Not Specified",
-      "returnDate": "2026-04-01"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": null
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "MIL",
     "player_name": "Gary Harris",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Groin",
-      "location": "Groin",
-      "detail": "Bruise",
-      "side": "Left",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Bruise",
     "player_avg_pts": 2.3
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "MIL",
     "player_name": "Kyle Kuzma",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Achilles",
-      "location": "Leg",
-      "detail": "Soreness",
-      "side": "Right",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Soreness",
     "player_avg_pts": 13.8
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "MIL",
     "player_name": "Kevin Porter Jr.",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Inflammation",
-      "side": "Right",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Inflammation",
     "player_avg_pts": 16.4
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "MIL",
     "player_name": "Giannis Antetokounmpo",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Bruise",
-      "side": "Left",
-      "returnDate": "2026-03-28"
-    },
+    "reason": "Bruise",
     "player_avg_pts": 25.1
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "MIN",
     "player_name": "Anthony Edwards",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Inflammation",
-      "side": "Right",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Inflammation",
     "player_avg_pts": 29.6
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "NOP",
     "player_name": "Bryce McGowens",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Toe",
-      "location": "Leg",
-      "detail": "Fracture",
-      "side": "Right",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Fracture",
     "player_avg_pts": 8.5
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "NYK",
     "player_name": "Landry Shamet",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Soreness",
-      "side": "Right",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Soreness",
     "player_avg_pts": 9.4
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "NYK",
     "player_name": "Kevin McCullar Jr.",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Quadriceps",
-      "location": "Leg",
-      "detail": "Not Specified",
-      "side": "Right",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 1.8
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "NYK",
     "player_name": "Miles McBride",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Pelvis",
-      "location": "Groin",
-      "detail": "Surgery",
-      "side": "Not Specified",
-      "returnDate": "2026-04-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 14.2
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "OKC",
     "player_name": "Ajay Mitchell",
     "status": "suspension",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Suspension",
-      "location": "Other",
-      "detail": "Not Specified",
-      "side": "Not Specified",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 14.3
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "OKC",
     "player_name": "Thomas Sorber",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Surgery",
-      "side": "Right",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": null
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "ORL",
     "player_name": "Jalen Suggs",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Illness",
-      "location": "Other",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Illness",
     "player_avg_pts": 13.1
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "ORL",
     "player_name": "Franz Wagner",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Ankle",
-      "location": "Leg",
-      "detail": "Sprain",
-      "side": "Left",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Sprain",
     "player_avg_pts": 21.0
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "ORL",
     "player_name": "Jonathan Isaac",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Sprain",
-      "side": "Left",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Sprain",
     "player_avg_pts": 1.8
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "ORL",
     "player_name": "Anthony Black",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Abdomen",
-      "location": "Torso",
-      "detail": "Strain",
-      "side": "Left",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Strain",
     "player_avg_pts": 14.4
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "PHI",
     "player_name": "Dominick Barlow",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Ankle",
-      "location": "Leg",
-      "detail": "Sprain",
-      "side": "Left",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Sprain",
     "player_avg_pts": 7.8
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "PHI",
     "player_name": "Quentin Grimes",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Illness",
-      "location": "Other",
-      "detail": "Not Specified",
-      "side": "Not Specified",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 15.7
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "PHI",
     "player_name": "Joel Embiid",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Oblique",
-      "location": "Torso",
-      "detail": "Strain",
-      "side": "Right",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Strain",
     "player_avg_pts": 29.8
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "PHI",
     "player_name": "Kelly Oubre Jr.",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Elbow",
-      "location": "Arm",
-      "detail": "Sprain",
-      "side": "Left",
-      "returnDate": "2026-03-28"
-    },
+    "reason": "Sprain",
     "player_avg_pts": 14.8
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "PHI",
     "player_name": "Tyrese Maxey",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Finger",
-      "location": "Arm",
-      "detail": "Strain",
-      "side": "Right",
-      "returnDate": "2026-04-01"
-    },
+    "reason": "Strain",
     "player_avg_pts": 26.6
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "PHI",
     "player_name": "Johni Broome",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Surgery",
-      "side": "Right",
-      "returnDate": "2026-04-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 0.9
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "PHI",
     "player_name": "Paul George",
     "status": "suspension",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Suspension",
-      "location": "Other",
-      "detail": "Not Specified",
-      "side": "Not Specified",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 16.5
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "PHX",
     "player_name": "Royce O'Neale",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Soreness",
-      "side": "Left",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Soreness",
     "player_avg_pts": 9.2
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "PHX",
     "player_name": "Amir Coffey",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Ankle",
-      "location": "Leg",
-      "detail": "Sprain",
-      "side": "Left",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Sprain",
     "player_avg_pts": 4.2
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "PHX",
     "player_name": "Haywood Highsmith",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Not Specified",
-      "side": "Right",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 5.5
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "PHX",
     "player_name": "Grayson Allen",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Not Specified",
-      "side": "Left",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 18.1
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "PHX",
     "player_name": "Dillon Brooks",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Hand",
-      "location": "Arm",
-      "detail": "Surgery",
-      "side": "Left",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 20.4
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "PHX",
     "player_name": "Mark Williams",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Foot",
-      "location": "Leg",
-      "detail": "Fracture",
-      "side": "Left",
-      "returnDate": "2026-03-28"
-    },
+    "reason": "Fracture",
     "player_avg_pts": 10.4
   },
   {
-    "team_abbr": "ATL",
-    "player_name": "Robert Williams III",
-    "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Not Specified",
-      "side": "Left",
-      "returnDate": "2026-03-23"
-    },
-    "player_avg_pts": 8.1
-  },
-  {
-    "team_abbr": "ATL",
-    "player_name": "Jerami Grant",
-    "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Foot",
-      "location": "Leg",
-      "detail": "Soreness",
-      "side": "Left",
-      "returnDate": "2026-03-23"
-    },
-    "player_avg_pts": 18.4
-  },
-  {
-    "team_abbr": "ATL",
+    "team_abbr": "POR",
     "player_name": "Vit Krejci",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Calf",
-      "location": "Leg",
-      "detail": "Bruise",
-      "side": "Left",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Bruise",
     "player_avg_pts": 7.4
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "POR",
+    "player_name": "Jerami Grant",
+    "status": "out",
+    "reason": "Soreness",
+    "player_avg_pts": 18.4
+  },
+  {
+    "team_abbr": "POR",
+    "player_name": "Robert Williams III",
+    "status": "out",
+    "reason": "Not Specified",
+    "player_avg_pts": 8.1
+  },
+  {
+    "team_abbr": "POR",
     "player_name": "Shaedon Sharpe",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Calf",
-      "location": "Leg",
-      "detail": "Fracture",
-      "side": "Left",
-      "returnDate": "2026-04-02"
-    },
+    "reason": "Fracture",
     "player_avg_pts": 20.4
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "POR",
     "player_name": "Damian Lillard",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Achilles",
-      "location": "Leg",
-      "detail": "Surgery",
-      "side": "Left",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": null
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "SAC",
     "player_name": "Isaiah Stevens",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Ankle",
-      "location": "Leg",
-      "detail": "Soreness",
-      "side": "Right",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Soreness",
     "player_avg_pts": 3.3
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "SAC",
     "player_name": "Daeqwon Plowden",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Foot",
-      "location": "Leg",
-      "detail": "Soreness",
-      "side": "Right",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Soreness",
     "player_avg_pts": 9.8
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "SAC",
     "player_name": "Russell Westbrook",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Foot",
-      "location": "Leg",
-      "detail": "Soreness",
-      "side": "Right",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Soreness",
     "player_avg_pts": 14.7
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "SAC",
     "player_name": "Nique Clifford",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Ankle",
-      "location": "Leg",
-      "detail": "Not Specified",
-      "side": "Left",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 12.7
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "",
     "player_name": "Killian Hayes",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Toe",
-      "location": "Leg",
-      "detail": "Not Specified",
-      "side": "Left",
-      "returnDate": "2026-03-24"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": null
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "SAC",
     "player_name": "Drew Eubanks",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Thumb",
-      "location": "Arm",
-      "detail": "Surgery",
-      "side": "Left",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 4.7
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "SAC",
     "player_name": "Keegan Murray",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Ankle",
-      "location": "Leg",
-      "detail": "Sprain",
-      "side": "Left",
-      "returnDate": "2026-03-28"
-    },
+    "reason": "Sprain",
     "player_avg_pts": 13.2
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "SAC",
     "player_name": "De'Andre Hunter",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Eye",
-      "location": "Head",
-      "detail": "Surgery",
-      "side": "Left",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 11.9
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "SAC",
     "player_name": "Domantas Sabonis",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Surgery",
-      "side": "Left",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 15.8
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "SAC",
     "player_name": "Zach LaVine",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Finger",
-      "location": "Arm",
-      "detail": "Surgery",
-      "side": "Right",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 17.7
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "SAS",
     "player_name": "Devin Vassell",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Hamstring",
-      "location": "Leg",
-      "detail": "Soreness",
-      "side": "Right",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Soreness",
     "player_avg_pts": 13.6
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "SAS",
     "player_name": "David Jones Garcia",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Ankle",
-      "location": "Leg",
-      "detail": "Surgery",
-      "side": "Right",
-      "returnDate": "2026-07-02"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 2.9
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "TOR",
     "player_name": "Collin Murray-Boyles",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Thumb",
-      "location": "Arm",
-      "detail": "Sprain",
-      "side": "Left",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Sprain",
     "player_avg_pts": 9.0
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "TOR",
     "player_name": "Immanuel Quickley",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Foot",
-      "location": "Leg",
-      "detail": "Plantar Fasciitis",
-      "side": "Right",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Plantar Fasciitis",
     "player_avg_pts": 17.1
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "TOR",
     "player_name": "Jakob Poeltl",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Back",
-      "location": "Torso",
-      "detail": "Not Specified",
-      "side": "Not Specified",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 10.2
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "TOR",
     "player_name": "Chucky Hepburn",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Surgery",
-      "side": "Right",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 0.0
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "UTA",
     "player_name": "Cody Williams",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Shoulder",
-      "location": "Arm",
-      "detail": "Soreness",
-      "side": "Right",
-      "returnDate": "2026-03-23"
-    },
+    "reason": "Soreness",
     "player_avg_pts": 10.0
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "UTA",
     "player_name": "Isaiah Collier",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Hamstring",
-      "location": "Leg",
-      "detail": "Not Specified",
-      "side": "Left",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 16.6
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "UTA",
     "player_name": "Lauri Markkanen",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Hip",
-      "location": "Torso",
-      "detail": "Pinched Nerve",
-      "side": "Right",
-      "returnDate": "2026-04-10"
-    },
+    "reason": "Pinched Nerve",
     "player_avg_pts": 25.8
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "UTA",
     "player_name": "Keyonte George",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Hamstring",
-      "location": "Leg",
-      "detail": "Strain",
-      "side": "Right",
-      "returnDate": "2026-03-27"
-    },
+    "reason": "Strain",
     "player_avg_pts": 22.5
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "UTA",
     "player_name": "Jusuf Nurkic",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Nose",
-      "location": "Head",
-      "detail": "Surgery",
-      "side": "Not Specified",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 13.7
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "UTA",
     "player_name": "Jaren Jackson Jr.",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Surgery",
-      "side": "Left",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 21.6
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "UTA",
     "player_name": "Walker Kessler",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Shoulder",
-      "location": "Arm",
-      "detail": "Surgery",
-      "side": "Left",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Surgery",
     "player_avg_pts": 14.4
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "WAS",
     "player_name": "Alex Sarr",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Toe",
-      "location": "Leg",
-      "detail": "Inflammation",
-      "side": "Left",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Inflammation",
     "player_avg_pts": 15.3
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "WAS",
     "player_name": "Tre Johnson",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Foot",
-      "location": "Leg",
-      "detail": "Sprain",
-      "side": "Right",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Sprain",
     "player_avg_pts": 11.9
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "WAS",
     "player_name": "Tristan Vukcevic",
     "status": "day-to-day",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Back",
-      "location": "Torso",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Back",
     "player_avg_pts": 11.2
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "WAS",
     "player_name": "Trae Young",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "GTD",
-        "abbreviation": "GTD"
-      },
-      "type": "Quadriceps",
-      "location": "Leg",
-      "detail": "Bruise",
-      "side": "Right",
-      "returnDate": "2026-03-25"
-    },
+    "reason": "Bruise",
     "player_avg_pts": 17.9
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "WAS",
     "player_name": "Anthony Davis",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Finger",
-      "location": "Arm",
-      "detail": "Sprain",
-      "side": "Left",
-      "returnDate": "2026-04-01"
-    },
+    "reason": "Sprain",
     "player_avg_pts": 20.4
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "WAS",
     "player_name": "Kyshawn George",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Elbow",
-      "location": "Arm",
-      "detail": "Sprain",
-      "side": "Left",
-      "returnDate": "2026-03-27"
-    },
+    "reason": "Sprain",
     "player_avg_pts": 14.5
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "WAS",
     "player_name": "D'Angelo Russell",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OUT",
-        "abbreviation": "OUT"
-      },
-      "type": "Not Injury Related",
-      "detail": "Not Specified",
-      "side": "Not Specified",
-      "returnDate": "2026-04-01"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 8.9
   },
   {
-    "team_abbr": "ATL",
+    "team_abbr": "WAS",
     "player_name": "Cam Whitmore",
     "status": "out",
-    "reason": {
-      "fantasyStatus": {
-        "description": "OFS",
-        "abbreviation": "OFS"
-      },
-      "type": "Shoulder",
-      "location": "Arm",
-      "detail": "Not Specified",
-      "side": "Right",
-      "returnDate": "2026-10-01"
-    },
+    "reason": "Not Specified",
     "player_avg_pts": 8.9
   }
 ]
