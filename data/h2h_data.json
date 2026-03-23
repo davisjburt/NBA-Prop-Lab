@@ -1,0 +1,1510 @@
+{
+  "GSW_LAL": {
+    "GSW": 1,
+    "LAL": 2
+  },
+  "HOU_OKC": {
+    "OKC": 2,
+    "HOU": 1
+  },
+  "CHI_DET": {
+    "CHI": 1,
+    "DET": 3
+  },
+  "CLE_NYK": {
+    "NYK": 2,
+    "CLE": 1
+  },
+  "BOS_PHI": {
+    "PHI": 2,
+    "BOS": 2
+  },
+  "PHX_SAC": {
+    "PHX": 4
+  },
+  "ATL_TOR": {
+    "TOR": 4
+  },
+  "MEM_NOP": {
+    "MEM": 2,
+    "NOP": 2
+  },
+  "MIL_WAS": {
+    "MIL": 1,
+    "WAS": 3
+  },
+  "MIN_POR": {
+    "MIN": 3,
+    "POR": 1
+  },
+  "MIA_ORL": {
+    "ORL": 5
+  },
+  "DAL_SAS": {
+    "SAS": 3
+  },
+  "LAC_UTA": {
+    "UTA": 1,
+    "LAC": 2
+  },
+  "BKN_CHA": {
+    "CHA": 1,
+    "BKN": 1
+  },
+  "DEN_GSW": {
+    "GSW": 2,
+    "DEN": 1
+  },
+  "IND_OKC": {
+    "OKC": 1,
+    "IND": 1
+  },
+  "ATL_ORL": {
+    "ATL": 3
+  },
+  "BKN_CLE": {
+    "CLE": 3
+  },
+  "LAC_PHX": {
+    "LAC": 2,
+    "PHX": 2
+  },
+  "LAL_MIN": {
+    "LAL": 3
+  },
+  "MEM_MIA": {
+    "MIA": 2
+  },
+  "MIL_TOR": {
+    "MIL": 1,
+    "TOR": 3
+  },
+  "BOS_NYK": {
+    "NYK": 2,
+    "BOS": 1
+  },
+  "GSW_POR": {
+    "POR": 3,
+    "GSW": 1
+  },
+  "SAC_UTA": {
+    "SAC": 2,
+    "UTA": 2
+  },
+  "NOP_SAS": {
+    "SAS": 3,
+    "NOP": 1
+  },
+  "DAL_WAS": {
+    "WAS": 1,
+    "DAL": 1
+  },
+  "DET_HOU": {
+    "DET": 1,
+    "HOU": 1
+  },
+  "DEN_PHX": {
+    "DEN": 2
+  },
+  "CHA_PHI": {
+    "PHI": 1,
+    "CHA": 1
+  },
+  "IND_MEM": {
+    "MEM": 2
+  },
+  "CHI_ORL": {
+    "CHI": 2,
+    "ORL": 1
+  },
+  "ATL_OKC": {
+    "OKC": 2
+  },
+  "CLE_MIL": {
+    "CLE": 3,
+    "MIL": 1
+  },
+  "DAL_TOR": {
+    "DAL": 1,
+    "TOR": 1
+  },
+  "LAL_SAC": {
+    "LAL": 3,
+    "SAC": 1
+  },
+  "MIA_NYK": {
+    "MIA": 2,
+    "NYK": 2
+  },
+  "IND_MIN": {
+    "MIN": 1
+  },
+  "BKN_SAS": {
+    "SAS": 2
+  },
+  "CHA_WAS": {
+    "CHA": 4
+  },
+  "BOS_DET": {
+    "DET": 3,
+    "BOS": 1
+  },
+  "LAC_POR": {
+    "LAC": 2
+  },
+  "ATL_CHI": {
+    "CHI": 3
+  },
+  "BKN_HOU": {
+    "HOU": 2
+  },
+  "LAL_POR": {
+    "POR": 2,
+    "LAL": 1
+  },
+  "DAL_OKC": {
+    "OKC": 3
+  },
+  "PHX_UTA": {
+    "UTA": 1,
+    "PHX": 1
+  },
+  "BOS_NOP": {
+    "BOS": 1
+  },
+  "CLE_DET": {
+    "CLE": 2,
+    "DET": 2
+  },
+  "DEN_MIN": {
+    "DEN": 3,
+    "MIN": 1
+  },
+  "ORL_PHI": {
+    "PHI": 2,
+    "ORL": 1
+  },
+  "GSW_MEM": {
+    "GSW": 3
+  },
+  "SAS_TOR": {
+    "SAS": 2
+  },
+  "CHA_MIA": {
+    "MIA": 3,
+    "CHA": 1
+  },
+  "GSW_LAC": {
+    "GSW": 1,
+    "LAC": 2
+  },
+  "MIL_NYK": {
+    "MIL": 1,
+    "NYK": 2
+  },
+  "PHI_WAS": {
+    "PHI": 3
+  },
+  "OKC_SAC": {
+    "OKC": 3
+  },
+  "DAL_IND": {
+    "DAL": 2
+  },
+  "POR_UTA": {
+    "POR": 4
+  },
+  "MEM_PHX": {
+    "MEM": 1,
+    "PHX": 1
+  },
+  "ATL_BKN": {
+    "ATL": 3
+  },
+  "BOS_CLE": {
+    "BOS": 3
+  },
+  "DET_ORL": {
+    "DET": 2,
+    "ORL": 1
+  },
+  "CHI_SAC": {
+    "CHI": 1,
+    "SAC": 1
+  },
+  "DEN_NOP": {
+    "DEN": 3
+  },
+  "HOU_TOR": {
+    "HOU": 2
+  },
+  "GSW_MIL": {
+    "MIL": 1,
+    "GSW": 1
+  },
+  "CHA_ORL": {
+    "ORL": 1,
+    "CHA": 3
+  },
+  "MIA_SAS": {
+    "SAS": 1
+  },
+  "OKC_WAS": {
+    "OKC": 2
+  },
+  "CHI_NYK": {
+    "CHI": 1,
+    "NYK": 2
+  },
+  "LAC_NOP": {
+    "LAC": 2,
+    "NOP": 2
+  },
+  "LAL_MEM": {
+    "LAL": 3
+  },
+  "CLE_TOR": {
+    "TOR": 3
+  },
+  "ATL_IND": {
+    "ATL": 2,
+    "IND": 1
+  },
+  "DEN_POR": {
+    "POR": 1,
+    "DEN": 2
+  },
+  "CHA_MIN": {
+    "MIN": 1
+  },
+  "ORL_WAS": {
+    "ORL": 3,
+    "WAS": 1
+  },
+  "BOS_HOU": {
+    "HOU": 1,
+    "BOS": 1
+  },
+  "GSW_IND": {
+    "IND": 1,
+    "GSW": 1
+  },
+  "MIL_SAC": {
+    "SAC": 1,
+    "MIL": 1
+  },
+  "DAL_DET": {
+    "DET": 1,
+    "DAL": 1
+  },
+  "ATL_CLE": {
+    "CLE": 1,
+    "ATL": 1
+  },
+  "LAL_MIA": {
+    "LAL": 2
+  },
+  "PHX_SAS": {
+    "PHX": 2,
+    "SAS": 2
+  },
+  "NOP_OKC": {
+    "OKC": 3
+  },
+  "CHA_UTA": {
+    "CHA": 2
+  },
+  "BKN_PHI": {
+    "PHI": 3,
+    "BKN": 1
+  },
+  "MEM_TOR": {
+    "TOR": 1
+  },
+  "DEN_SAC": {
+    "DEN": 3,
+    "SAC": 1
+  },
+  "DAL_HOU": {
+    "HOU": 2,
+    "DAL": 2
+  },
+  "LAC_MIA": {
+    "MIA": 2
+  },
+  "IND_MIL": {
+    "MIL": 4
+  },
+  "BKN_MIN": {
+    "MIN": 1,
+    "BKN": 1
+  },
+  "NYK_WAS": {
+    "NYK": 3
+  },
+  "DET_MEM": {
+    "DET": 2
+  },
+  "BOS_UTA": {
+    "UTA": 1,
+    "BOS": 1
+  },
+  "CHA_NOP": {
+    "NOP": 1,
+    "CHA": 1
+  },
+  "LAC_OKC": {
+    "OKC": 2
+  },
+  "CHI_PHI": {
+    "CHI": 2
+  },
+  "GSW_PHX": {
+    "GSW": 3,
+    "PHX": 1
+  },
+  "BOS_WAS": {
+    "BOS": 3
+  },
+  "CLE_PHI": {
+    "CLE": 4
+  },
+  "HOU_MEM": {
+    "HOU": 2
+  },
+  "DET_UTA": {
+    "DET": 1,
+    "UTA": 1
+  },
+  "DAL_NOP": {
+    "NOP": 3,
+    "DAL": 1
+  },
+  "LAL_SAS": {
+    "LAL": 1,
+    "SAS": 3
+  },
+  "BKN_IND": {
+    "BKN": 1,
+    "IND": 1
+  },
+  "MIN_NYK": {
+    "NYK": 1,
+    "MIN": 1
+  },
+  "OKC_POR": {
+    "POR": 1,
+    "OKC": 3
+  },
+  "GSW_SAC": {
+    "SAC": 1,
+    "GSW": 1
+  },
+  "DEN_MIA": {
+    "DEN": 1,
+    "MIA": 1
+  },
+  "BOS_ORL": {
+    "ORL": 1,
+    "BOS": 2
+  },
+  "BKN_DET": {
+    "DET": 3,
+    "BKN": 1
+  },
+  "CLE_WAS": {
+    "CLE": 3
+  },
+  "CHI_MIL": {
+    "MIL": 3,
+    "CHI": 1
+  },
+  "MIN_UTA": {
+    "MIN": 3,
+    "UTA": 1
+  },
+  "DAL_MEM": {
+    "MEM": 3,
+    "DAL": 1
+  },
+  "HOU_SAS": {
+    "SAS": 3,
+    "HOU": 1
+  },
+  "DEN_IND": {
+    "DEN": 2
+  },
+  "MIA_POR": {
+    "MIA": 1,
+    "POR": 1
+  },
+  "ATL_LAL": {
+    "ATL": 1,
+    "LAL": 1
+  },
+  "CHI_CLE": {
+    "CLE": 2,
+    "CHI": 2
+  },
+  "PHI_TOR": {
+    "PHI": 2,
+    "TOR": 2
+  },
+  "HOU_MIL": {
+    "HOU": 1
+  },
+  "MIN_SAC": {
+    "MIN": 3,
+    "SAC": 1
+  },
+  "BKN_NYK": {
+    "NYK": 4
+  },
+  "MEM_OKC": {
+    "OKC": 3
+  },
+  "DET_PHI": {
+    "DET": 3
+  },
+  "ATL_LAC": {
+    "ATL": 1,
+    "LAC": 1
+  },
+  "NOP_PHX": {
+    "PHX": 4
+  },
+  "DET_WAS": {
+    "DET": 3,
+    "WAS": 1
+  },
+  "CLE_MIA": {
+    "MIA": 1,
+    "CLE": 1
+  },
+  "DAL_MIL": {
+    "MIL": 1
+  },
+  "ORL_POR": {
+    "ORL": 2
+  },
+  "CHI_SAS": {
+    "SAS": 1
+  },
+  "CHA_LAL": {
+    "LAL": 1,
+    "CHA": 1
+  },
+  "MEM_NYK": {
+    "NYK": 1
+  },
+  "BKN_TOR": {
+    "TOR": 2,
+    "BKN": 1
+  },
+  "GSW_OKC": {
+    "OKC": 4
+  },
+  "IND_UTA": {
+    "UTA": 2
+  },
+  "ATL_SAC": {
+    "ATL": 1
+  },
+  "BOS_MEM": {
+    "BOS": 2
+  },
+  "GSW_SAS": {
+    "GSW": 2,
+    "SAS": 1
+  },
+  "HOU_WAS": {
+    "HOU": 2
+  },
+  "LAL_OKC": {
+    "OKC": 2
+  },
+  "CHA_MIL": {
+    "CHA": 1,
+    "MIL": 3
+  },
+  "DEN_LAC": {
+    "DEN": 2,
+    "LAC": 1
+  },
+  "NYK_ORL": {
+    "ORL": 2,
+    "NYK": 2
+  },
+  "DAL_PHX": {
+    "PHX": 2
+  },
+  "NOP_POR": {
+    "POR": 2,
+    "NOP": 1
+  },
+  "ATL_UTA": {
+    "ATL": 2
+  },
+  "IND_PHX": {
+    "PHX": 2
+  },
+  "LAL_NOP": {
+    "LAL": 4
+  },
+  "BKN_ORL": {
+    "ORL": 3
+  },
+  "HOU_POR": {
+    "HOU": 2,
+    "POR": 2
+  },
+  "DAL_LAC": {
+    "LAC": 2,
+    "DAL": 1
+  },
+  "LAL_MIL": {
+    "LAL": 1,
+    "MIL": 1
+  },
+  "CHA_OKC": {
+    "OKC": 1,
+    "CHA": 1
+  },
+  "CLE_MEM": {
+    "CLE": 1
+  },
+  "IND_TOR": {
+    "TOR": 4
+  },
+  "ATL_PHX": {
+    "ATL": 2
+  },
+  "DAL_POR": {
+    "DAL": 1,
+    "POR": 1
+  },
+  "GSW_NOP": {
+    "GSW": 2,
+    "NOP": 1
+  },
+  "HOU_ORL": {
+    "HOU": 2
+  },
+  "SAC_SAS": {
+    "SAS": 3
+  },
+  "CHI_UTA": {
+    "UTA": 1,
+    "CHI": 1
+  },
+  "BKN_WAS": {
+    "BKN": 2,
+    "WAS": 1
+  },
+  "BOS_LAC": {
+    "BOS": 2
+  },
+  "CHI_DEN": {
+    "CHI": 1,
+    "DEN": 1
+  },
+  "DAL_MIN": {
+    "MIN": 3
+  },
+  "LAC_PHI": {
+    "PHI": 2
+  },
+  "CHA_TOR": {
+    "TOR": 2,
+    "CHA": 2
+  },
+  "DET_IND": {
+    "DET": 3
+  },
+  "BKN_BOS": {
+    "BOS": 3,
+    "BKN": 1
+  },
+  "LAL_UTA": {
+    "LAL": 3
+  },
+  "GSW_ORL": {
+    "ORL": 1,
+    "GSW": 1
+  },
+  "ATL_DET": {
+    "DET": 3
+  },
+  "PHX_POR": {
+    "PHX": 2,
+    "POR": 1
+  },
+  "MEM_SAS": {
+    "SAS": 2,
+    "MEM": 1
+  },
+  "CHI_POR": {
+    "CHI": 1,
+    "POR": 1
+  },
+  "GSW_MIA": {
+    "MIA": 1,
+    "GSW": 1
+  },
+  "CHA_IND": {
+    "IND": 2,
+    "CHA": 1
+  },
+  "CLE_HOU": {
+    "HOU": 2
+  },
+  "MIN_WAS": {
+    "MIN": 2
+  },
+  "DAL_NYK": {
+    "NYK": 1,
+    "DAL": 1
+  },
+  "MIL_PHI": {
+    "PHI": 3
+  },
+  "ATL_SAS": {
+    "SAS": 2
+  },
+  "MEM_SAC": {
+    "MEM": 3,
+    "SAC": 1
+  },
+  "LAC_ORL": {
+    "ORL": 2
+  },
+  "DEN_HOU": {
+    "DEN": 3,
+    "HOU": 1
+  },
+  "CLE_IND": {
+    "CLE": 3
+  },
+  "MIN_PHX": {
+    "PHX": 2,
+    "MIN": 1
+  },
+  "OKC_UTA": {
+    "OKC": 3
+  },
+  "TOR_WAS": {
+    "TOR": 2,
+    "WAS": 1
+  },
+  "CHI_MIA": {
+    "MIA": 3,
+    "CHI": 1
+  },
+  "CHA_LAC": {
+    "LAC": 2
+  },
+  "DET_MIL": {
+    "DET": 2,
+    "MIL": 1
+  },
+  "CHI_WAS": {
+    "CHI": 1
+  },
+  "ATL_NOP": {
+    "ATL": 2
+  },
+  "ATL_CHA": {
+    "ATL": 1,
+    "CHA": 3
+  },
+  "CLE_LAC": {
+    "CLE": 2
+  },
+  "MIA_PHI": {
+    "MIA": 1,
+    "PHI": 1
+  },
+  "CHI_NOP": {
+    "NOP": 2,
+    "CHI": 1
+  },
+  "DEN_MEM": {
+    "DEN": 2,
+    "MEM": 1
+  },
+  "HOU_PHX": {
+    "HOU": 3
+  },
+  "GSW_UTA": {
+    "GSW": 3,
+    "UTA": 1
+  },
+  "DAL_MIA": {
+    "MIA": 1,
+    "DAL": 1
+  },
+  "MIL_POR": {
+    "POR": 1
+  },
+  "LAC_LAL": {
+    "LAL": 2,
+    "LAC": 2
+  },
+  "ATL_WAS": {
+    "WAS": 1,
+    "ATL": 3
+  },
+  "CHA_NYK": {
+    "NYK": 2
+  },
+  "POR_SAS": {
+    "SAS": 1,
+    "POR": 1
+  },
+  "MIN_OKC": {
+    "OKC": 2,
+    "MIN": 2
+  },
+  "GSW_HOU": {
+    "HOU": 1,
+    "GSW": 1
+  },
+  "MIA_MIL": {
+    "MIA": 2,
+    "MIL": 1
+  },
+  "CHA_CHI": {
+    "CHA": 3,
+    "CHI": 1
+  },
+  "DAL_LAL": {
+    "LAL": 3
+  },
+  "IND_WAS": {
+    "IND": 1,
+    "WAS": 3
+  },
+  "DEN_SAS": {
+    "SAS": 1,
+    "DEN": 1
+  },
+  "LAC_MEM": {
+    "MEM": 3,
+    "LAC": 1
+  },
+  "OKC_PHX": {
+    "OKC": 3,
+    "PHX": 1
+  },
+  "BKN_MIL": {
+    "MIL": 1,
+    "BKN": 1
+  },
+  "BOS_MIN": {
+    "MIN": 2
+  },
+  "CHI_IND": {
+    "IND": 3
+  },
+  "DET_MIA": {
+    "DET": 1,
+    "MIA": 2
+  },
+  "ATL_PHI": {
+    "ATL": 4
+  },
+  "MIN_SAS": {
+    "MIN": 2,
+    "SAS": 1
+  },
+  "NYK_TOR": {
+    "NYK": 4
+  },
+  "HOU_UTA": {
+    "HOU": 2,
+    "UTA": 1
+  },
+  "DAL_DEN": {
+    "DAL": 2,
+    "DEN": 1
+  },
+  "LAL_PHX": {
+    "PHX": 3,
+    "LAL": 1
+  },
+  "MIN_NOP": {
+    "MIN": 2,
+    "NOP": 1
+  },
+  "POR_TOR": {
+    "TOR": 2
+  },
+  "ORL_SAS": {
+    "SAS": 2
+  },
+  "HOU_SAC": {
+    "HOU": 2,
+    "SAC": 2
+  },
+  "BKN_CHI": {
+    "BKN": 3,
+    "CHI": 1
+  },
+  "CLE_POR": {
+    "POR": 1,
+    "CLE": 1
+  },
+  "BKN_UTA": {
+    "UTA": 1,
+    "BKN": 1
+  },
+  "LAL_TOR": {
+    "LAL": 2
+  },
+  "GSW_PHI": {
+    "PHI": 2
+  },
+  "NYK_UTA": {
+    "NYK": 2
+  },
+  "ATL_DEN": {
+    "DEN": 1,
+    "ATL": 1
+  },
+  "CLE_SAS": {
+    "CLE": 2
+  },
+  "BOS_LAL": {
+    "BOS": 2
+  },
+  "DET_POR": {
+    "DET": 2
+  },
+  "CLE_GSW": {
+    "GSW": 1
+  },
+  "MIA_SAC": {
+    "SAC": 1,
+    "MIA": 1
+  },
+  "LAC_MIN": {
+    "MIN": 2,
+    "LAC": 2
+  },
+  "BKN_NOP": {
+    "BKN": 1,
+    "NOP": 1
+  },
+  "CHI_GSW": {
+    "GSW": 1,
+    "CHI": 1
+  },
+  "LAL_PHI": {
+    "LAL": 2
+  },
+  "MEM_POR": {
+    "MEM": 1,
+    "POR": 3
+  },
+  "BOS_TOR": {
+    "BOS": 3
+  },
+  "CHA_DEN": {
+    "DEN": 1,
+    "CHA": 1
+  },
+  "IND_SAC": {
+    "IND": 1,
+    "SAC": 1
+  },
+  "HOU_LAC": {
+    "HOU": 2,
+    "LAC": 2
+  },
+  "BOS_MIL": {
+    "MIL": 1,
+    "BOS": 2
+  },
+  "IND_PHI": {
+    "PHI": 3
+  },
+  "MEM_UTA": {
+    "UTA": 1,
+    "MEM": 2
+  },
+  "BKN_DAL": {
+    "DAL": 3
+  },
+  "GSW_MIN": {
+    "MIN": 3,
+    "GSW": 1
+  },
+  "OKC_SAS": {
+    "SAS": 4,
+    "OKC": 1
+  },
+  "CHA_CLE": {
+    "CHA": 1,
+    "CLE": 3
+  },
+  "MIA_TOR": {
+    "TOR": 2
+  },
+  "DAL_UTA": {
+    "UTA": 2,
+    "DAL": 2
+  },
+  "MEM_MIN": {
+    "MEM": 2,
+    "MIN": 2
+  },
+  "IND_NYK": {
+    "NYK": 3,
+    "IND": 1
+  },
+  "BKN_MIA": {
+    "MIA": 3
+  },
+  "HOU_NOP": {
+    "NOP": 1,
+    "HOU": 2
+  },
+  "SAS_WAS": {
+    "SAS": 2
+  },
+  "DEN_ORL": {
+    "DEN": 1,
+    "ORL": 1
+  },
+  "POR_SAC": {
+    "POR": 3
+  },
+  "BOS_MIA": {
+    "BOS": 3
+  },
+  "NYK_PHI": {
+    "PHI": 2,
+    "NYK": 2
+  },
+  "MEM_WAS": {
+    "WAS": 2
+  },
+  "ORL_UTA": {
+    "ORL": 2
+  },
+  "CHA_DET": {
+    "DET": 2
+  },
+  "DAL_PHI": {
+    "PHI": 2
+  },
+  "IND_NOP": {
+    "NOP": 1,
+    "IND": 1
+  },
+  "MIL_MIN": {
+    "MIN": 2
+  },
+  "BOS_IND": {
+    "BOS": 3,
+    "IND": 1
+  },
+  "DEN_UTA": {
+    "DEN": 2
+  },
+  "CLE_NOP": {
+    "CLE": 2
+  },
+  "DET_SAC": {
+    "DET": 2
+  },
+  "HOU_LAL": {
+    "HOU": 1,
+    "LAL": 2
+  },
+  "DAL_GSW": {
+    "GSW": 1,
+    "DAL": 1
+  },
+  "ATL_MIA": {
+    "MIA": 2,
+    "ATL": 1
+  },
+  "MEM_MIL": {
+    "MEM": 1
+  },
+  "ATL_NYK": {
+    "NYK": 1,
+    "ATL": 1
+  },
+  "IND_MIA": {
+    "MIA": 1,
+    "IND": 1
+  },
+  "DAL_SAC": {
+    "SAC": 2,
+    "DAL": 1
+  },
+  "SAS_UTA": {
+    "UTA": 1,
+    "SAS": 2
+  },
+  "OKC_PHI": {
+    "OKC": 1
+  },
+  "GSW_TOR": {
+    "TOR": 2
+  },
+  "DET_LAC": {
+    "LAC": 2
+  },
+  "BOS_POR": {
+    "POR": 1,
+    "BOS": 1
+  },
+  "BKN_GSW": {
+    "GSW": 1
+  },
+  "CHI_MIN": {
+    "MIN": 1,
+    "CHI": 1
+  },
+  "HOU_IND": {
+    "HOU": 2
+  },
+  "PHX_WAS": {
+    "PHX": 2
+  },
+  "ORL_TOR": {
+    "TOR": 1,
+    "ORL": 1
+  },
+  "NOP_NYK": {
+    "NYK": 1
+  },
+  "MEM_PHI": {
+    "PHI": 2
+  },
+  "LAC_SAC": {
+    "LAC": 2,
+    "SAC": 1
+  },
+  "DET_LAL": {
+    "DET": 1
+  },
+  "CHA_GSW": {
+    "GSW": 2
+  },
+  "ATL_MIN": {
+    "ATL": 1,
+    "MIN": 1
+  },
+  "IND_ORL": {
+    "ORL": 2
+  },
+  "CLE_PHX": {
+    "CLE": 1,
+    "PHX": 1
+  },
+  "DEN_TOR": {
+    "DEN": 2
+  },
+  "NYK_SAS": {
+    "SAS": 1,
+    "NYK": 1
+  },
+  "BOS_SAC": {
+    "BOS": 2
+  },
+  "IND_SAS": {
+    "SAS": 2
+  },
+  "CLE_DEN": {
+    "CLE": 2
+  },
+  "MIA_MIN": {
+    "MIN": 2
+  },
+  "BKN_DEN": {
+    "BKN": 1,
+    "DEN": 1
+  },
+  "MIA_NOP": {
+    "MIA": 2
+  },
+  "BOS_CHI": {
+    "BOS": 2,
+    "CHI": 1
+  },
+  "DET_NYK": {
+    "DET": 3
+  },
+  "DEN_PHI": {
+    "DEN": 2
+  },
+  "LAC_NYK": {
+    "NYK": 1,
+    "LAC": 1
+  },
+  "BOS_DEN": {
+    "DEN": 2
+  },
+  "CLE_MIN": {
+    "MIN": 1,
+    "CLE": 1
+  },
+  "NOP_WAS": {
+    "NOP": 2
+  },
+  "NYK_PHX": {
+    "PHX": 2
+  },
+  "BKN_LAC": {
+    "LAC": 2
+  },
+  "BOS_SAS": {
+    "SAS": 2
+  },
+  "CHI_DAL": {
+    "CHI": 1
+  },
+  "MIA_OKC": {
+    "OKC": 1,
+    "MIA": 1
+  },
+  "DEN_MIL": {
+    "DEN": 2
+  },
+  "ATL_GSW": {
+    "ATL": 2
+  },
+  "NOP_ORL": {
+    "ORL": 1
+  },
+  "BKN_MEM": {
+    "MEM": 1,
+    "BKN": 1
+  },
+  "NYK_POR": {
+    "NYK": 2
+  },
+  "CLE_UTA": {
+    "UTA": 1
+  },
+  "MIA_PHX": {
+    "MIA": 2
+  },
+  "CHI_HOU": {
+    "HOU": 1
+  },
+  "NYK_SAC": {
+    "SAC": 1,
+    "NYK": 1
+  },
+  "LAC_WAS": {
+    "LAC": 2
+  },
+  "MEM_ORL": {
+    "ORL": 1,
+    "MEM": 1
+  },
+  "DET_PHX": {
+    "DET": 1,
+    "PHX": 1
+  },
+  "MIL_SAS": {
+    "SAS": 1
+  },
+  "ATL_POR": {
+    "POR": 1,
+    "ATL": 1
+  },
+  "GSW_NYK": {
+    "GSW": 1,
+    "NYK": 1
+  },
+  "LAC_TOR": {
+    "LAC": 1
+  },
+  "HOU_MIN": {
+    "HOU": 1
+  },
+  "SAC_WAS": {
+    "SAC": 1,
+    "WAS": 1
+  },
+  "ATL_BOS": {
+    "BOS": 1,
+    "ATL": 1
+  },
+  "DEN_WAS": {
+    "DEN": 2
+  },
+  "CLE_OKC": {
+    "OKC": 2
+  },
+  "ATL_MIL": {
+    "MIL": 1,
+    "ATL": 2
+  },
+  "BKN_PHX": {
+    "PHX": 2
+  },
+  "DEN_LAL": {
+    "LAL": 2,
+    "DEN": 1
+  },
+  "PHI_PHX": {
+    "PHX": 1,
+    "PHI": 1
+  },
+  "CHI_LAC": {
+    "CHI": 1,
+    "LAC": 1
+  },
+  "ATL_MEM": {
+    "ATL": 1
+  },
+  "DET_NOP": {
+    "DET": 1
+  },
+  "SAC_TOR": {
+    "TOR": 1
+  },
+  "MIL_OKC": {
+    "OKC": 1,
+    "MIL": 1
+  },
+  "HOU_PHI": {
+    "PHI": 1
+  },
+  "CLE_SAC": {
+    "CLE": 2
+  },
+  "CLE_ORL": {
+    "CLE": 2,
+    "ORL": 1
+  },
+  "MIA_UTA": {
+    "MIA": 1,
+    "UTA": 1
+  },
+  "OKC_TOR": {
+    "TOR": 1,
+    "OKC": 1
+  },
+  "CHI_LAL": {
+    "LAL": 2
+  },
+  "DEN_DET": {
+    "DET": 2
+  },
+  "POR_WAS": {
+    "WAS": 1
+  },
+  "CLE_LAL": {
+    "CLE": 1
+  },
+  "CHA_MEM": {
+    "CHA": 2
+  },
+  "PHI_SAC": {
+    "PHI": 2
+  },
+  "ATL_HOU": {
+    "HOU": 2
+  },
+  "CHA_DAL": {
+    "CHA": 2
+  },
+  "LAL_WAS": {
+    "LAL": 1
+  },
+  "DET_GSW": {
+    "DET": 2
+  },
+  "CHA_SAS": {
+    "CHA": 1,
+    "SAS": 1
+  },
+  "NOP_PHI": {
+    "PHI": 1,
+    "NOP": 1
+  },
+  "TOR_UTA": {
+    "TOR": 1
+  },
+  "LAL_NYK": {
+    "NYK": 1,
+    "LAL": 1
+  },
+  "DEN_OKC": {
+    "OKC": 3
+  },
+  "OKC_ORL": {
+    "OKC": 2
+  },
+  "BOS_DAL": {
+    "BOS": 2
+  },
+  "BKN_LAL": {
+    "LAL": 1
+  },
+  "DEN_NYK": {
+    "NYK": 2
+  },
+  "MIL_NOP": {
+    "MIL": 2
+  },
+  "MIN_TOR": {
+    "MIN": 2
+  },
+  "CHI_TOR": {
+    "TOR": 3
+  },
+  "CHA_HOU": {
+    "CHA": 1,
+    "HOU": 1
+  },
+  "MIA_WAS": {
+    "MIA": 2
+  },
+  "MIL_ORL": {
+    "ORL": 2,
+    "MIL": 1
+  },
+  "NOP_SAC": {
+    "NOP": 2
+  },
+  "PHI_POR": {
+    "POR": 1,
+    "PHI": 1
+  },
+  "DET_TOR": {
+    "DET": 1,
+    "TOR": 1
+  },
+  "ORL_SAC": {
+    "ORL": 1
+  },
+  "BOS_GSW": {
+    "BOS": 2
+  },
+  "BKN_OKC": {
+    "OKC": 2
+  },
+  "ORL_PHX": {
+    "PHX": 1
+  },
+  "HOU_NYK": {
+    "NYK": 1
+  },
+  "MIN_PHI": {
+    "PHI": 1
+  },
+  "DET_SAS": {
+    "SAS": 2
+  },
+  "BOS_PHX": {
+    "BOS": 2
+  },
+  "LAL_ORL": {
+    "ORL": 1,
+    "LAL": 1
+  },
+  "DET_OKC": {
+    "DET": 1
+  },
+  "NOP_UTA": {
+    "NOP": 2
+  },
+  "HOU_MIA": {
+    "MIA": 1,
+    "HOU": 1
+  },
+  "CHA_POR": {
+    "CHA": 2
+  },
+  "PHI_SAS": {
+    "SAS": 1
+  },
+  "CHI_OKC": {
+    "OKC": 1
+  },
+  "IND_LAC": {
+    "LAC": 1
+  },
+  "NYK_OKC": {
+    "OKC": 1
+  },
+  "BOS_CHA": {
+    "CHA": 1
+  },
+  "PHI_UTA": {
+    "PHI": 2
+  },
+  "UTA_WAS": {
+    "UTA": 1
+  },
+  "CHI_PHX": {
+    "CHI": 1
+  },
+  "DAL_ORL": {
+    "ORL": 1
+  },
+  "LAC_SAS": {
+    "SAS": 2
+  },
+  "IND_LAL": {
+    "LAL": 1
+  },
+  "MIL_UTA": {
+    "MIL": 1,
+    "UTA": 1
+  },
+  "MIN_ORL": {
+    "ORL": 1
+  },
+  "CHA_PHX": {
+    "PHX": 1
+  },
+  "IND_POR": {
+    "POR": 2
+  },
+  "ATL_DAL": {
+    "ATL": 2
+  },
+  "MIL_PHX": {
+    "PHX": 1,
+    "MIL": 1
+  },
+  "NOP_TOR": {
+    "NOP": 1
+  },
+  "CHA_SAC": {
+    "CHA": 1
+  },
+  "BOS_OKC": {
+    "OKC": 1
+  },
+  "CLE_DAL": {
+    "CLE": 1,
+    "DAL": 1
+  },
+  "PHX_TOR": {
+    "TOR": 1,
+    "PHX": 1
+  },
+  "CHI_MEM": {
+    "CHI": 1
+  },
+  "BKN_POR": {
+    "POR": 1
+  },
+  "GSW_WAS": {
+    "GSW": 1
+  },
+  "BKN_SAC": {
+    "SAC": 1
+  }
+}

@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NBA Prop Lab — Moneylines</title>
+    <link rel="icon" type="image/svg+xml" href="/static/proplab.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="/static/css/base.css" />
+    <link rel="stylesheet" href="/static/css/moneylines.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="nav-logo">
+        <img src="/static/proplab.svg" class="nav-logo-icon" /> Prop Lab
+      </a>
+      <div class="nav-links">
+        <a href="/"><i data-lucide="users"></i> Players</a>
+        <a href="/explore"><i data-lucide="compass"></i> Explore</a>
+        <a href="/prizepicks"><i data-lucide="list"></i> Player Props</a>
+        <a href="/moneylines" class="active"
+          ><i data-lucide="trending-up"></i> Moneylines</a
+        >
+      </div>
+    </nav>
+
+    <div class="ml-page">
+      <div class="ml-page-header">
+        <div class="ml-page-title-wrap">
+          <h1>Tonight's Games</h1>
+          <p>
+            Win probabilities powered by team ratings, recent form, home court,
+            and injury impact.
+          </p>
+        </div>
+        <div class="ml-disclaimer">
+          <i data-lucide="info"></i>
+          Model estimates only — not sportsbook lines
+        </div>
+      </div>
+
+      <div id="ml-games-grid">
+        <div class="ml-loading">
+          <div class="ml-loading-spinner"></div>
+          <span>Loading tonight's matchups...</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // NBA team ID map for logo CDN
+      // https://cdn.nba.com/logos/nba/{TEAM_ID}/global/L/logo.svg
+      const TEAM_IDS = {
+        ATL: 1610612737,
+        BOS: 1610612738,
+        BKN: 1610612751,
+        CHA: 1610612766,
+        CHI: 1610612741,
+        CLE: 1610612739,
+        DAL: 1610612742,
+        DEN: 1610612743,
+        DET: 1610612765,
+        GSW: 1610612744,
+        HOU: 1610612745,
+        IND: 1610612754,
+        LAC: 1610612746,
+        LAL: 1610612747,
+        MEM: 1610612763,
+        MIA: 1610612748,
+        MIL: 1610612749,
+        MIN: 1610612750,
+        NOP: 1610612740,
+        NYK: 1610612752,
+        OKC: 1610612760,
+        ORL: 1610612753,
+        PHI: 1610612755,
+        PHX: 1610612756,
+        POR: 1610612757,
+        SAC: 1610612758,
+        SAS: 1610612759,
+        TOR: 1610612761,
+        UTA: 1610612762,
+        WAS: 1610612764,
+      };
+
+      function logoUrl(abbr) {
+        const id = TEAM_IDS[abbr];
+        if (!id) return "";
+        return `https://cdn.nba.com/logos/nba/${id}/global/L/logo.svg`;
+      }
+
+      function probBarColor(prob) {
+        if (prob >= 68) return "#10b981";
+        if (prob >= 55) return "#6366f1";
+        return "#f59e0b";
+      }
+
+      function injuryStatusClass(status) {
+        const s = (status || "").toLowerCase();
+        if (s === "out") return "inj-out";
+        if (s === "doubtful") return "inj-doubtful";
+        if (s === "questionable") return "inj-questionable";
+        return "inj-other";
+      }
+
+      function buildInjuryList(injuries) {
+        if (!injuries || injuries.length === 0) {
+          return `<div class="inj-none"><i data-lucide="check-circle"></i> No reported injuries</div>`;
+        }
+        return injuries
+          .slice(0, 5)
+          .map((inj) => {
+            const name = (inj.player_name || "").replace(",", "").trim();
+            const status = inj.status || "";
+            const reason = (inj.reason || "")
+              .replace("Injury/Illness - ", "")
+              .replace("Injury/Illness -", "")
+              .trim();
+            const label = status.charAt(0).toUpperCase() + status.slice(1);
+            return `
+            <div class="inj-row">
+              <span class="inj-badge ${injuryStatusClass(status)}">${label}</span>
+              <span class="inj-name">${name}</span>
+              ${reason ? `<span class="inj-reason">· ${reason.split(";")[0]}</span>` : ""}
+            </div>`;
+          })
+          .join("");
+      }
+
+      function buildFormDots(w, l) {
+        const dots = [];
+        for (let i = 0; i < Math.min(w, 10); i++)
+          dots.push(`<span class="fdot win"></span>`);
+        for (let i = 0; i < Math.min(l, 10); i++)
+          dots.push(`<span class="fdot loss"></span>`);
+        return (
+          dots.join("") ||
+          `<span style="color:var(--muted);font-size:.72rem">—</span>`
+        );
+      }
+
+      const FACTOR_LABELS = {
+        form: "Recent Form",
+        net_rtg: "Net Rating",
+        home_court: "Home Court",
+        h2h: "H2H",
+        defense: "Defense",
+        injuries: "Injuries",
+      };
+
+      function buildGameCard(g, index) {
+        const homeWin = g.win_prob_home >= 50;
+        const favAbbr = homeWin ? g.home : g.away;
+        const dogAbbr = homeWin ? g.away : g.home;
+        const favProb = homeWin ? g.win_prob_home : g.win_prob_away;
+        const dogProb = homeWin ? g.win_prob_away : g.win_prob_home;
+        const favName = homeWin ? g.home_team_name : g.away_team_name;
+
+        const spreadAbs = Math.abs(g.spread || 0).toFixed(1);
+        const spreadStr =
+          g.spread > 0.2
+            ? `${g.home} -${spreadAbs}`
+            : g.spread < -0.2
+              ? `${g.away} -${spreadAbs}`
+              : "Pick'em";
+
+        const h2hTotal = (g.h2h?.home_wins || 0) + (g.h2h?.away_wins || 0);
+        const h2hStr =
+          h2hTotal > 0
+            ? `${g.home} ${g.h2h?.home_wins || 0} – ${g.h2h?.away_wins || 0} ${g.away}`
+            : "No matchups yet";
+
+        const favColor = probBarColor(favProb);
+
+        // Factor bars (home-perspective, max abs = 15)
+        const factorHTML = Object.entries(g.factors || {})
+          .map(([k, v]) => {
+            const pct = Math.min(100, (Math.abs(v) / 15) * 100);
+            const color = v >= 0 ? "#10b981" : "#ef4444";
+            const sign = v >= 0 ? "+" : "";
+            return `
+            <div class="factor-row">
+              <span class="factor-lbl">${FACTOR_LABELS[k] || k}</span>
+              <div class="factor-track">
+                <div class="factor-fill" style="width:${pct}%;background:${color}"></div>
+              </div>
+              <span class="factor-num" style="color:${color}">${sign}${v.toFixed(1)}</span>
+            </div>`;
+          })
+          .join("");
+
+        return `
+        <div class="ml-card" style="animation-delay:${index * 0.06}s">
+
+          <!-- ── Matchup hero ── -->
+          <div class="ml-hero">
+            <!-- Away -->
+            <div class="ml-team-block ${homeWin ? "ml-dog" : "ml-fav"}">
+              <div class="ml-logo-wrap">
+                <img class="ml-logo" src="${logoUrl(g.away)}" alt="${g.away}"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                <div class="ml-logo-fallback" style="display:none">${g.away}</div>
+              </div>
+              <div class="ml-team-abbr">${g.away}</div>
+              <div class="ml-team-full">${g.away_team_name}</div>
+              <div class="ml-team-wpct">${(g.away_w_pct * 100).toFixed(0)}% win rate</div>
+              <div class="ml-prob-badge ${homeWin ? "" : "ml-prob-badge-fav"}"
+                   style="${!homeWin ? `background:${favColor}22;color:${favColor};border-color:${favColor}40` : ""}">
+                ${g.win_prob_away}%
+              </div>
+            </div>
+
+            <!-- Center info -->
+            <div class="ml-center">
+              <div class="ml-at-badge">@</div>
+              <div class="ml-spread">${spreadStr}</div>
+              <div class="ml-score-est">${g.away_score_est} – ${g.home_score_est}</div>
+              <div class="ml-score-lbl">proj. score</div>
+            </div>
+
+            <!-- Home -->
+            <div class="ml-team-block ${homeWin ? "ml-fav" : "ml-dog"}">
+              <div class="ml-logo-wrap">
+                <img class="ml-logo" src="${logoUrl(g.home)}" alt="${g.home}"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                <div class="ml-logo-fallback" style="display:none">${g.home}</div>
+              </div>
+              <div class="ml-team-abbr">${g.home}</div>
+              <div class="ml-team-full">${g.home_team_name}</div>
+              <div class="ml-team-wpct">${(g.home_w_pct * 100).toFixed(0)}% win rate</div>
+              <div class="ml-prob-badge ${homeWin ? "ml-prob-badge-fav" : ""}"
+                   style="${homeWin ? `background:${favColor}22;color:${favColor};border-color:${favColor}40` : ""}">
+                ${g.win_prob_home}%
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Win probability bar ── -->
+          <div class="ml-bar-section">
+            <div class="ml-bar-labels">
+              <span style="color:${probBarColor(g.win_prob_away)};font-weight:700">${g.away} ${g.win_prob_away}%</span>
+              <span class="ml-winner-call">
+                <i data-lucide="trophy"></i>
+                <strong>${favAbbr}</strong> projected to win
+              </span>
+              <span style="color:${probBarColor(g.win_prob_home)};font-weight:700">${g.win_prob_home}% ${g.home}</span>
+            </div>
+            <div class="ml-split-bar">
+              <div class="ml-split-away"
+                   style="width:${g.win_prob_away}%;background:${probBarColor(g.win_prob_away)}"></div>
+              <div class="ml-split-home"
+                   style="width:${g.win_prob_home}%;background:${probBarColor(g.win_prob_home)}"></div>
+            </div>
+          </div>
+
+          <!-- ── Body ── -->
+          <div class="ml-body">
+
+            <!-- Factors -->
+            <div class="ml-panel">
+              <div class="ml-panel-title">
+                <i data-lucide="bar-chart-2"></i> Key Factors
+                <span class="ml-panel-subtitle">Home team edge</span>
+              </div>
+              <div class="ml-factors">${factorHTML}</div>
+            </div>
+
+            <!-- Form + H2H -->
+            <div class="ml-panel">
+              <div class="ml-panel-title"><i data-lucide="activity"></i> Last 10 Games</div>
+              <div class="ml-form-row">
+                <div class="ml-form-logo">
+                  <img src="${logoUrl(g.away)}" alt="${g.away}"
+                       onerror="this.style.display='none'" style="width:20px;height:20px;object-fit:contain" />
+                </div>
+                <span class="ml-form-abbr">${g.away}</span>
+                <div class="ml-form-dots">${buildFormDots(g.away_w_l10 || 0, g.away_l_l10 || 0)}</div>
+                <span class="ml-form-rec">${g.away_w_l10 || 0}–${g.away_l_l10 || 0}</span>
+              </div>
+              <div class="ml-form-row" style="margin-bottom:14px">
+                <div class="ml-form-logo">
+                  <img src="${logoUrl(g.home)}" alt="${g.home}"
+                       onerror="this.style.display='none'" style="width:20px;height:20px;object-fit:contain" />
+                </div>
+                <span class="ml-form-abbr">${g.home}</span>
+                <div class="ml-form-dots">${buildFormDots(g.home_w_l10 || 0, g.home_l_l10 || 0)}</div>
+                <span class="ml-form-rec">${g.home_w_l10 || 0}–${g.home_l_l10 || 0}</span>
+              </div>
+
+              <div class="ml-panel-title"><i data-lucide="repeat"></i> Season Series</div>
+              <div class="ml-h2h-row">
+                <img src="${logoUrl(g.home)}" alt="${g.home}" style="width:18px;height:18px;object-fit:contain" onerror="this.style.display='none'" />
+                <span class="ml-h2h-text">${h2hStr}</span>
+                <img src="${logoUrl(g.away)}" alt="${g.away}" style="width:18px;height:18px;object-fit:contain" onerror="this.style.display='none'" />
+              </div>
+            </div>
+
+            <!-- Injuries -->
+            <div class="ml-panel ml-panel-injuries">
+              <div class="ml-panel-title"><i data-lucide="alert-circle"></i> Injury Report</div>
+              <div class="ml-inj-team">
+                <div class="ml-inj-header">
+                  <img src="${logoUrl(g.away)}" alt="${g.away}"
+                       style="width:16px;height:16px;object-fit:contain"
+                       onerror="this.style.display='none'" />
+                  <span>${g.away} <em>Away</em></span>
+                  ${
+                    g.away_inj_loss > 0
+                      ? `<span class="inj-pts-lost">−${g.away_inj_loss} pts/g</span>`
+                      : ""
+                  }
+                </div>
+                ${buildInjuryList(g.away_injuries)}
+              </div>
+              <div class="ml-inj-team" style="margin-top:10px">
+                <div class="ml-inj-header">
+                  <img src="${logoUrl(g.home)}" alt="${g.home}"
+                       style="width:16px;height:16px;object-fit:contain"
+                       onerror="this.style.display='none'" />
+                  <span>${g.home} <em>Home</em></span>
+                  ${
+                    g.home_inj_loss > 0
+                      ? `<span class="inj-pts-lost">−${g.home_inj_loss} pts/g</span>`
+                      : ""
+                  }
+                </div>
+                ${buildInjuryList(g.home_injuries)}
+              </div>
+            </div>
+
+          </div><!-- /ml-body -->
+        </div>`;
+      }
+
+      fetch("/api/moneylines")
+        .then((r) => r.json())
+        .then((data) => {
+          const grid = document.getElementById("ml-games-grid");
+          if (data.error) {
+            grid.innerHTML = `<div class="ml-empty">${data.error}</div>`;
+            return;
+          }
+          if (!data.length) {
+            grid.innerHTML = `
+              <div class="ml-empty">
+                <i data-lucide="moon"></i>
+                <p>No games scheduled for tonight.</p>
+              </div>`;
+            lucide.createIcons();
+            return;
+          }
+          grid.innerHTML = data.map((g, i) => buildGameCard(g, i)).join("");
+          lucide.createIcons();
+        })
+        .catch(() => {
+          document.getElementById("ml-games-grid").innerHTML =
+            `<div class="ml-empty"><i data-lucide="wifi-off"></i><p>Failed to load data. Try refreshing.</p></div>`;
+          lucide.createIcons();
+        });
+    </script>
+  </body>
+</html>

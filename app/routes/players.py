@@ -19,6 +19,10 @@ def explore_page():
 def prizepicks_page():
     return render_template("prizepicks.html")
 
+@players_bp.route("/moneylines")
+def moneylines_page():
+    return render_template("moneylines.html")
+
 # Keep old URLs working
 @players_bp.route("/discover")
 def discover_redirect():
@@ -27,6 +31,10 @@ def discover_redirect():
 @players_bp.route("/trending")
 def trending_redirect():
     return redirect("/explore")
+
+@players_bp.route("/parlays")
+def parlays_page():
+    return render_template("parlays.html")
 
 @players_bp.route("/api/players")
 def get_players():
@@ -43,6 +51,3 @@ def get_player(player_id):
         "id": p.id, "name": p.name,
         "team": p.team_abbr, "position": p.position
     })
-@players_bp.route("/parlays")
-def parlays_page():
-    return render_template("parlays.html")

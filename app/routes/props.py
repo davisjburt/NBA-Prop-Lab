@@ -40,7 +40,10 @@ def round_to_half(val):
 @props_bp.route("/players")
 def all_players():
     players = Player.query.order_by(Player.name).all()
-    return jsonify([{"id": p.id, "name": p.name, "team": p.team_abbr, "position": p.position} for p in players])
+    return jsonify([{
+        "id": p.id, "name": p.name,
+        "team": p.team_abbr, "position": p.position
+    } for p in players])
 
 
 @props_bp.route("/players/<int:player_id>")
@@ -114,7 +117,6 @@ def player_logs(player_id):
 
 
 # ── Discover ──────────────────────────────────────────────────────────────────
-# Discover does per-player queries so keep it but limit sample size
 
 @props_bp.route("/discover")
 def discover():
@@ -142,7 +144,7 @@ def discover():
     return jsonify(results)
 
 
-# ── Pre-computed endpoints — just read JSON files ─────────────────────────────
+# ── Pre-computed endpoints ─────────────────────────────────────────────────────
 
 @props_bp.route("/trending")
 def trending():
@@ -162,4 +164,13 @@ def prizepicks_parlays():
     data = _load_json("prizepicks_parlays.json", None)
     if data is None:
         return jsonify({"error": "Parlay data not yet available."}), 503
+    return jsonify(data)
+
+
+@props_bp.route("/moneylines")
+def moneylines():
+    """Return tonight's game predictions from pre-computed JSON."""
+    data = _load_json("moneylines.json", None)
+    if data is None:
+        return jsonify({"error": "Moneyline data not yet available."}), 503
     return jsonify(data)

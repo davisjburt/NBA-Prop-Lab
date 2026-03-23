@@ -7,3 +7,4 @@ numpy
 pandas
 playwright
 nba_api
+nbainjuries
