@@ -239,12 +239,15 @@
             </div>
 
             <!-- Center info -->
+
             <div class="ml-center">
               <div class="ml-at-badge">@</div>
-              <div class="ml-spread">${spreadStr}</div>
-              <div class="ml-score-est">${g.away_score_est} – ${g.home_score_est}</div>
-              <div class="ml-score-lbl">proj. score</div>
+              <div class="ml-score-est">
+                Projected Differential: <strong>${spreadStr}</strong>
+              </div>
             </div>
+
+
 
             <!-- Home -->
             <div class="ml-team-block ${homeWin ? "ml-fav" : "ml-dog"}">
