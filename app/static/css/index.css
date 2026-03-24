@@ -107,3 +107,102 @@
   background: #f0f1ff;
   color: var(--accent);
 }
+
+/* ── Mobile Responsive Design ── */
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .search-bar {
+    margin: 1rem auto 0;
+    padding: 0 1rem;
+  }
+  
+  .search-bar input {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .player-grid {
+    margin: 1rem auto 2rem;
+    padding: 0 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0.75rem;
+  }
+  
+  .player-card {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+  
+  .player-card .player-avatar {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .player-name {
+    font-size: 0.9rem;
+  }
+  
+  .player-meta {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 1.5rem 0.75rem 0.75rem;
+  }
+  
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+  
+  .hero p {
+    font-size: 0.95rem;
+  }
+  
+  .search-bar {
+    padding: 0 0.75rem;
+  }
+  
+  .search-bar input {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.9rem;
+  }
+  
+  .player-grid {
+    padding: 0 0.75rem;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .player-card {
+    padding: 0.875rem;
+    gap: 0.625rem;
+  }
+  
+  .player-card .player-avatar {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .player-name {
+    font-size: 0.875rem;
+  }
+  
+  .player-meta {
+    font-size: 0.725rem;
+  }
+}

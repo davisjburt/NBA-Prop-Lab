@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NBA Prop Lab</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fredoka+One&display=swap"
@@ -25,9 +26,19 @@
         <a href="/prizepicks"><i data-lucide="list"></i> Player Props</a>
         <a href="/moneylines"><i data-lucide="trending-up"></i> Moneylines</a>
         <a href="/model-stats"><i data-lucide="bar-chart-3"></i> Model Stats</a>
-        <a href="/model-stats"><i data-lucide="bar-chart-3"></i> Model Stats</a>
       </div>
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+        <i data-lucide="menu"></i>
+      </button>
     </nav>
+    
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/"><i data-lucide="users"></i> Players</a>
+      <a href="/explore" class="active"><i data-lucide="compass"></i> Explore</a>
+      <a href="/prizepicks"><i data-lucide="list"></i> Player Props</a>
+      <a href="/moneylines"><i data-lucide="trending-up"></i> Moneylines</a>
+      <a href="/model-stats"><i data-lucide="bar-chart-3"></i> Model Stats</a>
+    </div>
 
     <div class="page">
       <div class="page-header">
@@ -299,6 +310,22 @@
           tbody.appendChild(tr);
         });
       }
+      
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenu.classList.toggle('open');
+      }
+      
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', (e) => {
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+          mobileMenu.classList.remove('open');
+        }
+      });
+      
+      document.addEventListener("DOMContentLoaded", () => lucide.createIcons());
     </script>
   </body>
 </html>

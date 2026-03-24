@@ -487,3 +487,81 @@
 .minutes-ok {
   color: var(--muted);
 }
+
+/* ── Mobile Responsive Design ── */
+@media (max-width: 768px) {
+  .pp-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .prop-card {
+    padding: 1rem;
+  }
+  
+  .prop-header {
+    margin-bottom: 0.75rem;
+  }
+  
+  .prop-player {
+    font-size: 0.95rem;
+  }
+  
+  .prop-team {
+    font-size: 0.8rem;
+  }
+  
+  .prop-line {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .prop-confidence {
+    font-size: 0.85rem;
+  }
+  
+  .prop-stats {
+    margin-top: 0.75rem;
+  }
+  
+  .stat-row {
+    padding: 0.5rem 0;
+    font-size: 0.85rem;
+  }
+  
+  .btn-load-more {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .prop-card {
+    padding: 0.875rem;
+  }
+  
+  .prop-player {
+    font-size: 0.9rem;
+  }
+  
+  .prop-team {
+    font-size: 0.75rem;
+  }
+  
+  .prop-line {
+    font-size: 1rem;
+  }
+  
+  .prop-confidence {
+    font-size: 0.8rem;
+  }
+  
+  .stat-row {
+    font-size: 0.8rem;
+  }
+  
+  .btn-load-more {
+    padding: 0.55rem 1.25rem;
+    font-size: 0.8rem;
+  }
+}
