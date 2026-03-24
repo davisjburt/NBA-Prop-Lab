@@ -446,13 +446,15 @@ def main():
         today = datetime.date.today()
         ModelPropEval.query.filter_by(date=today).delete()
 
+        MAX_PER_STAT = 25
+
         by_stat: dict[str, list] = defaultdict(list)
         for p in pp_results:
             by_stat[p["stat"]].append(p)
 
         for stat, rows in by_stat.items():
             rows.sort(key=lambda x: x["confidence"], reverse=True)
-            for row in rows[:10]:
+            for row in rows[:MAX_PER_STAT]:
                 m = ModelPropEval(
                     date=today,
                     player_id=row["id"],
