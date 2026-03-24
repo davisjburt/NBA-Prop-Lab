@@ -1,19 +1,13 @@
 /* model-stats.css */
 
 .stats-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
   animation: fadeUp 0.4s 0.1s ease both;
 }
 
-@media (min-width: 900px) {
-  .stats-layout {
-    grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.35fr);
-  }
-}
-
-/* ── Summary block inside the moneylines card ── */
+/* Summary block inside the moneylines card */
 .summary-block {
   padding: 1.5rem;
   text-align: center;
@@ -42,7 +36,7 @@
   margin-top: 6px;
 }
 
-/* ── Rate badge on hit % cells ── */
+/* Hit-rate pill */
 .rate-badge {
   display: inline-block;
   padding: 2px 8px;
@@ -75,7 +69,13 @@
   color: #991b1b;
 }
 
-/* ── Numeric column alignment ── */
+/* Numeric alignment */
 .numeric {
   text-align: right;
+}
+
+/* Make recent tables feel lighter */
+#props-sample-body td,
+#ml-sample-body td {
+  font-size: 0.85rem;
 }

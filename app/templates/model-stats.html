@@ -55,57 +55,15 @@
       </div>
       <div id="model-stats-error" class="empty-state" hidden></div>
 
-      <!-- Aggregate cards -->
       <div id="model-stats-content" hidden>
         <div class="stats-layout">
-          <!-- Moneylines card -->
+          <!-- Moneylines card: total % then individual lines -->
           <div class="table-card">
             <h3><i data-lucide="trending-up"></i> Moneylines</h3>
             <div class="summary-block">
               <div class="summary-value" id="moneylines-summary">—</div>
               <div class="summary-label">W – L (Hit %)</div>
             </div>
-          </div>
-
-          <!-- Props table card -->
-          <div class="table-card">
-            <h3><i data-lucide="bar-chart-3"></i> Prop Outcomes by Stat</h3>
-            <table>
-              <thead>
-                <tr>
-                  <th>Stat</th>
-                  <th class="numeric">Bets</th>
-                  <th class="numeric">Hits</th>
-                  <th class="numeric">Hit %</th>
-                </tr>
-              </thead>
-              <tbody id="props-table-body">
-                <!-- rows injected by JS -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Recent individual results -->
-        <div class="stats-layout" style="margin-top: 1.5rem">
-          <div class="table-card">
-            <h3><i data-lucide="list-checks"></i> Recent Prop Results</h3>
-            <table>
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Player</th>
-                  <th>Stat</th>
-                  <th>Line</th>
-                  <th>Result</th>
-                </tr>
-              </thead>
-              <tbody id="props-sample-body"></tbody>
-            </table>
-          </div>
-
-          <div class="table-card">
-            <h3><i data-lucide="activity"></i> Recent Moneyline Results</h3>
             <table>
               <thead>
                 <tr>
@@ -119,6 +77,43 @@
               <tbody id="ml-sample-body"></tbody>
             </table>
           </div>
+
+          <!-- Props card: overall row + per-stat rows + individual props -->
+          <div class="table-card">
+            <h3><i data-lucide="bar-chart-3"></i> Player Props</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Stat</th>
+                  <th class="numeric">Bets</th>
+                  <th class="numeric">Hits</th>
+                  <th class="numeric">Hit %</th>
+                </tr>
+              </thead>
+              <tbody id="props-table-body"></tbody>
+            </table>
+
+            <div
+              style="
+                margin-top: 0.75rem;
+                border-top: 1px solid var(--border);
+                padding-top: 0.75rem;
+              "
+            >
+              <table>
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Player</th>
+                    <th>Stat</th>
+                    <th>Line</th>
+                    <th>Result</th>
+                  </tr>
+                </thead>
+                <tbody id="props-sample-body"></tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -127,11 +122,12 @@
       const loadingEl = document.getElementById("model-stats-loading");
       const errorEl = document.getElementById("model-stats-error");
       const contentEl = document.getElementById("model-stats-content");
-      const propsTbody = document.getElementById("props-table-body");
+
       const moneylinesSummary = document.getElementById("moneylines-summary");
       const daysSelect = document.getElementById("days-select");
       const daysLabel = document.getElementById("days-label");
 
+      const propsTbody = document.getElementById("props-table-body");
       const propsSampleBody = document.getElementById("props-sample-body");
       const mlSampleBody = document.getElementById("ml-sample-body");
 
@@ -152,10 +148,10 @@
         errorEl.hidden = true;
         contentEl.hidden = true;
 
+        moneylinesSummary.textContent = "—";
         propsTbody.innerHTML = "";
         propsSampleBody.innerHTML = "";
         mlSampleBody.innerHTML = "";
-        moneylinesSummary.textContent = "—";
         daysLabel.textContent = days;
 
         try {
@@ -163,21 +159,52 @@
           if (!resp.ok) throw new Error(`Request failed: ${resp.status}`);
           const data = await resp.json();
 
-          // Moneylines aggregate
+          // Moneylines summary
           const ml = data.moneylines || { bets: 0, hits: 0, hit_rate: null };
           const misses = ml.bets - ml.hits;
           const pct = ml.hit_rate != null ? Math.round(ml.hit_rate * 100) : 0;
-          moneylinesSummary.innerHTML = `<span class="${hitClass(
-            ml.hit_rate,
-          )}">${ml.hits}–${misses}</span> <span class="summary-pct">(${pct}%)</span>`;
+          moneylinesSummary.innerHTML = `
+            <span class="${hitClass(ml.hit_rate)}">
+              ${ml.hits}–${misses}
+            </span>
+            <span class="summary-pct">(${pct}%)</span>
+          `;
 
-          // Props aggregate
+          // Player props: overall row then per-stat rows
           const props = data.props || [];
-          if (props.length === 0) {
+          const overall = data.prop_overall || {
+            bets: 0,
+            hits: 0,
+            hit_rate: null,
+          };
+
+          const overallRate =
+            overall.hit_rate != null
+              ? Math.round(overall.hit_rate * 100)
+              : null;
+
+          // Overall row at top
+          const overallRow = document.createElement("tr");
+          overallRow.className = "data-row";
+          overallRow.innerHTML = `
+            <td><strong>All props</strong></td>
+            <td class="numeric">${overall.bets}</td>
+            <td class="numeric">${overall.hits}</td>
+            <td class="numeric">
+              <span class="rate-badge ${hitClass(overall.hit_rate)}">
+                ${overallRate != null ? overallRate + "%" : "—"}
+              </span>
+            </td>
+          `;
+          propsTbody.appendChild(overallRow);
+
+          // Per-stat rows
+          if (!props.length) {
             const row = document.createElement("tr");
             const cell = document.createElement("td");
             cell.colSpan = 4;
-            cell.innerHTML = `<div class="empty-state">No prop outcomes yet for this window.</div>`;
+            cell.innerHTML =
+              '<div class="empty-state">No prop outcomes yet for this window.</div>';
             row.appendChild(cell);
             propsTbody.appendChild(row);
           } else {
@@ -190,14 +217,17 @@
                 <td>${p.stat}</td>
                 <td class="numeric">${p.bets}</td>
                 <td class="numeric">${p.hits}</td>
-                <td class="numeric"><span class="rate-badge ${hitClass(
-                  p.hit_rate,
-                )}">${rate != null ? rate + "%" : "—"}</span></td>`;
+                <td class="numeric">
+                  <span class="rate-badge ${hitClass(p.hit_rate)}">
+                    ${rate != null ? rate + "%" : "—"}
+                  </span>
+                </td>
+              `;
               propsTbody.appendChild(row);
             });
           }
 
-          // Recent prop results
+          // Individual prop results
           (data.sample_props || []).forEach((p) => {
             const tr = document.createElement("tr");
             tr.innerHTML = `
@@ -205,14 +235,16 @@
               <td>${p.player_name} (${p.team_abbr})</td>
               <td>${p.stat}</td>
               <td>${p.line}</td>
-              <td><span class="${outcomeClass(
-                p.hit,
-              )}">${p.hit ? "Hit" : "Miss"}</span></td>
+              <td>
+                <span class="${outcomeClass(p.hit)}">
+                  ${p.hit ? "Hit" : "Miss"}
+                </span>
+              </td>
             `;
             propsSampleBody.appendChild(tr);
           });
 
-          // Recent moneyline results
+          // Individual moneyline results
           (data.sample_moneylines || []).forEach((g) => {
             const matchup = `${g.away_abbr} @ ${g.home_abbr}`;
             const label = g.correct ? "Correct" : "Wrong";
@@ -221,7 +253,9 @@
               <td>${g.date}</td>
               <td>${matchup}</td>
               <td>${g.predicted_winner}</td>
-              <td><span class="${outcomeClass(g.correct)}">${label}</span></td>
+              <td>
+                <span class="${outcomeClass(g.correct)}">${label}</span>
+              </td>
               <td>${g.margin ?? "—"}</td>
             `;
             mlSampleBody.appendChild(tr);

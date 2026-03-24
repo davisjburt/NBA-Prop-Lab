@@ -1,5 +1,8 @@
 # app/routes/model_stats.py
 
+import os
+import json
+from pathlib import Path
 from datetime import date, timedelta
 
 from flask import Blueprint, jsonify, request
@@ -8,18 +11,25 @@ from sqlalchemy import desc
 from app.models.models import db, ModelPropEval, ModelMoneylineEval
 
 
+DATA_DIR = Path(os.path.join(os.path.dirname(__file__), "..", "..", "data"))
+
 model_stats_bp = Blueprint("model_stats", __name__, url_prefix="/api")
 
 
 @model_stats_bp.route("/model_outcomes")
 def model_outcomes():
-    # Parse & clamp window
     try:
         days = int(request.args.get("days", 30))
     except ValueError:
         days = 30
     if days not in (7, 30, 90):
         days = 30
+
+    # Prefer precomputed JSON if present (for Render); fall back to DB.
+    json_path = DATA_DIR / f"model_stats_{days}.json"
+    if json_path.exists():
+        with json_path.open() as f:
+            return jsonify(json.load(f))
 
     end = date.today()
     start = end - timedelta(days=days)
@@ -30,7 +40,6 @@ def model_outcomes():
         ModelMoneylineEval.date < end,
         ModelMoneylineEval.correct.isnot(None),
     )
-
     ml_bets = ml_q.count()
     ml_hits = ml_q.filter_by(correct=True).count()
     ml_hit_rate = (ml_hits / ml_bets) if ml_bets else None
@@ -61,17 +70,22 @@ def model_outcomes():
         hits = agg["hits"]
         hit_rate = hits / bets if bets else None
         props.append(
-            {
-                "stat": stat,
-                "bets": bets,
-                "hits": hits,
-                "hit_rate": hit_rate,
-            }
+            {"stat": stat, "bets": bets, "hits": hits, "hit_rate": hit_rate}
         )
 
     props.sort(key=lambda x: (x["hit_rate"] or 0), reverse=True)
 
-    # ── Recent individual props (sample) ──────────────────────────────
+    # Overall props across all stats
+    total_bets = sum(p["bets"] for p in props)
+    total_hits = sum(p["hits"] for p in props)
+    prop_hit_rate = (total_hits / total_bets) if total_bets else None
+    prop_overall = {
+        "bets": total_bets,
+        "hits": total_hits,
+        "hit_rate": prop_hit_rate,
+    }
+
+    # ── Recent individual props ───────────────────────────────────────
     sample_props_q = (
         ModelPropEval.query.filter(
             ModelPropEval.date >= start,
@@ -81,7 +95,6 @@ def model_outcomes():
         .order_by(desc(ModelPropEval.date), desc(ModelPropEval.confidence))
         .limit(50)
     )
-
     sample_props = [
         {
             "date": p.date.isoformat(),
@@ -95,7 +108,7 @@ def model_outcomes():
         for p in sample_props_q
     ]
 
-    # ── Recent individual moneylines (sample) ─────────────────────────
+    # ── Recent individual moneylines ──────────────────────────────────
     sample_ml_q = (
         ModelMoneylineEval.query.filter(
             ModelMoneylineEval.date >= start,
@@ -105,7 +118,6 @@ def model_outcomes():
         .order_by(desc(ModelMoneylineEval.date), desc(ModelMoneylineEval.win_prob_home))
         .limit(50)
     )
-
     sample_moneylines = [
         {
             "date": g.date.isoformat(),
@@ -125,6 +137,7 @@ def model_outcomes():
         {
             "moneylines": moneylines,
             "props": props,
+            "prop_overall": prop_overall,
             "sample_props": sample_props,
             "sample_moneylines": sample_moneylines,
         }
