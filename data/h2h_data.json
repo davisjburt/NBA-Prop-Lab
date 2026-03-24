@@ -1500,11 +1500,11 @@
   "CHI_MEM": {
     "CHI": 1
   },
-  "BKN_POR": {
-    "POR": 2
-  },
   "GSW_WAS": {
     "GSW": 1
+  },
+  "BKN_POR": {
+    "POR": 2
   },
   "BKN_SAC": {
     "SAC": 1

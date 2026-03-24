@@ -64,6 +64,13 @@
   },
   {
     "team_abbr": "CHA",
+    "player_name": "Pat Connaughton",
+    "status": "day-to-day",
+    "reason": "Illness",
+    "player_avg_pts": 2.4
+  },
+  {
+    "team_abbr": "CHA",
     "player_name": "Tidjane Salaun",
     "status": "out",
     "reason": "Strain",
@@ -505,13 +512,6 @@
   },
   {
     "team_abbr": "OKC",
-    "player_name": "Ajay Mitchell",
-    "status": "day-to-day",
-    "reason": "Suspension",
-    "player_avg_pts": 14.3
-  },
-  {
-    "team_abbr": "OKC",
     "player_name": "Thomas Sorber",
     "status": "out",
     "reason": "Surgery",
@@ -658,6 +658,20 @@
     "player_avg_pts": null
   },
   {
+    "team_abbr": "",
+    "player_name": "Killian Hayes",
+    "status": "out",
+    "reason": "Not Specified",
+    "player_avg_pts": null
+  },
+  {
+    "team_abbr": "SAC",
+    "player_name": "Precious Achiuwa",
+    "status": "out",
+    "reason": "Soreness",
+    "player_avg_pts": 13.8
+  },
+  {
     "team_abbr": "SAC",
     "player_name": "Nique Clifford",
     "status": "out",
@@ -665,32 +679,11 @@
     "player_avg_pts": 12.7
   },
   {
-    "team_abbr": "",
-    "player_name": "Killian Hayes",
-    "status": "day-to-day",
-    "reason": "Not Specified",
-    "player_avg_pts": null
-  },
-  {
     "team_abbr": "SAC",
     "player_name": "Russell Westbrook",
     "status": "out",
     "reason": "Soreness",
     "player_avg_pts": 14.7
-  },
-  {
-    "team_abbr": "SAC",
-    "player_name": "Daeqwon Plowden",
-    "status": "day-to-day",
-    "reason": "Soreness",
-    "player_avg_pts": 9.8
-  },
-  {
-    "team_abbr": "SAC",
-    "player_name": "Precious Achiuwa",
-    "status": "day-to-day",
-    "reason": "Soreness",
-    "player_avg_pts": 13.8
   },
   {
     "team_abbr": "SAC",

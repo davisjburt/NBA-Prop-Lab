@@ -5,23 +5,23 @@
     "predicted_winner": "CHA",
     "win_prob_home": 100.0,
     "win_prob_away": 0.0,
-    "spread": 25.7,
+    "spread": 28.7,
     "home_score_est": 109.9,
-    "away_score_est": 20.1,
+    "away_score_est": 6.3,
     "factors": {
       "form": 5.0,
       "net_rtg": 20.5,
       "home_court": 7.5,
       "h2h": 5.0,
       "defense": 3.0,
-      "injuries": 101.6
+      "injuries": 118.2
     },
     "home_net_rtg": 4.1,
     "away_net_rtg": -9.6,
     "home_form": 70.0,
     "away_form": 50.0,
     "home_inj_loss": 6.0,
-    "away_inj_loss": 90.7,
+    "away_inj_loss": 104.5,
     "home_team_name": "Charlotte Hornets",
     "away_team_name": "Sacramento Kings",
     "home_w_pct": 0.521,
@@ -31,6 +31,13 @@
     "away_w_l10": 5,
     "away_l_l10": 5,
     "home_injuries": [
+      {
+        "team_abbr": "CHA",
+        "player_name": "Pat Connaughton",
+        "status": "day-to-day",
+        "reason": "Illness",
+        "player_avg_pts": 2.4
+      },
       {
         "team_abbr": "CHA",
         "player_name": "Tidjane Salaun",
@@ -49,6 +56,13 @@
     "away_injuries": [
       {
         "team_abbr": "SAC",
+        "player_name": "Precious Achiuwa",
+        "status": "out",
+        "reason": "Soreness",
+        "player_avg_pts": 13.8
+      },
+      {
+        "team_abbr": "SAC",
         "player_name": "Nique Clifford",
         "status": "out",
         "reason": "Sprain",
@@ -60,20 +74,6 @@
         "status": "out",
         "reason": "Soreness",
         "player_avg_pts": 14.7
-      },
-      {
-        "team_abbr": "SAC",
-        "player_name": "Daeqwon Plowden",
-        "status": "day-to-day",
-        "reason": "Soreness",
-        "player_avg_pts": 9.8
-      },
-      {
-        "team_abbr": "SAC",
-        "player_name": "Precious Achiuwa",
-        "status": "day-to-day",
-        "reason": "Soreness",
-        "player_avg_pts": 13.8
       },
       {
         "team_abbr": "SAC",
