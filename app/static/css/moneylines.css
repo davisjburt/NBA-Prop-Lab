@@ -593,42 +593,17 @@
     height: 56px;
   }
   
-  .ml-team-name {
-    font-size: 0.9rem;
+  /* Keep mobile typography aligned with actual markup classes */
+  .ml-team-abbr {
+    font-size: 1rem;
   }
   
-  .ml-at {
+  .ml-at-badge {
     font-size: 0.85rem;
   }
   
-  .ml-game-time {
-    font-size: 0.75rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .ml-game-matchup {
-    font-size: 1rem;
-    margin-bottom: 0.75rem;
-  }
-  
-  .ml-prob-bar {
+  .ml-split-bar {
     height: 8px;
-  }
-  
-  .ml-team-row {
-    padding: 0.6rem 0;
-  }
-  
-  .ml-team-info {
-    font-size: 0.9rem;
-  }
-  
-  .ml-prob-text {
-    font-size: 1rem;
-  }
-  
-  .ml-american-odds {
-    font-size: 0.85rem;
   }
   
   .ml-form-row {
@@ -733,40 +708,6 @@
   .ml-logo-wrap {
     width: 48px;
     height: 48px;
-  }
-  
-  .ml-team-name {
-    font-size: 0.85rem;
-  }
-  
-  .ml-at {
-    font-size: 0.8rem;
-  }
-  
-  .ml-game-time {
-    font-size: 0.7rem;
-    margin-bottom: 0.4rem;
-  }
-  
-  .ml-game-matchup {
-    font-size: 0.95rem;
-    margin-bottom: 0.6rem;
-  }
-  
-  .ml-team-row {
-    padding: 0.5rem 0;
-  }
-  
-  .ml-team-info {
-    font-size: 0.85rem;
-  }
-  
-  .ml-prob-text {
-    font-size: 0.95rem;
-  }
-  
-  .ml-american-odds {
-    font-size: 0.8rem;
   }
   
   .ml-form-row {

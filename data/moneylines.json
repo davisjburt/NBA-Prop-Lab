@@ -33,6 +33,13 @@
     "home_injuries": [
       {
         "team_abbr": "MEM",
+        "player_name": "Zach Edey",
+        "status": "out",
+        "reason": "Surgery",
+        "player_avg_pts": 13.6
+      },
+      {
+        "team_abbr": "MEM",
         "player_name": "Ja Morant",
         "status": "out",
         "reason": "Sprain",
@@ -79,13 +86,6 @@
         "status": "out",
         "reason": "Surgery",
         "player_avg_pts": 11.4
-      },
-      {
-        "team_abbr": "MEM",
-        "player_name": "Zach Edey",
-        "status": "out",
-        "reason": "Surgery",
-        "player_avg_pts": 13.6
       },
       {
         "team_abbr": "MEM",
@@ -213,123 +213,6 @@
     }
   },
   {
-    "home": "IND",
-    "away": "LAL",
-    "predicted_winner": "LAL",
-    "win_prob_home": 0.6,
-    "win_prob_away": 99.4,
-    "spread": -11.0,
-    "home_score_est": 89.4,
-    "away_score_est": 115.1,
-    "factors": {
-      "form": -20.0,
-      "net_rtg": -14.8,
-      "home_court": 7.5,
-      "h2h": -5.0,
-      "defense": -1.2,
-      "injuries": -27.6
-    },
-    "home_net_rtg": -8.7,
-    "away_net_rtg": 1.2,
-    "home_form": 10.0,
-    "away_form": 90.0,
-    "home_inj_loss": 23.0,
-    "away_inj_loss": 0.0,
-    "home_team_name": "Indiana Pacers",
-    "away_team_name": "Los Angeles Lakers",
-    "home_w_pct": 0.222,
-    "away_w_pct": 0.639,
-    "home_w_l10": 1,
-    "home_l_l10": 9,
-    "away_w_l10": 9,
-    "away_l_l10": 1,
-    "home_injuries": [
-      {
-        "team_abbr": "IND",
-        "player_name": "Obi Toppin",
-        "status": "day-to-day",
-        "reason": "Foot",
-        "player_avg_pts": 9.0
-      },
-      {
-        "team_abbr": "IND",
-        "player_name": "Andrew Nembhard",
-        "status": "day-to-day",
-        "reason": "Bruise",
-        "player_avg_pts": 16.2
-      },
-      {
-        "team_abbr": "IND",
-        "player_name": "Aaron Nesmith",
-        "status": "day-to-day",
-        "reason": "Ankle",
-        "player_avg_pts": 13.6
-      },
-      {
-        "team_abbr": "IND",
-        "player_name": "Pascal Siakam",
-        "status": "day-to-day",
-        "reason": "Sprain",
-        "player_avg_pts": 24.2
-      },
-      {
-        "team_abbr": "IND",
-        "player_name": "Ivica Zubac",
-        "status": "out",
-        "reason": "Fracture",
-        "player_avg_pts": 12.0
-      },
-      {
-        "team_abbr": "IND",
-        "player_name": "Johnny Furphy",
-        "status": "out",
-        "reason": "Surgery",
-        "player_avg_pts": 5.4
-      },
-      {
-        "team_abbr": "IND",
-        "player_name": "Tyrese Haliburton",
-        "status": "out",
-        "reason": "Surgery",
-        "player_avg_pts": null
-      }
-    ],
-    "away_injuries": [
-      {
-        "team_abbr": "LAL",
-        "player_name": "Adou Thiero",
-        "status": "day-to-day",
-        "reason": "Soreness",
-        "player_avg_pts": 1.4
-      },
-      {
-        "team_abbr": "LAL",
-        "player_name": "Marcus Smart",
-        "status": "day-to-day",
-        "reason": "Soreness",
-        "player_avg_pts": 9.2
-      },
-      {
-        "team_abbr": "LAL",
-        "player_name": "Rui Hachimura",
-        "status": "day-to-day",
-        "reason": "Soreness",
-        "player_avg_pts": 9.7
-      },
-      {
-        "team_abbr": "LAL",
-        "player_name": "Nick Smith Jr.",
-        "status": "day-to-day",
-        "reason": "Not Specified",
-        "player_avg_pts": 5.3
-      }
-    ],
-    "h2h": {
-      "home_wins": 0,
-      "away_wins": 1
-    }
-  },
-  {
     "home": "POR",
     "away": "MIL",
     "predicted_winner": "POR",
@@ -437,6 +320,123 @@
     "h2h": {
       "home_wins": 1,
       "away_wins": 0
+    }
+  },
+  {
+    "home": "IND",
+    "away": "LAL",
+    "predicted_winner": "LAL",
+    "win_prob_home": 4.5,
+    "win_prob_away": 95.5,
+    "spread": -6.6,
+    "home_score_est": 89.4,
+    "away_score_est": 94.8,
+    "factors": {
+      "form": -20.0,
+      "net_rtg": -14.8,
+      "home_court": 7.5,
+      "h2h": -5.0,
+      "defense": -1.2,
+      "injuries": -3.2
+    },
+    "home_net_rtg": -8.7,
+    "away_net_rtg": 1.2,
+    "home_form": 10.0,
+    "away_form": 90.0,
+    "home_inj_loss": 23.0,
+    "away_inj_loss": 20.3,
+    "home_team_name": "Indiana Pacers",
+    "away_team_name": "Los Angeles Lakers",
+    "home_w_pct": 0.222,
+    "away_w_pct": 0.639,
+    "home_w_l10": 1,
+    "home_l_l10": 9,
+    "away_w_l10": 9,
+    "away_l_l10": 1,
+    "home_injuries": [
+      {
+        "team_abbr": "IND",
+        "player_name": "Obi Toppin",
+        "status": "day-to-day",
+        "reason": "Foot",
+        "player_avg_pts": 9.0
+      },
+      {
+        "team_abbr": "IND",
+        "player_name": "Andrew Nembhard",
+        "status": "day-to-day",
+        "reason": "Bruise",
+        "player_avg_pts": 16.2
+      },
+      {
+        "team_abbr": "IND",
+        "player_name": "Aaron Nesmith",
+        "status": "day-to-day",
+        "reason": "Ankle",
+        "player_avg_pts": 13.6
+      },
+      {
+        "team_abbr": "IND",
+        "player_name": "Pascal Siakam",
+        "status": "day-to-day",
+        "reason": "Sprain",
+        "player_avg_pts": 24.2
+      },
+      {
+        "team_abbr": "IND",
+        "player_name": "Ivica Zubac",
+        "status": "out",
+        "reason": "Fracture",
+        "player_avg_pts": 12.0
+      },
+      {
+        "team_abbr": "IND",
+        "player_name": "Johnny Furphy",
+        "status": "out",
+        "reason": "Surgery",
+        "player_avg_pts": 5.4
+      },
+      {
+        "team_abbr": "IND",
+        "player_name": "Tyrese Haliburton",
+        "status": "out",
+        "reason": "Surgery",
+        "player_avg_pts": null
+      }
+    ],
+    "away_injuries": [
+      {
+        "team_abbr": "LAL",
+        "player_name": "Adou Thiero",
+        "status": "out",
+        "reason": "Soreness",
+        "player_avg_pts": 1.4
+      },
+      {
+        "team_abbr": "LAL",
+        "player_name": "Marcus Smart",
+        "status": "out",
+        "reason": "Soreness",
+        "player_avg_pts": 9.2
+      },
+      {
+        "team_abbr": "LAL",
+        "player_name": "Rui Hachimura",
+        "status": "out",
+        "reason": "Soreness",
+        "player_avg_pts": 9.7
+      },
+      {
+        "team_abbr": "LAL",
+        "player_name": "Nick Smith Jr.",
+        "status": "day-to-day",
+        "reason": "Not Specified",
+        "player_avg_pts": 5.3
+      }
+    ],
+    "h2h": {
+      "home_wins": 0,
+      "away_wins": 1
     }
   },
   {

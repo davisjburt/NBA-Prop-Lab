@@ -76,18 +76,30 @@
               <div class="summary-value" id="moneylines-summary">—</div>
               <div class="summary-label">W – L (Hit %)</div>
             </div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Matchup</th>
-                  <th>Pick</th>
-                  <th>Result</th>
-                  <th>Margin</th>
-                </tr>
-              </thead>
-              <tbody id="ml-sample-body"></tbody>
-            </table>
+            <button
+              id="toggle-ml-samples"
+              class="btn model-stats-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="ml-samples-wrap"
+            >
+              View games
+            </button>
+
+            <div id="ml-samples-wrap" hidden>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Matchup</th>
+                    <th>Pick</th>
+                    <th>Result</th>
+                    <th>Margin</th>
+                  </tr>
+                </thead>
+                <tbody id="ml-sample-body"></tbody>
+              </table>
+            </div>
           </div>
 
           <!-- Props card: overall row + per-stat rows + individual props -->
@@ -105,13 +117,17 @@
               <tbody id="props-table-body"></tbody>
             </table>
 
-            <div
-              style="
-                margin-top: 0.75rem;
-                border-top: 1px solid var(--border);
-                padding-top: 0.75rem;
-              "
+            <button
+              id="toggle-props-samples"
+              class="btn model-stats-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="props-samples-wrap"
             >
+              View props
+            </button>
+
+            <div id="props-samples-wrap" class="model-stats-divider" hidden>
               <table>
                 <thead>
                   <tr>
@@ -143,6 +159,48 @@
       const propsSampleBody = document.getElementById("props-sample-body");
       const mlSampleBody = document.getElementById("ml-sample-body");
 
+      const mlSamplesWrap = document.getElementById("ml-samples-wrap");
+      const propsSamplesWrap = document.getElementById("props-samples-wrap");
+      const toggleMlBtn = document.getElementById("toggle-ml-samples");
+      const togglePropsBtn = document.getElementById("toggle-props-samples");
+
+      const STAT_LABELS = {
+        pts: "Points",
+        reb: "Rebounds",
+        ast: "Assists",
+        stl: "Steals",
+        blk: "Blocks",
+        fg3m: "3PT Made",
+        tov: "Turnovers",
+        pra: "PTS + REB + AST",
+        pr: "PTS + REB",
+        pa: "PTS + AST",
+        ra: "REB + AST",
+        bs: "BLK + STL",
+      };
+
+      function statLabel(stat) {
+        const key = (stat || "").toString().trim().toLowerCase();
+        return STAT_LABELS[key] || stat || "—";
+      }
+
+      function setExpanded(btn, expanded, showLabel, hideLabel) {
+        btn.setAttribute("aria-expanded", expanded ? "true" : "false");
+        btn.textContent = expanded ? hideLabel : showLabel;
+      }
+
+      toggleMlBtn.addEventListener("click", () => {
+        const willShow = mlSamplesWrap.hidden;
+        mlSamplesWrap.hidden = !willShow;
+        setExpanded(toggleMlBtn, willShow, "View games", "Hide games");
+      });
+
+      togglePropsBtn.addEventListener("click", () => {
+        const willShow = propsSamplesWrap.hidden;
+        propsSamplesWrap.hidden = !willShow;
+        setExpanded(togglePropsBtn, willShow, "View props", "Hide props");
+      });
+
       function hitClass(rate) {
         if (rate == null) return "";
         if (rate >= 0.7) return "rate-high";
@@ -165,6 +223,12 @@
         propsSampleBody.innerHTML = "";
         mlSampleBody.innerHTML = "";
         daysLabel.textContent = days;
+
+        // Collapse sample sections on reload
+        mlSamplesWrap.hidden = true;
+        propsSamplesWrap.hidden = true;
+        setExpanded(toggleMlBtn, false, "View games", "Hide games");
+        setExpanded(togglePropsBtn, false, "View props", "Hide props");
 
         try {
           const resp = await fetch(`/api/model_outcomes?days=${days}`);
@@ -226,7 +290,7 @@
               const row = document.createElement("tr");
               row.className = "data-row";
               row.innerHTML = `
-                <td>${p.stat}</td>
+                <td>${statLabel(p.stat)}</td>
                 <td class="numeric">${p.bets}</td>
                 <td class="numeric">${p.hits}</td>
                 <td class="numeric">
@@ -245,7 +309,7 @@
             tr.innerHTML = `
               <td>${p.date}</td>
               <td>${p.player_name} (${p.team_abbr})</td>
-              <td>${p.stat}</td>
+              <td>${statLabel(p.stat)}</td>
               <td>${p.line}</td>
               <td>
                 <span class="${outcomeClass(p.hit)}">

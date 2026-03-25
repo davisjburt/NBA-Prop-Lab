@@ -13,6 +13,7 @@
     <link rel="icon" type="image/svg+xml" href="/static/proplab.svg" />
   </head>
   <body>
+    <!-- cSpell:ignore lucide -->
     <nav>
       <a href="/" class="nav-logo">
         <img src="/static/proplab.svg" class="nav-logo-icon" />
@@ -31,10 +32,12 @@
         <i data-lucide="menu"></i>
       </button>
     </nav>
-    
+
     <div class="mobile-menu" id="mobileMenu">
       <a href="/"><i data-lucide="users"></i> Players</a>
-      <a href="/explore" class="active"><i data-lucide="compass"></i> Explore</a>
+      <a href="/explore" class="active"
+        ><i data-lucide="compass"></i> Explore</a
+      >
       <a href="/prizepicks"><i data-lucide="list"></i> Player Props</a>
       <a href="/moneylines"><i data-lucide="trending-up"></i> Moneylines</a>
       <a href="/model-stats"><i data-lucide="bar-chart-3"></i> Model Stats</a>
@@ -310,21 +313,21 @@
           tbody.appendChild(tr);
         });
       }
-      
+
       function toggleMobileMenu() {
-        const mobileMenu = document.getElementById('mobileMenu');
-        mobileMenu.classList.toggle('open');
+        const mobileMenu = document.getElementById("mobileMenu");
+        mobileMenu.classList.toggle("open");
       }
-      
+
       // Close mobile menu when clicking outside
-      document.addEventListener('click', (e) => {
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuToggle = document.querySelector('.mobile-menu-toggle');
+      document.addEventListener("click", (e) => {
+        const mobileMenu = document.getElementById("mobileMenu");
+        const menuToggle = document.querySelector(".mobile-menu-toggle");
         if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-          mobileMenu.classList.remove('open');
+          mobileMenu.classList.remove("open");
         }
       });
-      
+
       document.addEventListener("DOMContentLoaded", () => lucide.createIcons());
     </script>
   </body>
