@@ -1,505 +1,549 @@
 {
   "moneylines": {
-    "bets": 10,
-    "hits": 7,
-    "hit_rate": 0.7
+    "bets": 14,
+    "hits": 11,
+    "hit_rate": 0.7857142857142857
   },
   "props": [
     {
-      "stat": "stl",
-      "bets": 10,
-      "hits": 9,
-      "hit_rate": 0.9
-    },
-    {
       "stat": "pts",
-      "bets": 8,
-      "hits": 7,
-      "hit_rate": 0.875
+      "bets": 31,
+      "hits": 28,
+      "hit_rate": 0.9032258064516129
     },
     {
       "stat": "ast",
-      "bets": 9,
-      "hits": 7,
-      "hit_rate": 0.7777777777777778
+      "bets": 32,
+      "hits": 25,
+      "hit_rate": 0.78125
     },
     {
-      "stat": "tov",
-      "bets": 9,
-      "hits": 6,
-      "hit_rate": 0.6666666666666666
+      "stat": "stl",
+      "bets": 35,
+      "hits": 27,
+      "hit_rate": 0.7714285714285715
+    },
+    {
+      "stat": "reb",
+      "bets": 34,
+      "hits": 23,
+      "hit_rate": 0.6764705882352942
     },
     {
       "stat": "blk",
-      "bets": 10,
-      "hits": 6,
-      "hit_rate": 0.6
+      "bets": 35,
+      "hits": 16,
+      "hit_rate": 0.45714285714285713
     },
     {
-      "stat": "reb",
-      "bets": 10,
-      "hits": 5,
-      "hit_rate": 0.5
+      "stat": "tov",
+      "bets": 34,
+      "hits": 15,
+      "hit_rate": 0.4411764705882353
     }
   ],
   "prop_overall": {
-    "bets": 56,
-    "hits": 40,
-    "hit_rate": 0.7142857142857143
+    "bets": 201,
+    "hits": 134,
+    "hit_rate": 0.6666666666666666
   },
   "sample_props": [
     {
-      "date": "2026-03-23",
-      "player_name": "Amen Thompson",
-      "team_abbr": "HOU",
+      "date": "2026-03-24",
+      "player_name": "Grayson Allen",
+      "team_abbr": "PHX",
+      "stat": "pts",
+      "line": 9.5,
+      "hit": true,
+      "confidence": 98.0
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "James Harden",
+      "team_abbr": "CLE",
+      "stat": "reb",
+      "line": 3.5,
+      "hit": false,
+      "confidence": 97.2
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Wendell Carter Jr.",
+      "team_abbr": "ORL",
+      "stat": "pts",
+      "line": 7.5,
+      "hit": true,
+      "confidence": 96.7
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Miles Bridges",
+      "team_abbr": "CHA",
+      "stat": "pts",
+      "line": 9.5,
+      "hit": false,
+      "confidence": 96.7
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Evan Mobley",
+      "team_abbr": "CLE",
+      "stat": "pts",
+      "line": 14.5,
+      "hit": true,
+      "confidence": 96.3
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Wendell Carter Jr.",
+      "team_abbr": "ORL",
+      "stat": "pts",
+      "line": 8.5,
+      "hit": true,
+      "confidence": 95.6
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Dejounte Murray",
+      "team_abbr": "NOP",
+      "stat": "pts",
+      "line": 11.5,
+      "hit": false,
+      "confidence": 93.9
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Max Strus",
+      "team_abbr": "CLE",
+      "stat": "reb",
+      "line": 2.5,
+      "hit": true,
+      "confidence": 93.4
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Max Strus",
+      "team_abbr": "CLE",
+      "stat": "reb",
+      "line": 3.5,
+      "hit": false,
+      "confidence": 92.4
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Max Strus",
+      "team_abbr": "CLE",
+      "stat": "reb",
+      "line": 4.5,
+      "hit": false,
+      "confidence": 91.4
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Nikola Joki\u0107",
+      "team_abbr": "DEN",
+      "stat": "ast",
+      "line": 7.5,
+      "hit": true,
+      "confidence": 91.2
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "LaMelo Ball",
+      "team_abbr": "CHA",
+      "stat": "pts",
+      "line": 14.5,
+      "hit": true,
+      "confidence": 91.0
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Jordan Goodwin",
+      "team_abbr": "PHX",
+      "stat": "reb",
+      "line": 3.5,
+      "hit": true,
+      "confidence": 90.6
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Max Strus",
+      "team_abbr": "CLE",
       "stat": "reb",
       "line": 5.5,
       "hit": false,
-      "confidence": 96.6
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Matas Buzelis",
-      "team_abbr": "CHI",
-      "stat": "reb",
-      "line": 3.5,
-      "hit": true,
-      "confidence": 95.9
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Amen Thompson",
-      "team_abbr": "HOU",
-      "stat": "reb",
-      "line": 6.5,
-      "hit": false,
-      "confidence": 95.5
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Ryan Rollins",
-      "team_abbr": "MIL",
-      "stat": "pts",
-      "line": 11.5,
-      "hit": true,
-      "confidence": 95.0
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Kawhi Leonard",
-      "team_abbr": "LAC",
-      "stat": "pts",
-      "line": 23.5,
-      "hit": true,
-      "confidence": 93.9
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Matas Buzelis",
-      "team_abbr": "CHI",
-      "stat": "reb",
-      "line": 4.5,
-      "hit": false,
-      "confidence": 93.9
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Amen Thompson",
-      "team_abbr": "HOU",
-      "stat": "ast",
-      "line": 3.5,
-      "hit": false,
-      "confidence": 93.1
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Klay Thompson",
-      "team_abbr": "DAL",
-      "stat": "ast",
-      "line": 0.5,
-      "hit": true,
-      "confidence": 92.8
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Kawhi Leonard",
-      "team_abbr": "LAC",
-      "stat": "pts",
-      "line": 24.5,
-      "hit": true,
-      "confidence": 92.5
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Ziaire Williams",
-      "team_abbr": "BKN",
-      "stat": "stl",
-      "line": 0.5,
-      "hit": true,
-      "confidence": 92.1
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Jabari Smith Jr.",
-      "team_abbr": "HOU",
-      "stat": "pts",
-      "line": 11.5,
-      "hit": false,
-      "confidence": 92.1
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Deni Avdija",
-      "team_abbr": "POR",
-      "stat": "ast",
-      "line": 4.5,
-      "hit": false,
-      "confidence": 91.6
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Will Richard",
-      "team_abbr": "GSW",
-      "stat": "stl",
-      "line": 0.5,
-      "hit": true,
-      "confidence": 90.7
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Josh Giddey",
-      "team_abbr": "CHI",
-      "stat": "stl",
-      "line": 0.5,
-      "hit": true,
       "confidence": 90.4
     },
     {
-      "date": "2026-03-23",
-      "player_name": "Daniel Gafford",
-      "team_abbr": "DAL",
-      "stat": "reb",
-      "line": 5.5,
+      "date": "2026-03-24",
+      "player_name": "Grayson Allen",
+      "team_abbr": "PHX",
+      "stat": "pts",
+      "line": 11.5,
       "hit": true,
       "confidence": 90.0
     },
     {
-      "date": "2026-03-23",
-      "player_name": "P.J. Washington",
-      "team_abbr": "DAL",
-      "stat": "reb",
-      "line": 4.5,
+      "date": "2026-03-24",
+      "player_name": "Max Strus",
+      "team_abbr": "CLE",
+      "stat": "tov",
+      "line": 0.5,
       "hit": false,
       "confidence": 89.9
     },
     {
-      "date": "2026-03-23",
-      "player_name": "Deni Avdija",
-      "team_abbr": "POR",
+      "date": "2026-03-24",
+      "player_name": "Mitchell Robinson",
+      "team_abbr": "NYK",
       "stat": "reb",
-      "line": 4.5,
+      "line": 5.5,
       "hit": true,
       "confidence": 89.6
     },
     {
-      "date": "2026-03-23",
-      "player_name": "Naji Marshall",
-      "team_abbr": "DAL",
-      "stat": "ast",
-      "line": 2.5,
+      "date": "2026-03-24",
+      "player_name": "Josh Hart",
+      "team_abbr": "NYK",
+      "stat": "reb",
+      "line": 5.5,
       "hit": true,
-      "confidence": 89.4
+      "confidence": 89.6
     },
     {
-      "date": "2026-03-23",
-      "player_name": "Moses Moody",
-      "team_abbr": "GSW",
-      "stat": "pts",
-      "line": 7.5,
+      "date": "2026-03-24",
+      "player_name": "Nikola Joki\u0107",
+      "team_abbr": "DEN",
+      "stat": "ast",
+      "line": 8.5,
       "hit": true,
       "confidence": 89.2
     },
     {
-      "date": "2026-03-23",
-      "player_name": "Darius Garland",
-      "team_abbr": "LAC",
-      "stat": "ast",
-      "line": 5.5,
+      "date": "2026-03-24",
+      "player_name": "Trey Murphy III",
+      "team_abbr": "NOP",
+      "stat": "reb",
+      "line": 3.5,
       "hit": true,
-      "confidence": 88.6
+      "confidence": 89.2
     },
     {
-      "date": "2026-03-23",
-      "player_name": "Scottie Barnes",
-      "team_abbr": "TOR",
+      "date": "2026-03-24",
+      "player_name": "Saddiq Bey",
+      "team_abbr": "NOP",
+      "stat": "reb",
+      "line": 3.5,
+      "hit": true,
+      "confidence": 89.0
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Mitchell Robinson",
+      "team_abbr": "NYK",
+      "stat": "pts",
+      "line": 2.5,
+      "hit": true,
+      "confidence": 88.7
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Kon Knueppel",
+      "team_abbr": "CHA",
+      "stat": "ast",
+      "line": 1.5,
+      "hit": true,
+      "confidence": 88.5
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Evan Mobley",
+      "team_abbr": "CLE",
+      "stat": "pts",
+      "line": 17.5,
+      "hit": true,
+      "confidence": 88.1
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Mitchell Robinson",
+      "team_abbr": "NYK",
+      "stat": "reb",
+      "line": 6.5,
+      "hit": true,
+      "confidence": 88.0
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Dejounte Murray",
+      "team_abbr": "NOP",
       "stat": "stl",
       "line": 0.5,
       "hit": true,
       "confidence": 87.9
     },
     {
-      "date": "2026-03-23",
-      "player_name": "Moses Moody",
-      "team_abbr": "GSW",
+      "date": "2026-03-24",
+      "player_name": "LaMelo Ball",
+      "team_abbr": "CHA",
+      "stat": "stl",
+      "line": 0.5,
+      "hit": true,
+      "confidence": 87.8
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Royce O'Neale",
+      "team_abbr": "PHX",
       "stat": "pts",
-      "line": 9.5,
+      "line": 5.5,
+      "hit": true,
+      "confidence": 87.8
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Herbert Jones",
+      "team_abbr": "NOP",
+      "stat": "reb",
+      "line": 1.5,
       "hit": true,
       "confidence": 87.7
     },
     {
-      "date": "2026-03-23",
-      "player_name": "Reed Sheppard",
-      "team_abbr": "HOU",
+      "date": "2026-03-24",
+      "player_name": "Christian Braun",
+      "team_abbr": "DEN",
+      "stat": "ast",
+      "line": 1.5,
+      "hit": false,
+      "confidence": 87.1
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Jevon Carter",
+      "team_abbr": "ORL",
+      "stat": "reb",
+      "line": 1.5,
+      "hit": true,
+      "confidence": 87.1
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Trey Murphy III",
+      "team_abbr": "NOP",
+      "stat": "reb",
+      "line": 4.5,
+      "hit": true,
+      "confidence": 87.0
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "LaMelo Ball",
+      "team_abbr": "CHA",
+      "stat": "reb",
+      "line": 2.5,
+      "hit": true,
+      "confidence": 86.7
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Wendell Carter Jr.",
+      "team_abbr": "ORL",
       "stat": "pts",
       "line": 9.5,
       "hit": true,
-      "confidence": 86.6
+      "confidence": 86.5
     },
     {
-      "date": "2026-03-23",
-      "player_name": "P.J. Washington",
-      "team_abbr": "DAL",
+      "date": "2026-03-24",
+      "player_name": "Coby White",
+      "team_abbr": "CHA",
       "stat": "reb",
-      "line": 5.5,
+      "line": 1.5,
+      "hit": true,
+      "confidence": 86.4
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Evan Mobley",
+      "team_abbr": "CLE",
+      "stat": "pts",
+      "line": 16.5,
+      "hit": true,
+      "confidence": 86.4
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "James Harden",
+      "team_abbr": "CLE",
+      "stat": "reb",
+      "line": 4.5,
       "hit": false,
       "confidence": 86.3
     },
     {
-      "date": "2026-03-23",
-      "player_name": "Cooper Flagg",
-      "team_abbr": "DAL",
+      "date": "2026-03-24",
+      "player_name": "Herbert Jones",
+      "team_abbr": "NOP",
       "stat": "ast",
-      "line": 4.5,
+      "line": 1.5,
       "hit": true,
-      "confidence": 85.7
+      "confidence": 86.1
     },
     {
-      "date": "2026-03-23",
-      "player_name": "Leonard Miller",
-      "team_abbr": "CHI",
+      "date": "2026-03-24",
+      "player_name": "James Harden",
+      "team_abbr": "CLE",
       "stat": "pts",
-      "line": 7.5,
+      "line": 14.5,
       "hit": true,
-      "confidence": 85.6
+      "confidence": 86.1
     },
     {
-      "date": "2026-03-23",
-      "player_name": "Leonard Miller",
-      "team_abbr": "CHI",
-      "stat": "reb",
-      "line": 2.5,
+      "date": "2026-03-24",
+      "player_name": "LaMelo Ball",
+      "team_abbr": "CHA",
+      "stat": "pts",
+      "line": 16.5,
       "hit": true,
-      "confidence": 85.5
+      "confidence": 85.8
     },
     {
-      "date": "2026-03-23",
-      "player_name": "Kristaps Porzi\u0146\u0123is",
-      "team_abbr": "GSW",
-      "stat": "blk",
-      "line": 0.5,
-      "hit": false,
-      "confidence": 85.4
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Daniel Gafford",
-      "team_abbr": "DAL",
-      "stat": "reb",
-      "line": 6.5,
-      "hit": true,
-      "confidence": 85.4
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Reed Sheppard",
-      "team_abbr": "HOU",
+      "date": "2026-03-24",
+      "player_name": "Jordan Goodwin",
+      "team_abbr": "PHX",
       "stat": "stl",
       "line": 0.5,
       "hit": true,
-      "confidence": 84.8
+      "confidence": 85.1
     },
     {
-      "date": "2026-03-23",
-      "player_name": "Collin Sexton",
-      "team_abbr": "CHI",
-      "stat": "ast",
-      "line": 1.5,
+      "date": "2026-03-24",
+      "player_name": "Karl-Anthony Towns",
+      "team_abbr": "NYK",
+      "stat": "reb",
+      "line": 9.5,
       "hit": true,
-      "confidence": 80.1
+      "confidence": 85.1
     },
     {
-      "date": "2026-03-23",
-      "player_name": "Ryan Rollins",
-      "team_abbr": "MIL",
+      "date": "2026-03-24",
+      "player_name": "Zion Williamson",
+      "team_abbr": "NOP",
+      "stat": "reb",
+      "line": 3.5,
+      "hit": true,
+      "confidence": 85.0
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Jordan Clarkson",
+      "team_abbr": "NYK",
+      "stat": "pts",
+      "line": 5.5,
+      "hit": true,
+      "confidence": 85.0
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Jeremiah Fears",
+      "team_abbr": "NOP",
+      "stat": "pts",
+      "line": 4.5,
+      "hit": true,
+      "confidence": 84.4
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Jalen Brunson",
+      "team_abbr": "NYK",
       "stat": "ast",
       "line": 4.5,
       "hit": true,
-      "confidence": 79.8
+      "confidence": 84.1
     },
     {
-      "date": "2026-03-23",
-      "player_name": "Tari Eason",
-      "team_abbr": "HOU",
-      "stat": "tov",
-      "line": 0.5,
-      "hit": false,
-      "confidence": 79.7
+      "date": "2026-03-24",
+      "player_name": "Keon Ellis",
+      "team_abbr": "CLE",
+      "stat": "reb",
+      "line": 1.5,
+      "hit": true,
+      "confidence": 84.1
     },
     {
-      "date": "2026-03-23",
-      "player_name": "Matas Buzelis",
-      "team_abbr": "CHI",
+      "date": "2026-03-24",
+      "player_name": "Herbert Jones",
+      "team_abbr": "NOP",
+      "stat": "pts",
+      "line": 5.5,
+      "hit": true,
+      "confidence": 84.0
+    },
+    {
+      "date": "2026-03-24",
+      "player_name": "Sam Merrill",
+      "team_abbr": "CLE",
       "stat": "ast",
-      "line": 0.5,
-      "hit": true,
-      "confidence": 79.7
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Darius Garland",
-      "team_abbr": "LAC",
-      "stat": "stl",
-      "line": 0.5,
-      "hit": true,
-      "confidence": 79.6
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "De'Anthony Melton",
-      "team_abbr": "GSW",
-      "stat": "stl",
-      "line": 0.5,
-      "hit": true,
-      "confidence": 79.0
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Tre Jones",
-      "team_abbr": "CHI",
-      "stat": "stl",
-      "line": 0.5,
-      "hit": true,
-      "confidence": 76.8
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Matas Buzelis",
-      "team_abbr": "CHI",
-      "stat": "blk",
-      "line": 0.5,
-      "hit": false,
-      "confidence": 75.6
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Bobby Portis",
-      "team_abbr": "MIL",
-      "stat": "stl",
-      "line": 0.5,
-      "hit": true,
-      "confidence": 75.0
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Tari Eason",
-      "team_abbr": "HOU",
-      "stat": "stl",
-      "line": 0.5,
-      "hit": false,
-      "confidence": 72.4
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Cooper Flagg",
-      "team_abbr": "DAL",
-      "stat": "blk",
-      "line": 0.5,
-      "hit": false,
-      "confidence": 71.0
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Gui Santos",
-      "team_abbr": "GSW",
-      "stat": "tov",
       "line": 1.5,
-      "hit": true,
-      "confidence": 66.3
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Ace Bailey",
-      "team_abbr": "UTA",
-      "stat": "blk",
-      "line": 0.5,
-      "hit": true,
-      "confidence": 65.1
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Reed Sheppard",
-      "team_abbr": "HOU",
-      "stat": "tov",
-      "line": 1.5,
-      "hit": true,
-      "confidence": 65.1
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Scottie Barnes",
-      "team_abbr": "TOR",
-      "stat": "blk",
-      "line": 0.5,
-      "hit": true,
-      "confidence": 64.9
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Brook Lopez",
-      "team_abbr": "LAC",
-      "stat": "blk",
-      "line": 0.5,
-      "hit": true,
-      "confidence": 64.3
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Alperen Sengun",
-      "team_abbr": "HOU",
-      "stat": "tov",
-      "line": 2.5,
       "hit": false,
-      "confidence": 63.9
+      "confidence": 83.9
     },
     {
-      "date": "2026-03-23",
-      "player_name": "Derrick Jones Jr.",
-      "team_abbr": "LAC",
-      "stat": "tov",
+      "date": "2026-03-24",
+      "player_name": "Jalen Brunson",
+      "team_abbr": "NYK",
+      "stat": "stl",
       "line": 0.5,
       "hit": false,
-      "confidence": 63.6
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Kawhi Leonard",
-      "team_abbr": "LAC",
-      "stat": "tov",
-      "line": 1.5,
-      "hit": true,
-      "confidence": 63.3
-    },
-    {
-      "date": "2026-03-23",
-      "player_name": "Collin Murray-Boyles",
-      "team_abbr": "TOR",
-      "stat": "blk",
-      "line": 0.5,
-      "hit": true,
-      "confidence": 62.8
+      "confidence": 83.8
     }
   ],
   "sample_moneylines": [
+    {
+      "date": "2026-03-24",
+      "home_abbr": "CHA",
+      "away_abbr": "SAC",
+      "predicted_winner": "CHA",
+      "actual_winner": "CHA",
+      "correct": true,
+      "margin": 49.0,
+      "win_prob_home": 100.0,
+      "win_prob_away": 0.0
+    },
+    {
+      "date": "2026-03-24",
+      "home_abbr": "CLE",
+      "away_abbr": "ORL",
+      "predicted_winner": "CLE",
+      "actual_winner": "CLE",
+      "correct": true,
+      "margin": 5.0,
+      "win_prob_home": 94.7,
+      "win_prob_away": 5.3
+    },
+    {
+      "date": "2026-03-24",
+      "home_abbr": "NYK",
+      "away_abbr": "NOP",
+      "predicted_winner": "NYK",
+      "actual_winner": "NYK",
+      "correct": true,
+      "margin": 5.0,
+      "win_prob_home": 78.1,
+      "win_prob_away": 21.9
+    },
+    {
+      "date": "2026-03-24",
+      "home_abbr": "PHX",
+      "away_abbr": "DEN",
+      "predicted_winner": "DEN",
+      "actual_winner": "DEN",
+      "correct": true,
+      "margin": -2.0,
+      "win_prob_home": 0.7,
+      "win_prob_away": 99.3
+    },
     {
       "date": "2026-03-23",
       "home_abbr": "ATL",
