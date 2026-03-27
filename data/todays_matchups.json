@@ -1,33 +1,17 @@
 {
-  "DET": {
+  "IND": {
+    "opponent": "LAC",
+    "location": "Home"
+  },
+  "LAC": {
+    "opponent": "IND",
+    "location": "Road"
+  },
+  "BOS": {
     "opponent": "ATL",
     "location": "Home"
   },
   "ATL": {
-    "opponent": "DET",
-    "location": "Road"
-  },
-  "IND": {
-    "opponent": "LAL",
-    "location": "Home"
-  },
-  "LAL": {
-    "opponent": "IND",
-    "location": "Road"
-  },
-  "PHI": {
-    "opponent": "CHI",
-    "location": "Home"
-  },
-  "CHI": {
-    "opponent": "PHI",
-    "location": "Road"
-  },
-  "BOS": {
-    "opponent": "OKC",
-    "location": "Home"
-  },
-  "OKC": {
     "opponent": "BOS",
     "location": "Road"
   },
@@ -40,59 +24,59 @@
     "location": "Road"
   },
   "MEM": {
-    "opponent": "SAS",
-    "location": "Home"
-  },
-  "SAS": {
-    "opponent": "MEM",
-    "location": "Road"
-  },
-  "UTA": {
-    "opponent": "WAS",
-    "location": "Home"
-  },
-  "WAS": {
-    "opponent": "UTA",
-    "location": "Road"
-  },
-  "MIN": {
     "opponent": "HOU",
     "location": "Home"
   },
   "HOU": {
-    "opponent": "MIN",
+    "opponent": "MEM",
+    "location": "Road"
+  },
+  "OKC": {
+    "opponent": "CHI",
+    "location": "Home"
+  },
+  "CHI": {
+    "opponent": "OKC",
+    "location": "Road"
+  },
+  "TOR": {
+    "opponent": "NOP",
+    "location": "Home"
+  },
+  "NOP": {
+    "opponent": "TOR",
     "location": "Road"
   },
   "DEN": {
-    "opponent": "DAL",
+    "opponent": "UTA",
     "location": "Home"
   },
-  "DAL": {
+  "UTA": {
     "opponent": "DEN",
     "location": "Road"
   },
   "GSW": {
-    "opponent": "BKN",
+    "opponent": "WAS",
     "location": "Home"
   },
-  "BKN": {
+  "WAS": {
     "opponent": "GSW",
     "location": "Road"
   },
   "POR": {
-    "opponent": "MIL",
+    "opponent": "DAL",
     "location": "Home"
   },
-  "MIL": {
+  "DAL": {
     "opponent": "POR",
     "location": "Road"
   },
-  "LAC": {
-    "opponent": "TOR",
+  "LAL": {
+    "opponent": "BKN",
     "location": "Home"
   },
-  "TOR": {
-    "opponent": "LAC",
+  "BKN": {
+    "opponent": "LAL",
     "location": "Road"
   }
 }
