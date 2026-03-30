@@ -11,7 +11,7 @@ def _load_env_files() -> None:
 
 
 def database_uri() -> str:
-    """DATABASE_URL from env (and optional .env); Render uses postgres:// which SQLAlchemy expects as postgresql://."""
+    """DATABASE_URL from env (and optional .env); Compatible with Render and Heroku postgres:// URLs."""
     _load_env_files()
     url = os.environ.get("DATABASE_URL", "sqlite:///prop_lab.db")
     if url.startswith("postgres://"):

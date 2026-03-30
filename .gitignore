@@ -61,3 +61,6 @@ __pycache__/
 *.pyc
 
 refresh.sh
+
+# Heroku
+heroku.yml
