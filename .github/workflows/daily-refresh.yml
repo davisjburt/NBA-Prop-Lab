@@ -11,6 +11,6 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -r requirements.txt
-      - run: python scripts/daily_update.py
+      - run: python scripts/daily_update.py && python scripts/update_model_stats.py
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}

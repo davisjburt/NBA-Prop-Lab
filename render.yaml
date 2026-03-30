@@ -18,8 +18,7 @@ services:
     name: daily-data-refresh
     runtime: python
     schedule: "0 11 * * *"
-    buildCommand: pip install -r requirements.txt
-    startCommand: python scripts/daily_update.py
+    startCommand: python scripts/daily_update.py && python scripts/update_model_stats.py
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -32,8 +31,7 @@ services:
     name: prizepicks-hourly-refresh
     runtime: python
     schedule: "0 * * * *"
-    buildCommand: pip install -r requirements.txt
-    startCommand: python scripts/fetch_data.py
+    startCommand: python scripts/fetch_data.py && python scripts/update_model_stats.py
     envVars:
       - key: DATABASE_URL
         fromDatabase:

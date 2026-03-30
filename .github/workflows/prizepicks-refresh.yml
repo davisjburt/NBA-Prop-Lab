@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run fetch_data
+      - name: Run fetch_data and model stats
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: python scripts/fetch_data.py
+        run: python scripts/fetch_data.py && python scripts/update_model_stats.py
