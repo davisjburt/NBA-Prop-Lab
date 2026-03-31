@@ -283,25 +283,29 @@ def main():
         write_safe("moneylines.json", moneylines)
 
                 # ── Log moneyline predictions for model statistics ────────────────
-        today = datetime.date.today()
-        ModelMoneylineEval.query.filter_by(date=today).delete()
+        # today = datetime.date.today()
+        #
+        # db.session.execute(
+        #     db.text("TRUNCATE TABLE model_moneyline_eval RESTART IDENTITY CASCADE")
+        # )
+        # db.session.commit()
+        #
+        # for g in moneylines:
+        #     m = ModelMoneylineEval(
+        #         date=today,
+        #         home_abbr=g["home"],
+        #         away_abbr=g["away"],
+        #         predicted_winner=g["predicted_winner"],
+        #         win_prob_home=g["win_prob_home"],
+        #         win_prob_away=g["win_prob_away"],
+        #         spread=g["spread"],
+        #     )
+        #     db.session.add(m)
+        #
+        # db.session.commit()
 
-        for g in moneylines:
-            m = ModelMoneylineEval(
-                date=today,
-                home_abbr=g["home"],
-                away_abbr=g["away"],
-                predicted_winner=g["predicted_winner"],
-                win_prob_home=g["win_prob_home"],
-                win_prob_away=g["win_prob_away"],
-                spread=g["spread"],
-            )
-            db.session.add(m)
 
-        db.session.commit()
-
-
-        # ── Step 5: Compute PrizePicks results ────────────────────────────
+# ── Step 5: Compute PrizePicks results ────────────────────────────
         print("\n⚙️   Computing PrizePicks results...")
 
         def find_player(name_key):
@@ -315,80 +319,125 @@ def main():
         pp_results = []
 
         if pp_lines is not None:
-            for entry in pp_lines:
+            total_pp = len(pp_lines)
+            built_rows = 0
+            missing_player = 0
+            missing_rows = 0
+            skipped_bad_stat = 0
+
+            player_df_cache = {}
+            player_rows_cache = {}
+
+            print(f"   Processing {total_pp} PrizePicks lines...")
+
+            for i, entry in enumerate(pp_lines, start=1):
+                if i % 100 == 0 or i == total_pp:
+                    print(
+                        f"   ⏳ PrizePicks results: {i}/{total_pp} "
+                        f"({i * 100 // total_pp}%) | built={built_rows} "
+                        f"missing_player={missing_player} missing_rows={missing_rows} "
+                        f"bad_stat={skipped_bad_stat}"
+                    )
+
                 player = find_player(entry["name_key"])
                 if not player:
-                    continue
-                rows = stats_by_player.get(player.id, [])
-                if not rows:
+                    missing_player += 1
                     continue
 
-                df = rows_to_df(rows)
+                if player.id not in player_rows_cache:
+                    player_rows_cache[player.id] = stats_by_player.get(player.id, [])
+                rows = player_rows_cache[player.id]
+
+                if not rows:
+                    missing_rows += 1
+                    continue
+
+                if player.id not in player_df_cache:
+                    player_df_cache[player.id] = rows_to_df(rows)
+                df = player_df_cache[player.id]
+
                 stat = entry["stat"]
                 line = entry["line"]
 
-                team_abbr   = (entry.get("team") or player.team_abbr or "").upper()
-                today_game  = todays_matchups.get(team_abbr)
+                team_abbr = (entry.get("team") or player.team_abbr or "").upper()
+                today_game = todays_matchups.get(team_abbr)
 
                 if today_game:
-                    opponent_abbr    = today_game["opponent"]
+                    opponent_abbr = today_game["opponent"]
                     current_location = today_game["location"]
                 else:
-                    opponent_abbr    = extract_opponent(rows[0].matchup)
+                    opponent_abbr = extract_opponent(rows[0].matchup)
                     current_location = rows[0].location
 
                 if stat in COMBO_STATS:
-                    cols   = COMBO_STATS[stat]
+                    cols = COMBO_STATS[stat]
                     values = df[cols].sum(axis=1).tolist()
                     primary_stat = cols[0]
                 elif stat in df.columns:
                     values = df[stat].tolist()
                     primary_stat = stat
                 else:
+                    skipped_bad_stat += 1
                     continue
 
-                avg_l5     = clean_avg(values, n=5)
-                avg_l10    = clean_avg(values, n=10)
+                avg_l5 = clean_avg(values, n=5)
+                avg_l10 = clean_avg(values, n=10)
                 avg_season = clean_avg(values)
 
-                min_values    = df["min"].tolist()
-                min_l5        = clean_avg(min_values, n=5)
-                min_l10       = clean_avg(min_values, n=10)
-                min_season    = clean_avg(min_values)
+                min_values = df["min"].tolist()
+                min_l5 = clean_avg(min_values, n=5)
+                min_l10 = clean_avg(min_values, n=10)
+                min_season = clean_avg(min_values)
+
                 minutes_ratio = None
                 if min_l5 is not None and min_season not in (None, 0):
                     minutes_ratio = min_l5 / min_season
 
-                hr_l5     = (hit_rate_combo(df, stat, line, last_n=5)
-                             if stat in COMBO_STATS
-                             else hit_rate(df, stat, line, last_n=5))
-                hr_l10    = (hit_rate_combo(df, stat, line, last_n=10)
-                             if stat in COMBO_STATS
-                             else hit_rate(df, stat, line, last_n=10))
-                hr_season = (hit_rate_combo(df, stat, line)
-                             if stat in COMBO_STATS
-                             else hit_rate(df, stat, line))
+                hr_l5 = (
+                    hit_rate_combo(df, stat, line, last_n=5)
+                    if stat in COMBO_STATS
+                    else hit_rate(df, stat, line, last_n=5)
+                )
+                hr_l10 = (
+                    hit_rate_combo(df, stat, line, last_n=10)
+                    if stat in COMBO_STATS
+                    else hit_rate(df, stat, line, last_n=10)
+                )
+                hr_season = (
+                    hit_rate_combo(df, stat, line)
+                    if stat in COMBO_STATS
+                    else hit_rate(df, stat, line)
+                )
 
                 if "error" in hr_l10:
                     continue
 
-                edge   = round(avg_l5 - line, 1) if avg_l5 is not None else None
+                edge = round(avg_l5 - line, 1) if avg_l5 is not None else None
                 streak = hr_l10.get("streak", {"count": 0, "type": "none"})
-                mult   = matchup_multiplier(opponent_abbr, primary_stat, opp_defense)
+                mult = matchup_multiplier(opponent_abbr, primary_stat, opp_defense)
 
                 home_df = df[df["location"] == "Home"]
                 away_df = df[df["location"] == "Road"]
+
                 if stat in COMBO_STATS:
-                    cols    = COMBO_STATS[stat]
-                    home_hr = ((home_df[cols].sum(axis=1) > line).mean()
-                               if not home_df.empty else 0.5)
-                    away_hr = ((away_df[cols].sum(axis=1) > line).mean()
-                               if not away_df.empty else 0.5)
+                    cols = COMBO_STATS[stat]
+                    home_hr = (
+                        (home_df[cols].sum(axis=1) > line).mean()
+                        if not home_df.empty else 0.5
+                    )
+                    away_hr = (
+                        (away_df[cols].sum(axis=1) > line).mean()
+                        if not away_df.empty else 0.5
+                    )
                 else:
-                    home_hr = ((home_df[stat] > line).mean()
-                               if not home_df.empty else 0.5)
-                    away_hr = ((away_df[stat] > line).mean()
-                               if not away_df.empty else 0.5)
+                    home_hr = (
+                        (home_df[stat] > line).mean()
+                        if not home_df.empty else 0.5
+                    )
+                    away_hr = (
+                        (away_df[stat] > line).mean()
+                        if not away_df.empty else 0.5
+                    )
 
                 home_away_bonus = 0.0
                 if current_location == "Home" and home_hr > away_hr + 0.05:
@@ -437,36 +486,46 @@ def main():
                     "minutes_season": min_season,
                     "minutes_ratio": minutes_ratio,
                 })
+                built_rows += 1
+
+            print(
+                f"   ✅ Finished PrizePicks loop | built={built_rows} "
+                f"missing_player={missing_player} missing_rows={missing_rows} "
+                f"bad_stat={skipped_bad_stat}"
+            )
 
             pp_results.sort(key=lambda x: x["confidence"], reverse=True)
 
         write_safe("prizepicks_results.json", pp_results)
 
-                # ── Log top prop picks for model statistics ───────────────────────
-        today = datetime.date.today()
-        ModelPropEval.query.filter_by(date=today).delete()
-
-        MAX_PER_STAT = 25
-
-        by_stat: dict[str, list] = defaultdict(list)
-        for p in pp_results:
-            by_stat[p["stat"]].append(p)
-
-        for stat, rows in by_stat.items():
-            rows.sort(key=lambda x: x["confidence"], reverse=True)
-            for row in rows[:MAX_PER_STAT]:
-                m = ModelPropEval(
-                    date=today,
-                    player_id=row["id"],
-                    player_name=row["name"],
-                    team_abbr=row["team"],
-                    stat=stat,
-                    line=row["line"],
-                    confidence=row["confidence"],
-                )
-                db.session.add(m)
-
-        db.session.commit()
+        # # ── Log top prop picks for model statistics ───────────────────────
+        # today = datetime.date.today()
+        # db.session.execute(
+        #     db.text("TRUNCATE TABLE model_prop_eval RESTART IDENTITY CASCADE")
+        # )
+        # db.session.commit()
+        #
+        # MAX_PER_STAT = 25
+        #
+        # by_stat: dict[str, list] = defaultdict(list)
+        # for p in pp_results:
+        #     by_stat[p["stat"]].append(p)
+        #
+        # for stat, rows in by_stat.items():
+        #     rows.sort(key=lambda x: x["confidence"], reverse=True)
+        #     for row in rows[:MAX_PER_STAT]:
+        #         m = ModelPropEval(
+        #             date=today,
+        #             player_id=row["id"],
+        #             player_name=row["name"],
+        #             team_abbr=row["team"],
+        #             stat=stat,
+        #             line=row["line"],
+        #             confidence=row["confidence"],
+        #         )
+        #         db.session.add(m)
+        #
+        # db.session.commit()
 
 
         # ── Step 6: Compute parlays ───────────────────────────────────────

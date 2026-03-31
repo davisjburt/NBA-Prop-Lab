@@ -190,17 +190,17 @@
   },
   {
     "team_abbr": "DEN",
-    "player_name": "Aaron Gordon",
-    "status": "day-to-day",
-    "reason": "Soreness",
-    "player_avg_pts": 14.4
-  },
-  {
-    "team_abbr": "DEN",
     "player_name": "Cameron Johnson",
     "status": "day-to-day",
     "reason": "Spasms",
     "player_avg_pts": 11.9
+  },
+  {
+    "team_abbr": "DEN",
+    "player_name": "Aaron Gordon",
+    "status": "day-to-day",
+    "reason": "Soreness",
+    "player_avg_pts": 14.4
   },
   {
     "team_abbr": "DEN",
