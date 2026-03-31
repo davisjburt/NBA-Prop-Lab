@@ -3,15 +3,15 @@
     "team_abbr": "ATL",
     "player_name": "Jock Landale",
     "status": "day-to-day",
-    "reason": "Illness",
+    "reason": "Not Specified",
     "player_avg_pts": 8.5
   },
   {
     "team_abbr": "BOS",
-    "player_name": "Ron Harper Jr.",
+    "player_name": "Jayson Tatum",
     "status": "day-to-day",
-    "reason": "Ankle",
-    "player_avg_pts": 3.9
+    "reason": "Not Specified",
+    "player_avg_pts": 20.9
   },
   {
     "team_abbr": "BOS",
@@ -22,17 +22,10 @@
   },
   {
     "team_abbr": "BOS",
-    "player_name": "Derrick White",
+    "player_name": "Ron Harper Jr.",
     "status": "day-to-day",
-    "reason": "Bruise",
-    "player_avg_pts": 16.5
-  },
-  {
-    "team_abbr": "BOS",
-    "player_name": "Jayson Tatum",
-    "status": "out",
-    "reason": "Not Specified",
-    "player_avg_pts": 20.9
+    "reason": "Sprain",
+    "player_avg_pts": 3.9
   },
   {
     "team_abbr": "BOS",
@@ -50,17 +43,17 @@
   },
   {
     "team_abbr": "BKN",
-    "player_name": "Josh Minott",
-    "status": "day-to-day",
-    "reason": "Bruise",
-    "player_avg_pts": 7.4
-  },
-  {
-    "team_abbr": "BKN",
     "player_name": "Danny Wolf",
     "status": "out",
     "reason": "Sprain",
     "player_avg_pts": 10.4
+  },
+  {
+    "team_abbr": "BKN",
+    "player_name": "Terance Mann",
+    "status": "out",
+    "reason": "Soreness",
+    "player_avg_pts": 6.2
   },
   {
     "team_abbr": "BKN",
@@ -84,39 +77,11 @@
     "player_avg_pts": 10.6
   },
   {
-    "team_abbr": "CHA",
-    "player_name": "Tidjane Salaun",
-    "status": "out",
-    "reason": "Strain",
-    "player_avg_pts": 6.0
-  },
-  {
-    "team_abbr": "CHA",
-    "player_name": "Grant Williams",
-    "status": "day-to-day",
-    "reason": "Not Specified",
-    "player_avg_pts": 7.3
-  },
-  {
     "team_abbr": "CHI",
     "player_name": "Mac McClung",
-    "status": "out",
+    "status": "day-to-day",
     "reason": "Not Specified",
     "player_avg_pts": 5.8
-  },
-  {
-    "team_abbr": "CHI",
-    "player_name": "Anfernee Simons",
-    "status": "out",
-    "reason": "Fracture",
-    "player_avg_pts": 15.6
-  },
-  {
-    "team_abbr": "CHI",
-    "player_name": "Guerschon Yabusele",
-    "status": "day-to-day",
-    "reason": "Sprain",
-    "player_avg_pts": 9.9
   },
   {
     "team_abbr": "CHI",
@@ -127,10 +92,10 @@
   },
   {
     "team_abbr": "CHI",
-    "player_name": "Jaden Ivey",
+    "player_name": "Anfernee Simons",
     "status": "out",
-    "reason": "Soreness",
-    "player_avg_pts": 8.7
+    "reason": "Fracture",
+    "player_avg_pts": 15.6
   },
   {
     "team_abbr": "CHI",
@@ -155,23 +120,16 @@
   },
   {
     "team_abbr": "CLE",
-    "player_name": "Craig Porter Jr.",
-    "status": "out",
-    "reason": "Strain",
-    "player_avg_pts": 4.0
-  },
-  {
-    "team_abbr": "CLE",
     "player_name": "Max Strus",
-    "status": "out",
-    "reason": "Foot",
+    "status": "day-to-day",
+    "reason": "Not Specified",
     "player_avg_pts": 12.5
   },
   {
     "team_abbr": "CLE",
     "player_name": "Jarrett Allen",
-    "status": "out",
-    "reason": "Knee",
+    "status": "day-to-day",
+    "reason": "Not Specified",
     "player_avg_pts": 18.2
   },
   {
@@ -190,6 +148,13 @@
   },
   {
     "team_abbr": "DAL",
+    "player_name": "P.J. Washington",
+    "status": "day-to-day",
+    "reason": "Not Specified",
+    "player_avg_pts": 13.8
+  },
+  {
+    "team_abbr": "DAL",
     "player_name": "Naji Marshall",
     "status": "day-to-day",
     "reason": "Not Specified",
@@ -197,10 +162,10 @@
   },
   {
     "team_abbr": "DAL",
-    "player_name": "P.J. Washington",
+    "player_name": "Marvin Bagley III",
     "status": "day-to-day",
-    "reason": "Illness",
-    "player_avg_pts": 13.8
+    "reason": "Pinched Nerve",
+    "player_avg_pts": 10.8
   },
   {
     "team_abbr": "DAL",
@@ -208,20 +173,6 @@
     "status": "out",
     "reason": "Strain",
     "player_avg_pts": 6.7
-  },
-  {
-    "team_abbr": "DAL",
-    "player_name": "Daniel Gafford",
-    "status": "out",
-    "reason": "Sprain",
-    "player_avg_pts": 11.9
-  },
-  {
-    "team_abbr": "DAL",
-    "player_name": "Marvin Bagley III",
-    "status": "day-to-day",
-    "reason": "Pinched Nerve",
-    "player_avg_pts": 10.8
   },
   {
     "team_abbr": "DAL",
@@ -255,34 +206,34 @@
     "team_abbr": "DEN",
     "player_name": "Zeke Nnaji",
     "status": "day-to-day",
-    "reason": "Hip",
+    "reason": "Pinched Nerve",
     "player_avg_pts": 2.7
   },
   {
     "team_abbr": "DEN",
     "player_name": "Spencer Jones",
     "status": "day-to-day",
-    "reason": "Hamstring",
+    "reason": "Not Specified",
     "player_avg_pts": 4.2
   },
   {
     "team_abbr": "DET",
     "player_name": "Duncan Robinson",
-    "status": "out",
+    "status": "day-to-day",
     "reason": "Not Specified",
     "player_avg_pts": 11.1
   },
   {
     "team_abbr": "DET",
     "player_name": "Tobias Harris",
-    "status": "out",
+    "status": "day-to-day",
     "reason": "Not Specified",
     "player_avg_pts": 13.2
   },
   {
     "team_abbr": "DET",
     "player_name": "Jalen Duren",
-    "status": "out",
+    "status": "day-to-day",
     "reason": "Not Specified",
     "player_avg_pts": 23.0
   },
@@ -302,17 +253,17 @@
   },
   {
     "team_abbr": "GSW",
+    "player_name": "Quinten Post",
+    "status": "day-to-day",
+    "reason": "Soreness",
+    "player_avg_pts": 7.1
+  },
+  {
+    "team_abbr": "GSW",
     "player_name": "Will Richard",
     "status": "day-to-day",
     "reason": "Soreness",
     "player_avg_pts": 6.5
-  },
-  {
-    "team_abbr": "GSW",
-    "player_name": "Quinten Post",
-    "status": "out",
-    "reason": "Not Specified",
-    "player_avg_pts": 7.1
   },
   {
     "team_abbr": "GSW",
@@ -394,7 +345,7 @@
   {
     "team_abbr": "LAC",
     "player_name": "Isaiah Jackson",
-    "status": "day-to-day",
+    "status": "out",
     "reason": "Sprain",
     "player_avg_pts": 7.2
   },
@@ -427,20 +378,6 @@
     "player_avg_pts": 9.2
   },
   {
-    "team_abbr": "LAL",
-    "player_name": "Luka Doncic",
-    "status": "suspension",
-    "reason": "Not Specified",
-    "player_avg_pts": 35.5
-  },
-  {
-    "team_abbr": "MEM",
-    "player_name": "Jaylen Wells",
-    "status": "out",
-    "reason": "Surgery",
-    "player_avg_pts": 13.8
-  },
-  {
     "team_abbr": "MEM",
     "player_name": "Javon Small",
     "status": "day-to-day",
@@ -449,17 +386,10 @@
   },
   {
     "team_abbr": "MEM",
-    "player_name": "Ty Jerome",
-    "status": "out",
-    "reason": "Sprain",
-    "player_avg_pts": 19.7
-  },
-  {
-    "team_abbr": "",
-    "player_name": "DeJon Jarreau",
+    "player_name": "Olivier-Maxence Prosper",
     "status": "day-to-day",
     "reason": "Soreness",
-    "player_avg_pts": null
+    "player_avg_pts": 13.4
   },
   {
     "team_abbr": "",
@@ -470,17 +400,17 @@
   },
   {
     "team_abbr": "MEM",
-    "player_name": "Olivier-Maxence Prosper",
-    "status": "day-to-day",
-    "reason": "Soreness",
-    "player_avg_pts": 13.4
+    "player_name": "Jaylen Wells",
+    "status": "out",
+    "reason": "Surgery",
+    "player_avg_pts": 13.8
   },
   {
     "team_abbr": "MEM",
-    "player_name": "Walter Clayton Jr.",
-    "status": "day-to-day",
-    "reason": "Soreness",
-    "player_avg_pts": 8.7
+    "player_name": "Ty Jerome",
+    "status": "out",
+    "reason": "Sprain",
+    "player_avg_pts": 19.7
   },
   {
     "team_abbr": "MEM",
@@ -526,15 +456,8 @@
   },
   {
     "team_abbr": "MIA",
-    "player_name": "Pelle Larsson",
-    "status": "day-to-day",
-    "reason": "Triceps",
-    "player_avg_pts": 12.2
-  },
-  {
-    "team_abbr": "MIA",
     "player_name": "Norman Powell",
-    "status": "out",
+    "status": "day-to-day",
     "reason": "Not Specified",
     "player_avg_pts": 18.9
   },
@@ -547,22 +470,15 @@
   },
   {
     "team_abbr": "MIL",
-    "player_name": "Ryan Rollins",
-    "status": "day-to-day",
-    "reason": "Soreness",
-    "player_avg_pts": 17.5
-  },
-  {
-    "team_abbr": "MIL",
-    "player_name": "Myles Turner",
-    "status": "day-to-day",
-    "reason": "Tendinitis",
-    "player_avg_pts": 9.6
+    "player_name": "Gary Harris",
+    "status": "out",
+    "reason": "Not Specified",
+    "player_avg_pts": 2.3
   },
   {
     "team_abbr": "MIL",
     "player_name": "Thanasis Antetokounmpo",
-    "status": "day-to-day",
+    "status": "out",
     "reason": "Soreness",
     "player_avg_pts": 0.9
   },
@@ -575,17 +491,17 @@
   },
   {
     "team_abbr": "MIL",
-    "player_name": "Gary Harris",
-    "status": "out",
-    "reason": "Not Specified",
-    "player_avg_pts": 2.3
-  },
-  {
-    "team_abbr": "MIL",
     "player_name": "Bobby Portis",
     "status": "out",
     "reason": "Sprain",
     "player_avg_pts": 14.7
+  },
+  {
+    "team_abbr": "MIL",
+    "player_name": "Ryan Rollins",
+    "status": "day-to-day",
+    "reason": "Hip",
+    "player_avg_pts": 17.5
   },
   {
     "team_abbr": "MIL",
@@ -610,16 +526,9 @@
   },
   {
     "team_abbr": "MIN",
-    "player_name": "Anthony Edwards",
-    "status": "out",
-    "reason": "Soreness",
-    "player_avg_pts": 29.6
-  },
-  {
-    "team_abbr": "MIN",
     "player_name": "Rocco Zikarsky",
     "status": "day-to-day",
-    "reason": "Undisclosed",
+    "reason": "Not Specified",
     "player_avg_pts": 1.5
   },
   {
@@ -652,13 +561,6 @@
   },
   {
     "team_abbr": "NYK",
-    "player_name": "Miles McBride",
-    "status": "out",
-    "reason": "Undisclosed",
-    "player_avg_pts": 13.4
-  },
-  {
-    "team_abbr": "NYK",
     "player_name": "Landry Shamet",
     "status": "out",
     "reason": "Bruise",
@@ -666,23 +568,23 @@
   },
   {
     "team_abbr": "NYK",
-    "player_name": "Kevin McCullar Jr.",
-    "status": "out",
-    "reason": "Not Specified",
-    "player_avg_pts": 1.8
+    "player_name": "Miles McBride",
+    "status": "day-to-day",
+    "reason": "Pelvis",
+    "player_avg_pts": 13.4
   },
   {
     "team_abbr": "OKC",
     "player_name": "Jalen Williams",
-    "status": "out",
-    "reason": "Hamstring",
+    "status": "day-to-day",
+    "reason": "Not Specified",
     "player_avg_pts": 16.9
   },
   {
     "team_abbr": "OKC",
     "player_name": "Isaiah Hartenstein",
-    "status": "out",
-    "reason": "Rest",
+    "status": "day-to-day",
+    "reason": "Not Specified",
     "player_avg_pts": 7.0
   },
   {
@@ -701,17 +603,24 @@
   },
   {
     "team_abbr": "ORL",
+    "player_name": "Jonathan Isaac",
+    "status": "out",
+    "reason": "Sprain",
+    "player_avg_pts": 1.8
+  },
+  {
+    "team_abbr": "ORL",
     "player_name": "Franz Wagner",
     "status": "out",
     "reason": "Sprain",
     "player_avg_pts": 21.0
   },
   {
-    "team_abbr": "ORL",
-    "player_name": "Jonathan Isaac",
-    "status": "out",
-    "reason": "Sprain",
-    "player_avg_pts": 1.8
+    "team_abbr": "PHI",
+    "player_name": "Joel Embiid",
+    "status": "day-to-day",
+    "reason": "Not Specified",
+    "player_avg_pts": 30.1
   },
   {
     "team_abbr": "PHI",
@@ -722,9 +631,16 @@
   },
   {
     "team_abbr": "PHX",
+    "player_name": "Dillon Brooks",
+    "status": "out",
+    "reason": "Surgery",
+    "player_avg_pts": 20.4
+  },
+  {
+    "team_abbr": "PHX",
     "player_name": "Grayson Allen",
     "status": "day-to-day",
-    "reason": "Knee",
+    "reason": "Not Specified",
     "player_avg_pts": 18.6
   },
   {
@@ -733,13 +649,6 @@
     "status": "out",
     "reason": "Fracture",
     "player_avg_pts": 10.4
-  },
-  {
-    "team_abbr": "PHX",
-    "player_name": "Dillon Brooks",
-    "status": "out",
-    "reason": "Surgery",
-    "player_avg_pts": 20.4
   },
   {
     "team_abbr": "PHX",
@@ -758,7 +667,7 @@
   {
     "team_abbr": "POR",
     "player_name": "Jerami Grant",
-    "status": "day-to-day",
+    "status": "out",
     "reason": "Strain",
     "player_avg_pts": 17.6
   },
@@ -855,6 +764,13 @@
   },
   {
     "team_abbr": "TOR",
+    "player_name": "Jamison Battle",
+    "status": "out",
+    "reason": "Not Specified",
+    "player_avg_pts": 3.0
+  },
+  {
+    "team_abbr": "TOR",
     "player_name": "Collin Murray-Boyles",
     "status": "day-to-day",
     "reason": "Spasms",
@@ -869,13 +785,6 @@
   },
   {
     "team_abbr": "TOR",
-    "player_name": "Jamison Battle",
-    "status": "day-to-day",
-    "reason": "Not Specified",
-    "player_avg_pts": 3.0
-  },
-  {
-    "team_abbr": "TOR",
     "player_name": "Immanuel Quickley",
     "status": "out",
     "reason": "Plantar Fasciitis",
@@ -883,10 +792,24 @@
   },
   {
     "team_abbr": "TOR",
+    "player_name": "RJ Barrett",
+    "status": "day-to-day",
+    "reason": "Soreness",
+    "player_avg_pts": 19.6
+  },
+  {
+    "team_abbr": "TOR",
     "player_name": "Chucky Hepburn",
     "status": "out",
     "reason": "Surgery",
     "player_avg_pts": 0.0
+  },
+  {
+    "team_abbr": "UTA",
+    "player_name": "Elijah Harkless",
+    "status": "day-to-day",
+    "reason": "Soreness",
+    "player_avg_pts": 8.2
   },
   {
     "team_abbr": "UTA",
@@ -934,22 +857,15 @@
     "team_abbr": "WAS",
     "player_name": "Alex Sarr",
     "status": "day-to-day",
-    "reason": "Not Specified",
+    "reason": "Toe",
     "player_avg_pts": 15.0
   },
   {
     "team_abbr": "WAS",
-    "player_name": "Tre Johnson",
+    "player_name": "Bilal Coulibaly",
     "status": "day-to-day",
-    "reason": "Sprain",
-    "player_avg_pts": 11.2
-  },
-  {
-    "team_abbr": "WAS",
-    "player_name": "Bub Carrington",
-    "status": "day-to-day",
-    "reason": "Cramps",
-    "player_avg_pts": 10.4
+    "reason": "Inflammation",
+    "player_avg_pts": 14.0
   },
   {
     "team_abbr": "WAS",

@@ -216,7 +216,7 @@
   },
   "MEM_PHX": {
     "MEM": 1,
-    "PHX": 1
+    "PHX": 2
   },
   "ATL_BKN": {
     "ATL": 3
@@ -489,7 +489,7 @@
     "ORL": 2
   },
   "CHI_SAS": {
-    "SAS": 1
+    "SAS": 2
   },
   "CHA_LAL": {
     "LAL": 1,
@@ -610,7 +610,7 @@
     "DEN": 1
   },
   "DAL_MIN": {
-    "MIN": 3
+    "MIN": 4
   },
   "LAC_PHI": {
     "PHI": 2
@@ -723,7 +723,7 @@
     "CLE": 2
   },
   "MIA_PHI": {
-    "MIA": 1,
+    "MIA": 2,
     "PHI": 1
   },
   "CHI_NOP": {
@@ -1193,7 +1193,8 @@
     "NYK": 2
   },
   "CLE_UTA": {
-    "UTA": 1
+    "UTA": 1,
+    "CLE": 1
   },
   "MIA_PHX": {
     "MIA": 2
@@ -1241,7 +1242,7 @@
   },
   "ATL_BOS": {
     "BOS": 2,
-    "ATL": 1
+    "ATL": 2
   },
   "DEN_WAS": {
     "DEN": 2
@@ -1325,7 +1326,7 @@
     "CHA": 2
   },
   "LAL_WAS": {
-    "LAL": 1
+    "LAL": 2
   },
   "DET_GSW": {
     "DET": 2
@@ -1420,7 +1421,8 @@
     "LAL": 1
   },
   "DET_OKC": {
-    "DET": 1
+    "DET": 1,
+    "OKC": 1
   },
   "NOP_UTA": {
     "NOP": 2

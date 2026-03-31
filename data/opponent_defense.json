@@ -1,17 +1,17 @@
 {
   "ATL": {
-    "opp_pts": 116.4,
+    "opp_pts": 116.2,
     "opp_reb": 45.5,
-    "opp_ast": 26.7,
+    "opp_ast": 26.6,
     "opp_stl": 8.5,
     "opp_blk": 4.9,
     "opp_tov": 16.1,
     "opp_fg3m": 13.1
   },
   "BOS": {
-    "opp_pts": 106.8,
-    "opp_reb": 41.5,
-    "opp_ast": 24.6,
+    "opp_pts": 106.9,
+    "opp_reb": 41.6,
+    "opp_ast": 24.7,
     "opp_stl": 6.2,
     "opp_blk": 4.2,
     "opp_tov": 12.4,
@@ -36,31 +36,31 @@
     "opp_fg3m": 12.8
   },
   "CHI": {
-    "opp_pts": 121.0,
-    "opp_reb": 45.4,
-    "opp_ast": 28.5,
+    "opp_pts": 121.1,
+    "opp_reb": 45.5,
+    "opp_ast": 28.6,
     "opp_stl": 8.9,
     "opp_blk": 5.6,
     "opp_tov": 12.7,
     "opp_fg3m": 14.0
   },
   "CLE": {
-    "opp_pts": 115.2,
-    "opp_reb": 43.6,
-    "opp_ast": 26.8,
+    "opp_pts": 115.1,
+    "opp_reb": 43.5,
+    "opp_ast": 26.9,
     "opp_stl": 8.6,
     "opp_blk": 4.4,
     "opp_tov": 15.3,
     "opp_fg3m": 13.9
   },
   "DAL": {
-    "opp_pts": 118.9,
-    "opp_reb": 46.5,
-    "opp_ast": 28.2,
-    "opp_stl": 9.0,
+    "opp_pts": 119.0,
+    "opp_reb": 46.6,
+    "opp_ast": 28.3,
+    "opp_stl": 8.9,
     "opp_blk": 5.3,
-    "opp_tov": 13.4,
-    "opp_fg3m": 12.7
+    "opp_tov": 13.3,
+    "opp_fg3m": 12.8
   },
   "DEN": {
     "opp_pts": 116.6,
@@ -77,7 +77,7 @@
     "opp_ast": 23.4,
     "opp_stl": 8.7,
     "opp_blk": 5.8,
-    "opp_tov": 17.0,
+    "opp_tov": 17.1,
     "opp_fg3m": 12.6
   },
   "GSW": {
@@ -117,31 +117,31 @@
     "opp_fg3m": 13.5
   },
   "LAL": {
-    "opp_pts": 114.9,
-    "opp_reb": 41.0,
+    "opp_pts": 114.7,
+    "opp_reb": 40.9,
     "opp_ast": 27.6,
     "opp_stl": 8.8,
     "opp_blk": 3.5,
-    "opp_tov": 14.7,
-    "opp_fg3m": 12.9
+    "opp_tov": 14.6,
+    "opp_fg3m": 12.8
   },
   "MEM": {
-    "opp_pts": 119.2,
+    "opp_pts": 119.3,
     "opp_reb": 46.2,
-    "opp_ast": 27.6,
-    "opp_stl": 8.6,
+    "opp_ast": 27.8,
+    "opp_stl": 8.7,
     "opp_blk": 5.3,
-    "opp_tov": 15.6,
+    "opp_tov": 15.5,
     "opp_fg3m": 14.1
   },
   "MIA": {
-    "opp_pts": 117.9,
-    "opp_reb": 46.7,
+    "opp_pts": 117.8,
+    "opp_reb": 46.6,
     "opp_ast": 27.3,
     "opp_stl": 7.9,
     "opp_blk": 5.0,
-    "opp_tov": 15.4,
-    "opp_fg3m": 13.9
+    "opp_tov": 15.3,
+    "opp_fg3m": 13.8
   },
   "MIL": {
     "opp_pts": 116.9,
@@ -153,13 +153,13 @@
     "opp_fg3m": 14.8
   },
   "MIN": {
-    "opp_pts": 114.4,
-    "opp_reb": 43.4,
-    "opp_ast": 26.0,
-    "opp_stl": 8.5,
-    "opp_blk": 4.0,
+    "opp_pts": 114.1,
+    "opp_reb": 43.6,
+    "opp_ast": 25.9,
+    "opp_stl": 8.4,
+    "opp_blk": 3.9,
     "opp_tov": 15.0,
-    "opp_fg3m": 12.4
+    "opp_fg3m": 12.3
   },
   "NOP": {
     "opp_pts": 119.5,
@@ -181,12 +181,12 @@
   },
   "OKC": {
     "opp_pts": 107.6,
-    "opp_reb": 45.3,
+    "opp_reb": 45.4,
     "opp_ast": 24.8,
     "opp_stl": 7.5,
     "opp_blk": 4.3,
     "opp_tov": 16.8,
-    "opp_fg3m": 14.3
+    "opp_fg3m": 14.4
   },
   "ORL": {
     "opp_pts": 115.1,
@@ -199,20 +199,20 @@
   },
   "PHI": {
     "opp_pts": 116.5,
-    "opp_reb": 45.1,
-    "opp_ast": 27.7,
+    "opp_reb": 45.3,
+    "opp_ast": 27.6,
     "opp_stl": 7.2,
-    "opp_blk": 5.3,
-    "opp_tov": 15.6,
-    "opp_fg3m": 13.5
+    "opp_blk": 5.2,
+    "opp_tov": 15.5,
+    "opp_fg3m": 13.4
   },
   "PHX": {
     "opp_pts": 111.1,
-    "opp_reb": 43.8,
+    "opp_reb": 43.6,
     "opp_ast": 24.9,
-    "opp_stl": 7.8,
+    "opp_stl": 7.7,
     "opp_blk": 4.5,
-    "opp_tov": 16.2,
+    "opp_tov": 16.3,
     "opp_fg3m": 12.1
   },
   "POR": {
@@ -234,12 +234,12 @@
     "opp_fg3m": 13.7
   },
   "SAS": {
-    "opp_pts": 111.2,
-    "opp_reb": 42.6,
+    "opp_pts": 111.3,
+    "opp_reb": 42.5,
     "opp_ast": 26.2,
     "opp_stl": 7.8,
     "opp_blk": 4.5,
-    "opp_tov": 13.2,
+    "opp_tov": 13.1,
     "opp_fg3m": 13.1
   },
   "TOR": {
@@ -254,19 +254,19 @@
   "UTA": {
     "opp_pts": 125.4,
     "opp_reb": 45.5,
-    "opp_ast": 30.5,
+    "opp_ast": 30.6,
     "opp_stl": 9.2,
     "opp_blk": 5.9,
     "opp_tov": 14.5,
-    "opp_fg3m": 15.4
+    "opp_fg3m": 15.3
   },
   "WAS": {
-    "opp_pts": 124.0,
+    "opp_pts": 123.9,
     "opp_reb": 48.0,
     "opp_ast": 29.0,
-    "opp_stl": 9.8,
+    "opp_stl": 9.7,
     "opp_blk": 5.4,
     "opp_tov": 13.7,
-    "opp_fg3m": 13.6
+    "opp_fg3m": 13.5
   }
 }
