@@ -1,5 +1,4 @@
-from flask import Blueprint, jsonify, render_template, redirect
-from app.models.models import Player
+from flask import Blueprint, render_template, redirect
 
 players_bp = Blueprint("players", __name__, url_prefix="/")
 
@@ -36,21 +35,6 @@ def trending_redirect():
 def parlays_page():
     return render_template("parlays.html")
 
-@players_bp.route("/api/players")
-def get_players():
-    players = Player.query.order_by(Player.name).all()
-    return jsonify([{
-        "id": p.id, "name": p.name,
-        "team": p.team_abbr, "position": p.position
-    } for p in players])
-
-@players_bp.route("/api/players/<int:player_id>")
-def get_player(player_id):
-    p = Player.query.get_or_404(player_id)
-    return jsonify({
-        "id": p.id, "name": p.name,
-        "team": p.team_abbr, "position": p.position
-    })
 
 @players_bp.route("/model-stats")
 def model_stats_page():

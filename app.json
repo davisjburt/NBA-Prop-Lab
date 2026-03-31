@@ -1,0 +1,30 @@
+{
+  "name": "NBA Prop Lab",
+  "description": "NBA player prop analytics with PrizePicks integration, confidence scores, and moneyline predictions.",
+  "repository": "https://github.com/your-username/NBA-Prop-Lab",
+  "keywords": ["python", "flask", "nba", "sports-analytics"],
+  "env": {
+    "SECRET_KEY": {
+      "description": "Flask secret key for session signing",
+      "generator": "secret"
+    },
+    "DATABASE_URL": {
+      "description": "PostgreSQL connection string (auto-set by Heroku Postgres add-on)"
+    }
+  },
+  "addons": [
+    "heroku-postgresql:essential-0",
+    "scheduler:standard"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  }
+}

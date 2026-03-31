@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import UniqueConstraint
-from datetime import datetime
+from datetime import datetime, timezone
 
 
 db = SQLAlchemy()
@@ -50,9 +50,9 @@ class ModelPropEval(db.Model):
     result_value = db.Column(db.Float, nullable=True)
     hit = db.Column(db.Boolean, nullable=True)  # null until resolved
 
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    updated_at = db.Column(db.DateTime, default=datetime.utcnow,
-                           onupdate=datetime.utcnow)
+    created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
+    updated_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc),
+                           onupdate=lambda: datetime.now(timezone.utc))
 
 
 class ModelMoneylineEval(db.Model):
@@ -73,6 +73,6 @@ class ModelMoneylineEval(db.Model):
     margin = db.Column(db.Float, nullable=True)   # home_score - away_score
     correct = db.Column(db.Boolean, nullable=True)
 
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    updated_at = db.Column(db.DateTime, default=datetime.utcnow,
-                           onupdate=datetime.utcnow)
+    created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
+    updated_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc),
+                           onupdate=lambda: datetime.now(timezone.utc))
