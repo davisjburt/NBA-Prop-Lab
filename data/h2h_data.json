@@ -48,7 +48,7 @@
     "LAC": 2
   },
   "BKN_CHA": {
-    "CHA": 1,
+    "CHA": 2,
     "BKN": 1
   },
   "DEN_GSW": {
@@ -150,7 +150,8 @@
     "BOS": 1
   },
   "LAC_POR": {
-    "LAC": 2
+    "LAC": 2,
+    "POR": 1
   },
   "ATL_CHI": {
     "CHI": 3
@@ -483,7 +484,7 @@
     "CLE": 2
   },
   "DAL_MIL": {
-    "MIL": 1
+    "MIL": 2
   },
   "ORL_POR": {
     "ORL": 2
@@ -1311,7 +1312,8 @@
     "POR": 1
   },
   "CLE_LAL": {
-    "CLE": 1
+    "CLE": 1,
+    "LAL": 1
   },
   "CHA_MEM": {
     "CHA": 2
@@ -1389,7 +1391,7 @@
     "PHI": 1
   },
   "DET_TOR": {
-    "DET": 1,
+    "DET": 2,
     "TOR": 1
   },
   "ORL_SAC": {
@@ -1402,10 +1404,12 @@
     "OKC": 2
   },
   "ORL_PHX": {
-    "PHX": 1
+    "PHX": 1,
+    "ORL": 1
   },
   "HOU_NYK": {
-    "NYK": 1
+    "NYK": 1,
+    "HOU": 1
   },
   "MIN_PHI": {
     "PHI": 1

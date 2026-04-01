@@ -135,8 +135,16 @@ def confidence_score(
 
     return round(max(0, min(100, raw)), 1)
 
-def hit_rate(df, stat, line, last_n=None, location=None, opponent=None):
-    subset = df.copy()
+def hit_rate(
+    df,
+    stat,
+    line,
+    last_n=None,
+    location=None,
+    opponent=None,
+    include_games=True,
+):
+    subset = df
     if location:
         subset = subset[subset["location"] == location]
     if opponent:
@@ -149,7 +157,7 @@ def hit_rate(df, stat, line, last_n=None, location=None, opponent=None):
     hits  = (subset[stat] > line).sum()
     total = len(subset)
 
-    return {
+    result = {
         "stat":     stat,
         "line":     line,
         "sample":   total,
@@ -159,14 +167,24 @@ def hit_rate(df, stat, line, last_n=None, location=None, opponent=None):
         "max":      round(subset[stat].max(), 1),
         "min":      round(subset[stat].min(), 1),
         "streak":   calculate_streak(subset[stat].tolist(), line),
-        "games":    subset[["date", "matchup", stat]].to_dict(orient="records"),
     }
+    if include_games:
+        result["games"] = subset[["date", "matchup", stat]].to_dict(orient="records")
+    return result
 
 
-def hit_rate_combo(df, combo, line, last_n=None, location=None, opponent=None):
+def hit_rate_combo(
+    df,
+    combo,
+    line,
+    last_n=None,
+    location=None,
+    opponent=None,
+    include_games=True,
+):
     if combo not in COMBO_STATS:
         return {"error": f"Unknown combo: {combo}"}
-    subset = df.copy()
+    subset = df
     if location:
         subset = subset[subset["location"] == location]
     if opponent:
@@ -176,20 +194,23 @@ def hit_rate_combo(df, combo, line, last_n=None, location=None, opponent=None):
     if subset.empty:
         return {"error": "No data matching filters"}
     cols = COMBO_STATS[combo]
-    subset = subset.copy()
-    subset["combo_total"] = subset[cols].sum(axis=1)
-    hits  = (subset["combo_total"] > line).sum()
+    combo_total = subset[cols].sum(axis=1)
+    hits  = (combo_total > line).sum()
     total = len(subset)
-    return {
+    result = {
         "stat":       combo.upper(),
         "components": "+".join(c.upper() for c in cols),
         "line":       line,
         "sample":     total,
         "hits":       int(hits),
         "hit_rate":   round(hits / total, 3),
-        "avg":        round(subset["combo_total"].mean(), 1),
-        "max":        round(subset["combo_total"].max(), 1),
-        "min":        round(subset["combo_total"].min(), 1),
-        "streak":     calculate_streak(subset["combo_total"].tolist(), line),
-        "games":      subset[["date", "matchup"] + cols + ["combo_total"]].to_dict(orient="records"),
+        "avg":        round(combo_total.mean(), 1),
+        "max":        round(combo_total.max(), 1),
+        "min":        round(combo_total.min(), 1),
+        "streak":     calculate_streak(combo_total.tolist(), line),
     }
+    if include_games:
+        games_subset = subset[["date", "matchup"] + cols].copy()
+        games_subset["combo_total"] = combo_total
+        result["games"] = games_subset.to_dict(orient="records")
+    return result

@@ -317,6 +317,8 @@ def main():
             return None
 
         pp_results = []
+        player_df_cache = {}
+        player_rows_cache = {}
 
         if pp_lines is not None:
             total_pp = len(pp_lines)
@@ -324,9 +326,6 @@ def main():
             missing_player = 0
             missing_rows = 0
             skipped_bad_stat = 0
-
-            player_df_cache = {}
-            player_rows_cache = {}
 
             print(f"   Processing {total_pp} PrizePicks lines...")
 
@@ -394,19 +393,19 @@ def main():
                     minutes_ratio = min_l5 / min_season
 
                 hr_l5 = (
-                    hit_rate_combo(df, stat, line, last_n=5)
+                    hit_rate_combo(df, stat, line, last_n=5, include_games=False)
                     if stat in COMBO_STATS
-                    else hit_rate(df, stat, line, last_n=5)
+                    else hit_rate(df, stat, line, last_n=5, include_games=False)
                 )
                 hr_l10 = (
-                    hit_rate_combo(df, stat, line, last_n=10)
+                    hit_rate_combo(df, stat, line, last_n=10, include_games=False)
                     if stat in COMBO_STATS
-                    else hit_rate(df, stat, line, last_n=10)
+                    else hit_rate(df, stat, line, last_n=10, include_games=False)
                 )
                 hr_season = (
-                    hit_rate_combo(df, stat, line)
+                    hit_rate_combo(df, stat, line, include_games=False)
                     if stat in COMBO_STATS
-                    else hit_rate(df, stat, line)
+                    else hit_rate(df, stat, line, include_games=False)
                 )
 
                 if "error" in hr_l10:
@@ -526,6 +525,29 @@ def main():
         #         db.session.add(m)
         #
         # db.session.commit()
+         # ── Log top prop picks for model statistics ───────────────────────
+        today = datetime.date.today()
+        MAX_PER_STAT = 25
+
+        by_stat: dict[str, list] = defaultdict(list)
+        for p in pp_results:
+            by_stat[p["stat"]].append(p)
+
+        for stat, rows in by_stat.items():
+            rows.sort(key=lambda x: x["confidence"], reverse=True)
+            for row in rows[:MAX_PER_STAT]:
+                m = ModelPropEval(
+                    date=today,
+                    player_id=row["id"],
+                    player_name=row["name"],
+                    team_abbr=row["team"],
+                    stat=stat,
+                    line=float(row["line"]),
+                    confidence=float(row["confidence"]),
+                )
+                db.session.add(m)
+
+        db.session.commit()
 
 
         # ── Step 6: Compute parlays ───────────────────────────────────────
@@ -564,68 +586,89 @@ def main():
         )
 
         # ── Step 7: Compute trending ──────────────────────────────────────
-        print("⚙️   Computing trending...")
+        skip_trending = os.getenv("SKIP_TRENDING", "").strip().lower() in {
+            "1", "true", "yes", "y", "on"
+        }
+        if skip_trending:
+            print("⏭️   Skipping trending compute (SKIP_TRENDING enabled).")
+            write_safe("trending.json", {"hot_streaks": [], "top_hitters": []})
+        else:
+            print("⚙️   Computing trending...")
 
-        hot_streaks = []
-        top_hitters = []
+            hot_streaks = []
+            top_hitters = []
 
-        for player in all_players:
-            rows = stats_by_player.get(player.id, [])[:20]
-            if len(rows) < 3:
-                continue
-            df = rows_to_df(rows)
-
-            for stat in SINGLE_STATS:
-                values = df[stat].tolist()
-                line   = round_to_half(df[stat].head(5).mean())
-                if line <= 0:
+            total_players = len(all_players)
+            for idx, player in enumerate(all_players, start=1):
+                if idx % 100 == 0 or idx == total_players:
+                    print(f"   ⏳ Trending progress: {idx}/{total_players}")
+                rows = stats_by_player.get(player.id, [])[:20]
+                if len(rows) < 3:
                     continue
-                streak = calculate_streak(values, line)
-                hr     = hit_rate(df, stat, line, last_n=10)
-                if "error" in hr:
-                    continue
-                base = {
-                    "id": player.id, "name": player.name,
-                    "team": player.team_abbr, "position": player.position,
-                    "stat": stat, "label": STAT_LABELS[stat], "line": line,
-                    "avg": round(df[stat].mean(), 1),
-                    "hit_rate": hr["hit_rate"],
-                    "sample": hr["sample"], "hits": hr["hits"],
-                }
-                if streak["type"] == "hit" and streak["count"] >= 3:
-                    hot_streaks.append({**base, "streak": streak["count"]})
-                if hr["hit_rate"] >= 0.70 and hr["sample"] >= 5:
-                    top_hitters.append(base)
 
-            for combo, cols in COMBO_STATS.items():
-                df2 = df.copy()
-                df2["combo_val"] = df2[cols].sum(axis=1)
-                line   = round_to_half(df2["combo_val"].head(5).mean())
-                if line <= 0:
-                    continue
-                streak = calculate_streak(df2["combo_val"].tolist(), line)
-                hr     = hit_rate_combo(df, combo, line, last_n=10)
-                if "error" in hr:
-                    continue
-                base = {
-                    "id": player.id, "name": player.name,
-                    "team": player.team_abbr, "position": player.position,
-                    "stat": combo, "label": STAT_LABELS[combo], "line": line,
-                    "avg": hr["avg"], "hit_rate": hr["hit_rate"],
-                    "sample": hr["sample"], "hits": hr["hits"],
-                }
-                if streak["type"] == "hit" and streak["count"] >= 3:
-                    hot_streaks.append({**base, "streak": streak["count"]})
-                if hr["hit_rate"] >= 0.70 and hr["sample"] >= 5:
-                    top_hitters.append(base)
+                if player.id in player_df_cache:
+                    df = player_df_cache[player.id]
+                else:
+                    df = rows_to_df(rows)
+                    player_df_cache[player.id] = df
 
-        hot_streaks.sort(key=lambda x: x["streak"], reverse=True)
-        top_hitters.sort(key=lambda x: x["hit_rate"], reverse=True)
+                for stat in SINGLE_STATS:
+                    series = df[stat]
+                    line = round_to_half(series.head(5).mean())
+                    if line <= 0:
+                        continue
+                    sample_series = series.head(10)
+                    sample = len(sample_series)
+                    if sample == 0:
+                        continue
+                    hits = int((sample_series > line).sum())
+                    hr_rate = round(hits / sample, 3)
+                    streak = calculate_streak(series.tolist(), line)
+                    base = {
+                        "id": player.id, "name": player.name,
+                        "team": player.team_abbr, "position": player.position,
+                        "stat": stat, "label": STAT_LABELS[stat], "line": line,
+                        "avg": round(series.mean(), 1),
+                        "hit_rate": hr_rate,
+                        "sample": sample, "hits": hits,
+                    }
+                    if streak["type"] == "hit" and streak["count"] >= 3:
+                        hot_streaks.append({**base, "streak": streak["count"]})
+                    if hr_rate >= 0.70 and sample >= 5:
+                        top_hitters.append(base)
 
-        write_safe("trending.json", {
-            "hot_streaks": hot_streaks[:30],
-            "top_hitters": top_hitters[:30],
-        })
+                for combo, cols in COMBO_STATS.items():
+                    combo_series = df[cols].sum(axis=1)
+                    line = round_to_half(combo_series.head(5).mean())
+                    if line <= 0:
+                        continue
+                    sample_series = combo_series.head(10)
+                    sample = len(sample_series)
+                    if sample == 0:
+                        continue
+                    hits = int((sample_series > line).sum())
+                    hr_rate = round(hits / sample, 3)
+                    avg_val = round(combo_series.mean(), 1)
+                    streak = calculate_streak(combo_series.tolist(), line)
+                    base = {
+                        "id": player.id, "name": player.name,
+                        "team": player.team_abbr, "position": player.position,
+                        "stat": combo, "label": STAT_LABELS[combo], "line": line,
+                        "avg": avg_val, "hit_rate": hr_rate,
+                        "sample": sample, "hits": hits,
+                    }
+                    if streak["type"] == "hit" and streak["count"] >= 3:
+                        hot_streaks.append({**base, "streak": streak["count"]})
+                    if hr_rate >= 0.70 and sample >= 5:
+                        top_hitters.append(base)
+
+            hot_streaks.sort(key=lambda x: x["streak"], reverse=True)
+            top_hitters.sort(key=lambda x: x["hit_rate"], reverse=True)
+
+            write_safe("trending.json", {
+                "hot_streaks": hot_streaks[:30],
+                "top_hitters": top_hitters[:30],
+            })
 
     # ── Done ────────────────────────────────────────────────────────────────
     if errors:
