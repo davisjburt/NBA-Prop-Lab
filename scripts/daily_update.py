@@ -39,12 +39,18 @@ def run():
             db.func.max(PlayerGameStat.date)
         ).scalar()
 
-        last_logged_map = {}
+        # Batch query latest logged date per player (faster than N queries).
+        latest_rows = (
+            db.session.query(
+                PlayerGameStat.player_id,
+                db.func.max(PlayerGameStat.date).label("latest_date"),
+            )
+            .group_by(PlayerGameStat.player_id)
+            .all()
+        )
+        last_logged_map = {row.player_id: row.latest_date for row in latest_rows}
         for p in players:
-            latest = db.session.query(
-                db.func.max(PlayerGameStat.date)
-            ).filter_by(player_id=p.id).scalar()
-            last_logged_map[p.id] = latest
+            last_logged_map.setdefault(p.id, None)
 
     print(f"✅  Loaded {len(players)} players")
     print(f"📅  Last logged game: {global_last or 'None'}\n")
