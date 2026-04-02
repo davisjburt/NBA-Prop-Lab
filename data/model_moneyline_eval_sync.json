@@ -4,28 +4,28 @@
     "home_abbr": "GSW",
     "away_abbr": "CLE",
     "predicted_winner": "CLE",
-    "win_prob_home": 0.4,
-    "win_prob_away": 99.6,
-    "spread": -11.8,
+    "win_prob_home": 0.2,
+    "win_prob_away": 99.8,
+    "spread": -13.3,
     "actual_winner": null,
     "margin": null,
     "correct": null,
-    "created_at": "2026-04-02T17:37:15.108198",
-    "updated_at": "2026-04-02T17:37:15.108210"
+    "created_at": "2026-04-02T22:04:57.434878",
+    "updated_at": "2026-04-02T22:04:57.434895"
   },
   {
     "date": "2026-04-02",
-    "home_abbr": "LAC",
-    "away_abbr": "SAS",
-    "predicted_winner": "SAS",
-    "win_prob_home": 2.3,
-    "win_prob_away": 97.7,
-    "spread": -8.1,
+    "home_abbr": "DET",
+    "away_abbr": "MIN",
+    "predicted_winner": "DET",
+    "win_prob_home": 95.3,
+    "win_prob_away": 4.7,
+    "spread": 6.5,
     "actual_winner": null,
     "margin": null,
     "correct": null,
-    "created_at": "2026-04-02T17:37:15.108212",
-    "updated_at": "2026-04-02T17:37:15.108212"
+    "created_at": "2026-04-02T22:04:57.434897",
+    "updated_at": "2026-04-02T22:04:57.434898"
   },
   {
     "date": "2026-04-02",
@@ -38,8 +38,8 @@
     "actual_winner": null,
     "margin": null,
     "correct": null,
-    "created_at": "2026-04-02T17:37:15.108214",
-    "updated_at": "2026-04-02T17:37:15.108214"
+    "created_at": "2026-04-02T22:04:57.434899",
+    "updated_at": "2026-04-02T22:04:57.434899"
   },
   {
     "date": "2026-04-02",
@@ -52,35 +52,35 @@
     "actual_winner": null,
     "margin": null,
     "correct": null,
-    "created_at": "2026-04-02T17:37:15.108216",
-    "updated_at": "2026-04-02T17:37:15.108217"
+    "created_at": "2026-04-02T22:04:57.434900",
+    "updated_at": "2026-04-02T22:04:57.434901"
+  },
+  {
+    "date": "2026-04-02",
+    "home_abbr": "LAC",
+    "away_abbr": "SAS",
+    "predicted_winner": "SAS",
+    "win_prob_home": 23.7,
+    "win_prob_away": 76.3,
+    "spread": -2.5,
+    "actual_winner": null,
+    "margin": null,
+    "correct": null,
+    "created_at": "2026-04-02T22:04:57.434902",
+    "updated_at": "2026-04-02T22:04:57.434902"
   },
   {
     "date": "2026-04-02",
     "home_abbr": "POR",
     "away_abbr": "NOP",
-    "predicted_winner": "NOP",
-    "win_prob_home": 44.8,
-    "win_prob_away": 55.2,
-    "spread": -0.5,
+    "predicted_winner": "POR",
+    "win_prob_home": 62.7,
+    "win_prob_away": 37.3,
+    "spread": 1.1,
     "actual_winner": null,
     "margin": null,
     "correct": null,
-    "created_at": "2026-04-02T17:37:15.108219",
-    "updated_at": "2026-04-02T17:37:15.108220"
-  },
-  {
-    "date": "2026-04-02",
-    "home_abbr": "DET",
-    "away_abbr": "MIN",
-    "predicted_winner": "DET",
-    "win_prob_home": 52.5,
-    "win_prob_away": 47.5,
-    "spread": 0.2,
-    "actual_winner": null,
-    "margin": null,
-    "correct": null,
-    "created_at": "2026-04-02T17:37:15.108221",
-    "updated_at": "2026-04-02T17:37:15.108222"
+    "created_at": "2026-04-02T22:04:57.434903",
+    "updated_at": "2026-04-02T22:04:57.434904"
   }
 ]

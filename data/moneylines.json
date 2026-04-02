@@ -3,10 +3,10 @@
     "home": "GSW",
     "away": "CLE",
     "predicted_winner": "CLE",
-    "win_prob_home": 0.4,
-    "win_prob_away": 99.6,
-    "spread": -11.8,
-    "home_score_est": 44.9,
+    "win_prob_home": 0.2,
+    "win_prob_away": 99.8,
+    "spread": -13.3,
+    "home_score_est": 38.0,
     "away_score_est": 101.4,
     "factors": {
       "form": -7.5,
@@ -14,13 +14,13 @@
       "home_court": 7.5,
       "h2h": 5.0,
       "defense": 0.1,
-      "injuries": -64.0
+      "injuries": -72.5
     },
     "home_net_rtg": -0.2,
     "away_net_rtg": 4.1,
     "home_form": 40.0,
     "away_form": 70.0,
-    "home_inj_loss": 71.0,
+    "home_inj_loss": 78.1,
     "away_inj_loss": 17.7,
     "home_team_name": "Golden State Warriors",
     "away_team_name": "Cleveland Cavaliers",
@@ -33,6 +33,13 @@
     "home_injuries": [
       {
         "team_abbr": "GSW",
+        "player_name": "Quinten Post",
+        "status": "out",
+        "reason": "Not Specified",
+        "player_avg_pts": 7.1
+      },
+      {
+        "team_abbr": "GSW",
         "player_name": "Gui Santos",
         "status": "day-to-day",
         "reason": "Bruise",
@@ -40,24 +47,10 @@
       },
       {
         "team_abbr": "GSW",
-        "player_name": "Quinten Post",
-        "status": "day-to-day",
-        "reason": "Not Specified",
-        "player_avg_pts": 7.1
-      },
-      {
-        "team_abbr": "GSW",
-        "player_name": "Kristaps Porzingis",
-        "status": "day-to-day",
-        "reason": "Not Specified",
-        "player_avg_pts": 17.1
-      },
-      {
-        "team_abbr": "GSW",
-        "player_name": "Gary Payton II",
-        "status": "day-to-day",
-        "reason": "Not Specified",
-        "player_avg_pts": 12.9
+        "player_name": "Stephen Curry",
+        "status": "out",
+        "reason": "Soreness",
+        "player_avg_pts": 25.6
       },
       {
         "team_abbr": "GSW",
@@ -65,13 +58,6 @@
         "status": "day-to-day",
         "reason": "Strain",
         "player_avg_pts": 13.9
-      },
-      {
-        "team_abbr": "GSW",
-        "player_name": "Stephen Curry",
-        "status": "out",
-        "reason": "Soreness",
-        "player_avg_pts": 25.6
       },
       {
         "team_abbr": "GSW",
@@ -117,85 +103,71 @@
     }
   },
   {
-    "home": "LAC",
-    "away": "SAS",
-    "predicted_winner": "SAS",
-    "win_prob_home": 2.3,
-    "win_prob_away": 97.7,
-    "spread": -8.1,
-    "home_score_est": 94.9,
-    "away_score_est": 116.0,
+    "home": "DET",
+    "away": "MIN",
+    "predicted_winner": "DET",
+    "win_prob_home": 95.3,
+    "win_prob_away": 4.7,
+    "spread": 6.5,
+    "home_score_est": 86.8,
+    "away_score_est": 75.8,
     "factors": {
-      "form": -12.5,
-      "net_rtg": -10.6,
+      "form": 2.5,
+      "net_rtg": 6.8,
       "home_court": 7.5,
-      "h2h": -5.0,
-      "defense": -2.6,
-      "injuries": -22.0
+      "h2h": 5.0,
+      "defense": 1.6,
+      "injuries": 12.8
     },
-    "home_net_rtg": 1.4,
-    "away_net_rtg": 8.5,
-    "home_form": 50.0,
-    "away_form": 100.0,
-    "home_inj_loss": 21.2,
-    "away_inj_loss": 2.9,
-    "home_team_name": "LA Clippers",
-    "away_team_name": "San Antonio Spurs",
-    "home_w_pct": 0.513,
-    "away_w_pct": 0.763,
-    "home_w_l10": 5,
-    "home_l_l10": 5,
-    "away_w_l10": 10,
-    "away_l_l10": 0,
+    "home_net_rtg": 8.1,
+    "away_net_rtg": 3.6,
+    "home_form": 70.0,
+    "away_form": 60.0,
+    "home_inj_loss": 32.5,
+    "away_inj_loss": 43.2,
+    "home_team_name": "Detroit Pistons",
+    "away_team_name": "Minnesota Timberwolves",
+    "home_w_pct": 0.724,
+    "away_w_pct": 0.613,
+    "home_w_l10": 7,
+    "home_l_l10": 3,
+    "away_w_l10": 6,
+    "away_l_l10": 4,
     "home_injuries": [
       {
-        "team_abbr": "LAC",
-        "player_name": "Isaiah Jackson",
+        "team_abbr": "DET",
+        "player_name": "Cade Cunningham",
         "status": "out",
-        "reason": "Sprain",
-        "player_avg_pts": 7.2
+        "reason": "Not Specified",
+        "player_avg_pts": 22.8
       },
       {
-        "team_abbr": "LAC",
-        "player_name": "Yanic Konan Niederhauser",
+        "team_abbr": "DET",
+        "player_name": "Isaiah Stewart",
         "status": "out",
-        "reason": "Surgery",
-        "player_avg_pts": 5.8
-      },
-      {
-        "team_abbr": "LAC",
-        "player_name": "Bradley Beal",
-        "status": "out",
-        "reason": "Surgery",
-        "player_avg_pts": 8.2
+        "reason": "Strain",
+        "player_avg_pts": 9.7
       }
     ],
     "away_injuries": [
       {
-        "team_abbr": "SAS",
-        "player_name": "Luke Kornet",
-        "status": "day-to-day",
-        "reason": "Not Specified",
-        "player_avg_pts": 4.8
-      },
-      {
-        "team_abbr": "SAS",
-        "player_name": "Emanuel Miller",
-        "status": "day-to-day",
-        "reason": "Undisclosed",
-        "player_avg_pts": 3.0
-      },
-      {
-        "team_abbr": "SAS",
-        "player_name": "David Jones Garcia",
+        "team_abbr": "MIN",
+        "player_name": "Anthony Edwards",
         "status": "out",
-        "reason": "Surgery",
-        "player_avg_pts": 2.9
+        "reason": "Soreness",
+        "player_avg_pts": 29.1
+      },
+      {
+        "team_abbr": "MIN",
+        "player_name": "Jaden McDaniels",
+        "status": "out",
+        "reason": "Tendinitis",
+        "player_avg_pts": 14.1
       }
     ],
     "h2h": {
-      "home_wins": 0,
-      "away_wins": 2
+      "home_wins": 1,
+      "away_wins": 0
     }
   },
   {
@@ -241,6 +213,13 @@
     "away_injuries": [
       {
         "team_abbr": "PHX",
+        "player_name": "Mark Williams",
+        "status": "out",
+        "reason": "",
+        "player_avg_pts": 10.4
+      },
+      {
+        "team_abbr": "PHX",
         "player_name": "Amir Coffey",
         "status": "out",
         "reason": "Sprain",
@@ -252,13 +231,6 @@
         "status": "out",
         "reason": "Not Specified",
         "player_avg_pts": 5.5
-      },
-      {
-        "team_abbr": "PHX",
-        "player_name": "Mark Williams",
-        "status": "out",
-        "reason": "Fracture",
-        "player_avg_pts": 10.4
       }
     ],
     "h2h": {
@@ -328,28 +300,110 @@
     }
   },
   {
+    "home": "LAC",
+    "away": "SAS",
+    "predicted_winner": "SAS",
+    "win_prob_home": 23.7,
+    "win_prob_away": 76.3,
+    "spread": -2.5,
+    "home_score_est": 94.9,
+    "away_score_est": 90.3,
+    "factors": {
+      "form": -12.5,
+      "net_rtg": -10.5,
+      "home_court": 7.5,
+      "h2h": -5.0,
+      "defense": -2.6,
+      "injuries": 9.0
+    },
+    "home_net_rtg": 1.4,
+    "away_net_rtg": 8.4,
+    "home_form": 50.0,
+    "away_form": 100.0,
+    "home_inj_loss": 21.2,
+    "away_inj_loss": 28.7,
+    "home_team_name": "LA Clippers",
+    "away_team_name": "San Antonio Spurs",
+    "home_w_pct": 0.513,
+    "away_w_pct": 0.763,
+    "home_w_l10": 5,
+    "home_l_l10": 5,
+    "away_w_l10": 10,
+    "away_l_l10": 0,
+    "home_injuries": [
+      {
+        "team_abbr": "LAC",
+        "player_name": "Isaiah Jackson",
+        "status": "out",
+        "reason": "Sprain",
+        "player_avg_pts": 7.2
+      },
+      {
+        "team_abbr": "LAC",
+        "player_name": "Yanic Konan Niederhauser",
+        "status": "out",
+        "reason": "Surgery",
+        "player_avg_pts": 5.8
+      },
+      {
+        "team_abbr": "LAC",
+        "player_name": "Bradley Beal",
+        "status": "out",
+        "reason": "Surgery",
+        "player_avg_pts": 8.2
+      }
+    ],
+    "away_injuries": [
+      {
+        "team_abbr": "SAS",
+        "player_name": "Victor Wembanyama",
+        "status": "out",
+        "reason": "Ankle",
+        "player_avg_pts": 25.8
+      },
+      {
+        "team_abbr": "SAS",
+        "player_name": "Emanuel Miller",
+        "status": "day-to-day",
+        "reason": "Not Specified",
+        "player_avg_pts": 3.0
+      },
+      {
+        "team_abbr": "SAS",
+        "player_name": "David Jones Garcia",
+        "status": "out",
+        "reason": "Surgery",
+        "player_avg_pts": 2.9
+      }
+    ],
+    "h2h": {
+      "home_wins": 0,
+      "away_wins": 2
+    }
+  },
+  {
     "home": "POR",
     "away": "NOP",
-    "predicted_winner": "NOP",
-    "win_prob_home": 44.8,
-    "win_prob_away": 55.2,
-    "spread": -0.5,
+    "predicted_winner": "POR",
+    "win_prob_home": 62.7,
+    "win_prob_away": 37.3,
+    "spread": 1.1,
     "home_score_est": 64.5,
-    "away_score_est": 85.8,
+    "away_score_est": 78.5,
     "factors": {
       "form": 7.5,
       "net_rtg": 5.4,
       "home_court": 7.5,
       "h2h": 1.7,
       "defense": 2.0,
-      "injuries": -26.5
+      "injuries": -17.8
     },
     "home_net_rtg": -0.7,
     "away_net_rtg": -4.3,
     "home_form": 70.0,
     "away_form": 40.0,
     "home_inj_loss": 51.2,
-    "away_inj_loss": 29.1,
+    "away_inj_loss": 36.4,
     "home_team_name": "Portland Trail Blazers",
     "away_team_name": "New Orleans Pelicans",
     "home_w_pct": 0.506,
@@ -392,7 +446,7 @@
       {
         "team_abbr": "NOP",
         "player_name": "Karlo Matkovic",
-        "status": "day-to-day",
+        "status": "out",
         "reason": "Spasms",
         "player_avg_pts": 7.3
       },
@@ -414,88 +468,6 @@
     "h2h": {
       "home_wins": 2,
       "away_wins": 1
-    }
-  },
-  {
-    "home": "DET",
-    "away": "MIN",
-    "predicted_winner": "DET",
-    "win_prob_home": 52.5,
-    "win_prob_away": 47.5,
-    "spread": 0.2,
-    "home_score_est": 86.8,
-    "away_score_est": 104.9,
-    "factors": {
-      "form": 2.5,
-      "net_rtg": 6.8,
-      "home_court": 7.5,
-      "h2h": 5.0,
-      "defense": 1.6,
-      "injuries": -22.1
-    },
-    "home_net_rtg": 8.1,
-    "away_net_rtg": 3.6,
-    "home_form": 70.0,
-    "away_form": 60.0,
-    "home_inj_loss": 32.5,
-    "away_inj_loss": 14.1,
-    "home_team_name": "Detroit Pistons",
-    "away_team_name": "Minnesota Timberwolves",
-    "home_w_pct": 0.724,
-    "away_w_pct": 0.613,
-    "home_w_l10": 7,
-    "home_l_l10": 3,
-    "away_w_l10": 6,
-    "away_l_l10": 4,
-    "home_injuries": [
-      {
-        "team_abbr": "DET",
-        "player_name": "Marcus Sasser",
-        "status": "day-to-day",
-        "reason": "Not Specified",
-        "player_avg_pts": 5.6
-      },
-      {
-        "team_abbr": "DET",
-        "player_name": "Isaiah Stewart",
-        "status": "out",
-        "reason": "Strain",
-        "player_avg_pts": 9.7
-      },
-      {
-        "team_abbr": "DET",
-        "player_name": "Cade Cunningham",
-        "status": "out",
-        "reason": "Not Specified",
-        "player_avg_pts": 22.8
-      }
-    ],
-    "away_injuries": [
-      {
-        "team_abbr": "MIN",
-        "player_name": "Anthony Edwards",
-        "status": "day-to-day",
-        "reason": "Knee",
-        "player_avg_pts": 29.1
-      },
-      {
-        "team_abbr": "MIN",
-        "player_name": "Jaden McDaniels",
-        "status": "out",
-        "reason": "Tendinitis",
-        "player_avg_pts": 14.1
-      },
-      {
-        "team_abbr": "MIN",
-        "player_name": "Rocco Zikarsky",
-        "status": "day-to-day",
-        "reason": "Not Specified",
-        "player_avg_pts": 1.5
-      }
-    ],
-    "h2h": {
-      "home_wins": 1,
-      "away_wins": 0
     }
   }
 ]
