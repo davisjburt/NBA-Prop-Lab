@@ -181,24 +181,21 @@ def moneylines():
 
 @props_bp.route("/model_stats")
 def model_stats():
-    days = request.args.get("days", default=30, type=int)
+    days = request.args.get("days", default=0, type=int)
     today = date.today()
-    cutoff = today.fromordinal(today.toordinal() - days)
+    cutoff = (
+        today.fromordinal(today.toordinal() - days) if days > 0 else None
+    )
 
     # ── Prop stats aggregated by stat ────────────────────────────────────
-    prop_rows = (
-        db.session.query(
-            ModelPropEval.stat.label("stat"),
-            func.count(ModelPropEval.id).label("bets"),
-            func.sum(func.case((ModelPropEval.hit == True, 1), else_=0)).label("hits"),
-        )
-        .filter(
-            ModelPropEval.date >= cutoff,
-            ModelPropEval.hit.isnot(None),
-        )
-        .group_by(ModelPropEval.stat)
-        .all()
-    )
+    prop_base = db.session.query(
+        ModelPropEval.stat.label("stat"),
+        func.count(ModelPropEval.id).label("bets"),
+        func.sum(func.case((ModelPropEval.hit == True, 1), else_=0)).label("hits"),
+    ).filter(ModelPropEval.hit.isnot(None))
+    if cutoff is not None:
+        prop_base = prop_base.filter(ModelPropEval.date >= cutoff)
+    prop_rows = prop_base.group_by(ModelPropEval.stat).all()
 
     props = []
     for row in prop_rows:
@@ -211,17 +208,15 @@ def model_stats():
         })
 
     # ── Moneyline overall stats ─────────────────────────────────────────
-    moneyline_rows = (
-        db.session.query(
-            func.count(ModelMoneylineEval.id).label("bets"),
-            func.sum(func.case((ModelMoneylineEval.correct == True, 1), else_=0)).label("hits"),
-        )
-        .filter(
-            ModelMoneylineEval.date >= cutoff,
-            ModelMoneylineEval.correct.isnot(None),
-        )
-        .one()
-    )
+    ml_base = db.session.query(
+        func.count(ModelMoneylineEval.id).label("bets"),
+        func.sum(
+            func.case((ModelMoneylineEval.correct == True, 1), else_=0)
+        ).label("hits"),
+    ).filter(ModelMoneylineEval.correct.isnot(None))
+    if cutoff is not None:
+        ml_base = ml_base.filter(ModelMoneylineEval.date >= cutoff)
+    moneyline_rows = ml_base.one()
 
     ml_bets = int(moneyline_rows.bets or 0)
     ml_hits = int(moneyline_rows.hits or 0)

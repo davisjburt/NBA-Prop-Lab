@@ -215,3 +215,21 @@
     padding: 1px 6px;
   }
 }
+
+.model-stats-hint {
+  margin-bottom: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 10px;
+  background: #f0f4ff;
+  border: 1px solid #c7d2fe;
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.model-stats-hint code {
+  font-size: 0.82rem;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.7);
+}

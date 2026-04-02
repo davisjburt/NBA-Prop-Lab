@@ -1,15 +1,26 @@
 import os
 import sqlite3
+import sys
 import psycopg2
+from pathlib import Path
 from psycopg2 import sql
-from dotenv import load_dotenv
 
-load_dotenv()
+BASE_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(BASE_DIR))
 
-SQLITE_PATH = "instance/prop_lab.db"
-HEROKU_URL = os.getenv("DATABASE_URL")
+from app.config import load_env  # noqa: E402
+
+load_env()
+
+SQLITE_PATH = str(BASE_DIR / "instance" / "prop_lab.db")
+_raw = (
+    os.getenv("HEROKU_DATABASE_URL")
+    or os.getenv("DATABASE_URL")
+    or ""
+).strip()
+HEROKU_URL = _raw.replace("postgres://", "postgresql://", 1) if _raw else ""
 if not HEROKU_URL:
-    raise RuntimeError("DATABASE_URL is not set")
+    raise RuntimeError("HEROKU_DATABASE_URL or DATABASE_URL must be set")
 
 TABLE_ORDER = [
     "players",

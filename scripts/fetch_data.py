@@ -2,7 +2,9 @@
 scripts/fetch_data.py
 ---------------------
 Fetches external data, queries the DB, does all the heavy computation,
-and writes pre-computed JSON files to data/.
+and writes pre-computed JSON files to data/. Model evaluation tables are
+not written here; hydration + Heroku sync happen in update_model_stats and
+sync_to_heroku after JSON is finalized.
 
 Files written:
   data/prizepicks_results.json   ← full PrizePicks board with confidence scores
@@ -21,6 +23,10 @@ from itertools import combinations
 from collections import defaultdict
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from app.config import load_env  # noqa: E402
+
+load_env()
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 os.makedirs(DATA_DIR, exist_ok=True)
@@ -44,6 +50,15 @@ def write_safe(filename, data):
 def main():
     global errors
 
+    for stale in ("model_prop_eval_sync.json", "model_moneyline_eval_sync.json"):
+        stale_path = DATA_PATH / stale
+        if stale_path.is_file():
+            stale_path.unlink()
+            print(
+                f"🗑️  Removed stale {stale} "
+                "(recreated by update_model_stats before Heroku sync)."
+            )
+
     # ── Step 1: Fetch external API data ──────────────────────────────────────
     from app.services.nba_fetcher import (
         fetch_opponent_defense,
@@ -52,10 +67,8 @@ def main():
         fetch_h2h_season,
         fetch_injuries,
     )
-    from app.services.prizepicks import (
-        fetch_prizepicks_lines,
-        PrizePicksError,
-    )
+    from app.services.prizepicks import PrizePicksError
+    from app.services.props_sources import fetch_all_props_lines
 
     print("📡  Fetching opponent defense stats...")
     try:
@@ -101,26 +114,32 @@ def main():
         injuries_raw = []
         errors.append("injuries")
 
-    print("📡  Fetching PrizePicks lines...")
+    print("📡  Fetching player prop lines (PrizePicks + optional DraftKings)...")
     pp_lines = None
     try:
-        pp_lines = fetch_prizepicks_lines()
+        pp_lines, provider_results = fetch_all_props_lines()
+        ok_sources = [r.source for r in provider_results if not r.error]
+        bad_sources = [f"{r.source}({r.error})" for r in provider_results if r.error]
+        if ok_sources:
+            print(f"✅  Prop providers ok: {', '.join(ok_sources)}")
+        if bad_sources:
+            print(f"⚠️  Prop providers failed: {', '.join(bad_sources)}")
         write_safe("prizepicks_lines.json", pp_lines)
     except PrizePicksError as e:
         msg = str(e)
         if "403" in msg:
             print(
-                "⚠️  fetch_prizepicks_lines got 403 (likely blocked). "
+                "⚠️  PrizePicks lines got 403 (likely blocked). "
                 "Keeping existing file."
             )
             errors.append("prizepicks_lines_403")
             pp_lines = None
         else:
-            print(f"❌  fetch_prizepicks_lines failed (hard): {e}")
+            print(f"❌  PrizePicks lines failed (hard): {e}")
             errors.append("prizepicks_lines")
             raise
     except Exception as e:
-        print(f"❌  fetch_prizepicks_lines failed (unexpected): {e}")
+        print(f"❌  fetch_all_props_lines failed (unexpected): {e}")
         errors.append("prizepicks_lines")
         raise
 
@@ -131,8 +150,6 @@ def main():
     from app.models.models import (
         Player,
         PlayerGameStat,
-        ModelPropEval,
-        ModelMoneylineEval,
         db,
     )
     import datetime
@@ -141,9 +158,9 @@ def main():
         hit_rate,
         hit_rate_combo,
         COMBO_STATS,
-        calculate_streak,
         extract_opponent,
         clean_avg,
+        league_avg_by_stat,
         matchup_multiplier,
         confidence_score,
     )
@@ -187,6 +204,10 @@ def main():
             stats_by_player[s.player_id].append(s)
 
         player_map = {normalize(p.name): p for p in all_players}
+        league_avgs_opp = league_avg_by_stat(opp_defense)
+
+        # Model eval tables (model_prop_eval / model_moneyline_eval) are written only
+        # after resolution in update_model_stats → JSON → sync_to_heroku.
 
         # ── Step 3: Enrich injuries with player avg pts ───────────────────
         print("\n⚙️   Enriching injury data with player averages...")
@@ -282,31 +303,10 @@ def main():
         )
         write_safe("moneylines.json", moneylines)
 
-                # ── Log moneyline predictions for model statistics ────────────────
-        # today = datetime.date.today()
-        #
-        # db.session.execute(
-        #     db.text("TRUNCATE TABLE model_moneyline_eval RESTART IDENTITY CASCADE")
-        # )
-        # db.session.commit()
-        #
-        # for g in moneylines:
-        #     m = ModelMoneylineEval(
-        #         date=today,
-        #         home_abbr=g["home"],
-        #         away_abbr=g["away"],
-        #         predicted_winner=g["predicted_winner"],
-        #         win_prob_home=g["win_prob_home"],
-        #         win_prob_away=g["win_prob_away"],
-        #         spread=g["spread"],
-        #     )
-        #     db.session.add(m)
-        #
-        # db.session.commit()
-
-
-# ── Step 5: Compute PrizePicks results ────────────────────────────
-        print("\n⚙️   Computing PrizePicks results...")
+        # ── Step 5: Compute PrizePicks results ────────────────────────────
+        print(
+            "\n⚙️   Computing PrizePicks results (in-memory; model_eval DB sync comes later)..."
+        )
 
         def find_player(name_key):
             if name_key in player_map:
@@ -319,6 +319,7 @@ def main():
         pp_results = []
         player_df_cache = {}
         player_rows_cache = {}
+        player_home_away_cache: dict[int, tuple] = {}
 
         if pp_lines is not None:
             total_pp = len(pp_lines)
@@ -330,7 +331,7 @@ def main():
             print(f"   Processing {total_pp} PrizePicks lines...")
 
             for i, entry in enumerate(pp_lines, start=1):
-                if i % 100 == 0 or i == total_pp:
+                if i % 50 == 0 or i == total_pp:
                     print(
                         f"   ⏳ PrizePicks results: {i}/{total_pp} "
                         f"({i * 100 // total_pp}%) | built={built_rows} "
@@ -352,8 +353,14 @@ def main():
                     continue
 
                 if player.id not in player_df_cache:
-                    player_df_cache[player.id] = rows_to_df(rows)
+                    df_new = rows_to_df(rows)
+                    player_df_cache[player.id] = df_new
+                    player_home_away_cache[player.id] = (
+                        df_new.loc[df_new["location"] == "Home"],
+                        df_new.loc[df_new["location"] == "Road"],
+                    )
                 df = player_df_cache[player.id]
+                home_df, away_df = player_home_away_cache[player.id]
 
                 stat = entry["stat"]
                 line = entry["line"]
@@ -413,10 +420,9 @@ def main():
 
                 edge = round(avg_l5 - line, 1) if avg_l5 is not None else None
                 streak = hr_l10.get("streak", {"count": 0, "type": "none"})
-                mult = matchup_multiplier(opponent_abbr, primary_stat, opp_defense)
-
-                home_df = df[df["location"] == "Home"]
-                away_df = df[df["location"] == "Road"]
+                mult = matchup_multiplier(
+                    opponent_abbr, primary_stat, opp_defense, league_avgs_opp
+                )
 
                 if stat in COMBO_STATS:
                     cols = COMBO_STATS[stat]
@@ -457,6 +463,7 @@ def main():
                     minutes_avg_season=min_season,
                 )
 
+                book_src = (entry.get("source") or "prizepicks").lower()
                 pp_results.append({
                     "id": player.id,
                     "name": player.name,
@@ -464,6 +471,8 @@ def main():
                     "position": player.position,
                     "stat": stat,
                     "label": entry["pp_stat_label"],
+                    "source": book_src,
+                    "book": entry.get("book", book_src),
                     "odds_type": entry.get("odds_type", "standard"),
                     "line": line,
                     "hit_rate": hr_l10["hit_rate"],
@@ -525,30 +534,6 @@ def main():
         #         db.session.add(m)
         #
         # db.session.commit()
-         # ── Log top prop picks for model statistics ───────────────────────
-        today = datetime.date.today()
-        MAX_PER_STAT = 25
-
-        by_stat: dict[str, list] = defaultdict(list)
-        for p in pp_results:
-            by_stat[p["stat"]].append(p)
-
-        for stat, rows in by_stat.items():
-            rows.sort(key=lambda x: x["confidence"], reverse=True)
-            for row in rows[:MAX_PER_STAT]:
-                m = ModelPropEval(
-                    date=today,
-                    player_id=row["id"],
-                    player_name=row["name"],
-                    team_abbr=row["team"],
-                    stat=stat,
-                    line=float(row["line"]),
-                    confidence=float(row["confidence"]),
-                )
-                db.session.add(m)
-
-        db.session.commit()
-
 
         # ── Step 6: Compute parlays ───────────────────────────────────────
         print("⚙️   Computing parlays...")
@@ -585,90 +570,93 @@ def main():
             {"two_leg": parlays_2[:10], "three_leg": parlays_3[:10]},
         )
 
-        # ── Step 7: Compute trending ──────────────────────────────────────
-        skip_trending = os.getenv("SKIP_TRENDING", "").strip().lower() in {
-            "1", "true", "yes", "y", "on"
-        }
-        if skip_trending:
-            print("⏭️   Skipping trending compute (SKIP_TRENDING enabled).")
-            write_safe("trending.json", {"hot_streaks": [], "top_hitters": []})
-        else:
-            print("⚙️   Computing trending...")
+        # ── Step 7: Compute trending (entire section commented out) ───────────────
+        print("⏭️   Skipping trending compute (section commented out).")
+        write_safe("trending.json", {"hot_streaks": [], "top_hitters": []})
 
-            hot_streaks = []
-            top_hitters = []
-
-            total_players = len(all_players)
-            for idx, player in enumerate(all_players, start=1):
-                if idx % 100 == 0 or idx == total_players:
-                    print(f"   ⏳ Trending progress: {idx}/{total_players}")
-                rows = stats_by_player.get(player.id, [])[:20]
-                if len(rows) < 3:
-                    continue
-
-                if player.id in player_df_cache:
-                    df = player_df_cache[player.id]
-                else:
-                    df = rows_to_df(rows)
-                    player_df_cache[player.id] = df
-
-                for stat in SINGLE_STATS:
-                    series = df[stat]
-                    line = round_to_half(series.head(5).mean())
-                    if line <= 0:
-                        continue
-                    sample_series = series.head(10)
-                    sample = len(sample_series)
-                    if sample == 0:
-                        continue
-                    hits = int((sample_series > line).sum())
-                    hr_rate = round(hits / sample, 3)
-                    streak = calculate_streak(series.tolist(), line)
-                    base = {
-                        "id": player.id, "name": player.name,
-                        "team": player.team_abbr, "position": player.position,
-                        "stat": stat, "label": STAT_LABELS[stat], "line": line,
-                        "avg": round(series.mean(), 1),
-                        "hit_rate": hr_rate,
-                        "sample": sample, "hits": hits,
-                    }
-                    if streak["type"] == "hit" and streak["count"] >= 3:
-                        hot_streaks.append({**base, "streak": streak["count"]})
-                    if hr_rate >= 0.70 and sample >= 5:
-                        top_hitters.append(base)
-
-                for combo, cols in COMBO_STATS.items():
-                    combo_series = df[cols].sum(axis=1)
-                    line = round_to_half(combo_series.head(5).mean())
-                    if line <= 0:
-                        continue
-                    sample_series = combo_series.head(10)
-                    sample = len(sample_series)
-                    if sample == 0:
-                        continue
-                    hits = int((sample_series > line).sum())
-                    hr_rate = round(hits / sample, 3)
-                    avg_val = round(combo_series.mean(), 1)
-                    streak = calculate_streak(combo_series.tolist(), line)
-                    base = {
-                        "id": player.id, "name": player.name,
-                        "team": player.team_abbr, "position": player.position,
-                        "stat": combo, "label": STAT_LABELS[combo], "line": line,
-                        "avg": avg_val, "hit_rate": hr_rate,
-                        "sample": sample, "hits": hits,
-                    }
-                    if streak["type"] == "hit" and streak["count"] >= 3:
-                        hot_streaks.append({**base, "streak": streak["count"]})
-                    if hr_rate >= 0.70 and sample >= 5:
-                        top_hitters.append(base)
-
-            hot_streaks.sort(key=lambda x: x["streak"], reverse=True)
-            top_hitters.sort(key=lambda x: x["hit_rate"], reverse=True)
-
-            write_safe("trending.json", {
-                "hot_streaks": hot_streaks[:30],
-                "top_hitters": top_hitters[:30],
-            })
+        # skip_trending = os.getenv("SKIP_TRENDING", "").strip().lower() in {
+        #     "1", "true", "yes", "y", "on"
+        # }
+        # if skip_trending:
+        #     print("⏭️   Skipping trending compute (SKIP_TRENDING enabled).")
+        #     write_safe("trending.json", {"hot_streaks": [], "top_hitters": []})
+        # else:
+        #     print("⚙️   Computing trending...")
+        #
+        #     hot_streaks = []
+        #     top_hitters = []
+        #
+        #     total_players = len(all_players)
+        #     for idx, player in enumerate(all_players, start=1):
+        #         if idx % 100 == 0 or idx == total_players:
+        #             print(f"   ⏳ Trending progress: {idx}/{total_players}")
+        #         rows = stats_by_player.get(player.id, [])[:20]
+        #         if len(rows) < 3:
+        #             continue
+        #
+        #         if player.id in player_df_cache:
+        #             df = player_df_cache[player.id]
+        #         else:
+        #             df = rows_to_df(rows)
+        #             player_df_cache[player.id] = df
+        #
+        #         for stat in SINGLE_STATS:
+        #             series = df[stat]
+        #             line = round_to_half(series.head(5).mean())
+        #             if line <= 0:
+        #                 continue
+        #             sample_series = series.head(10)
+        #             sample = len(sample_series)
+        #             if sample == 0:
+        #                 continue
+        #             hits = int((sample_series > line).sum())
+        #             hr_rate = round(hits / sample, 3)
+        #             streak = calculate_streak(series.tolist(), line)
+        #             base = {
+        #                 "id": player.id, "name": player.name,
+        #                 "team": player.team_abbr, "position": player.position,
+        #                 "stat": stat, "label": STAT_LABELS[stat], "line": line,
+        #                 "avg": round(series.mean(), 1),
+        #                 "hit_rate": hr_rate,
+        #                 "sample": sample, "hits": hits,
+        #             }
+        #             if streak["type"] == "hit" and streak["count"] >= 3:
+        #                 hot_streaks.append({**base, "streak": streak["count"]})
+        #             if hr_rate >= 0.70 and sample >= 5:
+        #                 top_hitters.append(base)
+        #
+        #         for combo, cols in COMBO_STATS.items():
+        #             combo_series = df[cols].sum(axis=1)
+        #             line = round_to_half(combo_series.head(5).mean())
+        #             if line <= 0:
+        #                 continue
+        #             sample_series = combo_series.head(10)
+        #             sample = len(sample_series)
+        #             if sample == 0:
+        #                 continue
+        #             hits = int((sample_series > line).sum())
+        #             hr_rate = round(hits / sample, 3)
+        #             avg_val = round(combo_series.mean(), 1)
+        #             streak = calculate_streak(combo_series.tolist(), line)
+        #             base = {
+        #                 "id": player.id, "name": player.name,
+        #                 "team": player.team_abbr, "position": player.position,
+        #                 "stat": combo, "label": STAT_LABELS[combo], "line": line,
+        #                 "avg": avg_val, "hit_rate": hr_rate,
+        #                 "sample": sample, "hits": hits,
+        #             }
+        #             if streak["type"] == "hit" and streak["count"] >= 3:
+        #                 hot_streaks.append({**base, "streak": streak["count"]})
+        #             if hr_rate >= 0.70 and sample >= 5:
+        #                 top_hitters.append(base)
+        #
+        #     hot_streaks.sort(key=lambda x: x["streak"], reverse=True)
+        #     top_hitters.sort(key=lambda x: x["hit_rate"], reverse=True)
+        #
+        #     write_safe("trending.json", {
+        #         "hot_streaks": hot_streaks[:30],
+        #         "top_hitters": top_hitters[:30],
+        #     })
 
     # ── Done ────────────────────────────────────────────────────────────────
     if errors:

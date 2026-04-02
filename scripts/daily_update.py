@@ -3,7 +3,13 @@ scripts/daily_update.py
 -----------------------
 Headless version of the daily updater for GitHub Actions.
 Reads DATABASE_URL from environment (set as a GitHub Actions secret).
-No GUI, no customtkinter — pure Python.
+Ingests box scores into player_game_stats (required for fetch_data /
+update_model_stats). Derived model_eval rows are JSON-only until
+update_model_stats + sync_to_heroku. No GUI — pure Python.
+
+If every player shows “no new games” but the NBA API has newer box scores,
+PostgreSQL PK sequences may be behind MAX(id) (common after a DB import).
+Run: python scripts/repair_postgres_sequences.py
 """
 
 import sys, os, time, random
@@ -11,6 +17,10 @@ from datetime import date
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from app.config import load_env  # noqa: E402
+
+load_env()
 
 SEASON      = "2025-26"
 MAX_WORKERS = 2   # keep low — nba_api rate-limits aggressively

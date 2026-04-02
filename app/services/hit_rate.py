@@ -51,11 +51,28 @@ def clean_avg(values, n=None):
         return None
     return round(float(np.mean(clean_series(vals))), 1)
 
-def matchup_multiplier(opponent_abbr, stat, opp_defense: dict) -> float:
+def league_avg_by_stat(opp_defense: dict) -> dict[str, float]:
+    """Precompute league mean per stat for matchup_multiplier (called once per fetch)."""
+    if not opp_defense:
+        return {}
+    out: dict[str, float] = {}
+    for stat, opp_key in STAT_OPP_KEY.items():
+        vals = [v[opp_key] for v in opp_defense.values() if opp_key in v]
+        out[stat] = float(np.mean(vals)) if vals else 0.0
+    return out
+
+
+def matchup_multiplier(
+    opponent_abbr,
+    stat,
+    opp_defense: dict,
+    league_avgs: dict[str, float] | None = None,
+) -> float:
     """
     Returns a multiplier > 1.0 if opponent allows more than league avg for this stat,
     < 1.0 if they allow less. Neutral = 1.0.
     Stat is e.g. 'pts', combo stats use primary component.
+    Pass league_avgs from league_avg_by_stat(opp_defense) to avoid O(teams) work per line.
     """
     if not opp_defense or not opponent_abbr:
         return 1.0
@@ -66,7 +83,10 @@ def matchup_multiplier(opponent_abbr, stat, opp_defense: dict) -> float:
     if not team_data or opp_key not in team_data:
         return 1.0
     opp_val = team_data[opp_key]
-    league_avg = float(np.mean([v[opp_key] for v in opp_defense.values() if opp_key in v]))
+    if league_avgs is not None:
+        league_avg = league_avgs.get(stat, 0.0)
+    else:
+        league_avg = float(np.mean([v[opp_key] for v in opp_defense.values() if opp_key in v]))
     if league_avg == 0:
         return 1.0
     return round(opp_val / league_avg, 3)

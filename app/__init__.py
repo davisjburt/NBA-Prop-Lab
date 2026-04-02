@@ -3,6 +3,10 @@ from app.models.models import db
 
 
 def create_app():
+    from app.config import load_env
+
+    load_env()
+
     app = Flask(__name__)
     app.config.from_object("app.config.Config")
 

@@ -1,19 +1,24 @@
 """
 scripts/update_model_stats.py
 -----------------------------
-Resolves stored model predictions (props + moneylines) against
-actual outcomes in PlayerGameStat, and writes aggregated model
-stats JSON files for use by the frontend.
+Rebuilds today's model-eval slate from fetch_data JSON, resolves outcomes
+against PlayerGameStat, updates the local DB for historical summaries, writes
+model_*_eval_sync.json for sync_to_heroku, and writes model_stats_*.json.
 """
 
 import os
 import sys
 import json
+from collections import defaultdict
 from pathlib import Path
-from datetime import date, timedelta
+from datetime import date
 
 # Ensure app package is importable when running as a script
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from app.config import load_env  # noqa: E402
+
+load_env()
 
 from app import create_app
 from app.models.models import (
@@ -23,14 +28,151 @@ from app.models.models import (
     ModelPropEval,
     ModelMoneylineEval,
 )
-from sqlalchemy import desc
+from sqlalchemy import func
+
+from app.services.hit_rate import COMBO_STATS
+from app.services.model_summary import build_outcomes_summary
 
 DATA_DIR = Path(os.path.join(os.path.dirname(__file__), "..", "data"))
 
+MAX_PER_STAT = 25
+
+
+def _read_json_list(path: Path) -> list | None:
+    if not path.exists():
+        return None
+    with path.open() as f:
+        data = json.load(f)
+    return data if isinstance(data, list) else None
+
+
+def _write_json_atomic(path: Path, data: object) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    with tmp.open("w") as f:
+        json.dump(data, f, indent=2, default=str)
+    tmp.replace(path)
+
+
+def hydrate_today_from_json(today: date) -> None:
+    """
+    Replace today's model_prop_eval / model_moneyline_eval rows using the same
+    shaping as fetch_data used to insert (top N per stat from prizepicks_results).
+    """
+    ml_raw = _read_json_list(DATA_DIR / "moneylines.json") or []
+    pp_raw = _read_json_list(DATA_DIR / "prizepicks_results.json") or []
+
+    ModelPropEval.query.filter(ModelPropEval.date == today).delete(
+        synchronize_session=False
+    )
+    ModelMoneylineEval.query.filter(ModelMoneylineEval.date == today).delete(
+        synchronize_session=False
+    )
+
+    for g in ml_raw:
+        db.session.add(
+            ModelMoneylineEval(
+                date=today,
+                home_abbr=g["home"],
+                away_abbr=g["away"],
+                predicted_winner=g["predicted_winner"],
+                win_prob_home=g["win_prob_home"],
+                win_prob_away=g["win_prob_away"],
+                spread=g["spread"],
+            )
+        )
+
+    by_stat: dict[str, list] = defaultdict(list)
+    for row in pp_raw:
+        by_stat[row["stat"]].append(row)
+    for stat, rows in by_stat.items():
+        rows.sort(key=lambda x: x["confidence"], reverse=True)
+        for row in rows[:MAX_PER_STAT]:
+            db.session.add(
+                ModelPropEval(
+                    date=today,
+                    player_id=row["id"],
+                    player_name=row["name"],
+                    team_abbr=row["team"],
+                    stat=stat,
+                    line=float(row["line"]),
+                    confidence=float(row["confidence"]),
+                )
+            )
+
+    db.session.commit()
+    print(
+        f"Hydrated model eval for {today} from JSON "
+        f"({len(ml_raw)} moneylines, {len(pp_raw)} prop board rows → top {MAX_PER_STAT}/stat in DB)."
+    )
+
+
+def write_model_eval_sync_json(today: date) -> None:
+    """Full rows (including resolution fields) for Heroku Postgres sync."""
+    props = ModelPropEval.query.filter(ModelPropEval.date == today).all()
+    mls = ModelMoneylineEval.query.filter(ModelMoneylineEval.date == today).all()
+
+    prop_payload = [
+        {
+            "date": p.date.isoformat(),
+            "player_id": p.player_id,
+            "player_name": p.player_name,
+            "team_abbr": p.team_abbr,
+            "stat": p.stat,
+            "line": p.line,
+            "confidence": p.confidence,
+            "result_value": p.result_value,
+            "hit": p.hit,
+            "created_at": p.created_at.isoformat() if p.created_at else None,
+            "updated_at": p.updated_at.isoformat() if p.updated_at else None,
+        }
+        for p in props
+    ]
+    ml_payload = [
+        {
+            "date": g.date.isoformat(),
+            "home_abbr": g.home_abbr,
+            "away_abbr": g.away_abbr,
+            "predicted_winner": g.predicted_winner,
+            "win_prob_home": g.win_prob_home,
+            "win_prob_away": g.win_prob_away,
+            "spread": g.spread,
+            "actual_winner": g.actual_winner,
+            "margin": g.margin,
+            "correct": g.correct,
+            "created_at": g.created_at.isoformat() if g.created_at else None,
+            "updated_at": g.updated_at.isoformat() if g.updated_at else None,
+        }
+        for g in mls
+    ]
+
+    _write_json_atomic(DATA_DIR / "model_prop_eval_sync.json", prop_payload)
+    _write_json_atomic(DATA_DIR / "model_moneyline_eval_sync.json", ml_payload)
+    print(
+        f"Wrote model_prop_eval_sync.json ({len(prop_payload)} rows) and "
+        f"model_moneyline_eval_sync.json ({len(ml_payload)} rows)."
+    )
+
+
+def _actual_stat_value(row: PlayerGameStat, stat: str) -> float | None:
+    """Single-column stats or combo sums (pra, pr, …) from PlayerGameStat columns."""
+    if stat in COMBO_STATS:
+        total = 0.0
+        for col in COMBO_STATS[stat]:
+            v = getattr(row, col, None)
+            if v is None:
+                return None
+            total += float(v)
+        return total
+    v = getattr(row, stat, None)
+    return float(v) if v is not None else None
+
 
 def resolve_props(today: date) -> None:
+    # Include today so same-day slates resolve once daily_update has box scores.
+    # Rows without PlayerGameStat for that date are skipped until data exists.
     pending_props = ModelPropEval.query.filter(
-        ModelPropEval.date < today,
+        ModelPropEval.date <= today,
         ModelPropEval.hit.is_(None),
     ).all()
     print(f"Resolving {len(pending_props)} prop picks...")
@@ -44,7 +186,7 @@ def resolve_props(today: date) -> None:
             continue
 
         row = rows[0]
-        val = getattr(row, m.stat, None)
+        val = _actual_stat_value(row, m.stat)
         if val is None:
             continue
 
@@ -59,7 +201,7 @@ def team_score_for(game_date: date, team_abbr: str) -> float:
         .join(Player, PlayerGameStat.player_id == Player.id)
         .filter(
             PlayerGameStat.date == game_date,
-            Player.team_abbr == team_abbr,
+            func.upper(Player.team_abbr) == team_abbr.strip().upper(),
         )
         .all()
     )
@@ -68,7 +210,7 @@ def team_score_for(game_date: date, team_abbr: str) -> float:
 
 def resolve_moneylines(today: date) -> None:
     pending_games = ModelMoneylineEval.query.filter(
-        ModelMoneylineEval.date < today,
+        ModelMoneylineEval.date <= today,
         ModelMoneylineEval.correct.is_(None),
     ).all()
     print(f"Resolving {len(pending_games)} moneyline games...")
@@ -87,119 +229,6 @@ def resolve_moneylines(today: date) -> None:
         g.correct = (g.actual_winner == g.predicted_winner)
 
 
-def build_window_summary(window_days: int) -> dict:
-    """Aggregate moneylines + props and sample recent bets for a window."""
-    end = date.today()
-    start = end - timedelta(days=window_days)
-
-    # Moneylines summary
-    ml_q = ModelMoneylineEval.query.filter(
-        ModelMoneylineEval.date >= start,
-        ModelMoneylineEval.date < end,
-        ModelMoneylineEval.correct.isnot(None),
-    )
-    ml_bets = ml_q.count()
-    ml_hits = ml_q.filter_by(correct=True).count()
-    ml_hit_rate = (ml_hits / ml_bets) if ml_bets else None
-
-    moneylines = {
-        "bets": ml_bets,
-        "hits": ml_hits,
-        "hit_rate": ml_hit_rate,
-    }
-
-    # Props aggregated by stat
-    props_q = ModelPropEval.query.filter(
-        ModelPropEval.date >= start,
-        ModelPropEval.date < end,
-        ModelPropEval.hit.isnot(None),
-    )
-
-    buckets: dict[str, dict[str, int]] = {}
-    for p in props_q:
-        bucket = buckets.setdefault(p.stat, {"bets": 0, "hits": 0})
-        bucket["bets"] += 1
-        if p.hit:
-            bucket["hits"] += 1
-
-    props: list[dict] = []
-    for stat, agg in buckets.items():
-        bets = agg["bets"]
-        hits = agg["hits"]
-        hit_rate = hits / bets if bets else None
-        props.append(
-            {"stat": stat, "bets": bets, "hits": hits, "hit_rate": hit_rate}
-        )
-
-    props.sort(key=lambda x: (x["hit_rate"] or 0), reverse=True)
-
-    # Overall props across all stats
-    total_bets = sum(p["bets"] for p in props)
-    total_hits = sum(p["hits"] for p in props)
-    prop_hit_rate = (total_hits / total_bets) if total_bets else None
-    prop_overall = {
-        "bets": total_bets,
-        "hits": total_hits,
-        "hit_rate": prop_hit_rate,
-    }
-
-    # Recent individual props
-    sample_props_q = (
-        ModelPropEval.query.filter(
-            ModelPropEval.date >= start,
-            ModelPropEval.date < end,
-            ModelPropEval.hit.isnot(None),
-        )
-        .order_by(desc(ModelPropEval.date), desc(ModelPropEval.confidence))
-        .limit(50)
-    )
-    sample_props = [
-        {
-            "date": p.date.isoformat(),
-            "player_name": p.player_name,
-            "team_abbr": p.team_abbr,
-            "stat": p.stat,
-            "line": p.line,
-            "hit": p.hit,
-            "confidence": p.confidence,
-        }
-        for p in sample_props_q
-    ]
-
-    # Recent individual moneylines
-    sample_ml_q = (
-        ModelMoneylineEval.query.filter(
-            ModelMoneylineEval.date >= start,
-            ModelMoneylineEval.date < end,
-            ModelMoneylineEval.correct.isnot(None),
-        )
-        .order_by(desc(ModelMoneylineEval.date), desc(ModelMoneylineEval.win_prob_home))
-        .limit(50)
-    )
-    sample_moneylines = [
-        {
-            "date": g.date.isoformat(),
-            "home_abbr": g.home_abbr,
-            "away_abbr": g.away_abbr,
-            "predicted_winner": g.predicted_winner,
-            "actual_winner": g.actual_winner,
-            "correct": g.correct,
-            "margin": g.margin,
-            "win_prob_home": g.win_prob_home,
-            "win_prob_away": g.win_prob_away,
-        }
-        for g in sample_ml_q
-    ]
-
-    return {
-        "moneylines": moneylines,
-        "props": props,
-        "prop_overall": prop_overall,
-        "sample_props": sample_props,
-        "sample_moneylines": sample_moneylines,
-    }
-
-
 def write_model_stats_json() -> None:
     """Write model stats JSON files for 7/30/90-day windows."""
     DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -210,7 +239,7 @@ def write_model_stats_json() -> None:
     }
 
     for days, fname in windows.items():
-        summary = build_window_summary(days)
+        summary = build_outcomes_summary(days)
         path = DATA_DIR / fname
         tmp = path.with_suffix(path.suffix + ".tmp")
         with tmp.open("w") as f:
@@ -218,20 +247,29 @@ def write_model_stats_json() -> None:
         tmp.replace(path)
         print(f"Wrote model stats for last {days} days to {fname}")
 
+    all_path = DATA_DIR / "model_stats_all.json"
+    tmp_all = all_path.with_suffix(all_path.suffix + ".tmp")
+    summary_all = build_outcomes_summary(None)
+    with tmp_all.open("w") as f:
+        json.dump(summary_all, f, indent=2, default=str)
+    tmp_all.replace(all_path)
+    print("Wrote model stats (all logged outcomes) to model_stats_all.json")
+
 
 def main() -> None:
     app = create_app()
     with app.app_context():
         today = date.today()
 
+        hydrate_today_from_json(today)
+
         resolve_props(today)
         resolve_moneylines(today)
 
-        # Persist DB changes first
         db.session.commit()
-        print("Done updating model stats (DB).")
+        print("Done updating model stats (local DB).")
 
-        # Then write JSON snapshots for frontend / Render
+        write_model_eval_sync_json(today)
         write_model_stats_json()
 
 

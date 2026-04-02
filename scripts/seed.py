@@ -1,6 +1,10 @@
 import sys, os, time
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
+from app.config import load_env  # noqa: E402
+
+load_env()
+
 from app import create_app
 from app.models.models import db, Player, PlayerGameStat
 from app.services.nba_fetcher import fetch_game_logs
