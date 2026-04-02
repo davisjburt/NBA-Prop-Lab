@@ -11,12 +11,10 @@ NAV_REPLACEMENTS = {
     "index.html": {
         "old": '''      <div class="nav-links">
         <a href="/" class="active"><i data-lucide="users"></i> Players</a>
-        <a href="/explore"><i data-lucide="compass"></i> Explore</a>
         <a href="/prizepicks"><i data-lucide="book"></i> PrizePicks</a>
       </div>''',
         "new": '''      <div class="nav-links">
         <a href="/" class="active"><i data-lucide="users"></i> Players</a>
-        <a href="/explore"><i data-lucide="compass"></i> Explore</a>
         <a href="/prizepicks"><i data-lucide="list"></i> Player Props</a>
         <a href="/moneylines"><i data-lucide="trending-up"></i> Moneylines</a>
         <a href="/model-stats"><i data-lucide="bar-chart-3"></i> Model Stats</a>
@@ -25,14 +23,10 @@ NAV_REPLACEMENTS = {
     "explore.html": {
         "old": '''      <div class="nav-links">
         <a href="/"><i data-lucide="users"></i> Players</a>
-        <a href="/explore" class="active"
-          ><i data-lucide="compass"></i> Explore</a
-        >
         <a href="/prizepicks"><i data-lucide="book"></i> PrizePicks</a>
       </div>''',
         "new": '''      <div class="nav-links">
         <a href="/"><i data-lucide="users"></i> Players</a>
-        <a href="/explore" class="active"><i data-lucide="compass"></i> Explore</a>
         <a href="/prizepicks"><i data-lucide="list"></i> Player Props</a>
         <a href="/moneylines"><i data-lucide="trending-up"></i> Moneylines</a>
         <a href="/model-stats"><i data-lucide="bar-chart-3"></i> Model Stats</a>
@@ -41,12 +35,10 @@ NAV_REPLACEMENTS = {
     "player.html": {
         "old": '''      <div class="nav-links">
         <a href="/" class="active"> <i data-lucide="users"></i> Players </a>
-        <a href="/explore"> <i data-lucide="compass"></i> Explore </a>
         <a href="/prizepicks"> <i data-lucide="book"></i> PrizePicks </a>
       </div>''',
         "new": '''      <div class="nav-links">
         <a href="/" class="active"> <i data-lucide="users"></i> Players </a>
-        <a href="/explore"> <i data-lucide="compass"></i> Explore </a>
         <a href="/prizepicks"> <i data-lucide="list"></i> Player Props </a>
         <a href="/moneylines"> <i data-lucide="trending-up"></i> Moneylines </a>
         <a href="/model-stats"><i data-lucide="bar-chart-3"></i> Model Stats</a>
