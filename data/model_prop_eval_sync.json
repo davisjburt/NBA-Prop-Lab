@@ -6,24 +6,11 @@
     "team_abbr": "LAL",
     "stat": "reb",
     "line": 4.5,
-    "confidence": 98.6,
+    "confidence": 98.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193691",
-    "updated_at": "2026-04-02T17:07:09.193696"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1629632,
-    "player_name": "Coby White",
-    "team_abbr": "CHA",
-    "stat": "reb",
-    "line": 1.5,
-    "confidence": 94.4,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193697",
-    "updated_at": "2026-04-02T17:07:09.193698"
+    "created_at": "2026-04-02T17:37:15.218035",
+    "updated_at": "2026-04-02T17:37:15.218048"
   },
   {
     "date": "2026-04-02",
@@ -32,24 +19,11 @@
     "team_abbr": "CLE",
     "stat": "reb",
     "line": 2.5,
-    "confidence": 93.4,
+    "confidence": 94.0,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193698",
-    "updated_at": "2026-04-02T17:07:09.193699"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1628415,
-    "player_name": "Dillon Brooks",
-    "team_abbr": "PHX",
-    "stat": "reb",
-    "line": 1.5,
-    "confidence": 93.2,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193699",
-    "updated_at": "2026-04-02T17:07:09.193699"
+    "created_at": "2026-04-02T17:37:15.218049",
+    "updated_at": "2026-04-02T17:37:15.218051"
   },
   {
     "date": "2026-04-02",
@@ -61,21 +35,8 @@
     "confidence": 93.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193700",
-    "updated_at": "2026-04-02T17:07:09.193700"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1642851,
-    "player_name": "Kon Knueppel",
-    "team_abbr": "CHA",
-    "stat": "reb",
-    "line": 3.5,
-    "confidence": 90.7,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193701",
-    "updated_at": "2026-04-02T17:07:09.193701"
+    "created_at": "2026-04-02T17:37:15.218052",
+    "updated_at": "2026-04-02T17:37:15.218053"
   },
   {
     "date": "2026-04-02",
@@ -87,21 +48,21 @@
     "confidence": 90.4,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193701",
-    "updated_at": "2026-04-02T17:07:09.193702"
+    "created_at": "2026-04-02T17:37:15.218055",
+    "updated_at": "2026-04-02T17:37:15.218056"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1631105,
-    "player_name": "Jalen Duren",
-    "team_abbr": "DET",
+    "player_id": 1629637,
+    "player_name": "Jaxson Hayes",
+    "team_abbr": "LAL",
     "stat": "reb",
-    "line": 8.5,
-    "confidence": 90.2,
+    "line": 2.5,
+    "confidence": 89.9,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193702",
-    "updated_at": "2026-04-02T17:07:09.193703"
+    "created_at": "2026-04-02T17:37:15.218057",
+    "updated_at": "2026-04-02T17:37:15.218058"
   },
   {
     "date": "2026-04-02",
@@ -113,8 +74,21 @@
     "confidence": 89.4,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193703",
-    "updated_at": "2026-04-02T17:07:09.193703"
+    "created_at": "2026-04-02T17:37:15.218059",
+    "updated_at": "2026-04-02T17:37:15.218065"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1627884,
+    "player_name": "Derrick Jones Jr.",
+    "team_abbr": "LAC",
+    "stat": "reb",
+    "line": 2.5,
+    "confidence": 89.0,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218066",
+    "updated_at": "2026-04-02T17:37:15.218067"
   },
   {
     "date": "2026-04-02",
@@ -126,47 +100,34 @@
     "confidence": 88.9,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193704",
-    "updated_at": "2026-04-02T17:07:09.193704"
+    "created_at": "2026-04-02T17:37:15.218068",
+    "updated_at": "2026-04-02T17:37:15.218069"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1641709,
-    "player_name": "Ausar Thompson",
-    "team_abbr": "DET",
-    "stat": "reb",
-    "line": 3.5,
-    "confidence": 88.9,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193704",
-    "updated_at": "2026-04-02T17:07:09.193705"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1629637,
-    "player_name": "Jaxson Hayes",
-    "team_abbr": "LAL",
-    "stat": "reb",
-    "line": 2.5,
-    "confidence": 88.8,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193705",
-    "updated_at": "2026-04-02T17:07:09.193705"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1627884,
-    "player_name": "Derrick Jones Jr.",
-    "team_abbr": "LAC",
+    "player_id": 1631221,
+    "player_name": "Collin Gillespie",
+    "team_abbr": "PHX",
     "stat": "reb",
     "line": 2.5,
     "confidence": 88.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193706",
-    "updated_at": "2026-04-02T17:07:09.193706"
+    "created_at": "2026-04-02T17:37:15.218070",
+    "updated_at": "2026-04-02T17:37:15.218071"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1631097,
+    "player_name": "Bennedict Mathurin",
+    "team_abbr": "LAC",
+    "stat": "reb",
+    "line": 3.5,
+    "confidence": 88.3,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218072",
+    "updated_at": "2026-04-02T17:37:15.218074"
   },
   {
     "date": "2026-04-02",
@@ -175,37 +136,37 @@
     "team_abbr": "POR",
     "stat": "reb",
     "line": 1.5,
-    "confidence": 87.1,
+    "confidence": 87.0,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193706",
-    "updated_at": "2026-04-02T17:07:09.193707"
+    "created_at": "2026-04-02T17:37:15.218075",
+    "updated_at": "2026-04-02T17:37:15.218076"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1629028,
-    "player_name": "Deandre Ayton",
+    "player_id": 203110,
+    "player_name": "Draymond Green",
+    "team_abbr": "GSW",
+    "stat": "reb",
+    "line": 3.5,
+    "confidence": 86.1,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218077",
+    "updated_at": "2026-04-02T17:37:15.218078"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1629029,
+    "player_name": "Luka Don\u010di\u0107",
     "team_abbr": "LAL",
     "stat": "reb",
     "line": 5.5,
-    "confidence": 85.8,
+    "confidence": 85.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193707",
-    "updated_at": "2026-04-02T17:07:09.193707"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1641764,
-    "player_name": "Brandin Podziemski",
-    "team_abbr": "GSW",
-    "stat": "reb",
-    "line": 4.5,
-    "confidence": 85.4,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193708",
-    "updated_at": "2026-04-02T17:07:09.193708"
+    "created_at": "2026-04-02T17:37:15.218080",
+    "updated_at": "2026-04-02T17:37:15.218081"
   },
   {
     "date": "2026-04-02",
@@ -217,8 +178,8 @@
     "confidence": 85.0,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193708",
-    "updated_at": "2026-04-02T17:07:09.193709"
+    "created_at": "2026-04-02T17:37:15.218082",
+    "updated_at": "2026-04-02T17:37:15.218083"
   },
   {
     "date": "2026-04-02",
@@ -230,8 +191,8 @@
     "confidence": 84.8,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193709",
-    "updated_at": "2026-04-02T17:07:09.193709"
+    "created_at": "2026-04-02T17:37:15.218088",
+    "updated_at": "2026-04-02T17:37:15.218089"
   },
   {
     "date": "2026-04-02",
@@ -243,34 +204,34 @@
     "confidence": 84.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193710",
-    "updated_at": "2026-04-02T17:07:09.193710"
+    "created_at": "2026-04-02T17:37:15.218090",
+    "updated_at": "2026-04-02T17:37:15.218091"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1641705,
-    "player_name": "Victor Wembanyama",
+    "player_id": 1630224,
+    "player_name": "Jalen Green",
+    "team_abbr": "PHX",
+    "stat": "reb",
+    "line": 2.5,
+    "confidence": 84.4,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218093",
+    "updated_at": "2026-04-02T17:37:15.218094"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1630577,
+    "player_name": "Julian Champagnie",
     "team_abbr": "SAS",
     "stat": "reb",
-    "line": 9.5,
-    "confidence": 83.8,
+    "line": 3.5,
+    "confidence": 83.9,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193710",
-    "updated_at": "2026-04-02T17:07:09.193710"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1629028,
-    "player_name": "Deandre Ayton",
-    "team_abbr": "LAL",
-    "stat": "reb",
-    "line": 6.5,
-    "confidence": 83.4,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193711",
-    "updated_at": "2026-04-02T17:07:09.193711"
+    "created_at": "2026-04-02T17:37:15.218095",
+    "updated_at": "2026-04-02T17:37:15.218096"
   },
   {
     "date": "2026-04-02",
@@ -279,50 +240,89 @@
     "team_abbr": "POR",
     "stat": "reb",
     "line": 3.5,
-    "confidence": 82.9,
+    "confidence": 82.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193711",
-    "updated_at": "2026-04-02T17:07:09.193712"
+    "created_at": "2026-04-02T17:37:15.218097",
+    "updated_at": "2026-04-02T17:37:15.218098"
   },
   {
     "date": "2026-04-02",
-    "player_id": 202695,
-    "player_name": "Kawhi Leonard",
-    "team_abbr": "LAC",
+    "player_id": 1642851,
+    "player_name": "Kon Knueppel",
+    "team_abbr": "CHA",
     "stat": "reb",
-    "line": 4.5,
-    "confidence": 82.7,
+    "line": 3.5,
+    "confidence": 81.8,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193712",
-    "updated_at": "2026-04-02T17:07:09.193712"
+    "created_at": "2026-04-02T17:37:15.218100",
+    "updated_at": "2026-04-02T17:37:15.218101"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1641705,
-    "player_name": "Victor Wembanyama",
-    "team_abbr": "SAS",
+    "player_id": 1628386,
+    "player_name": "Jarrett Allen",
+    "team_abbr": "CLE",
     "stat": "reb",
-    "line": 10.5,
-    "confidence": 82.5,
+    "line": 5.5,
+    "confidence": 81.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193713",
-    "updated_at": "2026-04-02T17:07:09.193713"
+    "created_at": "2026-04-02T17:37:15.218102",
+    "updated_at": "2026-04-02T17:37:15.218103"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1628989,
-    "player_name": "Kevin Huerter",
+    "player_id": 1631105,
+    "player_name": "Jalen Duren",
     "team_abbr": "DET",
     "stat": "reb",
-    "line": 1.5,
-    "confidence": 82.3,
+    "line": 8.5,
+    "confidence": 81.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193713",
-    "updated_at": "2026-04-02T17:07:09.193714"
+    "created_at": "2026-04-02T17:37:15.218104",
+    "updated_at": "2026-04-02T17:37:15.218105"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 201935,
+    "player_name": "James Harden",
+    "team_abbr": "CLE",
+    "stat": "reb",
+    "line": 3.5,
+    "confidence": 80.9,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218106",
+    "updated_at": "2026-04-02T17:37:15.218107"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1631109,
+    "player_name": "Mark Williams",
+    "team_abbr": "PHX",
+    "stat": "reb",
+    "line": 3.5,
+    "confidence": 80.4,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218111",
+    "updated_at": "2026-04-02T17:37:15.218112"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1629622,
+    "player_name": "Max Strus",
+    "team_abbr": "CLE",
+    "stat": "reb",
+    "line": 3.5,
+    "confidence": 80.4,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218113",
+    "updated_at": "2026-04-02T17:37:15.218114"
   },
   {
     "date": "2026-04-02",
@@ -334,34 +334,21 @@
     "confidence": 98.3,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193714",
-    "updated_at": "2026-04-02T17:07:09.193714"
+    "created_at": "2026-04-02T17:37:15.218115",
+    "updated_at": "2026-04-02T17:37:15.218116"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1630162,
-    "player_name": "Anthony Edwards",
-    "team_abbr": "MIN",
-    "stat": "ra",
-    "line": 5.5,
-    "confidence": 96.4,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193715",
-    "updated_at": "2026-04-02T17:07:09.193715"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1642264,
-    "player_name": "Stephon Castle",
-    "team_abbr": "SAS",
+    "player_id": 201935,
+    "player_name": "James Harden",
+    "team_abbr": "CLE",
     "stat": "ra",
     "line": 9.5,
-    "confidence": 94.3,
+    "confidence": 97.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193715",
-    "updated_at": "2026-04-02T17:07:09.193716"
+    "created_at": "2026-04-02T17:37:15.218117",
+    "updated_at": "2026-04-02T17:37:15.218118"
   },
   {
     "date": "2026-04-02",
@@ -373,21 +360,21 @@
     "confidence": 94.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193716",
-    "updated_at": "2026-04-02T17:07:09.193716"
+    "created_at": "2026-04-02T17:37:15.218120",
+    "updated_at": "2026-04-02T17:37:15.218121"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1642264,
-    "player_name": "Stephon Castle",
-    "team_abbr": "SAS",
+    "player_id": 1630596,
+    "player_name": "Evan Mobley",
+    "team_abbr": "CLE",
     "stat": "ra",
-    "line": 10.5,
-    "confidence": 93.8,
+    "line": 8.5,
+    "confidence": 93.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193717",
-    "updated_at": "2026-04-02T17:07:09.193717"
+    "created_at": "2026-04-02T17:37:15.218122",
+    "updated_at": "2026-04-02T17:37:15.218123"
   },
   {
     "date": "2026-04-02",
@@ -396,11 +383,11 @@
     "team_abbr": "LAL",
     "stat": "ra",
     "line": 9.5,
-    "confidence": 93.6,
+    "confidence": 93.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193717",
-    "updated_at": "2026-04-02T17:07:09.193718"
+    "created_at": "2026-04-02T17:37:15.218124",
+    "updated_at": "2026-04-02T17:37:15.218125"
   },
   {
     "date": "2026-04-02",
@@ -412,21 +399,8 @@
     "confidence": 93.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193718",
-    "updated_at": "2026-04-02T17:07:09.193718"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1628415,
-    "player_name": "Dillon Brooks",
-    "team_abbr": "PHX",
-    "stat": "ra",
-    "line": 2.5,
-    "confidence": 92.6,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193718",
-    "updated_at": "2026-04-02T17:07:09.193719"
+    "created_at": "2026-04-02T17:37:15.218126",
+    "updated_at": "2026-04-02T17:37:15.218127"
   },
   {
     "date": "2026-04-02",
@@ -434,25 +408,51 @@
     "player_name": "Stephon Castle",
     "team_abbr": "SAS",
     "stat": "ra",
-    "line": 11.5,
-    "confidence": 92.3,
+    "line": 9.5,
+    "confidence": 91.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193719",
-    "updated_at": "2026-04-02T17:07:09.193719"
+    "created_at": "2026-04-02T17:37:15.218128",
+    "updated_at": "2026-04-02T17:37:15.218129"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1642450,
-    "player_name": "Daniss Jenkins",
-    "team_abbr": "DET",
+    "player_id": 1642264,
+    "player_name": "Stephon Castle",
+    "team_abbr": "SAS",
     "stat": "ra",
-    "line": 7.5,
-    "confidence": 89.4,
+    "line": 10.5,
+    "confidence": 90.9,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193720",
-    "updated_at": "2026-04-02T17:07:09.193720"
+    "created_at": "2026-04-02T17:37:15.218130",
+    "updated_at": "2026-04-02T17:37:15.218131"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1630224,
+    "player_name": "Jalen Green",
+    "team_abbr": "PHX",
+    "stat": "ra",
+    "line": 4.5,
+    "confidence": 89.2,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218132",
+    "updated_at": "2026-04-02T17:37:15.218133"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1631097,
+    "player_name": "Bennedict Mathurin",
+    "team_abbr": "LAC",
+    "stat": "ra",
+    "line": 5.5,
+    "confidence": 89.0,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218134",
+    "updated_at": "2026-04-02T17:37:15.218138"
   },
   {
     "date": "2026-04-02",
@@ -464,8 +464,8 @@
     "confidence": 88.9,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193720",
-    "updated_at": "2026-04-02T17:07:09.193721"
+    "created_at": "2026-04-02T17:37:15.218139",
+    "updated_at": "2026-04-02T17:37:15.218140"
   },
   {
     "date": "2026-04-02",
@@ -477,34 +477,21 @@
     "confidence": 88.8,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193721",
-    "updated_at": "2026-04-02T17:07:09.193721"
+    "created_at": "2026-04-02T17:37:15.218141",
+    "updated_at": "2026-04-02T17:37:15.218142"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1642450,
-    "player_name": "Daniss Jenkins",
-    "team_abbr": "DET",
+    "player_id": 1642264,
+    "player_name": "Stephon Castle",
+    "team_abbr": "SAS",
     "stat": "ra",
-    "line": 8.5,
-    "confidence": 88.2,
+    "line": 11.5,
+    "confidence": 88.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193722",
-    "updated_at": "2026-04-02T17:07:09.193722"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 2544,
-    "player_name": "LeBron James",
-    "team_abbr": "LAL",
-    "stat": "ra",
-    "line": 10.5,
-    "confidence": 87.5,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193722",
-    "updated_at": "2026-04-02T17:07:09.193722"
+    "created_at": "2026-04-02T17:37:15.218143",
+    "updated_at": "2026-04-02T17:37:15.218144"
   },
   {
     "date": "2026-04-02",
@@ -513,11 +500,37 @@
     "team_abbr": "LAL",
     "stat": "ra",
     "line": 3.5,
-    "confidence": 87.5,
+    "confidence": 88.0,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193723",
-    "updated_at": "2026-04-02T17:07:09.193723"
+    "created_at": "2026-04-02T17:37:15.218145",
+    "updated_at": "2026-04-02T17:37:15.218146"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1641706,
+    "player_name": "Brandon Miller",
+    "team_abbr": "CHA",
+    "stat": "ra",
+    "line": 7.5,
+    "confidence": 87.9,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218147",
+    "updated_at": "2026-04-02T17:37:15.218148"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1628368,
+    "player_name": "De'Aaron Fox",
+    "team_abbr": "SAS",
+    "stat": "ra",
+    "line": 7.5,
+    "confidence": 87.7,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218149",
+    "updated_at": "2026-04-02T17:37:15.218150"
   },
   {
     "date": "2026-04-02",
@@ -529,21 +542,21 @@
     "confidence": 87.3,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193723",
-    "updated_at": "2026-04-02T17:07:09.193724"
+    "created_at": "2026-04-02T17:37:15.218151",
+    "updated_at": "2026-04-02T17:37:15.218152"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1628368,
-    "player_name": "De'Aaron Fox",
-    "team_abbr": "SAS",
+    "player_id": 1642450,
+    "player_name": "Daniss Jenkins",
+    "team_abbr": "DET",
     "stat": "ra",
     "line": 7.5,
-    "confidence": 87.3,
+    "confidence": 87.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193724",
-    "updated_at": "2026-04-02T17:07:09.193724"
+    "created_at": "2026-04-02T17:37:15.218154",
+    "updated_at": "2026-04-02T17:37:15.218155"
   },
   {
     "date": "2026-04-02",
@@ -555,8 +568,8 @@
     "confidence": 87.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193725",
-    "updated_at": "2026-04-02T17:07:09.193725"
+    "created_at": "2026-04-02T17:37:15.218156",
+    "updated_at": "2026-04-02T17:37:15.218159"
   },
   {
     "date": "2026-04-02",
@@ -565,24 +578,37 @@
     "team_abbr": "LAC",
     "stat": "ra",
     "line": 3.5,
-    "confidence": 86.6,
+    "confidence": 87.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193725",
-    "updated_at": "2026-04-02T17:07:09.193726"
+    "created_at": "2026-04-02T17:37:15.218160",
+    "updated_at": "2026-04-02T17:37:15.218161"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1630170,
-    "player_name": "Devin Vassell",
-    "team_abbr": "SAS",
+    "player_id": 1642450,
+    "player_name": "Daniss Jenkins",
+    "team_abbr": "DET",
     "stat": "ra",
-    "line": 4.5,
-    "confidence": 86.1,
+    "line": 8.5,
+    "confidence": 85.9,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193726",
-    "updated_at": "2026-04-02T17:07:09.193726"
+    "created_at": "2026-04-02T17:37:15.218162",
+    "updated_at": "2026-04-02T17:37:15.218162"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1631097,
+    "player_name": "Bennedict Mathurin",
+    "team_abbr": "LAC",
+    "stat": "ra",
+    "line": 6.5,
+    "confidence": 85.8,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218163",
+    "updated_at": "2026-04-02T17:37:15.218164"
   },
   {
     "date": "2026-04-02",
@@ -591,50 +617,24 @@
     "team_abbr": "SAS",
     "stat": "ra",
     "line": 12.5,
-    "confidence": 85.8,
+    "confidence": 85.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193726",
-    "updated_at": "2026-04-02T17:07:09.193727"
+    "created_at": "2026-04-02T17:37:15.218165",
+    "updated_at": "2026-04-02T17:37:15.218166"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1631105,
-    "player_name": "Jalen Duren",
-    "team_abbr": "DET",
+    "player_id": 201935,
+    "player_name": "James Harden",
+    "team_abbr": "CLE",
     "stat": "ra",
-    "line": 11.5,
-    "confidence": 85.3,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193727",
-    "updated_at": "2026-04-02T17:07:09.193727"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1629028,
-    "player_name": "Deandre Ayton",
-    "team_abbr": "LAL",
-    "stat": "ra",
-    "line": 6.5,
-    "confidence": 84.5,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193728",
-    "updated_at": "2026-04-02T17:07:09.193728"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1642450,
-    "player_name": "Daniss Jenkins",
-    "team_abbr": "DET",
-    "stat": "ra",
-    "line": 9.5,
+    "line": 10.5,
     "confidence": 84.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193728",
-    "updated_at": "2026-04-02T17:07:09.193729"
+    "created_at": "2026-04-02T17:37:15.218167",
+    "updated_at": "2026-04-02T17:37:15.218168"
   },
   {
     "date": "2026-04-02",
@@ -643,11 +643,11 @@
     "team_abbr": "LAL",
     "stat": "ra",
     "line": 7.5,
-    "confidence": 83.8,
+    "confidence": 83.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193729",
-    "updated_at": "2026-04-02T17:07:09.193729"
+    "created_at": "2026-04-02T17:37:15.218169",
+    "updated_at": "2026-04-02T17:37:15.218170"
   },
   {
     "date": "2026-04-02",
@@ -659,21 +659,8 @@
     "confidence": 98.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193730",
-    "updated_at": "2026-04-02T17:07:09.193730"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1629632,
-    "player_name": "Coby White",
-    "team_abbr": "CHA",
-    "stat": "pr",
-    "line": 11.5,
-    "confidence": 94.9,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193730",
-    "updated_at": "2026-04-02T17:07:09.193730"
+    "created_at": "2026-04-02T17:37:15.218171",
+    "updated_at": "2026-04-02T17:37:15.218172"
   },
   {
     "date": "2026-04-02",
@@ -685,34 +672,8 @@
     "confidence": 94.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193731",
-    "updated_at": "2026-04-02T17:07:09.193731"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1630163,
-    "player_name": "LaMelo Ball",
-    "team_abbr": "CHA",
-    "stat": "pr",
-    "line": 19.5,
-    "confidence": 94.7,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193731",
-    "updated_at": "2026-04-02T17:07:09.193732"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1642264,
-    "player_name": "Stephon Castle",
-    "team_abbr": "SAS",
-    "stat": "pr",
-    "line": 14.5,
-    "confidence": 94.7,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193732",
-    "updated_at": "2026-04-02T17:07:09.193732"
+    "created_at": "2026-04-02T17:37:15.218173",
+    "updated_at": "2026-04-02T17:37:15.218174"
   },
   {
     "date": "2026-04-02",
@@ -724,8 +685,8 @@
     "confidence": 94.3,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193733",
-    "updated_at": "2026-04-02T17:07:09.193733"
+    "created_at": "2026-04-02T17:37:15.218175",
+    "updated_at": "2026-04-02T17:37:15.218176"
   },
   {
     "date": "2026-04-02",
@@ -737,21 +698,8 @@
     "confidence": 93.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193733",
-    "updated_at": "2026-04-02T17:07:09.193734"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1626220,
-    "player_name": "Royce O'Neale",
-    "team_abbr": "PHX",
-    "stat": "pr",
-    "line": 7.5,
-    "confidence": 93.1,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193734",
-    "updated_at": "2026-04-02T17:07:09.193734"
+    "created_at": "2026-04-02T17:37:15.218176",
+    "updated_at": "2026-04-02T17:37:15.218177"
   },
   {
     "date": "2026-04-02",
@@ -760,24 +708,24 @@
     "team_abbr": "LAL",
     "stat": "pr",
     "line": 37.5,
-    "confidence": 92.8,
+    "confidence": 92.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193735",
-    "updated_at": "2026-04-02T17:07:09.193735"
+    "created_at": "2026-04-02T17:37:15.218178",
+    "updated_at": "2026-04-02T17:37:15.218179"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1629632,
-    "player_name": "Coby White",
+    "player_id": 1630163,
+    "player_name": "LaMelo Ball",
     "team_abbr": "CHA",
     "stat": "pr",
-    "line": 14.5,
+    "line": 19.5,
     "confidence": 92.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193735",
-    "updated_at": "2026-04-02T17:07:09.193736"
+    "created_at": "2026-04-02T17:37:15.218180",
+    "updated_at": "2026-04-02T17:37:15.218181"
   },
   {
     "date": "2026-04-02",
@@ -789,34 +737,47 @@
     "confidence": 90.9,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193736",
-    "updated_at": "2026-04-02T17:07:09.193736"
+    "created_at": "2026-04-02T17:37:15.218185",
+    "updated_at": "2026-04-02T17:37:15.218186"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1626164,
-    "player_name": "Devin Booker",
+    "player_id": 1626220,
+    "player_name": "Royce O'Neale",
     "team_abbr": "PHX",
     "stat": "pr",
-    "line": 24.5,
-    "confidence": 90.4,
+    "line": 7.5,
+    "confidence": 90.8,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193736",
-    "updated_at": "2026-04-02T17:07:09.193737"
+    "created_at": "2026-04-02T17:37:15.218187",
+    "updated_at": "2026-04-02T17:37:15.218187"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1626164,
-    "player_name": "Devin Booker",
+    "player_id": 1630224,
+    "player_name": "Jalen Green",
     "team_abbr": "PHX",
     "stat": "pr",
-    "line": 23.5,
-    "confidence": 90.4,
+    "line": 19.5,
+    "confidence": 90.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193737",
-    "updated_at": "2026-04-02T17:07:09.193737"
+    "created_at": "2026-04-02T17:37:15.218188",
+    "updated_at": "2026-04-02T17:37:15.218189"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1630224,
+    "player_name": "Jalen Green",
+    "team_abbr": "PHX",
+    "stat": "pr",
+    "line": 18.5,
+    "confidence": 90.5,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218190",
+    "updated_at": "2026-04-02T17:37:15.218191"
   },
   {
     "date": "2026-04-02",
@@ -828,8 +789,8 @@
     "confidence": 90.3,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193738",
-    "updated_at": "2026-04-02T17:07:09.193738"
+    "created_at": "2026-04-02T17:37:15.218192",
+    "updated_at": "2026-04-02T17:37:15.218193"
   },
   {
     "date": "2026-04-02",
@@ -841,8 +802,8 @@
     "confidence": 89.9,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193738",
-    "updated_at": "2026-04-02T17:07:09.193739"
+    "created_at": "2026-04-02T17:37:15.218194",
+    "updated_at": "2026-04-02T17:37:15.218195"
   },
   {
     "date": "2026-04-02",
@@ -851,11 +812,11 @@
     "team_abbr": "DET",
     "stat": "pr",
     "line": 11.5,
-    "confidence": 89.4,
+    "confidence": 89.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193739",
-    "updated_at": "2026-04-02T17:07:09.193739"
+    "created_at": "2026-04-02T17:37:15.218196",
+    "updated_at": "2026-04-02T17:37:15.218197"
   },
   {
     "date": "2026-04-02",
@@ -864,50 +825,11 @@
     "team_abbr": "LAL",
     "stat": "pr",
     "line": 19.5,
-    "confidence": 89.0,
+    "confidence": 88.9,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193739",
-    "updated_at": "2026-04-02T17:07:09.193740"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1641764,
-    "player_name": "Brandin Podziemski",
-    "team_abbr": "GSW",
-    "stat": "pr",
-    "line": 19.5,
-    "confidence": 88.4,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193740",
-    "updated_at": "2026-04-02T17:07:09.193740"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 202699,
-    "player_name": "Tobias Harris",
-    "team_abbr": "DET",
-    "stat": "pr",
-    "line": 14.5,
-    "confidence": 88.3,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193741",
-    "updated_at": "2026-04-02T17:07:09.193741"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1628970,
-    "player_name": "Miles Bridges",
-    "team_abbr": "CHA",
-    "stat": "pr",
-    "line": 14.5,
-    "confidence": 88.3,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193741",
-    "updated_at": "2026-04-02T17:07:09.193742"
+    "created_at": "2026-04-02T17:37:15.218198",
+    "updated_at": "2026-04-02T17:37:15.218199"
   },
   {
     "date": "2026-04-02",
@@ -919,21 +841,8 @@
     "confidence": 88.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193742",
-    "updated_at": "2026-04-02T17:07:09.193742"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1642450,
-    "player_name": "Daniss Jenkins",
-    "team_abbr": "DET",
-    "stat": "pr",
-    "line": 14.5,
-    "confidence": 88.0,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193743",
-    "updated_at": "2026-04-02T17:07:09.193743"
+    "created_at": "2026-04-02T17:37:15.218200",
+    "updated_at": "2026-04-02T17:37:15.218201"
   },
   {
     "date": "2026-04-02",
@@ -945,8 +854,47 @@
     "confidence": 87.8,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193743",
-    "updated_at": "2026-04-02T17:07:09.193743"
+    "created_at": "2026-04-02T17:37:15.218203",
+    "updated_at": "2026-04-02T17:37:15.218204"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1630224,
+    "player_name": "Jalen Green",
+    "team_abbr": "PHX",
+    "stat": "pr",
+    "line": 14.5,
+    "confidence": 87.7,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218205",
+    "updated_at": "2026-04-02T17:37:15.218206"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1629640,
+    "player_name": "Keldon Johnson",
+    "team_abbr": "SAS",
+    "stat": "pr",
+    "line": 14.5,
+    "confidence": 87.6,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218208",
+    "updated_at": "2026-04-02T17:37:15.218209"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1629640,
+    "player_name": "Keldon Johnson",
+    "team_abbr": "SAS",
+    "stat": "pr",
+    "line": 15.5,
+    "confidence": 87.0,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218214",
+    "updated_at": "2026-04-02T17:37:15.218216"
   },
   {
     "date": "2026-04-02",
@@ -955,24 +903,76 @@
     "team_abbr": "SAS",
     "stat": "pr",
     "line": 11.5,
-    "confidence": 87.1,
+    "confidence": 87.0,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193744",
-    "updated_at": "2026-04-02T17:07:09.193744"
+    "created_at": "2026-04-02T17:37:15.218217",
+    "updated_at": "2026-04-02T17:37:15.218218"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1629028,
-    "player_name": "Deandre Ayton",
-    "team_abbr": "LAL",
+    "player_id": 1642264,
+    "player_name": "Stephon Castle",
+    "team_abbr": "SAS",
     "stat": "pr",
     "line": 14.5,
-    "confidence": 86.9,
+    "confidence": 86.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193744",
-    "updated_at": "2026-04-02T17:07:09.193745"
+    "created_at": "2026-04-02T17:37:15.218220",
+    "updated_at": "2026-04-02T17:37:15.218221"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1628970,
+    "player_name": "Miles Bridges",
+    "team_abbr": "CHA",
+    "stat": "pr",
+    "line": 14.5,
+    "confidence": 86.0,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218223",
+    "updated_at": "2026-04-02T17:37:15.218223"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 202699,
+    "player_name": "Tobias Harris",
+    "team_abbr": "DET",
+    "stat": "pr",
+    "line": 14.5,
+    "confidence": 85.8,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218225",
+    "updated_at": "2026-04-02T17:37:15.218225"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 2544,
+    "player_name": "LeBron James",
+    "team_abbr": "LAL",
+    "stat": "pr",
+    "line": 19.5,
+    "confidence": 84.8,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218227",
+    "updated_at": "2026-04-02T17:37:15.218228"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1629637,
+    "player_name": "Jaxson Hayes",
+    "team_abbr": "LAL",
+    "stat": "pr",
+    "line": 7.5,
+    "confidence": 84.5,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218228",
+    "updated_at": "2026-04-02T17:37:15.218229"
   },
   {
     "date": "2026-04-02",
@@ -984,8 +984,8 @@
     "confidence": 97.3,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193745",
-    "updated_at": "2026-04-02T17:07:09.193745"
+    "created_at": "2026-04-02T17:37:15.218231",
+    "updated_at": "2026-04-02T17:37:15.218232"
   },
   {
     "date": "2026-04-02",
@@ -994,50 +994,63 @@
     "team_abbr": "LAL",
     "stat": "pra",
     "line": 39.5,
-    "confidence": 95.2,
+    "confidence": 95.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193746",
-    "updated_at": "2026-04-02T17:07:09.193746"
+    "created_at": "2026-04-02T17:37:15.218233",
+    "updated_at": "2026-04-02T17:37:15.218234"
   },
   {
     "date": "2026-04-02",
-    "player_id": 2544,
-    "player_name": "LeBron James",
-    "team_abbr": "LAL",
+    "player_id": 201935,
+    "player_name": "James Harden",
+    "team_abbr": "CLE",
     "stat": "pra",
-    "line": 24.5,
+    "line": 28.5,
+    "confidence": 94.1,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218235",
+    "updated_at": "2026-04-02T17:37:15.218236"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1631097,
+    "player_name": "Bennedict Mathurin",
+    "team_abbr": "LAC",
+    "stat": "pra",
+    "line": 19.5,
     "confidence": 94.0,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193746",
-    "updated_at": "2026-04-02T17:07:09.193747"
+    "created_at": "2026-04-02T17:37:15.218237",
+    "updated_at": "2026-04-02T17:37:15.218238"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1630163,
-    "player_name": "LaMelo Ball",
-    "team_abbr": "CHA",
+    "player_id": 201935,
+    "player_name": "James Harden",
+    "team_abbr": "CLE",
     "stat": "pra",
-    "line": 24.5,
+    "line": 29.5,
     "confidence": 93.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193747",
-    "updated_at": "2026-04-02T17:07:09.193747"
+    "created_at": "2026-04-02T17:37:15.218239",
+    "updated_at": "2026-04-02T17:37:15.218240"
   },
   {
     "date": "2026-04-02",
-    "player_id": 203110,
-    "player_name": "Draymond Green",
-    "team_abbr": "GSW",
+    "player_id": 1631097,
+    "player_name": "Bennedict Mathurin",
+    "team_abbr": "LAC",
     "stat": "pra",
-    "line": 14.5,
+    "line": 20.5,
     "confidence": 93.4,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193747",
-    "updated_at": "2026-04-02T17:07:09.193748"
+    "created_at": "2026-04-02T17:37:15.218241",
+    "updated_at": "2026-04-02T17:37:15.218242"
   },
   {
     "date": "2026-04-02",
@@ -1049,47 +1062,21 @@
     "confidence": 93.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193748",
-    "updated_at": "2026-04-02T17:07:09.193748"
+    "created_at": "2026-04-02T17:37:15.218243",
+    "updated_at": "2026-04-02T17:37:15.218244"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1642264,
-    "player_name": "Stephon Castle",
-    "team_abbr": "SAS",
+    "player_id": 201935,
+    "player_name": "James Harden",
+    "team_abbr": "CLE",
     "stat": "pra",
-    "line": 24.5,
-    "confidence": 93.1,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193749",
-    "updated_at": "2026-04-02T17:07:09.193749"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1642264,
-    "player_name": "Stephon Castle",
-    "team_abbr": "SAS",
-    "stat": "pra",
-    "line": 25.5,
-    "confidence": 92.9,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193749",
-    "updated_at": "2026-04-02T17:07:09.193750"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1629130,
-    "player_name": "Duncan Robinson",
-    "team_abbr": "DET",
-    "stat": "pra",
-    "line": 13.5,
+    "line": 32.0,
     "confidence": 92.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193750",
-    "updated_at": "2026-04-02T17:07:09.193750"
+    "created_at": "2026-04-02T17:37:15.218245",
+    "updated_at": "2026-04-02T17:37:15.218246"
   },
   {
     "date": "2026-04-02",
@@ -1101,21 +1088,34 @@
     "confidence": 92.3,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193751",
-    "updated_at": "2026-04-02T17:07:09.193751"
+    "created_at": "2026-04-02T17:37:15.218247",
+    "updated_at": "2026-04-02T17:37:15.218248"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1642264,
-    "player_name": "Stephon Castle",
-    "team_abbr": "SAS",
+    "player_id": 1629130,
+    "player_name": "Duncan Robinson",
+    "team_abbr": "DET",
     "stat": "pra",
-    "line": 26.5,
+    "line": 13.5,
     "confidence": 92.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193751",
-    "updated_at": "2026-04-02T17:07:09.193751"
+    "created_at": "2026-04-02T17:37:15.218249",
+    "updated_at": "2026-04-02T17:37:15.218250"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1628960,
+    "player_name": "Grayson Allen",
+    "team_abbr": "PHX",
+    "stat": "pra",
+    "line": 15.5,
+    "confidence": 92.2,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218251",
+    "updated_at": "2026-04-02T17:37:15.218251"
   },
   {
     "date": "2026-04-02",
@@ -1124,11 +1124,76 @@
     "team_abbr": "LAL",
     "stat": "pra",
     "line": 24.5,
-    "confidence": 91.2,
+    "confidence": 91.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193752",
-    "updated_at": "2026-04-02T17:07:09.193752"
+    "created_at": "2026-04-02T17:37:15.218252",
+    "updated_at": "2026-04-02T17:37:15.218253"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1630163,
+    "player_name": "LaMelo Ball",
+    "team_abbr": "CHA",
+    "stat": "pra",
+    "line": 24.5,
+    "confidence": 91.0,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218254",
+    "updated_at": "2026-04-02T17:37:15.218255"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1630224,
+    "player_name": "Jalen Green",
+    "team_abbr": "PHX",
+    "stat": "pra",
+    "line": 24.5,
+    "confidence": 90.5,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218256",
+    "updated_at": "2026-04-02T17:37:15.218257"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1630224,
+    "player_name": "Jalen Green",
+    "team_abbr": "PHX",
+    "stat": "pra",
+    "line": 22.5,
+    "confidence": 90.5,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218258",
+    "updated_at": "2026-04-02T17:37:15.218259"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1630224,
+    "player_name": "Jalen Green",
+    "team_abbr": "PHX",
+    "stat": "pra",
+    "line": 20.5,
+    "confidence": 90.5,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218260",
+    "updated_at": "2026-04-02T17:37:15.218261"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1630224,
+    "player_name": "Jalen Green",
+    "team_abbr": "PHX",
+    "stat": "pra",
+    "line": 19.5,
+    "confidence": 90.5,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218262",
+    "updated_at": "2026-04-02T17:37:15.218263"
   },
   {
     "date": "2026-04-02",
@@ -1137,37 +1202,11 @@
     "team_abbr": "SAS",
     "stat": "pra",
     "line": 14.5,
-    "confidence": 90.1,
+    "confidence": 90.0,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193752",
-    "updated_at": "2026-04-02T17:07:09.193753"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1628989,
-    "player_name": "Kevin Huerter",
-    "team_abbr": "DET",
-    "stat": "pra",
-    "line": 10.5,
-    "confidence": 89.4,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193753",
-    "updated_at": "2026-04-02T17:07:09.193753"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1628989,
-    "player_name": "Kevin Huerter",
-    "team_abbr": "DET",
-    "stat": "pra",
-    "line": 9.5,
-    "confidence": 89.4,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193754",
-    "updated_at": "2026-04-02T17:07:09.193754"
+    "created_at": "2026-04-02T17:37:15.218264",
+    "updated_at": "2026-04-02T17:37:15.218265"
   },
   {
     "date": "2026-04-02",
@@ -1176,11 +1215,24 @@
     "team_abbr": "SAS",
     "stat": "pra",
     "line": 15.5,
-    "confidence": 89.1,
+    "confidence": 89.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193754",
-    "updated_at": "2026-04-02T17:07:09.193754"
+    "created_at": "2026-04-02T17:37:15.218266",
+    "updated_at": "2026-04-02T17:37:15.218266"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 203110,
+    "player_name": "Draymond Green",
+    "team_abbr": "GSW",
+    "stat": "pra",
+    "line": 14.5,
+    "confidence": 89.3,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218268",
+    "updated_at": "2026-04-02T17:37:15.218268"
   },
   {
     "date": "2026-04-02",
@@ -1192,8 +1244,8 @@
     "confidence": 88.4,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193755",
-    "updated_at": "2026-04-02T17:07:09.193755"
+    "created_at": "2026-04-02T17:37:15.218269",
+    "updated_at": "2026-04-02T17:37:15.218270"
   },
   {
     "date": "2026-04-02",
@@ -1202,24 +1254,24 @@
     "team_abbr": "LAL",
     "stat": "pra",
     "line": 25.5,
-    "confidence": 88.1,
+    "confidence": 88.0,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193755",
-    "updated_at": "2026-04-02T17:07:09.193756"
+    "created_at": "2026-04-02T17:37:15.218271",
+    "updated_at": "2026-04-02T17:37:15.218272"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1628970,
-    "player_name": "Miles Bridges",
-    "team_abbr": "CHA",
+    "player_id": 1629640,
+    "player_name": "Keldon Johnson",
+    "team_abbr": "SAS",
     "stat": "pra",
-    "line": 17.5,
-    "confidence": 87.9,
+    "line": 15.5,
+    "confidence": 87.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193756",
-    "updated_at": "2026-04-02T17:07:09.193756"
+    "created_at": "2026-04-02T17:37:15.218273",
+    "updated_at": "2026-04-02T17:37:15.218274"
   },
   {
     "date": "2026-04-02",
@@ -1228,76 +1280,24 @@
     "team_abbr": "LAL",
     "stat": "pra",
     "line": 26.5,
-    "confidence": 87.2,
+    "confidence": 87.4,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193757",
-    "updated_at": "2026-04-02T17:07:09.193757"
+    "created_at": "2026-04-02T17:37:15.218275",
+    "updated_at": "2026-04-02T17:37:15.218276"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1629028,
-    "player_name": "Deandre Ayton",
-    "team_abbr": "LAL",
+    "player_id": 1629640,
+    "player_name": "Keldon Johnson",
+    "team_abbr": "SAS",
     "stat": "pra",
-    "line": 14.5,
-    "confidence": 87.2,
+    "line": 16.5,
+    "confidence": 87.0,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193757",
-    "updated_at": "2026-04-02T17:07:09.193758"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1629028,
-    "player_name": "Deandre Ayton",
-    "team_abbr": "LAL",
-    "stat": "pra",
-    "line": 15.5,
-    "confidence": 86.9,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193758",
-    "updated_at": "2026-04-02T17:07:09.193758"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 202699,
-    "player_name": "Tobias Harris",
-    "team_abbr": "DET",
-    "stat": "pra",
-    "line": 19.5,
-    "confidence": 86.5,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193758",
-    "updated_at": "2026-04-02T17:07:09.193759"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1630180,
-    "player_name": "Saddiq Bey",
-    "team_abbr": "NOP",
-    "stat": "pra",
-    "line": 19.5,
-    "confidence": 86.2,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193759",
-    "updated_at": "2026-04-02T17:07:09.193759"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 202699,
-    "player_name": "Tobias Harris",
-    "team_abbr": "DET",
-    "stat": "pra",
-    "line": 20.5,
-    "confidence": 86.0,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193760",
-    "updated_at": "2026-04-02T17:07:09.193760"
+    "created_at": "2026-04-02T17:37:15.218279",
+    "updated_at": "2026-04-02T17:37:15.218280"
   },
   {
     "date": "2026-04-02",
@@ -1306,11 +1306,11 @@
     "team_abbr": "LAL",
     "stat": "pts",
     "line": 11.5,
-    "confidence": 96.2,
+    "confidence": 96.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193760",
-    "updated_at": "2026-04-02T17:07:09.193761"
+    "created_at": "2026-04-02T17:37:15.218282",
+    "updated_at": "2026-04-02T17:37:15.218283"
   },
   {
     "date": "2026-04-02",
@@ -1322,21 +1322,8 @@
     "confidence": 95.4,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193761",
-    "updated_at": "2026-04-02T17:07:09.193761"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1626220,
-    "player_name": "Royce O'Neale",
-    "team_abbr": "PHX",
-    "stat": "pts",
-    "line": 4.5,
-    "confidence": 95.0,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193762",
-    "updated_at": "2026-04-02T17:07:09.193762"
+    "created_at": "2026-04-02T17:37:15.218284",
+    "updated_at": "2026-04-02T17:37:15.218285"
   },
   {
     "date": "2026-04-02",
@@ -1348,60 +1335,21 @@
     "confidence": 94.9,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193762",
-    "updated_at": "2026-04-02T17:07:09.193762"
+    "created_at": "2026-04-02T17:37:15.218286",
+    "updated_at": "2026-04-02T17:37:15.218287"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1629632,
-    "player_name": "Coby White",
-    "team_abbr": "CHA",
-    "stat": "pts",
-    "line": 9.5,
-    "confidence": 94.6,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193763",
-    "updated_at": "2026-04-02T17:07:09.193763"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1642264,
-    "player_name": "Stephon Castle",
-    "team_abbr": "SAS",
+    "player_id": 1631097,
+    "player_name": "Bennedict Mathurin",
+    "team_abbr": "LAC",
     "stat": "pts",
     "line": 12.5,
     "confidence": 94.3,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193763",
-    "updated_at": "2026-04-02T17:07:09.193764"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1642264,
-    "player_name": "Stephon Castle",
-    "team_abbr": "SAS",
-    "stat": "pts",
-    "line": 11.5,
-    "confidence": 94.3,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193764",
-    "updated_at": "2026-04-02T17:07:09.193764"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1629640,
-    "player_name": "Keldon Johnson",
-    "team_abbr": "SAS",
-    "stat": "pts",
-    "line": 7.5,
-    "confidence": 94.3,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193765",
-    "updated_at": "2026-04-02T17:07:09.193765"
+    "created_at": "2026-04-02T17:37:15.218288",
+    "updated_at": "2026-04-02T17:37:15.218288"
   },
   {
     "date": "2026-04-02",
@@ -1413,8 +1361,8 @@
     "confidence": 93.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193765",
-    "updated_at": "2026-04-02T17:07:09.193765"
+    "created_at": "2026-04-02T17:37:15.218289",
+    "updated_at": "2026-04-02T17:37:15.218290"
   },
   {
     "date": "2026-04-02",
@@ -1426,8 +1374,8 @@
     "confidence": 93.0,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193766",
-    "updated_at": "2026-04-02T17:07:09.193766"
+    "created_at": "2026-04-02T17:37:15.218291",
+    "updated_at": "2026-04-02T17:37:15.218292"
   },
   {
     "date": "2026-04-02",
@@ -1436,11 +1384,24 @@
     "team_abbr": "LAL",
     "stat": "pts",
     "line": 29.5,
-    "confidence": 92.8,
+    "confidence": 92.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193766",
-    "updated_at": "2026-04-02T17:07:09.193767"
+    "created_at": "2026-04-02T17:37:15.218293",
+    "updated_at": "2026-04-02T17:37:15.218295"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1628960,
+    "player_name": "Grayson Allen",
+    "team_abbr": "PHX",
+    "stat": "pts",
+    "line": 10.5,
+    "confidence": 92.5,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218296",
+    "updated_at": "2026-04-02T17:37:15.218296"
   },
   {
     "date": "2026-04-02",
@@ -1452,8 +1413,21 @@
     "confidence": 92.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193767",
-    "updated_at": "2026-04-02T17:07:09.193767"
+    "created_at": "2026-04-02T17:37:15.218297",
+    "updated_at": "2026-04-02T17:37:15.218298"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1628960,
+    "player_name": "Grayson Allen",
+    "team_abbr": "PHX",
+    "stat": "pts",
+    "line": 11.5,
+    "confidence": 92.0,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218299",
+    "updated_at": "2026-04-02T17:37:15.218300"
   },
   {
     "date": "2026-04-02",
@@ -1465,8 +1439,21 @@
     "confidence": 91.8,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193768",
-    "updated_at": "2026-04-02T17:07:09.193768"
+    "created_at": "2026-04-02T17:37:15.218301",
+    "updated_at": "2026-04-02T17:37:15.218302"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1629640,
+    "player_name": "Keldon Johnson",
+    "team_abbr": "SAS",
+    "stat": "pts",
+    "line": 7.5,
+    "confidence": 91.8,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218303",
+    "updated_at": "2026-04-02T17:37:15.218304"
   },
   {
     "date": "2026-04-02",
@@ -1475,11 +1462,11 @@
     "team_abbr": "DET",
     "stat": "pts",
     "line": 5.5,
-    "confidence": 91.7,
+    "confidence": 91.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193768",
-    "updated_at": "2026-04-02T17:07:09.193768"
+    "created_at": "2026-04-02T17:37:15.218305",
+    "updated_at": "2026-04-02T17:37:15.218306"
   },
   {
     "date": "2026-04-02",
@@ -1488,11 +1475,11 @@
     "team_abbr": "DET",
     "stat": "pts",
     "line": 4.5,
-    "confidence": 91.7,
+    "confidence": 91.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193769",
-    "updated_at": "2026-04-02T17:07:09.193769"
+    "created_at": "2026-04-02T17:37:15.218307",
+    "updated_at": "2026-04-02T17:37:15.218307"
   },
   {
     "date": "2026-04-02",
@@ -1504,60 +1491,8 @@
     "confidence": 91.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193769",
-    "updated_at": "2026-04-02T17:07:09.193770"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1642264,
-    "player_name": "Stephon Castle",
-    "team_abbr": "SAS",
-    "stat": "pts",
-    "line": 14.5,
-    "confidence": 91.5,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193770",
-    "updated_at": "2026-04-02T17:07:09.193770"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1628989,
-    "player_name": "Kevin Huerter",
-    "team_abbr": "DET",
-    "stat": "pts",
-    "line": 6.5,
-    "confidence": 91.4,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193771",
-    "updated_at": "2026-04-02T17:07:09.193771"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1629028,
-    "player_name": "Deandre Ayton",
-    "team_abbr": "LAL",
-    "stat": "pts",
-    "line": 5.5,
-    "confidence": 91.3,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193771",
-    "updated_at": "2026-04-02T17:07:09.193772"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1629130,
-    "player_name": "Duncan Robinson",
-    "team_abbr": "DET",
-    "stat": "pts",
-    "line": 8.5,
-    "confidence": 91.2,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193772",
-    "updated_at": "2026-04-02T17:07:09.193772"
+    "created_at": "2026-04-02T17:37:15.218309",
+    "updated_at": "2026-04-02T17:37:15.218309"
   },
   {
     "date": "2026-04-02",
@@ -1569,8 +1504,8 @@
     "confidence": 91.0,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193773",
-    "updated_at": "2026-04-02T17:07:09.193773"
+    "created_at": "2026-04-02T17:37:15.218310",
+    "updated_at": "2026-04-02T17:37:15.218311"
   },
   {
     "date": "2026-04-02",
@@ -1582,34 +1517,99 @@
     "confidence": 90.8,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193773",
-    "updated_at": "2026-04-02T17:07:09.193773"
+    "created_at": "2026-04-02T17:37:15.218312",
+    "updated_at": "2026-04-02T17:37:15.218313"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1641764,
-    "player_name": "Brandin Podziemski",
-    "team_abbr": "GSW",
+    "player_id": 1630224,
+    "player_name": "Jalen Green",
+    "team_abbr": "PHX",
     "stat": "pts",
-    "line": 11.5,
-    "confidence": 90.3,
+    "line": 14.5,
+    "confidence": 90.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193774",
-    "updated_at": "2026-04-02T17:07:09.193774"
+    "created_at": "2026-04-02T17:37:15.218314",
+    "updated_at": "2026-04-02T17:37:15.218315"
   },
   {
     "date": "2026-04-02",
-    "player_id": 203110,
-    "player_name": "Draymond Green",
-    "team_abbr": "GSW",
+    "player_id": 1630224,
+    "player_name": "Jalen Green",
+    "team_abbr": "PHX",
+    "stat": "pts",
+    "line": 13.5,
+    "confidence": 90.5,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218316",
+    "updated_at": "2026-04-02T17:37:15.218317"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1629028,
+    "player_name": "Deandre Ayton",
+    "team_abbr": "LAL",
     "stat": "pts",
     "line": 5.5,
-    "confidence": 90.1,
+    "confidence": 90.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193774",
-    "updated_at": "2026-04-02T17:07:09.193775"
+    "created_at": "2026-04-02T17:37:15.218318",
+    "updated_at": "2026-04-02T17:37:15.218319"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1629130,
+    "player_name": "Duncan Robinson",
+    "team_abbr": "DET",
+    "stat": "pts",
+    "line": 8.5,
+    "confidence": 90.4,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218320",
+    "updated_at": "2026-04-02T17:37:15.218320"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1630163,
+    "player_name": "LaMelo Ball",
+    "team_abbr": "CHA",
+    "stat": "pts",
+    "line": 16.5,
+    "confidence": 90.2,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218321",
+    "updated_at": "2026-04-02T17:37:15.218322"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1630224,
+    "player_name": "Jalen Green",
+    "team_abbr": "PHX",
+    "stat": "pts",
+    "line": 16.5,
+    "confidence": 90.0,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218323",
+    "updated_at": "2026-04-02T17:37:15.218324"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1629029,
+    "player_name": "Luka Don\u010di\u0107",
+    "team_abbr": "LAL",
+    "stat": "pts",
+    "line": 30.5,
+    "confidence": 89.2,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218325",
+    "updated_at": "2026-04-02T17:37:15.218326"
   },
   {
     "date": "2026-04-02",
@@ -1618,11 +1618,11 @@
     "team_abbr": "LAC",
     "stat": "pts",
     "line": 4.5,
-    "confidence": 90.1,
+    "confidence": 89.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193775",
-    "updated_at": "2026-04-02T17:07:09.193775"
+    "created_at": "2026-04-02T17:37:15.218327",
+    "updated_at": "2026-04-02T17:37:15.218328"
   },
   {
     "date": "2026-04-02",
@@ -1631,11 +1631,24 @@
     "team_abbr": "LAL",
     "stat": "ast",
     "line": 3.5,
-    "confidence": 95.4,
+    "confidence": 95.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193776",
-    "updated_at": "2026-04-02T17:07:09.193776"
+    "created_at": "2026-04-02T17:37:15.218329",
+    "updated_at": "2026-04-02T17:37:15.218330"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 201935,
+    "player_name": "James Harden",
+    "team_abbr": "CLE",
+    "stat": "ast",
+    "line": 6.5,
+    "confidence": 92.0,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218331",
+    "updated_at": "2026-04-02T17:37:15.218331"
   },
   {
     "date": "2026-04-02",
@@ -1647,8 +1660,8 @@
     "confidence": 90.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193776",
-    "updated_at": "2026-04-02T17:07:09.193776"
+    "created_at": "2026-04-02T17:37:15.218332",
+    "updated_at": "2026-04-02T17:37:15.218333"
   },
   {
     "date": "2026-04-02",
@@ -1660,34 +1673,8 @@
     "confidence": 89.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193777",
-    "updated_at": "2026-04-02T17:07:09.193777"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1642264,
-    "player_name": "Stephon Castle",
-    "team_abbr": "SAS",
-    "stat": "ast",
-    "line": 5.5,
-    "confidence": 89.4,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193777",
-    "updated_at": "2026-04-02T17:07:09.193778"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 2544,
-    "player_name": "LeBron James",
-    "team_abbr": "LAL",
-    "stat": "ast",
-    "line": 4.5,
-    "confidence": 89.3,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193778",
-    "updated_at": "2026-04-02T17:07:09.193778"
+    "created_at": "2026-04-02T17:37:15.218334",
+    "updated_at": "2026-04-02T17:37:15.218335"
   },
   {
     "date": "2026-04-02",
@@ -1699,8 +1686,8 @@
     "confidence": 88.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193779",
-    "updated_at": "2026-04-02T17:07:09.193779"
+    "created_at": "2026-04-02T17:37:15.218336",
+    "updated_at": "2026-04-02T17:37:15.218337"
   },
   {
     "date": "2026-04-02",
@@ -1712,8 +1699,34 @@
     "confidence": 87.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193779",
-    "updated_at": "2026-04-02T17:07:09.193780"
+    "created_at": "2026-04-02T17:37:15.218338",
+    "updated_at": "2026-04-02T17:37:15.218339"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1642264,
+    "player_name": "Stephon Castle",
+    "team_abbr": "SAS",
+    "stat": "ast",
+    "line": 5.5,
+    "confidence": 86.5,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218340",
+    "updated_at": "2026-04-02T17:37:15.218341"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1630559,
+    "player_name": "Austin Reaves",
+    "team_abbr": "LAL",
+    "stat": "ast",
+    "line": 4.5,
+    "confidence": 85.8,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218342",
+    "updated_at": "2026-04-02T17:37:15.218342"
   },
   {
     "date": "2026-04-02",
@@ -1725,8 +1738,8 @@
     "confidence": 85.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193780",
-    "updated_at": "2026-04-02T17:07:09.193780"
+    "created_at": "2026-04-02T17:37:15.218344",
+    "updated_at": "2026-04-02T17:37:15.218344"
   },
   {
     "date": "2026-04-02",
@@ -1738,21 +1751,8 @@
     "confidence": 85.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193781",
-    "updated_at": "2026-04-02T17:07:09.193781"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1629130,
-    "player_name": "Duncan Robinson",
-    "team_abbr": "DET",
-    "stat": "ast",
-    "line": 1.5,
-    "confidence": 84.1,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193781",
-    "updated_at": "2026-04-02T17:07:09.193781"
+    "created_at": "2026-04-02T17:37:15.218346",
+    "updated_at": "2026-04-02T17:37:15.218346"
   },
   {
     "date": "2026-04-02",
@@ -1764,8 +1764,8 @@
     "confidence": 83.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193782",
-    "updated_at": "2026-04-02T17:07:09.193782"
+    "created_at": "2026-04-02T17:37:15.218347",
+    "updated_at": "2026-04-02T17:37:15.218348"
   },
   {
     "date": "2026-04-02",
@@ -1777,8 +1777,8 @@
     "confidence": 82.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193782",
-    "updated_at": "2026-04-02T17:07:09.193783"
+    "created_at": "2026-04-02T17:37:15.218349",
+    "updated_at": "2026-04-02T17:37:15.218350"
   },
   {
     "date": "2026-04-02",
@@ -1790,21 +1790,21 @@
     "confidence": 82.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193783",
-    "updated_at": "2026-04-02T17:07:09.193783"
+    "created_at": "2026-04-02T17:37:15.218351",
+    "updated_at": "2026-04-02T17:37:15.218352"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1630596,
-    "player_name": "Evan Mobley",
-    "team_abbr": "CLE",
+    "player_id": 1629640,
+    "player_name": "Keldon Johnson",
+    "team_abbr": "SAS",
     "stat": "ast",
-    "line": 2.5,
-    "confidence": 82.3,
+    "line": 0.5,
+    "confidence": 82.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193784",
-    "updated_at": "2026-04-02T17:07:09.193784"
+    "created_at": "2026-04-02T17:37:15.218353",
+    "updated_at": "2026-04-02T17:37:15.218354"
   },
   {
     "date": "2026-04-02",
@@ -1816,47 +1816,21 @@
     "confidence": 82.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193784",
-    "updated_at": "2026-04-02T17:07:09.193784"
+    "created_at": "2026-04-02T17:37:15.218355",
+    "updated_at": "2026-04-02T17:37:15.218356"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1628379,
-    "player_name": "Luke Kennard",
-    "team_abbr": "LAL",
-    "stat": "ast",
-    "line": 0.5,
-    "confidence": 81.8,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193785",
-    "updated_at": "2026-04-02T17:07:09.193785"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 203471,
-    "player_name": "Dennis Schr\u00f6der",
+    "player_id": 1630596,
+    "player_name": "Evan Mobley",
     "team_abbr": "CLE",
     "stat": "ast",
-    "line": 1.5,
-    "confidence": 81.8,
+    "line": 2.5,
+    "confidence": 82.0,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193785",
-    "updated_at": "2026-04-02T17:07:09.193786"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1629640,
-    "player_name": "Keldon Johnson",
-    "team_abbr": "SAS",
-    "stat": "ast",
-    "line": 0.5,
-    "confidence": 81.7,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193786",
-    "updated_at": "2026-04-02T17:07:09.193786"
+    "created_at": "2026-04-02T17:37:15.218356",
+    "updated_at": "2026-04-02T17:37:15.218357"
   },
   {
     "date": "2026-04-02",
@@ -1864,12 +1838,51 @@
     "player_name": "LeBron James",
     "team_abbr": "LAL",
     "stat": "ast",
-    "line": 5.5,
-    "confidence": 80.8,
+    "line": 4.5,
+    "confidence": 81.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193787",
-    "updated_at": "2026-04-02T17:07:09.193787"
+    "created_at": "2026-04-02T17:37:15.218358",
+    "updated_at": "2026-04-02T17:37:15.218359"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1629130,
+    "player_name": "Duncan Robinson",
+    "team_abbr": "DET",
+    "stat": "ast",
+    "line": 1.5,
+    "confidence": 81.6,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218360",
+    "updated_at": "2026-04-02T17:37:15.218361"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1629636,
+    "player_name": "Darius Garland",
+    "team_abbr": "LAC",
+    "stat": "ast",
+    "line": 5.5,
+    "confidence": 80.7,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218362",
+    "updated_at": "2026-04-02T17:37:15.218363"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1641705,
+    "player_name": "Victor Wembanyama",
+    "team_abbr": "SAS",
+    "stat": "ast",
+    "line": 2.5,
+    "confidence": 80.4,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218364",
+    "updated_at": "2026-04-02T17:37:15.218365"
   },
   {
     "date": "2026-04-02",
@@ -1881,8 +1894,21 @@
     "confidence": 79.9,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193787",
-    "updated_at": "2026-04-02T17:07:09.193788"
+    "created_at": "2026-04-02T17:37:15.218366",
+    "updated_at": "2026-04-02T17:37:15.218366"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1628368,
+    "player_name": "De'Aaron Fox",
+    "team_abbr": "SAS",
+    "stat": "ast",
+    "line": 4.5,
+    "confidence": 78.9,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218367",
+    "updated_at": "2026-04-02T17:37:15.218368"
   },
   {
     "date": "2026-04-02",
@@ -1891,63 +1917,37 @@
     "team_abbr": "DET",
     "stat": "ast",
     "line": 2.5,
-    "confidence": 79.8,
+    "confidence": 78.8,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193788",
-    "updated_at": "2026-04-02T17:07:09.193788"
+    "created_at": "2026-04-02T17:37:15.218369",
+    "updated_at": "2026-04-02T17:37:15.218370"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1641705,
-    "player_name": "Victor Wembanyama",
-    "team_abbr": "SAS",
+    "player_id": 1631221,
+    "player_name": "Collin Gillespie",
+    "team_abbr": "PHX",
     "stat": "ast",
     "line": 2.5,
-    "confidence": 79.4,
+    "confidence": 77.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193788",
-    "updated_at": "2026-04-02T17:07:09.193789"
+    "created_at": "2026-04-02T17:37:15.218371",
+    "updated_at": "2026-04-02T17:37:15.218372"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1630194,
-    "player_name": "Paul Reed",
-    "team_abbr": "DET",
+    "player_id": 1628415,
+    "player_name": "Dillon Brooks",
+    "team_abbr": "PHX",
     "stat": "ast",
     "line": 0.5,
-    "confidence": 79.0,
+    "confidence": 76.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193789",
-    "updated_at": "2026-04-02T17:07:09.193789"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1642450,
-    "player_name": "Daniss Jenkins",
-    "team_abbr": "DET",
-    "stat": "ast",
-    "line": 4.5,
-    "confidence": 77.8,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193790",
-    "updated_at": "2026-04-02T17:07:09.193790"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1628378,
-    "player_name": "Donovan Mitchell",
-    "team_abbr": "CLE",
-    "stat": "ast",
-    "line": 3.5,
-    "confidence": 77.8,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193790",
-    "updated_at": "2026-04-02T17:07:09.193791"
+    "created_at": "2026-04-02T17:37:15.218373",
+    "updated_at": "2026-04-02T17:37:15.218374"
   },
   {
     "date": "2026-04-02",
@@ -1956,24 +1956,11 @@
     "team_abbr": "LAL",
     "stat": "fg3m",
     "line": 2.5,
-    "confidence": 95.0,
+    "confidence": 94.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193791",
-    "updated_at": "2026-04-02T17:07:09.193791"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1641706,
-    "player_name": "Brandon Miller",
-    "team_abbr": "CHA",
-    "stat": "fg3m",
-    "line": 1.5,
-    "confidence": 93.0,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193791",
-    "updated_at": "2026-04-02T17:07:09.193792"
+    "created_at": "2026-04-02T17:37:15.218375",
+    "updated_at": "2026-04-02T17:37:15.218376"
   },
   {
     "date": "2026-04-02",
@@ -1982,50 +1969,24 @@
     "team_abbr": "LAC",
     "stat": "fg3m",
     "line": 1.5,
+    "confidence": 90.8,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218377",
+    "updated_at": "2026-04-02T17:37:15.218377"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1628379,
+    "player_name": "Luke Kennard",
+    "team_abbr": "LAL",
+    "stat": "fg3m",
+    "line": 0.5,
     "confidence": 90.0,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193792",
-    "updated_at": "2026-04-02T17:07:09.193792"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1641739,
-    "player_name": "Toumani Camara",
-    "team_abbr": "POR",
-    "stat": "fg3m",
-    "line": 1.5,
-    "confidence": 89.3,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193793",
-    "updated_at": "2026-04-02T17:07:09.193793"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1628415,
-    "player_name": "Dillon Brooks",
-    "team_abbr": "PHX",
-    "stat": "fg3m",
-    "line": 0.5,
-    "confidence": 88.8,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193793",
-    "updated_at": "2026-04-02T17:07:09.193794"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1629130,
-    "player_name": "Duncan Robinson",
-    "team_abbr": "DET",
-    "stat": "fg3m",
-    "line": 1.5,
-    "confidence": 86.9,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193794",
-    "updated_at": "2026-04-02T17:07:09.193794"
+    "created_at": "2026-04-02T17:37:15.218378",
+    "updated_at": "2026-04-02T17:37:15.218379"
   },
   {
     "date": "2026-04-02",
@@ -2034,37 +1995,50 @@
     "team_abbr": "LAC",
     "stat": "fg3m",
     "line": 2.5,
+    "confidence": 87.5,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218380",
+    "updated_at": "2026-04-02T17:37:15.218381"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1641739,
+    "player_name": "Toumani Camara",
+    "team_abbr": "POR",
+    "stat": "fg3m",
+    "line": 1.5,
+    "confidence": 87.0,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218382",
+    "updated_at": "2026-04-02T17:37:15.218383"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1629130,
+    "player_name": "Duncan Robinson",
+    "team_abbr": "DET",
+    "stat": "fg3m",
+    "line": 1.5,
     "confidence": 86.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193795",
-    "updated_at": "2026-04-02T17:07:09.193795"
+    "created_at": "2026-04-02T17:37:15.218384",
+    "updated_at": "2026-04-02T17:37:15.218385"
   },
   {
     "date": "2026-04-02",
-    "player_id": 202699,
-    "player_name": "Tobias Harris",
-    "team_abbr": "DET",
+    "player_id": 1642844,
+    "player_name": "Dylan Harper",
+    "team_abbr": "SAS",
     "stat": "fg3m",
     "line": 0.5,
-    "confidence": 85.4,
+    "confidence": 85.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193795",
-    "updated_at": "2026-04-02T17:07:09.193795"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1626220,
-    "player_name": "Royce O'Neale",
-    "team_abbr": "PHX",
-    "stat": "fg3m",
-    "line": 1.5,
-    "confidence": 84.8,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193796",
-    "updated_at": "2026-04-02T17:07:09.193796"
+    "created_at": "2026-04-02T17:37:15.218386",
+    "updated_at": "2026-04-02T17:37:15.218387"
   },
   {
     "date": "2026-04-02",
@@ -2076,34 +2050,21 @@
     "confidence": 84.3,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193796",
-    "updated_at": "2026-04-02T17:07:09.193797"
+    "created_at": "2026-04-02T17:37:15.218388",
+    "updated_at": "2026-04-02T17:37:15.218388"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1630163,
-    "player_name": "LaMelo Ball",
-    "team_abbr": "CHA",
+    "player_id": 1626220,
+    "player_name": "Royce O'Neale",
+    "team_abbr": "PHX",
     "stat": "fg3m",
-    "line": 2.5,
-    "confidence": 84.3,
+    "line": 1.5,
+    "confidence": 83.8,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193797",
-    "updated_at": "2026-04-02T17:07:09.193797"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1642450,
-    "player_name": "Daniss Jenkins",
-    "team_abbr": "DET",
-    "stat": "fg3m",
-    "line": 0.5,
-    "confidence": 84.0,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193798",
-    "updated_at": "2026-04-02T17:07:09.193798"
+    "created_at": "2026-04-02T17:37:15.218389",
+    "updated_at": "2026-04-02T17:37:15.218390"
   },
   {
     "date": "2026-04-02",
@@ -2112,11 +2073,50 @@
     "team_abbr": "CHA",
     "stat": "fg3m",
     "line": 2.5,
-    "confidence": 83.2,
+    "confidence": 83.3,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193798",
-    "updated_at": "2026-04-02T17:07:09.193799"
+    "created_at": "2026-04-02T17:37:15.218391",
+    "updated_at": "2026-04-02T17:37:15.218392"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 202699,
+    "player_name": "Tobias Harris",
+    "team_abbr": "DET",
+    "stat": "fg3m",
+    "line": 0.5,
+    "confidence": 82.8,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218393",
+    "updated_at": "2026-04-02T17:37:15.218394"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1642450,
+    "player_name": "Daniss Jenkins",
+    "team_abbr": "DET",
+    "stat": "fg3m",
+    "line": 0.5,
+    "confidence": 82.6,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218395",
+    "updated_at": "2026-04-02T17:37:15.218396"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1630163,
+    "player_name": "LaMelo Ball",
+    "team_abbr": "CHA",
+    "stat": "fg3m",
+    "line": 2.5,
+    "confidence": 82.5,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218397",
+    "updated_at": "2026-04-02T17:37:15.218397"
   },
   {
     "date": "2026-04-02",
@@ -2128,8 +2128,8 @@
     "confidence": 82.4,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193799",
-    "updated_at": "2026-04-02T17:07:09.193799"
+    "created_at": "2026-04-02T17:37:15.218398",
+    "updated_at": "2026-04-02T17:37:15.218399"
   },
   {
     "date": "2026-04-02",
@@ -2138,37 +2138,24 @@
     "team_abbr": "SAS",
     "stat": "fg3m",
     "line": 0.5,
-    "confidence": 81.6,
+    "confidence": 81.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193799",
-    "updated_at": "2026-04-02T17:07:09.193801"
+    "created_at": "2026-04-02T17:37:15.218400",
+    "updated_at": "2026-04-02T17:37:15.218401"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1641764,
-    "player_name": "Brandin Podziemski",
-    "team_abbr": "GSW",
+    "player_id": 1630224,
+    "player_name": "Jalen Green",
+    "team_abbr": "PHX",
     "stat": "fg3m",
     "line": 1.5,
-    "confidence": 81.4,
+    "confidence": 80.4,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193802",
-    "updated_at": "2026-04-02T17:07:09.193802"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1642264,
-    "player_name": "Stephon Castle",
-    "team_abbr": "SAS",
-    "stat": "fg3m",
-    "line": 0.5,
-    "confidence": 80.7,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193802",
-    "updated_at": "2026-04-02T17:07:09.193802"
+    "created_at": "2026-04-02T17:37:15.218402",
+    "updated_at": "2026-04-02T17:37:15.218403"
   },
   {
     "date": "2026-04-02",
@@ -2180,21 +2167,34 @@
     "confidence": 80.3,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193803",
-    "updated_at": "2026-04-02T17:07:09.193803"
+    "created_at": "2026-04-02T17:37:15.218404",
+    "updated_at": "2026-04-02T17:37:15.218405"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1629680,
-    "player_name": "Matisse Thybulle",
-    "team_abbr": "POR",
+    "player_id": 1642264,
+    "player_name": "Stephon Castle",
+    "team_abbr": "SAS",
     "stat": "fg3m",
     "line": 0.5,
-    "confidence": 77.7,
+    "confidence": 79.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193803",
-    "updated_at": "2026-04-02T17:07:09.193804"
+    "created_at": "2026-04-02T17:37:15.218406",
+    "updated_at": "2026-04-02T17:37:15.218407"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 202695,
+    "player_name": "Kawhi Leonard",
+    "team_abbr": "LAC",
+    "stat": "fg3m",
+    "line": 1.5,
+    "confidence": 78.1,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218408",
+    "updated_at": "2026-04-02T17:37:15.218409"
   },
   {
     "date": "2026-04-02",
@@ -2206,47 +2206,47 @@
     "confidence": 77.3,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193804",
-    "updated_at": "2026-04-02T17:07:09.193804"
+    "created_at": "2026-04-02T17:37:15.218409",
+    "updated_at": "2026-04-02T17:37:15.218410"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1628960,
-    "player_name": "Grayson Allen",
-    "team_abbr": "PHX",
+    "player_id": 1629680,
+    "player_name": "Matisse Thybulle",
+    "team_abbr": "POR",
+    "stat": "fg3m",
+    "line": 0.5,
+    "confidence": 76.6,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218411",
+    "updated_at": "2026-04-02T17:37:15.218412"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1628378,
+    "player_name": "Donovan Mitchell",
+    "team_abbr": "CLE",
     "stat": "fg3m",
     "line": 1.5,
     "confidence": 76.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193805",
-    "updated_at": "2026-04-02T17:07:09.193805"
+    "created_at": "2026-04-02T17:37:15.218413",
+    "updated_at": "2026-04-02T17:37:15.218414"
   },
   {
     "date": "2026-04-02",
-    "player_id": 203084,
-    "player_name": "Harrison Barnes",
-    "team_abbr": "SAS",
+    "player_id": 1630180,
+    "player_name": "Saddiq Bey",
+    "team_abbr": "NOP",
     "stat": "fg3m",
-    "line": 0.5,
-    "confidence": 75.9,
+    "line": 2.5,
+    "confidence": 73.8,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193805",
-    "updated_at": "2026-04-02T17:07:09.193806"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 201935,
-    "player_name": "James Harden",
-    "team_abbr": "CLE",
-    "stat": "fg3m",
-    "line": 1.5,
-    "confidence": 75.0,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193806",
-    "updated_at": "2026-04-02T17:07:09.193806"
+    "created_at": "2026-04-02T17:37:15.218415",
+    "updated_at": "2026-04-02T17:37:15.218416"
   },
   {
     "date": "2026-04-02",
@@ -2255,24 +2255,24 @@
     "team_abbr": "DET",
     "stat": "fg3m",
     "line": 0.5,
-    "confidence": 74.9,
+    "confidence": 73.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193807",
-    "updated_at": "2026-04-02T17:07:09.193807"
+    "created_at": "2026-04-02T17:37:15.218417",
+    "updated_at": "2026-04-02T17:37:15.218420"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1631221,
-    "player_name": "Collin Gillespie",
-    "team_abbr": "PHX",
+    "player_id": 203084,
+    "player_name": "Harrison Barnes",
+    "team_abbr": "SAS",
     "stat": "fg3m",
-    "line": 1.5,
-    "confidence": 74.7,
+    "line": 0.5,
+    "confidence": 73.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193807",
-    "updated_at": "2026-04-02T17:07:09.193807"
+    "created_at": "2026-04-02T17:37:15.218421",
+    "updated_at": "2026-04-02T17:37:15.218422"
   },
   {
     "date": "2026-04-02",
@@ -2284,8 +2284,8 @@
     "confidence": 94.4,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193808",
-    "updated_at": "2026-04-02T17:07:09.193808"
+    "created_at": "2026-04-02T17:37:15.218424",
+    "updated_at": "2026-04-02T17:37:15.218425"
   },
   {
     "date": "2026-04-02",
@@ -2294,11 +2294,11 @@
     "team_abbr": "LAL",
     "stat": "pa",
     "line": 19.5,
-    "confidence": 94.3,
+    "confidence": 94.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193808",
-    "updated_at": "2026-04-02T17:07:09.193809"
+    "created_at": "2026-04-02T17:37:15.218427",
+    "updated_at": "2026-04-02T17:37:15.218428"
   },
   {
     "date": "2026-04-02",
@@ -2307,50 +2307,11 @@
     "team_abbr": "DET",
     "stat": "pa",
     "line": 9.5,
-    "confidence": 93.7,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193809",
-    "updated_at": "2026-04-02T17:07:09.193809"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 2544,
-    "player_name": "LeBron James",
-    "team_abbr": "LAL",
-    "stat": "pa",
-    "line": 19.5,
-    "confidence": 93.7,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193810",
-    "updated_at": "2026-04-02T17:07:09.193810"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1628960,
-    "player_name": "Grayson Allen",
-    "team_abbr": "PHX",
-    "stat": "pa",
-    "line": 10.5,
-    "confidence": 93.5,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193810",
-    "updated_at": "2026-04-02T17:07:09.193810"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1642264,
-    "player_name": "Stephon Castle",
-    "team_abbr": "SAS",
-    "stat": "pa",
-    "line": 19.5,
     "confidence": 92.9,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193811",
-    "updated_at": "2026-04-02T17:07:09.193811"
+    "created_at": "2026-04-02T17:37:15.218430",
+    "updated_at": "2026-04-02T17:37:15.218431"
   },
   {
     "date": "2026-04-02",
@@ -2362,21 +2323,8 @@
     "confidence": 92.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193811",
-    "updated_at": "2026-04-02T17:07:09.193812"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1642264,
-    "player_name": "Stephon Castle",
-    "team_abbr": "SAS",
-    "stat": "pa",
-    "line": 21.5,
-    "confidence": 92.4,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193812",
-    "updated_at": "2026-04-02T17:07:09.193812"
+    "created_at": "2026-04-02T17:37:15.218432",
+    "updated_at": "2026-04-02T17:37:15.218433"
   },
   {
     "date": "2026-04-02",
@@ -2388,8 +2336,34 @@
     "confidence": 92.3,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193813",
-    "updated_at": "2026-04-02T17:07:09.193813"
+    "created_at": "2026-04-02T17:37:15.218434",
+    "updated_at": "2026-04-02T17:37:15.218435"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1630224,
+    "player_name": "Jalen Green",
+    "team_abbr": "PHX",
+    "stat": "pa",
+    "line": 14.5,
+    "confidence": 92.2,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218436",
+    "updated_at": "2026-04-02T17:37:15.218437"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 201935,
+    "player_name": "James Harden",
+    "team_abbr": "CLE",
+    "stat": "pa",
+    "line": 24.5,
+    "confidence": 92.0,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218439",
+    "updated_at": "2026-04-02T17:37:15.218440"
   },
   {
     "date": "2026-04-02",
@@ -2401,8 +2375,8 @@
     "confidence": 91.8,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193813",
-    "updated_at": "2026-04-02T17:07:09.193814"
+    "created_at": "2026-04-02T17:37:15.218441",
+    "updated_at": "2026-04-02T17:37:15.218442"
   },
   {
     "date": "2026-04-02",
@@ -2414,60 +2388,21 @@
     "confidence": 90.9,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193814",
-    "updated_at": "2026-04-02T17:07:09.193814"
+    "created_at": "2026-04-02T17:37:15.218443",
+    "updated_at": "2026-04-02T17:37:15.218443"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1629640,
-    "player_name": "Keldon Johnson",
-    "team_abbr": "SAS",
-    "stat": "pa",
-    "line": 9.5,
-    "confidence": 90.0,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193815",
-    "updated_at": "2026-04-02T17:07:09.193815"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1628989,
-    "player_name": "Kevin Huerter",
-    "team_abbr": "DET",
-    "stat": "pa",
-    "line": 9.5,
-    "confidence": 89.8,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193815",
-    "updated_at": "2026-04-02T17:07:09.193816"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1626220,
-    "player_name": "Royce O'Neale",
+    "player_id": 1630224,
+    "player_name": "Jalen Green",
     "team_abbr": "PHX",
     "stat": "pa",
-    "line": 7.5,
-    "confidence": 89.8,
+    "line": 18.5,
+    "confidence": 90.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193816",
-    "updated_at": "2026-04-02T17:07:09.193816"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1626164,
-    "player_name": "Devin Booker",
-    "team_abbr": "PHX",
-    "stat": "pa",
-    "line": 24.5,
-    "confidence": 89.4,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193816",
-    "updated_at": "2026-04-02T17:07:09.193817"
+    "created_at": "2026-04-02T17:37:15.218444",
+    "updated_at": "2026-04-02T17:37:15.218445"
   },
   {
     "date": "2026-04-02",
@@ -2476,24 +2411,11 @@
     "team_abbr": "CHA",
     "stat": "pa",
     "line": 11.5,
-    "confidence": 89.3,
+    "confidence": 87.9,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193817",
-    "updated_at": "2026-04-02T17:07:09.193817"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 202699,
-    "player_name": "Tobias Harris",
-    "team_abbr": "DET",
-    "stat": "pa",
-    "line": 16.5,
-    "confidence": 88.3,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193818",
-    "updated_at": "2026-04-02T17:07:09.193818"
+    "created_at": "2026-04-02T17:37:15.218447",
+    "updated_at": "2026-04-02T17:37:15.218448"
   },
   {
     "date": "2026-04-02",
@@ -2502,11 +2424,11 @@
     "team_abbr": "SAS",
     "stat": "pa",
     "line": 11.5,
-    "confidence": 87.8,
+    "confidence": 87.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193818",
-    "updated_at": "2026-04-02T17:07:09.193819"
+    "created_at": "2026-04-02T17:37:15.218449",
+    "updated_at": "2026-04-02T17:37:15.218450"
   },
   {
     "date": "2026-04-02",
@@ -2518,8 +2440,47 @@
     "confidence": 87.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193819",
-    "updated_at": "2026-04-02T17:07:09.193819"
+    "created_at": "2026-04-02T17:37:15.218451",
+    "updated_at": "2026-04-02T17:37:15.218452"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1629640,
+    "player_name": "Keldon Johnson",
+    "team_abbr": "SAS",
+    "stat": "pa",
+    "line": 9.5,
+    "confidence": 87.5,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218453",
+    "updated_at": "2026-04-02T17:37:15.218454"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1626220,
+    "player_name": "Royce O'Neale",
+    "team_abbr": "PHX",
+    "stat": "pa",
+    "line": 7.5,
+    "confidence": 86.8,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218455",
+    "updated_at": "2026-04-02T17:37:15.218456"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1642844,
+    "player_name": "Dylan Harper",
+    "team_abbr": "SAS",
+    "stat": "pa",
+    "line": 13.5,
+    "confidence": 86.3,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218457",
+    "updated_at": "2026-04-02T17:37:15.218458"
   },
   {
     "date": "2026-04-02",
@@ -2531,8 +2492,34 @@
     "confidence": 86.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193820",
-    "updated_at": "2026-04-02T17:07:09.193820"
+    "created_at": "2026-04-02T17:37:15.218459",
+    "updated_at": "2026-04-02T17:37:15.218460"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1631097,
+    "player_name": "Bennedict Mathurin",
+    "team_abbr": "LAC",
+    "stat": "pa",
+    "line": 17.5,
+    "confidence": 86.1,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218461",
+    "updated_at": "2026-04-02T17:37:15.218463"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 2544,
+    "player_name": "LeBron James",
+    "team_abbr": "LAL",
+    "stat": "pa",
+    "line": 19.5,
+    "confidence": 85.7,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218467",
+    "updated_at": "2026-04-02T17:37:15.218467"
   },
   {
     "date": "2026-04-02",
@@ -2540,12 +2527,12 @@
     "player_name": "Tobias Harris",
     "team_abbr": "DET",
     "stat": "pa",
-    "line": 14.5,
-    "confidence": 85.7,
+    "line": 16.5,
+    "confidence": 85.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193820",
-    "updated_at": "2026-04-02T17:07:09.193820"
+    "created_at": "2026-04-02T17:37:15.218468",
+    "updated_at": "2026-04-02T17:37:15.218469"
   },
   {
     "date": "2026-04-02",
@@ -2557,21 +2544,8 @@
     "confidence": 85.4,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193821",
-    "updated_at": "2026-04-02T17:07:09.193821"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1642264,
-    "player_name": "Stephon Castle",
-    "team_abbr": "SAS",
-    "stat": "pa",
-    "line": 23.5,
-    "confidence": 85.1,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193821",
-    "updated_at": "2026-04-02T17:07:09.193822"
+    "created_at": "2026-04-02T17:37:15.218470",
+    "updated_at": "2026-04-02T17:37:15.218471"
   },
   {
     "date": "2026-04-02",
@@ -2580,11 +2554,11 @@
     "team_abbr": "LAL",
     "stat": "pa",
     "line": 22.5,
-    "confidence": 85.0,
+    "confidence": 84.9,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193822",
-    "updated_at": "2026-04-02T17:07:09.193822"
+    "created_at": "2026-04-02T17:37:15.218472",
+    "updated_at": "2026-04-02T17:37:15.218473"
   },
   {
     "date": "2026-04-02",
@@ -2596,8 +2570,34 @@
     "confidence": 84.8,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193823",
-    "updated_at": "2026-04-02T17:07:09.193823"
+    "created_at": "2026-04-02T17:37:15.218474",
+    "updated_at": "2026-04-02T17:37:15.218475"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1642264,
+    "player_name": "Stephon Castle",
+    "team_abbr": "SAS",
+    "stat": "pa",
+    "line": 19.5,
+    "confidence": 84.8,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218476",
+    "updated_at": "2026-04-02T17:37:15.218477"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1642264,
+    "player_name": "Stephon Castle",
+    "team_abbr": "SAS",
+    "stat": "pa",
+    "line": 20.5,
+    "confidence": 84.7,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218478",
+    "updated_at": "2026-04-02T17:37:15.218478"
   },
   {
     "date": "2026-04-02",
@@ -2609,8 +2609,8 @@
     "confidence": 94.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193823",
-    "updated_at": "2026-04-02T17:07:09.193824"
+    "created_at": "2026-04-02T17:37:15.218479",
+    "updated_at": "2026-04-02T17:37:15.218480"
   },
   {
     "date": "2026-04-02",
@@ -2619,24 +2619,11 @@
     "team_abbr": "LAC",
     "stat": "stl",
     "line": 0.5,
-    "confidence": 91.7,
+    "confidence": 91.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193824",
-    "updated_at": "2026-04-02T17:07:09.193824"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 203110,
-    "player_name": "Draymond Green",
-    "team_abbr": "GSW",
-    "stat": "stl",
-    "line": 0.5,
-    "confidence": 87.2,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193824",
-    "updated_at": "2026-04-02T17:07:09.193825"
+    "created_at": "2026-04-02T17:37:15.218481",
+    "updated_at": "2026-04-02T17:37:15.218482"
   },
   {
     "date": "2026-04-02",
@@ -2645,37 +2632,37 @@
     "team_abbr": "SAS",
     "stat": "stl",
     "line": 0.5,
-    "confidence": 84.6,
+    "confidence": 84.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193825",
-    "updated_at": "2026-04-02T17:07:09.193825"
+    "created_at": "2026-04-02T17:37:15.218483",
+    "updated_at": "2026-04-02T17:37:15.218484"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1641709,
-    "player_name": "Ausar Thompson",
-    "team_abbr": "DET",
-    "stat": "stl",
-    "line": 1.5,
-    "confidence": 80.2,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193826",
-    "updated_at": "2026-04-02T17:07:09.193826"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1641739,
-    "player_name": "Toumani Camara",
-    "team_abbr": "POR",
+    "player_id": 201935,
+    "player_name": "James Harden",
+    "team_abbr": "CLE",
     "stat": "stl",
     "line": 0.5,
-    "confidence": 80.2,
+    "confidence": 80.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193826",
-    "updated_at": "2026-04-02T17:07:09.193827"
+    "created_at": "2026-04-02T17:37:15.218485",
+    "updated_at": "2026-04-02T17:37:15.218486"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1627739,
+    "player_name": "Kris Dunn",
+    "team_abbr": "LAC",
+    "stat": "stl",
+    "line": 1.5,
+    "confidence": 80.6,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218487",
+    "updated_at": "2026-04-02T17:37:15.218488"
   },
   {
     "date": "2026-04-02",
@@ -2687,8 +2674,21 @@
     "confidence": 80.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193827",
-    "updated_at": "2026-04-02T17:07:09.193827"
+    "created_at": "2026-04-02T17:37:15.218489",
+    "updated_at": "2026-04-02T17:37:15.218490"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1628989,
+    "player_name": "Kevin Huerter",
+    "team_abbr": "DET",
+    "stat": "stl",
+    "line": 0.5,
+    "confidence": 79.7,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218491",
+    "updated_at": "2026-04-02T17:37:15.218491"
   },
   {
     "date": "2026-04-02",
@@ -2700,8 +2700,8 @@
     "confidence": 79.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193828",
-    "updated_at": "2026-04-02T17:07:09.193828"
+    "created_at": "2026-04-02T17:37:15.218492",
+    "updated_at": "2026-04-02T17:37:15.218493"
   },
   {
     "date": "2026-04-02",
@@ -2713,21 +2713,34 @@
     "confidence": 79.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193828",
-    "updated_at": "2026-04-02T17:07:09.193828"
+    "created_at": "2026-04-02T17:37:15.218494",
+    "updated_at": "2026-04-02T17:37:15.218495"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1628989,
-    "player_name": "Kevin Huerter",
-    "team_abbr": "DET",
+    "player_id": 1641705,
+    "player_name": "Victor Wembanyama",
+    "team_abbr": "SAS",
     "stat": "stl",
     "line": 0.5,
-    "confidence": 79.4,
+    "confidence": 77.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193829",
-    "updated_at": "2026-04-02T17:07:09.193829"
+    "created_at": "2026-04-02T17:37:15.218496",
+    "updated_at": "2026-04-02T17:37:15.218497"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1630163,
+    "player_name": "LaMelo Ball",
+    "team_abbr": "CHA",
+    "stat": "stl",
+    "line": 0.5,
+    "confidence": 77.2,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218498",
+    "updated_at": "2026-04-02T17:37:15.218499"
   },
   {
     "date": "2026-04-02",
@@ -2739,8 +2752,21 @@
     "confidence": 76.9,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193829",
-    "updated_at": "2026-04-02T17:07:09.193830"
+    "created_at": "2026-04-02T17:37:15.218500",
+    "updated_at": "2026-04-02T17:37:15.218501"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1641739,
+    "player_name": "Toumani Camara",
+    "team_abbr": "POR",
+    "stat": "stl",
+    "line": 0.5,
+    "confidence": 76.8,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218502",
+    "updated_at": "2026-04-02T17:37:15.218502"
   },
   {
     "date": "2026-04-02",
@@ -2752,8 +2778,8 @@
     "confidence": 76.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193830",
-    "updated_at": "2026-04-02T17:07:09.193830"
+    "created_at": "2026-04-02T17:37:15.218504",
+    "updated_at": "2026-04-02T17:37:15.218504"
   },
   {
     "date": "2026-04-02",
@@ -2762,24 +2788,37 @@
     "team_abbr": "LAL",
     "stat": "stl",
     "line": 0.5,
-    "confidence": 76.1,
+    "confidence": 75.0,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193831",
-    "updated_at": "2026-04-02T17:07:09.193831"
+    "created_at": "2026-04-02T17:37:15.218505",
+    "updated_at": "2026-04-02T17:37:15.218506"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1631222,
-    "player_name": "Jake LaRavia",
-    "team_abbr": "LAL",
+    "player_id": 1630170,
+    "player_name": "Devin Vassell",
+    "team_abbr": "SAS",
     "stat": "stl",
     "line": 0.5,
-    "confidence": 73.2,
+    "confidence": 73.8,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193831",
-    "updated_at": "2026-04-02T17:07:09.193832"
+    "created_at": "2026-04-02T17:37:15.218507",
+    "updated_at": "2026-04-02T17:37:15.218508"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 203110,
+    "player_name": "Draymond Green",
+    "team_abbr": "GSW",
+    "stat": "stl",
+    "line": 0.5,
+    "confidence": 72.5,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218509",
+    "updated_at": "2026-04-02T17:37:15.218510"
   },
   {
     "date": "2026-04-02",
@@ -2791,21 +2830,34 @@
     "confidence": 72.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193832",
-    "updated_at": "2026-04-02T17:07:09.193832"
+    "created_at": "2026-04-02T17:37:15.218511",
+    "updated_at": "2026-04-02T17:37:15.218512"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1631221,
-    "player_name": "Collin Gillespie",
-    "team_abbr": "PHX",
+    "player_id": 1628378,
+    "player_name": "Donovan Mitchell",
+    "team_abbr": "CLE",
     "stat": "stl",
     "line": 0.5,
-    "confidence": 70.9,
+    "confidence": 71.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193833",
-    "updated_at": "2026-04-02T17:07:09.193833"
+    "created_at": "2026-04-02T17:37:15.218513",
+    "updated_at": "2026-04-02T17:37:15.218513"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1641764,
+    "player_name": "Brandin Podziemski",
+    "team_abbr": "GSW",
+    "stat": "stl",
+    "line": 0.5,
+    "confidence": 71.4,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218514",
+    "updated_at": "2026-04-02T17:37:15.218515"
   },
   {
     "date": "2026-04-02",
@@ -2817,34 +2869,8 @@
     "confidence": 70.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193833",
-    "updated_at": "2026-04-02T17:07:09.193833"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1629636,
-    "player_name": "Darius Garland",
-    "team_abbr": "LAC",
-    "stat": "stl",
-    "line": 0.5,
-    "confidence": 70.5,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193834",
-    "updated_at": "2026-04-02T17:07:09.193834"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 201935,
-    "player_name": "James Harden",
-    "team_abbr": "CLE",
-    "stat": "stl",
-    "line": 0.5,
-    "confidence": 70.3,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193834",
-    "updated_at": "2026-04-02T17:07:09.193835"
+    "created_at": "2026-04-02T17:37:15.218516",
+    "updated_at": "2026-04-02T17:37:15.218517"
   },
   {
     "date": "2026-04-02",
@@ -2856,73 +2882,47 @@
     "confidence": 70.0,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193835",
-    "updated_at": "2026-04-02T17:07:09.193835"
+    "created_at": "2026-04-02T17:37:15.218518",
+    "updated_at": "2026-04-02T17:37:15.218519"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1630194,
-    "player_name": "Paul Reed",
+    "player_id": 1641709,
+    "player_name": "Ausar Thompson",
     "team_abbr": "DET",
     "stat": "stl",
-    "line": 0.5,
-    "confidence": 68.9,
+    "line": 1.5,
+    "confidence": 69.9,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193836",
-    "updated_at": "2026-04-02T17:07:09.193836"
+    "created_at": "2026-04-02T17:37:15.218520",
+    "updated_at": "2026-04-02T17:37:15.218521"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1630170,
-    "player_name": "Devin Vassell",
-    "team_abbr": "SAS",
-    "stat": "stl",
-    "line": 0.5,
-    "confidence": 68.7,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193836",
-    "updated_at": "2026-04-02T17:07:09.193837"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1641764,
-    "player_name": "Brandin Podziemski",
-    "team_abbr": "GSW",
-    "stat": "stl",
-    "line": 0.5,
-    "confidence": 68.3,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193837",
-    "updated_at": "2026-04-02T17:07:09.193837"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 2544,
-    "player_name": "LeBron James",
+    "player_id": 1631222,
+    "player_name": "Jake LaRavia",
     "team_abbr": "LAL",
     "stat": "stl",
     "line": 0.5,
-    "confidence": 66.8,
+    "confidence": 69.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193837",
-    "updated_at": "2026-04-02T17:07:09.193838"
+    "created_at": "2026-04-02T17:37:15.218522",
+    "updated_at": "2026-04-02T17:37:15.218523"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1628381,
-    "player_name": "John Collins",
+    "player_id": 1629636,
+    "player_name": "Darius Garland",
     "team_abbr": "LAC",
     "stat": "stl",
     "line": 0.5,
-    "confidence": 66.7,
+    "confidence": 69.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193838",
-    "updated_at": "2026-04-02T17:07:09.193838"
+    "created_at": "2026-04-02T17:37:15.218524",
+    "updated_at": "2026-04-02T17:37:15.218525"
   },
   {
     "date": "2026-04-02",
@@ -2934,8 +2934,8 @@
     "confidence": 88.8,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193839",
-    "updated_at": "2026-04-02T17:07:09.193839"
+    "created_at": "2026-04-02T17:37:15.218526",
+    "updated_at": "2026-04-02T17:37:15.218526"
   },
   {
     "date": "2026-04-02",
@@ -2944,11 +2944,11 @@
     "team_abbr": "LAL",
     "stat": "bs",
     "line": 0.5,
-    "confidence": 85.6,
+    "confidence": 85.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193839",
-    "updated_at": "2026-04-02T17:07:09.193840"
+    "created_at": "2026-04-02T17:37:15.218527",
+    "updated_at": "2026-04-02T17:37:15.218528"
   },
   {
     "date": "2026-04-02",
@@ -2957,11 +2957,11 @@
     "team_abbr": "CLE",
     "stat": "bs",
     "line": 0.5,
-    "confidence": 84.1,
+    "confidence": 84.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193840",
-    "updated_at": "2026-04-02T17:07:09.193840"
+    "created_at": "2026-04-02T17:37:15.218529",
+    "updated_at": "2026-04-02T17:37:15.218530"
   },
   {
     "date": "2026-04-02",
@@ -2970,11 +2970,11 @@
     "team_abbr": "LAC",
     "stat": "bs",
     "line": 1.5,
-    "confidence": 83.9,
+    "confidence": 84.4,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193841",
-    "updated_at": "2026-04-02T17:07:09.193841"
+    "created_at": "2026-04-02T17:37:15.218531",
+    "updated_at": "2026-04-02T17:37:15.218532"
   },
   {
     "date": "2026-04-02",
@@ -2983,37 +2983,24 @@
     "team_abbr": "LAC",
     "stat": "bs",
     "line": 1.5,
-    "confidence": 83.7,
+    "confidence": 83.4,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193841",
-    "updated_at": "2026-04-02T17:07:09.193841"
+    "created_at": "2026-04-02T17:37:15.218533",
+    "updated_at": "2026-04-02T17:37:15.218534"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1630170,
-    "player_name": "Devin Vassell",
-    "team_abbr": "SAS",
+    "player_id": 1628978,
+    "player_name": "Donte DiVincenzo",
+    "team_abbr": "MIN",
     "stat": "bs",
-    "line": 0.5,
-    "confidence": 80.2,
+    "line": 1.5,
+    "confidence": 75.3,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193842",
-    "updated_at": "2026-04-02T17:07:09.193842"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1642844,
-    "player_name": "Dylan Harper",
-    "team_abbr": "SAS",
-    "stat": "bs",
-    "line": 0.5,
-    "confidence": 78.8,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193842",
-    "updated_at": "2026-04-02T17:07:09.193843"
+    "created_at": "2026-04-02T17:37:15.218535",
+    "updated_at": "2026-04-02T17:37:15.218536"
   },
   {
     "date": "2026-04-02",
@@ -3022,11 +3009,11 @@
     "team_abbr": "POR",
     "stat": "bs",
     "line": 1.5,
-    "confidence": 77.8,
+    "confidence": 74.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193843",
-    "updated_at": "2026-04-02T17:07:09.193843"
+    "created_at": "2026-04-02T17:37:15.218537",
+    "updated_at": "2026-04-02T17:37:15.218538"
   },
   {
     "date": "2026-04-02",
@@ -3038,21 +3025,21 @@
     "confidence": 73.8,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193844",
-    "updated_at": "2026-04-02T17:07:09.193844"
+    "created_at": "2026-04-02T17:37:15.218539",
+    "updated_at": "2026-04-02T17:37:15.218539"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1629029,
-    "player_name": "Luka Don\u010di\u0107",
-    "team_abbr": "LAL",
+    "player_id": 1630170,
+    "player_name": "Devin Vassell",
+    "team_abbr": "SAS",
     "stat": "bs",
-    "line": 1.5,
+    "line": 0.5,
     "confidence": 72.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193844",
-    "updated_at": "2026-04-02T17:07:09.193844"
+    "created_at": "2026-04-02T17:37:15.218540",
+    "updated_at": "2026-04-02T17:37:15.218541"
   },
   {
     "date": "2026-04-02",
@@ -3064,8 +3051,21 @@
     "confidence": 72.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193845",
-    "updated_at": "2026-04-02T17:07:09.193845"
+    "created_at": "2026-04-02T17:37:15.218542",
+    "updated_at": "2026-04-02T17:37:15.218543"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1629029,
+    "player_name": "Luka Don\u010di\u0107",
+    "team_abbr": "LAL",
+    "stat": "bs",
+    "line": 1.5,
+    "confidence": 71.7,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218544",
+    "updated_at": "2026-04-02T17:37:15.218545"
   },
   {
     "date": "2026-04-02",
@@ -3074,50 +3074,50 @@
     "team_abbr": "LAL",
     "stat": "bs",
     "line": 1.5,
-    "confidence": 72.1,
+    "confidence": 69.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193845",
-    "updated_at": "2026-04-02T17:07:09.193846"
+    "created_at": "2026-04-02T17:37:15.218546",
+    "updated_at": "2026-04-02T17:37:15.218547"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1631221,
-    "player_name": "Collin Gillespie",
-    "team_abbr": "PHX",
-    "stat": "bs",
-    "line": 0.5,
-    "confidence": 70.3,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193846",
-    "updated_at": "2026-04-02T17:07:09.193846"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 203110,
-    "player_name": "Draymond Green",
-    "team_abbr": "GSW",
-    "stat": "bs",
-    "line": 1.5,
-    "confidence": 65.7,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193847",
-    "updated_at": "2026-04-02T17:07:09.193847"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1641757,
-    "player_name": "Jordan Miller",
+    "player_id": 1631097,
+    "player_name": "Bennedict Mathurin",
     "team_abbr": "LAC",
     "stat": "bs",
     "line": 0.5,
-    "confidence": 64.3,
+    "confidence": 68.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193847",
-    "updated_at": "2026-04-02T17:07:09.193848"
+    "created_at": "2026-04-02T17:37:15.218548",
+    "updated_at": "2026-04-02T17:37:15.218549"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 201935,
+    "player_name": "James Harden",
+    "team_abbr": "CLE",
+    "stat": "bs",
+    "line": 1.5,
+    "confidence": 68.0,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218550",
+    "updated_at": "2026-04-02T17:37:15.218551"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1642844,
+    "player_name": "Dylan Harper",
+    "team_abbr": "SAS",
+    "stat": "bs",
+    "line": 0.5,
+    "confidence": 67.8,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218552",
+    "updated_at": "2026-04-02T17:37:15.218553"
   },
   {
     "date": "2026-04-02",
@@ -3126,11 +3126,37 @@
     "team_abbr": "POR",
     "stat": "bs",
     "line": 2.5,
-    "confidence": 63.5,
+    "confidence": 67.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193848",
-    "updated_at": "2026-04-02T17:07:09.193848"
+    "created_at": "2026-04-02T17:37:15.218554",
+    "updated_at": "2026-04-02T17:37:15.218555"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1629029,
+    "player_name": "Luka Don\u010di\u0107",
+    "team_abbr": "LAL",
+    "stat": "bs",
+    "line": 2.5,
+    "confidence": 64.8,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218556",
+    "updated_at": "2026-04-02T17:37:15.218557"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1641705,
+    "player_name": "Victor Wembanyama",
+    "team_abbr": "SAS",
+    "stat": "bs",
+    "line": 3.5,
+    "confidence": 64.2,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218558",
+    "updated_at": "2026-04-02T17:37:15.218558"
   },
   {
     "date": "2026-04-02",
@@ -3142,8 +3168,21 @@
     "confidence": 63.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193849",
-    "updated_at": "2026-04-02T17:07:09.193849"
+    "created_at": "2026-04-02T17:37:15.218559",
+    "updated_at": "2026-04-02T17:37:15.218560"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1641757,
+    "player_name": "Jordan Miller",
+    "team_abbr": "LAC",
+    "stat": "bs",
+    "line": 0.5,
+    "confidence": 63.2,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218561",
+    "updated_at": "2026-04-02T17:37:15.218562"
   },
   {
     "date": "2026-04-02",
@@ -3155,21 +3194,47 @@
     "confidence": 62.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193849",
-    "updated_at": "2026-04-02T17:07:09.193850"
+    "created_at": "2026-04-02T17:37:15.218563",
+    "updated_at": "2026-04-02T17:37:15.218564"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1629060,
-    "player_name": "Rui Hachimura",
-    "team_abbr": "LAL",
+    "player_id": 1641709,
+    "player_name": "Ausar Thompson",
+    "team_abbr": "DET",
     "stat": "bs",
-    "line": 0.5,
+    "line": 2.5,
     "confidence": 61.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193850",
-    "updated_at": "2026-04-02T17:07:09.193850"
+    "created_at": "2026-04-02T17:37:15.218565",
+    "updated_at": "2026-04-02T17:37:15.218566"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1631221,
+    "player_name": "Collin Gillespie",
+    "team_abbr": "PHX",
+    "stat": "bs",
+    "line": 0.5,
+    "confidence": 60.9,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218567",
+    "updated_at": "2026-04-02T17:37:15.218567"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1641709,
+    "player_name": "Ausar Thompson",
+    "team_abbr": "DET",
+    "stat": "bs",
+    "line": 3.5,
+    "confidence": 60.8,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218568",
+    "updated_at": "2026-04-02T17:37:15.218569"
   },
   {
     "date": "2026-04-02",
@@ -3181,86 +3246,8 @@
     "confidence": 60.0,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193850",
-    "updated_at": "2026-04-02T17:07:09.193851"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1626220,
-    "player_name": "Royce O'Neale",
-    "team_abbr": "PHX",
-    "stat": "bs",
-    "line": 1.5,
-    "confidence": 60.0,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193851",
-    "updated_at": "2026-04-02T17:07:09.193851"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1629001,
-    "player_name": "De'Anthony Melton",
-    "team_abbr": "GSW",
-    "stat": "bs",
-    "line": 1.5,
-    "confidence": 59.0,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193852",
-    "updated_at": "2026-04-02T17:07:09.193852"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1631119,
-    "player_name": "Jaylin Williams",
-    "team_abbr": "OKC",
-    "stat": "bs",
-    "line": 0.5,
-    "confidence": 58.9,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193852",
-    "updated_at": "2026-04-02T17:07:09.193853"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 201572,
-    "player_name": "Brook Lopez",
-    "team_abbr": "LAC",
-    "stat": "bs",
-    "line": 2.5,
-    "confidence": 58.8,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193853",
-    "updated_at": "2026-04-02T17:07:09.193853"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1630530,
-    "player_name": "Trey Murphy III",
-    "team_abbr": "NOP",
-    "stat": "bs",
-    "line": 2.5,
-    "confidence": 58.7,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193854",
-    "updated_at": "2026-04-02T17:07:09.193854"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1628989,
-    "player_name": "Kevin Huerter",
-    "team_abbr": "DET",
-    "stat": "tov",
-    "line": 0.5,
-    "confidence": 86.9,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193854",
-    "updated_at": "2026-04-02T17:07:09.193855"
+    "created_at": "2026-04-02T17:37:15.218570",
+    "updated_at": "2026-04-02T17:37:15.218571"
   },
   {
     "date": "2026-04-02",
@@ -3269,63 +3256,50 @@
     "team_abbr": "POR",
     "stat": "tov",
     "line": 0.5,
-    "confidence": 85.8,
+    "confidence": 85.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193855",
-    "updated_at": "2026-04-02T17:07:09.193855"
+    "created_at": "2026-04-02T17:37:15.218572",
+    "updated_at": "2026-04-02T17:37:15.218573"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1642264,
-    "player_name": "Stephon Castle",
-    "team_abbr": "SAS",
-    "stat": "tov",
-    "line": 2.5,
-    "confidence": 82.7,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193855",
-    "updated_at": "2026-04-02T17:07:09.193856"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1642450,
-    "player_name": "Daniss Jenkins",
-    "team_abbr": "DET",
-    "stat": "tov",
-    "line": 2.5,
-    "confidence": 80.2,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193856",
-    "updated_at": "2026-04-02T17:07:09.193856"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1629028,
-    "player_name": "Deandre Ayton",
-    "team_abbr": "LAL",
+    "player_id": 1628386,
+    "player_name": "Jarrett Allen",
+    "team_abbr": "CLE",
     "stat": "tov",
     "line": 0.5,
-    "confidence": 77.3,
+    "confidence": 77.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193857",
-    "updated_at": "2026-04-02T17:07:09.193857"
+    "created_at": "2026-04-02T17:37:15.218574",
+    "updated_at": "2026-04-02T17:37:15.218575"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1631105,
-    "player_name": "Jalen Duren",
-    "team_abbr": "DET",
+    "player_id": 1628381,
+    "player_name": "John Collins",
+    "team_abbr": "LAC",
     "stat": "tov",
-    "line": 2.5,
-    "confidence": 76.2,
+    "line": 0.5,
+    "confidence": 76.3,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193857",
-    "updated_at": "2026-04-02T17:07:09.193858"
+    "created_at": "2026-04-02T17:37:15.218576",
+    "updated_at": "2026-04-02T17:37:15.218576"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1628989,
+    "player_name": "Kevin Huerter",
+    "team_abbr": "DET",
+    "stat": "tov",
+    "line": 0.5,
+    "confidence": 75.5,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218577",
+    "updated_at": "2026-04-02T17:37:15.218578"
   },
   {
     "date": "2026-04-02",
@@ -3334,11 +3308,63 @@
     "team_abbr": "LAC",
     "stat": "tov",
     "line": 1.5,
-    "confidence": 76.1,
+    "confidence": 73.3,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193858",
-    "updated_at": "2026-04-02T17:07:09.193858"
+    "created_at": "2026-04-02T17:37:15.218579",
+    "updated_at": "2026-04-02T17:37:15.218580"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1642264,
+    "player_name": "Stephon Castle",
+    "team_abbr": "SAS",
+    "stat": "tov",
+    "line": 2.5,
+    "confidence": 72.1,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218581",
+    "updated_at": "2026-04-02T17:37:15.218582"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 203944,
+    "player_name": "Julius Randle",
+    "team_abbr": "MIN",
+    "stat": "tov",
+    "line": 2.5,
+    "confidence": 71.9,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218583",
+    "updated_at": "2026-04-02T17:37:15.218584"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1642450,
+    "player_name": "Daniss Jenkins",
+    "team_abbr": "DET",
+    "stat": "tov",
+    "line": 2.5,
+    "confidence": 71.8,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218585",
+    "updated_at": "2026-04-02T17:37:15.218586"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1630596,
+    "player_name": "Evan Mobley",
+    "team_abbr": "CLE",
+    "stat": "tov",
+    "line": 1.5,
+    "confidence": 71.3,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218587",
+    "updated_at": "2026-04-02T17:37:15.218587"
   },
   {
     "date": "2026-04-02",
@@ -3350,8 +3376,8 @@
     "confidence": 70.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193859",
-    "updated_at": "2026-04-02T17:07:09.193859"
+    "created_at": "2026-04-02T17:37:15.218588",
+    "updated_at": "2026-04-02T17:37:15.218589"
   },
   {
     "date": "2026-04-02",
@@ -3363,8 +3389,21 @@
     "confidence": 70.3,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193859",
-    "updated_at": "2026-04-02T17:07:09.193859"
+    "created_at": "2026-04-02T17:37:15.218590",
+    "updated_at": "2026-04-02T17:37:15.218591"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1641764,
+    "player_name": "Brandin Podziemski",
+    "team_abbr": "GSW",
+    "stat": "tov",
+    "line": 1.5,
+    "confidence": 68.5,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218592",
+    "updated_at": "2026-04-02T17:37:15.218593"
   },
   {
     "date": "2026-04-02",
@@ -3373,11 +3412,11 @@
     "team_abbr": "PHX",
     "stat": "tov",
     "line": 0.5,
-    "confidence": 68.7,
+    "confidence": 67.4,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193860",
-    "updated_at": "2026-04-02T17:07:09.193860"
+    "created_at": "2026-04-02T17:37:15.218594",
+    "updated_at": "2026-04-02T17:37:15.218595"
   },
   {
     "date": "2026-04-02",
@@ -3389,8 +3428,21 @@
     "confidence": 66.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193860",
-    "updated_at": "2026-04-02T17:07:09.193861"
+    "created_at": "2026-04-02T17:37:15.218596",
+    "updated_at": "2026-04-02T17:37:15.218596"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1627884,
+    "player_name": "Derrick Jones Jr.",
+    "team_abbr": "LAC",
+    "stat": "tov",
+    "line": 0.5,
+    "confidence": 66.5,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218597",
+    "updated_at": "2026-04-02T17:37:15.218598"
   },
   {
     "date": "2026-04-02",
@@ -3402,8 +3454,8 @@
     "confidence": 66.3,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193861",
-    "updated_at": "2026-04-02T17:07:09.193861"
+    "created_at": "2026-04-02T17:37:15.218599",
+    "updated_at": "2026-04-02T17:37:15.218600"
   },
   {
     "date": "2026-04-02",
@@ -3415,47 +3467,21 @@
     "confidence": 66.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193862",
-    "updated_at": "2026-04-02T17:07:09.193862"
+    "created_at": "2026-04-02T17:37:15.218601",
+    "updated_at": "2026-04-02T17:37:15.218602"
   },
   {
     "date": "2026-04-02",
-    "player_id": 201572,
-    "player_name": "Brook Lopez",
-    "team_abbr": "LAC",
-    "stat": "tov",
-    "line": 0.5,
-    "confidence": 65.3,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193862",
-    "updated_at": "2026-04-02T17:07:09.193863"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1630194,
-    "player_name": "Paul Reed",
+    "player_id": 1631105,
+    "player_name": "Jalen Duren",
     "team_abbr": "DET",
     "stat": "tov",
-    "line": 0.5,
-    "confidence": 64.5,
+    "line": 2.5,
+    "confidence": 65.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193863",
-    "updated_at": "2026-04-02T17:07:09.193863"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1628415,
-    "player_name": "Dillon Brooks",
-    "team_abbr": "PHX",
-    "stat": "tov",
-    "line": 0.5,
-    "confidence": 63.9,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193863",
-    "updated_at": "2026-04-02T17:07:09.193864"
+    "created_at": "2026-04-02T17:37:15.218603",
+    "updated_at": "2026-04-02T17:37:15.218604"
   },
   {
     "date": "2026-04-02",
@@ -3467,47 +3493,21 @@
     "confidence": 63.3,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193864",
-    "updated_at": "2026-04-02T17:07:09.193864"
+    "created_at": "2026-04-02T17:37:15.218605",
+    "updated_at": "2026-04-02T17:37:15.218606"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1642270,
-    "player_name": "Donovan Clingan",
+    "player_id": 1630166,
+    "player_name": "Deni Avdija",
     "team_abbr": "POR",
     "stat": "tov",
-    "line": 1.5,
-    "confidence": 63.0,
+    "line": 3.5,
+    "confidence": 63.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193865",
-    "updated_at": "2026-04-02T17:07:09.193865"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 202695,
-    "player_name": "Kawhi Leonard",
-    "team_abbr": "LAC",
-    "stat": "tov",
-    "line": 1.5,
-    "confidence": 62.8,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193865",
-    "updated_at": "2026-04-02T17:07:09.193866"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1630559,
-    "player_name": "Austin Reaves",
-    "team_abbr": "LAL",
-    "stat": "tov",
-    "line": 2.5,
-    "confidence": 62.7,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193866",
-    "updated_at": "2026-04-02T17:07:09.193866"
+    "created_at": "2026-04-02T17:37:15.218606",
+    "updated_at": "2026-04-02T17:37:15.218607"
   },
   {
     "date": "2026-04-02",
@@ -3519,47 +3519,8 @@
     "confidence": 62.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193867",
-    "updated_at": "2026-04-02T17:07:09.193867"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 2544,
-    "player_name": "LeBron James",
-    "team_abbr": "LAL",
-    "stat": "tov",
-    "line": 2.5,
-    "confidence": 62.5,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193867",
-    "updated_at": "2026-04-02T17:07:09.193868"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1629640,
-    "player_name": "Keldon Johnson",
-    "team_abbr": "SAS",
-    "stat": "tov",
-    "line": 0.5,
-    "confidence": 61.8,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193868",
-    "updated_at": "2026-04-02T17:07:09.193868"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1630596,
-    "player_name": "Evan Mobley",
-    "team_abbr": "CLE",
-    "stat": "tov",
-    "line": 1.5,
-    "confidence": 61.7,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193869",
-    "updated_at": "2026-04-02T17:07:09.193869"
+    "created_at": "2026-04-02T17:37:15.218608",
+    "updated_at": "2026-04-02T17:37:15.218609"
   },
   {
     "date": "2026-04-02",
@@ -3571,8 +3532,60 @@
     "confidence": 60.9,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193869",
-    "updated_at": "2026-04-02T17:07:09.193869"
+    "created_at": "2026-04-02T17:37:15.218613",
+    "updated_at": "2026-04-02T17:37:15.218614"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1630559,
+    "player_name": "Austin Reaves",
+    "team_abbr": "LAL",
+    "stat": "tov",
+    "line": 2.5,
+    "confidence": 60.7,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218616",
+    "updated_at": "2026-04-02T17:37:15.218616"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 201572,
+    "player_name": "Brook Lopez",
+    "team_abbr": "LAC",
+    "stat": "tov",
+    "line": 0.5,
+    "confidence": 60.7,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218618",
+    "updated_at": "2026-04-02T17:37:15.218619"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1628983,
+    "player_name": "Shai Gilgeous-Alexander",
+    "team_abbr": "OKC",
+    "stat": "tov",
+    "line": 2.5,
+    "confidence": 59.4,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218620",
+    "updated_at": "2026-04-02T17:37:15.218622"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1629637,
+    "player_name": "Jaxson Hayes",
+    "team_abbr": "LAL",
+    "stat": "blk",
+    "line": 0.5,
+    "confidence": 74.8,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218624",
+    "updated_at": "2026-04-02T17:37:15.218624"
   },
   {
     "date": "2026-04-02",
@@ -3581,11 +3594,11 @@
     "team_abbr": "LAC",
     "stat": "blk",
     "line": 1.5,
-    "confidence": 79.1,
+    "confidence": 73.8,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193870",
-    "updated_at": "2026-04-02T17:07:09.193870"
+    "created_at": "2026-04-02T17:37:15.218625",
+    "updated_at": "2026-04-02T17:37:15.218626"
   },
   {
     "date": "2026-04-02",
@@ -3594,11 +3607,24 @@
     "team_abbr": "LAC",
     "stat": "blk",
     "line": 0.5,
-    "confidence": 73.4,
+    "confidence": 72.4,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193870",
-    "updated_at": "2026-04-02T17:07:09.193871"
+    "created_at": "2026-04-02T17:37:15.218627",
+    "updated_at": "2026-04-02T17:37:15.218628"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1629637,
+    "player_name": "Jaxson Hayes",
+    "team_abbr": "LAL",
+    "stat": "blk",
+    "line": 1.5,
+    "confidence": 72.0,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218630",
+    "updated_at": "2026-04-02T17:37:15.218631"
   },
   {
     "date": "2026-04-02",
@@ -3610,47 +3636,21 @@
     "confidence": 69.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193871",
-    "updated_at": "2026-04-02T17:07:09.193871"
+    "created_at": "2026-04-02T17:37:15.218632",
+    "updated_at": "2026-04-02T17:37:15.218633"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1641750,
-    "player_name": "Ryan Kalkbrenner",
-    "team_abbr": "CHA",
+    "player_id": 1641709,
+    "player_name": "Ausar Thompson",
+    "team_abbr": "DET",
     "stat": "blk",
     "line": 0.5,
-    "confidence": 69.1,
+    "confidence": 68.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193872",
-    "updated_at": "2026-04-02T17:07:09.193872"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1629057,
-    "player_name": "Robert Williams III",
-    "team_abbr": "POR",
-    "stat": "blk",
-    "line": 0.5,
-    "confidence": 69.0,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193872",
-    "updated_at": "2026-04-02T17:07:09.193873"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1641705,
-    "player_name": "Victor Wembanyama",
-    "team_abbr": "SAS",
-    "stat": "blk",
-    "line": 2.5,
-    "confidence": 65.4,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193873",
-    "updated_at": "2026-04-02T17:07:09.193873"
+    "created_at": "2026-04-02T17:37:15.218634",
+    "updated_at": "2026-04-02T17:37:15.218635"
   },
   {
     "date": "2026-04-02",
@@ -3662,8 +3662,8 @@
     "confidence": 63.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193873",
-    "updated_at": "2026-04-02T17:07:09.193874"
+    "created_at": "2026-04-02T17:37:15.218636",
+    "updated_at": "2026-04-02T17:37:15.218637"
   },
   {
     "date": "2026-04-02",
@@ -3675,8 +3675,34 @@
     "confidence": 62.6,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193874",
-    "updated_at": "2026-04-02T17:07:09.193874"
+    "created_at": "2026-04-02T17:37:15.218638",
+    "updated_at": "2026-04-02T17:37:15.218639"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1641705,
+    "player_name": "Victor Wembanyama",
+    "team_abbr": "SAS",
+    "stat": "blk",
+    "line": 2.5,
+    "confidence": 62.2,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218640",
+    "updated_at": "2026-04-02T17:37:15.218641"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 201935,
+    "player_name": "James Harden",
+    "team_abbr": "CLE",
+    "stat": "blk",
+    "line": 0.5,
+    "confidence": 62.0,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218642",
+    "updated_at": "2026-04-02T17:37:15.218643"
   },
   {
     "date": "2026-04-02",
@@ -3688,21 +3714,8 @@
     "confidence": 61.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193875",
-    "updated_at": "2026-04-02T17:07:09.193875"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1631105,
-    "player_name": "Jalen Duren",
-    "team_abbr": "DET",
-    "stat": "blk",
-    "line": 0.5,
-    "confidence": 61.1,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193875",
-    "updated_at": "2026-04-02T17:07:09.193876"
+    "created_at": "2026-04-02T17:37:15.218644",
+    "updated_at": "2026-04-02T17:37:15.218645"
   },
   {
     "date": "2026-04-02",
@@ -3714,21 +3727,47 @@
     "confidence": 61.1,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193876",
-    "updated_at": "2026-04-02T17:07:09.193876"
+    "created_at": "2026-04-02T17:37:15.218646",
+    "updated_at": "2026-04-02T17:37:15.218646"
   },
   {
     "date": "2026-04-02",
-    "player_id": 1629637,
-    "player_name": "Jaxson Hayes",
-    "team_abbr": "LAL",
+    "player_id": 1641750,
+    "player_name": "Ryan Kalkbrenner",
+    "team_abbr": "CHA",
     "stat": "blk",
     "line": 0.5,
-    "confidence": 61.0,
+    "confidence": 60.8,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193877",
-    "updated_at": "2026-04-02T17:07:09.193877"
+    "created_at": "2026-04-02T17:37:15.218647",
+    "updated_at": "2026-04-02T17:37:15.218648"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1629057,
+    "player_name": "Robert Williams III",
+    "team_abbr": "POR",
+    "stat": "blk",
+    "line": 0.5,
+    "confidence": 60.8,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218649",
+    "updated_at": "2026-04-02T17:37:15.218650"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1630596,
+    "player_name": "Evan Mobley",
+    "team_abbr": "CLE",
+    "stat": "blk",
+    "line": 0.5,
+    "confidence": 60.6,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218651",
+    "updated_at": "2026-04-02T17:37:15.218652"
   },
   {
     "date": "2026-04-02",
@@ -3740,21 +3779,8 @@
     "confidence": 58.5,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193877",
-    "updated_at": "2026-04-02T17:07:09.193877"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1629637,
-    "player_name": "Jaxson Hayes",
-    "team_abbr": "LAL",
-    "stat": "blk",
-    "line": 1.5,
-    "confidence": 58.3,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193878",
-    "updated_at": "2026-04-02T17:07:09.193878"
+    "created_at": "2026-04-02T17:37:15.218653",
+    "updated_at": "2026-04-02T17:37:15.218654"
   },
   {
     "date": "2026-04-02",
@@ -3766,60 +3792,8 @@
     "confidence": 57.2,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193879",
-    "updated_at": "2026-04-02T17:07:09.193879"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1641709,
-    "player_name": "Ausar Thompson",
-    "team_abbr": "DET",
-    "stat": "blk",
-    "line": 0.5,
-    "confidence": 56.4,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193879",
-    "updated_at": "2026-04-02T17:07:09.193879"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1629028,
-    "player_name": "Deandre Ayton",
-    "team_abbr": "LAL",
-    "stat": "blk",
-    "line": 0.5,
-    "confidence": 55.9,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193880",
-    "updated_at": "2026-04-02T17:07:09.193880"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1629680,
-    "player_name": "Matisse Thybulle",
-    "team_abbr": "POR",
-    "stat": "blk",
-    "line": 0.5,
-    "confidence": 55.9,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193880",
-    "updated_at": "2026-04-02T17:07:09.193881"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 1641739,
-    "player_name": "Toumani Camara",
-    "team_abbr": "POR",
-    "stat": "blk",
-    "line": 0.5,
-    "confidence": 55.4,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193881",
-    "updated_at": "2026-04-02T17:07:09.193881"
+    "created_at": "2026-04-02T17:37:15.218655",
+    "updated_at": "2026-04-02T17:37:15.218656"
   },
   {
     "date": "2026-04-02",
@@ -3831,60 +3805,47 @@
     "confidence": 54.8,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193882",
-    "updated_at": "2026-04-02T17:07:09.193882"
+    "created_at": "2026-04-02T17:37:15.218657",
+    "updated_at": "2026-04-02T17:37:15.218658"
   },
   {
     "date": "2026-04-02",
-    "player_id": 203110,
-    "player_name": "Draymond Green",
-    "team_abbr": "GSW",
-    "stat": "blk",
-    "line": 0.5,
-    "confidence": 52.9,
-    "result_value": null,
-    "hit": null,
-    "created_at": "2026-04-02T17:07:09.193882",
-    "updated_at": "2026-04-02T17:07:09.193883"
-  },
-  {
-    "date": "2026-04-02",
-    "player_id": 201935,
-    "player_name": "James Harden",
+    "player_id": 1628386,
+    "player_name": "Jarrett Allen",
     "team_abbr": "CLE",
     "stat": "blk",
     "line": 0.5,
-    "confidence": 52.5,
+    "confidence": 54.4,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193883",
-    "updated_at": "2026-04-02T17:07:09.193883"
+    "created_at": "2026-04-02T17:37:15.218659",
+    "updated_at": "2026-04-02T17:37:15.218660"
   },
   {
     "date": "2026-04-02",
-    "player_id": 2544,
-    "player_name": "LeBron James",
-    "team_abbr": "LAL",
+    "player_id": 1631105,
+    "player_name": "Jalen Duren",
+    "team_abbr": "DET",
     "stat": "blk",
     "line": 0.5,
-    "confidence": 51.4,
+    "confidence": 52.8,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193884",
-    "updated_at": "2026-04-02T17:07:09.193884"
+    "created_at": "2026-04-02T17:37:15.218661",
+    "updated_at": "2026-04-02T17:37:15.218661"
   },
   {
     "date": "2026-04-02",
-    "player_id": 202695,
-    "player_name": "Kawhi Leonard",
-    "team_abbr": "LAC",
+    "player_id": 1631217,
+    "player_name": "Moussa Diabat\u00e9",
+    "team_abbr": "CHA",
     "stat": "blk",
     "line": 0.5,
-    "confidence": 50.3,
+    "confidence": 51.7,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193884",
-    "updated_at": "2026-04-02T17:07:09.193884"
+    "created_at": "2026-04-02T17:37:15.218663",
+    "updated_at": "2026-04-02T17:37:15.218664"
   },
   {
     "date": "2026-04-02",
@@ -3893,10 +3854,49 @@
     "team_abbr": "POR",
     "stat": "blk",
     "line": 0.5,
-    "confidence": 47.1,
+    "confidence": 50.8,
     "result_value": null,
     "hit": null,
-    "created_at": "2026-04-02T17:07:09.193885",
-    "updated_at": "2026-04-02T17:07:09.193885"
+    "created_at": "2026-04-02T17:37:15.218665",
+    "updated_at": "2026-04-02T17:37:15.218665"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1629680,
+    "player_name": "Matisse Thybulle",
+    "team_abbr": "POR",
+    "stat": "blk",
+    "line": 0.5,
+    "confidence": 47.3,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218666",
+    "updated_at": "2026-04-02T17:37:15.218667"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1641705,
+    "player_name": "Victor Wembanyama",
+    "team_abbr": "SAS",
+    "stat": "blk",
+    "line": 3.5,
+    "confidence": 46.9,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218669",
+    "updated_at": "2026-04-02T17:37:15.218670"
+  },
+  {
+    "date": "2026-04-02",
+    "player_id": 1642270,
+    "player_name": "Donovan Clingan",
+    "team_abbr": "POR",
+    "stat": "blk",
+    "line": 2.5,
+    "confidence": 46.7,
+    "result_value": null,
+    "hit": null,
+    "created_at": "2026-04-02T17:37:15.218671",
+    "updated_at": "2026-04-02T17:37:15.218672"
   }
 ]

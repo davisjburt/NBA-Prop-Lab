@@ -6,6 +6,7 @@ against PlayerGameStat, updates the local DB for historical summaries, writes
 model_*_eval_sync.json for sync_to_heroku, and writes model_stats_*.json.
 """
 
+import argparse
 import os
 import sys
 import json
@@ -28,7 +29,7 @@ from app.models.models import (
     ModelPropEval,
     ModelMoneylineEval,
 )
-from sqlalchemy import func
+from sqlalchemy import tuple_
 
 from app.services.hit_rate import COMBO_STATS
 from app.services.model_summary import build_outcomes_summary
@@ -177,35 +178,34 @@ def resolve_props(today: date) -> None:
     ).all()
     print(f"Resolving {len(pending_props)} prop picks...")
 
+    if not pending_props:
+        return
+
+    keys = list({(m.player_id, m.date) for m in pending_props})
+    stat_lookup: dict[tuple[int, date], PlayerGameStat] = {}
+    chunk_size = 400
+    for i in range(0, len(keys), chunk_size):
+        chunk = keys[i : i + chunk_size]
+        for row in (
+            PlayerGameStat.query.filter(
+                tuple_(PlayerGameStat.player_id, PlayerGameStat.date).in_(chunk)
+            ).all()
+        ):
+            k = (row.player_id, row.date)
+            if k not in stat_lookup:
+                stat_lookup[k] = row
+
     for m in pending_props:
-        rows = PlayerGameStat.query.filter_by(
-            player_id=m.player_id,
-            date=m.date,
-        ).all()
-        if not rows:
+        row = stat_lookup.get((m.player_id, m.date))
+        if not row:
             continue
 
-        row = rows[0]
         val = _actual_stat_value(row, m.stat)
         if val is None:
             continue
 
         m.result_value = float(val)
         m.hit = bool(val > m.line)
-
-
-def team_score_for(game_date: date, team_abbr: str) -> float:
-    """Sum points for a team on a given date using Player.team_abbr."""
-    rows = (
-        db.session.query(PlayerGameStat)
-        .join(Player, PlayerGameStat.player_id == Player.id)
-        .filter(
-            PlayerGameStat.date == game_date,
-            func.upper(Player.team_abbr) == team_abbr.strip().upper(),
-        )
-        .all()
-    )
-    return sum(r.pts or 0 for r in rows)
 
 
 def resolve_moneylines(today: date) -> None:
@@ -215,9 +215,28 @@ def resolve_moneylines(today: date) -> None:
     ).all()
     print(f"Resolving {len(pending_games)} moneyline games...")
 
+    if not pending_games:
+        return
+
+    dates = sorted({g.date for g in pending_games})
+    pts_by_date_team: dict[tuple[date, str], float] = defaultdict(float)
+    rows = (
+        db.session.query(PlayerGameStat, Player.team_abbr)
+        .join(Player, PlayerGameStat.player_id == Player.id)
+        .filter(PlayerGameStat.date.in_(dates))
+        .all()
+    )
+    for stat_row, team_abbr in rows:
+        abbr = (team_abbr or "").strip().upper()
+        if not abbr:
+            continue
+        pts_by_date_team[(stat_row.date, abbr)] += stat_row.pts or 0.0
+
     for g in pending_games:
-        home_score = team_score_for(g.date, g.home_abbr)
-        away_score = team_score_for(g.date, g.away_abbr)
+        home_abbr = (g.home_abbr or "").strip().upper()
+        away_abbr = (g.away_abbr or "").strip().upper()
+        home_score = pts_by_date_team.get((g.date, home_abbr), 0.0)
+        away_score = pts_by_date_team.get((g.date, away_abbr), 0.0)
 
         # If we have no stats for either team, skip
         if home_score == 0 and away_score == 0:
@@ -257,11 +276,20 @@ def write_model_stats_json() -> None:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Resolve model eval + write JSON.")
+    parser.add_argument(
+        "--skip-hydrate",
+        action="store_true",
+        help="Do not replace today's rows from JSON (use after git history recovery).",
+    )
+    args = parser.parse_args()
+
     app = create_app()
     with app.app_context():
         today = date.today()
 
-        hydrate_today_from_json(today)
+        if not args.skip_hydrate:
+            hydrate_today_from_json(today)
 
         resolve_props(today)
         resolve_moneylines(today)
