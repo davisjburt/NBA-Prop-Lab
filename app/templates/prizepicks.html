@@ -70,6 +70,11 @@
           />
         </div>
         <div class="pp-filters">
+          <select id="filterBook" onchange="renderTable()">
+            <option value="">All Books</option>
+            <option value="prizepicks">PrizePicks</option>
+            <option value="draftkings">DraftKings</option>
+          </select>
           <select id="filterStat" onchange="renderTable()">
             <option value="">All Stats</option>
             <option value="pts">Points</option>
@@ -88,8 +93,8 @@
           <select id="filterOddsType" onchange="renderTable()">
             <option value="">All Lines</option>
             <option value="safer">Safer Only</option>
-            <option value="standard" selected>Standard Only</option>
-            <option value="riskier">Riskier Only</option>
+            <option value="standard">Standard Only</option>
+            <option value="risky">Risky Only</option>
           </select>
           <select id="filterEdge" onchange="renderTable()">
             <option value="">All Edges</option>
@@ -196,18 +201,12 @@
         return s >= 80 ? "conf-high" : s >= 65 ? "conf-mid" : "conf-low";
       }
 
-      function normalizeRiskType(type) {
-        const t = (type || "standard").toLowerCase();
-        if (t === "goblin" || t === "safer") return "safer";
-        if (t === "demon" || t === "riskier" || t === "risky") return "riskier";
-        return "standard";
-      }
       function oddsTypeBadge(type) {
-        const risk = normalizeRiskType(type);
-        if (risk === "safer")
+        const normalized = (type || "standard").toLowerCase();
+        if (normalized === "safer" || normalized === "goblin")
           return `<span class="odds-badge goblin">Safer</span>`;
-        if (risk === "riskier")
-          return `<span class="odds-badge demon">Riskier</span>`;
+        if (normalized === "risky" || normalized === "demon")
+          return `<span class="odds-badge demon">Risky</span>`;
         return `<span class="odds-badge">Standard</span>`;
       }
       function matchupBadge(mult) {
@@ -238,6 +237,11 @@
 
       function buildRow(p, i) {
         const pct = (p.hit_rate * 100).toFixed(1);
+        const book = (p.book || p.source || "prizepicks").toLowerCase();
+        const bookLabel =
+          book === "draftkings"
+            ? `<span class="odds-badge demon">DK</span>`
+            : `<span class="odds-badge goblin">PP</span>`;
         const tr = document.createElement("tr");
         tr.className = "data-row";
         tr.innerHTML = `
@@ -247,7 +251,7 @@
               <div class="mini-avatar"><img src="https://cdn.nba.com/headshots/nba/latest/260x190/${p.id}.png" alt="${p.name}" /></div>
               <div class="player-info">
                 <div class="player-name">${p.name} ${streakBadge(p.streak)}</div>
-                <div class="player-meta">${p.team} · ${p.position} · ${p.location ?? ""} vs ${p.opponent ?? ""}</div>
+                <div class="player-meta">${p.team} · ${p.position} · ${p.location ?? ""} vs ${p.opponent ?? ""} · ${bookLabel}</div>
               </div>
             </div>
           </td>
@@ -318,6 +322,7 @@
       }
 
       function renderTable() {
+        const bookFilter = document.getElementById("filterBook").value;
         const statFilter = document.getElementById("filterStat").value;
         const oddsFilter = document.getElementById("filterOddsType").value;
         const edgeFilter = document.getElementById("filterEdge").value;
@@ -328,9 +333,16 @@
           .value.toLowerCase()
           .trim();
         filtered = allData.filter((p) => {
-          const riskType = normalizeRiskType(p.odds_type);
+          const pBook = (p.book || p.source || "prizepicks").toLowerCase();
+          const pRisk =
+            p.odds_type === "goblin" || p.odds_type === "safer"
+              ? "safer"
+              : p.odds_type === "demon" || p.odds_type === "risky"
+                ? "risky"
+                : "standard";
+          if (bookFilter && pBook !== bookFilter) return false;
           if (statFilter && p.stat !== statFilter) return false;
-          if (oddsFilter && riskType !== oddsFilter) return false;
+          if (oddsFilter && pRisk !== oddsFilter) return false;
           if (edgeFilter === "positive" && (p.edge === null || p.edge <= 0))
             return false;
           if (edgeFilter === "negative" && (p.edge === null || p.edge >= 0))
@@ -418,13 +430,18 @@
         }, 150);
       }
       function buildParlayCard(parlay, rank) {
+        const variant = ((rank - 1) % 4) + 1;
+        const teams = [...new Set(parlay.legs.map((l) => l.team).filter(Boolean))];
+        const teamsLabel = teams.slice(0, 3).join(" · ");
         const corrWarning = parlay.correlated
           ? `<span class="corr-warning"><i data-lucide="alert-triangle"></i> Same team</span>`
           : "";
         return `
-        <div class="parlay-card">
+        <div class="parlay-card parlay-variant-${variant}">
           <div class="parlay-card-header">
             <span class="parlay-rank">#${rank}</span>
+            <span class="parlay-type-badge">${parlay.legs.length}-Leg</span>
+            <span class="parlay-teams">${teamsLabel || "Mixed teams"}</span>
             <span class="conf-badge ${confClass(parlay.score)}">Score: ${parlay.score}</span>
             ${corrWarning}
           </div>

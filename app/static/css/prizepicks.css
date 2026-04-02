@@ -296,6 +296,28 @@
   box-shadow: var(--shadow-sm);
   overflow: hidden;
   animation: fadeUp 0.3s ease both;
+  position: relative;
+}
+.parlay-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: #6366f1;
+}
+.parlay-variant-1::before {
+  background: linear-gradient(180deg, #6366f1, #8b5cf6);
+}
+.parlay-variant-2::before {
+  background: linear-gradient(180deg, #10b981, #14b8a6);
+}
+.parlay-variant-3::before {
+  background: linear-gradient(180deg, #f59e0b, #ef4444);
+}
+.parlay-variant-4::before {
+  background: linear-gradient(180deg, #06b6d4, #3b82f6);
 }
 .parlay-card-header {
   display: flex;
@@ -309,6 +331,22 @@
   font-weight: 800;
   font-size: 1rem;
   color: var(--accent);
+}
+.parlay-type-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #4338ca;
+  background: #e0e7ff;
+  border-radius: 999px;
+  padding: 3px 8px;
+}
+.parlay-teams {
+  font-size: 0.75rem;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 210px;
 }
 .corr-warning {
   margin-left: auto;
@@ -372,8 +410,9 @@
   gap: 3px;
 }
 .leg-line {
-  font-size: 0.78rem;
-  color: var(--muted);
+  font-size: 0.8rem;
+  color: #4b5563;
+  font-weight: 600;
 }
 .leg-rate {
   font-size: 0.78rem;
@@ -396,6 +435,19 @@
 .leg-divider i {
   width: 13px;
   height: 13px;
+}
+
+.parlay-variant-1 .parlay-card-header {
+  background: linear-gradient(90deg, #eef2ff, #f5f3ff);
+}
+.parlay-variant-2 .parlay-card-header {
+  background: linear-gradient(90deg, #ecfdf5, #f0fdfa);
+}
+.parlay-variant-3 .parlay-card-header {
+  background: linear-gradient(90deg, #fff7ed, #fef2f2);
+}
+.parlay-variant-4 .parlay-card-header {
+  background: linear-gradient(90deg, #ecfeff, #eff6ff);
 }
 
 /* ── States ── */
