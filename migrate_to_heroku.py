@@ -27,11 +27,12 @@ TABLE_ORDER = [
     "player_game_stats",
     "model_prop_eval",
     "model_moneyline_eval",
+    "refresh_digest_emails",
 ]
 
 BOOLEAN_COLUMNS = {
     "model_moneyline_eval": {"correct"},
-    "model_prop_eval": {"correct"},
+    "model_prop_eval": {"hit"},
 }
 
 def convert_row(table, columns, row):

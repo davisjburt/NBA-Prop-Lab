@@ -523,7 +523,7 @@
     "HOU": 2
   },
   "LAL_OKC": {
-    "OKC": 2
+    "OKC": 3
   },
   "CHA_MIL": {
     "CHA": 1,
@@ -541,7 +541,7 @@
     "PHX": 2
   },
   "NOP_POR": {
-    "POR": 2,
+    "POR": 3,
     "NOP": 1
   },
   "ATL_UTA": {
@@ -885,7 +885,8 @@
     "DET": 2
   },
   "CLE_GSW": {
-    "GSW": 1
+    "GSW": 1,
+    "CLE": 1
   },
   "MIA_SAC": {
     "SAC": 1,
@@ -1469,7 +1470,7 @@
     "ORL": 1
   },
   "LAC_SAS": {
-    "SAS": 2
+    "SAS": 3
   },
   "IND_LAL": {
     "LAL": 2
@@ -1482,7 +1483,8 @@
     "ORL": 1
   },
   "CHA_PHX": {
-    "PHX": 1
+    "PHX": 1,
+    "CHA": 1
   },
   "IND_POR": {
     "POR": 2
@@ -1531,6 +1533,6 @@
     "LAC": 2
   },
   "DET_MIN": {
-    "DET": 1
+    "DET": 2
   }
 }

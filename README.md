@@ -46,7 +46,8 @@ End-to-end order used by `./refresh.sh`:
 | 2 | `dedup.py` | Remove duplicate `(player_id, date)` rows if any |
 | 3 | `fetch_data.py` | Fetches props, computes board → **`moneylines.json`**, **`prizepicks_results.json`**, etc. **Does not** insert into `model_prop_eval` / `model_moneyline_eval`. |
 | 4 | `update_model_stats.py` | Rebuilds **today’s** slate from JSON, resolves hits vs `player_game_stats`, writes **`model_prop_eval_sync.json`**, **`model_moneyline_eval_sync.json`**, **`model_stats_*.json`** |
-| 5 | `sync_to_heroku.py` | Bulk INSERT into Postgres using sync JSON (full columns including resolved fields when present) |
+| 5 | `send_refresh_digest.py` | Optional: emails **top 10 props** + **all moneylines** to addresses in **`refresh_digest_emails`** (skips if SMTP env vars missing or no subscribers) |
+| 6 | `sync_to_heroku.py` | Bulk INSERT into Postgres using sync JSON (full columns including resolved fields when present) |
 
 The **Model Stats** page calls **`GET /api/model_outcomes?days=…`**, which aggregates from the **live database** (`build_outcomes_summary`), not from stale snapshot files.
 
@@ -76,12 +77,12 @@ NBA-Prop-Lab/
 ├── app/
 │   ├── __init__.py
 │   ├── config.py
-│   ├── models/models.py          # Player, PlayerGameStat, ModelPropEval, ModelMoneylineEval
+│   ├── models/models.py          # Player, PlayerGameStat, ModelPropEval, ModelMoneylineEval, RefreshDigestEmail
 │   ├── routes/
 │   │   ├── players.py            # HTML routes (/, /player, /prizepicks, /moneylines, /model-stats, …)
 │   │   ├── props.py              # /api/* data (props, moneylines JSON, legacy model_stats)
 │   │   └── model_stats.py        # GET /api/model_outcomes
-│   ├── services/                 # hit_rate, nba_fetcher, prizepicks, moneyline, model_summary, …
+│   ├── services/                 # hit_rate, nba_fetcher, prizepicks, moneyline, model_summary, refresh_digest, …
 │   ├── templates/                # index, player, prizepicks, parlays, moneylines, model-stats, explore, …
 │   └── static/
 ├── data/                         # JSON outputs + sync snapshots (git-tracked where applicable)
@@ -93,6 +94,7 @@ NBA-Prop-Lab/
 │   ├── dedup.py
 │   ├── seed.py
 │   ├── check_model_history.py    # DB row counts / date ranges for model tables
+│   ├── send_refresh_digest.py    # Email digest (called from refresh.sh)
 │   └── recover_model_history_from_git.py  # replay history from git snapshots (optional)
 ├── refresh.sh                    # Full local pipeline + git push
 ├── run.py                        # Dev server (port 5002)
@@ -114,6 +116,8 @@ NBA-Prop-Lab/
 | `sync_to_heroku.py` | Push `model_prop_eval` / `model_moneyline_eval` to Postgres (`HEROKU_DATABASE_URL` or `DATABASE_URL`) |
 | `check_model_history.py` | Print masked `DATABASE_URL`, counts, and date ranges for model tables |
 | `recover_model_history_from_git.py` | Replay `data/prizepicks_results.json` / `data/moneylines.json` from git history into model tables. **`--apply --finish`**: replay + run `update_model_stats.py --skip-hydrate` in one shot |
+| `send_refresh_digest.py` | Sends digest email (see [Refresh email digest](#refresh-email-digest)) |
+| `verify_smtp.py` | Check SMTP env for digest; `--test-smtp` tests SMTP login only |
 
 ---
 
@@ -142,6 +146,9 @@ NBA-Prop-Lab/
 | `GET /api/moneylines` | From `moneylines.json` |
 | `GET /api/model_outcomes?days=0|7|30|90` | Aggregated model stats (DB-backed) |
 | `GET /api/model_stats?days=…` | Legacy aggregate endpoint (still in `props.py`) |
+| `GET /api/refresh-digest/emails` | List subscribed emails (for Player Props UI) |
+| `POST /api/refresh-digest/emails` | Body `{"email":"…"}` — subscribe |
+| `DELETE /api/refresh-digest/emails?email=…` | Unsubscribe |
 
 ---
 
@@ -166,6 +173,7 @@ Auto-created via `db.create_all()`:
 - **`player_game_stats`** — One row per player per game; unique `(player_id, date)`  
 - **`model_prop_eval`** — Tracked prop picks (date, player, stat, line, confidence, `result_value`, `hit`)  
 - **`model_moneyline_eval`** — Game picks (teams, probs, `actual_winner`, `margin`, `correct`)
+- **`refresh_digest_emails`** — Subscribers for the refresh email digest (unique `email`)
 
 ---
 
@@ -177,6 +185,7 @@ Auto-created via `db.create_all()`:
 ```bash
 git clone https://github.com/davisjburt/NBA-Prop-Lab.git
 cd NBA-Prop-Lab
+cp .env.example .env   # then edit .env (DATABASE_URL, SECRET_KEY, SMTP_* for email digest)
 python3 -m venv venv
 source venv/bin/activate   # Windows: venv\Scripts\activate
 pip install -r requirements.txt
@@ -201,6 +210,32 @@ App: **http://127.0.0.1:5002**
 | `SECRET_KEY` | Flask session signing |
 | `SKIP_TRENDING` | Set in `refresh.sh` to skip trending computation in `fetch_data` |
 
+**Refresh digest email** uses **SMTP** only. Set these in **`.env` at the repo root** (loaded by `load_env()` for `refresh.sh` and `send_refresh_digest.py`):
+
+| Variable | Purpose |
+|----------|---------|
+| `SMTP_HOST` | SMTP server hostname (e.g. `smtp.gmail.com`, `smtp.mail.me.com` for iCloud) |
+| `SMTP_PORT` | Default `587` |
+| `SMTP_USER` | SMTP login username |
+| `SMTP_PASSWORD` | App password or SMTP password |
+| `SMTP_FROM` | Optional `From:` address (defaults to `SMTP_USER`) |
+| `SMTP_USE_TLS` | Default `1` — set to `0` to disable STARTTLS |
+
+**Gmail** (use a [Google App Password](https://support.google.com/accounts/answer/185833)):
+
+```env
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=you@gmail.com
+SMTP_PASSWORD=xxxx xxxx xxxx xxxx
+SMTP_FROM=NBA Prop Lab <you@gmail.com>
+```
+
+Copy **`.env.example`** → **`.env`** and fill in secrets. Verify with:
+
+`python3 scripts/verify_smtp.py`  
+`python3 scripts/verify_smtp.py --test-smtp` (SMTP login test only)
+
 Define these in a `.env` file (see `app/config.py`) or export them in your shell.
 
 ---
@@ -223,7 +258,22 @@ chmod +x refresh.sh
 ./refresh.sh
 ```
 
-This runs: `daily_update` → `dedup` → `fetch_data` (with `SKIP_TRENDING=1`) → `update_model_stats` → `sync_to_heroku` (if `HEROKU_DATABASE_URL` is set) → `git add data/` → commit/push when there are changes.
+This runs: `daily_update` → `dedup` → `fetch_data` (with `SKIP_TRENDING=1`) → `update_model_stats` → **`send_refresh_digest.py`** → `sync_to_heroku` (if `HEROKU_DATABASE_URL` is set) → `git add data/` → commit/push when there are changes.
+
+### Refresh email digest
+
+On **Player Props**, users can subscribe with an email address. Addresses are stored in **`refresh_digest_emails`** (same database as the app).
+
+After each successful `refresh.sh` run (once new `prizepicks_results.json` and `moneylines.json` exist), `send_refresh_digest.py` emails every subscriber:
+
+- **Top 10** prop lines by **confidence** (from `prizepicks_results.json`)
+- **All** moneyline rows (from `moneylines.json`)
+
+If `SMTP_HOST` / `SMTP_USER` / `SMTP_PASSWORD` are not set, the script prints a skip message and exits successfully. If there are no subscribers, it also skips.
+
+You can run the sender manually:
+
+`python3 scripts/send_refresh_digest.py`
 
 ---
 

@@ -1,8 +1,16 @@
 import json, os
 from flask import Blueprint, jsonify, request
-from app.models.models import db, Player, PlayerGameStat, ModelPropEval, ModelMoneylineEval
+from app.models.models import (
+    db,
+    Player,
+    PlayerGameStat,
+    ModelPropEval,
+    ModelMoneylineEval,
+    RefreshDigestEmail,
+)
 from datetime import date
 from sqlalchemy import func
+from app.services.refresh_digest import is_valid_email
 from app.services.hit_rate import (
     hit_rate, hit_rate_combo, COMBO_STATS,
     calculate_streak, extract_opponent
@@ -232,3 +240,47 @@ def model_stats():
         "props": props,
         "moneylines": moneylines,
     })
+
+
+# ── Refresh email digest subscribers ───────────────────────────────────────────
+
+
+@props_bp.route("/refresh-digest/emails", methods=["GET"])
+def refresh_digest_list_emails():
+    rows = RefreshDigestEmail.query.order_by(RefreshDigestEmail.email).all()
+    return jsonify(
+        [
+            {"email": r.email, "created_at": r.created_at.isoformat() if r.created_at else None}
+            for r in rows
+        ]
+    )
+
+
+@props_bp.route("/refresh-digest/emails", methods=["POST"])
+def refresh_digest_add_email():
+    data = request.get_json(silent=True) or {}
+    raw = (data.get("email") or "").strip()
+    if not is_valid_email(raw):
+        return jsonify({"error": "Invalid email address"}), 400
+    existing = RefreshDigestEmail.query.filter_by(email=raw.lower()).first()
+    if existing:
+        return jsonify({"ok": True, "email": raw.lower(), "already": True})
+    db.session.add(RefreshDigestEmail(email=raw.lower()))
+    db.session.commit()
+    return jsonify({"ok": True, "email": raw.lower(), "already": False})
+
+
+@props_bp.route("/refresh-digest/emails", methods=["DELETE"])
+def refresh_digest_remove_email():
+    raw = (request.args.get("email") or "").strip()
+    if not raw:
+        return jsonify({"error": "Missing email query param"}), 400
+    if not is_valid_email(raw):
+        return jsonify({"error": "Invalid email address"}), 400
+    addr = raw.lower()
+    row = RefreshDigestEmail.query.filter_by(email=addr).first()
+    if not row:
+        return jsonify({"ok": True, "removed": False})
+    db.session.delete(row)
+    db.session.commit()
+    return jsonify({"ok": True, "removed": True, "email": addr})

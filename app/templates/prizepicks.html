@@ -46,6 +46,39 @@
         </p>
       </div>
 
+      <div class="pp-digest-card" id="digestCard">
+        <div class="pp-digest-header">
+          <i data-lucide="mail"></i>
+          <div>
+            <h2 class="pp-digest-title">Refresh email digest</h2>
+            <p class="pp-digest-desc">
+              When <code>refresh.sh</code> runs, subscribers get the
+              <strong>top 10 props</strong> (by confidence) and
+              <strong>all moneyline</strong> picks. Requires SMTP env vars (see README).
+            </p>
+          </div>
+        </div>
+        <div class="pp-digest-form">
+          <input
+            type="email"
+            id="digestEmailInput"
+            class="pp-digest-input"
+            placeholder="you@example.com"
+            autocomplete="email"
+          />
+          <button type="button" class="btn pp-digest-btn" id="digestSubscribeBtn">
+            Subscribe
+          </button>
+        </div>
+        <p class="pp-digest-msg" id="digestMsg" hidden></p>
+        <div class="pp-digest-list-wrap">
+          <div class="pp-digest-list-label">Subscribed addresses</div>
+          <ul class="pp-digest-list" id="digestList">
+            <li class="pp-digest-loading">Loading…</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="pp-tabs">
         <button class="pp-tab active" onclick="switchTab('props', this)">
           <i data-lucide="layout-list"></i> Props Board
@@ -389,6 +422,83 @@
             `(${rem} more)`;
       }
 
+      function showDigestMsg(text, isError) {
+        const el = document.getElementById("digestMsg");
+        el.textContent = text;
+        el.hidden = false;
+        el.style.color = isError ? "var(--danger, #ef4444)" : "var(--muted)";
+      }
+
+      function renderDigestList(rows) {
+        const ul = document.getElementById("digestList");
+        if (!rows.length) {
+          ul.innerHTML = `<li class="pp-digest-empty">No subscribers yet.</li>`;
+          return;
+        }
+        ul.innerHTML = rows
+          .map(
+            (r) =>
+              `<li class="pp-digest-item"><span class="pp-digest-email">${escapeHtml(r.email)}</span>` +
+              `<button type="button" class="pp-digest-remove" data-email="${escapeHtml(r.email)}">Remove</button></li>`,
+          )
+          .join("");
+        ul.querySelectorAll(".pp-digest-remove").forEach((btn) => {
+          btn.addEventListener("click", () => removeDigestEmail(btn.dataset.email));
+        });
+        if (typeof lucide !== "undefined") lucide.createIcons();
+      }
+
+      function escapeHtml(s) {
+        const d = document.createElement("div");
+        d.textContent = s;
+        return d.innerHTML;
+      }
+
+      function loadDigestEmails() {
+        fetch("/api/refresh-digest/emails")
+          .then((r) => r.json())
+          .then((rows) => renderDigestList(Array.isArray(rows) ? rows : []))
+          .catch(() => {
+            document.getElementById("digestList").innerHTML =
+              `<li class="pp-digest-empty">Could not load list.</li>`;
+          });
+      }
+
+      function removeDigestEmail(email) {
+        const q = new URLSearchParams({ email });
+        fetch(`/api/refresh-digest/emails?${q}`, { method: "DELETE" })
+          .then((r) => r.json())
+          .then(() => {
+            showDigestMsg("Removed.", false);
+            loadDigestEmails();
+          })
+          .catch(() => showDigestMsg("Remove failed.", true));
+      }
+
+      document.getElementById("digestSubscribeBtn").addEventListener("click", () => {
+        const input = document.getElementById("digestEmailInput");
+        const email = (input.value || "").trim();
+        if (!email) {
+          showDigestMsg("Enter an email address.", true);
+          return;
+        }
+        fetch("/api/refresh-digest/emails", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        })
+          .then((r) => r.json().then((j) => ({ ok: r.ok, j })))
+          .then(({ ok, j }) => {
+            if (!ok) throw new Error(j.error || "Subscribe failed");
+            showDigestMsg(j.already ? "Already subscribed." : "Subscribed.", false);
+            input.value = "";
+            loadDigestEmails();
+          })
+          .catch((e) => showDigestMsg(e.message || "Subscribe failed.", true));
+      });
+
+      loadDigestEmails();
+
       fetch("/api/prizepicks")
         .then((r) => r.json())
         .then((data) => {
@@ -479,6 +589,8 @@
           mobileMenu.classList.remove('open');
         }
       });
+
+      if (typeof lucide !== "undefined") lucide.createIcons();
     </script>
   </body>
 </html>

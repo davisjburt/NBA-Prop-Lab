@@ -55,6 +55,18 @@ class ModelPropEval(db.Model):
                            onupdate=lambda: datetime.now(timezone.utc))
 
 
+class RefreshDigestEmail(db.Model):
+    """Subscribers who receive top props + moneylines when the refresh pipeline runs."""
+
+    __tablename__ = "refresh_digest_emails"
+
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(255), unique=True, nullable=False, index=True)
+    created_at = db.Column(
+        db.DateTime, default=lambda: datetime.now(timezone.utc), nullable=False
+    )
+
+
 class ModelMoneylineEval(db.Model):
     __tablename__ = "model_moneyline_eval"
 
