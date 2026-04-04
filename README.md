@@ -46,7 +46,7 @@ End-to-end order used by `./refresh.sh`:
 | 2 | `dedup.py` | Remove duplicate `(player_id, date)` rows if any |
 | 3 | `fetch_data.py` | Fetches props, computes board → **`moneylines.json`**, **`prizepicks_results.json`**, etc. **Does not** insert into `model_prop_eval` / `model_moneyline_eval`. |
 | 4 | `update_model_stats.py` | Rebuilds **today’s** slate from JSON, resolves hits vs `player_game_stats`, writes **`model_prop_eval_sync.json`**, **`model_moneyline_eval_sync.json`**, **`model_stats_*.json`** |
-| 5 | `send_refresh_digest.py` | Optional: emails **top 10 props** + **moneylines** (teams + pick per game) to **`refresh_digest_emails`** (skips if SMTP missing or no subscribers) |
+| 5 | `send_refresh_digest.py` | Optional: emails **top 10 standard props** + **moneylines** (teams + pick per game) to **`refresh_digest_emails`** (skips if SMTP missing or no subscribers) |
 | 6 | `sync_to_heroku.py` | Bulk INSERT into Postgres using sync JSON (full columns including resolved fields when present) |
 
 The **Model Stats** page calls **`GET /api/model_outcomes?days=…`**, which aggregates from the **live database** (`build_outcomes_summary`), not from stale snapshot files.
@@ -93,9 +93,14 @@ NBA-Prop-Lab/
 │   ├── sync_to_heroku.py         # Postgres bulk sync from sync JSON (fallback: prizepicks/moneylines JSON)
 │   ├── dedup.py
 │   ├── seed.py
-│   ├── check_model_history.py    # DB row counts / date ranges for model tables
 │   ├── send_refresh_digest.py    # Email digest (called from refresh.sh)
-│   └── recover_model_history_from_git.py  # replay history from git snapshots (optional)
+│   └── archive/                  # one-off / rarely used utilities
+│       ├── check_model_history.py
+│       ├── recover_model_history_from_git.py
+│       ├── repair_postgres_sequences.py
+│       ├── send_refresh_digest_to_me.py
+│       ├── fix_positions.py
+│       └── patch_nav.py
 ├── refresh.sh                    # Full local pipeline + git push
 ├── run.py                        # Dev server (port 5002)
 ├── requirements.txt
@@ -114,9 +119,10 @@ NBA-Prop-Lab/
 | `fetch_data.py` | Fetches lines + computes enriched board → `data/*.json` (no model-eval table writes) |
 | `update_model_stats.py` | Hydrate today from JSON, resolve props/moneylines, write `model_stats_*.json` and `model_*_eval_sync.json`. **`--skip-hydrate`**: skip replacing today from JSON (e.g. after git recovery). |
 | `sync_to_heroku.py` | Push `model_prop_eval` / `model_moneyline_eval` to Postgres (`HEROKU_DATABASE_URL` or `DATABASE_URL`) |
-| `check_model_history.py` | Print masked `DATABASE_URL`, counts, and date ranges for model tables |
-| `recover_model_history_from_git.py` | Replay `data/prizepicks_results.json` / `data/moneylines.json` from git history into model tables. **`--apply --finish`**: replay + run `update_model_stats.py --skip-hydrate` in one shot |
+| `archive/check_model_history.py` | Print masked `DATABASE_URL`, counts, and date ranges for model tables |
+| `archive/recover_model_history_from_git.py` | Replay `data/prizepicks_results.json` / `data/moneylines.json` from git history into model tables. **`--apply --finish`**: replay + run `update_model_stats.py --skip-hydrate` in one shot |
 | `send_refresh_digest.py` | Sends digest email (see [Refresh email digest](#refresh-email-digest)) |
+| `archive/send_refresh_digest_to_me.py` | Same digest, **always** to `davisb7@me.com` only (ignores DB subscribers; for testing) |
 | `verify_smtp.py` | Check SMTP env for digest; `--test-smtp` tests SMTP login only |
 
 ---
@@ -267,23 +273,24 @@ On **Settings**, users can subscribe with an email address for the digest. Addre
 
 After each successful `refresh.sh` run (once new `prizepicks_results.json` and `moneylines.json` exist), `send_refresh_digest.py` emails every subscriber:
 
-- **Top 10** prop lines by **confidence** (from `prizepicks_results.json`)
+- **Top 10** **standard** prop lines by **confidence** (excludes safer/goblin lines; from `prizepicks_results.json`)
 - **Moneylines:** each game shows **away**, **home**, and **pick** only (from `moneylines.json`)
 
 If `SMTP_HOST` / `SMTP_USER` / `SMTP_PASSWORD` are not set, the script prints a skip message and exits successfully. If there are no subscribers, it also skips.
 
 You can run the sender manually:
 
-`python3 scripts/send_refresh_digest.py`
+`python3 scripts/send_refresh_digest.py`  
+`python3 scripts/archive/send_refresh_digest_to_me.py` — same content, only `davisb7@me.com`
 
 ---
 
 ## Recovery and history
 
-- **`scripts/check_model_history.py`** — Inspect whether resolved rows exist and which date range is present.
-- **`scripts/recover_model_history_from_git.py`** — Best-effort rebuild of `model_*_eval` rows from historical **`data/prizepicks_results.json`** and **`data/moneylines.json`** committed in git (one row per commit date).  
+- **`scripts/archive/check_model_history.py`** — Inspect whether resolved rows exist and which date range is present.
+- **`scripts/archive/recover_model_history_from_git.py`** — Best-effort rebuild of `model_*_eval` rows from historical **`data/prizepicks_results.json`** and **`data/moneylines.json`** committed in git (one row per commit date).  
   **One-shot:**  
-  `python3 scripts/recover_model_history_from_git.py --apply --finish`  
+  `python3 scripts/archive/recover_model_history_from_git.py --apply --finish`  
 
 This does **not** replace a full Postgres backup; it only replays what exists in git history.
 
@@ -309,7 +316,7 @@ Cron or Render schedulers typically run `daily_update.py` and/or `fetch_data.py`
 | Model Stats shows no graded outcomes | Run `daily_update.py` so `player_game_stats` exists for game dates, then `update_model_stats.py`. Use the same `DATABASE_URL` as the app. |
 | Heroku model tables out of date | Run `sync_to_heroku.py` with `DATABASE_URL` pointing at Heroku (or set `HEROKU_DATABASE_URL` and use `refresh.sh`) |
 | Duplicate game logs | `python3 scripts/dedup.py` |
-| Postgres sequence errors after import | `python3 scripts/repair_postgres_sequences.py` (if present) |
+| Postgres sequence errors after import | `python3 scripts/archive/repair_postgres_sequences.py` |
 | NBA API 429 | Back off 15–30 minutes; `daily_update` uses throttling |
 
 ---

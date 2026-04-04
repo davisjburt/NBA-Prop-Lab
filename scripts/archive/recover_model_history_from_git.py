@@ -1,6 +1,6 @@
 """
-scripts/recover_model_history_from_git.py
------------------------------------------
+scripts/archive/recover_model_history_from_git.py
+--------------------------------------------------
 Best-effort recovery of model eval history from git-tracked JSON snapshots.
 
 It replays historical versions of:
@@ -10,10 +10,10 @@ using each commit's calendar date (%cs) as the slate date.
 
 Usage:
   # Preview only
-  python scripts/recover_model_history_from_git.py
+  python scripts/archive/recover_model_history_from_git.py
 
   # One command: replay + resolve + model_stats / sync JSON
-  python scripts/recover_model_history_from_git.py --apply --finish
+  python scripts/archive/recover_model_history_from_git.py --apply --finish
 """
 
 from __future__ import annotations
@@ -27,7 +27,7 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
 from app.config import load_env  # noqa: E402
 
@@ -40,7 +40,7 @@ from scripts.update_model_stats import resolve_moneylines, resolve_props  # noqa
 MAX_PER_STAT = 25
 PP_PATH = "data/prizepicks_results.json"
 ML_PATH = "data/moneylines.json"
-REPO_ROOT = Path(__file__).resolve().parent.parent
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 UPDATE_STATS_SCRIPT = REPO_ROOT / "scripts" / "update_model_stats.py"
 
 

@@ -1,6 +1,6 @@
 """
-scripts/check_model_history.py
-------------------------------
+scripts/archive/check_model_history.py
+----------------------------------------
 Quick DB sanity check for model history.
 
 Shows:
@@ -15,7 +15,7 @@ import sys
 
 from sqlalchemy import func
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
 from app.config import load_env  # noqa: E402
 

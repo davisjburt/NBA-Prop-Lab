@@ -1,4 +1,4 @@
-"""Build and send the refresh digest email (top props + all moneylines)."""
+"""Build and send the refresh digest email (top standard props + moneylines)."""
 
 from __future__ import annotations
 
@@ -36,12 +36,18 @@ def _load_json_list(path: Path) -> list[dict[str, Any]]:
 
 
 def top_props_by_confidence(n: int = 10) -> list[dict[str, Any]]:
+    """Top N by confidence, PrizePicks **standard** lines only (excludes goblin/safer, demon)."""
     rows = _load_json_list(_DATA / "prizepicks_results.json")
-    rows.sort(
+    standard = [
+        r
+        for r in rows
+        if (str(r.get("odds_type") or "standard")).lower() == "standard"
+    ]
+    standard.sort(
         key=lambda r: float(r.get("confidence") or 0),
         reverse=True,
     )
-    return rows[:n]
+    return standard[:n]
 
 
 def all_moneylines() -> list[dict[str, Any]]:
@@ -52,7 +58,7 @@ def build_digest_plain(top_props: list[dict], moneylines: list[dict]) -> str:
     lines: list[str] = [
         "NBA Prop Lab — refresh digest",
         "",
-        f"Top {len(top_props)} props (by confidence)",
+        f"Top {len(top_props)} standard props (by confidence)",
         "-" * 40,
     ]
     for i, p in enumerate(top_props, 1):
@@ -94,7 +100,7 @@ def build_digest_html(top_props: list[dict], moneylines: list[dict]) -> str:
 <html><head><meta charset="utf-8"><title>NBA Prop Lab digest</title></head>
 <body style="font-family:system-ui,sans-serif;line-height:1.5;color:#111">
 <h2>NBA Prop Lab — refresh digest</h2>
-<h3>Top {len(top_props)} props (confidence)</h3>
+<h3>Top {len(top_props)} standard props (confidence)</h3>
 <table border="1" cellpadding="6" cellspacing="0" style="border-collapse:collapse;font-size:14px">
 <thead><tr><th>#</th><th>Player</th><th>Team</th><th>Stat</th><th>Line</th><th>Conf</th></tr></thead>
 <tbody>{prop_rows}</tbody></table>

@@ -9,7 +9,7 @@ update_model_stats + sync_to_heroku. No GUI — pure Python.
 
 If every player shows “no new games” but the NBA API has newer box scores,
 PostgreSQL PK sequences may be behind MAX(id) (common after a DB import).
-Run: python scripts/repair_postgres_sequences.py
+Run: python scripts/archive/repair_postgres_sequences.py
 """
 
 import sys, os, time, random

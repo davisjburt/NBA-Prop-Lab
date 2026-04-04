@@ -6,13 +6,13 @@ causing primary-key collisions. daily_update then hits IntegrityError, rolls
 back, and appears to leave everything “up to date.”
 
 Usage (same DATABASE_URL / .env as the app):
-  python scripts/repair_postgres_sequences.py
+  python scripts/archive/repair_postgres_sequences.py
 """
 
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from sqlalchemy import inspect, text  # noqa: E402
 

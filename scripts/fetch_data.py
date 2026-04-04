@@ -7,7 +7,7 @@ not written here; hydration + Heroku sync happen in update_model_stats and
 sync_to_heroku after JSON is finalized.
 
 Files written:
-  data/prizepicks_results.json   ← full PrizePicks board with confidence scores
+  data/prizepicks_results.json   ← props only for teams on today's NBA scoreboard (US Eastern day)
   data/prizepicks_parlays.json   ← pre-computed 2 and 3-leg parlays
   data/trending.json             ← hot streaks + top hitters
   data/opponent_defense.json     ← raw NBA opponent defense stats
@@ -158,7 +158,6 @@ def main():
         hit_rate,
         hit_rate_combo,
         COMBO_STATS,
-        extract_opponent,
         clean_avg,
         league_avg_by_stat,
         matchup_multiplier,
@@ -327,8 +326,14 @@ def main():
             missing_player = 0
             missing_rows = 0
             skipped_bad_stat = 0
+            skipped_not_today = 0
 
             print(f"   Processing {total_pp} PrizePicks lines...")
+            if not todays_matchups:
+                print(
+                    "   ⚠️  No teams on today's NBA scoreboard — "
+                    "skipping all lines (avoid yesterday's matchups)."
+                )
 
             for i, entry in enumerate(pp_lines, start=1):
                 if i % 50 == 0 or i == total_pp:
@@ -366,14 +371,13 @@ def main():
                 line = entry["line"]
 
                 team_abbr = (entry.get("team") or player.team_abbr or "").upper()
-                today_game = todays_matchups.get(team_abbr)
+                if not todays_matchups or team_abbr not in todays_matchups:
+                    skipped_not_today += 1
+                    continue
 
-                if today_game:
-                    opponent_abbr = today_game["opponent"]
-                    current_location = today_game["location"]
-                else:
-                    opponent_abbr = extract_opponent(rows[0].matchup)
-                    current_location = rows[0].location
+                today_game = todays_matchups[team_abbr]
+                opponent_abbr = today_game["opponent"]
+                current_location = today_game["location"]
 
                 if stat in COMBO_STATS:
                     cols = COMBO_STATS[stat]
@@ -499,7 +503,7 @@ def main():
             print(
                 f"   ✅ Finished PrizePicks loop | built={built_rows} "
                 f"missing_player={missing_player} missing_rows={missing_rows} "
-                f"bad_stat={skipped_bad_stat}"
+                f"bad_stat={skipped_bad_stat} not_on_todays_slate={skipped_not_today}"
             )
 
             pp_results.sort(key=lambda x: x["confidence"], reverse=True)

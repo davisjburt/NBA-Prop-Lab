@@ -21,6 +21,21 @@ import requests
 
 SEASON = "2025-26"
 
+
+def nba_scoreboard_game_date_str() -> str:
+    """
+    Date string for nba_api ScoreboardV2 (MM/DD/YYYY). NBA.com uses the US Eastern
+    calendar day for "tonight's" slate — using local date.today() can be wrong
+    (e.g. late night PT or early morning ET) and show yesterday's games.
+    """
+    try:
+        from zoneinfo import ZoneInfo
+
+        d = datetime.datetime.now(ZoneInfo("America/New_York")).date()
+    except Exception:
+        d = datetime.date.today()
+    return d.strftime("%m/%d/%Y")
+
 # ── Existing helpers ──────────────────────────────────────────────────────
 
 
@@ -126,7 +141,8 @@ def fetch_todays_matchups() -> dict:
     try:
         time.sleep(0.6)
         id_to_abbr = {t["id"]: t["abbreviation"] for t in nba_teams.get_teams()}
-        today = datetime.date.today().strftime("%m/%d/%Y")
+        today = nba_scoreboard_game_date_str()
+        print(f"   Scoreboard game_date (US Eastern): {today}")
         board = scoreboardv2.ScoreboardV2(
             game_date=today, day_offset=0, timeout=15
         )

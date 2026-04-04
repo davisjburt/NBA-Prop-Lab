@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Run this from your repo root to patch nav links in all templates.
-  python3 patch_nav.py
+  python3 scripts/archive/patch_nav.py
 """
 import re, os
 
