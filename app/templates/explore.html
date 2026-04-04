@@ -141,6 +141,7 @@
 
     {% include 'base_drawer.html' %}
 
+    <script src="/static/js/mobile-nav.js"></script>
     <script>
       const DISCOVER_LINE_DEFAULTS = {
         pts: 20.5,
@@ -309,20 +310,6 @@
           tbody.appendChild(tr);
         });
       }
-
-      function toggleMobileMenu() {
-        const mobileMenu = document.getElementById("mobileMenu");
-        mobileMenu.classList.toggle("open");
-      }
-
-      // Close mobile menu when clicking outside
-      document.addEventListener("click", (e) => {
-        const mobileMenu = document.getElementById("mobileMenu");
-        const menuToggle = document.querySelector(".mobile-menu-toggle");
-        if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-          mobileMenu.classList.remove("open");
-        }
-      });
 
       document.addEventListener("DOMContentLoaded", () => lucide.createIcons());
     </script>

@@ -63,6 +63,7 @@
       </div>
     </div>
 
+    <script src="/static/js/mobile-nav.js"></script>
     <script>
       // NBA team ID map for logo CDN
       // https://cdn.nba.com/logos/nba/{TEAM_ID}/global/L/logo.svg
@@ -416,20 +417,6 @@
             `<div class="ml-empty"><i data-lucide="wifi-off"></i><p>Failed to load data. Try refreshing.</p></div>`;
           lucide.createIcons();
         });
-      
-      function toggleMobileMenu() {
-        const mobileMenu = document.getElementById('mobileMenu');
-        mobileMenu.classList.toggle('open');
-      }
-      
-      // Close mobile menu when clicking outside
-      document.addEventListener('click', (e) => {
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuToggle = document.querySelector('.mobile-menu-toggle');
-        if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-          mobileMenu.classList.remove('open');
-        }
-      });
     </script>
   </body>
 </html>

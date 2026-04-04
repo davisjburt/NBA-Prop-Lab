@@ -652,6 +652,19 @@ tr.data-row:hover td {
     height: 20px;
   }
   
+  /* Dim page behind menu; stays below nav (100) so hamburger stays tappable */
+  body.mobile-nav-open::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.42);
+    z-index: 90;
+  }
+
+  body.mobile-nav-open {
+    overflow: hidden;
+  }
+
   .mobile-menu {
     transform: translateY(0); /* Reset transform on mobile */
     position: fixed;
@@ -661,16 +674,19 @@ tr.data-row:hover td {
     background: var(--surface);
     border-bottom: 1px solid var(--border);
     box-shadow: var(--shadow-md);
-    z-index: 99;
+    z-index: 110;
     max-height: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     transition: max-height 0.3s ease;
   }
-  
+
   .mobile-menu.open {
-    max-height: 400px;
+    max-height: min(85vh, 520px);
+    touch-action: pan-y;
   }
-  
+
   .mobile-menu a {
     display: block;
     padding: 1rem;
@@ -678,6 +694,9 @@ tr.data-row:hover td {
     color: var(--text);
     border-bottom: 1px solid var(--border);
     transition: background 0.15s;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(99, 102, 241, 0.2);
+    touch-action: manipulation;
   }
   
   .mobile-menu a:hover,
