@@ -10,8 +10,8 @@
     "actual_winner": null,
     "margin": null,
     "correct": null,
-    "created_at": "2026-04-04T16:49:45.742999",
-    "updated_at": "2026-04-04T16:49:45.743006"
+    "created_at": "2026-04-04T17:43:39.700285",
+    "updated_at": "2026-04-04T17:43:39.700300"
   },
   {
     "date": "2026-04-04",
@@ -24,21 +24,21 @@
     "actual_winner": null,
     "margin": null,
     "correct": null,
-    "created_at": "2026-04-04T16:49:45.743007",
-    "updated_at": "2026-04-04T16:49:45.743008"
+    "created_at": "2026-04-04T17:43:39.700302",
+    "updated_at": "2026-04-04T17:43:39.700303"
   },
   {
     "date": "2026-04-04",
     "home_abbr": "PHI",
     "away_abbr": "DET",
-    "predicted_winner": "PHI",
-    "win_prob_home": 87.1,
-    "win_prob_away": 12.9,
-    "spread": 4.1,
+    "predicted_winner": "DET",
+    "win_prob_home": 26.0,
+    "win_prob_away": 74.0,
+    "spread": -2.3,
     "actual_winner": null,
     "margin": null,
     "correct": null,
-    "created_at": "2026-04-04T16:49:45.743008",
-    "updated_at": "2026-04-04T16:49:45.743009"
+    "created_at": "2026-04-04T17:43:39.700304",
+    "updated_at": "2026-04-04T17:43:39.700305"
   }
 ]

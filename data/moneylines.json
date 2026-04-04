@@ -33,13 +33,6 @@
     "home_injuries": [
       {
         "team_abbr": "MIA",
-        "player_name": "Tyler Herro",
-        "status": "day-to-day",
-        "reason": "Soreness",
-        "player_avg_pts": 21.2
-      },
-      {
-        "team_abbr": "MIA",
         "player_name": "Norman Powell",
         "status": "out",
         "reason": "Not Specified",
@@ -56,10 +49,10 @@
     "away_injuries": [
       {
         "team_abbr": "WAS",
-        "player_name": "Justin Champagnie",
-        "status": "day-to-day",
-        "reason": "Bruise",
-        "player_avg_pts": 11.4
+        "player_name": "Alex Sarr",
+        "status": "out",
+        "reason": "Inflammation",
+        "player_avg_pts": 15.0
       },
       {
         "team_abbr": "WAS",
@@ -70,31 +63,10 @@
       },
       {
         "team_abbr": "WAS",
-        "player_name": "Alex Sarr",
-        "status": "out",
-        "reason": "Inflammation",
-        "player_avg_pts": 15.0
-      },
-      {
-        "team_abbr": "WAS",
-        "player_name": "Bilal Coulibaly",
-        "status": "day-to-day",
-        "reason": "Soreness",
-        "player_avg_pts": 13.9
-      },
-      {
-        "team_abbr": "WAS",
         "player_name": "Tristan Vukcevic",
         "status": "day-to-day",
         "reason": "Bruise",
         "player_avg_pts": 12.2
-      },
-      {
-        "team_abbr": "WAS",
-        "player_name": "Tre Johnson",
-        "status": "day-to-day",
-        "reason": "Sprain",
-        "player_avg_pts": 10.8
       },
       {
         "team_abbr": "WAS",
@@ -215,11 +187,11 @@
   {
     "home": "PHI",
     "away": "DET",
-    "predicted_winner": "PHI",
-    "win_prob_home": 87.1,
-    "win_prob_away": 12.9,
-    "spread": 4.1,
-    "home_score_est": 118.2,
+    "predicted_winner": "DET",
+    "win_prob_home": 26.0,
+    "win_prob_away": 74.0,
+    "spread": -2.3,
+    "home_score_est": 88.7,
     "away_score_est": 84.5,
     "factors": {
       "form": -2.5,
@@ -227,13 +199,13 @@
       "home_court": 7.5,
       "h2h": -5.0,
       "defense": -3.0,
-      "injuries": 37.9
+      "injuries": 2.5
     },
     "home_net_rtg": 0.1,
     "away_net_rtg": 8.1,
     "home_form": 70.0,
     "away_form": 80.0,
-    "home_inj_loss": 0.9,
+    "home_inj_loss": 30.4,
     "away_inj_loss": 32.5,
     "home_team_name": "Philadelphia 76ers",
     "away_team_name": "Detroit Pistons",
@@ -246,17 +218,17 @@
     "home_injuries": [
       {
         "team_abbr": "PHI",
+        "player_name": "Joel Embiid",
+        "status": "out",
+        "reason": "Not Specified",
+        "player_avg_pts": 29.5
+      },
+      {
+        "team_abbr": "PHI",
         "player_name": "Paul George",
         "status": "day-to-day",
         "reason": "Not Specified",
         "player_avg_pts": 18.4
-      },
-      {
-        "team_abbr": "PHI",
-        "player_name": "Joel Embiid",
-        "status": "day-to-day",
-        "reason": "Not Specified",
-        "player_avg_pts": 29.5
       },
       {
         "team_abbr": "PHI",
@@ -269,10 +241,10 @@
     "away_injuries": [
       {
         "team_abbr": "DET",
-        "player_name": "Marcus Sasser",
+        "player_name": "Jalen Duren",
         "status": "day-to-day",
-        "reason": "Strain",
-        "player_avg_pts": 5.6
+        "reason": "Illness",
+        "player_avg_pts": 23.1
       },
       {
         "team_abbr": "DET",
