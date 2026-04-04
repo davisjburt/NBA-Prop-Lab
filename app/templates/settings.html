@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NBA Prop Lab — Settings</title>
+    <link rel="icon" type="image/svg+xml" href="/static/proplab.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="/static/css/base.css" />
+    <link rel="stylesheet" href="/static/css/settings.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="nav-logo">
+        <img src="/static/proplab.svg" class="nav-logo-icon" /> Prop Lab
+      </a>
+      <div class="nav-links">
+        <a href="/"><i data-lucide="users"></i> Players</a>
+        <a href="/prizepicks"><i data-lucide="list"></i> Player Props</a>
+        <a href="/moneylines"><i data-lucide="trending-up"></i> Moneylines</a>
+        <a href="/model-stats"><i data-lucide="bar-chart-3"></i> Model Stats</a>
+        <a href="/settings" class="active"
+          ><i data-lucide="settings"></i> Settings</a
+        >
+      </div>
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+        <i data-lucide="menu"></i>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/"><i data-lucide="users"></i> Players</a>
+      <a href="/prizepicks"><i data-lucide="list"></i> Player Props</a>
+      <a href="/moneylines"><i data-lucide="trending-up"></i> Moneylines</a>
+      <a href="/model-stats"><i data-lucide="bar-chart-3"></i> Model Stats</a>
+      <a href="/settings" class="active"><i data-lucide="settings"></i> Settings</a>
+    </div>
+
+    <div class="st-page">
+      <header class="st-page-header">
+        <h1>Settings</h1>
+        <p>Notifications and preferences. More options will appear here later.</p>
+      </header>
+
+      <section class="st-section" aria-labelledby="email-heading">
+        <h2 class="st-section-title" id="email-heading">Email</h2>
+        <div class="st-digest-card" id="digestCard">
+          <div class="st-digest-header">
+            <i data-lucide="mail"></i>
+            <div>
+              <h3 class="st-digest-title">Refresh email digest</h3>
+              <p class="st-digest-desc">
+                When <code>refresh.sh</code> runs, subscribers get the
+                <strong>top 10 props</strong> (by confidence) and
+                <strong>moneylines</strong> (teams + pick per game). Requires SMTP
+                env vars on the server (see README).
+              </p>
+            </div>
+          </div>
+          <div class="st-digest-form">
+            <input
+              type="email"
+              id="digestEmailInput"
+              class="st-digest-input"
+              placeholder="you@example.com"
+              autocomplete="email"
+            />
+            <button type="button" class="btn st-digest-btn" id="digestSubscribeBtn">
+              Subscribe
+            </button>
+          </div>
+          <p class="st-digest-msg" id="digestMsg" hidden></p>
+          <div>
+            <div class="st-digest-list-label">Subscribed addresses</div>
+            <ul class="st-digest-list" id="digestList">
+              <li class="st-digest-loading">Loading…</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      function showDigestMsg(text, isError) {
+        const el = document.getElementById("digestMsg");
+        el.textContent = text;
+        el.hidden = false;
+        el.style.color = isError ? "var(--danger, #ef4444)" : "var(--muted)";
+      }
+
+      function renderDigestList(rows) {
+        const ul = document.getElementById("digestList");
+        if (!rows.length) {
+          ul.innerHTML = `<li class="st-digest-empty">No subscribers yet.</li>`;
+          return;
+        }
+        ul.innerHTML = rows
+          .map(
+            (r) =>
+              `<li class="st-digest-item"><span class="st-digest-email">${escapeHtml(r.email)}</span>` +
+              `<button type="button" class="st-digest-remove" data-email="${escapeHtml(r.email)}">Remove</button></li>`,
+          )
+          .join("");
+        ul.querySelectorAll(".st-digest-remove").forEach((btn) => {
+          btn.addEventListener("click", () => removeDigestEmail(btn.dataset.email));
+        });
+        if (typeof lucide !== "undefined") lucide.createIcons();
+      }
+
+      function escapeHtml(s) {
+        const d = document.createElement("div");
+        d.textContent = s;
+        return d.innerHTML;
+      }
+
+      function loadDigestEmails() {
+        fetch("/api/refresh-digest/emails")
+          .then((r) => r.json())
+          .then((rows) => renderDigestList(Array.isArray(rows) ? rows : []))
+          .catch(() => {
+            document.getElementById("digestList").innerHTML =
+              `<li class="st-digest-empty">Could not load list.</li>`;
+          });
+      }
+
+      function removeDigestEmail(email) {
+        const q = new URLSearchParams({ email });
+        fetch(`/api/refresh-digest/emails?${q}`, { method: "DELETE" })
+          .then((r) => r.json())
+          .then(() => {
+            showDigestMsg("Removed.", false);
+            loadDigestEmails();
+          })
+          .catch(() => showDigestMsg("Remove failed.", true));
+      }
+
+      document.getElementById("digestSubscribeBtn").addEventListener("click", () => {
+        const input = document.getElementById("digestEmailInput");
+        const email = (input.value || "").trim();
+        if (!email) {
+          showDigestMsg("Enter an email address.", true);
+          return;
+        }
+        fetch("/api/refresh-digest/emails", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        })
+          .then((r) => r.json().then((j) => ({ ok: r.ok, j })))
+          .then(({ ok, j }) => {
+            if (!ok) throw new Error(j.error || "Subscribe failed");
+            showDigestMsg(j.already ? "Already subscribed." : "Subscribed.", false);
+            input.value = "";
+            loadDigestEmails();
+          })
+          .catch((e) => showDigestMsg(e.message || "Subscribe failed.", true));
+      });
+
+      loadDigestEmails();
+
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        mobileMenu.classList.toggle("open");
+      }
+
+      document.addEventListener("click", (e) => {
+        const mobileMenu = document.getElementById("mobileMenu");
+        const menuToggle = document.querySelector(".mobile-menu-toggle");
+        if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+          mobileMenu.classList.remove("open");
+        }
+      });
+
+      if (typeof lucide !== "undefined") lucide.createIcons();
+    </script>
+  </body>
+</html>

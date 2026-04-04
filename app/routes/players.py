@@ -39,3 +39,8 @@ def parlays_page():
 @players_bp.route("/model-stats")
 def model_stats_page():
     return render_template("model-stats.html")
+
+
+@players_bp.route("/settings")
+def settings_page():
+    return render_template("settings.html")

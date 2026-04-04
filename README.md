@@ -46,7 +46,7 @@ End-to-end order used by `./refresh.sh`:
 | 2 | `dedup.py` | Remove duplicate `(player_id, date)` rows if any |
 | 3 | `fetch_data.py` | Fetches props, computes board → **`moneylines.json`**, **`prizepicks_results.json`**, etc. **Does not** insert into `model_prop_eval` / `model_moneyline_eval`. |
 | 4 | `update_model_stats.py` | Rebuilds **today’s** slate from JSON, resolves hits vs `player_game_stats`, writes **`model_prop_eval_sync.json`**, **`model_moneyline_eval_sync.json`**, **`model_stats_*.json`** |
-| 5 | `send_refresh_digest.py` | Optional: emails **top 10 props** + **all moneylines** to addresses in **`refresh_digest_emails`** (skips if SMTP env vars missing or no subscribers) |
+| 5 | `send_refresh_digest.py` | Optional: emails **top 10 props** + **moneylines** (teams + pick per game) to **`refresh_digest_emails`** (skips if SMTP missing or no subscribers) |
 | 6 | `sync_to_heroku.py` | Bulk INSERT into Postgres using sync JSON (full columns including resolved fields when present) |
 
 The **Model Stats** page calls **`GET /api/model_outcomes?days=…`**, which aggregates from the **live database** (`build_outcomes_summary`), not from stale snapshot files.
@@ -79,11 +79,11 @@ NBA-Prop-Lab/
 │   ├── config.py
 │   ├── models/models.py          # Player, PlayerGameStat, ModelPropEval, ModelMoneylineEval, RefreshDigestEmail
 │   ├── routes/
-│   │   ├── players.py            # HTML routes (/, /player, /prizepicks, /moneylines, /model-stats, …)
+│   │   ├── players.py            # HTML routes (/, /player, /prizepicks, /moneylines, /model-stats, /settings, …)
 │   │   ├── props.py              # /api/* data (props, moneylines JSON, legacy model_stats)
 │   │   └── model_stats.py        # GET /api/model_outcomes
 │   ├── services/                 # hit_rate, nba_fetcher, prizepicks, moneyline, model_summary, refresh_digest, …
-│   ├── templates/                # index, player, prizepicks, parlays, moneylines, model-stats, explore, …
+│   ├── templates/                # index, player, prizepicks, parlays, moneylines, model-stats, settings, explore, …
 │   └── static/
 ├── data/                         # JSON outputs + sync snapshots (git-tracked where applicable)
 ├── scripts/
@@ -133,6 +133,7 @@ NBA-Prop-Lab/
 | GET | `/parlays` | `parlays.html` | Parlays |
 | GET | `/moneylines` | `moneylines.html` | Game predictions |
 | GET | `/model-stats` | `model-stats.html` | Model outcomes |
+| GET | `/settings` | `settings.html` | Preferences (e.g. refresh digest email list) |
 | GET | `/explore` | `explore.html` | Still reachable; **not linked in nav** |
 | GET | `/discover`, `/trending` | redirect | → `/explore` |
 
@@ -146,7 +147,7 @@ NBA-Prop-Lab/
 | `GET /api/moneylines` | From `moneylines.json` |
 | `GET /api/model_outcomes?days=0|7|30|90` | Aggregated model stats (DB-backed) |
 | `GET /api/model_stats?days=…` | Legacy aggregate endpoint (still in `props.py`) |
-| `GET /api/refresh-digest/emails` | List subscribed emails (for Player Props UI) |
+| `GET /api/refresh-digest/emails` | List subscribed emails (for **Settings** UI) |
 | `POST /api/refresh-digest/emails` | Body `{"email":"…"}` — subscribe |
 | `DELETE /api/refresh-digest/emails?email=…` | Unsubscribe |
 
@@ -262,12 +263,12 @@ This runs: `daily_update` → `dedup` → `fetch_data` (with `SKIP_TRENDING=1`) 
 
 ### Refresh email digest
 
-On **Player Props**, users can subscribe with an email address. Addresses are stored in **`refresh_digest_emails`** (same database as the app).
+On **Settings**, users can subscribe with an email address for the digest. Addresses are stored in **`refresh_digest_emails`** (same database as the app).
 
 After each successful `refresh.sh` run (once new `prizepicks_results.json` and `moneylines.json` exist), `send_refresh_digest.py` emails every subscriber:
 
 - **Top 10** prop lines by **confidence** (from `prizepicks_results.json`)
-- **All** moneyline rows (from `moneylines.json`)
+- **Moneylines:** each game shows **away**, **home**, and **pick** only (from `moneylines.json`)
 
 If `SMTP_HOST` / `SMTP_USER` / `SMTP_PASSWORD` are not set, the script prints a skip message and exits successfully. If there are no subscribers, it also skips.
 

@@ -1,0 +1,174 @@
+/* Settings page — add new sections under .st-section as needed */
+
+.st-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+}
+
+.st-page-header h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin: 0 0 0.35rem 0;
+}
+
+.st-page-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.st-section {
+  margin-top: 2rem;
+}
+
+.st-section-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0 0 0.75rem 0;
+}
+
+/* ── Refresh email digest ── */
+.st-digest-card {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 1.25rem 1.35rem;
+}
+
+.st-digest-header {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.st-digest-header i {
+  width: 22px;
+  height: 22px;
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.st-digest-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem 0;
+}
+
+.st-digest-desc {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.st-digest-desc code {
+  font-size: 0.82rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  background: var(--bg, rgba(0, 0, 0, 0.06));
+}
+
+.st-digest-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.st-digest-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.55rem 0.75rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: var(--bg, #fff);
+  color: var(--text);
+}
+
+.st-digest-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.st-digest-btn {
+  padding: 0.55rem 1.1rem;
+  font-size: 0.88rem;
+}
+
+.st-digest-msg {
+  font-size: 0.85rem;
+  margin: 0 0 0.75rem 0;
+}
+
+.st-digest-list-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.st-digest-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.st-digest-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+}
+
+.st-digest-item:last-child {
+  border-bottom: none;
+}
+
+.st-digest-email {
+  word-break: break-all;
+}
+
+.st-digest-remove {
+  flex-shrink: 0;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.78rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.st-digest-remove:hover {
+  border-color: var(--danger, #ef4444);
+  color: var(--danger, #ef4444);
+}
+
+.st-digest-empty,
+.st-digest-loading {
+  color: var(--muted);
+  font-size: 0.88rem;
+  padding: 0.25rem 0;
+}
+
+@media (max-width: 640px) {
+  .st-page {
+    padding: 1.5rem 1rem 3rem;
+  }
+}

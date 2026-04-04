@@ -242,8 +242,7 @@ def model_stats():
     })
 
 
-# ── Refresh email digest subscribers ───────────────────────────────────────────
-
+# ── Refresh email digest subscribers (Settings page) ───────────────────────────
 
 @props_bp.route("/refresh-digest/emails", methods=["GET"])
 def refresh_digest_list_emails():
