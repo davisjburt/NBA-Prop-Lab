@@ -220,7 +220,7 @@
     "PHX": 2
   },
   "ATL_BKN": {
-    "ATL": 3
+    "ATL": 4
   },
   "BOS_CLE": {
     "BOS": 3
@@ -255,7 +255,7 @@
   },
   "CHI_NYK": {
     "CHI": 1,
-    "NYK": 2
+    "NYK": 3
   },
   "LAC_NOP": {
     "LAC": 2,
@@ -320,7 +320,7 @@
     "BKN": 1
   },
   "MEM_TOR": {
-    "TOR": 1
+    "TOR": 2
   },
   "DEN_SAC": {
     "DEN": 3,
@@ -656,7 +656,7 @@
   },
   "CHA_IND": {
     "IND": 2,
-    "CHA": 1
+    "CHA": 2
   },
   "CLE_HOU": {
     "HOU": 2
@@ -825,7 +825,7 @@
     "NYK": 4
   },
   "HOU_UTA": {
-    "HOU": 2,
+    "HOU": 3,
     "UTA": 1
   },
   "DAL_DEN": {
@@ -928,7 +928,7 @@
   },
   "BOS_MIL": {
     "MIL": 1,
-    "BOS": 2
+    "BOS": 3
   },
   "IND_PHI": {
     "PHI": 3
@@ -1386,7 +1386,8 @@
     "MIL": 1
   },
   "NOP_SAC": {
-    "NOP": 2
+    "NOP": 2,
+    "SAC": 1
   },
   "PHI_POR": {
     "POR": 1,
@@ -1414,7 +1415,7 @@
     "HOU": 1
   },
   "MIN_PHI": {
-    "PHI": 1
+    "PHI": 2
   },
   "DET_SAS": {
     "SAS": 2
@@ -1467,7 +1468,7 @@
     "CHI": 1
   },
   "DAL_ORL": {
-    "ORL": 1
+    "ORL": 2
   },
   "LAC_SAS": {
     "SAS": 3
