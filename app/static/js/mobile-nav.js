@@ -1,21 +1,47 @@
 /**
- * Mobile nav: hamburger toggle, outside-click / backdrop close, close on link navigate.
- * Expects #mobileMenu and .mobile-menu-toggle (matches base.css).
+ * Mobile nav for max-width 768px layouts (base.css).
+ * iOS Safari: do not set overflow:hidden on body or position:fixed on body — both
+ * break tap hit-testing on position:fixed descendants. Scroll lock uses html only
+ * (see base.css .mobile-nav-open on html).
  */
 (function () {
   function menuEl() {
     return document.getElementById("mobileMenu");
   }
 
-  function setOpen(open) {
-    var m = menuEl();
-    if (!m) return;
-    m.classList.toggle("open", open);
-    document.body.classList.toggle("mobile-nav-open", open);
+  function ensureBackdrop() {
+    var id = "mobileNavBackdrop";
+    var el = document.getElementById(id);
+    if (el) return el;
+    el = document.createElement("div");
+    el.id = id;
+    el.className = "mobile-nav-backdrop";
+    el.setAttribute("aria-hidden", "true");
+    el.tabIndex = -1;
+    var nav = document.querySelector("nav");
+    if (nav && nav.parentNode) {
+      nav.parentNode.insertBefore(el, nav.nextSibling);
+    } else {
+      document.body.insertBefore(el, document.body.firstChild);
+    }
+    el.addEventListener("click", function () {
+      closeMenu();
+    });
+    return el;
   }
 
   function closeMenu() {
     setOpen(false);
+  }
+
+  function setOpen(open) {
+    var m = menuEl();
+    if (!m) return;
+    var bd = ensureBackdrop();
+    m.classList.toggle("open", open);
+    bd.classList.toggle("open", open);
+    document.documentElement.classList.toggle("mobile-nav-open", open);
+    document.body.classList.toggle("mobile-nav-open", open);
   }
 
   window.toggleMobileMenu = function () {
@@ -45,6 +71,8 @@
       }
 
       if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        var bd = document.getElementById("mobileNavBackdrop");
+        if (bd && bd.contains(e.target)) return;
         closeMenu();
       }
     },

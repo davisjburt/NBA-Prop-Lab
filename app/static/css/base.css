@@ -652,17 +652,34 @@ tr.data-row:hover td {
     height: 20px;
   }
   
-  /* Dim page behind menu; stays below nav (100) so hamburger stays tappable */
-  body.mobile-nav-open::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 23, 42, 0.42);
-    z-index: 90;
+  /*
+   * Scroll lock on html only — overflow:hidden on body breaks iOS hit-testing for
+   * position:fixed panels (e.g. .mobile-menu).
+   */
+  html.mobile-nav-open {
+    overflow: hidden;
+    height: 100%;
   }
 
-  body.mobile-nav-open {
-    overflow: hidden;
+  /*
+   * Backdrop is a real element (injected by mobile-nav.js). Do NOT use body::before —
+   * WebKit can mis-layer pseudo-elements so taps never reach links. Keep backdrop
+   * below .mobile-menu (z-index) so anchors receive touches on iOS.
+   */
+  .mobile-nav-backdrop {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 56px;
+    bottom: 0;
+    z-index: 105;
+    background: rgba(15, 23, 42, 0.42);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobile-nav-backdrop.open {
+    display: block;
   }
 
   .mobile-menu {
@@ -680,11 +697,11 @@ tr.data-row:hover td {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     transition: max-height 0.3s ease;
+    isolation: isolate;
   }
 
   .mobile-menu.open {
     max-height: min(85vh, 520px);
-    touch-action: pan-y;
   }
 
   .mobile-menu a {
@@ -696,7 +713,9 @@ tr.data-row:hover td {
     transition: background 0.15s;
     cursor: pointer;
     -webkit-tap-highlight-color: rgba(99, 102, 241, 0.2);
-    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    position: relative;
+    z-index: 1;
   }
   
   .mobile-menu a:hover,
