@@ -1,8 +1,8 @@
 /**
- * Mobile nav for max-width 768px layouts (base.css).
- * iOS Safari: do not set overflow:hidden on body or position:fixed on body — both
- * break tap hit-testing on position:fixed descendants. Scroll lock uses html only
- * (see base.css .mobile-nav-open on html).
+ * Mobile nav (base.css @media max-width 768px).
+ * Only run "close" logic while #mobileMenu is open — otherwise document clicks
+ * (e.g. desktop .nav-links) would call setOpen(false) → ensureBackdrop() and
+ * mutate the DOM during navigation, cancelling the request in many browsers.
  */
 (function () {
   function menuEl() {
@@ -57,6 +57,10 @@
       var menuToggle = document.querySelector(".mobile-menu-toggle");
       if (!mobileMenu || !menuToggle) return;
 
+      if (!mobileMenu.classList.contains("open")) {
+        return;
+      }
+
       var navLink =
         e.target.closest &&
         e.target.closest("#mobileMenu a[href]");
@@ -66,13 +70,10 @@
         navLink.getAttribute("href") !== "#" &&
         !navLink.hasAttribute("download")
       ) {
-        closeMenu();
         return;
       }
 
       if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-        var bd = document.getElementById("mobileNavBackdrop");
-        if (bd && bd.contains(e.target)) return;
         closeMenu();
       }
     },
@@ -80,6 +81,8 @@
   );
 
   window.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeMenu();
+    if (e.key !== "Escape") return;
+    var m = menuEl();
+    if (m && m.classList.contains("open")) closeMenu();
   });
 })();
